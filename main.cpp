@@ -72,7 +72,7 @@ struct Pitch
 /*
  2)
  */
-struct knobColor
+struct knobColor FIXME see readme.md coding style guide about type names
 {
     bool scopeIn = false;
     int colorSweep = 100;
@@ -81,7 +81,7 @@ struct knobColor
 /*
  3)
  */
-struct facePlate
+struct facePlate FIXME see readme.md coding style guide about type names
 {
     bool showBack = false;
 };
@@ -89,7 +89,7 @@ struct facePlate
 /*
  4)
  */
-struct powerSwitch
+struct powerSwitch FIXME see readme.md coding style guide about type names
 {
     bool active = true;
 };
@@ -97,7 +97,7 @@ struct powerSwitch
 /*
  5)
  */
-struct mixLevel
+struct mixLevel FIXME see readme.md coding style guide about type names
 {
     int wetDry = 120;
     float wetLevel = 120;
@@ -115,7 +115,7 @@ struct mixLevel
  6)
  */
 
-struct modeControl
+struct modeControl FIXME see readme.md coding style guide about type names
 {
     int modeSet = 10;
     char A = 1;
@@ -125,7 +125,7 @@ struct modeControl
 /*
  7)
  */
-struct eqControl
+struct eqControl FIXME see readme.md coding style guide about type names
 {
     bool lpOn = false;
     bool hpOn = false;
@@ -136,7 +136,7 @@ struct eqControl
  8)
  */
 
-struct diffusion
+struct diffusion FIXME see readme.md coding style guide about type names
 {
     float difAmount = 2000;
 };
@@ -146,7 +146,7 @@ struct diffusion
  */
 
 
-struct crush
+struct crush FIXME see readme.md coding style guide about type names
 {
     int crushAmount = 200;
     bool tubeDistort = false;
@@ -156,11 +156,12 @@ struct crush
  10)
  */
 
-struct feedback
+struct feedback FIXME see readme.md coding style guide about type names
 {
     bool feedbackOn = false;
     float feedbackAmount = 1000;
 };
+
 #include <iostream>
 int main()
 {
