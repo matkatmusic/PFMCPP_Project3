@@ -73,10 +73,10 @@ struct Pitch
  2)
  */
 struct knobColor
- {
-     bool scopeIn = false;
-     int colorSweep = 100;
- };
+{
+    bool scopeIn = false;
+    int colorSweep = 100;
+};
 
 /*
  3)
@@ -89,27 +89,27 @@ struct facePlate
 /*
  4)
  */
- struct powerSwitch
- {
-     bool active = true;
- };
+struct powerSwitch
+{
+    bool active = true;
+};
 
 /*
  5)
  */
- struct mixLevel
- {
-     int wetDry = 120;
-     float wetLevel = 120;
+struct mixLevel
+{
+    int wetDry = 120;
+    float wetLevel = 120;
 
-     struct Shimmer
-     {
-         bool shimmerActivate = false;
-         float shimmerLevel = 100;
-     };
+    struct Shimmer
+    {
+        bool shimmerActivate = false;
+        float shimmerLevel = 100;
+    };
 
- Shimmer setShimmer;
- };
+    Shimmer setShimmer;
+};
 
 /*
  6)
@@ -140,6 +140,7 @@ struct diffusion
 {
     float difAmount = 2000;
 };
+
 /*
  9)
  */
