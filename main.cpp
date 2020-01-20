@@ -52,17 +52,17 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
  */
 
 struct Person{
-  int age;
-  double heightInCM;
-  int numberOfPets;
-
-  struct Pet {
-    bool isCat;
-    bool isDog;
     int age;
-  };
+    double heightInCM;
+    int numberOfPets;
 
-  bool isPetHungry( Pet pet);
+    struct Pet {
+        bool isCat;
+        bool isDog;
+        int age;
+    };
+
+    bool isPetHungry( Pet pet);
 };
 
 /*
@@ -70,18 +70,18 @@ struct Person{
  */
 
 struct Synthesizer {
-  int polyphony;
-  bool multitimbral;
+    int polyphony;
+    bool multitimbral;
 
-  struct Sequencer {
-    bool isPlaying = 0;
-    bool playForward = 1;
-    bool playReverse = 0;
-    void playSequence(int sequence);
-  };
+    struct Sequencer {
+        bool isPlaying = 0;
+        bool playForward = 1;
+        bool playReverse = 0;
+        void playSequence(int sequence);
+    };
 
-  Sequencer sequencer;
-  void playNote(int frequency);
+    Sequencer sequencer;
+    void playNote(int frequency);
 };
 
 /*
@@ -89,13 +89,13 @@ struct Synthesizer {
  */
 
 struct Playlist {
-  bool isSharable = 1;
-  int songs;
-  double idOfCoverImage = 8717241; //ID for default image
+    bool isSharable = 1;
+    int songs;
+    double idOfCoverImage = 8717241; //ID for default image
 
-  bool addSongToPlaylist(int id);
-  bool deleteSongFromPlaylist(int id);
-  int listSongsInPlaylist();
+    bool addSongToPlaylist(int id);
+    bool deleteSongFromPlaylist(int id);
+    int listSongsInPlaylist();
 };
 
 /*
@@ -103,17 +103,17 @@ struct Playlist {
  */
 
 struct Student{
-  float currentGPA;
+    float currentGPA;
 
-  struct Class {
-    float currentGrade;
-    int daysMissed;
-    void addAssignment(double assignmentID, int grade);
-    void addMissedDay(bool excused);
-  };
+    struct Class {
+        float currentGrade;
+        int daysMissed;
+        void addAssignment(double assignmentID, int grade);
+        void addMissedDay(bool excused);
+    };
 
-  double calculateGPA();
-  double calculateTotalDaysMissed();
+    double calculateGPA();
+    double calculateTotalDaysMissed();
 };
 
 /*
@@ -121,11 +121,11 @@ struct Student{
  */
 
 struct RadioShow {
-  char showDays;
-  int showTime;
-  double hostID;
+    char showDays;
+    int showTime;
+    double hostID;
 
-  void updateShowTime(double hostID, char updatedShowDay, int updatedShowTime);
+    void updateShowTime(double hostID, char updatedShowDay, int updatedShowTime);
 };
 
 
@@ -134,20 +134,20 @@ struct RadioShow {
  */
 
 struct Driver{
-  bool licenseIsValid;
-  int numberOfViolations;
-  int numberOfCars;
+    bool licenseIsValid;
+    int numberOfViolations;
+    int numberOfCars;
 
-  struct Car {
-    bool isRegistered;
-    bool isSmogged;
+    struct Car {
+        bool isRegistered;
+        bool isSmogged;
 
-    bool registerCar();
-    bool smogCar();
-  };
+        bool registerCar();
+        bool smogCar();
+    };
 
-  bool isDriverAllowedToDrive();
-  int addCarToDriver(Car car);
+    bool isDriverAllowedToDrive();
+    int addCarToDriver(Car car);
 };
 
 
@@ -156,9 +156,9 @@ struct Driver{
  */
 
 struct Bike {
-  int numberOfGears;
-  bool hasDiscBrakes;
-  bool hasCarbonFrame;
+    int numberOfGears;
+    bool hasDiscBrakes;
+    bool hasCarbonFrame;
 };
 
 /*
@@ -166,10 +166,10 @@ struct Bike {
  */
 
 struct Warddrobe {
-  int numberOfSweaters;
-  int numbersOfShirts;
+    int numberOfSweaters;
+    int numbersOfShirts;
 
-  bool addItemsToWardrobe(int quantityOfSweaters, int quantityOfShirts);
+    bool addItemsToWardrobe(int quantityOfSweaters, int quantityOfShirts);
 };
 
 /*
@@ -177,18 +177,18 @@ struct Warddrobe {
  */
 
 struct Patient {
-  double patientId;
-  bool hasHadAnnual;
-  double doctorId;
+    double patientId;
+    bool hasHadAnnual;
+    double doctorId;
 
-  struct Visit {
-    int lastVisitDate;
-    float icdCode;
-    char icdPrefix;
-  };
+    struct Visit {
+        int lastVisitDate;
+        float icdCode;
+        char icdPrefix;
+    };
 
-  bool addVisit(Visit visit, double doctor);
-  /* why can't I use doctorId as a default? */
+    bool addVisit(Visit visit, double doctor);
+    /* why can't I use doctorId as a default? */
 };
 
 /*
@@ -196,15 +196,15 @@ struct Patient {
  */
 
 struct Artist {
-  double genreId;
-  bool isActive;
+    double genreId;
+    bool isActive;
 
-  struct Album {
-    int numberOfTracks;
-    bool isReleased;
-  };
+    struct Album {
+        int numberOfTracks;
+        bool isReleased;
+    };
 
-  bool addAlbumToArtist(int numberOfTracks, bool isReleased);
+    bool addAlbumToArtist(int numberOfTracks, bool isReleased);
 };
 
 #include <iostream>
