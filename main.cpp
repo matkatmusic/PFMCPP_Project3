@@ -72,7 +72,7 @@ struct Pitch
 /*
  2)
  */
-struct knobColor FIXME see readme.md coding style guide about type names
+struct KnobColor //FIXME see readme.md coding style guide about type names
 {
     bool scopeIn = false;
     int colorSweep = 100;
@@ -81,7 +81,7 @@ struct knobColor FIXME see readme.md coding style guide about type names
 /*
  3)
  */
-struct facePlate FIXME see readme.md coding style guide about type names
+struct FacePlate //FIXME see readme.md coding style guide about type names
 {
     bool showBack = false;
 };
@@ -89,7 +89,7 @@ struct facePlate FIXME see readme.md coding style guide about type names
 /*
  4)
  */
-struct powerSwitch FIXME see readme.md coding style guide about type names
+struct PowerSwitch //FIXME see readme.md coding style guide about type names
 {
     bool active = true;
 };
@@ -97,7 +97,7 @@ struct powerSwitch FIXME see readme.md coding style guide about type names
 /*
  5)
  */
-struct mixLevel FIXME see readme.md coding style guide about type names
+struct MixLevel //FIXME see readme.md coding style guide about type names
 {
     int wetDry = 120;
     float wetLevel = 120;
@@ -115,7 +115,7 @@ struct mixLevel FIXME see readme.md coding style guide about type names
  6)
  */
 
-struct modeControl FIXME see readme.md coding style guide about type names
+struct ModeControl //FIXME see readme.md coding style guide about type names
 {
     int modeSet = 10;
     char A = 1;
@@ -125,7 +125,7 @@ struct modeControl FIXME see readme.md coding style guide about type names
 /*
  7)
  */
-struct eqControl FIXME see readme.md coding style guide about type names
+struct EqControl //FIXME see readme.md coding style guide about type names
 {
     bool lpOn = false;
     bool hpOn = false;
@@ -136,7 +136,7 @@ struct eqControl FIXME see readme.md coding style guide about type names
  8)
  */
 
-struct diffusion FIXME see readme.md coding style guide about type names
+struct Diffusion //FIXME see readme.md coding style guide about type names
 {
     float difAmount = 2000;
 };
@@ -146,7 +146,7 @@ struct diffusion FIXME see readme.md coding style guide about type names
  */
 
 
-struct crush FIXME see readme.md coding style guide about type names
+struct Crush //FIXME see readme.md coding style guide about type names
 {
     int crushAmount = 200;
     bool tubeDistort = false;
@@ -156,7 +156,7 @@ struct crush FIXME see readme.md coding style guide about type names
  10)
  */
 
-struct feedback FIXME see readme.md coding style guide about type names
+struct Feedback //FIXME see readme.md coding style guide about type names
 {
     bool feedbackOn = false;
     float feedbackAmount = 1000;
