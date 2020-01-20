@@ -14,7 +14,7 @@ Video:  Chapter 2 Part 5
     make the function parameter list for those member functions use some of your User-Defined Types
  
  4) make 2 of the 10 user-defined types be nested class
- 
+
  5) One of your UDTs should only use UDTs for its member variable types.   
      No primitives allowed!
  
@@ -52,42 +52,114 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
  1)
  */
 
+struct Pitch
+{
+    int interval = -12;
+    double mod = 2;
+    unsigned int simPitches = 3;
+
+    struct Sweep
+    {
+        bool Port = false;
+        float sweepTime = 100;
+    };
+
+    void wowFlutter( Sweep sweep);
+
+    Sweep centerPitch;
+};
+
 /*
  2)
  */
+struct knobColor
+ {
+     bool scopeIn = false;
+     int colorSweep = 100;
+ };
 
 /*
  3)
  */
+struct facePlate
+{
+    bool showBack = false;
+};
 
 /*
  4)
  */
+ struct powerSwitch
+ {
+     bool active = true;
+ };
 
 /*
  5)
  */
+ struct mixLevel
+ {
+     int wetDry = 120;
+     float wetLevel = 120;
+
+     struct Shimmer
+     {
+         bool shimmerActivate = false;
+         float shimmerLevel = 100;
+     };
+
+ Shimmer setShimmer;
+ };
 
 /*
  6)
  */
 
+struct modeControl
+{
+    int modeSet = 10;
+    char A = 1;
+    char B = 2;
+};
+
 /*
  7)
  */
-
+struct eqControl
+{
+    bool lpOn = false;
+    bool hpOn = false;
+    float centerPoint = 100000;
+};
+    
 /*
  8)
  */
 
+struct diffusion
+{
+    float difAmount = 2000;
+};
 /*
  9)
  */
 
+
+struct crush
+{
+    int crushAmount = 200;
+    bool tubeDistort = false;
+   
+};
 /*
  10)
  */
 
+struct feedback
+{
+    bool feedbackOn = false;
+    float feedbackAmount = 1000;
+};
 #include <iostream>
 int main()
 {
