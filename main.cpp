@@ -3,7 +3,7 @@
 Video:  Chapter 2 Part 5
  User-Defined Types
 
- Create a branch named Part1
+ Create a branch named Part1 
  
  1) write 10 user-defined types, each with a random number of member variables
     try to make the member variables have names that are related to the user-defined type.
@@ -30,6 +30,9 @@ Video:  Chapter 2 Part 5
 /*
  example:
  */
+#include <iostream>
+using namespace std;
+
 struct CarWash            //1) a U.D.T. with a random number of member variables
 {
     int numSponges = 3;
@@ -51,45 +54,211 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
+struct Dog
+{
+    int numLegs = 4;
+    float weight = 4.6f;
+    
+    struct DogRace
+    {
+        bool pedigree = true;
+        string race;
+    };
 
+    string getRace (DogRace race);
+
+    DogRace myDogRace;
+};
 /*
  2)
  */
 
+ struct FileType
+{
+    string format;
+    string type;
+};
+
+struct AudioFile
+{
+    int bitDepth  = 24;
+    int sampleRate = 44100;
+    int bitsPerMilisecond = (sampleRate * bitDepth) / 1000;
+    void typeOfAudioFile (FileType type);
+
+    FileType fileType;
+};    
 /*
  3)
  */
+struct MusicTrack
+{
+    int beatsPerMinute;
+    char key = 'C';
+    
+    struct TimeSignature
+    {
+        int bars = 4;
+        int beats = 4;
+    };
+
+    TimeSignature timeSignature;
+
+    double barDuration (int BPM, TimeSignature signature)
+    {
+        double barLenght;
+        double beatLength = BPM / 60;
+        barLenght = beatLength * signature.beats;
+        return barLenght;
+    }
+};
 
 /*
  4)
  */
+struct BankAccount
+{
+    struct Money
+    {
+        public : string currency;
+        float amount;
+    };
 
+    bool active = true;
+
+    float Balance (Money money)
+    {
+        return money.amount;
+    }
+    Money moneyInAccount;
+};
 /*
  5)
  */
-
+struct Soles
+{
+    int durability = 10;
+};
+struct BootLaces
+{
+    int length = 25;
+};
+struct Boots
+{
+    string color = "red";
+    bool haveLaces = true;
+    bool waterproof = true;
+    int howWorn (Soles soles);
+    BootLaces laces;
+};
+int Boots::howWorn(Soles soles)
+{
+    return soles.durability;
+}
 /*
  6)
  */
+struct Coffee
+{
+    struct Roast
+    {
+        int level = 7;
+    };
 
+    struct Ground
+    {
+        float grainSize = 0.7f;
+    };
+
+    Roast coffeeRoast;
+    Ground coffeeGround;
+    string taste (Roast, Ground);
+};
+
+string Coffee::taste(Roast roast, Ground ground)
+{
+    roast.level *= ground.grainSize;
+    return "full";
+}
 /*
  7)
  */
-
+ 
+struct Model
+{
+    int airplaneModel = 1;
+};
+struct Airplane
+{
+    Model airplane;
+    int passengerCapacity = 250;
+    float fuelCapacity = 5000;
+    float DistanceCapacity(float, int, Model);
+};
+float Airplane::DistanceCapacity(float, int, Model model)
+{
+    float distance;
+    distance = fuelCapacity*passengerCapacity*model.airplaneModel;
+    return distance;
+}
 /*
  8)
  */
-
+struct Cellphone
+{
+    enum color
+    {
+        red,
+        blue,
+        white,
+        silver,
+        gold
+    };
+    color col = red;
+    float displaySize = 3.2f;
+    int resolution[2] = {1920, 1080}; 
+    void changeResolution(int[], int[]);
+};
 /*
  9)
  */
-
+struct Book
+{
+    int numberOfPages = 257;
+    int currentPage = 5;
+    string author = "Charles Dickens";
+    struct Version
+    {
+        bool illustrated = true;
+        bool hardCover = false;
+    };
+    Version bookVersion;
+    void flipPage(int);
+};
+void Book::flipPage(int)
+{
+    currentPage += 1;
+}
 /*
  10)
  */
+struct Cup
+{
+    float capacity;
+    enum material
+    {
+        glass,
+        porcelain,
+        plastic
+    };
+    material mat = plastic;
+    void fillCup(float);
+};
 
 #include <iostream>
 int main()
 {
     std::cout << "good to go!" << std::endl;
+    
 }
+
