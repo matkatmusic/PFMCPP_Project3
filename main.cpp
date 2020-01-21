@@ -73,7 +73,7 @@ struct Dog
  2)
  */
 
- struct FileType
+struct FileType
 {
     string format;
     string type;
@@ -104,13 +104,7 @@ struct MusicTrack
 
     TimeSignature timeSignature;
 
-    double barDuration (int BPM, TimeSignature signature)
-    {
-        double barLenght;
-        double beatLength = BPM / 60;
-        barLenght = beatLength * signature.beats;
-        return barLenght;
-    }
+    double barDuration (int BPM, TimeSignature signature);
 };
 
 /*
@@ -120,16 +114,13 @@ struct BankAccount
 {
     struct Money
     {
-        public : string currency;
+        string currency;
         float amount;
     };
 
     bool active = true;
 
-    float Balance (Money money)
-    {
-        return money.amount;
-    }
+    float Balance (Money money);
     Money moneyInAccount;
 };
 /*
@@ -151,10 +142,7 @@ struct Boots
     int howWorn (Soles soles);
     BootLaces laces;
 };
-int Boots::howWorn(Soles soles)
-{
-    return soles.durability;
-}
+
 /*
  6)
  */
@@ -175,11 +163,6 @@ struct Coffee
     string taste (Roast, Ground);
 };
 
-string Coffee::taste(Roast roast, Ground ground)
-{
-    roast.level *= ground.grainSize;
-    return "full";
-}
 /*
  7)
  */
@@ -188,6 +171,7 @@ struct Model
 {
     int airplaneModel = 1;
 };
+
 struct Airplane
 {
     Model airplane;
@@ -195,28 +179,23 @@ struct Airplane
     float fuelCapacity = 5000;
     float DistanceCapacity(float, int, Model);
 };
-float Airplane::DistanceCapacity(float, int, Model model)
-{
-    float distance;
-    distance = fuelCapacity*passengerCapacity*model.airplaneModel;
-    return distance;
-}
+
 /*
  8)
  */
 struct Cellphone
 {
-    enum color
+    enum color FIXME Type names (even enums) should start with a Capital letter
     {
         red,
         blue,
         white,
         silver,
         gold
-    };
+    }; FIXME readability. add blank lines between types, member vars, and member funcs. 
     color col = red;
     float displaySize = 3.2f;
-    int resolution[2] = {1920, 1080}; 
+    int resolution[2] = {1920, 1080};  FIXME readability. add blank lines between types, member vars, and member funcs. 
     void changeResolution(int[], int[]);
 };
 /*
@@ -226,31 +205,27 @@ struct Book
 {
     int numberOfPages = 257;
     int currentPage = 5;
-    string author = "Charles Dickens";
+    string author = "Charles Dickens"; FIXME readability. add blank lines between types, member vars, and member funcs. 
     struct Version
     {
         bool illustrated = true;
         bool hardCover = false;
-    };
+    }; FIXME readability. add blank lines between types, member vars, and member funcs. 
     Version bookVersion;
     void flipPage(int);
 };
-void Book::flipPage(int)
-{
-    currentPage += 1;
-}
 /*
  10)
  */
 struct Cup
 {
-    float capacity;
-    enum material
+    float capacity; FIXME readability. add blank lines between types, member vars, and member funcs. 
+    enum material FIXME Type names (even enums) should start with a Capital letter
     {
         glass,
         porcelain,
         plastic
-    };
+    }; FIXME readability. add blank lines between types, member vars, and member funcs. 
     material mat = plastic;
     void fillCup(float);
 };
