@@ -185,17 +185,21 @@ struct Airplane
  */
 struct Cellphone
 {
-    enum color FIXME Type names (even enums) should start with a Capital letter
+    enum Color  
     {
         red,
         blue,
         white,
         silver,
         gold
-    }; FIXME readability. add blank lines between types, member vars, and member funcs. 
-    color col = red;
+    }; 
+
+    Color col = red;
+
     float displaySize = 3.2f;
-    int resolution[2] = {1920, 1080};  FIXME readability. add blank lines between types, member vars, and member funcs. 
+
+    int resolution[2] = {1920, 1080};  
+
     void changeResolution(int[], int[]);
 };
 /*
@@ -205,13 +209,17 @@ struct Book
 {
     int numberOfPages = 257;
     int currentPage = 5;
-    string author = "Charles Dickens"; FIXME readability. add blank lines between types, member vars, and member funcs. 
+
+    string author = "Charles Dickens"; 
+
     struct Version
     {
         bool illustrated = true;
         bool hardCover = false;
-    }; FIXME readability. add blank lines between types, member vars, and member funcs. 
+    }; 
+
     Version bookVersion;
+
     void flipPage(int);
 };
 /*
@@ -219,14 +227,17 @@ struct Book
  */
 struct Cup
 {
-    float capacity; FIXME readability. add blank lines between types, member vars, and member funcs. 
-    enum material FIXME Type names (even enums) should start with a Capital letter
+    float capacity; 
+
+    enum Material 
     {
         glass,
         porcelain,
         plastic
-    }; FIXME readability. add blank lines between types, member vars, and member funcs. 
-    material mat = plastic;
+    }; 
+
+    Material mat = plastic;
+    
     void fillCup(float);
 };
 
