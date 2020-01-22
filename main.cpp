@@ -76,8 +76,16 @@ struct KnobColor //FIXME see readme.md coding style guide about type names
 {
     bool scopeIn = false;
     int colorSweep = 100;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    struct Knurl
+    {
+        bool apiStyle = false;
+        float knurlLevel = 1000;
+    };
+
+    void reflectionSpecular(Knurl knurl );
+    Knurl userKnurl;
 };
 
 /*
@@ -86,8 +94,17 @@ struct KnobColor //FIXME see readme.md coding style guide about type names
 struct FacePlate //FIXME see readme.md coding style guide about type names
 {
     bool showBack = false;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct BrushedMetal
+    {
+        float shininess = 1500;
+        float eraAge = 60;
+    };
+
+    void homemadeShopmade(BrushedMetal brushedMetal );
+    BrushedMetal anodizedBrushedMetal;
 };
 
 /*
@@ -96,8 +113,17 @@ struct FacePlate //FIXME see readme.md coding style guide about type names
 struct PowerSwitch //FIXME see readme.md coding style guide about type names
 {
     bool active = true;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct SignalPass
+    {
+        double powerMoose = 1.0;
+        float indyMoose = 1.0;
+    };
+
+    void upLowLoad(SignalPass signalPass );
+    
 };
 
 /*
@@ -112,13 +138,13 @@ struct MixLevel //FIXME see readme.md coding style guide about type names
     {
         bool shimmerActivate = false;
         float shimmerLevel = 100;
-        FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
     };
 
-    Shimmer setShimmer;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    void Shimmerous(Shimmer setShimmer );
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
 };
 
 /*
@@ -130,8 +156,17 @@ struct ModeControl //FIXME see readme.md coding style guide about type names
     int modeSet = 10;
     char A = 1;
     char B = 2;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct Diffusion
+    {
+        float scarcity = 100;
+        bool scarcityActivation = false;
+        double scarcityDepth = 2000;
+    };
+
+    void Diftown(Diffusion diffusion );
 };
 
 /*
@@ -142,19 +177,39 @@ struct EqControl //FIXME see readme.md coding style guide about type names
     bool lpOn = false;
     bool hpOn = false;
     float centerPoint = 100000;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct EQ
+    {
+        float center = 1000;
+        float qShape = 1;
+        float amplitude = 0;
+    };
+
+    void eek (EQ eq);
 };
     
 /*
  8)
  */
 
-struct Diffusion //FIXME see readme.md coding style guide about type names
+struct DiffusionPad //FIXME see readme.md coding style guide about type names
 {
     float difAmount = 2000;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    double modulationDiffusion = 15000;
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct Veiling
+    {
+        float color = 24;
+        float earlyMix = 50;
+        float lateMix = 45;
+    };
+
+    void Hiding(Veiling veiling );
+
 };
 
 /*
@@ -166,8 +221,17 @@ struct Crush //FIXME see readme.md coding style guide about type names
 {
     int crushAmount = 200;
     bool tubeDistort = false;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct Smasher
+    {
+        float intensity = 100;
+        int marshall = 12;
+        bool digitalNoise = false;
+    };
+
+    void Horrible(Smasher smasher );
    
 };
 /*
@@ -178,8 +242,16 @@ struct Feedback //FIXME see readme.md coding style guide about type names
 {
     bool feedbackOn = false;
     float feedbackAmount = 1000;
-    FIXME 3) add a couple member functions.  
-    FIXME make the function parameter list for those member functions use some of your User-Defined Types
+    //FIXME 3) add a couple member functions.  
+    //FIXME make the function parameter list for those member functions use some of your User-Defined Types
+
+    struct TurnAround
+    {
+        bool turnaroundActivate = true;
+        float feedbackFlow = 199;
+    };
+
+    void Scream(TurnAround turnAround);
 };
 
 #include <iostream>
