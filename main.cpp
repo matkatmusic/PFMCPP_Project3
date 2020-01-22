@@ -84,6 +84,7 @@ struct AudioFile
     int bitDepth  = 24;
     int sampleRate = 44100;
     int bitsPerMilisecond = (sampleRate * bitDepth) / 1000;
+
     void typeOfAudioFile (FileType type);
 
     FileType fileType;
@@ -121,6 +122,7 @@ struct BankAccount
     bool active = true;
 
     float Balance (Money money);
+
     Money moneyInAccount;
 };
 /*
@@ -139,7 +141,9 @@ struct Boots
     string color = "red";
     bool haveLaces = true;
     bool waterproof = true;
+
     int howWorn (Soles soles);
+
     BootLaces laces;
 };
 
@@ -160,6 +164,7 @@ struct Coffee
 
     Roast coffeeRoast;
     Ground coffeeGround;
+
     string taste (Roast, Ground);
 };
 
@@ -177,6 +182,7 @@ struct Airplane
     Model airplane;
     int passengerCapacity = 250;
     float fuelCapacity = 5000;
+    
     float DistanceCapacity(float, int, Model);
 };
 
