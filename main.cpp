@@ -51,7 +51,7 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
-struct Person
+struct Human
 {
     int numHands = 2;
     float height = 1.68f; // in [m]
@@ -62,7 +62,7 @@ struct Person
         float fingerLength = 0.082f;        //2) in [m]
     };
     
-    void isMale( Person person );
+    void isMale( Human human );
     
     Hand myLeftHand;
 };
@@ -187,6 +187,9 @@ struct Train
  */
 struct Shoe
 {
+
+    float weight = 500; // in [g]
+
     struct Lace
     {
         float length = 2; // in [m]
@@ -198,6 +201,9 @@ struct Shoe
         int color = 25;
         int logoIndex = 2; // assuming a preexisting vector including all the logos
     };
+
+    void clean(Shoe myShoe);
+    void tieLace(Shoe myShoe, Lace myLace);
 
 };  
 
