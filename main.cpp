@@ -35,7 +35,7 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
     int numSponges = 3;
     double amountOfSoapUsedPerCar = 2.6; //2) relevant data types
     unsigned int numCarsProcessed = 0;
-    
+
     struct Car                             //4) nested class
     {
         bool isAPickupTruck = false;
@@ -45,20 +45,64 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
     void washAndWaxCar( Car car );         //3) member function with a user-defined type as the parameter.  The user-defined type parameter happens to be the nested class.
     
     Car myCar;  //5) a member variable whose type is a UDT.
+
+    
+
 };
 
 
 /*
  1)
  */
+ struct LivingRoom
+ {
+    int numPeople = 5;
+    float interiorTemperature = 21.5f;
+
+    struct furniture
+    {
+        bool isTaken = false;
+        int chairNumber = 4;
+    };
+
+    void checkAvaiability (int numPeople, furniture);
+
+    furniture loungeSeats;
+ };
 
 /*
  2)
  */
+ struct Bakery  
+ {
+    int numOfOvens = 2;
+    int amountOfBread = 250;
+    int openingTime = 8;
+    int closingTIme = 18;
+
+    bool checkOpen (int openingTime, int closingTime);
+    void bakeBread (int numOfOvens, int amountOfBread, int ovenNumber);
+
+ };
 
 /*
  3)
  */
+ struct PublicBus   //A User Defined Type with random amount of Variables
+ {
+    int maxAmountofSeats = 50;  //Member Variables of the UDT with relevant data types
+    bool seatsLeft = true;
+
+    struct busSeat      //A nested User Defined Type with it's own member variables
+    { 
+        int seatRow = 1;
+        int seatColor = 25;
+    };
+
+    busSeat frontRedSeat; //two Member Variables that are User Defined Types
+    busSeat rearBlueSeat;
+
+ };
 
 /*
  4)
