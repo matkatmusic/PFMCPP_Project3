@@ -12,7 +12,44 @@ Create a branch named Part2
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled = 0;
+    
+    float run(int howFast, bool startWithLeftFoot);
+    
+    struct Foot
+    {
+        bool hasMoved;
+        void stepForward() {
+            this->hasMoved = true;
+        }
+        float stepSize() { return 1; }
+    };
+    Foot leftFoot, rightFoot;
+};
 
+float Person::run(int howFast, bool startWithLeftFoot)
+{
+    if ( startWithLeftFoot == true)
+    {
+        // stepForward returns void
+        leftFoot.stepForward(); 
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    // stepSize returns int
+    return distanceTraveled += leftFoot.stepSize()*howFast + rightFoot.stepSize()*howFast;
+}
 
 
 
@@ -253,5 +290,12 @@ struct Classroom
 #include <iostream>
 int main()
 {
+    Person person;
+    std::cout << "Total distance " << person.run(5.0f, true) << std::endl;
+    // Test if left foot has moved
+    std::cout << "Left foot has " << (person.leftFoot.hasMoved ? "" : "not ") << "moved" <<  std::endl;
+    // Test if right foot has moved
+    std::cout << "Right foot has " << (person.leftFoot.hasMoved ? "" : "not ") << "moved" <<  std::endl;        
+
     std::cout << "good to go!" << std::endl;
 }
