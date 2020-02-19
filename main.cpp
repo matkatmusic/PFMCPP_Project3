@@ -88,6 +88,7 @@ struct Human
     
     Hand myLeftHand;
 };
+
 bool Human::isMale(Human human)
 {
     std::size_t found = human.chromosome.find("Y");
@@ -114,6 +115,7 @@ struct Computer
     
     App JUCE;
 };
+
 void Computer::formatComputer(bool toFormat)
 {
     toFormat ? (isFormatted = true) : (isFormatted = false);
@@ -143,10 +145,12 @@ struct Watch
     
     Wristband myPlasticWB;
 }; 
+
 void Watch::reset(bool toReset)
 {
     toReset ? (isResetted = true) : (isResetted = false);
 }
+
 void Watch::setAlarm(float timeAlarm)
 {
     this->currentAlarmTime = timeAlarm;
@@ -174,10 +178,12 @@ struct Window
     
     Knob myKnob;
 }; 
+
 void Window::cleanWindow(bool toClean)
 {
     toClean ? (isClean = true) : (isClean = false);
 }
+
 void Window::openWindow(bool toOpen)
 {
     toOpen ? (isOpen = true) : (isOpen = false);
@@ -207,10 +213,12 @@ struct Table
     
     Tablecloth currentTablecloth;
 }; 
+
 void Table::cleanTable(bool toClean)
 {
     toClean ? (isClean = true) : (isClean = false);
 }
+
 void Table::placeTablecloth(Table::Tablecloth myTablecloth)
 {
     this->currentTablecloth = myTablecloth;
@@ -241,10 +249,12 @@ struct Train
     
     Carriage myCarriage;
 };  
+
 void Train::start()
 {
     this->isInMotion = true;
 }
+
 void Train::stop()
 {
     this->isInMotion = false;
@@ -277,10 +287,12 @@ struct Shoe
 
     Lace myCurrentLace;
 };  
+
 void Shoe::clean()
 {
     this->isClean = true;
 }
+
 void Shoe::tieLace()
 {
     this->myCurrentLace.isTied = true;
@@ -308,10 +320,12 @@ struct Egg
 
     Shell myEggShell;
 };  
+
 void Egg::crackShell()
 {
     this->myEggShell.isCracked = true;
 }
+
 void Egg::cookEgg()
 {
     this->isCooked = true;
@@ -337,11 +351,13 @@ struct Backpack
     void addBook(Book bookToAdd);
 
 };  
+
 void Backpack::removeLastBook()
 {
     books.pop_back();
     numBooks -= 1;
 }
+
 void Backpack::addBook(Book bookToAdd)
 {
     books.push_back(&bookToAdd); // Add the address of the object bookToAdd to the vector (of pointers) books 
@@ -373,10 +389,12 @@ struct Classroom
     void spawnDesk();
     int howManyFreeDesks();
 }; 
+
 void Classroom::spawnDesk()
 {
     this->numDesks += 1;
 }
+
 int Classroom::howManyFreeDesks()
 {
     return numDesks - occupiedDesks;
