@@ -368,10 +368,12 @@ struct Classroom
         float width = 2.0f; // in [m]
     };
     
-    void spawnDesk(Desk myDesk);
+    // Desk myDesk;
+
+    void spawnDesk();
     int howManyFreeDesks();
 }; 
-void Classroom::spawnDesk(Desk myDesk)
+void Classroom::spawnDesk()
 {
     this->numDesks += 1;
 }
