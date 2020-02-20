@@ -199,7 +199,7 @@ struct Exercise
  10)
  */
 
-struct Trainingplan
+struct TrainingPlan
 {
     Exercise pushUp;
     Exercise pullUp;
