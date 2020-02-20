@@ -54,26 +54,19 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
- struct LivingRoom
+ struct human
  {
-    int numPeople = 5;
-    float interiorTemperature = 21.5f;
+    float weight = 25.5f;
+    float height = 160.5f;
 
-    struct furniture
-    {
-        bool isTaken = false;
-        int chairNumber = 4;
-    };
-
-    void checkAvaiability (int numPeople, furniture);
-
-    furniture loungeSeats;
+    void sleep ();
+    bool isHungry(int timeAwake, int stamina);
  };
 
 /*
  2)
  */
- struct Bakery  
+ struct bakery  
  {
     int numOfOvens = 2;
     int amountOfBread = 250;
@@ -82,55 +75,133 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 
     bool checkOpen (int openingTime, int closingTime);
     void bakeBread (int numOfOvens, int amountOfBread, int ovenNumber);
-
  };
 
 /*
  3)
  */
- struct PublicBus   //A User Defined Type with random amount of Variables
+ struct publicBus  
  {
-    int maxAmountofSeats = 50;  //Member Variables of the UDT with relevant data types
+    int maxAmountofSeats = 50;  
     bool seatsLeft = true;
 
-    struct busSeat      //A nested User Defined Type with it's own member variables
+    struct busSeat    
     { 
         int seatRow = 1;
         int seatColor = 25;
     };
-
-    busSeat frontRedSeat; //two Member Variables that are User Defined Types
-    busSeat rearBlueSeat;
+    
+    void takeSeat (busSeat frontSeat, human passenger);
 
  };
 
 /*
  4)
  */
+struct village
+{
+    human tom;
+    human lisa;
+    publicBus redBus;
+
+    void openShop(bakery theBakery);
+};
+
+
+ struct wizard
+ {
+    int health = 160;
+    int mana = 70;
+
+    struct wizardStaff
+    {
+        int itemIndex = 1;
+        int baseDamage = 250;
+    };
+
+    void equipWeapon (wizardStaff rareStaff);
+    void unequipWeapon (wizardStaff rareStaff);
+    void attack (wizardStaff rareStaff, int enemyId);
+ };
 
 /*
  5)
  */
+struct commonTreasureChest
+{
+    int numberOfItems = 5;
+    bool isRare = false;
+    bool isOpened = false;
+
+    void openChest(bool isOpened);
+};
+
 
 /*
  6)
  */
+struct audioPlugin
+{
+    bool bypass = false;
+    bool initialized = true;
+    int samplerate = 41000;
+    
+    void processAudio();
+    void drawWaveform(float sampleValue);
+}
+
+
 
 /*
  7)
  */
+struct audioEvent
+{
+    int samplerate = 48000;
+    int bitDepth = 24;
+    float length = 250.35f;
+
+    void getLength(int eventId);
+    void generateWaveform(float length, int eventId);
+};
 
 /*
  8)
  */
+ struct audioEditor
+ {
+    int samplerate = 48000;
+    
+    void importFile();
+
+
+    void cutSample (audioEvent someAudio);
+    void processSample (audioEvent someAudio, audioPlugin someAudioPlugin);
+ };
 
 /*
  9)
  */
+ struct piano;
+ {
+    int range = 88;
+    int color = black;
+
+    void pressSustainPedal{};
+    void releaseSustainPedal{};
+ };
+
 
 /*
  10)
  */
+ struct concertHall
+ {
+     bool concertOngoing = false;
+     int visitorCount = 1500;
+
+     void addInstrumentToStage(piano);
+ };
 
 #include <iostream>
 int main()
