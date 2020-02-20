@@ -28,6 +28,13 @@ send me a DM to check your pull request
  */
 
 #include <iostream>
+// #include <initializer_list>
+
+// void printVarArg(std::initializer_list<int> args)
+// {
+//     for (int i: args) std::cout << i << '\n';
+// }
+
 namespace Example 
 {
 struct UDT  // my user defined type
@@ -57,10 +64,17 @@ int main()
  */
 struct Human
 {
-    int numHands = 2;
-    float height = 1.68f; // in [m]
+    int numHands;
+    float height; // in [m]
     std::string chromosome = "XX";
-    
+
+    Human() // constructor
+    {
+        numHands = 2;
+        height = 1.68f; // in [m]
+        std::cout << "Human object created" << std::endl;
+    }
+
     struct Hand
     {
         bool isLeftHand = false;
@@ -83,10 +97,19 @@ bool Human::isMale(Human human)
  */
 struct Computer
 {
-    int numKeys = 48;
-    float processorSpeed = 4.2f; // in [GHz]
-    bool isLaptop = true;
-    bool isFormatted = false;
+    int numKeys;
+    float processorSpeed; // in [GHz]
+    bool isLaptop;
+    bool isFormatted;
+
+    Computer() // constructor
+    {
+        numKeys = 48;
+        processorSpeed = 4.2f; // in [GHz]
+        isLaptop = true;
+        isFormatted = false;
+        std::cout << "Computer object created" << std::endl;
+    }
 
     struct App
     {
@@ -110,12 +133,22 @@ void Computer::formatComputer(bool toFormat)
  */
 struct Watch
 {
-    int numBatteries = 1;
-    int totalHours = 12;
-    float weight = 50.0f; // in [g]
-    bool isDigital = true;
-    bool isResetted = true;
+    int numBatteries;
+    int totalHours;
+    float weight; // in [g]
+    bool isDigital;
+    bool isResetted;
     float currentAlarmTime;
+
+    Watch() // constructor
+    {
+        numBatteries = 1;
+        totalHours = 12;
+        weight = 50.0f; // in [g]
+        isDigital = true;
+        isResetted = true;
+        std::cout << "Watch object created" << std::endl;
+    }
 
     struct Wristband
     {
@@ -143,12 +176,32 @@ void Watch::setAlarm(float timeAlarm)
  */
 struct Window
 {
-    float height = 2.0f; // in [m]
-    float width = 1.0f; // in [m]
-    float weight = 20.0f; // in [kg]
-    bool isClean = true;
-    bool isOpen = false;
-    bool isGlassOpaque = true;
+    float height; // in [m]
+    float width; // in [m]
+    float weight; // in [kg]
+    bool isClean;
+    bool isOpen;
+    bool isGlassOpaque;
+
+    Window(float height_, float width_, float weight_) //constructor
+    {
+        this->height = height_;
+        this->width = width_;
+        this->weight = weight_;
+        isClean = true;
+        isOpen = false;
+        isGlassOpaque = true;
+        print();
+    }
+
+    void print()
+    {
+        std::cout << 
+        "Height: " << height << "\n" << 
+        "Width: " << width << "\n" << 
+        "Weight: " << weight << 
+        std::endl;
+    }
 
     struct Knob
     {
@@ -177,12 +230,34 @@ void Window::openWindow(bool toOpen)
  */
 struct Table
 {
-    int numLegs = 4;
-    float height = 2.0f; // in [m]
-    float width = 1.0f; // in [m]
-    float weight = 20.0f; // in [kg]
-    bool isWooden = true;
-    bool isClean = true;
+    int numLegs;
+    float height; // in [m]
+    float width; // in [m]
+    float weight; // in [kg]
+    bool isWooden;
+    bool isClean;
+
+
+    Table(int numLegs_, float height_, float width_, float weight_, bool isWooden_, bool isClean_) 
+    {
+        numLegs = numLegs_;
+        height = height_; // in [m]
+        width = width_; // in [m]
+        weight = weight_; // in [kg]
+        isWooden = isWooden_;
+        isClean = isClean_;  
+        print(); 
+    }
+
+    void print()
+    {
+        std::cout << 
+        "Num legs: " << numLegs << "\n" << 
+        "Height: " << height << "\n" << 
+        "Width: " << width << "\n" << 
+        "Weight: " << weight << 
+        std::endl;
+    }
 
     struct Tablecloth
     {
@@ -212,13 +287,30 @@ void Table::placeTablecloth(Table::Tablecloth myTablecloth)
  */
 struct Train
 {
-    int numCarriages = 20;
-    float height = 10.0f; // in [m]
-    float length = 10.0f; // in [m]
-    float width = 3.0f; // in [m]
-    float weightPerCarriage = 10.0f; // in [ton]
-    float maxSpeed = 75; // in [km/h]
-    bool isInMotion = false;
+    int numCarriages;
+    float height; // in [m]
+    float length; // in [m]
+    float width; // in [m]
+    float weightPerCarriage; // in [ton]
+    float maxSpeed; // in [km/h]
+    bool isInMotion;
+
+    // constructor through initializer list
+    Train() : 
+    numCarriages(20), height(10.0f), length(10.0f), width(3.0f), weightPerCarriage(10.0f), maxSpeed(75), isInMotion(false)
+    {
+        print();
+    }
+
+    void print()
+    {
+        std::cout << 
+        "Num carriages: " << numCarriages << "\n" << 
+        "Height: " << height << "\n" << 
+        "Width: " << width << "\n" << 
+        "Length: " << length << 
+        std::endl;
+    }
 
     struct Carriage
     {
@@ -249,8 +341,14 @@ void Train::stop()
  */
 struct Shoe
 {
+    // constructor
+    Shoe()
+    {
+        weight = 500.0f;
+    }
+
     bool isClean = true;
-    float weight = 500; // in [g]
+    float weight; // in [g]
 
     struct Lace
     {
@@ -287,10 +385,12 @@ void Shoe::tieLace()
  */
 struct Egg
 {
+    Egg(); // constructor definition (implementation outside)
+
     float proteinContent = 10; // in [g]
     float weight = 100; // in [g]
     int numYolks = 1;
-    bool isCooked = false;
+    bool isCooked;
     
     struct Shell
     {
@@ -303,6 +403,12 @@ struct Egg
 
     Shell myEggShell;
 };  
+
+// constructor outside
+Egg::Egg() : isCooked(false)
+{
+
+}
 
 void Egg::crackShell()
 {
@@ -320,6 +426,8 @@ void Egg::cookEgg()
 #include <vector>
 struct Backpack
 {
+    Backpack() {}
+
     int numBooks = 3;
     bool contains = true;
     
@@ -354,12 +462,17 @@ void Backpack::addBook(Book bookToAdd)
  */
 struct Classroom
 {
-    int numDesks = 20;
+    int numDesks;
     int occupiedDesks = 12;
     float height = 3.0f; // in [m]
     float width = 4.0f; // in [m]
     float length = 5.0f; // in [kg]
     bool isBooked = true;
+
+    Classroom() : numDesks(20)
+    {
+
+    } 
 
     struct Desk
     {
@@ -404,5 +517,22 @@ int main()
     std::cout << "----------------------\n" << std::endl;
     // --------------------------------
 
+    std::cout << "The current window has the following properties: " << std::endl;
+    Window window(3.0f,2.0f,1.5f);
+    std::cout << "----------------------\n" << std::endl; 
+
+    // --------------------------------
+
+    std::cout << "The current table has the following properties: " << std::endl;
+    Table table(4, 1.3f, 0.6f, 15.0f, true, true);
+    std::cout << "----------------------\n" << std::endl; 
+
+    // --------------------------------
+
+    std::cout << "The current train has the following properties: " << std::endl;
+    Train train;
+    std::cout << "----------------------\n" << std::endl; 
+
+    // --------------------------------
     std::cout << "good to go!" << std::endl;
 }
