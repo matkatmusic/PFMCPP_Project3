@@ -90,11 +90,9 @@ struct Computer
     bool isLaptop;
     bool isFormatted;
 
-    Computer() // constructor
+    Computer() : numKeys(48), isLaptop(true)// constructor
     {
-        numKeys = 48;
         processorSpeed = 4.2f; // in [GHz]
-        isLaptop = true;
         isFormatted = false;
         std::cout << "Computer object created" << std::endl;
     }
@@ -316,11 +314,13 @@ struct Train
 void Train::start()
 {
     this->isInMotion = true;
+    std::cout << "We're leaving!" << std::endl;
 }
 
 void Train::stop()
 {
     this->isInMotion = false;
+    std::cout << "We're stopping!" << std::endl;
 }
 
 
@@ -519,6 +519,8 @@ int main()
 
     std::cout << "The current train has the following properties: " << std::endl;
     Train train;
+    train.start();
+    train.stop();
     std::cout << "----------------------\n" << std::endl; 
 
     // --------------------------------
