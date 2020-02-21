@@ -12,8 +12,65 @@ Create a branch named Part2
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
+    void run( bool startWithLeftFoot, int howFast );
+};
 
+struct Limb
+{
+    int limbLength;
+    int extremitySize;
+
+    int stepForward();
+    int stepSize();
+};
+
+int Limb::stepForward()
+{
+    int x;
+    bool forward = true;
+    if( forward == true)
+    {
+        x = 1;
+    }
+    else
+    {
+        x = -1;
+    }
+    return x;
+}
+
+int Limb::stepSize()
+{
+    int x = ( limbLength + extremitySize ) * stepForward();
+    return x;
+}
+
+void Person::run( bool startWithLeftFoot, int howFast = 1 )
+{
+    Limb leftFoot;
+    Limb rightFoot;
+
+    if( startWithLeftFoot == true )
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += ( leftFoot.stepSize() + rightFoot.stepSize() ) * howFast; // implemented unused variable in example
+}
 
 
  /*
@@ -37,6 +94,8 @@ send me a DM to check your pull request
  1)
  */
 
+
+
 struct BoulderProblem
 {
     int problemGrade = 3;
@@ -48,10 +107,16 @@ struct BoulderProblem
         double holdSize = 0.8; 
     };
 
-    void calculateDifficulty( int problemGrade, Hold hold );
+    int calculateDifficulty( double ropeLength );
 
     Hold crimp;
 };
+
+int BoulderProblem::calculateDifficulty(double ropeLength)
+{
+    int difficulty = ( ( problemGrade * crimp.holdType ) / crimp.holdSize ) - ropeLength;
+    return difficulty;
+}
 
 /*
  2)
