@@ -37,6 +37,7 @@ send me a DM to check your pull request
  */
 
 #include <iostream>
+#include <vector>
 namespace Example {
 struct Bar 
 { 
@@ -82,12 +83,15 @@ struct Human
     int numHands;
     float height; // in [m]
     std::string chromosome = "XX";
+    int totalSteps = 0;
+    bool leftFootFront = true;
 
     Human() // constructor
     {
         numHands = 2;
         height = 1.68f; // in [m]
         std::cout << "Human object created" << std::endl;
+        std::cout << "Current foot in front: " << (leftFootFront == true ? "Left" : "Right") << " foot" << std::endl;     
     }
 
     struct Hand
@@ -97,6 +101,7 @@ struct Human
     };
     
     bool isMale( Human human );
+    void addSteps(int addedSteps);
     
     Hand myLeftHand;
 };
@@ -107,6 +112,25 @@ bool Human::isMale(Human human)
     return (found!=std::string::npos ? true : false);
 }
 
+// Add a given number of steps and update front foot
+void Human::addSteps(int addedSteps)
+{
+    for (int i = 0; i < addedSteps; i++)
+    {
+        this->totalSteps += 1;
+        if ( i % 2 == 0 )
+            this->leftFootFront = false;
+        else
+            this->leftFootFront = true;
+    }
+
+    std::cout << "Total steps: " << this->totalSteps << "\nCurrent foot in front: " << (leftFootFront == true ? "Left" : "Right") << " foot" << std::endl;
+}
+
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
+
 /*
  2)
  */
@@ -116,6 +140,7 @@ struct Computer
     float processorSpeed; // in [GHz]
     bool isLaptop;
     bool isFormatted;
+    int formatTime = 10;
 
     Computer() : numKeys(48), isLaptop(true)// constructor
     {
@@ -137,9 +162,18 @@ struct Computer
 
 void Computer::formatComputer(bool toFormat)
 {
+    int i = 0;
+    std::cout << "Formatting computer" << std::endl;
+    while (i < this->formatTime)
+    {
+        std::cout << "Current progress: " << ++i << "0%" << std::endl;
+    }
     toFormat ? (isFormatted = true) : (isFormatted = false);
 }
 
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
 
 /*
  3)
@@ -184,6 +218,13 @@ void Watch::setAlarm(float timeAlarm)
 {
     this->currentAlarmTime = timeAlarm;
 }
+
+
+
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
+
 /*
  4)
  */
@@ -195,6 +236,9 @@ struct Window
     bool isClean;
     bool isOpen;
     bool isGlassOpaque;
+    int structIntegrity;
+    int currDamage;
+
 
     Window(float height_, float width_, float weight_) //constructor
     {
@@ -204,6 +248,8 @@ struct Window
         isClean = true;
         isOpen = false;
         isGlassOpaque = true;
+        structIntegrity = 10;
+        currDamage = 0;
         print();
     }
 
@@ -224,6 +270,7 @@ struct Window
     
     void cleanWindow(bool toClean);
     void openWindow(bool toOpen);
+    void hammerWindow(int numBlows);
     
     Knob myKnob;
 }; 
@@ -237,6 +284,29 @@ void Window::openWindow(bool toOpen)
 {
     toOpen ? (isOpen = true) : (isOpen = false);
 }
+
+// tests the structural integrity of the window upon a bunch of hammer blows
+void Window::hammerWindow(int numBlows)
+{
+    for (int i = 0; i < numBlows; i++)
+    {
+        int blowStrength = rand() % 4 + 1;
+        this->currDamage += blowStrength;
+        if (this->currDamage >= this->structIntegrity)
+        {
+            std::cout << "The window has been broken!" << std::endl;
+            break;
+        }
+        else
+        {
+            std::cout << "Current damage level: " << this->currDamage << "/10" << std::endl;
+        }
+    }
+}
+
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
 
 /*
  5)
@@ -295,6 +365,10 @@ void Table::placeTablecloth(Table::Tablecloth myTablecloth)
     this->currentTablecloth = myTablecloth;
 }
 
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
+
 /*
  6)
  */
@@ -307,13 +381,7 @@ struct Train
     float weightPerCarriage; // in [ton]
     float maxSpeed; // in [km/h]
     bool isInMotion;
-
-    // constructor through initializer list
-    Train() : 
-    numCarriages(20), height(10.0f), length(10.0f), width(3.0f), weightPerCarriage(10.0f), maxSpeed(75), isInMotion(false)
-    {
-        print();
-    }
+    int maxPassengersPerCarriage;
 
     void print()
     {
@@ -325,17 +393,57 @@ struct Train
         std::endl;
     }
 
+    void printCarriages()
+    {
+        for (int i = 0; i < this->numCarriages; i++)
+        {
+            std::cout << 
+            "Carriage " << i+1 << ": " << this->carriages[i].numPassengers <<
+            std::endl;
+        }
+    }
+
     struct Carriage
     {
         int numWindows = 10;
         bool isSeatLeather = true;
-        int maxNumPassengers = 25;
+        int maxNumPassengers;
+        int numPassengers;
+        Carriage(int numPassengers_) 
+        {
+            this->numPassengers = numPassengers_;
+        }
     };
+
+    std::vector<Train::Carriage> carriages;
     
+
+    // constructor through initializer list
+    Train() : 
+    numCarriages(3), height(10.0f), length(10.0f), width(3.0f), weightPerCarriage(10.0f), maxSpeed(75), isInMotion(false), maxPassengersPerCarriage(50)
+    {
+        print();
+        for (int i = 0; i < this->numCarriages; i++)
+        {
+            int numPassengers = rand() % 50 + 10;
+            if ( numPassengers < maxPassengersPerCarriage )
+            {
+                Carriage myCarriage(numPassengers);
+                this->carriages.push_back(myCarriage);
+            }
+            else
+            {
+                Carriage myCarriage(maxPassengersPerCarriage);
+                this->carriages.push_back(myCarriage);
+                std::cout << "Maximum carriage capacity reached;\nThe extra " << numPassengers - maxPassengersPerCarriage  << " passengers in carriage " << i+1 << " must move to another carriage" << std::endl; 
+            }
+        }
+        printCarriages();
+    }
+
+
     void start();
     void stop();
-    
-    Carriage myCarriage;
 };  
 
 void Train::start()
@@ -350,6 +458,9 @@ void Train::stop()
     std::cout << "We're stopping!" << std::endl;
 }
 
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
 
 /*
  7)
@@ -394,6 +505,9 @@ void Shoe::tieLace()
     this->myCurrentLace.isTied = true;
 }
 
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
 
 /*
  8)
@@ -435,13 +549,16 @@ void Egg::cookEgg()
     this->isCooked = true;
 }
 
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
+
 /*
  9)
  */
-#include <vector>
 struct Backpack
 {
-    Backpack() {}
+    Backpack(); // constructor definition (implementation outside)
 
     int numBooks = 3;
     bool contains = true;
@@ -450,27 +567,65 @@ struct Backpack
     {
         std::string title;
         int pages;
+
+        Book (std::string title_, int pages_)
+        {
+            title = title_;
+            pages = pages_; 
+        }
     };
 
-    std::vector<Book*> books;
+    std::vector<Book> books;
 
     void removeLastBook();
     void addBook(Book bookToAdd);
 
+    
+    void print()
+    {
+        for (int i = 0; i < this->numBooks; i++)
+        {
+            std::cout << "Book " << i+1 << ": " << this->books[i].title << ", pages " << this->books[i].pages << std::endl;
+        }
+    }
+
 };  
+
+Backpack::Backpack()
+{
+    std::string subjects[5] = { "Math", "English", 
+                        "Physics", "Economy", "Chemistry" };
+
+    for (int i = 0; i < this->numBooks; i++)
+    {
+        int numPages = rand() % 500 + 1;
+        int subjInd = rand() % 5;
+        Book myBook(subjects[subjInd], numPages);
+        this->books.push_back(myBook);
+        // std::cout << "Book " << i+1 << ": " << this->books[i].title << ", pages " << this->books[i].pages << std::endl;
+    }
+
+    print();
+    
+}
 
 void Backpack::removeLastBook()
 {
     books.pop_back();
     numBooks -= 1;
+    std::cout << "One book removed" << std::endl;
 }
 
-void Backpack::addBook(Book bookToAdd)
+void Backpack::addBook(Backpack::Book bookToAdd)
 {
-    books.push_back(&bookToAdd); // Add the address of the object bookToAdd to the vector (of pointers) books 
+    books.push_back(bookToAdd); // Add the address of the object bookToAdd to the vector (of pointers) books 
     numBooks += 1;
+    print();
 }
 
+// ------------------------------------------------------------------
+// ******************************************************************
+// ------------------------------------------------------------------
 
 /*
  10)
@@ -523,6 +678,7 @@ int main()
     // --------------------------------
     Human human;
     std::cout << "The first considered human is " << (human.isMale(human) ? "male" : "female") << std::endl;
+    human.addSteps(3);
     std::cout << "----------------------\n" << std::endl;   
     // --------------------------------
     Computer computer;
@@ -534,6 +690,9 @@ int main()
 
     std::cout << "The current window has the following properties: " << std::endl;
     Window window(3.0f,2.0f,1.5f);
+    srand(unsigned(time(NULL)));
+    std::cout << "---- LET'S HAMMER THE WINDOW ---" << std::endl;
+    window.hammerWindow(3);
     std::cout << "----------------------\n" << std::endl; 
 
     // --------------------------------
@@ -548,6 +707,18 @@ int main()
     Train train;
     train.start();
     train.stop();
+    std::cout << "----------------------\n" << std::endl; 
+
+
+    // --------------------------------
+
+    Backpack backpack;
+    std::cout << "The current backpack has " << backpack.numBooks << " books" <<std::endl;
+    backpack.removeLastBook();
+    std::cout << "The current backpack has " << backpack.numBooks << " books" <<std::endl;
+    Backpack::Book myBook("Law",320);
+    backpack.addBook(myBook);
+    std::cout << "The current backpack has " << backpack.numBooks << " books" <<std::endl;
     std::cout << "----------------------\n" << std::endl; 
 
     // --------------------------------
