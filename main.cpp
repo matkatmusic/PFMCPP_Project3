@@ -54,7 +54,7 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
- struct human
+ struct human FIXME types begin with capital letters
  {
     float weight = 25.5f;
     float height = 160.5f;
@@ -66,7 +66,7 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  2)
  */
- struct bakery  
+ struct bakery   FIXME types begin with capital letters
  {
     int numOfOvens = 2;
     int amountOfBread = 250;
@@ -80,12 +80,12 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  3)
  */
- struct publicBus  
+ struct publicBus   FIXME types begin with capital letters
  {
     int maxAmountofSeats = 50;  
     bool seatsLeft = true;
 
-    struct busSeat    
+    struct busSeat     FIXME types begin with capital letters
     { 
         int seatRow = 1;
         int seatColor = 25;
@@ -98,7 +98,7 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  4)
  */
-struct village
+struct village FIXME types begin with capital letters
 {
     human tom;
     human lisa;
@@ -108,12 +108,12 @@ struct village
 };
 
 
- struct wizard
+ struct wizard FIXME types begin with capital letters
  {
     int health = 160;
     int mana = 70;
 
-    struct wizardStaff
+    struct wizardStaff FIXME types begin with capital letters
     {
         int itemIndex = 1;
         int baseDamage = 250;
@@ -127,7 +127,7 @@ struct village
 /*
  5)
  */
-struct commonTreasureChest
+struct commonTreasureChest FIXME types begin with capital letters
 {
     int numberOfItems = 5;
     bool isRare = false;
@@ -140,7 +140,7 @@ struct commonTreasureChest
 /*
  6)
  */
-struct audioPlugin
+struct audioPlugin FIXME types begin with capital letters
 {
     bool bypass = false;
     bool initialized = true;
@@ -155,7 +155,7 @@ struct audioPlugin
 /*
  7)
  */
-struct audioEvent
+struct audioEvent FIXME types begin with capital letters
 {
     int samplerate = 48000;
     int bitDepth = 24;
@@ -168,7 +168,7 @@ struct audioEvent
 /*
  8)
  */
- struct audioEditor
+ struct audioEditor FIXME types begin with capital letters
  {
     int samplerate = 48000;
     
@@ -182,7 +182,7 @@ struct audioEvent
 /*
  9)
  */
- struct piano;
+ struct piano; FIXME types begin with capital letters
  {
     int range = 88;
     int color = black;
@@ -195,7 +195,7 @@ struct audioEvent
 /*
  10)
  */
- struct concertHall
+ struct concertHall FIXME types begin with capital letters
  {
      bool concertOngoing = false;
      int visitorCount = 1500;
