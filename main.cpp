@@ -88,16 +88,16 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  3)
  */
-    struct ADSREnvelope
-    {
-        double attack  = 2.0;
-        double decay = 2.0;
-        float sustain = 1.f;
-        float release =2.4f;
-        bool isMidiControlEnabled = true;
+struct ADSREnvelope
+{
+    double attack  = 2.0;
+    double decay = 2.0;
+    float sustain = 1.f;
+    float release =2.4f;
+    bool isMidiControlEnabled = true;
 
-        void playNoteOnTrigger(ADSREnvelope myEnvelope);
-    };
+    void playNoteOnTrigger(ADSREnvelope myEnvelope);
+};
 /*
  4)
  */
