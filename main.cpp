@@ -54,19 +54,19 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
- struct human FIXME types begin with capital letters
+ struct Human 
  {
     float weight = 25.5f;
     float height = 160.5f;
 
-    void sleep ();
+    void eat ();
     bool isHungry(int timeAwake, int stamina);
  };
 
 /*
  2)
  */
- struct bakery   FIXME types begin with capital letters
+ struct Bakery   
  {
     int numOfOvens = 2;
     int amountOfBread = 250;
@@ -80,54 +80,54 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  3)
  */
- struct publicBus   FIXME types begin with capital letters
+ struct PublicBus   
  {
     int maxAmountofSeats = 50;  
     bool seatsLeft = true;
 
-    struct busSeat     FIXME types begin with capital letters
+    struct BusSeat     
     { 
         int seatRow = 1;
         int seatColor = 25;
     };
     
-    void takeSeat (busSeat frontSeat, human passenger);
+    void takeSeat (BusSeat frontSeat, Human passenger);
 
  };
 
 /*
  4)
  */
-struct village FIXME types begin with capital letters
+struct Village 
 {
-    human tom;
-    human lisa;
-    publicBus redBus;
+    Human tom;
+    Human lisa;
+    PublicBus redBus;
 
-    void openShop(bakery theBakery);
+    void openShop(Bakery theBakery);
 };
 
 
- struct wizard FIXME types begin with capital letters
+ struct Wizard 
  {
     int health = 160;
     int mana = 70;
 
-    struct wizardStaff FIXME types begin with capital letters
+    struct WizardStaff 
     {
         int itemIndex = 1;
         int baseDamage = 250;
     };
 
-    void equipWeapon (wizardStaff rareStaff);
-    void unequipWeapon (wizardStaff rareStaff);
-    void attack (wizardStaff rareStaff, int enemyId);
+    void equipWeapon (WizardStaff rareStaff);
+    void unequipWeapon (WizardStaff rareStaff);
+    void attack (WizardStaff rareStaff, int enemyId);
  };
 
 /*
  5)
  */
-struct commonTreasureChest FIXME types begin with capital letters
+struct CommonTreasureChest
 {
     int numberOfItems = 5;
     bool isRare = false;
@@ -140,7 +140,7 @@ struct commonTreasureChest FIXME types begin with capital letters
 /*
  6)
  */
-struct audioPlugin FIXME types begin with capital letters
+struct AudioPlugin 
 {
     bool bypass = false;
     bool initialized = true;
@@ -148,14 +148,14 @@ struct audioPlugin FIXME types begin with capital letters
     
     void processAudio();
     void drawWaveform(float sampleValue);
-}
+};
 
 
 
 /*
  7)
  */
-struct audioEvent FIXME types begin with capital letters
+struct AudioEvent 
 {
     int samplerate = 48000;
     int bitDepth = 24;
@@ -168,39 +168,39 @@ struct audioEvent FIXME types begin with capital letters
 /*
  8)
  */
- struct audioEditor FIXME types begin with capital letters
+ struct AudioEditor 
  {
     int samplerate = 48000;
     
     void importFile();
 
 
-    void cutSample (audioEvent someAudio);
-    void processSample (audioEvent someAudio, audioPlugin someAudioPlugin);
+    void cutSample (AudioEvent someAudio);
+    void processSample (AudioEvent someAudio, AudioPlugin someAudioPlugin);
  };
 
 /*
  9)
  */
- struct piano; FIXME types begin with capital letters
+ struct Piano 
  {
     int range = 88;
-    int color = black;
+    char color = 'b';
 
-    void pressSustainPedal{};
-    void releaseSustainPedal{};
+    void pressSustainPedal();
+    void releaseSustainPedal();
  };
 
 
 /*
  10)
  */
- struct concertHall FIXME types begin with capital letters
+ struct ConcertHall 
  {
      bool concertOngoing = false;
      int visitorCount = 1500;
 
-     void addInstrumentToStage(piano);
+     void addInstrumentToStage(Piano);
  };
 
 #include <iostream>
