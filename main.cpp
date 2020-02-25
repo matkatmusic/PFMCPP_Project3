@@ -64,6 +64,8 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
         float knobPosition;
         bool knobOverride = false;
         int color = 1;
+
+        void spawnKnobs(int numberOfKnobs, float knobLocation);
     };
 
     void updateKnobPosition(FilterKnob knobOne, double nextKnobPosition);
@@ -81,6 +83,8 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
     {   
         int maxNumberOfWaveforms = 100;
         bool interpolationOn = true;
+
+        void loadWavetable(int wavetableToLoad, float loadTimeOffset);
     };
 
     int getNextFrequencyInSequence(float nextFrequency);
@@ -169,6 +173,8 @@ struct Bank
         float valueOfAccount = 50000.f;
         bool owesMoney = true;
         int totalAssetsHeld = 15;
+
+        int getLastDepositAmount(PersonalAccount myAccount, float lastDepositTime);
     };
 
     void payOffLoans(Bank chase, PersonalAccount newAccount);
@@ -187,6 +193,8 @@ struct SearchEngine
         float widthOfSearchBar = 100.f;
         float heightOfSearchBar = 5.f;
         bool searchEnabled = true;
+
+        char showBookmarks(int totalBookmarks);
     };
 
     SearchEngine(char recentlySearchedAddress);
