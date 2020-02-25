@@ -54,20 +54,20 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 /*
  1)
  */
- struct Human 
- {
+struct Human 
+{
     float weight = 25.5f;
     float height = 160.5f;
 
     void eat ();
     bool isHungry(int timeAwake, int stamina);
- };
+};
 
 /*
  2)
  */
- struct Bakery   
- {
+struct Bakery   
+{
     int numOfOvens = 2;
     int amountOfBread = 250;
     int openingTime = 8;
@@ -75,13 +75,13 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
 
     bool checkOpen (int openingTime, int closingTime);
     void bakeBread (int numOfOvens, int amountOfBread, int ovenNumber);
- };
+};
 
 /*
  3)
  */
- struct PublicBus   
- {
+struct PublicBus   
+{
     int maxAmountofSeats = 50;  
     bool seatsLeft = true;
 
@@ -93,7 +93,7 @@ struct CarWash            //1) a U.D.T. with a random number of member variables
     
     void takeSeat (BusSeat frontSeat, Human passenger);
 
- };
+};
 
 /*
  4)
@@ -108,8 +108,8 @@ struct Village
 };
 
 
- struct Wizard 
- {
+struct Wizard 
+{
     int health = 160;
     int mana = 70;
 
@@ -122,7 +122,7 @@ struct Village
     void equipWeapon (WizardStaff rareStaff);
     void unequipWeapon (WizardStaff rareStaff);
     void attack (WizardStaff rareStaff, int enemyId);
- };
+};
 
 /*
  5)
@@ -168,40 +168,39 @@ struct AudioEvent
 /*
  8)
  */
- struct AudioEditor 
- {
+struct AudioEditor 
+{
     int samplerate = 48000;
     
     void importFile();
 
-
     void cutSample (AudioEvent someAudio);
     void processSample (AudioEvent someAudio, AudioPlugin someAudioPlugin);
- };
+};
 
 /*
  9)
  */
- struct Piano 
- {
+struct Piano 
+{
     int range = 88;
     char color = 'b';
 
     void pressSustainPedal();
     void releaseSustainPedal();
- };
+};
 
 
 /*
  10)
  */
- struct ConcertHall 
- {
-     bool concertOngoing = false;
-     int visitorCount = 1500;
+struct ConcertHall 
+{
+    bool concertOngoing = false;
+    int visitorCount = 1500;
 
-     void addInstrumentToStage(Piano);
- };
+    void addInstrumentToStage(Piano);
+};
 
 #include <iostream>
 int main()
