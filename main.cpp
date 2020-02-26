@@ -89,6 +89,8 @@ struct PublicBus
     { 
         int seatRow = 1;
         int seatColor = 25;
+        void moveBackrest (bool isBack);
+        void setSeathHeight (int heigth);
     };
     
     void takeSeat (BusSeat frontSeat, Human passenger);
@@ -117,6 +119,9 @@ struct Wizard
     {
         int itemIndex = 1;
         int baseDamage = 250;
+
+        void setSkin (int colorIndex, int logoIndex);
+        int chargeUp (int chargingTime, int currentCharge);
     };
 
     void equipWeapon (WizardStaff rareStaff);
