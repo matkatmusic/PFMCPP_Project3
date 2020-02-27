@@ -12,6 +12,47 @@ Create a branch named Part2
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled; 
+
+    struct Foot
+    {
+        void stepForward()
+        {
+            //step forward function
+        }
+        int stepSize()
+        {
+           return{}; //step size function
+        }
+    };
+    
+    void run(int howFast, bool startWithLeftFoot);
+
+    Foot leftFoot, rightFoot;
+
+};
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if( startWithLeftFoot)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else 
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+}
 
 
 
@@ -45,6 +86,18 @@ struct Human
     bool isHungry(int timeAwake, int stamina);
 };
 
+bool Human::isHungry(int timeAwake, int stamina)
+{
+    if (timeAwake > 8 && stamina <4 ) 
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 /*
  2)
  */
@@ -55,9 +108,27 @@ struct Bakery
     int openingTime = 8;
     int closingTIme = 18;
 
-    bool checkOpen (int openingTime, int closingTime);
-    void bakeBread (int numOfOvens, int amountOfBread, int ovenNumber);
+    bool checkOpen (int opening, int closing, int current);
+    int bakeBread (int numOfOvens, int breadPerOven);
 };
+
+bool Bakery::checkOpen (int opening, int closing, int current)
+{
+    if (current > opening && current < closing)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+int Bakery::bakeBread (int numOvens, int breadPerOven)
+{
+    return (amountOfBread-(numOvens*breadPerOven));
+}
+
 
 /*
  3)
@@ -70,7 +141,8 @@ struct PublicBus
     struct BusSeat     
     { 
         int seatRow = 1;
-        int seatColor = 25;
+        bool isUsed = false;
+        int maxWeight = 15;
         void moveBackrest (bool isBack);
         void setSeathHeight (int heigth);
     };
@@ -78,6 +150,16 @@ struct PublicBus
     void takeSeat (BusSeat frontSeat, Human passenger);
 
 };
+
+void PublicBus::takeSeat(BusSeat frontSeat, Human passenger)
+{
+    if (passenger.weight < frontSeat.maxWeight)
+    {
+       // sit down function
+    }
+}
+
+
 
 /*
  4)
@@ -110,6 +192,8 @@ struct Wizard
     void unequipWeapon (WizardStaff rareStaff);
     void attack (WizardStaff rareStaff, int enemyId);
 };
+
+
 
 /*
  5)
