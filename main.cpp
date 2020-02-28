@@ -33,13 +33,13 @@ struct Person
         }
     };
     
-    void run(int howFast, bool startWithLeftFoot);
+    void run(bool startWithLeftFoot);
 
     Foot leftFoot, rightFoot;
 
 };
 
-void Person::run(int howFast, bool startWithLeftFoot)
+void Person::run(bool startWithLeftFoot)
 {
     if( startWithLeftFoot)
     {
@@ -53,6 +53,7 @@ void Person::run(int howFast, bool startWithLeftFoot)
     }
     distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
 }
+
 
 
 
@@ -155,7 +156,7 @@ void PublicBus::takeSeat(BusSeat frontSeat, Human passenger)
 {
     if (passenger.weight < frontSeat.maxWeight)
     {
-       // sit down function
+       // trigger a sit down function
     }
 }
 
@@ -204,8 +205,19 @@ struct CommonTreasureChest
     bool isRare = false;
     bool isOpened = false;
 
-    void openChest(bool isOpened);
+    bool openChest(bool openState);
 };
+
+bool CommonTreasureChest::openChest (bool openState)
+{
+    if (openState == false)
+    {
+        //triger function to open the Box
+        return true;
+    }
+
+}
+
 
 
 /*
