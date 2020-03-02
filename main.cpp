@@ -55,9 +55,6 @@ void Person::run(bool startWithLeftFoot)
 }
 
 
-
-
-
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
  
@@ -314,6 +311,7 @@ void AudioEvent::generateWaveform(float eventLength, int eventId)
         //generate the Audio Waveform
     }
 }
+
 
 /*
  8)
