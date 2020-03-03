@@ -12,8 +12,47 @@ Create a branch named Part2
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled; 
 
+    struct Foot
+    {
+        void stepForward()
+        {
+            //step forward function
+        }
+        int stepSize()
+        {
+           return{}; //step size function
+        }
+    };
+    
+    void run(bool startWithLeftFoot);
 
+    Foot leftFoot, rightFoot;
+
+};
+
+void Person::run(bool startWithLeftFoot)
+{
+    if( startWithLeftFoot)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else 
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+}
 
 
  /*
@@ -41,9 +80,24 @@ struct Human
     float weight = 25.5f;
     float height = 160.5f;
 
-    void eat ();
+    void wakeUp();
     bool isHungry(int timeAwake, int stamina);
 };
+
+void Human::wakeUp()
+{
+    //call a waking up functionality
+}
+
+bool Human::isHungry(int timeAwake, int stamina)
+{
+    if (timeAwake > 8 && stamina <4 ) 
+    {
+        return true;
+    }
+    return false;
+}
+
 
 /*
  2)
@@ -55,9 +109,24 @@ struct Bakery
     int openingTime = 8;
     int closingTIme = 18;
 
-    bool checkOpen (int openingTime, int closingTime);
-    void bakeBread (int numOfOvens, int amountOfBread, int ovenNumber);
+    bool checkOpen (int opening, int closing, int current);
+    int bakeBread (int numOfOvens, int breadPerOven);
 };
+
+bool Bakery::checkOpen (int opening, int closing, int current)
+{
+    if (current > opening && current < closing)
+    {
+        return true;
+    }
+    return false;
+}
+
+int Bakery::bakeBread (int numOvens, int breadPerOven)
+{
+    return (amountOfBread-(numOvens*breadPerOven));
+}
+
 
 /*
  3)
@@ -70,7 +139,8 @@ struct PublicBus
     struct BusSeat     
     { 
         int seatRow = 1;
-        int seatColor = 25;
+        bool isUsed = false;
+        int maxWeight = 15;
         void moveBackrest (bool isBack);
         void setSeathHeight (int heigth);
     };
@@ -79,23 +149,56 @@ struct PublicBus
 
 };
 
+void PublicBus::takeSeat(BusSeat frontSeat, Human passenger)
+{
+    if (passenger.weight < frontSeat.maxWeight)
+    {
+       // trigger a sit down function
+    }
+}
+
+void PublicBus::BusSeat::moveBackrest(bool isBack)
+{
+    if (isBack == false)
+    {
+        // move the Backrest forward
+    }
+}
+
+
+void PublicBus::BusSeat::setSeathHeight(int height)
+{
+    if (height > 1 && height < 15)
+    {
+        // call a function to change the seat height
+    }
+}
+
+
 /*
  4)
  */
 struct Village 
 {
-    Human tom;
-    Human lisa;
+    Human villagerTom;
+    Human villagerLisa;
     PublicBus redBus;
 
-    void openShop(Bakery theBakery);
+    void startDay();
 };
+
+void Village::startDay ()
+{
+    villagerTom.wakeUp();
+    villagerLisa.wakeUp();
+}
 
 
 struct Wizard 
 {
     int health = 160;
     int mana = 70;
+    int equipmentSlot = 1;
 
     struct WizardStaff 
     {
@@ -106,10 +209,44 @@ struct Wizard
         int chargeUp (int chargingTime, int currentCharge);
     };
 
-    void equipWeapon (WizardStaff rareStaff);
-    void unequipWeapon (WizardStaff rareStaff);
-    void attack (WizardStaff rareStaff, int enemyId);
+    void equipWeapon (Wizard gandalf);
+    void unequipWeapon (Wizard gandalf);
+    void attack (WizardStaff rareStaff, int enemyHealth);
+
 };
+
+void Wizard::equipWeapon (Wizard gandalf)
+{
+    if (gandalf.equipmentSlot == 1)
+    {
+        // Equip the Weapon
+    }
+}
+
+void Wizard::unequipWeapon (Wizard gandalf)
+{
+    if (gandalf.equipmentSlot == 2)
+    {
+        // Unequip the Weapon
+    }
+}
+
+void Wizard::attack (WizardStaff rareStaff, int enemyHealth)
+{
+    enemyHealth -= rareStaff.baseDamage;
+}
+
+void Wizard::WizardStaff::setSkin (int colorIndex, int logoIndex)
+{
+    colorIndex = 5;
+    logoIndex = 15;
+}
+
+int Wizard::WizardStaff::chargeUp (int chargingTime, int currentCharge)
+{
+    return (currentCharge * chargingTime);
+}
+
 
 /*
  5)
@@ -120,8 +257,13 @@ struct CommonTreasureChest
     bool isRare = false;
     bool isOpened = false;
 
-    void openChest(bool isOpened);
+    bool openChest(bool openState);
 };
+
+bool CommonTreasureChest::openChest (bool openState)
+{
+    return (openState == false);
+}
 
 
 /*
@@ -134,23 +276,42 @@ struct AudioPlugin
     int samplerate = 41000;
     
     void processAudio();
-    void drawWaveform(float sampleValue);
 };
 
+void AudioPlugin::processAudio()
+{
+    //Process the Audio Block
+}
 
 
 /*
  7)
  */
+
 struct AudioEvent 
 {
     int samplerate = 48000;
     int bitDepth = 24;
     float length = 250.35f;
+    int eventId = 15;
 
-    void getLength(int eventId);
-    void generateWaveform(float length, int eventId);
+    int getLength(int eventId, int eventSamplerate);
+    void generateWaveform(float eventLength, int eventId);
 };
+
+int AudioEvent::getLength(int eventSize, int eventSamplerate)
+{
+    return (eventSize*eventSamplerate);
+}
+
+void AudioEvent::generateWaveform(float eventLength, int eventId)
+{
+    if (eventId != 0 && eventLength > 0.1f)
+    {
+        //generate the Audio Waveform
+    }
+}
+
 
 /*
  8)
@@ -161,9 +322,24 @@ struct AudioEditor
     
     void importFile();
 
-    void cutSample (AudioEvent someAudio);
-    void processSample (AudioEvent someAudio, AudioPlugin someAudioPlugin);
+    void cutEvent (float cursorPosition, AudioEvent someClip);
+    void processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugin);
 };
+
+void cutEvent (float cursorPosition, AudioEvent someClip)
+{
+    float cutPosition = cursorPosition - someClip.length;
+    //forward cutPosition to some logic that cuts the Audio
+}
+
+void AudioEditor::processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugin)
+{
+    if (someAudio.eventId == 15)
+    {
+        someAudioPlugin.processAudio();
+    }
+}
+
 
 /*
  9)
@@ -177,6 +353,16 @@ struct Piano
     void releaseSustainPedal();
 };
 
+void Piano::pressSustainPedal()
+{
+    //press the Sustain Pedal on the Piano
+}
+
+void Piano::releaseSustainPedal()
+{
+    //release the Sustain Pedal on the Piano
+}
+
 
 /*
  10)
@@ -188,6 +374,12 @@ struct ConcertHall
 
     void addInstrumentToStage(Piano);
 };
+
+void ConcertHall::addInstrumentToStage (Piano)
+{
+    // add the Instrument to the Stage
+}
+
 
 #include <iostream>
 int main()
