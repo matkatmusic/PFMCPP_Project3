@@ -61,6 +61,11 @@ struct Human
     float weight = 25.5f;
     float height = 160.5f;
 
+    Human ()
+    {
+        std::cout << "Hello there! I'm a new Person." << std::endl;
+    }
+
     void wakeUp();
     bool isHungry(int timeAwake, int stamina);
 };
@@ -68,6 +73,7 @@ struct Human
 void Human::wakeUp()
 {
     //call a waking up functionality
+    std::cout << "I'm finally awake!" << std::endl;
 }
 
 bool Human::isHungry(int timeAwake, int stamina)
@@ -88,7 +94,12 @@ struct Bakery
     int numOfOvens = 2;
     int amountOfBread = 250;
     int openingTime = 8;
-    int closingTIme = 18;
+    int closingTime = 18;
+
+    Bakery ()
+    {
+        std::cout << "The Bakery is open between " <<  openingTime << " and " << closingTime << std::endl;
+    }
 
     bool checkOpen (int opening, int closing, int current);
     int bakeBread (int numOfOvens, int breadPerOven);
@@ -98,8 +109,10 @@ bool Bakery::checkOpen (int opening, int closing, int current)
 {
     if (current > opening && current < closing)
     {
+        std::cout << "Bakery is Open, Come in!" << std::endl;
         return true;
     }
+    std::cout << "Bakery is Closed!" << std::endl;
     return false;
 }
 
@@ -117,11 +130,17 @@ struct PublicBus
     int maxAmountofSeats = 50;  
     bool seatsLeft = true;
 
+    PublicBus()
+    {
+       std::cout << "New Bus is here with a capacity of " << maxAmountofSeats << std::endl;
+    }
+
     struct BusSeat     
     { 
         int seatRow = 1;
         bool isUsed = false;
         int maxWeight = 15;
+        BusSeat(){std::cout << "This is a Bus Seat" << std::endl;}
         void moveBackrest (bool isBack);
         void setSeathHeight (int heigth);
     };
@@ -142,7 +161,7 @@ void PublicBus::BusSeat::moveBackrest(bool isBack)
 {
     if (isBack == false)
     {
-        // move the Backrest forward
+        std::cout << "The Seats Backrest has been moved forward.." << std::endl;
     }
 }
 
@@ -151,7 +170,11 @@ void PublicBus::BusSeat::setSeathHeight(int height)
 {
     if (height > 1 && height < 15)
     {
-        // call a function to change the seat height
+        std::cout << "The Seat Height has been chagned to " << height << std::endl;
+    }
+    else
+    {
+        std::cout << "The Seat can't be adjusted to this height" << std::endl;
     }
 }
 
@@ -164,6 +187,8 @@ struct Village
     Human villagerTom;
     Human villagerLisa;
     PublicBus redBus;
+
+    Village(){std::cout << "The Village has been build" << std::endl;}
 
     void startDay();
 };
@@ -181,35 +206,46 @@ struct Wizard
     int mana = 70;
     int equipmentSlot = 1;
 
-    struct WizardStaff 
+    Wizard()
     {
+        std::cout << "New Wizard arrived. Health:" << health << " Mana: " << mana << std::endl;
+    }
+
+    struct WizardStaff 
+    {     
         int itemIndex = 1;
         int baseDamage = 250;
+
+        WizardStaff();
 
         void setSkin (int colorIndex, int logoIndex);
         int chargeUp (int chargingTime, int currentCharge);
     };
 
-    void equipWeapon (Wizard gandalf);
-    void unequipWeapon (Wizard gandalf);
+    int equipWeapon (Wizard gandalf);
+    int unequipWeapon (Wizard gandalf);
     void attack (WizardStaff rareStaff, int enemyHealth);
 
 };
 
-void Wizard::equipWeapon (Wizard gandalf)
+int Wizard::equipWeapon (Wizard gandalf)
 {
     if (gandalf.equipmentSlot == 1)
     {
-        // Equip the Weapon
+        std::cout << "I've Equipped my Staff!" << std::endl; 
+        return 2;
     }
+    return 1;
 }
 
-void Wizard::unequipWeapon (Wizard gandalf)
+int Wizard::unequipWeapon (Wizard gandalf)
 {
     if (gandalf.equipmentSlot == 2)
     {
-        // Unequip the Weapon
+        std::cout << "Unequipped Weapon!" << std::endl;
+        return 2;
     }
+    return 1;
 }
 
 void Wizard::attack (WizardStaff rareStaff, int enemyHealth)
@@ -238,12 +274,35 @@ struct CommonTreasureChest
     bool isRare = false;
     bool isOpened = false;
 
+    CommonTreasureChest()
+    {
+        std::cout << "This is a common Treasure Chest with a Max Capacity of 5 items" << std::endl;
+    }
+
     bool openChest(bool openState);
+    bool closeChest(bool openState);
 };
 
 bool CommonTreasureChest::openChest (bool openState)
 {
-    return (openState == false);
+    if (openState == false) 
+    {
+        std::cout << "You've opened the Box, sadly there's nothing in it!" << std::endl;
+        return true;
+    }
+    std::cout << "This Box is already opened.. find another one!" << std::endl;
+    return false;
+}
+
+bool CommonTreasureChest::closeChest (bool openState)
+{
+    if (openState == true) 
+    {
+        std::cout << "You've closed the Box and locked it" << std::endl;
+        return false;
+    }
+    std::cout << "You can't lock an already locked box" << std::endl;
+    return true;
 }
 
 
@@ -255,13 +314,15 @@ struct AudioPlugin
     bool bypass = false;
     bool initialized = true;
     int samplerate = 41000;
+
+    AudioPlugin(){std::cout << "The Plugin is running at " << samplerate << " Samples per Second." << std::endl;}
     
     void processAudio();
 };
 
 void AudioPlugin::processAudio()
 {
-    //Process the Audio Block
+    std::cout << "Processing the Audio Block" << std::endl;
 }
 
 
@@ -276,8 +337,10 @@ struct AudioEvent
     float length = 250.35f;
     int eventId = 15;
 
+    AudioEvent(){std::cout << "Event Lenght: " << length << " Event ID: " << eventId << std::endl;}
+
     int getLength(int eventId, int eventSamplerate);
-    void generateWaveform(float eventLength, int eventId);
+    void generateWaveform(float eventLength, int id);
 };
 
 int AudioEvent::getLength(int eventSize, int eventSamplerate)
@@ -285,11 +348,11 @@ int AudioEvent::getLength(int eventSize, int eventSamplerate)
     return (eventSize*eventSamplerate);
 }
 
-void AudioEvent::generateWaveform(float eventLength, int eventId)
+void AudioEvent::generateWaveform(float eventLength, int id)
 {
-    if (eventId != 0 && eventLength > 0.1f)
+    if (id != 0 && eventLength > 0.1f)
     {
-        //generate the Audio Waveform
+        std::cout << "This is the Waveform of the Event" << std::endl;
     }
 }
 
@@ -300,17 +363,18 @@ void AudioEvent::generateWaveform(float eventLength, int eventId)
 struct AudioEditor 
 {
     int samplerate = 48000;
+
+    AudioEditor(){std::cout << "Splash Screen: Sound Forge 22" << std::endl;}
     
     void importFile();
-
     void cutEvent (float cursorPosition, AudioEvent someClip);
     void processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugin);
 };
 
-void cutEvent (float cursorPosition, AudioEvent someClip)
+void AudioEditor::cutEvent (float cursorPosition, AudioEvent someClip)
 {
-    float cutPosition = cursorPosition - someClip.length;
-    //forward cutPosition to some logic that cuts the Audio
+    float cutPosition = cursorPosition + someClip.length;
+    std::cout << "Cut the Event at: " << cutPosition << std::endl;
 }
 
 void AudioEditor::processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugin)
@@ -330,18 +394,26 @@ struct Piano
     int range = 88;
     char color = 'b';
 
+    Piano()
+    {
+        if (color == 'b')
+        {
+            std::cout << "I'm a black Concert Piano" << std::endl;
+        }
+    }
+
     void pressSustainPedal();
     void releaseSustainPedal();
 };
 
 void Piano::pressSustainPedal()
 {
-    //press the Sustain Pedal on the Piano
+    std::cout << "Sustain Pedal is pressed" << std::endl;
 }
 
 void Piano::releaseSustainPedal()
 {
-    //release the Sustain Pedal on the Piano
+    std::cout << "Sustain Pedal is released" << std::endl;
 }
 
 
@@ -353,12 +425,14 @@ struct ConcertHall
     bool concertOngoing = false;
     int visitorCount = 1500;
 
+    ConcertHall(){std::cout << "In This Hall fit " << visitorCount << " Visitors." << std::endl;}
+
     void addInstrumentToStage(Piano);
 };
 
-void ConcertHall::addInstrumentToStage (Piano)
+void ConcertHall::addInstrumentToStage (Piano piano)
 {
-    // add the Instrument to the Stage
+    std::cout << "A Piano with " << piano.range << " Keys has been added onto the stage!" << std::endl;
 }
 
 
@@ -366,5 +440,70 @@ void ConcertHall::addInstrumentToStage (Piano)
 int main()
 {
     Example::main();
+
+    Human Peter;
+    Peter.wakeUp();
+
+    std::cout << std::endl;
+
+    Bakery TastyBreads;
+    TastyBreads.checkOpen(8, 18, 20);
+    TastyBreads.checkOpen(8, 18, 10);
+
+    std::cout << std::endl;
+
+    PublicBus Line104;
+    PublicBus::BusSeat Seat01;
+    Seat01.setSeathHeight(25);
+    Seat01.setSeathHeight(8);
+    
+    std::cout << std::endl;
+
+    Village CozyTown;
+    CozyTown.startDay();
+
+    std::cout << std::endl;
+
+    Wizard GandalfTheGrey;
+    //Calling equipWeapon function sets equipmentSlot Variable to 2, which allows the unequipWeapon functions if statement
+    GandalfTheGrey.equipmentSlot = GandalfTheGrey.equipWeapon(GandalfTheGrey);  
+    GandalfTheGrey.unequipWeapon(GandalfTheGrey);
+
+    std::cout << std::endl;
+
+    CommonTreasureChest Box01;
+    Box01.isOpened = Box01.openChest(Box01.isOpened);
+    Box01.openChest(Box01.isOpened);
+    Box01.isOpened = Box01.closeChest(Box01.isOpened);
+    Box01.closeChest(Box01.isOpened);
+
+    std::cout << std::endl;
+
+    AudioPlugin MultibandCompressor;
+    MultibandCompressor.processAudio();
+
+    std::cout << std::endl;
+
+    AudioEvent KickDrumSample;
+    KickDrumSample.generateWaveform(25.5, 5);
+
+    std::cout << std::endl;
+
+    AudioEditor SoundForge;
+    SoundForge.cutEvent(5.5, KickDrumSample);
+
+    std::cout << std::endl;
+
+    Piano GrandPiano;
+    GrandPiano.pressSustainPedal();
+
+    std::cout << std::endl;
+
+    ConcertHall SidneyOpera;
+    SidneyOpera.addInstrumentToStage(GrandPiano);
+
+
     std::cout << "good to go!" << std::endl;
+
+  
 }
