@@ -430,9 +430,9 @@ struct ConcertHall
     void addInstrumentToStage(Piano);
 };
 
-void ConcertHall::addInstrumentToStage (Piano Piano)
+void ConcertHall::addInstrumentToStage (Piano piano)
 {
-    std::cout << "A Piano with " << Piano.range << " Keys has been added onto the stage!" << std::endl;
+    std::cout << "A Piano with " << piano.range << " Keys has been added onto the stage!" << std::endl;
 }
 
 
