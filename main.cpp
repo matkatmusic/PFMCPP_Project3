@@ -216,7 +216,7 @@ struct Wizard
         int itemIndex = 1;
         int baseDamage = 250;
 
-        WizardStaff(){};
+        WizardStaff();
 
         void setSkin (int colorIndex, int logoIndex);
         int chargeUp (int chargingTime, int currentCharge);
@@ -337,8 +337,10 @@ struct AudioEvent
     float length = 250.35f;
     int eventId = 15;
 
+    AudioEvent(){std::cout << "Event Lenght: " << length << " Event ID: " << eventId << std::endl;}
+
     int getLength(int eventId, int eventSamplerate);
-    void generateWaveform(float eventLength, int eventId);
+    void generateWaveform(float eventLength, int id);
 };
 
 int AudioEvent::getLength(int eventSize, int eventSamplerate)
@@ -346,11 +348,11 @@ int AudioEvent::getLength(int eventSize, int eventSamplerate)
     return (eventSize*eventSamplerate);
 }
 
-void AudioEvent::generateWaveform(float eventLength, int eventId)
+void AudioEvent::generateWaveform(float eventLength, int id)
 {
-    if (eventId != 0 && eventLength > 0.1f)
+    if (id != 0 && eventLength > 0.1f)
     {
-        //generate the Audio Waveform
+        std::cout << "This is the Waveform of the Event" << std::endl;
     }
 }
 
@@ -361,17 +363,18 @@ void AudioEvent::generateWaveform(float eventLength, int eventId)
 struct AudioEditor 
 {
     int samplerate = 48000;
+
+    AudioEditor(){std::cout << "Splash Screen: Sound Forge 22" << std::endl;}
     
     void importFile();
-
     void cutEvent (float cursorPosition, AudioEvent someClip);
     void processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugin);
 };
 
-void cutEvent (float cursorPosition, AudioEvent someClip)
+void AudioEditor::cutEvent (float cursorPosition, AudioEvent someClip)
 {
-    float cutPosition = cursorPosition - someClip.length;
-    //forward cutPosition to some logic that cuts the Audio
+    float cutPosition = cursorPosition + someClip.length;
+    std::cout << "Cut the Event at: " << cutPosition << std::endl;
 }
 
 void AudioEditor::processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugin)
@@ -391,18 +394,26 @@ struct Piano
     int range = 88;
     char color = 'b';
 
+    Piano()
+    {
+        if (color == 'b')
+        {
+            std::cout << "I'm a black Concert Piano" << std::endl;
+        }
+    }
+
     void pressSustainPedal();
     void releaseSustainPedal();
 };
 
 void Piano::pressSustainPedal()
 {
-    //press the Sustain Pedal on the Piano
+    std::cout << "Sustain Pedal is pressed" << std::endl;
 }
 
 void Piano::releaseSustainPedal()
 {
-    //release the Sustain Pedal on the Piano
+    std::cout << "Sustain Pedal is released" << std::endl;
 }
 
 
@@ -414,12 +425,14 @@ struct ConcertHall
     bool concertOngoing = false;
     int visitorCount = 1500;
 
+    ConcertHall(){std::cout << "In This Hall fit " << visitorCount << " Visitors." << std::endl;}
+
     void addInstrumentToStage(Piano);
 };
 
-void ConcertHall::addInstrumentToStage (Piano)
+void ConcertHall::addInstrumentToStage (Piano Piano)
 {
-    // add the Instrument to the Stage
+    std::cout << "A Piano with " << Piano.range << " Keys has been added onto the stage!" << std::endl;
 }
 
 
@@ -471,6 +484,26 @@ int main()
 
     std::cout << std::endl;
 
+    AudioEvent KickDrumSample;
+    KickDrumSample.generateWaveform(25.5, 5);
+
+    std::cout << std::endl;
+
+    AudioEditor SoundForge;
+    SoundForge.cutEvent(5.5, KickDrumSample);
+
+    std::cout << std::endl;
+
+    Piano GrandPiano;
+    GrandPiano.pressSustainPedal();
+
+    std::cout << std::endl;
+
+    ConcertHall SidneyOpera;
+    SidneyOpera.addInstrumentToStage(GrandPiano);
+
 
     std::cout << "good to go!" << std::endl;
+
+  
 }
