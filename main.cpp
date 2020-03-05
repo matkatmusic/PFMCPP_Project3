@@ -1,20 +1,15 @@
 /*
- Project 3 - Part 3 / 5
- video: Chapter 2 - Part 8
- Constructors tasks
+ Project 3 - Part 4 / 5
+ video: Chapter 2 - Part 9
+ Member initialization tasks
 
- Create a branch named Part3
+ Create a branch named Part4
+ 
+ 1) initialize some of your member variables either in-class or in the Constructor member initializer list.
 
- On a new branch:
-
- 1) Add a constructor for each User-Defined-Type.
+ 2) make some of your member functions use those initialized member variables via std::cout statements.
  
- 2) Instantiate 1 or 2 instances of each of your user-defined types in the main function at the bottom of that file, and call some of those member functions.
- 
- 3) make them print out something interesting via std::cout
- 
- After you finish defining each type/function:
- click the [run] button.  Clear up any errors or warnings as best you can.
+ 3) click the [run] button.  Clear up any errors or warnings as best you can.
  
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
  
@@ -23,33 +18,31 @@
 send me a DM to check your pull request
 
  Wait for my code review.
- 
- example:
  */
 
 #include <iostream>
-namespace Example 
-{
-struct UDT  // my user defined type
+namespace Example {
+struct UDT  
 {
     int a; //a member variable
-    UDT() { a = 0; }             //3) the constructor
-    void printThing()            //1) the member function
+    float b { 2.f }; //3) in-class initialization
+    UDT() : a(0) { } //3) 'constructor-initializer-list' member variable initialization
+    void printThing()  //the member function
     {
-        std::cout << "UDT::printThing() " << a << std::endl;  //5) printing out something interesting
+        std::cout << "UDT::printThing() a:" << a << " b: " << b << std::endl;  //4) printing out something interesting
     }
 };
 
 int main()
 {
-    UDT foo;              //4) instantiating a UDT in main()
-    foo.printThing();     //4) calling a member function of the instance that was instantiated.
-    
+    UDT foo; //instantiating a Foo in main()
+    foo.printThing(); //calling a member function of the instance that was instantiated.
     return 0;
 }
 }
 
-//insert Example::main() into main() of user's repo.
+//call Example::main()
+
 
 
 
