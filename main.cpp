@@ -51,12 +51,14 @@ int main()
  */
 struct Human 
 {
-    float weight = 25.5f;
-    float height = 160.5f;
+    float weight;
+    float height;
 
-    Human ()
+    Human () :
+        weight (65.5f),
+        height (189.5f)
     {
-        std::cout << "Hello there! I'm a new Person." << std::endl;
+        std::cout << "Hello there! I'm a new Person and weigh " << weight << " Kilos." << std::endl;
     }
 
     void wakeUp();
@@ -65,7 +67,6 @@ struct Human
 
 void Human::wakeUp()
 {
-    //call a waking up functionality
     std::cout << "I'm finally awake!" << std::endl;
 }
 
@@ -84,7 +85,7 @@ bool Human::isHungry(int timeAwake, int stamina)
  */
 struct Bakery   
 {
-    int numOfOvens = 2;
+    int numOfOvens =2;
     int amountOfBread = 250;
     int openingTime = 8;
     int closingTime = 18;
@@ -105,7 +106,7 @@ bool Bakery::checkOpen (int opening, int closing, int current)
         std::cout << "Bakery is Open, Come in!" << std::endl;
         return true;
     }
-    std::cout << "Bakery is Closed!" << std::endl;
+    std::cout << "Bakery is Closed! Opening Times: " << opening << " to " << closing << "."  << std::endl;
     return false;
 }
 
@@ -130,10 +131,10 @@ struct PublicBus
 
     struct BusSeat     
     { 
-        int seatRow = 1;
-        bool isUsed = false;
-        int maxWeight = 15;
-        BusSeat(){std::cout << "This is a Bus Seat" << std::endl;}
+        int seatRow;
+        bool isUsed;
+        int maxWeight;
+        BusSeat() : seatRow(15), isUsed(true), maxWeight(350) {std::cout << "This is a Bus Seat" << std::endl;}
         void moveBackrest (bool isBack);
         void setSeathHeight (int heigth);
     };
@@ -146,7 +147,7 @@ void PublicBus::takeSeat(BusSeat frontSeat, Human passenger)
 {
     if (passenger.weight < frontSeat.maxWeight)
     {
-       // trigger a sit down function
+       std::cout << "The Passenger has a weight of " << passenger.weight << " and fits inside the bus seats capacity of " << frontSeat.maxWeight << std::endl;
     }
 }
 
@@ -195,14 +196,9 @@ void Village::startDay ()
 
 struct Wizard 
 {
-    int health = 160;
-    int mana = 70;
-    int equipmentSlot = 1;
+    int health, mana, equipmentSlot;
 
-    Wizard()
-    {
-        std::cout << "New Wizard arrived. Health:" << health << " Mana: " << mana << std::endl;
-    }
+    Wizard();
 
     struct WizardStaff 
     {     
@@ -220,6 +216,14 @@ struct Wizard
     void attack (WizardStaff rareStaff, int enemyHealth);
 
 };
+
+Wizard::Wizard () : 
+    health (140),
+    mana (50),
+    equipmentSlot (1)
+    {
+        std::cout << "New Wizard arrived. Health: " << health << " Mana: " << mana << std::endl;
+    }
 
 int Wizard::equipWeapon (Wizard gandalf)
 {
@@ -265,9 +269,10 @@ struct CommonTreasureChest
 {
     int numberOfItems = 5;
     bool isRare = false;
-    bool isOpened = false;
+    bool isOpened;
 
-    CommonTreasureChest()
+    CommonTreasureChest() :
+    isOpened (false)
     {
         std::cout << "This is a common Treasure Chest with a Max Capacity of 5 items" << std::endl;
     }
@@ -325,12 +330,11 @@ void AudioPlugin::processAudio()
 
 struct AudioEvent 
 {
-    int samplerate = 48000;
-    int bitDepth = 24;
+    int samplerate, bitDepth;
     float length = 250.35f;
     int eventId = 15;
 
-    AudioEvent(){std::cout << "Event Lenght: " << length << " Event ID: " << eventId << std::endl;}
+    AudioEvent() : samplerate(48000), bitDepth (24) {std::cout << "Event Lenght: " << length << " Event ID: " << eventId << std::endl;}
 
     int getLength(int eventId, int eventSamplerate);
     void generateWaveform(float eventLength, int id);
@@ -384,20 +388,24 @@ void AudioEditor::processEvent (AudioEvent someAudio, AudioPlugin someAudioPlugi
  */
 struct Piano 
 {
-    int range = 88;
-    char color = 'b';
+    Piano();
 
-    Piano()
-    {
-        if (color == 'b')
-        {
-            std::cout << "I'm a black Concert Piano" << std::endl;
-        }
-    }
+    int range;
+    char color;
 
     void pressSustainPedal();
     void releaseSustainPedal();
 };
+
+Piano::Piano() : 
+range(88),
+color('b')
+{
+    if (color == 'b')
+    {
+        std::cout << "I'm a black Concert Piano" << std::endl;
+    }
+}
 
 void Piano::pressSustainPedal()
 {
@@ -449,6 +457,7 @@ int main()
     PublicBus::BusSeat Seat01;
     Seat01.setSeathHeight(25);
     Seat01.setSeathHeight(8);
+    Line104.takeSeat(Seat01, Peter);
     
     std::cout << std::endl;
 
