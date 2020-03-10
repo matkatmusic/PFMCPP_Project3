@@ -94,6 +94,7 @@ struct Human
 
     void wakeUp();
     bool isHungry(int timeAwake, int stamina);
+    auto eatBread(int howMany);
 };
 
 void Human::wakeUp()
@@ -116,15 +117,12 @@ bool Human::isHungry(int timeAwake, int stamina)
  */
 struct Bakery   
 {
+    Bakery () {}
+    
     int numOfOvens =2;
     int amountOfBread = 250;
     int openingTime = 8;
     int closingTime = 18;
-
-    Bakery ()
-    {
-        std::cout << "The Bakery is open between " <<  openingTime << " and " << closingTime << std::endl;
-    }
 
     bool checkOpen (int opening, int closing, int current);
     int bakeBread (int numOfOvens, int breadPerOven);
@@ -146,6 +144,15 @@ int Bakery::bakeBread (int numOvens, int breadPerOven)
     return (amountOfBread-(numOvens*breadPerOven));
 }
 
+auto Human::eatBread(int howMany)
+{
+    Bakery bakery;
+    std::cout << "Breads in the Bakery: " << bakery.amountOfBread << std::endl;
+    std::cout << "I'm eating " << howMany << " breads!" << std::endl;
+    bakery.amountOfBread -= howMany;
+    std::cout << "Breads in the Bakery: " << bakery.amountOfBread << std::endl;
+    return bakery;
+}
 
 /*
  3)
@@ -481,6 +488,8 @@ int main()
     Bakery TastyBreads;
     TastyBreads.checkOpen(8, 18, 20);
     TastyBreads.checkOpen(8, 18, 10);
+    Peter.eatBread(15);
+    Peter.eatBread(5);
 
     std::cout << std::endl;
 
