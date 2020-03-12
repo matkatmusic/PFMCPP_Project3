@@ -77,43 +77,11 @@ int main()
 
 
 
+
+
+
 /*
  1)
- */
-struct Human 
-{
-    float weight;
-    float height;
-
-    Human () :
-        weight (65.5f),
-        height (189.5f)
-    {
-        std::cout << "Hello there! I'm a new Person and weigh " << weight << " Kilos." << std::endl;
-    }
-
-    void wakeUp();
-    bool isHungry(int timeAwake, int stamina);
-    auto eatBread(int howMany);
-};
-
-void Human::wakeUp()
-{
-    std::cout << "I'm finally awake!" << std::endl;
-}
-
-bool Human::isHungry(int timeAwake, int stamina)
-{
-    if (timeAwake > 8 && stamina <4 ) 
-    {
-        return true;
-    }
-    return false;
-}
-
-
-/*
- 2)
  */
 struct Bakery   
 {
@@ -144,14 +112,54 @@ int Bakery::bakeBread (int numOvens, int breadPerOven)
     return (amountOfBread-(numOvens*breadPerOven));
 }
 
-auto Human::eatBread(int howMany)
+/*
+ 2)
+ */
+struct Human 
 {
-    Bakery bakery;
+    float weight;
+    float height;
+
+    Human () :
+        weight (65.5f),
+        height (189.5f)
+    {
+        std::cout << "Hello there! I'm a new Person and weigh " << weight << " Kilos." << std::endl;
+    }
+
+    void wakeUp();
+    bool isHungry(int timeAwake, int stamina);
+    int eatBread(int howMany, Bakery bakery);
+};
+
+void Human::wakeUp()
+{
+    std::cout << "I'm finally awake!" << std::endl;
+}
+
+bool Human::isHungry(int timeAwake, int stamina)
+{
+    if (timeAwake > 8 && stamina <4 ) 
+    {
+        return true;
+    }
+    return false;
+}
+
+int Human::eatBread(int howMany, Bakery bakery)
+{
     std::cout << "Breads in the Bakery: " << bakery.amountOfBread << std::endl;
     std::cout << "I'm eating " << howMany << " breads!" << std::endl;
     bakery.amountOfBread -= howMany;
-    std::cout << "Breads in the Bakery: " << bakery.amountOfBread << std::endl;
-    return bakery;
+    if (bakery.amountOfBread <= 0)
+    {
+        std::cout << "-> Bakery is out of Bread! Bake some new one via the bakeBread function." << std::endl;
+        return 0;
+    }
+    std::cout << "-> Breads in the Bakery: " << bakery.amountOfBread << std::endl;
+    return bakery.amountOfBread;
+    
+   
 }
 
 /*
@@ -488,8 +496,9 @@ int main()
     Bakery TastyBreads;
     TastyBreads.checkOpen(8, 18, 20);
     TastyBreads.checkOpen(8, 18, 10);
-    Peter.eatBread(15);
-    Peter.eatBread(5);
+    TastyBreads.amountOfBread = Peter.eatBread(15, TastyBreads);
+    TastyBreads.amountOfBread =  Peter.eatBread(5, TastyBreads);
+    TastyBreads.amountOfBread =  Peter.eatBread(250, TastyBreads);
 
     std::cout << std::endl;
 
