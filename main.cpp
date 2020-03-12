@@ -70,14 +70,7 @@ int main()
 }
 }
 
-//call Example::main() in main()
-
-
-
-
-
-
-
+FIXME: you have no while or for() loops anywhere in your code.  see instruction 2)
 
 
 /*
@@ -180,7 +173,7 @@ struct PublicBus
         int seatRow;
         bool isUsed;
         int maxWeight;
-        BusSeat() : seatRow(15), isUsed(true), maxWeight(350) {std::cout << "This is a Bus Seat" << std::endl;}
+        BusSeat() : seatRow(15), isUsed(true), maxWeight(350) {std::cout << "This is a Bus Seat" << std::endl;}FIXME this is hard to read.  put the { } on their own line.
         void moveBackrest (bool isBack);
         void setSeathHeight (int heigth);
     };
@@ -264,12 +257,12 @@ struct Wizard
 };
 
 Wizard::Wizard () : 
-    health (140),
-    mana (50),
-    equipmentSlot (1)
-    {
-        std::cout << "New Wizard arrived. Health: " << health << " Mana: " << mana << std::endl;
-    }
+health (140),
+mana (50),
+equipmentSlot (1)
+{
+    std::cout << "New Wizard arrived. Health: " << health << " Mana: " << mana << std::endl;
+}
 
 int Wizard::equipWeapon (Wizard gandalf)
 {
@@ -359,7 +352,7 @@ struct AudioPlugin
     bool initialized = true;
     int samplerate = 41000;
 
-    AudioPlugin(){std::cout << "The Plugin is running at " << samplerate << " Samples per Second." << std::endl;}
+    AudioPlugin(){std::cout << "The Plugin is running at " << samplerate << " Samples per Second." << std::endl;} FIXME this is hard to read.  put the { } on their own line.
     
     void processAudio();
 };
@@ -380,7 +373,7 @@ struct AudioEvent
     float length = 250.35f;
     int eventId = 15;
 
-    AudioEvent() : samplerate(48000), bitDepth (24) {std::cout << "Event Lenght: " << length << " Event ID: " << eventId << std::endl;}
+    AudioEvent() : samplerate(48000), bitDepth (24) {std::cout << "Event Lenght: " << length << " Event ID: " << eventId << std::endl;} FIXME this is hard to read.  put the { } on their own line.
 
     int getLength(int eventId, int eventSamplerate);
     void generateWaveform(float eventLength, int id);
@@ -407,7 +400,7 @@ struct AudioEditor
 {
     int samplerate = 48000;
 
-    AudioEditor(){std::cout << "Splash Screen: Sound Forge 22" << std::endl;}
+    AudioEditor(){std::cout << "Splash Screen: Sound Forge 22" << std::endl;} FIXME this is hard to read.  put the { } on their own line.
     
     void importFile();
     void cutEvent (float cursorPosition, AudioEvent someClip);
@@ -472,7 +465,7 @@ struct ConcertHall
     bool concertOngoing = false;
     int visitorCount = 1500;
 
-    ConcertHall(){std::cout << "In This Hall fit " << visitorCount << " Visitors." << std::endl;}
+    ConcertHall(){std::cout << "In This Hall fit " << visitorCount << " Visitors." << std::endl;} FIXME this is hard to read.  put the { } on their own line.
 
     void addInstrumentToStage(Piano);
 };
