@@ -335,7 +335,7 @@ struct CommonTreasureChest
     bool isOpened;
     bool isRare;  
 
-    CommonTreasureChest(bool rare) : isOpened (false) , isRare (rare)
+    CommonTreasureChest(bool rarity) : isOpened (false) , isRare (rarity)
     {
         if (isRare == false)
         {
@@ -378,12 +378,12 @@ void CommonTreasureChest::lootChest ()
 {
     for (int i = numberOfItems; i != 0; i -= 1 )
     {
-        std::cout << "Found a common item!" << std::endl;
-        if (isRare == true && i == 0)
+        if (isRare == true && i == 1)
         {
-            std::cout << "Legendary!!!" << std::endl;
+            std::cout << "Legendary Item!!!" << std::endl;
+            return;
         }
-        
+        std::cout << "Found a common item!" << std::endl;   
     }
 }
 
@@ -570,7 +570,7 @@ int main()
     TastyBreads.amountOfBread =  Peter.eatBread(5, TastyBreads);
     TastyBreads.amountOfBread =  Peter.eatBread(250, TastyBreads);
     TastyBreads.amountOfBread += TastyBreads.bakeBread(9,10);
-     TastyBreads.amountOfBread =  Peter.eatBread(80, TastyBreads);
+    TastyBreads.amountOfBread =  Peter.eatBread(80, TastyBreads);
 
     std::cout << std::endl;
 
@@ -597,6 +597,7 @@ int main()
     std::cout << std::endl;
 
     CommonTreasureChest Box01 (false);
+    Box01.lootChest();
     Box01.isOpened = Box01.openChest(Box01.isOpened);
     Box01.openChest(Box01.isOpened);
     Box01.isOpened = Box01.closeChest(Box01.isOpened);
