@@ -232,16 +232,16 @@ struct CarWash //2)
  */
 
 /*
- 10)
+ 10)digital audio workstation
  5 properties:
  These 5 properties should be UDTs that you defined above.
  this goes along with the instruction:
     One of your 10 UDTs should only use UDTs for its member variable types.
- 1)digital audio workstation
- 2)
- 3)
- 4)
- 5)
+ 1)audio tracks 
+ 2)midi tracks
+ 3)plugins
+ 4)stereo input
+ 5)stereo output
  3 things it can do:
  1)display recorded midi
  2)display plugin gui
