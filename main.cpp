@@ -106,129 +106,129 @@ struct CarWash //2)
 
 
 /*
- 1)
+ 1)midi keyboard
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)keys
+ 2)pitch wheel
+ 3)mod wheel
+ 4)usb lead
+ 5)body
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)plays midi notes
+ 2)changes pitch
+ 3)changes macros
  */
 
 /*
- 2)
+ 2)guitar
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)body
+ 2)neck
+ 3)strings
+ 4)jack
+ 5)cable
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)play notes
+ 2)play chords
+ 3)play muted
  */
 
 /*
- 3)
+ 3)mobile phone
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)screen
+ 2)buttons
+ 3)mic
+ 4)speaker
+ 5)usb input
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)make calls
+ 2)recieve calls
+ 3)send text messages
  */
 
 /*
- 4)
+ 4)game
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)players
+ 2)levels
+ 3)objects
+ 4)enemies
+ 5)allies
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)play
+ 2)pause
+ 3)exit
  */
 
 /*
- 5)
+ 5)digital audio workstation
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)audio tracks
+ 2)midi tracks
+ 3)plugins
+ 4)stereo output
+ 5)stereo input
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)record midi
+ 2)record audio
+ 3)output audio
  */
 
 /*
- 6)
+ 6)laptop
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)screen
+ 2)keyboard
+ 3)mouse pad
+ 4)speakers
+ 5)camera
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)recieve input
+ 2)produce output
+ 3)save data
  */
 
 /*
- 7)
+ 7)television
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)screen type lcd/oled ect
+ 2)speaker type surround/stereo ect
+ 3)dimensions
+ 4)resolution
+ 5)digital or analogue
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)dispaly television channels
+ 2)change television channels
+ 3)switch off
  */
 
 /*
- 8)
+ 8)fish tank
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)water type
+ 2)dimesions
+ 3)gallons
+ 4)light
+ 5)heater
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)switch light on
+ 2)switch heater on
+ 3)switch off
  */
 
 /*
- 9)
+ 9)cinema
  5 properties:
- 1)
- 2)
- 3)
- 4)
- 5)
+ 1)seats
+ 2)screen
+ 3)projector
+ 4)film
+ 5)lights
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)project film
+ 2)turn lights down
+ 3)seat customers
  */
 
 /*
@@ -237,15 +237,15 @@ struct CarWash //2)
  These 5 properties should be UDTs that you defined above.
  this goes along with the instruction:
     One of your 10 UDTs should only use UDTs for its member variable types.
- 1)
+ 1)digital audio workstation
  2)
  3)
  4)
  5)
  3 things it can do:
- 1)
- 2)
- 3)
+ 1)display recorded midi
+ 2)display plugin gui
+ 3)display recorded audio
  */
 
 #include <iostream>
