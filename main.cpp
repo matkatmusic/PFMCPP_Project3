@@ -118,7 +118,20 @@ struct CarWash //2)
  2)changes pitch
  3)changes macros
  */
+struct MidiKeyboard
+{
+    int keys = 88;
+    bool pitchWheel = true;
+    bool modWheel = true;
+    bool usbCompatable = true;
+    bool metalBody = false;
 
+    void playMidiNotes();
+    void changePitch();
+    void controlMacros();
+
+    
+};
 /*
  2)guitar
  5 properties:
@@ -132,7 +145,20 @@ struct CarWash //2)
  2)play chords
  3)play muted
  */
+struct Guitar
+{
+    
+    bool body = true;
+    bool neck = true;
+    int strings = 6;
+    bool jack = true;
+    bool cable = true;
 
+    void playNote();
+    void playChord();
+    void playMuted();
+
+};
 /*
  3)mobile phone
  5 properties:
@@ -146,7 +172,20 @@ struct CarWash //2)
  2)recieve calls
  3)send text messages
  */
+struct MobilePhone
+{
+    
+    bool screen = true;
+    bool buttons = true;
+    bool mic = true;
+    bool speaker = true;
+    bool usbInput = true;
 
+    void makeCall();
+    void answerCall();
+    void sendText();
+
+};
 /*
  4)game
  5 properties:
@@ -160,7 +199,20 @@ struct CarWash //2)
  2)pause
  3)exit
  */
+struct Game
+{
+    
+    int players = 2;
+    int levels = 10;
+    bool objects = true;
+    bool enemies = true;
+    int allies = 2;
 
+    void play();
+    void pause();
+    void exit();
+
+};
 /*
  5)digital audio workstation/DAW
  5 properties:
@@ -174,7 +226,19 @@ struct CarWash //2)
  2)record audio
  3)output audio
  */
+struct Daw
+{
+    int audioTracks =16;
+    int midiTracks = 16;
+    bool plugins = true;
+    bool stereoOutput = true;
+    bool stereoInput = true;
 
+    void recordMidi();
+    void recordAudio();
+    void outputAudio();
+
+};
 /*
  6)laptop
  5 properties:
@@ -188,7 +252,18 @@ struct CarWash //2)
  2)produce output
  3)save data
  */
+struct Laptop
+{
+    bool screen = true;
+    bool keyboard = true;
+    bool mousePad = true;
+    int speakers = 2;
+    bool camera = true;
 
+    void recieveInput();
+    void produceOutput();
+    void saveData();
+};
 /*
  7)television
  5 properties:
@@ -202,21 +277,67 @@ struct CarWash //2)
  2)change television channels
  3)switch off
  */
+struct television
+{
+    bool flatScreen = true;
+    bool surroundSound = true;
+    int heightCm = 60;
+    int lengthCm = 80;
+    float resolution = 4000;
+    bool digital = true;
 
+    struct RemoteControl
+    {
+        int numberButtons = 10;
+        bool onButton = true;
+    };
+
+    void switchTvOn();
+    void changeTvChannel();
+    void switchTvOff();
+
+    RemoteControl controlOn;
+};
 /*
  8)fish tank
  5 properties:
- 1)water type
+ 1)water temp
  2)dimesions
  3)gallons
- 4)light
- 5)heater
+ 4)lighton
+ 5)decor
  3 things it can do:
  1)switch light on
  2)switch heater on
  3)switch off
  */
+struct FishTank
+{
+    float waterTempCelcius = 25.0f;
+    int heightCm = 30;
+    int lengthCm = 90;
+    int depthCm = 30;
+    int gallons = 50;
+    bool lightOn = true;
 
+    struct Decor
+    {
+        bool livePlants = true;
+        int numberOfPlants = 6;
+        bool corals = false;
+        int numberOfCorals = 0;
+        bool rocks = true;
+        int numberOfRocks = 5;
+
+        void cleanDecor();
+    };
+
+    void switchLightOn();
+    void switchHeaterOn();
+    void feedFish();
+
+    Decor tropical;
+};
 /*
  9)cinema
  5 properties:
@@ -230,7 +351,19 @@ struct CarWash //2)
  2)turn lights down
  3)seat customers
  */
+struct Cinema
+{
+    
+    int seats = 100;
+    bool screenOn = true;
+    bool projectorOn = true;
+    int lightLevel = 10;
 
+    void playFilm(bool screenOn,bool projectorOn);
+    void setLightLevel(int lightLevel);
+    void sitCustomers();
+
+};
 /*
  10)audio interface
  5 properties:
@@ -271,7 +404,7 @@ struct CarWash //2)
      };
      struct ComputerConnection
      {
-         
+
      };
 
      void captureAudioInput();
