@@ -237,15 +237,15 @@ struct CarWash //2)
  These 5 properties should be UDTs that you defined above.
  this goes along with the instruction:
     One of your 10 UDTs should only use UDTs for its member variable types.
- 1)DAWaudio tracks 
- 2)DAWmidi tracks
- 3)DAWplugins
- 4)DAWstereo input
- 5)DAWstereo output
+ 1)lcd display-shows colour-brightness-number of pixels-amount of power consumed 
+ 2)headphone port
+ 3)power switch
+ 4)Mic inputs (4)
+ 5)computer connection
  3 things it can do:
- 1)increase volume
- 2)decrease volume
- 3)mute and play through headphones
+ 1)capture audion input
+ 2)send audio to speakers
+ 3)show audio levels on level meters
  */
 
 #include <iostream>
