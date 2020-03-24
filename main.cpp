@@ -247,6 +247,37 @@ struct CarWash //2)
  2)send audio to speakers
  3)show audio levels on level meters
  */
+ struct AudioInterface
+ {
+     struct LCDDisplay
+     {
+         int brightnessLevel = 10;
+         int numberOfPixels = 1000;
+         float amountOfPowerConsumed = 0.75f;
+         void showColour(bool on = true);
+     };
+
+     struct HeadphonePort
+     {
+
+     };
+     struct PowerSwitch
+     {
+
+     };
+     struct MicInputs
+     {
+
+     };
+     struct ComputerConnection
+     {
+         
+     };
+
+     void captureAudioInput();
+     void sendAudioToSpeakers();
+     void showAudioLevels();
+ };
 
 #include <iostream>
 int main()
