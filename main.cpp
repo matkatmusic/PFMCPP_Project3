@@ -380,40 +380,25 @@ struct Cinema
  2)send audio to speakers
  3)show audio levels on level meters
  */
- struct AudioInterface
+ struct Producer
  {
-     struct LCDDisplay
-     {
-         int brightnessLevel = 10;
-         int numberOfPixels = 1000;
-         float amountOfPowerConsumed = 0.75f;
-         void showColour(bool on = true);
-     };
+    Guitar producersGuitar;
+    MidiKeyboard producersKeyboard;
+    Laptop producersLaptop;
+    MobilePhone producersPhone;
+    Daw producersDaw;
 
-     struct HeadphonePort
-     {
+    void playInstrument();
+    void recordInstrument();
+    void playbackRecording();
 
-     };
-     struct PowerSwitch
-     {
-
-     };
-     struct MicInputs
-     {
-
-     };
-     struct ComputerConnection
-     {
-
-     };
-
-     void captureAudioInput();
-     void sendAudioToSpeakers();
-     void showAudioLevels();
  };
+ 
 
-#include <iostream>
-int main()
-{
-    std::cout << "good to go!" << std::endl;
-}
+ #include <iostream>
+ int main()
+ {
+     std::cout << "go to go!"<< std::endl;
+ }
+    
+
