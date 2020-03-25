@@ -365,20 +365,20 @@ struct Cinema
 
 };
 /*
- 10)audio interface
+ 10)producer
  5 properties:
  These 5 properties should be UDTs that you defined above.
  this goes along with the instruction:
     One of your 10 UDTs should only use UDTs for its member variable types.
- 1)lcd display-shows colour-brightness-number of pixels-amount of power consumed 
- 2)headphone port
- 3)power switch
- 4)Mic inputs (4)
- 5)computer connection
+ 1)Guitar 
+ 2)Midi keyboard
+ 3)computer
+ 4)mobile phone
+ 5)d a w
  3 things it can do:
- 1)capture audion input
- 2)send audio to speakers
- 3)show audio levels on level meters
+ 1)play instrument
+ 2)record instrument
+ 3)play recorded track
  */
  struct Producer
  {
