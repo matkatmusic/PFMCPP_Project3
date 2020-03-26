@@ -126,9 +126,9 @@ struct MidiKeyboard
     bool usbCompatable = true;
     bool metalBody = false;
 
-    void playMidiNotes();
-    void changePitch();
-    void controlMacros();
+    void playMidiNotes(int keys);
+    void changePitch(bool pitchWheel);
+    void controlMacros(bool modWheel);
 
     
 };
@@ -154,9 +154,9 @@ struct Guitar
     bool jack = true;
     bool cable = true;
 
-    void playNote();
-    void playChord();
-    void playMuted();
+    void playNote(int strings);
+    void playChord(int strings);
+    void playMuted(bool neck, int strings);
 
 };
 /*
@@ -181,9 +181,9 @@ struct MobilePhone
     bool speaker = true;
     bool usbInput = true;
 
-    void makeCall();
-    void answerCall();
-    void sendText();
+    void makeCall(bool buttons, bool mic);
+    void answerCall(bool buttons, bool mic, bool speaker);
+    void sendText(bool screen, bool buttons);
 
 };
 /*
@@ -208,8 +208,8 @@ struct Game
     bool enemies = true;
     int allies = 2;
 
-    void play();
-    void pause();
+    void play(int players);
+    void pause(bool objects);
     void exit();
 
 };
@@ -234,9 +234,9 @@ struct Daw
     bool stereoOutput = true;
     bool stereoInput = true;
 
-    void recordMidi();
-    void recordAudio();
-    void outputAudio();
+    void recordMidi(bool plugins, int midiTracks);
+    void recordAudio(int audioTracks, bool stereoInput);
+    void outputAudio(bool stereoOutput);
 
 };
 /*
@@ -257,11 +257,11 @@ struct Laptop
     bool screen = true;
     bool keyboard = true;
     bool mousePad = true;
-    int speakers = 2;
+    bool speakers = true;
     bool camera = true;
 
-    void recieveInput();
-    void produceOutput();
+    void recieveInput(bool keyboard, bool mousePad, bool camera);
+    void produceOutput(bool screen, bool speakers);
     void saveData();
 };
 /*
@@ -292,11 +292,11 @@ struct television
         bool onButton = true;
     };
 
-    void switchTvOn();
-    void changeTvChannel();
-    void switchTvOff();
+    void switchTvOn(RemoteControl);
+    void changeTvChannel(RemoteControl);
+    void switchTvOff(RemoteControl);
 
-    RemoteControl controlOn;
+    RemoteControl controlOn, controlOff;
 };
 /*
  8)fish tank
@@ -332,11 +332,11 @@ struct FishTank
         void cleanDecor();
     };
 
-    void switchLightOn();
-    void switchHeaterOn();
+    void switchLightOn(bool lightOn);
+    void switchHeaterOn(float waterTempCelcius);
     void feedFish();
 
-    Decor tropical;
+    Decor tropical, marine;
 };
 /*
  9)cinema
@@ -354,6 +354,7 @@ struct FishTank
 struct Cinema
 {
     
+    int freeSeats = 100;
     int seats = 100;
     bool screenOn = true;
     bool projectorOn = true;
@@ -361,7 +362,7 @@ struct Cinema
 
     void playFilm(bool screenOn,bool projectorOn);
     void setLightLevel(int lightLevel);
-    void sitCustomers();
+    void sitCustomers(int seats, int freeSeats);
 
 };
 /*
@@ -388,9 +389,9 @@ struct Cinema
     MobilePhone producersPhone;
     Daw producersDaw;
 
-    void playInstrument();
-    void recordInstrument();
-    void playbackRecording();
+    void playInstrument(Guitar, MidiKeyboard);
+    void recordInstrument(Laptop, Daw);
+    void playbackRecording(Laptop, Daw);
 
  };
  
