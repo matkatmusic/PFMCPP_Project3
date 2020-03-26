@@ -245,8 +245,8 @@ struct Daw
  1)screen
  2)keyboard
  3)mouse pad
- 4)speakers
- 5)camera
+ 4)harddrive
+ 5)ram
  3 things it can do:
  1)recieve input
  2)produce output
@@ -257,12 +257,12 @@ struct Laptop
     bool screen = true;
     bool keyboard = true;
     bool mousePad = true;
-    bool speakers = true;
-    bool camera = true;
+    int hardDriveAvailableGb = 256;
+    int memoryGb = 8; 
 
-    void recieveInput(bool keyboard, bool mousePad, bool camera);
-    void produceOutput(bool screen, bool speakers);
-    void saveData();
+    void recieveInput(bool keyboard, bool mousePad, int memoryGb);
+    void produceOutput(bool screen, int memoryGb);
+    void saveData(int hardDriveAvailableGb);
 };
 /*
  7)television
@@ -277,7 +277,7 @@ struct Laptop
  2)change television channels
  3)switch off
  */
-struct television
+struct Television
 {
     bool flatScreen = true;
     bool surroundSound = true;
