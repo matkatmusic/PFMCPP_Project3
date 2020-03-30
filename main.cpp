@@ -135,7 +135,7 @@ struct MidiKeyboard
 /*
  2)guitar
  5 properties:
- 1)body
+ 1)manufacturer
  2)neck
  3)strings
  4)jack
@@ -145,10 +145,11 @@ struct MidiKeyboard
  2)play chords
  3)play muted
  */
+# include <string>
 struct Guitar
 {
     
-    bool body = true;
+    std::string manufacturer = "akai";
     bool neck = true;
     int strings = 6;
     bool jack = true;
@@ -166,12 +167,13 @@ struct Guitar
  2)buttons
  3)mic
  4)speaker
- 5)usb input
+ 5)brand
  3 things it can do:
  1)make calls
  2)recieve calls
  3)send text messages
  */
+# include <string> 
 struct MobilePhone
 {
     
@@ -179,7 +181,7 @@ struct MobilePhone
     bool buttons = true;
     bool mic = true;
     bool speaker = true;
-    bool usbInput = true;
+    std::string brand = "sony"; 
 
     void makeCall(bool buttons, bool mic);
     void answerCall(bool buttons, bool mic, bool speaker);
@@ -244,7 +246,7 @@ struct Daw
  5 properties:
  1)screen
  2)keyboard
- 3)mouse pad
+ 3)passwor
  4)harddrive
  5)ram
  3 things it can do:
@@ -252,15 +254,16 @@ struct Daw
  2)produce output
  3)save data
  */
+#include <string>
 struct Laptop
 {
-    bool screen = true;
+    int screenresolution = 4000;
     bool keyboard = true;
-    bool mousePad = true;
+    std::string password = "password";
     int hardDriveAvailableGb = 256;
     int memoryGb = 8; 
 
-    void recieveInput(bool keyboard, bool mousePad, int memoryGb);
+    void recieveInput(bool keyboard, std::string password, int memoryGb);
     void produceOutput(bool screen, int memoryGb);
     void saveData(int hardDriveAvailableGb);
 };
