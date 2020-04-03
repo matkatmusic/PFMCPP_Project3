@@ -173,59 +173,59 @@ struct CarWash //2)
 
 
 /*
-1)
+1) Lizard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Length
+    2) Weight
+    3) Color
+    4) Teeth
+    5) Scales
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Run
+    2) Eat
+    3) Flick Tongue
  */
 
 /*
-2)
+2) Audio Interface
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Inputs
+    2) Outputs
+    3) Sample rate
+    4) Preamps
+    5) USB Port
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Output audio
+    2) Receive Input
+    3) Convert digital data to analog signal
  */
 
 /*
-3)
+3) Portable Video Game System
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Display
+    2) On/off switch
+    3) Speakers
+    4) Game Slot
+    5) Buttons
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Load game software
+    2) Show images on display
+    3) Play sound from speakers
  */
 
 /*
-4)
+4) Tape Player
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Tape Slot
+    2) Control Buttons
+    3) Power Button
+    4) Speed Selector
+    5) Headphone jack
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Play tape
+    2) Rewind tape
+    3) Eject Tape
  */
 
 /*
