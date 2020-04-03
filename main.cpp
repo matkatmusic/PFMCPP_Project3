@@ -299,17 +299,17 @@ struct CarWash //2)
  */
 
 /*
-10)
+10) Electric Guitar
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Body
+    2) Neck
+    3) Bridge
+    4) Pickups
+    5) Electronics
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Output sound
+    2) Increase/decrease volume
+    3) Adjust tone
  */
 
 #include <iostream>
