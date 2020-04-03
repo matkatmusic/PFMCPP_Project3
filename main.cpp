@@ -125,12 +125,9 @@ struct MidiKeyboard
     bool modWheel = true;
     bool usbCompatable = true;
     bool metalBody = false;
-
     void playMidiNotes(int keys);
     void changePitch(bool pitchWheel);
     void controlMacros(bool modWheel);
-
-    
 };
 /*
  2)guitar
@@ -148,17 +145,14 @@ struct MidiKeyboard
 # include <string>
 struct Guitar
 {
-    
     std::string manufacturer = "akai";
     bool neck = true;
     int strings = 6;
     bool jack = true;
     bool cable = true;
-
     void playNote(int strings);
     void playChord(int strings);
     void playMuted(bool neck, int strings);
-
 };
 /*
  3)mobile phone
@@ -176,17 +170,14 @@ struct Guitar
 # include <string> 
 struct MobilePhone
 {
-    
     bool screen = true;
     bool buttons = true;
     bool mic = true;
     bool speaker = true;
     std::string brand = "sony"; 
-
     void makeCall(bool buttons, bool mic);
     void answerCall(bool buttons, bool mic, bool speaker);
     void sendText(bool screen, bool buttons);
-
 };
 /*
  4)game
@@ -203,17 +194,14 @@ struct MobilePhone
  */
 struct Game
 {
-    
     int players = 2;
     int levels = 10;
     bool objects = true;
     bool enemies = true;
     int allies = 2;
-
     void play(int players);
     void pause(bool objects);
     void exit();
-
 };
 /*
  5)digital audio workstation/DAW
@@ -235,11 +223,9 @@ struct Daw
     bool plugins = true;
     bool stereoOutput = true;
     bool stereoInput = true;
-
     void recordMidi(bool plugins, int midiTracks);
     void recordAudio(int audioTracks, bool stereoInput);
     void outputAudio(bool stereoOutput);
-
 };
 /*
  6)laptop
@@ -262,7 +248,6 @@ struct Laptop
     std::string password = "password";
     int hardDriveAvailableGb = 256;
     int memoryGb = 8; 
-
     void recieveInput(bool keyboard, std::string password, int memoryGb);
     void produceOutput(bool screen, int memoryGb);
     void saveData(int hardDriveAvailableGb);
@@ -288,17 +273,14 @@ struct Television
     int lengthCm = 80;
     float resolution = 4000;
     bool digital = true;
-
     struct RemoteControl
     {
         int numberButtons = 10;
         bool onButton = true;
     };
-
     void switchTvOn(RemoteControl);
     void changeTvChannel(RemoteControl);
     void switchTvOff(RemoteControl);
-
     RemoteControl controlOn, controlOff;
 };
 /*
@@ -322,7 +304,6 @@ struct FishTank
     int depthCm = 30;
     int gallons = 50;
     bool lightOn = true;
-
     struct Decor
     {
         bool livePlants = true;
@@ -331,14 +312,11 @@ struct FishTank
         int numberOfCorals = 0;
         bool rocks = true;
         int numberOfRocks = 5;
-
         void cleanDecor();
     };
-
     void switchLightOn(bool lightOn);
     void switchHeaterOn(float waterTempCelcius);
     void feedFish();
-
     Decor tropical, marine;
 };
 /*
@@ -356,17 +334,14 @@ struct FishTank
  */
 struct Cinema
 {
-    
     int freeSeats = 100;
     int seats = 100;
     bool screenOn = true;
     bool projectorOn = true;
     int lightLevel = 10;
-
     void playFilm(bool screenOn,bool projectorOn);
     void setLightLevel(int lightLevel);
     void sitCustomers(int seats, int freeSeats);
-
 };
 /*
  10)producer
@@ -384,25 +359,23 @@ struct Cinema
  2)record instrument
  3)play recorded track
  */
- struct Producer
- {
+struct Producer
+{
     Guitar producersGuitar;
     MidiKeyboard producersKeyboard;
     Laptop producersLaptop;
     MobilePhone producersPhone;
     Daw producersDaw;
-
     void playInstrument(Guitar, MidiKeyboard);
     void recordInstrument(Laptop, Daw);
     void playbackRecording(Laptop, Daw);
-
- };
+};
  
 
- #include <iostream>
- int main()
- {
-     std::cout << "go to go!"<< std::endl;
- }
+#include <iostream>
+int main()
+{
+    std::cout << "go to go!"<< std::endl;
+}
     
 
