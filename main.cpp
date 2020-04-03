@@ -125,6 +125,7 @@ struct MidiKeyboard
     bool modWheel = true;
     bool usbCompatable = true;
     bool metalBody = false;
+    
     void playMidiNotes(int keys);
     void changePitch(bool pitchWheel);
     void controlMacros(bool modWheel);
@@ -150,6 +151,7 @@ struct Guitar
     int strings = 6;
     bool jack = true;
     bool cable = true;
+
     void playNote(int strings);
     void playChord(int strings);
     void playMuted(bool neck, int strings);
@@ -175,6 +177,7 @@ struct MobilePhone
     bool mic = true;
     bool speaker = true;
     std::string brand = "sony"; 
+
     void makeCall(bool buttons, bool mic);
     void answerCall(bool buttons, bool mic, bool speaker);
     void sendText(bool screen, bool buttons);
@@ -199,6 +202,7 @@ struct Game
     bool objects = true;
     bool enemies = true;
     int allies = 2;
+
     void play(int players);
     void pause(bool objects);
     void exit();
@@ -223,6 +227,7 @@ struct Daw
     bool plugins = true;
     bool stereoOutput = true;
     bool stereoInput = true;
+
     void recordMidi(bool plugins, int midiTracks);
     void recordAudio(int audioTracks, bool stereoInput);
     void outputAudio(bool stereoOutput);
@@ -248,6 +253,7 @@ struct Laptop
     std::string password = "password";
     int hardDriveAvailableGb = 256;
     int memoryGb = 8; 
+
     void recieveInput(bool keyboard, std::string password, int memoryGb);
     void produceOutput(bool screen, int memoryGb);
     void saveData(int hardDriveAvailableGb);
@@ -273,14 +279,17 @@ struct Television
     int lengthCm = 80;
     float resolution = 4000;
     bool digital = true;
+
     struct RemoteControl
     {
         int numberButtons = 10;
         bool onButton = true;
     };
+
     void switchTvOn(RemoteControl);
     void changeTvChannel(RemoteControl);
     void switchTvOff(RemoteControl);
+
     RemoteControl controlOn, controlOff;
 };
 /*
@@ -304,6 +313,7 @@ struct FishTank
     int depthCm = 30;
     int gallons = 50;
     bool lightOn = true;
+
     struct Decor
     {
         bool livePlants = true;
@@ -314,9 +324,11 @@ struct FishTank
         int numberOfRocks = 5;
         void cleanDecor();
     };
+
     void switchLightOn(bool lightOn);
     void switchHeaterOn(float waterTempCelcius);
     void feedFish();
+
     Decor tropical, marine;
 };
 /*
@@ -339,6 +351,7 @@ struct Cinema
     bool screenOn = true;
     bool projectorOn = true;
     int lightLevel = 10;
+
     void playFilm(bool screenOn,bool projectorOn);
     void setLightLevel(int lightLevel);
     void sitCustomers(int seats, int freeSeats);
@@ -366,6 +379,7 @@ struct Producer
     Laptop producersLaptop;
     MobilePhone producersPhone;
     Daw producersDaw;
+
     void playInstrument(Guitar, MidiKeyboard);
     void recordInstrument(Laptop, Daw);
     void playbackRecording(Laptop, Daw);
