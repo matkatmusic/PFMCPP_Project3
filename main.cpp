@@ -229,73 +229,73 @@ struct CarWash //2)
  */
 
 /*
-5)
+5) Display
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of pixels
+    2) Brightness
+    3) Width
+    4) Height
+    5) Amount of power consumed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Update pixels with image information
+    2) Clear pixels
+    3) Adjust brightness 
  */
 
 /*
-6)
+6) WiFi Adapter
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Frequency
+    2) Upload speed
+    3) Download speed
+    4) Channel
+    5) Amount of power consumed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Connect to an access point
+    2) Upload data 
+    3) Download data
  */
 
 /*
-7)
+7) Audio ouptut system
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Volume level
+    2) Sample rate
+    3) Bit depth
+    4) number of output channels
+    5) amount of power consumed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Output audio
+    2) Receive audio input
+    3) Adjust volume level
  */
 
 /*
-8)
+8) CPU
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Clock speed in MHz
+    2) Number of cores
+    3) Number of threads
+    4) Cache size in MB
+    5) amount of power consumed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Fetch instructions from memory
+    2) Execute instructions
+    3) Write data to memory
  */
 
 /*
-9)
+9) RAM
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Capacity 
+    2) Clock speed
+    3) Bus width
+    4) Number of pins
+    5) Amount of power consumed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Write data to memory
+    2) Clear memory
+    3) Send data to CPU
  */
 
 /*
@@ -305,7 +305,7 @@ struct CarWash //2)
     2) WiFi Adapter
     3) Audio output system
     4) CPU
-    5) Games
+    5) RAM
 3 things it can do:
     1) Load game software
     2) Show images on display
