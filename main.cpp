@@ -201,17 +201,17 @@ struct CarWash //2)
  */
 
 /*
-3) Portable Video Game System
+3) Electric Guitar
 5 properties:
-    1) Display
-    2) On/off switch
-    3) Speakers
-    4) Game Slot
-    5) Buttons
+    1) Body
+    2) Neck
+    3) Bridge
+    4) Pickups
+    5) Electronics
 3 things it can do:
-    1) Load game software
-    2) Show images on display
-    3) Play sound from speakers
+    1) Output sound
+    2) Increase/decrease volume
+    3) Adjust tone
  */
 
 /*
@@ -299,17 +299,17 @@ struct CarWash //2)
  */
 
 /*
-10) Electric Guitar
+10) Portable Video Game System
 5 properties:
-    1) Body
-    2) Neck
-    3) Bridge
-    4) Pickups
-    5) Electronics
+    1) Display
+    2) WiFi Adapter
+    3) Audio output system
+    4) CPU
+    5) Games
 3 things it can do:
-    1) Output sound
-    2) Increase/decrease volume
-    3) Adjust tone
+    1) Load game software
+    2) Show images on display
+    3) Play sound from speakers
  */
 
 #include <iostream>
