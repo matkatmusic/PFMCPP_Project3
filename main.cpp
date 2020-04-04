@@ -290,7 +290,7 @@ struct CarWash //2)
     1)  output level
     2)  delay
     3)  Eq
-    4)  maxtrix sends
+    4)  matrix sends
     5)  output patch
 3 things it can do:
     1)  sum all input signals sent to it
