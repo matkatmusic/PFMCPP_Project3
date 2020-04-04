@@ -173,143 +173,143 @@ struct CarWash //2)
 
 
 /*
-1)
+1)  car
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  doors
+    2)  wheels
+    3)  engine
+    4)  steering wheel
+    5)  fuel tank
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  start
+    2)  move
+    3)  turn
  */
 
 /*
-2)
+2)  dog
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  head
+    2)  legs
+    3)  tail
+    4)  ears
+    5)  mouth
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  walk
+    2)  bark
+    3)  eat
  */
 
 /*
-3)
+3)  computer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  keyboard
+    2)  screen
+    3)  CPU
+    4)  sound card
+    5)  mouse
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  boot
+    2)  play sound
+    3)  show stuff on the screen
  */
 
 /*
-4)
+4)  bird
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  wings
+    2)  legs
+    3)  beak
+    4)  tail
+    5)  eyes
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  fly
+    2)  walk
+    3)  sleep
  */
 
 /*
-5)
+5)  Input
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  assigned preamp socket in patch
+    2)  gain
+    3)  phantom power
+    4)  low cut filter
+    5)  -20dB pad
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  adjust input level
+    2)  power static microphones and active DIs
+    3)  send signal to input channel
  */
 
 /*
-6)
+6)  Eq
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  number of bands
+    2)  type of filter
+    3)  frequency
+    4)  Q or slope
+    5)  gain (cut or boost)
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  modify timber/tone of signal
+    2)  cascade several filter bands
+    3)  indicate clipping
  */
 
 /*
-7)
+7) compressor
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  threshold
+    2)  ratio
+    3)  knee
+    4)  attack time
+    5)  release time
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  detect if signal is above level
+    2)  reduce signal if above level
+    3)  progressively release signal reduction once signal is below threshold
  */
 
 /*
-8)
+8)  routing
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  assign to master channel
+    2)  assign to sub groups
+    3)  master pan
+    4)  aux sends level
+    5)  aux sends pan
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  send to master channel
+    2)  send to sub groups
+    3)  send to aux channels
  */
 
 /*
-9)
+9)  output channel
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  output level
+    2)  delay
+    3)  Eq
+    4)  maxtrix sends
+    5)  output patch
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  sum all input signals sent to it
+    2)  adjust level
+    3)  send summed signal to outputs
  */
 
 /*
-10)
+10) digital console
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) preamp
+    2) eq
+    3) compressor
+    4) routing
+    5) output channel
 3 things it can do:
-    1)
-    2)
-    3)
+    1) adjust level and tone
+    2) mix different inputs to the output channels
+    3) patch inputs and outputs
  */
 
 #include <iostream>
