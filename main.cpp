@@ -301,7 +301,7 @@ struct CarWash //2)
 /*
 10) digital console
 5 properties:
-    1) preamp
+    1) input
     2) eq
     3) compressor
     4) routing
