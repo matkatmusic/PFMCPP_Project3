@@ -89,42 +89,57 @@ struct MidiKeyboard
     bool usbCompatable = true;
     bool metalBody = false;
     
-    void playMidiNotes(int keys);
-    void changePitch(bool pitchWheel);
-    void controlMacros(bool modWheel);
+    void playMidiNotes(bool keyPressed);
+    void changePitch(bool pitchWheelUp);
+    void controlMacros(bool modWheelUp);
 
 };
 
-void MidiKeyboard::playMidiNotes(int keys)
+void MidiKeyboard::playMidiNotes(bool)
 {
   
 }
-void MidiKeyboard::changePitch(bool pitchWheel)
+void MidiKeyboard::changePitch(bool)
 {
 
 }
-void MidiKeyboard::controlMacros(bool modWheel)
+void MidiKeyboard::controlMacros(bool)
 {
 
 }
 /*
  */
 # include <string>
+
 struct Guitar
 {
     std::string manufacturer = "akai";
     bool neck = true;
-    int strings = 6;
+    bool steel = true;
     bool jack = true;
     bool cable = true;
 
-    void playNote(int strings);
-    void playChord(int strings);
-    void playMuted(bool neck, int strings);
+    void playNote(bool strum);
+    void playChord(int stringNumber, bool strum);
+    void playMuted(bool mute, bool strum);
 };
+
+void Guitar::playNote(bool)
+{
+
+}
+void Guitar::playChord(int, bool)
+{
+
+}
+void Guitar::playMuted(bool, bool)
+{
+
+}
 /*
  */
 # include <string> 
+
 struct MobilePhone
 {
     bool screen = true;
@@ -137,6 +152,19 @@ struct MobilePhone
     void answerCall(bool buttons, bool mic, bool speaker);
     void sendText(bool screen, bool buttons);
 };
+
+void MobilePhone::makeCall(bool, bool)
+{
+
+}
+void MobilePhone::answerCall(bool, bool, bool)
+{
+
+}
+void MobilePhone::sendText(bool, bool)
+{
+
+}
 /*
  */
 struct Game
@@ -151,6 +179,19 @@ struct Game
     void pause(bool objects);
     void exit();
 };
+
+void Game::play(int)
+{
+
+}
+void Game::pause(bool)
+{
+
+}
+void Game::exit()
+{
+
+}
 /*
  */
 struct Daw
@@ -165,6 +206,19 @@ struct Daw
     void recordAudio(int audioTracks, bool stereoInput);
     void outputAudio(bool stereoOutput);
 };
+
+void Daw::recordMidi(bool, int)
+{
+
+}
+void Daw::recordAudio(int, bool)
+{
+
+}
+void Daw::outputAudio(bool)
+{
+
+}
 /*
  */
 #include <string>
@@ -180,6 +234,19 @@ struct Laptop
     void produceOutput(bool screen, int memoryGb);
     void saveData(int hardDriveAvailableGb);
 };
+
+void Laptop::recieveInput(bool, std::string, int)
+{
+
+}
+void Laptop::produceOutput(bool, int)
+{
+
+}
+void Laptop::saveData(int)
+{
+
+}
 /*
  */
 struct Television
@@ -195,14 +262,24 @@ struct Television
     {
         int numberButtons = 10;
         bool onButton = true;
+        
+        void pressButton();
     };
 
-    void switchTvOn(RemoteControl);
+    void switchTvOn(bool onButton);
     void changeTvChannel(RemoteControl);
     void switchTvOff(RemoteControl);
 
     RemoteControl controlOn, controlOff;
 };
+
+void RemoteControl::switchTvOn(bool)
+{
+    if (onButton == true)
+    {
+      controlOn.pressButton()
+    }
+}
 /*
  */
 struct FishTank
