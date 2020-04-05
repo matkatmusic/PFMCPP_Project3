@@ -14,7 +14,50 @@ Create a branch named Part2
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Person
+{
+  int age;
+  int height;
+  float hairLength;
+  float GPA;
+  unsigned int SATScore;
+  int distanceTraveled;
 
+  void run(int howFast, bool startWithLeftFoot);
+
+  struct Foot
+  {
+      int numberOfSteps = 0;
+      int step = 5;
+
+      void stepForward()
+      {
+        numberOfSteps += 1;
+      }
+      int stepSize(int speed)
+      {
+        return speed * step;
+      }
+  };
+
+  Foot rightFoot;
+  Foot leftFoot;
+};
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+  if (startWithLeftFoot == true)
+  {
+      leftFoot.stepForward();
+      rightFoot.stepForward();
+  }
+  else
+  {
+      rightFoot.stepForward();
+      leftFoot.stepForward();
+  }
+  distanceTraveled += leftFoot.stepSize(howFast) + rightFoot.stepSize(howFast);
+}
 
 
 
@@ -37,17 +80,6 @@ send me a DM to check your pull request
 
 
 /*
- 1)midi keyboard
- 5 properties:
- 1)keys
- 2)pitch wheel
- 3)mod wheel
- 4)usb lead
- 5)body
- 3 things it can do:
- 1)plays midi notes
- 2)changes pitch
- 3)changes macros
  */
 struct MidiKeyboard
 {
@@ -60,19 +92,22 @@ struct MidiKeyboard
     void playMidiNotes(int keys);
     void changePitch(bool pitchWheel);
     void controlMacros(bool modWheel);
+
 };
+
+void MidiKeyboard::playMidiNotes(int keys)
+{
+  
+}
+void MidiKeyboard::changePitch(bool pitchWheel)
+{
+
+}
+void MidiKeyboard::controlMacros(bool modWheel)
+{
+
+}
 /*
- 2)guitar
- 5 properties:
- 1)manufacturer
- 2)neck
- 3)strings
- 4)jack
- 5)cable
- 3 things it can do:
- 1)play notes
- 2)play chords
- 3)play muted
  */
 # include <string>
 struct Guitar
@@ -88,17 +123,6 @@ struct Guitar
     void playMuted(bool neck, int strings);
 };
 /*
- 3)mobile phone
- 5 properties:
- 1)screen
- 2)buttons
- 3)mic
- 4)speaker
- 5)brand
- 3 things it can do:
- 1)make calls
- 2)recieve calls
- 3)send text messages
  */
 # include <string> 
 struct MobilePhone
@@ -114,17 +138,6 @@ struct MobilePhone
     void sendText(bool screen, bool buttons);
 };
 /*
- 4)game
- 5 properties:
- 1)players
- 2)levels
- 3)objects
- 4)enemies
- 5)allies
- 3 things it can do:
- 1)play
- 2)pause
- 3)exit
  */
 struct Game
 {
@@ -139,17 +152,6 @@ struct Game
     void exit();
 };
 /*
- 5)digital audio workstation/DAW
- 5 properties:
- 1)audio tracks
- 2)midi tracks
- 3)plugins
- 4)stereo output
- 5)stereo input
- 3 things it can do:
- 1)record midi
- 2)record audio
- 3)output audio
  */
 struct Daw
 {
@@ -164,17 +166,6 @@ struct Daw
     void outputAudio(bool stereoOutput);
 };
 /*
- 6)laptop
- 5 properties:
- 1)screen
- 2)keyboard
- 3)passwor
- 4)harddrive
- 5)ram
- 3 things it can do:
- 1)recieve input
- 2)produce output
- 3)save data
  */
 #include <string>
 struct Laptop
@@ -190,17 +181,6 @@ struct Laptop
     void saveData(int hardDriveAvailableGb);
 };
 /*
- 7)television
- 5 properties:
- 1)screen type lcd/oled ect
- 2)speaker type surround/stereo ect
- 3)dimensions
- 4)resolution
- 5)digital or analogue
- 3 things it can do:
- 1)dispaly television channels
- 2)change television channels
- 3)switch off
  */
 struct Television
 {
@@ -224,17 +204,6 @@ struct Television
     RemoteControl controlOn, controlOff;
 };
 /*
- 8)fish tank
- 5 properties:
- 1)water temp
- 2)dimesions
- 3)gallons
- 4)lighton
- 5)decor
- 3 things it can do:
- 1)switch light on
- 2)switch heater on
- 3)switch off
  */
 struct FishTank
 {
@@ -263,17 +232,6 @@ struct FishTank
     Decor tropical, marine;
 };
 /*
- 9)cinema
- 5 properties:
- 1)seats
- 2)screen
- 3)projector
- 4)film
- 5)lights
- 3 things it can do:
- 1)project film
- 2)turn lights down
- 3)seat customers
  */
 struct Cinema
 {
@@ -288,20 +246,6 @@ struct Cinema
     void sitCustomers(int seats, int freeSeats);
 };
 /*
- 10)producer
- 5 properties:
- These 5 properties should be UDTs that you defined above.
- this goes along with the instruction:
-    One of your 10 UDTs should only use UDTs for its member variable types.
- 1)Guitar 
- 2)Midi keyboard
- 3)computer
- 4)mobile phone
- 5)d a w
- 3 things it can do:
- 1)play instrument
- 2)record instrument
- 3)play recorded track
  */
 struct Producer
 {
