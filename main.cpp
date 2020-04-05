@@ -173,144 +173,175 @@ struct CarWash //2)
 
 
 /*
-1) Lizard
-5 properties:
-    1) Length
-    2) Weight
-    3) Color
-    4) Teeth
-    5) Scales
-3 things it can do:
-    1) Run
-    2) Eat
-    3) Flick Tongue
+1)
  */
 
-/*
-2) Audio Interface
-5 properties:
-    1) Inputs
-    2) Outputs
-    3) Sample rate
-    4) Preamps
-    5) USB Port
-3 things it can do:
-    1) Output audio
-    2) Receive Input
-    3) Convert digital data to analog signal
- */
+struct Lizard
+{
+    // 1) Length
+    // 2) Weight
+    // 3) Color
+    // 4) Teeth
+    // 5) Scales
+
+    // 1) Run
+    // 2) Eat
+    // 3) Flick Tongue
+};
+
 
 /*
-3) Electric Guitar
-5 properties:
-    1) Body
-    2) Neck
-    3) Bridge
-    4) Pickups
-    5) Electronics
-3 things it can do:
-    1) Output sound
-    2) Increase/decrease volume
-    3) Adjust tone
+2)
  */
 
-/*
-4) Tape Player
-5 properties:
-    1) Tape Slot
-    2) Control Buttons
-    3) Power Button
-    4) Speed Selector
-    5) Headphone jack
-3 things it can do:
-    1) Play tape
-    2) Rewind tape
-    3) Eject Tape
- */
+struct AudioInterface
+{
+    // 1) Inputs
+    // 2) Outputs
+    // 3) Sample rate
+    // 4) Preamps
+    // 5) USB Port
+
+    // 1) Output audio
+    // 2) Receive Input
+    // 3) Convert digital data to analog signal
+};
 
 /*
-5) Display
-5 properties:
-    1) Number of pixels
-    2) Brightness
-    3) Width
-    4) Height
-    5) Amount of power consumed
-3 things it can do:
-    1) Update pixels with image information
-    2) Clear pixels
-    3) Adjust brightness 
+3)
  */
 
-/*
-6) WiFi Adapter
-5 properties:
-    1) Frequency
-    2) Upload speed
-    3) Download speed
-    4) Channel
-    5) Amount of power consumed
-3 things it can do:
-    1) Connect to an access point
-    2) Upload data 
-    3) Download data
- */
+struct ElectricGuitar
+{
+    // 1) Body
+    // 2) Neck
+    // 3) Bridge
+    // 4) Pickups
+    // 5) Electronics
+
+    // 1) Output sound
+    // 2) Increase/decrease volume
+    // 3) Adjust tone
+};
 
 /*
-7) Audio ouptut system
-5 properties:
-    1) Volume level
-    2) Sample rate
-    3) Bit depth
-    4) number of output channels
-    5) amount of power consumed
-3 things it can do:
-    1) Output audio
-    2) Receive audio input
-    3) Adjust volume level
+4)
  */
 
-/*
-8) CPU
-5 properties:
-    1) Clock speed in MHz
-    2) Number of cores
-    3) Number of threads
-    4) Cache size in MB
-    5) amount of power consumed
-3 things it can do:
-    1) Fetch instructions from memory
-    2) Execute instructions
-    3) Write data to memory
- */
+struct TapePlayer
+{
+    // 1) Tape Slot
+    // 2) Control Buttons
+    // 3) Power Button
+    // 4) Speed Selector
+    // 5) Headphone jack
+
+    // 1) Play tape
+    // 2) Rewind tape
+    // 3) Eject Tape
+};
 
 /*
-9) RAM
-5 properties:
-    1) Capacity 
-    2) Clock speed
-    3) Bus width
-    4) Number of pins
-    5) Amount of power consumed
-3 things it can do:
-    1) Write data to memory
-    2) Clear memory
-    3) Send data to CPU
+5)
  */
 
+struct Display
+{
+    // 1) Number of pixels
+    // 2) Brightness
+    // 3) Width
+    // 4) Height
+    // 5) Amount of power consumed
+
+    // 1) Update pixels with image information
+    // 2) Clear pixels
+    // 3) Adjust brightness 
+};
+
 /*
-10) Portable Video Game System
-5 properties:
-    1) Display
-    2) WiFi Adapter
-    3) Audio output system
-    4) CPU
-    5) RAM
-3 things it can do:
-    1) Load game software
-    2) Show images on display
-    3) Play sound from speakers
+6)
  */
+
+struct WiFiAdapter
+{
+    // 1) Frequency
+    // 2) Upload speed
+    // 3) Download speed
+    // 4) Channel
+    // 5) Amount of power consumed
+
+    // 1) Connect to an access point
+    // 2) Upload data 
+    // 3) Download data
+};
+
+/*
+7)
+ */
+
+struct audioOutputSystem
+{
+    // 1) Volume level
+    // 2) Sample rate
+    // 3) Bit depth
+    // 4) number of output channels
+    // 5) amount of power consumed
+
+    // 1) Output audio
+    // 2) Receive audio input
+    // 3) Adjust volume level
+};
+
+/*
+8)
+ */
+
+struct CPU
+{
+    // 1) Clock speed in MHz
+    // 2) Number of cores
+    // 3) Number of threads
+    // 4) Cache size in MB
+    // 5) amount of power consumed
+
+    // 1) Fetch instructions from memory
+    // 2) Execute instructions
+    // 3) Write data to memory
+};
+
+/*
+9)
+ */
+
+struct RAM
+{
+    // 1) Capacity 
+    // 2) Clock speed
+    // 3) Bus width
+    // 4) Number of pins
+    // 5) Amount of power consumed
+
+    // 1) Write data to memory
+    // 2) Clear memory
+    // 3) Send data to CPU
+};
+
+/*
+10)
+ */
+
+struct PortableVideoGameSystem
+{
+    // 1) Display
+    // 2) WiFi Adapter
+    // 3) Audio output system
+    // 4) CPU
+    // 5) RAM
+
+    // 1) Load game software
+    // 2) Show images on display
+    // 3) Play sound from speakers
+};
 
 #include <iostream>
 int main()
