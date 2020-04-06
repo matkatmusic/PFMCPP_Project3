@@ -198,9 +198,9 @@ struct Daw
     bool stereoOutput = true;
     bool stereoInput = true;
 
-    void recordMidi(bool plugins, int midiTracks);
-    void recordAudio(int audioTracks, bool stereoInput);
-    void outputAudio(bool stereoOutput);
+    void recordMidi(bool, int);
+    void recordAudio(int, bool);
+    void outputAudio(bool);
 };
 void Daw::recordMidi(bool, int)
 {
@@ -312,11 +312,11 @@ struct FishTank
 
     Decor tropical, marine;
 };
-void FishTank::switchLightOn(bool lightOn)
+void FishTank::switchLightOn(bool)
 {
 
 }
-void FishTank::switchHeaterOn(float waterTempCelcius)
+void FishTank::switchHeaterOn(float)
 {
     if(waterTempCelcius > 25.0f)
     {
@@ -345,15 +345,15 @@ struct Cinema
     void setLightLevel(int lightLevel);
     void sitCustomers(int seats, int freeSeats);
 };
-void Cinema::playFilm(bool screenOn, bool projectorOn)
+void Cinema::playFilm(bool, bool)
 {
 
 }
-void Cinema::setLightLevel(int lightLevel)
+void Cinema::setLightLevel(int)
 {
 
 }
-void Cinema::sitCustomers(int seats, int freeSeats)
+void Cinema::sitCustomers(int, int)
 {
 
 }
