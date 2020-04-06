@@ -94,7 +94,6 @@ struct MidiKeyboard
     void controlMacros(bool modWheelUp);
 
 };
-
 void MidiKeyboard::playMidiNotes(bool)
 {
   
@@ -123,7 +122,6 @@ struct Guitar
     void playChord(int stringNumber, bool strum);
     void playMuted(bool mute, bool strum);
 };
-
 void Guitar::playNote(bool)
 {
 
@@ -152,7 +150,6 @@ struct MobilePhone
     void answerCall(bool buttons, bool mic, bool speaker);
     void sendText(bool screen, bool buttons);
 };
-
 void MobilePhone::makeCall(bool, bool)
 {
 
@@ -179,7 +176,6 @@ struct Game
     void pause(bool objects);
     void exit();
 };
-
 void Game::play(int)
 {
 
@@ -206,7 +202,6 @@ struct Daw
     void recordAudio(int audioTracks, bool stereoInput);
     void outputAudio(bool stereoOutput);
 };
-
 void Daw::recordMidi(bool, int)
 {
 
@@ -232,9 +227,8 @@ struct Laptop
 
     void recieveInput(bool keyboard, std::string password, int memoryGb);
     void produceOutput(bool screen, int memoryGb);
-    void saveData(int hardDriveAvailableGb);
+    float saveData(int hardDriveAvailableGb);
 };
-
 void Laptop::recieveInput(bool, std::string, int)
 {
 
@@ -243,9 +237,9 @@ void Laptop::produceOutput(bool, int)
 {
 
 }
-void Laptop::saveData(int)
+float Laptop::saveData(int)
 {
-
+    return(hardDriveAvailableGb);
 }
 /*
  */
@@ -257,28 +251,38 @@ struct Television
     int lengthCm = 80;
     float resolution = 4000;
     bool digital = true;
-
+    bool onButton = true;
     struct RemoteControl
     {
         int numberButtons = 10;
-        bool onButton = true;
+        
         
         void pressButton();
     };
-
     void switchTvOn(bool onButton);
     void changeTvChannel(RemoteControl);
     void switchTvOff(RemoteControl);
 
     RemoteControl controlOn, controlOff;
 };
-
-void RemoteControl::switchTvOn(bool)
+void Television::switchTvOn(bool)
 {
     if (onButton == true)
     {
-      controlOn.pressButton()
+      controlOn.pressButton();
     }
+    else
+    {
+      controlOff.pressButton();
+    }
+}
+void Television::changeTvChannel(Television::RemoteControl)
+{
+
+}
+void Television::switchTvOff(Television::RemoteControl)
+{
+
 }
 /*
  */
@@ -308,6 +312,25 @@ struct FishTank
 
     Decor tropical, marine;
 };
+void FishTank::switchLightOn(bool lightOn)
+{
+
+}
+void FishTank::switchHeaterOn(float waterTempCelcius)
+{
+    if(waterTempCelcius > 25.0f)
+    {
+      marine.cleanDecor();
+    }
+    else
+    {
+      tropical.cleanDecor();
+    }
+}
+void FishTank::feedFish()
+{
+
+}
 /*
  */
 struct Cinema
@@ -322,6 +345,18 @@ struct Cinema
     void setLightLevel(int lightLevel);
     void sitCustomers(int seats, int freeSeats);
 };
+void Cinema::playFilm(bool screenOn, bool projectorOn)
+{
+
+}
+void Cinema::setLightLevel(int lightLevel)
+{
+
+}
+void Cinema::sitCustomers(int seats, int freeSeats)
+{
+
+}
 /*
  */
 struct Producer
@@ -336,12 +371,16 @@ struct Producer
     void recordInstrument(Laptop, Daw);
     void playbackRecording(Laptop, Daw);
 };
- 
-
-#include <iostream>
-int main()
+void Producer::playInstrument(Guitar, MidiKeyboard)
 {
-    std::cout << "go to go!"<< std::endl;
+
 }
-    
+void Producer::recordInstrument(Laptop, Daw)
+{
+
+}
+void Producer::playbackRecording(Laptop, Daw)
+{
+
+}
 
