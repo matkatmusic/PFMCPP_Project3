@@ -31,13 +31,13 @@ struct Person
       int step = 5;
 
       void stepForward()
-      {
-        numberOfSteps += 1;
-      }
-      int stepSize(int speed)
-      {
-        return speed * step;
-      }
+        {
+          numberOfSteps += 1;
+        }
+          int stepSize(int speed)
+        {
+          return speed * step;
+        }
   };
 
   Foot rightFoot;
@@ -114,7 +114,7 @@ struct Guitar
 {
     std::string manufacturer = "akai";
     bool neck = true;
-    bool steel = true;
+    int strings = 6;
     bool jack = true;
     bool cable = true;
 
@@ -225,11 +225,11 @@ struct Laptop
     int hardDriveAvailableGb = 256;
     int memoryGb = 8; 
 
-    void recieveInput(bool keyboard, std::string password, int memoryGb);
+    void receiveInput(bool keyboard, std::string password, int memoryGb);
     void produceOutput(bool screen, int memoryGb);
     float saveData(int hardDriveAvailableGb);
 };
-void Laptop::recieveInput(bool, std::string, int)
+void Laptop::receiveInput(bool, std::string, int)
 {
 
 }
@@ -268,13 +268,13 @@ struct Television
 void Television::switchTvOn(bool)
 {
     if (onButton == true)
-    {
-      controlOn.pressButton();
-    }
-    else
-    {
-      controlOff.pressButton();
-    }
+      {
+        controlOn.pressButton();
+      }
+      else
+      {
+        controlOff.pressButton();
+      }
 }
 void Television::changeTvChannel(Television::RemoteControl)
 {
@@ -319,13 +319,13 @@ void FishTank::switchLightOn(bool)
 void FishTank::switchHeaterOn(float)
 {
     if(waterTempCelcius > 25.0f)
-    {
-      marine.cleanDecor();
-    }
-    else
-    {
-      tropical.cleanDecor();
-    }
+      {
+        marine.cleanDecor();
+      }
+      else
+      {
+        tropical.cleanDecor();
+      }
 }
 void FishTank::feedFish()
 {
