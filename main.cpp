@@ -186,6 +186,24 @@ struct CarWash //2)
     3)  turn
  */
 
+struct Car
+{
+//    1)  doors
+unsigned int numDoors = 5;
+//    2)  wheels
+unsigned int numWheels = 4;
+//    3)  engine
+unsigned int sizeOfEngine = 2500;
+//    4)  steering wheel
+bool LeftHandDriving = true;
+//    5)  fuel tank
+float volumeGasTank = 70.0f;
+
+//    1)  start
+//    2)  move
+//    3)  turn
+};
+
 /*
 2)  dog
 5 properties:
@@ -199,6 +217,29 @@ struct CarWash //2)
     2)  bark
     3)  eat
  */
+
+struct dogHead
+{
+    struct Colour{
+        int red   = 0;
+        int green = 0;
+        int blue  = 0;
+    };
+//  1)  eyes
+    int numEye = 2;
+//  2)  ears
+    int numEar = 2;
+//  3)  mouth
+    int numTeeth = 42;
+//  4)  nostrils
+    Colour nostrilColour = {255, 0, 255};
+//  5)  colourHair
+    Colour hairColour = {0, 255, 0};
+
+//  1)  walk
+//  2)  bark
+//  3)  eat
+};
 
 /*
 3)  computer
@@ -214,6 +255,30 @@ struct CarWash //2)
     3)  show stuff on the screen
  */
 
+struct Computer
+{
+    struct PixelSize {
+        int xSize = 1920;
+        int ySize = 1080;
+    };
+
+//  1)  keyboard
+    int numKeys = 103;
+//  2)  screen
+    PixelSize screenSize = {1920, 1080};
+//  3)  CPU
+    int numCores = 8;
+//  4)  sound card
+    int numChannels = 16;
+//  5)  mouse
+    bool laserMouse = true;
+
+
+//  1)  boot
+//  2)  play sound
+//  3)  show stuff on the screen
+};
+
 /*
 4)  bird
 5 properties:
@@ -227,6 +292,29 @@ struct CarWash //2)
     2)  walk
     3)  sleep
  */
+
+struct Bird
+{
+    struct Limb {
+        int numDigits = 5;
+        float lengthLimb = 20.0f;
+    };
+
+//  1)  wings
+    Limb wing = {0, 30.0f};
+//  2)  legs
+    Limb leg  = {5, 15.0f};
+//  3)  beak
+    float lengthBeak = 3.5f;
+//  4)  tail
+    int numTailFeather = 5;
+//  5)  eyes
+    bool sideFacingEyes = true;
+
+//  1)  fly
+//  2)  walk
+//  3)  sleep
+};
 
 /*
 5)  Input
@@ -242,10 +330,34 @@ struct CarWash //2)
     3)  send signal to input channel
  */
 
+struct InputChannel
+{
+    struct InputPad {
+        float attenuation = -20.0f;
+        bool engaged = false;
+    };
+
+//  1)  assigned preamp socket in patch
+    int preampSocket = 0;
+//  2)  gain
+    float gain = 10;
+//  3)  phantom power
+    bool phantomePower = false;
+//  4)  low cut filter
+    bool loCut = true;
+//  5)  -20dB pad
+    InputPad inputPad {-20.0f, true};
+
+
+//  1)  adjust input level
+//  2)  power static microphones and active DIs
+//  3)  send signal to input channel
+};
+
 /*
 6)  Eq
 5 properties:
-    1)  number of bands
+    1)  eq active
     2)  type of filter
     3)  frequency
     4)  Q or slope
@@ -255,6 +367,42 @@ struct CarWash //2)
     2)  cascade several filter bands
     3)  indicate clipping
  */
+
+struct Equaliser
+{
+    struct EqBand {
+    //  type of filter
+    int typeFilter = 0;
+    //  frequency
+    float frequency = 200.0f;
+    //  Q or slope
+    float qiu = 0.7f;
+    //gain (cut or boost)
+    float gain = 0.0f;
+    };
+
+//  1)  eq active
+    bool eqActive = true;
+//  2) band 1
+    EqBand eqBand_1 = {0, 100.0f, 0.7f, 0.0f};
+//  3) band 2
+    EqBand eqBand_2 = {1, 500.0f, 0.7f, 0.0f};
+//  4) band 3
+    EqBand eqBand_3 = {1, 1000.0f, 0.7f, 0.0f};
+//  5) band 4
+    EqBand eqBand_4 = {2, 5000.0f, 0.7f, 0.0f};
+
+// problably should be done with an Array: 
+    EqBand eqBands[4] = {{0, 100.0f, 0.7f, 0.0f}, 
+                         {1, 500.0f, 0.7f, 0.0f},
+                         {1, 1000.0f, 0.7f, 0.0f},
+                         {2, 5000.0f, 0.7f, 0.0f},
+                        };
+
+//  1)  modify timber/tone of signal
+//  2)  cascade several filter bands
+//  3)  indicate clipping
+};
 
 /*
 7) compressor
@@ -270,6 +418,24 @@ struct CarWash //2)
     3)  progressively release signal reduction once signal is below threshold
  */
 
+struct Compressor
+{
+//  1)  threshold
+    float threshold = -30.0f;
+//  2)  ratio
+    float ratio = 2.0f;
+//  3)  knee
+    int kneeCurve = 0;
+//  4)  attack time
+    int attackTime = 10;
+//  5)  release time
+    int releaseTime = 50;
+
+//  1)  detect if signal is above level
+//  2)  reduce signal if above level
+//  3)  progressively release signal reduction once signal is below threshold
+};
+
 /*
 8)  routing
 5 properties:
@@ -283,6 +449,25 @@ struct CarWash //2)
     2)  send to sub groups
     3)  send to aux channels
  */
+
+struct Routing
+{
+//  1)  assign to master channel
+    bool assign2master = true;
+//  2)  assign to sub groups
+    int assign2groups[8] = {0};
+//  3)  master pan
+    float panMaster = 0.5f;
+//  4)  aux sends level
+    float sendLevels[8] = {-60.0f};
+//  5)  aux sends pan
+    float sendPans[8] = {0.5f};
+
+
+//  1)  send to master channel
+//  2)  send to sub groups
+//  3)  send to aux channels
+};
 
 /*
 9)  output channel
@@ -298,10 +483,29 @@ struct CarWash //2)
     3)  send summed signal to outputs
  */
 
+struct OutputChannel
+{
+//  1)  output level
+    float outputLevel = -60.0f;
+//  2)  delay
+    unsigned int delaySamples = 0;
+//  3)  Eq
+    Equaliser outputEq; // default values from the struct?
+//  4)  matrix sends
+    float matrixSend[8] = {-60.0f};
+//  5)  output patch
+    int outputPatch = 0;
+
+
+//  1)  sum all input signals sent to it
+//  2)  adjust level
+//  3)  send summed signal to outputs
+};
+
 /*
 10) digital console
 5 properties:
-    1) input
+    1) input channel
     2) eq
     3) compressor
     4) routing
@@ -311,6 +515,24 @@ struct CarWash //2)
     2) mix different inputs to the output channels
     3) patch inputs and outputs
  */
+
+struct DigitalConsole
+{
+//  1) input channel
+    InputChannel inputChannels[32];
+//  2) eq
+    Equaliser inputEqualisers[32];
+//  3) compressor
+    Compressor inputCompressors[32];
+//  4) routing
+    Routing inputRouting[32];
+//  5) output channel
+    OutputChannel outputChannels[25];
+
+//  1) adjust level and tone
+//  2) mix different inputs to the output channels
+//  3) patch inputs and outputs
+};
 
 #include <iostream>
 int main()
