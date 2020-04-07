@@ -205,17 +205,17 @@ float volumeGasTank = 70.0f;
 };
 
 /*
-2)  dog
+2)  dog head
 5 properties:
-    1)  head
-    2)  legs
-    3)  tail
-    4)  ears
-    5)  mouth
+    1)  eyes
+    2)  ears
+    3)  teeth
+    4)  nose colour
+    5)  hair colour
 3 things it can do:
-    1)  walk
-    2)  bark
-    3)  eat
+    1)  bark
+    2)  eat
+    3)  lick
  */
 
 struct dogHead
@@ -236,9 +236,9 @@ struct dogHead
 //  5)  colourHair
     Colour hairColour = {0, 255, 0};
 
-//  1)  walk
-//  2)  bark
-//  3)  eat
+//  1)  bark
+//  2)  eat
+//  3)  lick
 };
 
 /*
