@@ -220,7 +220,8 @@ float volumeGasTank = 70.0f;
 
 struct dogHead
 {
-    struct Colour{
+    struct Colour
+    {
         int red   = 0;
         int green = 0;
         int blue  = 0;
@@ -257,7 +258,8 @@ struct dogHead
 
 struct Computer
 {
-    struct PixelSize {
+    struct PixelSize
+    {
         int xSize = 1920;
         int ySize = 1080;
     };
@@ -295,7 +297,8 @@ struct Computer
 
 struct Bird
 {
-    struct Limb {
+    struct Limb
+    {
         int numDigits = 5;
         float lengthLimb = 20.0f;
     };
@@ -332,7 +335,8 @@ struct Bird
 
 struct InputChannel
 {
-    struct InputPad {
+    struct InputPad
+    {
         float attenuation = -20.0f;
         bool engaged = false;
     };
@@ -370,13 +374,14 @@ struct InputChannel
 
 struct Equaliser
 {
-    struct EqBand {
+    struct EqBand
+    {
     //  type of filter
     int typeFilter = 0;
     //  frequency
     float frequency = 200.0f;
     //  Q or slope
-    float qiu = 0.7f;
+    float qiuSlope = 0.7f;
     //gain (cut or boost)
     float gain = 0.0f;
     };
@@ -391,13 +396,6 @@ struct Equaliser
     EqBand eqBand_3 = {1, 1000.0f, 0.7f, 0.0f};
 //  5) band 4
     EqBand eqBand_4 = {2, 5000.0f, 0.7f, 0.0f};
-
-// problably should be done with an Array: 
-    EqBand eqBands[4] = {{0, 100.0f, 0.7f, 0.0f}, 
-                         {1, 500.0f, 0.7f, 0.0f},
-                         {1, 1000.0f, 0.7f, 0.0f},
-                         {2, 5000.0f, 0.7f, 0.0f},
-                        };
 
 //  1)  modify timber/tone of signal
 //  2)  cascade several filter bands
@@ -452,16 +450,40 @@ struct Compressor
 
 struct Routing
 {
+    struct EightFloats
+    {
+        float v1 = 0.0f;
+        float v2 = 0.0f;
+        float v3 = 0.0f;
+        float v4 = 0.0f;
+        float v5 = 0.0f;
+        float v6 = 0.0f;
+        float v7 = 0.0f;
+        float v8 = 0.0f;
+    };
+
+    struct EightInts
+    {
+        int v1 = 0.0f;
+        int v2 = 0.0f;
+        int v3 = 0.0f;
+        int v4 = 0.0f;
+        int v5 = 0.0f;
+        int v6 = 0.0f;
+        int v7 = 0.0f;
+        int v8 = 0.0f;
+    };
+
 //  1)  assign to master channel
     bool assign2master = true;
 //  2)  assign to sub groups
-    int assign2groups[8] = {0};
+    EightInts assign2groups = {0, 0, 0, 0, 0, 0, 0, 0};
 //  3)  master pan
     float panMaster = 0.5f;
 //  4)  aux sends level
-    float sendLevels[8] = {-60.0f};
+    EightFloats sendLevels = {-60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f};
 //  5)  aux sends pan
-    float sendPans[8] = {0.5f};
+    EightFloats sendPans = {0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f};
 
 
 //  1)  send to master channel
@@ -485,6 +507,18 @@ struct Routing
 
 struct OutputChannel
 {
+    struct EightFloats
+    {
+        float v1 = 0.0f;
+        float v2 = 0.0f;
+        float v3 = 0.0f;
+        float v4 = 0.0f;
+        float v5 = 0.0f;
+        float v6 = 0.0f;
+        float v7 = 0.0f;
+        float v8 = 0.0f;
+    };
+
 //  1)  output level
     float outputLevel = -60.0f;
 //  2)  delay
@@ -492,7 +526,7 @@ struct OutputChannel
 //  3)  Eq
     Equaliser outputEq; // default values from the struct?
 //  4)  matrix sends
-    float matrixSend[8] = {-60.0f};
+    EightFloats matrixSend = {-60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f};
 //  5)  output patch
     int outputPatch = 0;
 
@@ -519,15 +553,15 @@ struct OutputChannel
 struct DigitalConsole
 {
 //  1) input channel
-    InputChannel inputChannels[32];
+    InputChannel inputChannels;
 //  2) eq
-    Equaliser inputEqualisers[32];
+    Equaliser inputEqualisers;
 //  3) compressor
-    Compressor inputCompressors[32];
+    Compressor inputCompressors;
 //  4) routing
-    Routing inputRouting[32];
+    Routing inputRouting;
 //  5) output channel
-    OutputChannel outputChannels[25];
+    OutputChannel outputChannels;
 
 //  1) adjust level and tone
 //  2) mix different inputs to the output channels
