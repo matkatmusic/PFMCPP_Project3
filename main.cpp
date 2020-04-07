@@ -16,47 +16,48 @@ Create a branch named Part2
  */
 struct Person
 {
-  int age;
-  int height;
-  float hairLength;
-  float GPA;
-  unsigned int SATScore;
-  int distanceTraveled;
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
-  void run(int howFast, bool startWithLeftFoot);
+    void run(int howFast, bool startWithLeftFoot);
 
-  struct Foot
-  {
-      int numberOfSteps = 0;
-      int step = 5;
+    struct Foot
+    {
+        int numberOfSteps = 0;
+        int step = 5;
 
-      void stepForward()
+        void stepForward()
         {
-          numberOfSteps += 1;
+            numberOfSteps += 1;
         }
-          int stepSize(int speed)
+        
+        int stepSize(int speed)
         {
-          return speed * step;
+            return speed * step;
         }
-  };
-
-  Foot rightFoot;
-  Foot leftFoot;
+    };
+    
+    Foot rightFoot;
+    Foot leftFoot;
 };
 
 void Person::run(int howFast, bool startWithLeftFoot)
 {
-  if (startWithLeftFoot == true)
-  {
-      leftFoot.stepForward();
-      rightFoot.stepForward();
-  }
-  else
-  {
-      rightFoot.stepForward();
-      leftFoot.stepForward();
-  }
-  distanceTraveled += leftFoot.stepSize(howFast) + rightFoot.stepSize(howFast);
+    if (startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize(howFast) + rightFoot.stepSize(howFast);
 }
 
 
@@ -92,16 +93,18 @@ struct MidiKeyboard
     void playMidiNotes(bool keyPressed);
     void changePitch(bool pitchWheelUp);
     void controlMacros(bool modWheelUp);
-
 };
+
 void MidiKeyboard::playMidiNotes(bool)
 {
   
 }
+
 void MidiKeyboard::changePitch(bool)
 {
 
 }
+
 void MidiKeyboard::controlMacros(bool)
 {
 
@@ -122,14 +125,17 @@ struct Guitar
     void playChord(int stringNumber, bool strum);
     void playMuted(bool mute, bool strum);
 };
+
 void Guitar::playNote(bool)
 {
 
 }
+
 void Guitar::playChord(int, bool)
 {
 
 }
+
 void Guitar::playMuted(bool, bool)
 {
 
@@ -150,14 +156,17 @@ struct MobilePhone
     void answerCall(bool buttons, bool mic, bool speaker);
     void sendText(bool screen, bool buttons);
 };
+
 void MobilePhone::makeCall(bool, bool)
 {
 
 }
+
 void MobilePhone::answerCall(bool, bool, bool)
 {
 
 }
+
 void MobilePhone::sendText(bool, bool)
 {
 
@@ -176,14 +185,17 @@ struct Game
     void pause(bool objects);
     void exit();
 };
+
 void Game::play(int)
 {
 
 }
+
 void Game::pause(bool)
 {
 
 }
+
 void Game::exit()
 {
 
@@ -202,14 +214,17 @@ struct Daw
     void recordAudio(int, bool);
     void outputAudio(bool);
 };
+
 void Daw::recordMidi(bool, int)
 {
 
 }
+
 void Daw::recordAudio(int, bool)
 {
 
 }
+
 void Daw::outputAudio(bool)
 {
 
@@ -229,14 +244,17 @@ struct Laptop
     void produceOutput(bool screen, int memoryGb);
     float saveData(int hardDriveAvailableGb);
 };
+
 void Laptop::receiveInput(bool, std::string, int)
 {
 
 }
+
 void Laptop::produceOutput(bool, int)
 {
 
 }
+
 float Laptop::saveData(int)
 {
     return(hardDriveAvailableGb);
@@ -252,34 +270,39 @@ struct Television
     float resolution = 4000;
     bool digital = true;
     bool onButton = true;
+    
     struct RemoteControl
     {
         int numberButtons = 10;
         
-        
         void pressButton();
     };
+    
     void switchTvOn(bool onButton);
     void changeTvChannel(RemoteControl);
     void switchTvOff(RemoteControl);
 
     RemoteControl controlOn, controlOff;
 };
+
 void Television::switchTvOn(bool)
 {
     if (onButton == true)
-      {
+    {
         controlOn.pressButton();
-      }
-      else
-      {
+    }
+      
+    else
+    {
         controlOff.pressButton();
-      }
+    }
 }
+
 void Television::changeTvChannel(Television::RemoteControl)
 {
 
 }
+
 void Television::switchTvOff(Television::RemoteControl)
 {
 
@@ -303,6 +326,7 @@ struct FishTank
         int numberOfCorals = 0;
         bool rocks = true;
         int numberOfRocks = 5;
+        
         void cleanDecor();
     };
 
@@ -312,21 +336,25 @@ struct FishTank
 
     Decor tropical, marine;
 };
+
 void FishTank::switchLightOn(bool)
 {
 
 }
+
 void FishTank::switchHeaterOn(float)
 {
     if(waterTempCelcius > 25.0f)
-      {
+    {
         marine.cleanDecor();
-      }
-      else
-      {
+    }
+      
+    else
+    {
         tropical.cleanDecor();
-      }
+    }
 }
+
 void FishTank::feedFish()
 {
 
@@ -345,14 +373,17 @@ struct Cinema
     void setLightLevel(int lightLevel);
     void sitCustomers(int seats, int freeSeats);
 };
+
 void Cinema::playFilm(bool, bool)
 {
 
 }
+
 void Cinema::setLightLevel(int)
 {
 
 }
+
 void Cinema::sitCustomers(int, int)
 {
 
@@ -371,14 +402,17 @@ struct Producer
     void recordInstrument(Laptop, Daw);
     void playbackRecording(Laptop, Daw);
 };
+
 void Producer::playInstrument(Guitar, MidiKeyboard)
 {
 
 }
+
 void Producer::recordInstrument(Laptop, Daw)
 {
 
 }
+
 void Producer::playbackRecording(Laptop, Daw)
 {
 
