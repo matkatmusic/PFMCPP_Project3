@@ -100,11 +100,11 @@ void MidiKeyboard::playMidiNotes(bool)
 {
     if(keyPressed == true)
     {
-        std::cout<<"key pressed"<<std::endl;  
+        std::cout << "key pressed" << std::endl;  
     }
     else
     {
-        std::cout<<"key not pressed"<<std::endl;
+        std::cout << "key not pressed" << std::endl;
     } 
 }
 
@@ -112,11 +112,11 @@ void MidiKeyboard::changePitch(bool)
 {
     if(pitchWheel == true)
     {
-        std::cout<<"pitch wheel"<<std::endl;
+        std::cout << "pitch wheel" << std::endl;
     }
     else
     {
-        std::cout<<"no pitch wheel"<<std::endl;
+        std::cout << "no pitch wheel" << std::endl;
     }
 }
 
@@ -124,11 +124,11 @@ void MidiKeyboard::controlMacros(bool)
 {
     if(modWheel == true)
     {
-        std::cout<<"mod wheel"<<std::endl;
+        std::cout << "mod wheel" << std::endl;
     }
     else
     {
-        std::cout<<"no mod wheel"<<std::endl;
+        std::cout << "no mod wheel" << std::endl;
     }
 }
 /*
@@ -204,17 +204,17 @@ struct MobilePhone
 
 void MobilePhone::makeCall(bool, bool)
 {
-    std::cout<<"Calling"<<std::endl;
+    std::cout << "Calling" << std::endl;
 }
 
 void MobilePhone::answerCall(bool, bool)
 {
-    std::cout<<"Answered Call"<<std::endl;
+    std::cout << "Answered Call" << std::endl;
 }
 
 void MobilePhone::sendText(bool, bool)
 {
-    std::cout<<"Text Sent"<<std::endl;
+    std::cout << "Text Sent" << std::endl;
 }
 /*
  */
@@ -235,22 +235,22 @@ void Game::play(int)
 {
     if(players == 1 || players == 2)
     {
-        std::cout<<"welcome player to the game"<<std::endl;
+        std::cout << "welcome player to the game" << std::endl;
     }
     else
     {
-        std::cout<<"choose players"<<std::endl;
+        std::cout << "choose players" << std::endl;
     }
 }
 
 void Game::pause(bool)
 {
-    std::cout<<"Game Paused"<<std::endl;
+    std::cout << "Game Paused" << std::endl;
 }
 
 void Game::exit()
 {
-    std::cout<<"Game Over"<<std::endl;
+    std::cout << "Game Over" << std::endl;
 }
 /*
  */
@@ -281,11 +281,11 @@ float Daw::outputAudio(bool)
 {
     if(stereoOutput == true)
     {
-        std::cout<<"audio playing"<<std::endl;
+        std::cout << "audio playing" << std::endl;
     }
     else
     {
-        std::cout<<"no audio"<<std::endl;
+        std::cout << "no audio" << std::endl;
     }
 }
 /*
@@ -308,15 +308,15 @@ void Laptop::receiveInput(bool, std::string, int)
 {
     if(password == "password")
     {
-        std::cout<<"welcome user"<<std::endl;
+        std::cout << "welcome user" << std::endl;
     }
     if(password != "password")
     {
-        std::cout<<"incorrect password"<<std::endl;
+        std::cout << "incorrect password" << std::endl;
     }
     else
     {
-        std::cout<<"enter password"<<std::endl;
+        std::cout << "enter password" << std::endl;
     }
 
 }
@@ -372,12 +372,12 @@ void Television::switchTvOn(bool)
 
 void changeTvChannel(int)      
 {
-    std::cout<<"T.V Channel"<<std::endl;     
+    std::cout << "T.V Channel" << std::endl;     
 }
 
 void Television::switchTvOff(Television::RemoteControl)
 {
-    std::cout<<"television off"<<std::endl;
+    std::cout << "television off" << std::endl;
 }
 /*
  */
@@ -412,7 +412,7 @@ struct FishTank
 
 void FishTank::switchLightOn(bool)
 {
-    std::cout<<"light is on"<<std::endl;
+    std::cout << "light is on" << std::endl;
 }
 
 void FishTank::switchHeaterOn(float)
@@ -432,15 +432,15 @@ void FishTank::feedFish(int)
 {
     if(gallons <= 50)
     {
-        std::cout<<"feed fish once a week"<<std::endl;  
+        std::cout << "feed fish once a week" << std::endl;  
     }
     if(gallons <= 100 || gallons > 50)
     {
-        std::cout<<"feed fish twice a week"<<std::endl;
+        std::cout << "feed fish twice a week" << std::endl;
     }
     else
     {
-        std::cout<<"feed fish at least three times a week"<<std::endl;
+        std::cout << "feed fish at least three times a week" << std::endl;
     }        
 }
 /*
@@ -462,28 +462,28 @@ void Cinema::playFilm(bool, bool)
 {
     if(screenOn == true || projectorOn == true)
     {
-        std::cout<<"Quiet Please Movie is On"<<std::endl;
+        std::cout << "Quiet Please Movie is On" << std::endl;
     }
     else
     {
-        std::cout<<"Movie will Start soon"<<std::endl;
-    }
+        std::cout << "Movie will Start soon" << std::endl;
+    } 
 }
 
 void Cinema::setLightLevel(int)
 {
     if(lightLevel == 0)
     {
-        std::cout<<"turn lights on"<<std::endl;
+        std::cout << "turn lights on" << std::endl;
     }
     if(lightLevel == 10)
     {
-        std::cout<<"turn lights down"<<std::endl;
+        std::cout << "turn lights down" << std::endl;
     }
     else
     {
         lightLevel = 5;
-        std::cout<<"mid lighting"<<std::endl;
+        std::cout << "mid lighting" << std::endl;
     }
 }
 
@@ -491,11 +491,11 @@ void Cinema::sitCustomers(int, int)
 {
     if(freeSeats < 1)
     {
-        std::cout<<"Sorry all seats are taken"<<std::endl;
+        std::cout << "Sorry all seats are taken" << std::endl;
     }
     else
     {
-        std::cout<<"Please select seat"<<std::endl;
+        std::cout << "Please select seat" << std::endl;
     }
 }
 /*
@@ -515,17 +515,17 @@ struct Producer
 
 void Producer::playInstrument(Guitar, MidiKeyboard)
 {
-    std::cout<<"producer playing instrument"<<std::endl;   
+    std::cout << "producer playing instrument" << std::endl;   
 }
 
 void Producer::recordInstrument(Laptop, Daw)
 {
-    std::cout<<"recording"<<std::endl;
+    std::cout << "recording" << std::endl;
 }
 
 void Producer::playbackRecording(Laptop, Daw)
 {
-    std::cout<<"playing"<<std::endl;
+    std::cout << "playing" << std::endl;
 }
 
 #include <iostream>
