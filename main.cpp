@@ -279,9 +279,8 @@ float Daw::outputAudio(bool)
 {
     if(stereoOutput == true)
     {
-        return(audioTracks);
+        return audioTracks;
     }
-    else
     {
         return 0;
     }
@@ -472,11 +471,11 @@ void Cinema::setLightLevel(int)
 {
     if(lightLevel == 0)
     {
-        std::cout << "turn lights on" << std::endl;
+        lightLevel = lightLevel + 1;
     }
-    if(lightLevel == 10)
+    else if(lightLevel == 10)
     {
-        std::cout << "turn lights down" << std::endl;
+        lightLevel = lightLevel - 1;
     }
     else
     {
