@@ -110,7 +110,7 @@ struct Chameleon
 	Color color;
 	int numberOfTeeth = 35;
 	int numberOfScales = 4800;
-	int numTongueFlicks = 0;
+	float totalTongueFlickDistance = 0;
 
 	float run(float speed, float timeToRun);
 	void changeColor(int newRedValue, int newGreenValue, int newBlueValue);
@@ -129,7 +129,7 @@ void Chameleon::changeColor(int newRedValue, int newGreenValue, int newBlueValue
 
 void Chameleon::flickTongue(float flickDistance, int numberOfFlicks)
 {
-	numTongueFlicks += numberOfFlicks;
+	totalTongueFlickDistance += numberOfFlicks * flickDistance;
 }
 
 /*
@@ -247,42 +247,42 @@ struct TapePlayer
 	float speedSelectorPosition = 2.0f;
 	float volumeSliderPosition = 1.0f;
 
-	void playTape(Tape& tape, float lengthToPlay);
-	void rewindTape(Tape& tape, float amountToRewind);
+	void playTape(Tape& tapeToPlay, float lengthToPlay);
+	void rewindTape(Tape& tapeToRewind, float amountToRewind);
 	bool recordToTape(Tape& tape, float amountToRecord);
 	bool resetTapeTimer();
 
 };
 
-void TapePlayer::playTape(TapePlayer::Tape& tape, float lengthToPlay)
+void TapePlayer::playTape(TapePlayer::Tape& tapeToPlay, float lengthToPlay)
 {
-	float startingPosition = tape.currentPosition;
+	float startingPosition = tapeToPlay.currentPosition;
 
-	tape.currentPosition -= lengthToPlay;
-	if(tape.currentPosition > tape.length) tape.currentPosition = tape.length;
+	tapeToPlay.currentPosition -= lengthToPlay;
+	if(tapeToPlay.currentPosition > tapeToPlay.length) tapeToPlay.currentPosition = tapeToPlay.length;
 
-	tapeTimerPosition += tape.currentPosition - startingPosition;
+	tapeTimerPosition += tapeToPlay.currentPosition - startingPosition;
 }
 
-void TapePlayer::rewindTape(TapePlayer::Tape& tape, float amountToRewind)
+void TapePlayer::rewindTape(TapePlayer::Tape& tapeToRewind, float amountToRewind)
 {
-	tape.currentPosition -= amountToRewind;
-	if(tape.currentPosition < 0.0f) tape.currentPosition = 0.0f;
+	tapeToRewind.currentPosition -= amountToRewind;
+	if(tapeToRewind.currentPosition < 0.0f) tapeToRewind.currentPosition = 0.0f;
 
 	tapeTimerPosition -= amountToRewind;
 	if(tapeTimerPosition < 0.0f) tapeTimerPosition = 0.0f;
 }
 
-bool TapePlayer::recordToTape(TapePlayer::Tape& tape, float amountToRecord)
+bool TapePlayer::recordToTape(TapePlayer::Tape& tapeToRecord, float amountToRecord)
 {
-	if(tape.currentPosition == tape.length) return false;
+	if(tapeToRecord.currentPosition == tapeToRecord.length) return false;
 
-	float startingPosition = tape.currentPosition;
+	float startingPosition = tapeToRecord.currentPosition;
 
-	tape.currentPosition -= amountToRecord;
-	if(tape.currentPosition > tape.length) tape.currentPosition = tape.length;
+	tapeToRecord.currentPosition -= amountToRecord;
+	if(tapeToRecord.currentPosition > tapeToRecord.length) tapeToRecord.currentPosition = tapeToRecord.length;
 
-	tapeTimerPosition += tape.currentPosition - startingPosition;
+	tapeTimerPosition += tapeToRecord.currentPosition - startingPosition;
 
 	return true;
 }
@@ -338,8 +338,8 @@ struct WiFiAdapter
 	float powerConsumedInWatts = 1.0f;
 
 	void connectToAccessPoint();
-	void uploadData(float amountToUpload);
-	void downloadData(float amountToDownload);
+	float uploadData(float amountToUpload);
+	float  downloadData(float amountToDownload);
 };
 
 void WiFiAdapter::connectToAccessPoint()
@@ -347,14 +347,14 @@ void WiFiAdapter::connectToAccessPoint()
 
 }
 
-void WiFiAdapter::uploadData(float amountToUpload)
+float WiFiAdapter::uploadData(float amountToUpload)
 {
-
+    return amountToUpload / uploadSpeed;
 }
 
-void WiFiAdapter::downloadData(float amountToDownload)
+float WiFiAdapter::downloadData(float amountToDownload)
 {
-
+    return amountToDownload / downloadSpeed;
 }
 
 /*
@@ -401,19 +401,19 @@ struct CPU
 	float cacheSizeInMB = 6.0f;
 	float powerConsumedInWatts = 10.0f;
 
-	void fetchInstructions(int threadNumber, int sizeOfInstructions);
-	void executeInstructions(int threadNumber);
+	void fetchInstructions();
+	float executeInstructions(float sizeOfInstructions);
 	void sendDataToRAM();
 };
 
-void CPU::fetchInstructions(int threadNumber, int sizeOfInstructions)
+void CPU::fetchInstructions()
 {
 
 }
 
-void CPU::executeInstructions(int threadNumber)
+float CPU::executeInstructions(float sizeOfInstructions)
 {
-
+    return sizeOfInstructions / clockSpeedInGHz;
 }
 
 void CPU::sendDataToRAM()
@@ -440,7 +440,9 @@ struct RAM
 
 bool RAM::writeToMemory(int dataToWrite)
 {
+    if(dataToWrite < capacityInMB) return true;
 
+    return false;
 }
 
 void RAM::clearMemory()
