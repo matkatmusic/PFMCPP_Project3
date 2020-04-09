@@ -279,11 +279,11 @@ float Daw::outputAudio(bool)
 {
     if(stereoOutput == true)
     {
-        std::cout << "audio playing" << std::endl;
+        return(audioTracks);
     }
     else
     {
-        std::cout << "no audio" << std::endl;
+        return 0;
     }
 }
 
