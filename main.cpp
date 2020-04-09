@@ -146,8 +146,6 @@ struct Guitar
     int playNote(bool strum);
     void playChord(int stringNumber, bool strum);
     void playMuted(bool mute, bool strum);
-    void strummingGuitar();
-    void strummingMuted();
 };
 
 int Guitar::playNote(bool)
@@ -166,7 +164,7 @@ void Guitar::playChord(int, bool)
 {
     if(strings > 0 || strum == true)
     {
-        strummingGuitar();
+        std::cout << "note played" << std::endl;
     }
     else
     {
@@ -178,7 +176,7 @@ void Guitar::playMuted(bool, bool)
 {
     if(strings > 0 || strum == true || muted == true)
     {
-        strummingMuted();    
+        std::cout << "muted note played" << std::endl;    
     }
     else
     {
@@ -288,8 +286,7 @@ float Daw::outputAudio(bool)
         std::cout << "no audio" << std::endl;
     }
 }
-/*
- */
+
 #include <string>
 struct Laptop
 {
@@ -354,19 +351,20 @@ struct Television
     void switchTvOn(bool onButton);
     void switchTvOff(RemoteControl);
 
-    RemoteControl controlOn, controlOff;
+    RemoteControl controlOff;
+    RemoteControl controlOn;
 };
 
 void Television::switchTvOn(bool)
 {
     if (onButton == true)
     {
-        controlOn.pressButton();
+        std::cout << "button pressed" << std::endl;
     }
       
     else
     {
-        controlOff.pressButton();
+        std::cout << "button ready" << std::endl;
     }
 }
 
@@ -419,12 +417,12 @@ void FishTank::switchHeaterOn(float)
 {
     if(waterTempCelcius > 25.0f)
     {
-        marine.cleanDecor();
+        std::cout << "Marine Aquarium" << std::endl;
     }
       
     else
     {
-        tropical.cleanDecor();
+        std::cout << "Tropical Aquarium" << std::endl;
     }
 }
 
@@ -533,3 +531,6 @@ int main()
 {
   std::cout<< "good to go !"<< std::endl;
 }
+
+
+
