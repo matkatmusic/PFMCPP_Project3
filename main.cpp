@@ -200,8 +200,12 @@ bool LeftHandDriving = true;
 float volumeGasTank = 70.0f;
 
 //    1)  start
+    bool startEngine (); // returns the stage of the engine, whether it's running or not.
 //    2)  move
+    void moveCar(Car car, float speed, float duration);
 //    3)  turn
+    void turnCar(Car car, float angleSteeringWheel, float speed, float duration);
+
 };
 
 /*
@@ -238,8 +242,12 @@ struct dogHead
     Colour hairColour = {0, 255, 0};
 
 //  1)  bark
+    void dogBark(int barkTimes, float loudBark);
 //  2)  eat
+    void dogEat(float quantityFood, float speed);
 //  3)  lick
+    void dogLick(int lickTimes ,float lengthTongue);
+
 };
 
 /*
@@ -277,8 +285,12 @@ struct Computer
 
 
 //  1)  boot
+    bool bootComputer(int startMode); //    returns if the computer is running
 //  2)  play sound
+    void playSound(float soundLevel, int frequency);
 //  3)  show stuff on the screen
+    void displayNumber(Computer myComputer, float number2Display);
+
 };
 
 /*
@@ -315,8 +327,12 @@ struct Bird
     bool sideFacingEyes = true;
 
 //  1)  fly
+    void birdFly(Bird bird, int flapsPerSecond);
 //  2)  walk
+    void birdWalk(bool startWithLeftLeg, float stepsPerSecond);
 //  3)  sleep
+    void birdSleep(bool sleepStanding, float sleepDuration);
+
 };
 
 /*
@@ -354,8 +370,11 @@ struct InputChannel
 
 
 //  1)  adjust input level
+    float setGain(InputChannel inputChan, float targetGain);    // returns the gains after setting it
 //  2)  power static microphones and active DIs
+    bool switchP48(InputChannel inputChan, bool p48active);     // returns the state of the phatom power
 //  3)  send signal to input channel
+    void getSignal(InputChannel inputChan);
 };
 
 /*
@@ -398,8 +417,12 @@ struct Equaliser
     EqBand eqBand_4 = {2, 5000.0f, 0.7f, 0.0f};
 
 //  1)  modify timber/tone of signal
+    bool setEqParams(int selectBand, EqBand newEqParam);    // returns true if the parameters were set correctly
 //  2)  cascade several filter bands
+    void cascadeEq(EqBand eqBand1, EqBand eqBand2, EqBand eqBand3, EqBand eqBand4);
 //  3)  indicate clipping
+    bool clipping(float signal);    // returns if there is clipping ie. abs(signal)>1.f
+
 };
 
 /*
@@ -430,8 +453,12 @@ struct Compressor
     int releaseTime = 50;
 
 //  1)  detect if signal is above level
+    bool aboveThreshold(float signal, float threshold); // in reality should be a signal vector and I'm not going to mention a pointer... I guess this is later as well...
 //  2)  reduce signal if above level
+    float compressSignal(float signal, float threshold, float ratio, int kneeCurve, int attackTime);
 //  3)  progressively release signal reduction once signal is below threshold
+    float releaseSignal(float signal, Compressor compressor); // Can I just pass along all parameters with a struct instead?
+
 };
 
 /*
@@ -487,8 +514,12 @@ struct Routing
 
 
 //  1)  send to master channel
+    float send2Master(float signal, bool assign2master);
 //  2)  send to sub groups
+    void send2groups(float signal, EightInts assign2groups);
 //  3)  send to aux channels
+    void send2auxes(float signal, EightFloats sendLevels);
+    
 };
 
 /*
@@ -532,8 +563,12 @@ struct OutputChannel
 
 
 //  1)  sum all input signals sent to it
+    void sumSignals(float signal1, float signal2, float signal3); // etc
 //  2)  adjust level
+    float adjustOutputLevel(float signal, float outputLevel);
 //  3)  send summed signal to outputs
+    void send2output(float signal, int outputPatch);
+
 };
 
 /*
@@ -564,8 +599,12 @@ struct DigitalConsole
     OutputChannel outputChannels;
 
 //  1) adjust level and tone
+    float adjustLevelAndEq(float signal, InputChannel inputSettings, Equaliser eqSettings);
 //  2) mix different inputs to the output channels
+    void send2GroupsAndAuxes(float signal, Routing inputSends);
 //  3) patch inputs and outputs
+    void assignPatch(bool isInput, int channelNumber, int socketNumber);
+
 };
 
 #include <iostream>
