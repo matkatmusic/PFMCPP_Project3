@@ -173,59 +173,59 @@ struct CarWash //2)
 
 
 /*
-1)
+1)Audio Interface
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)speaker output
+    2)mic input
+    3)line input
+    4)gain
+    5)phantom power
 3 things it can do:
-    1)
-    2)
-    3)
+    1)amplify sound
+    2)convert analog to digital signal
+    3)invert phase
  */
 
 /*
-2)
+2)Printer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)Paper tray
+    2)Display
+    3)Buttons
+    4)Ink tank
+    5)Scanner
 3 things it can do:
-    1)
-    2)
-    3)
+    1)Scan documents
+    2)Print documents
+    3)Copy documents
  */
 
 /*
-3)
+3)Dog
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)legs
+    2)fur
+    3)eyes
+    4)nose
+    5)tail
 3 things it can do:
-    1)
-    2)
-    3)
+    1)bark
+    2)eat
+    3)jump
  */
 
 /*
-4)
+4)Monitor
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)woofer
+    2)tweeter
+    3)rca input
+    4)line input
+    5)aux input
 3 things it can do:
-    1)
-    2)
-    3)
+    1)Receives signal
+    2)Play sound
+    3)Change volume
  */
 
 /*
