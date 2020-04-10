@@ -189,18 +189,18 @@ struct CarWash //2)
 struct Car
 {
 //    1)  doors
-unsigned int numDoors = 5;
+    unsigned int numDoors = 5;
 //    2)  wheels
-unsigned int numWheels = 4;
+    unsigned int numWheels = 4;
 //    3)  engine
-unsigned int sizeOfEngine = 2500;
+    unsigned int sizeOfEngine = 2500;
 //    4)  steering wheel
-bool LeftHandDriving = true;
+    bool LeftHandDriving = true;
 //    5)  fuel tank
-float volumeGasTank = 70.0f;
+    float volumeGasTank = 70.0f;
 
 //    1)  start
-    bool startEngine (); // returns the stage of the engine, whether it's running or not.
+    bool startEngine(); // returns the stage of the engine, whether it's running or not.
 //    2)  move
     void moveCar(Car car, float speed, float duration);
 //    3)  turn
@@ -222,13 +222,13 @@ float volumeGasTank = 70.0f;
     3)  lick
  */
 
-struct dogHead
+struct DogHead
 {
     struct Colour
     {
-        int red   = 0;
-        int green = 0;
-        int blue  = 0;
+        int red   = 0,
+            green = 0,
+            blue  = 0;
     };
 //  1)  eyes
     int numEye = 2;
@@ -246,7 +246,7 @@ struct dogHead
 //  2)  eat
     void dogEat(float quantityFood, float speed);
 //  3)  lick
-    void dogLick(int lickTimes ,float lengthTongue);
+    void dogLick(int lickTimes, float lengthTongue);
 
 };
 
@@ -268,8 +268,8 @@ struct Computer
 {
     struct PixelSize
     {
-        int xSize = 1920;
-        int ySize = 1080;
+        int xSize = 1920,
+            ySize = 1080;
     };
 
 //  1)  keyboard
@@ -461,6 +461,30 @@ struct Compressor
 
 };
 
+struct EightFloats
+{
+    float v1 = 0.0f,
+          v2 = 0.0f,
+          v3 = 0.0f,
+          v4 = 0.0f,
+          v5 = 0.0f,
+          v6 = 0.0f,
+          v7 = 0.0f,
+          v8 = 0.0f;
+};
+
+struct EightInts
+{
+    int v1 = 0.0f,
+        v2 = 0.0f,
+        v3 = 0.0f,
+        v4 = 0.0f,
+        v5 = 0.0f,
+        v6 = 0.0f,
+        v7 = 0.0f,
+        v8 = 0.0f;
+};
+
 /*
 8)  routing
 5 properties:
@@ -477,30 +501,6 @@ struct Compressor
 
 struct Routing
 {
-    struct EightFloats
-    {
-        float v1 = 0.0f;
-        float v2 = 0.0f;
-        float v3 = 0.0f;
-        float v4 = 0.0f;
-        float v5 = 0.0f;
-        float v6 = 0.0f;
-        float v7 = 0.0f;
-        float v8 = 0.0f;
-    };
-
-    struct EightInts
-    {
-        int v1 = 0.0f;
-        int v2 = 0.0f;
-        int v3 = 0.0f;
-        int v4 = 0.0f;
-        int v5 = 0.0f;
-        int v6 = 0.0f;
-        int v7 = 0.0f;
-        int v8 = 0.0f;
-    };
-
 //  1)  assign to master channel
     bool assign2master = true;
 //  2)  assign to sub groups
@@ -538,18 +538,6 @@ struct Routing
 
 struct OutputChannel
 {
-    struct EightFloats
-    {
-        float v1 = 0.0f;
-        float v2 = 0.0f;
-        float v3 = 0.0f;
-        float v4 = 0.0f;
-        float v5 = 0.0f;
-        float v6 = 0.0f;
-        float v7 = 0.0f;
-        float v8 = 0.0f;
-    };
-
 //  1)  output level
     float outputLevel = -60.0f;
 //  2)  delay
