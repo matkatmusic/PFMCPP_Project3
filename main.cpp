@@ -96,8 +96,10 @@ struct MidiKeyboard
     void controlMacros(bool modWheel);
 };
 
-void MidiKeyboard::playMidiNotes(bool)
+void MidiKeyboard::playMidiNotes(bool press)
 {
+    keyPressed = press;
+
     if(keyPressed == true)
     {
         std::cout << "key pressed" << std::endl;  
@@ -108,8 +110,10 @@ void MidiKeyboard::playMidiNotes(bool)
     } 
 }
 
-void MidiKeyboard::changePitch(bool)
+void MidiKeyboard::changePitch(bool up)
 {
+    pitchWheel = up;
+    
     if(pitchWheel == true)
     {
         std::cout << "pitch wheel" << std::endl;
@@ -120,8 +124,10 @@ void MidiKeyboard::changePitch(bool)
     }
 }
 
-void MidiKeyboard::controlMacros(bool)
+void MidiKeyboard::controlMacros(bool macro)
 {
+    modWheel = macro;
+
     if(modWheel == true)
     {
         std::cout << "mod wheel" << std::endl;
@@ -144,12 +150,14 @@ struct Guitar
     bool muted;
 
     int playNote(bool strum);
-    void playChord(int stringNumber, bool strum);
-    void playMuted(bool mute, bool strum);
+    void playChord(int stringNumber, bool strum); 
+    void playMuted(bool muted, bool strum);
 };
 
-int Guitar::playNote(bool)
+int Guitar::playNote(bool strumming) 
 {
+    strum = strumming;
+    
     if(strings > 0)
     {
         return strings;
@@ -160,9 +168,12 @@ int Guitar::playNote(bool)
     }
 }
 
-void Guitar::playChord(int, bool)
+void Guitar::playChord(int stringNumber, bool strummingChord) 
 {
-    if(strings > 0 || strum == true)
+    strings = stringNumber; 
+    strum = strummingChord; 
+
+    if(strings > 0 || strum == true) 
     {
         std::cout << "note played" << std::endl;
     }
@@ -172,8 +183,11 @@ void Guitar::playChord(int, bool)
     }   
 }
 
-void Guitar::playMuted(bool, bool)
+void Guitar::playMuted(bool muteHeld, bool strumming) 
 {
+    muted = muteHeld;
+    strum = strumming;
+    
     if(strings > 0 || strum == true || muted == true)
     {
         std::cout << "muted note played" << std::endl;    
@@ -200,18 +214,27 @@ struct MobilePhone
     void sendText(bool screen, bool buttons);
 };
 
-void MobilePhone::makeCall(bool, bool)
+void MobilePhone::makeCall(bool button, bool voice)
 {
+    buttons = button;
+    mic = voice;
+
     std::cout << "Calling" << std::endl;
 }
 
-void MobilePhone::answerCall(bool, bool)
+void MobilePhone::answerCall(bool button, bool audio)
 {
+    buttons = button;
+    mic = audio;
+
     std::cout << "Answered Call" << std::endl;
 }
 
-void MobilePhone::sendText(bool, bool)
+void MobilePhone::sendText(bool image, bool text)
 {
+    screen = image;
+    buttons = text;
+
     std::cout << "Text Sent" << std::endl;
 }
 /*
@@ -229,8 +252,10 @@ struct Game
     void exit();
 };
 
-void Game::play(int)
+void Game::play(int character)
 {
+    players = character;
+
     if(players == 1 || players == 2)
     {
         std::cout << "welcome player to the game" << std::endl;
@@ -241,8 +266,10 @@ void Game::play(int)
     }
 }
 
-void Game::pause(bool)
+void Game::pause(bool items)
 {
+    objects = items;
+
     std::cout << "Game Paused" << std::endl;
 }
 
@@ -265,18 +292,26 @@ struct Daw
     float outputAudio(bool stereoOutput);
 };
 
-float Daw::recordMidi(bool, int)
+float Daw::recordMidi(bool presentPlugin , int midi)
 {
+    plugins = presentPlugin;
+    midiTracks = midi;
+
     return(midiTracks);
 }
 
-float Daw::recordAudio(int, bool)
+float Daw::recordAudio(int audio, bool stereo)
 {
+    audioTracks = audio;
+    stereoInput = stereo;
+
     return(stereoOutput);   
 }
 
-float Daw::outputAudio(bool)
+float Daw::outputAudio(bool output)
 {
+    stereoOutput = output;
+
     if(stereoOutput == true)
     {
         return audioTracks;
@@ -289,19 +324,23 @@ float Daw::outputAudio(bool)
 #include <string>
 struct Laptop
 {
-    int screenresolution = 4000;
+    int screenResolution = 4000;
     bool keyboard = true;
     std::string password = "password";
     int hardDriveAvailableGb = 256;
     int memoryGb = 8; 
 
     void receiveInput(bool keyboard, std::string password, int memoryGb);
-    float produceOutput(bool screen, int memoryGb);
+    float produceOutput(bool screenResolution, int memoryGb);
     float saveData(int hardDriveAvailableGb);
 };
 
-void Laptop::receiveInput(bool, std::string, int)
+void Laptop::receiveInput(bool keyboardInput, std::string user, int RAM)
 {
+    keyboard = keyboardInput;
+    password = user;
+    memoryGb = RAM;
+
     if(password == "password")
     {
         std::cout << "welcome user" << std::endl;
@@ -317,13 +356,18 @@ void Laptop::receiveInput(bool, std::string, int)
 
 }
 
-float Laptop::produceOutput(bool, int)
+float Laptop::produceOutput(bool graphics, int RAM)
 {
+    screenResolution = graphics;
+    memoryGb = RAM;
+
     return(memoryGb);
 }
 
-float Laptop::saveData(int)
-{
+float Laptop::saveData(int storage)
+{ 
+    hardDriveAvailableGb = storage;
+
     return(hardDriveAvailableGb);
 }
 /*
@@ -341,21 +385,23 @@ struct Television
         int numberButtons = 10;
         bool channelUp;
         bool channelDown;
-        int channel = 1;
+        int TvChannel = 1;
         
         void pressButton();
-        void changeTvChannel(int channel);
+        void changeTvChannel(int TvChannel);
     };
     
     void switchTvOn(bool onButton);
-    void switchTvOff(RemoteControl);
+    void switchTvOff(bool onButton);
 
     RemoteControl controlOff;
     RemoteControl controlOn;
 };
 
-void Television::switchTvOn(bool)
+void Television::switchTvOn(bool status)
 {
+    onButton = status;
+
     if (onButton == true)
     {
         std::cout << "button pressed" << std::endl;
@@ -367,14 +413,21 @@ void Television::switchTvOn(bool)
     }
 }
 
-void changeTvChannel(int)      
+void changeTvChannel(int frequency)
 {
+    TvChannel = frequency;
+
     std::cout << "T.V Channel" << std::endl;     
 }
 
-void Television::switchTvOff(Television::RemoteControl)
+void Television::switchTvOff(bool status)
 {
-    std::cout << "television off" << std::endl;
+    onButton = status;
+
+    if (onButton == false)
+    {
+        std::cout << "television off" << std::endl;
+    }
 }
 /*
  */
@@ -407,13 +460,17 @@ struct FishTank
     Decor tropical, marine;
 };
 
-void FishTank::switchLightOn(bool)
+void FishTank::switchLightOn(bool lighting)
 {
+    lightOn = lighting;
+
     std::cout << "light is on" << std::endl;
 }
 
-void FishTank::switchHeaterOn(float)
+void FishTank::switchHeaterOn(float waterTemprature)
 {
+    waterTempCelcius = waterTemprature;
+
     if(waterTempCelcius > 25.0f)
     {
         std::cout << "Marine Aquarium" << std::endl;
@@ -425,8 +482,10 @@ void FishTank::switchHeaterOn(float)
     }
 }
 
-void FishTank::feedFish(int)
+void FishTank::feedFish(int aquariumSize)
 {
+    gallons = aquariumSize;
+
     if(gallons <= 50)
     {
         std::cout << "feed fish once a week" << std::endl;  
@@ -455,8 +514,11 @@ struct Cinema
     void sitCustomers(int seats, int freeSeats);
 };
 
-void Cinema::playFilm(bool, bool)
+void Cinema::playFilm(bool screenPlaying, bool projectorPlaying)
 {
+    screenOn = screenPlaying;
+    projectorOn = projectorPlaying;
+
     if(screenOn == true || projectorOn == true)
     {
         std::cout << "Quiet Please Movie is On" << std::endl;
@@ -467,8 +529,10 @@ void Cinema::playFilm(bool, bool)
     } 
 }
 
-int Cinema::setLightLevel(int)
+int Cinema::setLightLevel(int mood)
 {
+    lightLevel = mood;
+
     if(lightLevel == 0)
     {
         return lightLevel + 1;
@@ -483,8 +547,11 @@ int Cinema::setLightLevel(int)
     }
 }
 
-void Cinema::sitCustomers(int, int)
+void Cinema::sitCustomers(int seatNumber, int seatsAvailable)
 {
+    seats = seatNumber;
+    freeSeats = seatsAvailable;
+
     if(freeSeats < 1)
     {
         std::cout << "Sorry all seats are taken" << std::endl;
@@ -504,22 +571,22 @@ struct Producer
     MobilePhone producersPhone;
     Daw producersDaw;
 
-    void playInstrument(Guitar, MidiKeyboard);
-    void recordInstrument(Laptop, Daw);
-    void playbackRecording(Laptop, Daw);
+    void playInstrument();
+    void recordInstrument();
+    void playbackRecording();
 };
 
-void Producer::playInstrument(Guitar, MidiKeyboard)
+void Producer::playInstrument()
 {
     std::cout << "producer playing instrument" << std::endl;   
 }
 
-void Producer::recordInstrument(Laptop, Daw)
+void Producer::recordInstrument() 
 {
     std::cout << "recording" << std::endl;
 }
 
-void Producer::playbackRecording(Laptop, Daw)
+void Producer::playbackRecording()
 {
     std::cout << "playing" << std::endl;
 }
