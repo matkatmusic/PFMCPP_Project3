@@ -377,7 +377,7 @@ struct Television
     bool flatScreen = true;
     bool surroundSound = true;
     int heightCm = 60;
-    int lengthCm = 80;
+    int tvChannel = 1;
     bool onButton = true;
     
     struct RemoteControl
@@ -385,14 +385,13 @@ struct Television
         int numberButtons = 10;
         bool channelUp;
         bool channelDown;
-        int TvChannel = 1;
         
         void pressButton();
-        void changeTvChannel(int TvChannel);
     };
     
     void switchTvOn(bool onButton);
     void switchTvOff(bool onButton);
+    int changeTvChannel(int tvChannel);
 
     RemoteControl controlOff;
     RemoteControl controlOn;
@@ -413,11 +412,13 @@ void Television::switchTvOn(bool status)
     }
 }
 
-void changeTvChannel(int frequency)
+int Television::changeTvChannel(int frequency)
 {
-    TvChannel = frequency;
-
-    std::cout << "T.V Channel" << std::endl;     
+    tvChannel = frequency; 
+    
+    std::cout << "T.V Channel" << std::endl;
+    
+    return tvChannel; 
 }
 
 void Television::switchTvOff(bool status)
@@ -594,7 +595,7 @@ void Producer::playbackRecording()
 #include <iostream>
 int main()
 {
-  std::cout<< "good to go !"<< std::endl;
+    std::cout << "good to go !" << std::endl;
 }
 
 
