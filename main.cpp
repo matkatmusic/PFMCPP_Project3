@@ -451,7 +451,7 @@ struct Cinema
     int lightLevel = 10;
 
     void playFilm(bool screenOn,bool projectorOn);
-    void setLightLevel(int lightLevel);
+    int setLightLevel(int lightLevel);
     void sitCustomers(int seats, int freeSeats);
 };
 
@@ -467,20 +467,19 @@ void Cinema::playFilm(bool, bool)
     } 
 }
 
-void Cinema::setLightLevel(int)
+int Cinema::setLightLevel(int)
 {
     if(lightLevel == 0)
     {
-        lightLevel = lightLevel + 1;
+        return lightLevel + 1;
     }
     else if(lightLevel == 10)
     {
-        lightLevel = lightLevel - 1;
+        return lightLevel - 1;
     }
     else
     {
-        lightLevel = 5;
-        std::cout << "mid lighting" << std::endl;
+        return lightLevel = 5;
     }
 }
 
