@@ -187,17 +187,17 @@ struct CarWash //2)
  */
 
 /*
-2)Printer
+2)Tree
 5 properties:
-    1)Paper tray
-    2)Display
-    3)Buttons
-    4)Ink tank
-    5)Scanner
+    1)leaves
+    2)seeds
+    3)water
+    4)flowers
+    5)energy
 3 things it can do:
-    1)Scan documents
-    2)Print documents
-    3)Copy documents
+    1)photosyntesis
+    2)releases oxygen
+    3)produces fruits
  */
 
 /*
@@ -299,17 +299,17 @@ struct CarWash //2)
  */
 
 /*
-10)
+10)Printer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)paper tray
+    2)display
+    3)buttons
+    4)onk tank
+    5)scanner
 3 things it can do:
-    1)
-    2)
-    3)
+    1)scan documents
+    2)print documents
+    3)copy documents
  */
 
 #include <iostream>
