@@ -229,73 +229,73 @@ struct CarWash //2)
  */
 
 /*
-5)
+5)paper tray
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)plastic
+    2)rigid body
+    3)edge guides
+    4)sheet feeder
+    5)input tray shield
 3 things it can do:
-    1)
-    2)
-    3)
+    1)hold paper
+    2)opens
+    3)counts amount of paper
  */
 
 /*
-6)
+6)display
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)pixels
+    2)plasma
+    3)sensitivity
+    4)touch integrated
+    5)power circuit
 3 things it can do:
-    1)
-    2)
-    3)
+    1)show menu
+    2)show error
+    3)change option
  */
 
 /*
-7)
+7)print heads
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)print heads latch
+    2)chip
+    3)ink chamber
+    4)filter
+    5)screws
 3 things it can do:
-    1)
-    2)
-    3)
+    1)receives instructions
+    2)prints
+    3)calibrates ink noozles
  */
 
 /*
-8)
+8)ink tank
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)container
+    2)ink color
+    3)hemetic
+    4)ink level
+    5)tank cap
 3 things it can do:
-    1)
-    2)
-    3)
+    1)checks quality of ink
+    2)counts amount of ink
+    3)warns if ink is low
  */
 
 /*
-9)
+9)scanner
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)document table
+    2)document cover
+    3)carriage
+    4)lamp
+    5)lid
 3 things it can do:
-    1)
-    2)
-    3)
+    1)scan document
+    2)makes copies
+    3)re-size documents
  */
 
 /*
@@ -303,8 +303,8 @@ struct CarWash //2)
 5 properties:
     1)paper tray
     2)display
-    3)buttons
-    4)onk tank
+    3)print heads
+    4)ink tank
     5)scanner
 3 things it can do:
     1)scan documents
