@@ -14,10 +14,21 @@ Create a branch named Part2
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Person
+{
+    int lengthOfStep;
 
+    void stepForward();
+    int stepSize();
+};
 
+void Person::stepForward() {
+    // take a step forward
+}
 
-
+int Person::stepSize() {
+    return lengthOfStep;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -35,6 +46,8 @@ send me a DM to check your pull request
  Wait for my code review.
  */
 
+template<typename ...T>
+void ignoreUnused(T&&...) { }
 
 
 /*
@@ -64,6 +77,25 @@ struct Car
     void turnCar(Car car, float angleSteeringWheel, float speed, float duration);
 
 };
+
+bool Car::startEngine()
+{
+    // start engine
+    bool carRunning = 1;
+    return(carRunning);
+}
+
+void Car::moveCar(Car car, float speed, float duration)
+{
+    // drive car at speed for duration.
+    ignoreUnused(car, speed, duration);
+}
+
+void Car::turnCar(Car car, float angleSteeringWheel, float speed, float duration)
+{
+    // turn car with sterring wheel angled at angleSteeringWheel at speed for duration.
+    ignoreUnused(car, angleSteeringWheel, duration);
+}
 
 /*
 2)  dog head
@@ -100,6 +132,24 @@ struct DogHead
 
 };
 
+void DogHead::dogBark(int barkTimes, float loudBark)
+{
+    // bark barkTimes times as loud as loudBark
+    ignoreUnused(barkTimes, loudBark);
+}
+
+void DogHead::dogEat(float quantityFood, float speed)
+{
+    // gobble quantityFood at speed
+    ignoreUnused(quantityFood, speed);
+}
+
+void DogHead::dogLick(int lickTimes, float lengthTongue)
+{
+    // lick lickTimes times with this much lengthTongue of tongue
+    ignoreUnused(lickTimes, lengthTongue);
+}
+
 /*
 3)  computer
 5 properties:
@@ -134,6 +184,26 @@ struct Computer
 
 };
 
+bool Computer::bootComputer(int startMode)
+{
+    // boot computer in startMode mode
+    bool computerRunning = 1;
+    ignoreUnused(startMode);
+    return(computerRunning);
+}
+
+void Computer::playSound(float soundLevel, int frequency)
+{
+    // play sound at soundLevel level and with a pitch of frequency
+    ignoreUnused(soundLevel, frequency);
+}
+
+void Computer::displayNumber(Computer myComputer, float number2Display)
+{
+    // display number number2Display on myComputer screen
+    ignoreUnused(myComputer, number2Display);
+}
+
 /*
 4)  bird
 5 properties:
@@ -163,10 +233,28 @@ struct Bird
     bool sideFacingEyes = true;
 
     void birdFly(Bird bird, int flapsPerSecond);
-    void birdWalk(bool startWithLeftLeg, float stepsPerSecond);
-    void birdSleep(bool sleepStanding, float sleepDuration);
+    void birdWalk(Bird bird, bool startWithLeftLeg, float stepsPerSecond);
+    void birdSleep(Bird bird, bool sleepStanding, float sleepDuration);
 
 };
+
+void Bird::birdFly(Bird bird, int flapsPerSecond)
+{
+    // fly at so many flapsPerSecond
+    ignoreUnused(bird, flapsPerSecond);
+}
+
+void Bird::birdWalk(Bird bird, bool startWithLeftLeg, float stepsPerSecond)
+{
+    // walk at so many stepsPerSecond and with either leg first
+    ignoreUnused(bird, startWithLeftLeg, stepsPerSecond);
+}
+
+void Bird::birdSleep(Bird bird, bool sleepStanding, float sleepDuration)
+{
+    // sleep for sleepDuration and standing or not
+    ignoreUnused(bird, sleepStanding, sleepDuration);
+}
 
 /*
 5)  Input
@@ -198,9 +286,31 @@ struct InputChannel
 
     float setGain(InputChannel inputChan, float targetGain);
     bool switchP48(InputChannel inputChan, bool p48active);
-    void getSignal(InputChannel inputChan);
+    float getSignal(InputChannel inputChan);
 
 };
+
+float InputChannel::setGain(InputChannel inputChan, float targetGain)
+{
+    // check gain value is within possible range and return the gain value
+    float setGain = targetGain;
+    ignoreUnused(inputChan);
+    return(setGain);
+}
+
+bool InputChannel::switchP48(InputChannel inputChan, bool p48active)
+{
+    ignoreUnused(inputChan);
+    return(p48active);
+}
+
+float InputChannel::getSignal(InputChannel inputChan)
+{
+    float signal = 0.0f;
+    // get signal from socket
+    ignoreUnused(inputChan);
+    return(signal);
+}
 
 /*
 6)  Eq
@@ -238,6 +348,26 @@ struct Equaliser
 
 };
 
+bool Equaliser::setEqParams(int selectBand, EqBand newEqParam)
+{
+    int valid = 0;
+    // check parameters within bounds and confirm after setting parameters
+    valid = 1;
+    ignoreUnused(selectBand, newEqParam);
+    return(valid);
+}
+
+void Equaliser::cascadeEq(EqBand eqBand1, EqBand eqBand2, EqBand eqBand3, EqBand eqBand4)
+{
+    // calculate the biquad coefficients for the cascaded eq bands
+    ignoreUnused(eqBand1, eqBand2, eqBand3, eqBand4);
+}
+
+bool Equaliser::clipping(float signal)
+{
+    return( (signal > 1.0f) || (signal < -1.0f) );
+}
+
 /*
 7) compressor
 5 properties:
@@ -265,6 +395,26 @@ struct Compressor
     float releaseSignal(float signal, Compressor compressor);
 
 };
+
+bool Compressor::aboveThreshold(float signal, float threshold)
+{
+    return(signal > threshold);
+}
+
+float Compressor::compressSignal(float signal, float threshold, float ratio, int kneeCurve, int attackTime)
+{
+    // signal *= attenuation
+    ignoreUnused(threshold, ratio, kneeCurve, attackTime);
+    return(signal);
+}
+
+float Compressor::releaseSignal(float signal, Compressor compressor)
+{
+    // signal *= attenuation
+    ignoreUnused(compressor);
+    return(signal);
+}
+
 
 struct EightFloats
 {
@@ -318,6 +468,24 @@ struct Routing
     
 };
 
+float Routing::send2Master(float signal, bool assign2master)
+{
+    ignoreUnused(signal);
+    return(assign2master);
+}
+
+void Routing::send2groups(float signal, EightInts assign2groups)
+{
+    // assign to groups
+    ignoreUnused(signal, assign2groups);
+}
+
+void Routing::send2auxes(float signal, EightFloats sendLevels)
+{
+    // assign to auxes
+    ignoreUnused(signal, sendLevels);
+}
+
 /*
 9)  output channel
 5 properties:
@@ -340,11 +508,27 @@ struct OutputChannel
     EightFloats matrixSend = {-60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f, -60.0f};
     int outputPatch = 0;
 
-    void sumSignals(float signal1, float signal2, float signal3);
+    float sumSignals(float signal1, float signal2, float signal3);
     float adjustOutputLevel(float signal, float outputLevel);
     void send2output(float signal, int outputPatch);
 
 };
+
+float OutputChannel::sumSignals(float signal1, float signal2, float signal3)
+{
+    return(signal1 + signal2 + signal3);
+}
+
+float OutputChannel::adjustOutputLevel(float signal, float outputLevel)
+{
+    return(outputLevel*signal);
+}
+
+void OutputChannel::send2output(float signal, int outputPatch)
+{
+    // send signal according to output patch
+    ignoreUnused(signal, outputPatch);
+}
 
 /*
 10) digital console
@@ -373,6 +557,25 @@ struct DigitalConsole
     void assignPatch(bool isInput, int channelNumber, int socketNumber);
 
 };
+
+float DigitalConsole::adjustLevelAndEq(float signal, InputChannel inputSettings, Equaliser eqSettings)
+{
+    ignoreUnused(inputSettings, eqSettings);
+    return(signal);
+}
+
+void DigitalConsole::send2GroupsAndAuxes(float signal, Routing inputSends)
+{
+    // send signal to groups and auxes
+    ignoreUnused(signal, inputSends);
+}
+
+void DigitalConsole::assignPatch(bool isInput, int channelNumber, int socketNumber)
+{
+    // assign patch
+    ignoreUnused(isInput, channelNumber, socketNumber);
+}
+
 
 #include <iostream>
 int main()
