@@ -172,145 +172,257 @@ struct CarWash //2)
 };
 
 
-/*
-1)Audio Interface
-5 properties:
-    1)speaker output
-    2)mic input
-    3)line input
-    4)gain
-    5)phantom power
-3 things it can do:
-    1)amplify sound
-    2)convert analog to digital signal
-    3)invert phase
- */
 
-/*
-2)Tree
-5 properties:
-    1)leaves
-    2)seeds
-    3)water
-    4)flowers
-    5)energy
-3 things it can do:
-    1)photosyntesis
-    2)releases oxygen
-    3)produces fruits
- */
+//1)
+struct AudioInterface
+{
+// 1)speaker output
+int speakerOuputs = 4;
+// 2)mic input
+int micInputs = 8;
+// 3)line input
+int lineInputs = 8;
+// 4)gain
+float gain = 70.5f;
+// 5)phantom power
+bool phantomPower = false;
 
-/*
-3)Dog
-5 properties:
-    1)legs
-    2)fur
-    3)eyes
-    4)nose
-    5)tail
-3 things it can do:
-    1)bark
-    2)eat
-    3)jump
- */
 
-/*
-4)Monitor
-5 properties:
-    1)woofer
-    2)tweeter
-    3)rca input
-    4)line input
-    5)aux input
-3 things it can do:
-    1)Receives signal
-    2)Play sound
-    3)Change volume
- */
+// 1)amplify sound
+void aplifySound();
+// 2)convert analog to digital signal
+bool analogToDigital (bool convertion = true);
+// 3)invert phase
+void invertPhase(); 
+};
 
-/*
-5)paper tray
-5 properties:
-    1)plastic
-    2)rigid body
-    3)edge guides
-    4)sheet feeder
-    5)input tray shield
-3 things it can do:
-    1)hold paper
-    2)opens
-    3)counts amount of paper
- */
 
-/*
-6)display
-5 properties:
-    1)pixels
-    2)plasma
-    3)sensitivity
-    4)touch integrated
-    5)power circuit
-3 things it can do:
-    1)show menu
-    2)show error
-    3)change option
- */
+//2)
+struct Tree
+{
+// 1)leaves
+float leaves = 5293.23f;
+// 2)seeds
+int seeds = 3;
+// 3)water
+float water = 5.32f;
+// 4)flowers
+int flowers = 32;
+// 5)energy
+float energy = 424.3f;
 
-/*
-7)print heads
-5 properties:
-    1)print heads latch
-    2)chip
-    3)ink chamber
-    4)filter
-    5)screws
-3 things it can do:
-    1)receives instructions
-    2)prints
-    3)calibrates ink noozles
- */
+// 1)photosynthesis
+void photosynthesis();
+// 2)releases oxygen
+bool releaseOxygen (bool isPhotosynthesisDone = true);
+// 3)produces fruits
+void produceFruit();
+ };
 
-/*
-8)ink tank
-5 properties:
-    1)container
-    2)ink color
-    3)hemetic
-    4)ink level
-    5)tank cap
-3 things it can do:
-    1)checks quality of ink
-    2)counts amount of ink
-    3)warns if ink is low
- */
 
-/*
-9)scanner
-5 properties:
-    1)document table
-    2)document cover
-    3)carriage
-    4)lamp
-    5)lid
-3 things it can do:
-    1)scan document
-    2)makes copies
-    3)re-size documents
- */
+//3)
+struct Dog
+{
+// 1)legs
+int legs = 4;
+// 2)fur
+float fur = 8324.5f;
+// 3)eyes
+int eyes = 2;
+// 4)nose
+int nose = 1;
+// 5)tail
+int tail = 1;
 
-/*
-10)Printer
-5 properties:
-    1)paper tray
-    2)display
-    3)print heads
-    4)ink tank
-    5)scanner
-3 things it can do:
-    1)scan documents
-    2)print documents
-    3)copy documents
- */
+// 1)bark
+bool bark (bool isHungry = true);
+// 2)eat
+void eat();
+// 3)jump
+int jump (int bedHight = 120);
+};
+
+
+
+//4)
+struct Monitor
+{
+
+// 1)woofer
+int woofer = 1;
+// 2)tweeter
+int tweeter = 2;
+// 3)rca input
+int rcaInput = 2;
+// 4)line input
+int lineInput = 4;
+// 5)aux input
+int auxInput = 1;
+
+// 1) Receives signal
+void receiveSignal();
+// 2) Play sound
+void playSound();
+// 3)Change volume
+void changeVolume();
+};
+
+
+//5)
+struct Characters
+{
+// 1)body
+int body = 1;
+// 2)movement
+bool movement = true;
+// 3)colour indicator
+int colourIndicator = 2;
+// 4)sound character activated
+bool soundChar = true;
+// 5)background story
+int backgroundStory = 23;
+
+struct colorIndicator 
+    { 
+        int red = 1;
+        int blue = 2;
+        int green = 3;
+        
+        int setColourSelector(int blue);
+    };
+// 1)move
+int move (int x = 2, int y = 5, int z = 7);
+// 2)jump
+void jump();
+// 3)run
+bool run(bool isInARush = true);
+};
+
+
+//6)
+struct Inventory
+{
+
+// 1)skills slots
+int skillSlots = 2;
+// 2)weapons
+int weapons = 25;
+// 3)skins
+int skins = 135;
+// 4)pets
+int pets = 5;
+// 5)coins
+int coins = 2134;
+
+struct pets
+    { 
+        int cat = 1;
+        int penguin = 2;
+        int horse = 3;
+        int bear = 4;
+        int wolf = 5;
+        
+        int selectpet(int pet = 5);
+    };
+// 1)save items
+void saveItem();
+// 2)check if skin is equipped
+void checkIfSkinEquipped();
+// 3)add items
+void addItems();
+ };
+
+
+//7)
+struct Level
+{
+// 1)difficulty
+int difficult = 4;
+// 2)bots
+int bots = 27;
+// 3)map
+int map = 13;
+// 4)clips
+bool clip = true;
+// 5)checkpoint
+int checkpoint = 1;
+
+//give rewards
+void giveRewards();
+//save progress
+void saveProgress();
+//load items
+void loadItems();
+ };
+
+
+//8)
+struct UserInterface
+{
+// 1)exit menu
+bool exitMenu = false;
+// 2)level selector
+int levelSelector = 1;
+// 3)character selected
+int characterSelection = 2;
+// 4)start option
+bool startOption = true;
+// 5)health bar
+float healthBar = 99.8f;
+
+// 1)show warnings
+void showWarning(bool accountIsSuspended = true);
+// 2)show map
+void showMap();
+// 3)end game
+bool endGame (bool buttonPressed = true); 
+};
+
+
+//9)
+struct Enemy
+{
+// 1)body
+int body = 1;
+// 2)damage
+int damage = 43;
+// 3)speed
+double speed = 4.3;
+// 4)lives
+int lives = 5;
+// 5)reflex
+int reflex = 8;
+
+// 1)kill the player
+void killPlayer (int characterHealth = 0);
+// 2)hurt the player
+int hurtPlayer (int playerDamage);
+// 3)move
+int move (int x = 2, int y = 3, int z = 0);
+};
+
+
+//10)
+struct Videogame
+{
+// 1)characters
+Characters movement;
+// 2)inventory
+Inventory skins;
+// 3)level
+Level difficult;
+// 4)user interface
+UserInterface healthBar;
+// 5)enemy
+Enemy speed;
+
+// 1)start the game
+void startGame();
+// 2)load match
+void loadMatch();
+// 3)end game
+void endGame();
+ };
 
 #include <iostream>
 int main()
