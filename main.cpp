@@ -282,13 +282,13 @@ struct Characters
     int backgroundStory = 23;
 
     struct ColorIndicator 
-        { 
-            int red = 1;
-            int blue = 2;
-            int green = 3;
-        
-            int setColourSelector(int blue);
-        };
+    { 
+        int red = 1;
+        int blue = 2;
+        int green = 3;
+    
+        int setColourSelector(int blue);
+    };
     // 1)move
     int move (int x = 2, int y = 5, int z = 7);
     // 2)jump
@@ -313,15 +313,15 @@ struct Inventory
     int coins = 2134;
 
     struct Pets
-        { 
-            int cat = 1;
-            int penguin = 2;
-            int horse = 3;
-            int bear = 4;
-            int wolf = 5;
-        
-            int selectpet(int pet = 5);
-        };
+    { 
+        int cat = 1;
+        int penguin = 2;
+        int horse = 3;
+        int bear = 4;
+        int wolf = 5;
+    
+        int selectpet(int pet = 5);
+    };
     // 1)save items
     void saveItem();
     // 2)check if skin is equipped
