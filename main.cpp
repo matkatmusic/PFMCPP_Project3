@@ -16,9 +16,51 @@ Create a branch named Part2
  */
 
 
+struct Person
+{
+    int age;
+    int heigth;
+    float hairlength;
+    float GPA;
+    unsigned int SATScore;
+
+    int distanceTraveled;
+
+    struct Foot
+        {
+            int stepSize(int lenght);
+ 		    void stepForward();
+        };
+
+    Foot leftFoot;
+    Foot rightFoot;
 
 
+    void run(int howFast, bool startWithLeftFoot);
+};
 
+
+int Person::Foot::stepSize(int lenght) 
+{
+     return lenght;
+}
+
+void Person::Foot::stepForward() {}
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+ 	if(startWithLeftFoot == true)
+ 	{
+ 		leftFoot.stepForward();
+ 		rightFoot.stepForward();
+ 	}
+ 	else
+ 	{
+ 		rightFoot.stepForward();
+ 		leftFoot.stepForward();
+ 	}
+ 	distanceTraveled += leftFoot.stepSize(howFast) + rightFoot.stepSize(howFast);
+}
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
  
@@ -40,109 +82,221 @@ send me a DM to check your pull request
 //1)
 struct AudioInterface
 {
-    // 1)speaker output
     int speakerOuputs = 4;
-    // 2)mic input
     int micInputs = 8;
-    // 3)line input
     int lineInputs = 8;
-    // 4)gain
     float gain = 70.5f;
-    // 5)phantom power
     bool phantomPower = false;
 
 
-    // 1)amplify sound
-    void aplifySound();
-    // 2)convert analog to digital signal
+    void amplifySound();
     bool analogToDigital (bool convertion = true);
-    // 3)invert phase
     void invertPhase(); 
 };
+
+
+void AudioInterface::amplifySound()
+{
+    bool micConected = true;
+    bool micGain = true;
+
+    if (micConected == true)
+    {
+        micGain = true;
+    }
+}
+
+
+bool AudioInterface::analogToDigital(bool convertion)
+{
+    bool analogConnectedToDigital = true;
+
+    if (analogConnectedToDigital == true)
+    {
+        convertion = true;
+    }
+    else
+    {
+        convertion = false;
+    }
+
+    return convertion;
+}
+
+
+void AudioInterface::invertPhase()
+{
+    int quantityOfMics = 2;
+    bool changePolarity = false;
+
+    if (quantityOfMics == 2)
+    {
+        changePolarity = true;
+    }
+    else
+    {
+        changePolarity = false;
+    }
+}
 
 
 //2)
 struct Tree
 {
-    // 1)leaves
     float leaves = 5293.23f;
-    // 2)seeds
     int seeds = 3;
-    // 3)water
     float water = 5.32f;
-    // 4)flowers
     int flowers = 32;
-    // 5)energy
     float energy = 424.3f;
 
-    // 1)photosynthesis
+
     void photosynthesis();
-    // 2)releases oxygen
     bool releaseOxygen (bool isPhotosynthesisDone = true);
-    // 3)produces fruits
     void produceFruit();
- };
+};
+
+
+void Tree::photosynthesis()
+{
+    bool oxygen = false;
+    bool plantEnergy = true;
+    
+    if (plantEnergy == true)
+    {
+        oxygen = true;
+    }
+}
+
+
+bool Tree::releaseOxygen(bool isPhotosynthesisDone)
+{
+    isPhotosynthesisDone = true;
+    return isPhotosynthesisDone;
+}
+
+
+void Tree::produceFruit()
+{
+    int quantityOfFruitPoints = 23;
+    bool fruitsOnTree = false;
+
+    if (quantityOfFruitPoints == 0)
+    {
+        fruitsOnTree = false;
+    }
+    else
+    {
+        fruitsOnTree = true;
+    }
+}
 
 
 //3)
 struct Dog
 {
-    // 1)legs
     int legs = 4;
-    // 2)fur
     float fur = 8324.5f;
-    // 3)eyes
     int eyes = 2;
-    // 4)nose
     int nose = 1;
-    // 5)tail
     int tail = 1;
 
-    // 1)bark
+
     bool bark (bool isHungry = true);
-    // 2)eat
     void eat();
-    // 3)jump
-    int jump (int bedHight = 120);
+    int jump (int bedHeight = 120);
 };
 
+
+bool Dog::bark(bool isHungry)
+{  
+    int howLoud = 10;
+
+    if (isHungry == true)
+    {
+        howLoud = 10;
+    }
+    else
+    {
+        howLoud = 0;
+    }
+    return howLoud;
+}
+
+
+void Dog::eat()
+{
+    bool isFoodInPlate = true;
+    bool dogEats = false;
+
+    if (isFoodInPlate== true)
+    {
+        dogEats = true;
+    }
+}
+
+
+int Dog::jump(int bedHeight)
+{
+    int jumpHeight = 120;
+    bool dogJump = true;
+
+if (jumpHeight == bedHeight)
+{
+    dogJump = true;
+}
+    return dogJump;
+}
 
 
 //4)
 struct Monitor
 {
-    // 1)woofer
     int woofer = 1;
-    // 2)tweeter
     int tweeter = 2;
-    // 3)rca input
     int rcaInput = 2;
-    // 4)line input
     int lineInput = 4;
-    // 5)aux input
     int auxInput = 1;
 
-    // 1) Receives signal
+
     void receiveSignal();
-    // 2) Play sound
     void playSound();
-    // 3)Change volume
     void changeVolume();
 };
 
 
+void Monitor::receiveSignal(){}
+
+
+void Monitor::playSound()
+{
+    bool signalReceived = true;
+    bool playSong = true;
+
+    if (signalReceived == true)
+    {
+        playSong = true;
+    }
+}
+
+
+void Monitor::changeVolume()
+{
+    bool gainMoved = true;
+    float volumeLevel = 60.5f;
+
+    if (gainMoved == false)
+    {
+        volumeLevel = 0.0f;
+    }
+}
+
 //5)
 struct Characters
 {
-    // 1)body
     int body = 1;
-    // 2)movement
     bool movement = true;
-    // 3)colour indicator
     int colourIndicator = 2;
-    // 4)sound character activated
     bool soundChar = true;
-    // 5)background story
     int backgroundStory = 23;
 
     struct ColorIndicator 
@@ -151,29 +305,68 @@ struct Characters
         int blue = 2;
         int green = 3;
     
-        int setColourSelector(int blue);
+        int setColourSelector(int colour);
     };
-    // 1)move
+
+
     int move (int x = 2, int y = 5, int z = 7);
-    // 2)jump
     void jump();
-    // 3)run
     bool run(bool isInARush = true);
 };
+
+
+int Characters::ColorIndicator::setColourSelector(int colour)
+{
+    colour = 3;
+    return colour;
+}
+
+
+int Characters::move(int x, int y, int z)
+{
+    x = 13;
+    y = 32;
+    z = 41;
+    return z;
+}
+
+
+void Characters::jump()
+{
+bool keyPressed = true;
+bool charJump = true;
+
+    if (keyPressed == true)
+    {
+        charJump = true;
+    }
+}
+
+
+bool Characters::run(bool isInARush)
+{
+    int movePosition = 4;
+    
+    if (isInARush == true)
+    {
+        movePosition = 1;
+    }
+    else
+    {
+        movePosition = 0;
+    }
+    
+    return movePosition;
+}
 
 
 //6)
 struct Inventory
 {
-    // 1)skills slots
     int skillSlots = 2;
-    // 2)weapons
     int weapons = 25;
-    // 3)skins
     int skins = 135;
-    // 4)pets
     int pets = 5;
-    // 5)coins
     int coins = 2134;
 
     struct Pets
@@ -184,107 +377,216 @@ struct Inventory
         int bear = 4;
         int wolf = 5;
     
-        int selectpet(int pet = 5);
+        int selectPet(int pet = 5);
     };
-    // 1)save items
+ 
+
     void saveItem();
-    // 2)check if skin is equipped
     void checkIfSkinEquipped();
-    // 3)add items
     void addItems();
  };
 
 
+int Inventory::Pets::selectPet(int pet)
+{
+    pet = 2;
+
+    return pet;
+}
+
+
+void Inventory::saveItem()
+{
+    bool isGrabbed = true;
+    bool getInBackpack = true;
+
+    if (isGrabbed == true)
+    {
+        getInBackpack = true;
+    }
+}
+
+
+void Inventory::checkIfSkinEquipped()
+{
+    bool isEquipped = true;
+    bool checked = true;
+    
+    if (isEquipped == true)
+    {
+        checked = true;
+    }
+}
+
+void Inventory::addItems(){}
+
 //7)
 struct Level
 {
-    // 1)difficulty
     int difficult = 4;
-    // 2)bots
     int bots = 27;
-    // 3)map
     int map = 13;
-    // 4)clips
     bool clip = true;
-    // 5)checkpoint
     int checkpoint = 1;
 
-    //give rewards
+
     void giveRewards();
-    //save progress
     void saveProgress();
-    //load items
     void loadItems();
  };
+
+
+void Level::giveRewards()
+{
+    bool addCoins = true;
+    bool reachedCheckpoint = true;
+
+    if (reachedCheckpoint == true)
+    {
+        addCoins = true;
+    }
+}
+
+
+void Level::saveProgress(){}
+
+
+void Level::loadItems()
+{
+    bool levelStart = false;
+    bool loadScenery = true;
+
+    if (levelStart == true)
+    {
+        loadScenery = true;
+    }
+}
 
 
 //8)
 struct UserInterface
 {
-    // 1)exit menu
     bool exitMenu = false;
-    // 2)level selector
     int levelSelector = 1;
-    // 3)character selected
     int characterSelection = 2;
-    // 4)start option
     bool startOption = true;
-    // 5)health bar
     float healthBar = 99.8f;
 
-    // 1)show warnings
+
     void showWarning(bool accountIsSuspended = true);
-    // 2)show map
     void showMap();
-    // 3)end game
     bool endGame (bool buttonPressed = true); 
 };
+
+
+void UserInterface::showWarning(bool accountIsSuspended)
+{
+    accountIsSuspended = true;
+}
+
+
+void UserInterface::showMap()
+{
+    bool buttonIsClicked = true;
+    bool openMapWindow = false;
+
+    if (buttonIsClicked == false)
+    {
+        openMapWindow = false;
+    }
+}
+
+
+bool UserInterface::endGame(bool buttonPressed)
+{
+    buttonPressed = true;
+
+    return buttonPressed;
+}
 
 
 //9)
 struct Enemy
 {
-    // 1)body
     int body = 1;
-    // 2)damage
     int damage = 43;
-    // 3)speed
     double speed = 4.3;
-    // 4)lives
     int lives = 5;
-    // 5)reflex
     int reflex = 8;
 
-    // 1)kill the player
+
     void killPlayer (int characterHealth = 0);
-    // 2)hurt the player
     int hurtPlayer (int playerDamage);
-    // 3)move
     int move (int x = 2, int y = 3, int z = 0);
 };
+
+
+void Enemy::killPlayer(int characterHealth)
+{
+    characterHealth = 0;
+}
+
+
+int Enemy::hurtPlayer(int playerDamage)
+{
+    playerDamage = 12;
+
+    return playerDamage;
+}
+
+
+int Enemy::move(int x, int y, int z)
+{
+    x = 8;
+    y = 1;
+    z = -2;
+
+    int enemyMovement = x + y + z;
+
+    return enemyMovement;
+}
 
 
 //10)
 struct Videogame
 {
-    // 1)characters
     Characters movement;
-    // 2)inventory
     Inventory skins;
-    // 3)level
     Level difficult;
-    // 4)user interface
     UserInterface healthBar;
-    // 5)enemy
     Enemy speed;
 
-    // 1)start the game
+
     void startGame();
-    // 2)load match
     void loadMatch();
-    // 3)end game
     void endGame();
  };
+
+ void Videogame::startGame()
+ {
+     bool initializeGame = true;
+     bool gameOpened = true;
+
+     if (gameOpened == true)
+     {
+         initializeGame = true;
+     }
+ }
+
+
+void Videogame::loadMatch()
+{
+    bool matchStartButtonClicked = false;
+    bool matchStart = false;
+
+    if (matchStartButtonClicked == true)
+    {
+        matchStart = true;
+    }
+}
+
+void Videogame::endGame(){}
+
 
 #include <iostream>
 int main()
