@@ -173,59 +173,59 @@ struct CarWash //2)
 
 
 /*
-1)
+1) Acoustic Guitar
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of strings it has
+    2) Number of frets
+    3) Fret number of a capo
+    4) Year it was built
+    5) Whether or not it has amplification
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Play a single note
+    2) Play a chord
+    3) Tune its strings (you would want a nested type "string"?)
  */
 
 /*
-2)
+2) Book
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of pages
+    2) Number of chapters
+    3) Whether you have read this book or not
+    4) Year of publication
+    5) Whether it's on the best-sellers list
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Open to a given page
+    2) Turn to the next page
+    3) Open to a given chapter
  */
 
 /*
-3)
+3) smart light bulb
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of Watts
+    2) Brightness level
+    3) Whether it's currently on or not
+    4) Keeps track of total energy it has used
+    5) Keeps track of the total hours it's been on
 3 things it can do:
-    1)
-    2)
-    3)
+    1) toggle on/off
+    2) turn off automatically after a given time
+    3) it can send a signal when it needs to be replaced
  */
 
 /*
-4)
+4) Cat
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Age
+    2) Whether or not it's male
+    3) Whether or not it's a tabby cat
+    4) How hungry it is
+    5) How thirsty it is
 3 things it can do:
-    1)
-    2)
-    3)
+    1) It can purr
+    2) It can meow
+    3) It can drink water
  */
 
 /*
