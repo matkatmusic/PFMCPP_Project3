@@ -35,51 +35,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) horn
+        4) volume control
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) steer
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1)  speedometer
+        2)  miles per gallon rating
+        3)  gas meter
+        4)  temperature meter
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1)  display speed
+        2)  display acceleration
+        3)  display temperature
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1)  AC on/off button
+        2)  Auto AC button
+        3)  temperature adjust switch
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1)  turn AC on
+        2)  engage Auto AC
+        3)  adjust temperature
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1)  song/radio selection
+        2)  volume adjustment icon
+        3)  play/pause icon
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1)  select song/station
+        2)  adjust volume
+        3)  play/pause
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1)  seat belt
+        2)  position adjust levers
+        3)  head cushion
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1)  adjust seat settings
+        2)  put on/off seatbelt
 */
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
