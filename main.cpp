@@ -55,11 +55,11 @@ Thing: Car Wash
 /*
 Thing 1) Prophet-6
 5 properties:
-    1)  oscillators
-    2)  filters
-    3)  envelopes
-    4)  VCAs
-    5)  Keyboard
+    1)  number of oscillators
+    2)  FX on/off
+    3)  filter cutoff amount
+    4)  distortion amount
+    5)  keyboard notes (int)
 3 things it can do:
     1)  modulate cutoff
     2)  play sequence
@@ -69,11 +69,11 @@ Thing 1) Prophet-6
 /*
 Thing 2) Tr-808
 5 properties:
-    1)  voices
-    2)  sequencer
-    3)  voice parameters
-    4)  instrument select knob
-    5)  tempo knob
+    1)  number of voices
+    2)  step trigger (bool)
+    3)  level amount per voice
+    4)  preset number
+    5)  tempo bpm
 3 things it can do:
     1)  program sequence
     2)  adjust tone
@@ -83,11 +83,11 @@ Thing 2) Tr-808
 /*
 Thing 3) Electric Guitar
 5 properties:
-    1)  body
-    2)  neck
-    3)  strings
-    4)  tuning pegs 
-    5)  pickups
+    1)  volume level
+    2)  tone level
+    3)  number of strings
+    4)  tuning pegs rotation degree
+    5)  seymour duncan pickups (bool)
 3 things it can do:
     1)  play music
     2)  feedback
