@@ -53,59 +53,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Prophet-6
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  oscillators
+    2)  filters
+    3)  envelopes
+    4)  VCAs
+    5)  Keyboard
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  modulate cutoff
+    2)  play sequence
+    3)  turn on FX
  */
 
 /*
-Thing 2)
+Thing 2) Tr-808
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  voices
+    2)  sequencer
+    3)  voice parameters
+    4)  instrument select knob
+    5)  tempo knob
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  program sequence
+    2)  adjust tone
+    3)  change the world
  */
 
 /*
-Thing 3)
+Thing 3) Electric Guitar
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  body
+    2)  neck
+    3)  strings
+    4)  tuning pegs 
+    5)  pickups
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  play music
+    2)  feedback
+    3)  guitar spin
  */
 
 /*
-Thing 4)
+Thing 4) Granular Synth
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  grain size
+    2)  grain density
+    3)  playback position
+    4)  varispeed of sample
+    5)  random
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  granulate
+    2)  change playback position
+    3)  modulate grain size
  */
 
 
