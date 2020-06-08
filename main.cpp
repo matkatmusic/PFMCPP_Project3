@@ -130,73 +130,73 @@ Thing 4) Granular Synth
  */
 
 /*
-Thing 5)
+Thing 5) Oscillators
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  -12v power consumption
+    2)  +12v power consumption
+    3)  waveshape value
+    4)  output type (sine, saw, waveshaper)
+    5)  FM attenuator value
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  outputs wave
+    2)  hard sync
+    3)  receives pitch CV
  */
 
 /*
-Thing 6)
+Thing 6) Filters
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  filter type (HP, LP, BP)
+    2)  FM attenuator value
+    3)  cutoff value
+    4)  resonance value
+    5)  gain value
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  filter audio
+    2)  track 1v/oct
+    3)  change filter cutoff
  */
 
 /*
-Thing 7)
+Thing 7) Envelopes
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  attack time
+    2)  decay time
+    3)  sustain level
+    4)  release time
+    5)  hold time
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  output CV
+    2)  receive gate/trigger
+    3)  engage cycle mode
  */
 
 /*
-Thing 8)
+Thing 8) VCAs
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  number of audio inputs
+    2)  number of cv inputs
+    3)  cascading cv inputs (bool)
+    4)  boost switch
+    5)  number of audio outputs
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  receive cv
+    2)  output audio/cv
+    3)  mute output
  */
 
 /*
-Thing 9)
+Thing 9) CV Sequencer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  number of channels
+    2)  channel output level
+    3)  number of steps
+    4)  clock mode(slave or master)
+    5)  scale select (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  output cv
+    2)  receive clock
+    3)  arpeggiate steps
  */
 
 /*
