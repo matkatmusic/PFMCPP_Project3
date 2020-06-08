@@ -109,17 +109,17 @@ Thing 4) Granular Synth
  */
 
 /*
-Thing 10)
+Thing 10) Modular Synth
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  oscillators
+    2)  filters
+    3)  envelopes
+    4)  VCAs    
+    5)  CV Sequencer
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  changes pitch
+    2)  cross modulates
+    3)  modulate decay time of AD envelope
  */
 
 /*
