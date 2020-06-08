@@ -1,5 +1,5 @@
 /*
-Project 3 - Part 1d / 5
+Project 3 - Part 1e / 5
 Video:  Chapter 2 Part 5
 User-Defined Types
 
@@ -20,52 +20,99 @@ You are going to write 10 UDTs in project3.
     Part 1e: you will convert those 10 plain-english UDTs into code that runs.
 ************************
 
-    The goal of this step is to get you to think about breaking down an object into smaller and smaller objects, 
-    until the smallest object is made of up only C++ primitives. 
+Convert your 10 Plain-english UDTs into code.
 
-    Continuing the previous example:  Cell Phone
+I recommend compiling after finishing each one and making sure it compiles 
+without errors or warnings before moving on to writing the next UDT. 
 
-    A Cell Phone is made up of the following 5 properties/sub-objects and 3 actions:
-        Display
-        Memory
-        CPU
-        Radio
-        Applications
-    3 actions:
-        make a call
-        send a text
-        run an application.
-
-    These 5 properties can be broken down into their own sub-objects and properties. 
-
-    If we break down the first property 'Display' into its 5 properties we get:
-        brightness
-        amount of power consumed.
-        pixels
-        width in cm
-        height in cm
-
-    the Display's brightness can be represented with a Primitive, such as a double. 
-
-    The amount of power consumed can also be represented with a Primitive, such as a float or integer (i.e. 250mWa)
-    
-    The 'pixels' property must be represented with an array of Pixel instances, as the screen has more than 1 row of pixels.
-        Arrays have not been discussed and can't be used in this project.
-        Instead, we can use an Integer primitive to store the Number of Pixels:
-
-    Display:
-        Number of Pixels
-        Amount of Power consumed (milliwatt-hours)
-        Brightness
-        width in cm
-        height in cm
-************************
-
-1) Fill in #5 - #9 with plain-english UDTs for the 5 properties you created for UDT #10
-    example: 
-        If #10's first property was 'Engine', then your `Thing 5)` will be `Engine` and 
-        you will need to provide 5 properties and 3 member functions of that Engine object in plain English
+1) define an empty struct for each of your 10 types. i.e.:
 */
+struct CellPhone
+{
+
+};
+/*
+2) Copy your 5 properties & 3 actions into the empty struct body.
+    - comment them out.
+    
+3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
+    - give the member variables relevant data types
+ 
+4) make the function parameter list for those member functions use some of your User-Defined Types
+    - You'll write definitions/implementations for these functions in Project3 Part2
+    - you'll call each of these functions in Project3 part3
+ 
+5) make 2 of the 10 user-defined types have a nested class.  
+    - this nested class also needs 5 properties and 3 actions.
+    - these nested classes are not considered one of your 10 UDTs.
+    - this nested class must be related to the class it is nested inside
+ 
+6) your 10th UDT's properties should be instances of your #5-#9 UDTs.   
+    - No primitives allowed!
+ 
+7) After you finish defining each type, click the [run] button.  
+    Clear up any errors or warnings as best you can. 
+ */
+
+/*
+ example:  
+
+Thing: Car Wash   
+    5 properties:
+        - number of vacuum cleaners
+        - number of eco-friendly cleaning supplies
+        - stores the amount of water used per week.
+        - stores amount of profit made per week
+        - number of cars serviced per day
+    3 things it can do:
+        - wash and wax car
+        - charge customer
+        - detail the car interior
+ */
+
+#include <iostream>
+#include <string>
+
+struct CarWash //                                   1) define an empty struct for each of your 10 types.       
+{
+    //number of vacuum cleaners                     2) copied and commented-out plain-english property
+    int numVacuumCleaners = 3; //                   3) member variables with relevant data types.
+    //number of eco-friendly cleaning supplies      
+    int numEcoFriendlyCleaningSupplies = 20;     
+    //stores the amount of water used per week.     
+    float waterUsedPerWeek = 200.f;            
+    //stores amount of profit made per week         
+    float profitPerWeek = 495.95f;               
+    //number of cars serviced per day               
+    int numberOfCarsServiced = 10;               
+    
+    struct Car //5)                                 Note that the nested type 'Car' is related to the 'CarWash' 
+    {
+        //2) member variables with relevant data types.  the names are appropriate for the U.D.T.'s purpose.
+        bool isAPickupTruck = false;
+        float gasMileage = 26.2f;        
+        int year = 1985;
+        std::string manufacturer = "Toyota";
+        std::string model = "Corolla";
+
+        //3) a member function whose parameter has a default value.
+        //the parameter name is related to the work the function will perform.
+        void fillTank(double fuelAmountInGallons = 2.0);  
+        void breakDown(std::string failureType, bool requiresTow = false);
+        int getMilesTraveledAnnually(bool includeUberLyftTrips);
+    };
+
+    //wash and wax car
+    void washAndWaxCar( Car car ); //4) a member function whose parameter is a UDT.
+    //charge customer
+    float chargeCustomer(float discountPercentage);
+    //detail the car interior
+    void detailInterior( Car car );
+    
+    //5) a member variable whose type is a UDT.
+    Car carBeingServiced;  
+};
+
 
 
 
