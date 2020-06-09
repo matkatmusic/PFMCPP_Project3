@@ -113,6 +113,19 @@ struct CarWash //                                   1) define an empty struct fo
     //5) a member variable whose type is a UDT.
     Car carBeingServiced;  
 };
+/*
+Thing 1) Prophet-6
+5 properties:
+    1)  number of oscillators
+    2)  FX on/off
+    3)  filter cutoff amount
+    4)  distortion amount
+    5)  keyboard notes (int)
+3 things it can do:
+    1)  modulate cutoff
+    2)  play sequence
+    3)  turn on FX
+*/
 
 struct Prophet6
 {
@@ -130,15 +143,19 @@ struct Prophet6
     struct Globals
     {
         //1) transpose value
-        int transpose = 0;
-        //2) master tune value
-        int masterTune = 0;
+        int transposeSemiTone = 0;
+        //2) master tune value in cents
+        int masterTuneCents = 0; 
         //3) midi channel
         int midiChannel = 1;
         //4) midiClock
-        int midiClock = false;
+        int transmitMidiClock = false; 
         //5) clock port (MIDI or USB)
-        bool clockPort = false;
+        bool usingUSBForMidiClock = false; 
+
+        void setTransposition(int semitones); 
+        void setMasterTune(int cents);
+        void setMidiChannel(int channel);
     };
 
     //1) modulate cutoff
@@ -149,6 +166,19 @@ struct Prophet6
     bool engageFX(bool fxOnOff);
 };
 
+/*
+Thing 2) Tr-808
+5 properties:
+    1)  number of voices
+    2)  step trigger (bool)
+    3)  level amount per voice
+    4)  preset number
+    5)  tempo bpm
+3 things it can do:
+    1)  program sequence
+    2)  adjust tone
+    3)  change the world
+ */
 struct Tr808
 {
     //1) number of voices
@@ -170,6 +200,19 @@ struct Tr808
     double changeTheWorld(bool musicIsAmazing);
 };
 
+/*
+Thing 3) Electric Guitar
+5 properties:
+    1)  volume level
+    2)  tone level
+    3)  number of strings
+    4)  tuning pegs rotation degree
+    5)  seymour duncan pickups (bool)
+3 things it can do:
+    1)  play music
+    2)  feedback
+    3)  guitar spin
+ */
 struct ElectricGuitar
 {
     //1)  volume level in decibels
@@ -191,6 +234,19 @@ struct ElectricGuitar
     bool guitarSpin(bool crowdIsWild);
 };
 
+/*
+Thing 4) Granular Synth
+5 properties:
+    1)  grain size
+    2)  grain density
+    3)  playback position
+    4)  varispeed of sample
+    5)  random
+3 things it can do:
+    1)  granulate
+    2)  change playback position
+    3)  modulate grain size
+ */
 struct GranularSynth
 {
     //1)  grain size in seconds
@@ -212,6 +268,19 @@ struct GranularSynth
     void modGrainSize(float grainSize, float modulationInput);
 };
 
+/*
+Thing 5) Oscillators
+5 properties:
+    1)  -12v power consumption
+    2)  +12v power consumption
+    3)  waveshape value
+    4)  output type (sine, saw, waveshaper)
+    5)  FM attenuator value
+3 things it can do:
+    1)  outputs wave
+    2)  hard sync
+    3)  receives pitch CV
+ */
 struct Oscillators
 {
     //1)  -12v power consumption in mA
@@ -233,6 +302,19 @@ struct Oscillators
     void receivePitchCV(float inputVoltage, float fmAttenuator);
 };
 
+/*
+Thing 6) Filters
+5 properties:
+    1)  filter type (HP, LP, BP)
+    2)  FM attenuator value
+    3)  cutoff value
+    4)  resonance value
+    5)  gain value
+3 things it can do:
+    1)  filter audio
+    2)  track 1v/oct
+    3)  change filter cutoff
+ */
 struct Filters
 {
     //1)  filter type (HP, LP, BP)
@@ -254,7 +336,20 @@ struct Filters
     void modFilter(float cutoff, float fmAttenuator);
 };
 
-struct Envelopes
+/*
+Thing 7) Envelopes
+5 properties:
+    1)  attack time
+    2)  decay time
+    3)  sustain level
+    4)  release time
+    5)  hold time
+3 things it can do:
+    1)  output CV
+    2)  receive gate/trigger
+    3)  engage cycle mode
+ */
+struct Envelopes FIXME: is this representing ONE envelope or several envelopes?
 {
     //1)  attack time in ms
     int attack = 243;
@@ -275,7 +370,20 @@ struct Envelopes
     bool cycleMode(bool switchPosition);
 };
 
-struct VCAs
+/*
+Thing 8) VCAs
+5 properties:
+    1)  number of audio inputs
+    2)  number of cv inputs
+    3)  cascading cv inputs (bool)
+    4)  boost switch
+    5)  number of audio outputs
+3 things it can do:
+    1)  receive cv
+    2)  output audio/cv
+    3)  mute output
+ */
+struct VCAs FIXME: is this representing ONE VCA or multiple VCAs?
 {
     //1)  number of audio inputs
     int audioInputs = 4;
@@ -297,6 +405,19 @@ struct VCAs
     void mute(bool muteSwitch);
 };
 
+/*
+Thing 9) CV Sequencer
+5 properties:
+    1)  number of channels
+    2)  channel output level
+    3)  number of steps
+    4)  clock mode(slave or master)
+    5)  scale select (int)
+3 things it can do:
+    1)  output cv
+    2)  receive clock
+    3)  arpeggiate steps
+ */
 struct CVSequencer
 {
     //1)  number of channels
@@ -318,6 +439,19 @@ struct CVSequencer
     bool arp(bool stepsOn, std::vector<int> stepOrder[]);
 };
 
+/*
+Thing 10) Modular Synth
+5 properties:
+    1)  oscillators
+    2)  filters
+    3)  envelopes
+    4)  VCAs    
+    5)  CV Sequencer
+3 things it can do:
+    1)  changes pitch
+    2)  cross modulates
+    3)  modulate decay time of AD envelope
+ */
 struct ModularSynth
 {
     //1)  oscillators
@@ -351,146 +485,6 @@ struct ModularSynth
     //3)  modulate decay time of AD envelope
     void modDecayEnv(int decay);
 };
-
-/*
-Thing 1) Prophet-6
-5 properties:
-    1)  number of oscillators
-    2)  FX on/off
-    3)  filter cutoff amount
-    4)  distortion amount
-    5)  keyboard notes (int)
-3 things it can do:
-    1)  modulate cutoff
-    2)  play sequence
-    3)  turn on FX
- */
-
-/*
-Thing 2) Tr-808
-5 properties:
-    1)  number of voices
-    2)  step trigger (bool)
-    3)  level amount per voice
-    4)  preset number
-    5)  tempo bpm
-3 things it can do:
-    1)  program sequence
-    2)  adjust tone
-    3)  change the world
- */
-
-/*
-Thing 3) Electric Guitar
-5 properties:
-    1)  volume level
-    2)  tone level
-    3)  number of strings
-    4)  tuning pegs rotation degree
-    5)  seymour duncan pickups (bool)
-3 things it can do:
-    1)  play music
-    2)  feedback
-    3)  guitar spin
- */
-
-/*
-Thing 4) Granular Synth
-5 properties:
-    1)  grain size
-    2)  grain density
-    3)  playback position
-    4)  varispeed of sample
-    5)  random
-3 things it can do:
-    1)  granulate
-    2)  change playback position
-    3)  modulate grain size
- */
-
-/*
-Thing 5) Oscillators
-5 properties:
-    1)  -12v power consumption
-    2)  +12v power consumption
-    3)  waveshape value
-    4)  output type (sine, saw, waveshaper)
-    5)  FM attenuator value
-3 things it can do:
-    1)  outputs wave
-    2)  hard sync
-    3)  receives pitch CV
- */
-
-/*
-Thing 6) Filters
-5 properties:
-    1)  filter type (HP, LP, BP)
-    2)  FM attenuator value
-    3)  cutoff value
-    4)  resonance value
-    5)  gain value
-3 things it can do:
-    1)  filter audio
-    2)  track 1v/oct
-    3)  change filter cutoff
- */
-
-/*
-Thing 7) Envelopes
-5 properties:
-    1)  attack time
-    2)  decay time
-    3)  sustain level
-    4)  release time
-    5)  hold time
-3 things it can do:
-    1)  output CV
-    2)  receive gate/trigger
-    3)  engage cycle mode
- */
-
-/*
-Thing 8) VCAs
-5 properties:
-    1)  number of audio inputs
-    2)  number of cv inputs
-    3)  cascading cv inputs (bool)
-    4)  boost switch
-    5)  number of audio outputs
-3 things it can do:
-    1)  receive cv
-    2)  output audio/cv
-    3)  mute output
- */
-
-/*
-Thing 9) CV Sequencer
-5 properties:
-    1)  number of channels
-    2)  channel output level
-    3)  number of steps
-    4)  clock mode(slave or master)
-    5)  scale select (int)
-3 things it can do:
-    1)  output cv
-    2)  receive clock
-    3)  arpeggiate steps
- */
-
-/*
-Thing 10) Modular Synth
-5 properties:
-    1)  oscillators
-    2)  filters
-    3)  envelopes
-    4)  VCAs    
-    5)  CV Sequencer
-3 things it can do:
-    1)  changes pitch
-    2)  cross modulates
-    3)  modulate decay time of AD envelope
- */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
