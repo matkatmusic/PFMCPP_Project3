@@ -163,7 +163,7 @@ struct Prophet6
     //2) play sequencer
     void playSequence(int note);
     //3) turn on FX
-    bool engageFX(bool fxOnOff);
+    bool engageFX(bool fxOn);
 };
 
 /*
@@ -281,7 +281,7 @@ Thing 5) Oscillators
     2)  hard sync
     3)  receives pitch CV
  */
-struct Oscillators
+struct Oscillator
 {
     //1)  -12v power consumption in mA
     int negativeTwelvePower = 40;
@@ -315,7 +315,7 @@ Thing 6) Filters
     2)  track 1v/oct
     3)  change filter cutoff
  */
-struct Filters
+struct Filter
 {
     //1)  filter type (HP, LP, BP)
     int filterType = 1;
@@ -337,7 +337,7 @@ struct Filters
 };
 
 /*
-Thing 7) Envelopes
+Thing 7) Envelope
 5 properties:
     1)  attack time
     2)  decay time
@@ -349,7 +349,7 @@ Thing 7) Envelopes
     2)  receive gate/trigger
     3)  engage cycle mode
  */
-struct Envelopes FIXME: is this representing ONE envelope or several envelopes?
+struct Envelope
 {
     //1)  attack time in ms
     int attack = 243;
@@ -363,11 +363,11 @@ struct Envelopes FIXME: is this representing ONE envelope or several envelopes?
     int hold = 43;
 
     //1)  output CV
-    float outputCV(bool powerOn, bool gateHigh);
+    void outputCV(bool powerOn, bool gateHigh);
     //2)  receive gate/trigger
-    bool receive(bool cycleModeOnOff = false);
+    void GateOrTrigger(bool cycleModeOn = false);
     //3)  engage cycle mode
-    bool cycleMode(bool switchPosition);
+    void cycleMode(bool switchPosition);
 };
 
 /*
@@ -383,7 +383,7 @@ Thing 8) VCAs
     2)  output audio/cv
     3)  mute output
  */
-struct VCAs FIXME: is this representing ONE VCA or multiple VCAs?
+struct QuadVCA
 {
     //1)  number of audio inputs
     int audioInputs = 4;
@@ -402,7 +402,7 @@ struct VCAs FIXME: is this representing ONE VCA or multiple VCAs?
     //2)  output audio/cv
     void output();
     //3)  mute output
-    void mute(bool muteSwitch);
+    void mute(bool muteSwitchOn);
 };
 
 /*
@@ -432,11 +432,11 @@ struct CVSequencer
     int scale = 2;
 
     //1)  output cv
-    bool output(bool powerOn);
+    void outputCV(bool powerOn);
     //2)  receive clock
-    bool receiveClock(bool clockMode);
+    void receiveClock(bool clockMode);
     //3)  arpeggiate steps
-    bool arp(bool stepsOn, std::vector<int> stepOrder[]);
+    void arp(bool stepsOn, std::vector<int> stepOrder[]);
 };
 
 /*
@@ -455,13 +455,13 @@ Thing 10) Modular Synth
 struct ModularSynth
 {
     //1)  oscillators
-    Oscillators oscillators;
+    Oscillator oscillator;
     //2)  filters
-    Filters flters;
+    Filter flter;
     //3)  envelopes
-    Envelopes envelopes;
+    Envelope envelope;
     //4)  VCAs    
-    VCAs vcas;
+    QuadVCA vca;
     //5)  CV Sequencer
     CVSequencer cvsequencer;
 
@@ -481,7 +481,7 @@ struct ModularSynth
     //1)  changes pitch
     void changePitch(void receivePitchCV(float inputVoltage, float fmAttenuator));
     //2)  cross modulates
-    void crossMod(Envelopes);
+    void crossMod(Envelope);
     //3)  modulate decay time of AD envelope
     void modDecayEnv(int decay);
 };
