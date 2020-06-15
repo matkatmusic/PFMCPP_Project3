@@ -187,17 +187,17 @@ struct CarWash //2)
  */
 
 /*
-2) Book
+2) Library
 5 properties:
-    1) Number of pages
-    2) Number of chapters
-    3) Whether you have read this book or not
-    4) Year of publication
-    5) Whether it's on the best-sellers list
+    1) Number of books
+    2) Number of members
+    3) Fee for returning books late
+    4) Numbero of books each member can have out at once
+    5) Duration that a member can take a book out for
 3 things it can do:
-    1) Open to a given page
-    2) Turn to the next page
-    3) Open to a given chapter
+    1) Check out a book
+    2) Return a book
+    3) Search whether a book is in the libarry
  */
 
 /*
@@ -299,17 +299,17 @@ struct CarWash //2)
  */
 
 /*
-10)
+10) Melodic Sequencer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Harmonic set (to take pitches from)
+    2) Rhythmic rules (for deciding when to play what)
+    3) Display (for showing the user info on the screen)
+    4) Synthesizer (selects/generates the actual sound)
+    5) User Interface (for live control)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) It can play a melodic sequence
+    2) It can display patterns on the screen
+    3) It can accept user instructions
  */
 
 #include <iostream>
