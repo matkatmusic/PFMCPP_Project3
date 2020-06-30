@@ -130,73 +130,73 @@ You are going to write 10 UDTs in project3.
  */
 
 /*
-Thing 5)
+Thing 5) Harmonic set (generates a set of frequencies from two input frequencies)
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Bass Frequency
+    2) Generator Frequency 
+    3) Minimum output frequency
+    4) maximum output frequency
+    5) generator rule # (would select among a few pre-coded rules)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) calculate and output a set of frequencies
+    2) calculate statistics about the frequencies (how harmonically coherent they are, etc)
+    3) filter the frequency set according to certain rules
  */
 
 /*
-Thing 6)
+Thing 6) Rhythmic Rules
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) density / note gap %
+    2) "convolution rate" (how complicated the rhythms are)
+    3) tempo
+    4) rate of variation (how far it randomly strays from the selected settings)
+    5) meter / pulse structure (this would have to be a UDT also)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) output a rhythm that controls the pattern generator
+    2) modify the rhythmic properties according to a control signal from the UI
+    3) modify the meter and tempo according to UI control
  */
 
 /*
-Thing 7)
+Thing 7) Pattern Generator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) "rootedness" (how often it plays the generator frequencies)
+    2) repetition rate (how likely to repeat notes)
+    3) step size (how far away in the set it will pick the next note)
+    4) variability rate
+    5) fractal dimension (would be used in the pattern calculation)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) receives inpulses from the rhythm generator
+    2) calculates next note based on current harmonic set
+    3) outputs control signals to the synth
  */
 
 /*
-Thing 8)
+Thing 8) Synthesizer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) wave shape (int, selects between pre-coded waveshapes)
+    2) amplitude
+    3) envelope
+    4) max polyphony
+    5) distortion
 3 things it can do:
-    1)
-    2)
-    3)
+    1) respond to signals from the pattern generator
+    2) respond to signals from UI display
+    3) output audio
  */
 
 /*
-Thing 9)
+Thing 9) User Interface
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) UI for harmonic set
+    2) UI for rhythm
+    3) UI for synth
+    4) General UI
+    5) Graphic display
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Receive user input
+    2) Modify properties of other components
+    3) display animated visual feedback
  */
 
 /*
@@ -204,7 +204,7 @@ Thing 9)
 5 properties:
     1) Harmonic set (to take pitches from)
     2) Rhythmic rules (for deciding when to play what)
-    3) Display (for showing the user info on the screen)
+    3) Pattern generator (brings together harmonic set and rhythm rules)
     4) Synthesizer (selects/generates the actual sound)
     5) User Interface (for live control)
 3 things it can do:
