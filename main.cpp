@@ -176,7 +176,7 @@ Thing 8) Synthesizer
 5 properties:
     1) wave shape (int, selects between pre-coded waveshapes)
     2) amplitude
-    3) envelope
+    3) attack time
     4) max polyphony
     5) distortion
 3 things it can do:
@@ -186,17 +186,17 @@ Thing 8) Synthesizer
  */
 
 /*
-Thing 9) User Interface
+Thing 9) Distortion
 5 properties:
-    1) UI for harmonic set
-    2) UI for rhythm
-    3) UI for synth
-    4) General UI
-    5) Graphic display
+    1) brightness
+    2) number of echoes
+    3) room size
+    4) hipass filter cutoff
+    5) lopass filter cutoff
 3 things it can do:
-    1) Receive user input
-    2) Modify properties of other components
-    3) display animated visual feedback
+    1) process a sound input
+    2) calculate changes to its values
+    3) turn on/off bypass
  */
 
 /*
@@ -206,7 +206,7 @@ Thing 9) User Interface
     2) Rhythmic rules (for deciding when to play what)
     3) Pattern generator (brings together harmonic set and rhythm rules)
     4) Synthesizer (selects/generates the actual sound)
-    5) User Interface (for live control)
+    5) Distortion
 3 things it can do:
     1) It can play a melodic sequence
     2) It can display patterns on the screen
