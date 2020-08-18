@@ -113,17 +113,17 @@ Thing 4) Coffee shop
  */
 
 /*
-Thing 10)
+Thing 10) Pet Shelter
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Dog
+    2) Cat
+    3) Bird
+    4) Lizard
+    5) Snake
 3 things it can do:
-    1)
-    2)
-    3)
+    1) take care an animal
+    2) find the animal a home
+    3) give away the animal
  */
 
 /*
