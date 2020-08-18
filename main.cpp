@@ -119,7 +119,7 @@ Thing 10) University
     2) Teacher
     3) Admissions Committee
     4) Cafeteria
-    5) Dorms
+    5) Librarian
 3 things it can do:
     1) conduct exams
     2) collect fees
