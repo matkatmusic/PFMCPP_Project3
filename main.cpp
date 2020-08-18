@@ -124,73 +124,73 @@ Thing 4) Coffee shop
  */
 
 /*
-Thing 5)
+Thing 5) Student
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) age
+    2) height
+    3) weight
+    4) gpa
+    5) GRE score
 3 things it can do:
-    1)
-    2)
-    3)
+    1) study
+    2) attend class
+    3) skip class
  */
 
 /*
-Thing 6)
+Thing 6) Teacher
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Age
+    2) height
+    3) compensation
+    4) degree held
+    5) position
 3 things it can do:
-    1)
-    2)
-    3)
+    1) teach
+    2) conduct pop quiz
+    3) grade students
  */
 
 /*
-Thing 7)
+Thing 7) Music Department
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of undergraduate students
+    2) number of staff
+    3) number of courses
+    4) number of postgradute students
+    5) number of practice rooms
 3 things it can do:
-    1)
-    2)
-    3)
+    1) organise a concert
+    2) change course contents
+    3) add a new course
  */
 
 /*
-Thing 8)
+Thing 8) Cafeteria
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) cost of item 1
+    2) cost of item 2
+    3) number of employees
+    4) cost of ingredients monthly
+    5) monthly revenue
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change menu
+    2) serve food
+    3) collect payment
  */
 
 /*
-Thing 9)
+Thing 9) Library
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) age of librarian
+    2) number of employees
+    3) number of shelves
+    4) number of books
+    5) late fees
 3 things it can do:
-    1)
-    2)
-    3)
+    1) check out a book
+    2) return a book
+    3) charge a late fee
  */
 
 /*
@@ -198,9 +198,9 @@ Thing 10) University
 5 properties:
     1) Student
     2) Teacher
-    3) Admissions Committee
+    3) Music Department
     4) Cafeteria
-    5) Librarian
+    5) Library
 3 things it can do:
     1) conduct exams
     2) collect fees
