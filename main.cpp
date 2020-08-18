@@ -53,59 +53,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) CPU
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of cores
+    2) clock speed
+    3) L1 cache
+    4) L2 cache
+    5) L3 cache
 3 things it can do:
-    1)
-    2)
-    3)
+    1) communicate with RAM
+    2) communicate with motherboard chipset
+    3) process data
  */
 
 /*
-Thing 2)
+Thing 2) Cat
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of legs
+    2) size of meal
+    3) weight
+    4) length of tail
+    5) rat kill count
 3 things it can do:
-    1)
-    2)
-    3)
+    1) climb a tree
+    2) hiss at dog
+    3) purr
  */
 
 /*
-Thing 3)
+Thing 3) Plane
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of wheels
+    2) number of wings
+    3) size of fuel tanks
+    4) passenger capacity
+    5) flights per day
 3 things it can do:
-    1)
-    2)
-    3)
+    1) take off
+    2) land
+    3) cruise
  */
 
 /*
-Thing 4)
+Thing 4) Coffee shop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of tables
+    2) number of chairs
+    3) count of customers per day
+    4) number of cups
+    5) number of coffee machines
 3 things it can do:
-    1)
-    2)
-    3)
+    1) take customer's order
+    2) make coffee
+    3) serve customer their order
  */
 
 
