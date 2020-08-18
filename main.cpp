@@ -113,17 +113,17 @@ Thing 4) Coffee shop
  */
 
 /*
-Thing 10) Pet Shelter
+Thing 10) University
 5 properties:
-    1) Dog
-    2) Cat
-    3) Bird
-    4) Lizard
-    5) Snake
+    1) Student
+    2) Teacher
+    3) Admissions Committee
+    4) Cafeteria
+    5) Dorms
 3 things it can do:
-    1) take care an animal
-    2) find the animal a home
-    3) give away the animal
+    1) conduct exams
+    2) collect fees
+    3) hold graduation ceremony
  */
 
 /*
