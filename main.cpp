@@ -57,9 +57,9 @@ Thing 1) CPU
 5 properties:
     1) number of cores
     2) clock speed
-    3) L1 cache
-    4) L2 cache
-    5) L3 cache
+    3) L1 cache size
+    4) L2 cache size
+    5) L3 cache size
 3 things it can do:
     1) communicate with RAM
     2) communicate with motherboard chipset
