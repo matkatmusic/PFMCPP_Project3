@@ -218,6 +218,19 @@ struct Plane
     int numPassengers = 250;
     //5) flights per day
     int numDailyFlights = 4;
+    
+    struct Pilot
+    {
+        int distanceFlown = 100000;
+        int age = 30;
+        float heightInCentimeters = 175.2f;
+        float weightInKilograms = 68.3f;
+        std::string airline = "Emirates";
+
+        void flyPlane();
+        void contactATC();
+        void talkToCoPilot();
+    };
 
     //1) take off
     void takeOff();
