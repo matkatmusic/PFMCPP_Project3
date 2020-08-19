@@ -170,7 +170,19 @@ struct CentralProcessingUnit
     void communicateWithMotherboard();
     float processData();
 };
+void CentralProcessingUnit::communicateWithRAM()
+{
 
+}
+void CentralProcessingUnit::communicateWithMotherboard()
+{
+
+}
+float CentralProcessingUnit::processData()
+{
+    float processedData;
+    return processedData;
+}
 
 struct Cat
 {
@@ -193,12 +205,36 @@ struct Cat
         void growBranches();
         void shedLeaves();
     };
-
+    Tree tree;
     void climbTree(Tree tree);
     void hissAtDog();
     void purr();
 };
+void Cat::Tree::growTaller()
+{
 
+}
+void Cat::Tree::growBranches()
+{
+
+}
+void Cat::Tree::shedLeaves()
+{
+
+}
+
+void Cat::climbTree(Cat::Tree tree)
+{
+
+}
+void Cat::hissAtDog()
+{
+
+}
+void Cat::purr()
+{
+    
+}
 
 struct Plane 
 {
