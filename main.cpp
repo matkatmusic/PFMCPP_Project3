@@ -109,7 +109,7 @@ struct CarWash
  */
 
 struct Person
-{	{
+{	
     int age;	    
     int height;	    
     float hairLength;	    
@@ -122,8 +122,19 @@ struct Person
 };
 struct Foot
 {
-    int stepSize;
+    int stepSize();
+    void stepForward();
 };
+int Foot::stepSize()
+{
+    return 8;
+}
+
+void Foot::stepForward()
+{
+
+}
+
 void Person::run(int howFast, bool startWithLeftFoot)
 {
     if (startWithLeftFoot)
