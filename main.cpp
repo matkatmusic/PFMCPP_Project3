@@ -110,17 +110,20 @@ struct CarWash
 
 struct Person
 {	{
-    int age;	    int age;
-    int height;	    int height;
-    float hairLength;	    float hairLength;
-    float GPA	    float GPA;
+    int age;	    
+    int height;	    
+    float hairLength;	    
+    float GPA;
     unsigned int SATScore;
     int distanceTravelled;
 
     void run(int, bool);
 
 };
-
+struct Foot
+{
+    int stepSize;
+};
 void Person::run(int howFast, bool startWithLeftFoot)
 {
     if (startWithLeftFoot)
