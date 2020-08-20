@@ -148,7 +148,7 @@ void Person::run(int howFast, bool startWithLeftFoot)
     {
         distanceTravelled += rightFoot.stepSize() + leftFoot.stepSize();
     }
-
+    howFast-=1;
 }	
 
 
@@ -227,9 +227,9 @@ void Cat::Tree::shedLeaves()
 
 }
 
-void Cat::climbTree(Cat::Tree tree)
+void Cat::climbTree(Cat::Tree tree1)
 {
-
+    tree1.numBranches+=1;
 }
 void Cat::hissAtDog()
 {
