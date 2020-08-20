@@ -116,6 +116,8 @@ struct Person
     float GPA;
     unsigned int SATScore;
     int distanceTravelled;
+    Foot leftFoot;
+    Foot rightFoot;
 
     void run(int, bool);
 
@@ -180,7 +182,7 @@ void CentralProcessingUnit::communicateWithMotherboard()
 }
 float CentralProcessingUnit::processData()
 {
-    float processedData;
+    float processedData=1.0f;
     return processedData;
 }
 
