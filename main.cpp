@@ -148,7 +148,7 @@ void Person::run(int howFast, bool startWithLeftFoot)
     {
         distanceTravelled += rightFoot.stepSize() + leftFoot.stepSize();
     }
-    howFast-=1;
+    howFast -= 1;
 }	
 
 
@@ -184,7 +184,7 @@ void CentralProcessingUnit::communicateWithMotherboard()
 }
 float CentralProcessingUnit::processData()
 {
-    float processedData=1.0f;
+    float processedData = 1.0f;
     return processedData;
 }
 
@@ -229,7 +229,7 @@ void Cat::Tree::shedLeaves()
 
 void Cat::climbTree(Cat::Tree tree1)
 {
-    tree1.numBranches+=1;
+    tree1.numBranches += 1;
 }
 void Cat::hissAtDog()
 {
