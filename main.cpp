@@ -170,17 +170,17 @@ struct CentralProcessingUnit
     int l2CacheSize = 16;
     int l3CacheSize = 32;
 
-    void communicateWithRAM();
-    void communicateWithMotherboard();
+    std::string communicateWithRAM();
+    std::string communicateWithMotherboard();
     float processData();
 };
-void CentralProcessingUnit::communicateWithRAM()
+std::string CentralProcessingUnit::communicateWithRAM()
 {
-
+    return("Hi RAM");
 }
-void CentralProcessingUnit::communicateWithMotherboard()
+std::string CentralProcessingUnit::communicateWithMotherboard()
 {
-
+    return("Hi Motherboard");
 }
 float CentralProcessingUnit::processData()
 {
@@ -205,39 +205,43 @@ struct Cat
         int numFlowers = 1;
         std::string treeType = "Apple";
 
-        void growTaller();
-        void growBranches();
-        void shedLeaves();
+        float growTaller(float heightInMeters);
+        int growBranches(int numBranches);
+        int shedLeaves(int numLeaves);
     };
     Tree tree;
-    void climbTree(Tree tree);
-    void hissAtDog();
-    void purr();
+    std::string climbTree(Tree tree);
+    std::string hissAtDog();
+    std::string purr();
 };
-void Cat::Tree::growTaller()
+float Cat::Tree::growTaller(float heightInMeters1)
 {
-
+    heightInMeters1 += 2.5f;
+    return{};
 }
-void Cat::Tree::growBranches()
+int Cat::Tree::growBranches(int numBranches1)
 {
-
+    numBranches1 -= 5;
+    return{};
 }
-void Cat::Tree::shedLeaves()
+int Cat::Tree::shedLeaves(int numLeaves1)
 {
-
+    numLeaves1 -= 10;
+    return{};
 }
 
-void Cat::climbTree(Cat::Tree tree1)
+std::string Cat::climbTree(Cat::Tree tree1)
 {
-    tree1.numBranches += 1;
+    return("Mrrrrrrow (I am stuck at "+ std::to_string(tree1.heightInMeters) + " m)");
 }
-void Cat::hissAtDog()
-{
 
-}
-void Cat::purr()
+std::string Cat::hissAtDog()
 {
-    
+    return("HISSSSSS");
+}
+std::string Cat::purr()
+{
+    return("PURRRRRR");
 }
 
 struct Plane 
@@ -256,16 +260,45 @@ struct Plane
         float weightInKilograms = 68.3f;
         std::string airline = "Emirates";
 
-        void flyPlane();
-        void contactATC();
-        void talkToCoPilot();
+        std::string flyPlane();
+        std::string contactATC();
+        std::string talkToCoPilot();
     };
 
-    void takeOff();
-    void land();
-    void cruise (int altitude = 50000);
+    std::string takeOff();
+    std::string land();
+    std::string cruise (int altitude = 50000);
 };
 
+std::string Plane::Pilot::flyPlane()
+{
+    return("I believe I can fly");
+}
+
+std::string Plane::Pilot::contactATC()
+{
+    return("Coming in for landing");
+}
+
+std::string Plane::Pilot::talkToCoPilot()
+{
+    return("Do you want to take over while I take a nap?");
+}
+
+std::string Plane::takeOff()
+{
+    return("up in the air now");
+}
+
+std::string Plane::land()
+{
+    return("Back on terra firma");
+}
+
+std::string Plane::cruise(int altitude1)
+{
+    return("Cruising at"+ std::to_string(altitude1) + "feet");
+}
 
 struct CoffeeShop
 {
@@ -276,9 +309,24 @@ struct CoffeeShop
     int numCoffeeMachines = 2;
 
     std::string takeOrder();
-    void makeCoffee (std::string order = "Latte");
-    void serveCoffee (std::string order = "Americano");
+    std::string makeCoffee (std::string order = "Latte");
+    std::string serveCoffee (std::string order = "Americano");
 };
+
+std::string CoffeeShop::takeOrder()
+{
+    return("May I take your order?");
+}
+
+std::string CoffeeShop::makeCoffee(std::string order1)
+{
+    return("I have made 1 " + order1);
+}
+
+std::string CoffeeShop::serveCoffee(std::string order1)
+{
+    return("Here is your " + order1);
+}
 
 
 struct Student
@@ -289,11 +337,25 @@ struct Student
     float gpa = 3.8f;
     unsigned int greScore = 325;
 
-    void study();
-    void attendClass();   
-    void skipClass();
+    std::string study(std::string subject = "Math");
+    std::string attendClass(std::string lesson = "English");   
+    std::string skipClass(std::string lesson = "History");
 };
 
+std::string Student::study(std::string subject1)
+{
+    return("I am studying " + subject1);
+}
+
+std::string Student::attendClass(std::string lesson1)
+{
+    return("I am attending my " + lesson1 + " lesson");
+}
+
+std::string Student::skipClass(std::string lesson1)
+{
+    return("I'm missing my " + lesson1 + " class");
+}
 
 struct Teacher
 {
@@ -303,11 +365,25 @@ struct Teacher
     std::string highestDegreeHeld = "PhD";
     std::string position = "Senior Professor";
 
-    void teach();
-    void conductPopQuiz();
+    std::string teach();
+    std::string conductPopQuiz();
     std::string gradeStudents();
 };
 
+std::string Teacher::teach()
+{
+    return("a + b = c");
+}
+
+std::string Teacher::conductPopQuiz()
+{
+    return("Good luck with your test");
+}
+
+std::string Teacher::gradeStudents()
+{
+    return("You got an A");
+}
 
 struct MusicDepartment
 {
@@ -317,11 +393,25 @@ struct MusicDepartment
     int numPostgraduateStudents = 30;
     int numPracticeRooms = 5;
 
-    void organiseConcert();
-    void changeCourseContents();
-    void addNewCourse();
+    std::string organiseConcert();
+    std::string changeCourseContents(std::string course);
+    std::string addNewCourse(std::string newCourse);
 };
 
+std::string MusicDepartment::organiseConcert()
+{
+    return("Welcome to the concert");
+}
+
+std::string MusicDepartment::changeCourseContents(std::string course1)
+{
+    return("I'm changing the course contents of" + course1);
+}
+
+std::string MusicDepartment::addNewCourse(std::string newCourse1)
+{
+    return("We are introducing a new course: " + newCourse1);
+}
 
 struct Cafeteria
 {
@@ -331,11 +421,25 @@ struct Cafeteria
     float costMonthlyIngredients = 1093.25f;
     float monthlyRevenue = 50096.95f;
 
-    void changeMenu();
-    void serveFood();
-    float collectPayment();
+    std::string changeMenu();
+    std::string serveFood();
+    float collectPayment(float payment);
 };
 
+std::string Cafeteria::changeMenu()
+{
+    return("New Menu");
+}
+
+std::string Cafeteria::serveFood()
+{
+    return("Here is your food");
+}
+
+float Cafeteria::collectPayment(float payment1)
+{
+    return(payment1);
+}
 
 struct Library
 {
@@ -345,23 +449,53 @@ struct Library
     int numBooks = 3000;
     float lateFees = 2.5f;
 
-    void checkOutBook();
-    void returnBook();
+    std::string checkOutBook();
+    std::string returnBook();
     float chargeLateFee(float lateFee, int numDays);
 };
+
+std::string Library::checkOutBook()
+{
+    return("Enjoy your book");
+}
+
+std::string Library::returnBook()
+{
+    return("Did you enjoy your book?");
+}
+
+float Library::chargeLateFee(float lateFee1, int numDays1)
+{
+    return(lateFee1 * numDays1);
+}
 
 struct University
 {
     Student student1;
     Teacher teacher1;
-    MusicDepartment musicDepartment;
+    MusicDepartment musicDepartment1;
     Cafeteria cafeteria1;
     Library library1;
 
-    void conductExams();
+    std::string conductExams();
     float collectFees(int numStudents,float yearlyFees);
-    void holdGraduation();
+    std::string holdGraduation();
 };
+
+std::string University::conductExams()
+{
+    return("Good luck with your exams");
+}
+
+float University::collectFees(int numStudents1, float yearlyFees1)
+{
+    return(numStudents1 * yearlyFees1);
+}
+
+std::string University::holdGraduation()
+{
+    return("Good bye, good luck");
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
