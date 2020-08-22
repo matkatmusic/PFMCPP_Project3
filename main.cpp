@@ -438,7 +438,7 @@ std::string Cafeteria::serveFood()
 
 float Cafeteria::collectPayment(float payment1)
 {
-    return(payment1);
+    return payment1;
 }
 
 struct Library
@@ -466,7 +466,7 @@ std::string Library::returnBook()
 
 float Library::chargeLateFee(float lateFee1, int numDays1)
 {
-    return(lateFee1 * numDays1);
+    return lateFee1 * numDays1;
 }
 
 struct University
@@ -489,7 +489,7 @@ std::string University::conductExams()
 
 float University::collectFees(int numStudents1, float yearlyFees1)
 {
-    return(numStudents1 * yearlyFees1);
+    return numStudents1 * yearlyFees1;
 }
 
 std::string University::holdGraduation()
