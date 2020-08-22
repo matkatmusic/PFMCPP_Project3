@@ -107,8 +107,49 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Foot
+{
+    int stepSize();
+    void stepForward();
+};
+int Foot::stepSize()
+{
+    return 8;
+}
+
+void Foot::stepForward()
+{
+
+}
+
+struct Person
+{	
+    int age;	    
+    int height;	    
+    float hairLength;	    
+    float GPA;
+    unsigned int SATScore;
+    int distanceTravelled;
+    Foot leftFoot;
+    Foot rightFoot;
+
+    void run(int, bool);
+
+};
 
 
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if (startWithLeftFoot)
+    {
+        distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize();
+    }
+    else 
+    {
+        distanceTravelled += rightFoot.stepSize() + leftFoot.stepSize();
+    }
+    howFast -= 1;
+}	
 
 
 
@@ -121,65 +162,39 @@ struct CarWash
  4) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  */
 
-
-
-/*
-Thing 1) CPU
-5 properties:
-    1) number of cores
-    2) clock speed
-    3) L1 cache size
-    4) L2 cache size
-    5) L3 cache size
-3 things it can do:
-    1) communicate with RAM
-    2) communicate with motherboard chipset
-    3) process data
- */
 struct CentralProcessingUnit
 {
-    //1) number of cores
     int numberOfCores = 8;
-    //2) clock speed
     float clockSpeedInGHz = 2.8f;
-    //3) L1 cache size
     int l1CacheSize = 8;
-    //4) L2 cache size
     int l2CacheSize = 16;
-    //5) L3 cache size
     int l3CacheSize = 32;
 
-    //1) communicate with RAM
-    void communicateWithRAM();
-    //2) communicate with motherboard chipset
-    void communicateWithMotherboard();
-    //3) process data
+    std::string communicateWithRAM();
+    std::string communicateWithMotherboard();
     float processData();
 };
-/*
-Thing 2) Cat
-5 properties:
-    1) number of legs
-    2) size of meal
-    3) weight
-    4) length of tail
-    5) rat kill count
-3 things it can do:
-    1) climb a tree
-    2) hiss at dog
-    3) purr
- */
+std::string CentralProcessingUnit::communicateWithRAM()
+{
+    return "Hi RAM";
+}
+std::string CentralProcessingUnit::communicateWithMotherboard()
+{
+    return "Hi Motherboard";
+}
+float CentralProcessingUnit::processData()
+{
+    float processedData = 1.0f;
+    return processedData;
+}
+
 struct Cat
 {
-    //1) number of legs
+
     int numLegs = 4;
-    //2) size of meal
     int mealSize = 5;
-    //3) weight
     float catWeight = 5.5f;
-    //4) length of tail
     float tailLength = 20.3f;
-    //5) rat kill count
     int killedRats = 15;
 
     struct Tree
@@ -190,42 +205,51 @@ struct Cat
         int numFlowers = 1;
         std::string treeType = "Apple";
 
-        void growTaller();
-        void growBranches();
-        void shedLeaves();
+        float growTaller();
+        int growBranches();
+        int shedLeaves();
     };
-
-    //1) climb a tree
-    void climbTree(Tree tree);
-    //2) hiss at dog
-    void hissAtDog();
-    //3) purr
-    void purr();
+    Tree tree;
+    std::string climbTree(Tree tree);
+    std::string hissAtDog();
+    std::string purr();
 };
-/*
-Thing 3) Plane
-5 properties:
-    1) number of wheels
-    2) number of wings
-    3) size of fuel tanks
-    4) passenger capacity
-    5) flights per day
-3 things it can do:
-    1) take off
-    2) land
-    3) cruise
- */
+float Cat::Tree::growTaller()
+{
+    heightInMeters += 2.5f;
+    return { };
+}
+int Cat::Tree::growBranches()
+{
+    numBranches += 5;
+    return { };
+}
+int Cat::Tree::shedLeaves()
+{
+    numLeaves -= 10;
+    return { };
+}
+
+std::string Cat::climbTree(Cat::Tree tree1)
+{
+    return "Mrrrrrrow (I am stuck at "+ std::to_string(tree1.heightInMeters) + " m)";
+}
+
+std::string Cat::hissAtDog()
+{
+    return "HISSSSSS";
+}
+std::string Cat::purr()
+{
+    return "PURRRRRR";
+}
+
 struct Plane 
 {
-    //1) number of wheels
     int numWheels = 3;
-    //2) number of wings
     unsigned int numWings = 2;
-    //3) size of fuel tanks
     int sizeOfFuelTank = 2000;
-    //4) passenger capacity
     int numPassengers = 250;
-    //5) flights per day
     int numDailyFlights = 4;
     
     struct Pilot
@@ -236,249 +260,243 @@ struct Plane
         float weightInKilograms = 68.3f;
         std::string airline = "Emirates";
 
-        void flyPlane();
-        void contactATC();
-        void talkToCoPilot();
+        std::string flyPlane();
+        std::string contactATC();
+        std::string talkToCoPilot();
     };
 
-    //1) take off
-    void takeOff();
-    //2) land
-    void land();
-    //3) cruise
-    void cruise (int altitude = 50000);
+    std::string takeOff();
+    std::string land();
+    std::string cruise (int altitude = 50000);
 };
-/*
-Thing 4) Coffee shop
-5 properties:
-    1) number of tables
-    2) number of chairs
-    3) count of customers per day
-    4) number of cups
-    5) number of coffee machines
-3 things it can do:
-    1) take customer's order
-    2) make coffee
-    3) serve customer their order
- */
+
+std::string Plane::Pilot::flyPlane()
+{
+    return "I believe I can fly";
+}
+
+std::string Plane::Pilot::contactATC()
+{
+    return "Coming in for landing";
+}
+
+std::string Plane::Pilot::talkToCoPilot()
+{
+    return "Do you want to take over while I take a nap?";
+}
+
+std::string Plane::takeOff()
+{
+    return "Up in the air now";
+}
+
+std::string Plane::land()
+{
+    return "Back on terra firma";
+}
+
+std::string Plane::cruise(int altitude1)
+{
+    return "Cruising at"+ std::to_string(altitude1) + "feet";
+}
+
 struct CoffeeShop
 {
-    //1) number of tables
     int numTables = 10;
-    //2) number of chairs
     int numChairs = 40;
-    //3) count of customers per day
     int numDailyCustomers = 400;
-    //4) number of cups
     int numCups = 10000;
-    //5) number of coffee machines
     int numCoffeeMachines = 2;
 
-    //1) take customer's order
     std::string takeOrder();
-    //2) make coffee
-    void makeCoffee (std::string order = "Latte");
-    //3) serve customer their order
-    void serveCoffee (std::string order = "Americano");
+    std::string makeCoffee (std::string order = "Latte");
+    std::string serveCoffee (std::string order = "Americano");
 };
-/*
-Thing 5) Student
-5 properties:
-    1) age
-    2) height
-    3) weight
-    4) gpa
-    5) GRE score
-3 things it can do:
-    1) study
-    2) attend class
-    3) skip class
- */
+
+std::string CoffeeShop::takeOrder()
+{
+    return "May I take your order?";
+}
+
+std::string CoffeeShop::makeCoffee(std::string order1)
+{
+    return "I have made 1 " + order1;
+}
+
+std::string CoffeeShop::serveCoffee(std::string order1)
+{
+    return "Here is your " + order1;
+}
+
+
 struct Student
 {
-    //1) age
     int age = 20;
-    //2) height
     float heightInCentimeters = 180.2f;
-    //3) weight
     float weightInKilos = 70.2f;
-    //4) gpa
     float gpa = 3.8f;
-    //5) GRE score
     unsigned int greScore = 325;
 
-    //1) study
-    void study();
-    //2) attend class
-    void attendClass();
-    //3) skip class
-    void skipClass();
+    std::string study(std::string subject = "Math");
+    std::string attendClass(std::string lesson = "English");   
+    std::string skipClass(std::string lesson = "History");
 };
-/*
-Thing 6) Teacher
-5 properties:
-    1) Age
-    2) height
-    3) compensation
-    4) degree held
-    5) position
-3 things it can do:
-    1) teach
-    2) conduct pop quiz
-    3) grade students
- */
+
+std::string Student::study(std::string subject1)
+{
+    return "I am studying " + subject1;
+}
+
+std::string Student::attendClass(std::string lesson1)
+{
+    return "I am attending my " + lesson1 + " lesson";
+}
+
+std::string Student::skipClass(std::string lesson1)
+{
+    return "I'm missing my " + lesson1 + " class";
+}
+
 struct Teacher
 {
-    //1) Age
     int age = 45;
-    //2) height
     float heightInCentimeters = 175.2f;
-    //3) compensation
     int compensation = 90000;
-    //4) degree held
     std::string highestDegreeHeld = "PhD";
-    //5) position
     std::string position = "Senior Professor";
 
-    //1) teach
-    void teach();
-    //2) conduct pop quiz
-    void conductPopQuiz();
-    //3) grade students
+    std::string teach();
+    std::string conductPopQuiz();
     std::string gradeStudents();
 };
-/*
-Thing 7) Music Department
-5 properties:
-    1) number of undergraduate students
-    2) number of staff
-    3) number of courses
-    4) number of postgradute students
-    5) number of practice rooms
-3 things it can do:
-    1) organise a concert
-    2) change course contents
-    3) add a new course
- */
+
+std::string Teacher::teach()
+{
+    return "a + b = c";
+}
+
+std::string Teacher::conductPopQuiz()
+{
+    return "Good luck with your test";
+}
+
+std::string Teacher::gradeStudents()
+{
+    return "You got an A";
+}
+
 struct MusicDepartment
 {
-    //1) number of undergraduate students
     int numUndergraduateStudents = 100;
-    //2) number of staff
     int numStaff = 15;
-    //3) number of courses
     int numCourses = 10;
-    //4) number of postgradute students
     int numPostgraduateStudents = 30;
-    //5) number of practice rooms
     int numPracticeRooms = 5;
 
-    //1) organise a concert
-    void organiseConcert();
-    //2) change course contents
-    void changeCourseContents();
-    //3) add a new course
-    void addNewCourse();
+    std::string organiseConcert();
+    std::string changeCourseContents(std::string course);
+    std::string addNewCourse(std::string newCourse);
 };
-/*
-Thing 8) Cafeteria
-5 properties:
-    1) cost of item 1
-    2) cost of item 2
-    3) number of employees
-    4) cost of ingredients monthly
-    5) monthly revenue
-3 things it can do:
-    1) change menu
-    2) serve food
-    3) collect payment
-*/
+
+std::string MusicDepartment::organiseConcert()
+{
+    return "Welcome to the concert";
+}
+
+std::string MusicDepartment::changeCourseContents(std::string course1)
+{
+    return "I'm changing the course contents of" + course1;
+}
+
+std::string MusicDepartment::addNewCourse(std::string newCourse1)
+{
+    return "We are introducing a new course: " + newCourse1;
+}
+
 struct Cafeteria
 {
-    //1) cost of item 1
     float costItemOne = 3.50f;
-    //2) cost of item 2
     float costItemTwo = 5.95f;
-    //3) number of employees
     int numEmployees = 12;
-    //4) cost of ingredients monthly
     float costMonthlyIngredients = 1093.25f;
-    //5) monthly revenue
     float monthlyRevenue = 50096.95f;
 
-    //1) change menu
-    void changeMenu();
-    //2) serve food
-    void serveFood();
-    //3) collect payment
-    float collectPayment();
+    std::string changeMenu();
+    std::string serveFood();
+    float collectPayment(float payment);
 };
-/*
-Thing 9) Library
-5 properties:
-    1) age of librarian
-    2) number of employees
-    3) number of shelves
-    4) number of books
-    5) late fees
-3 things it can do:
-    1) check out a book
-    2) return a book
-    3) charge a late fee
- */
+
+std::string Cafeteria::changeMenu()
+{
+    return "New Menu";
+}
+
+std::string Cafeteria::serveFood()
+{
+    return "Here is your food";
+}
+
+float Cafeteria::collectPayment(float payment1)
+{
+    return payment1;
+}
+
 struct Library
 {
-    //1) age of librarian
     int librarianAge = 58;
-    //2) number of employees
     int numEmployees = 5;
-    //3) number of shelves
     int numShelves = 50;
-    //4) number of books
     int numBooks = 3000;
-    //5) late fees
     float lateFees = 2.5f;
 
-    //1) check out a book
-    void checkOutBook();
-    //2) return a book
-    void returnBook();
-    //3) charge a late fee
+    std::string checkOutBook();
+    std::string returnBook();
     float chargeLateFee(float lateFee, int numDays);
 };
-/*
-Thing 10) University
-5 properties:
-    1) Student
-    2) Teacher
-    3) Music Department
-    4) Cafeteria
-    5) Library
-3 things it can do:
-    1) conduct exams
-    2) collect fees
-    3) hold graduation ceremony
- */
+
+std::string Library::checkOutBook()
+{
+    return "Enjoy your book";
+}
+
+std::string Library::returnBook()
+{
+    return "Did you enjoy your book?";
+}
+
+float Library::chargeLateFee(float lateFee1, int numDays1)
+{
+    return lateFee1 * numDays1;
+}
+
 struct University
 {
-    //1) Student
     Student student1;
-    //2) Teacher
     Teacher teacher1;
-    //3) Music Department
-    MusicDepartment musicDepartment;
-    //4) Cafeteria
+    MusicDepartment musicDepartment1;
     Cafeteria cafeteria1;
-    //5) Library
     Library library1;
 
-    //1) conduct exams
-    void conductExams();
-    //2) collect fees
+    std::string conductExams();
     float collectFees(int numStudents,float yearlyFees);
-    //3) hold graduation ceremony
-    void holdGraduation();
+    std::string holdGraduation();
 };
+
+std::string University::conductExams()
+{
+    return "Good luck with your exams";
+}
+
+float University::collectFees(int numStudents1, float yearlyFees1)
+{
+    return numStudents1 * yearlyFees1;
+}
+
+std::string University::holdGraduation()
+{
+    return "Good bye, good luck";
+}
+
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
