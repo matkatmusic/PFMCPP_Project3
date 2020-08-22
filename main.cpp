@@ -176,11 +176,11 @@ struct CentralProcessingUnit
 };
 std::string CentralProcessingUnit::communicateWithRAM()
 {
-    return("Hi RAM");
+    return "Hi RAM" ;
 }
 std::string CentralProcessingUnit::communicateWithMotherboard()
 {
-    return("Hi Motherboard");
+    return "Hi Motherboard" ;
 }
 float CentralProcessingUnit::processData()
 {
@@ -205,43 +205,43 @@ struct Cat
         int numFlowers = 1;
         std::string treeType = "Apple";
 
-        float growTaller(float heightInMeters);
-        int growBranches(int numBranches);
-        int shedLeaves(int numLeaves);
+        float growTaller();
+        int growBranches();
+        int shedLeaves();
     };
     Tree tree;
     std::string climbTree(Tree tree);
     std::string hissAtDog();
     std::string purr();
 };
-float Cat::Tree::growTaller(float heightInMeters1)
+float Cat::Tree::growTaller()
 {
-    heightInMeters1 += 2.5f;
-    return{};
+    heightInMeters += 2.5f;
+    return { };
 }
-int Cat::Tree::growBranches(int numBranches1)
+int Cat::Tree::growBranches()
 {
-    numBranches1 -= 5;
-    return{};
+    numBranches += 5;
+    return { };
 }
-int Cat::Tree::shedLeaves(int numLeaves1)
+int Cat::Tree::shedLeaves()
 {
-    numLeaves1 -= 10;
-    return{};
+    numLeaves -= 10;
+    return { };
 }
 
 std::string Cat::climbTree(Cat::Tree tree1)
 {
-    return("Mrrrrrrow (I am stuck at "+ std::to_string(tree1.heightInMeters) + " m)");
+    return "Mrrrrrrow (I am stuck at "+ std::to_string(tree1.heightInMeters) + " m)" ;
 }
 
 std::string Cat::hissAtDog()
 {
-    return("HISSSSSS");
+    return "HISSSSSS" ;
 }
 std::string Cat::purr()
 {
-    return("PURRRRRR");
+    return "PURRRRRR" ;
 }
 
 struct Plane 
@@ -272,32 +272,32 @@ struct Plane
 
 std::string Plane::Pilot::flyPlane()
 {
-    return("I believe I can fly");
+    return "I believe I can fly" ;
 }
 
 std::string Plane::Pilot::contactATC()
 {
-    return("Coming in for landing");
+    return "Coming in for landing" ;
 }
 
 std::string Plane::Pilot::talkToCoPilot()
 {
-    return("Do you want to take over while I take a nap?");
+    return "Do you want to take over while I take a nap?" ;
 }
 
 std::string Plane::takeOff()
 {
-    return("up in the air now");
+    return "Up in the air now";
 }
 
 std::string Plane::land()
 {
-    return("Back on terra firma");
+    return "Back on terra firma" ;
 }
 
 std::string Plane::cruise(int altitude1)
 {
-    return("Cruising at"+ std::to_string(altitude1) + "feet");
+    return "Cruising at"+ std::to_string(altitude1) + "feet" ;
 }
 
 struct CoffeeShop
@@ -315,17 +315,17 @@ struct CoffeeShop
 
 std::string CoffeeShop::takeOrder()
 {
-    return("May I take your order?");
+    return "May I take your order?" ;
 }
 
 std::string CoffeeShop::makeCoffee(std::string order1)
 {
-    return("I have made 1 " + order1);
+    return "I have made 1 " + order1 ;
 }
 
 std::string CoffeeShop::serveCoffee(std::string order1)
 {
-    return("Here is your " + order1);
+    return "Here is your " + order1 ;
 }
 
 
@@ -344,17 +344,17 @@ struct Student
 
 std::string Student::study(std::string subject1)
 {
-    return("I am studying " + subject1);
+    return "I am studying " + subject1 ;
 }
 
 std::string Student::attendClass(std::string lesson1)
 {
-    return("I am attending my " + lesson1 + " lesson");
+    return "I am attending my " + lesson1 + " lesson" ;
 }
 
 std::string Student::skipClass(std::string lesson1)
 {
-    return("I'm missing my " + lesson1 + " class");
+    return "I'm missing my " + lesson1 + " class" ;
 }
 
 struct Teacher
@@ -372,17 +372,17 @@ struct Teacher
 
 std::string Teacher::teach()
 {
-    return("a + b = c");
+    return "a + b = c" ;
 }
 
 std::string Teacher::conductPopQuiz()
 {
-    return("Good luck with your test");
+    return "Good luck with your test" ;
 }
 
 std::string Teacher::gradeStudents()
 {
-    return("You got an A");
+    return "You got an A" ;
 }
 
 struct MusicDepartment
@@ -400,17 +400,17 @@ struct MusicDepartment
 
 std::string MusicDepartment::organiseConcert()
 {
-    return("Welcome to the concert");
+    return "Welcome to the concert" ;
 }
 
 std::string MusicDepartment::changeCourseContents(std::string course1)
 {
-    return("I'm changing the course contents of" + course1);
+    return "I'm changing the course contents of" + course1 ;
 }
 
 std::string MusicDepartment::addNewCourse(std::string newCourse1)
 {
-    return("We are introducing a new course: " + newCourse1);
+    return "We are introducing a new course: " + newCourse1 ;
 }
 
 struct Cafeteria
@@ -428,12 +428,12 @@ struct Cafeteria
 
 std::string Cafeteria::changeMenu()
 {
-    return("New Menu");
+    return "New Menu" ;
 }
 
 std::string Cafeteria::serveFood()
 {
-    return("Here is your food");
+    return "Here is your food" ;
 }
 
 float Cafeteria::collectPayment(float payment1)
@@ -456,12 +456,12 @@ struct Library
 
 std::string Library::checkOutBook()
 {
-    return("Enjoy your book");
+    return "Enjoy your book" ;
 }
 
 std::string Library::returnBook()
 {
-    return("Did you enjoy your book?");
+    return "Did you enjoy your book?" ;
 }
 
 float Library::chargeLateFee(float lateFee1, int numDays1)
@@ -484,7 +484,7 @@ struct University
 
 std::string University::conductExams()
 {
-    return("Good luck with your exams");
+    return "Good luck with your exams" ;
 }
 
 float University::collectFees(int numStudents1, float yearlyFees1)
@@ -494,7 +494,7 @@ float University::collectFees(int numStudents1, float yearlyFees1)
 
 std::string University::holdGraduation()
 {
-    return("Good bye, good luck");
+    return "Good bye, good luck" ;
 }
 
 /*
