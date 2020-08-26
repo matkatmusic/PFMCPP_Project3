@@ -525,5 +525,20 @@ std::string University::holdGraduation()
 int main()
 {
     Example::main();
+
+    CentralProcessingUnit cpu1;
+    Cat cat1;
+    Cat::Tree tree1;
+    Plane plane1;
+    Plane::Pilot pilot1;
+    CoffeeShop coffeeShop1;
+    Student student1;
+    Teacher teacher1;
+    MusicDepartment musicDepartment1;
+    Cafeteria cafeteria1;
+    Library library1;
+
+    University university1;
+
     std::cout << "good to go!" << std::endl;
 }
