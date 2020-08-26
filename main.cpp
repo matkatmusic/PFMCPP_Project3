@@ -87,11 +87,11 @@ CentralProcessingUnit::CentralProcessingUnit()
 
 void CentralProcessingUnit::communicateWithRAM()
 {
-    std::cout << "Hi RAM";
+    std::cout << "Hi RAM\n";
 }
 void CentralProcessingUnit::communicateWithMotherboard()
 {
-    std::cout << "Hi Motherboard";
+    std::cout << "Hi Motherboard\n";
 }
 float CentralProcessingUnit::processData()
 {
@@ -167,11 +167,11 @@ std::string Cat::climbTree(Cat::Tree tree1)
 
 void Cat::hissAtDog()
 {
-    std::cout << "HISSSSSS";
+    std::cout << "HISSSSSS\n";
 }
 void Cat::purr()
 {
-    std::cout << "PURRRRRR";
+    std::cout << "PURRRRRR\n";
 }
 
 struct Plane 
@@ -247,7 +247,7 @@ std::string Plane::land()
 
 void Plane::cruise(int altitude1)
 {
-    std::cout << "Cruising at"+ std::to_string(altitude1) + "feet";
+    std::cout << "Cruising at "+ std::to_string(altitude1) + " feet\n";
 }
 
 struct CoffeeShop
@@ -285,7 +285,7 @@ std::string CoffeeShop::makeCoffee(std::string order1)
 
 void CoffeeShop::serveCoffee(std::string order1)
 {
-    std::cout << "Here is your " + order1;
+    std::cout << "Here is your " + order1 << "\n";
 }
 
 
@@ -314,7 +314,7 @@ Student::Student()
 
 void Student::study(std::string subject1)
 {
-    std::cout << "I am studying " + subject1;
+    std::cout << "I am studying " + subject1 + "\n";
 }
 
 std::string Student::attendClass(std::string lesson1)
@@ -352,7 +352,7 @@ Teacher::Teacher()
 
 void Teacher::teach()
 {
-    std::cout << "a + b = c";
+    std::cout << "a + b = c\n";
 }
 
 std::string Teacher::conductPopQuiz()
@@ -390,7 +390,7 @@ MusicDepartment::MusicDepartment()
 
 void MusicDepartment::organiseConcert()
 {
-    std::cout << "Welcome to the concert";
+    std::cout << "Welcome to the concert\n";
 }
 
 std::string MusicDepartment::changeCourseContents(std::string course1)
@@ -433,7 +433,7 @@ std::string Cafeteria::changeMenu()
 
 void Cafeteria::serveFood()
 {
-    std::cout << "Here is your food";
+    std::cout << "Here is your food\n";
 }
 
 float Cafeteria::collectPayment(float payment1)
@@ -466,7 +466,7 @@ Library::Library()
 
 void Library::checkOutBook()
 {
-    std::cout << "Enjoy your book";
+    std::cout << "Enjoy your book\n";
 }
 
 std::string Library::returnBook()
@@ -494,7 +494,7 @@ struct University
 
 void University::conductExams()
 {
-    std::cout << "Good luck with your exams";
+    std::cout << "Good luck with your exams\n";
 }
 
 float University::collectFees(int numStudents1, float yearlyFees1)
@@ -539,6 +539,66 @@ int main()
     Library library1;
 
     University university1;
+
+    std::cout << "CPU communication \n";
+    cpu1.communicateWithRAM();
+    cpu1.communicateWithMotherboard();
+    std::cout << "\n";
+
+    std::cout << "Cat actions\n";
+    cat1.hissAtDog();
+    cat1.purr();
+    std::cout << "\n";
+
+    std::cout << "Tree Properties\n";
+    std::cout << "Tree 1 has " + std::to_string(tree1.numBranches) + " branches, and " + std::to_string(tree1.numLeaves) + " leaves \n";
+    std::cout << "\n";
+
+    std::cout << "Plane actions\n";
+    plane1.cruise();
+    std::cout << "\n";
+
+    std::cout << "Pilot properties and actions\n";
+    std::cout << "The pilot is " + std::to_string(pilot1.age) + " years old\n";
+    std::cout << "The pilot is " + std::to_string(pilot1.heightInCentimeters/100.0f) + " meters tall\n";
+    std::cout << pilot1.contactATC() << "\n";
+    std::cout << "\n";
+
+    std::cout << "Coffee Shop:\n";
+    std::cout << "We have " + std::to_string(coffeeShop1.numCoffeeMachines) + ", and we serve " + std::to_string(coffeeShop1.numDailyCustomers) + " people each day\n";
+    coffeeShop1.serveCoffee("Americano");
+    std::cout << "\n";
+
+    std::cout << "Student Actions: \n";
+    student1.study("History");
+    std::cout << "\n";
+
+    std::cout << "Teacher Actions: \n";
+    teacher1.teach();
+    std::cout << "\n";
+
+    std::cout << "Music Department Actions: \n";
+    musicDepartment1.organiseConcert();
+    std::cout << "\n";
+
+    std::cout << "Cafeteria Actions: \n";
+    cafeteria1.serveFood();
+    std::cout << "\n";
+
+    std::cout << "Library Actions: \n";
+    library1.checkOutBook();
+    std::cout << "\n";
+
+    std::cout << "University Properties and Actions: \n";
+    university1.conductExams();
+    std::cout << "This University's Music Department has " + std::to_string(university1.musicDepartment1.numUndergraduateStudents) + " students";
+    std::cout << "\n";
+    std::cout << "\n";
+
+
+
+
+
 
     std::cout << "good to go!" << std::endl;
 }
