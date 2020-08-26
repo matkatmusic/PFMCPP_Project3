@@ -64,16 +64,27 @@ int main()
 
 struct CentralProcessingUnit
 {
-    int numberOfCores = 8;
-    float clockSpeedInGHz = 2.8f;
-    int l1CacheSize = 8;
-    int l2CacheSize = 16;
-    int l3CacheSize = 32;
+    CentralProcessingUnit();
+    int numberOfCores;
+    float clockSpeedInGHz;
+    int l1CacheSize;
+    int l2CacheSize;
+    int l3CacheSize;
 
     std::string communicateWithRAM();
     std::string communicateWithMotherboard();
     float processData();
 };
+
+CentralProcessingUnit::CentralProcessingUnit()
+{
+    numberOfCores = 8;
+    clockSpeedInGHz = 2.8f;
+    l1CacheSize = 8;
+    l2CacheSize = 16;
+    l3CacheSize = 32;
+}
+
 std::string CentralProcessingUnit::communicateWithRAM()
 {
     return "Hi RAM";
@@ -90,21 +101,21 @@ float CentralProcessingUnit::processData()
 
 struct Cat
 {
-
-    int numLegs = 4;
-    int mealSize = 5;
-    float catWeight = 5.5f;
-    float tailLength = 20.3f;
-    int killedRats = 15;
+    Cat();
+    int numLegs;
+    int mealSize;
+    float catWeight;
+    float tailLength;
+    int killedRats;
 
     struct Tree
     {
-        int numLeaves = 100;
-        unsigned int numBranches = 20;
-        float heightInMeters = 10.3f;
-        int numFlowers = 1;
-        std::string treeType = "Apple";
-
+        Tree();
+        int numLeaves;
+        unsigned int numBranches;
+        float heightInMeters;
+        int numFlowers;
+        std::string treeType;
         float growTaller();
         int growBranches();
         int shedLeaves();
@@ -114,6 +125,24 @@ struct Cat
     std::string hissAtDog();
     std::string purr();
 };
+
+Cat::Cat()
+{
+    numLegs = 4;
+    mealSize = 5;
+    catWeight = 5.5f;
+    tailLength = 20.3f;
+    killedRats = 15; 
+}
+
+Cat::Tree::Tree()
+{
+    numLeaves = 100;
+    numBranches = 20;
+    heightInMeters = 10.3f;
+    numFlowers = 1;
+}
+
 float Cat::Tree::growTaller()
 {
     heightInMeters += 2.5f;
@@ -146,19 +175,21 @@ std::string Cat::purr()
 
 struct Plane 
 {
-    int numWheels = 3;
-    unsigned int numWings = 2;
-    int sizeOfFuelTank = 2000;
-    int numPassengers = 250;
-    int numDailyFlights = 4;
+    Plane();
+    int numWheels;
+    unsigned int numWings;
+    int sizeOfFuelTank;
+    int numPassengers;
+    int numDailyFlights;
     
     struct Pilot
     {
-        int distanceFlown = 100000;
-        int age = 30;
-        float heightInCentimeters = 175.2f;
-        float weightInKilograms = 68.3f;
-        std::string airline = "Emirates";
+        Pilot();
+        int distanceFlown;
+        int age;
+        float heightInCentimeters;
+        float weightInKilograms;
+        std::string airline;
 
         std::string flyPlane();
         std::string contactATC();
@@ -169,6 +200,24 @@ struct Plane
     std::string land();
     std::string cruise (int altitude = 50000);
 };
+
+Plane::Plane()
+{
+    numWheels = 3;
+    numWings = 2;
+    sizeOfFuelTank = 2000;
+    numPassengers = 250;
+    numDailyFlights = 4;
+}
+
+Plane::Pilot::Pilot()
+{
+    distanceFlown = 100000;
+    age = 30;
+    heightInCentimeters = 175.2f;
+    weightInKilograms = 68.3f;
+    airline = "Emirates";
+}
 
 std::string Plane::Pilot::flyPlane()
 {
@@ -202,16 +251,26 @@ std::string Plane::cruise(int altitude1)
 
 struct CoffeeShop
 {
-    int numTables = 10;
-    int numChairs = 40;
-    int numDailyCustomers = 400;
-    int numCups = 10000;
-    int numCoffeeMachines = 2;
+    CoffeeShop();
+    int numTables;
+    int numChairs;
+    int numDailyCustomers;
+    int numCups;
+    int numCoffeeMachines;
 
     std::string takeOrder();
     std::string makeCoffee (std::string order = "Latte");
     std::string serveCoffee (std::string order = "Americano");
 };
+
+CoffeeShop::CoffeeShop()
+{
+    numTables = 10;
+    numChairs = 40;
+    numDailyCustomers = 400;
+    numCups = 10000;
+    numCoffeeMachines = 2;
+}
 
 std::string CoffeeShop::takeOrder()
 {
@@ -231,16 +290,26 @@ std::string CoffeeShop::serveCoffee(std::string order1)
 
 struct Student
 {
-    int age = 20;
-    float heightInCentimeters = 180.2f;
-    float weightInKilos = 70.2f;
-    float gpa = 3.8f;
-    unsigned int greScore = 325;
+    Student();
+    int age;
+    float heightInCentimeters;
+    float weightInKilos;
+    float gpa;
+    unsigned int greScore;
 
     std::string study(std::string subject = "Math");
     std::string attendClass(std::string lesson = "English");   
     std::string skipClass(std::string lesson = "History");
 };
+
+Student::Student()
+{
+    age = 20;
+    heightInCentimeters = 180.2f;
+    weightInKilos = 70.2f;
+    gpa = 3.8f;
+    greScore = 325;
+}
 
 std::string Student::study(std::string subject1)
 {
@@ -259,16 +328,26 @@ std::string Student::skipClass(std::string lesson1)
 
 struct Teacher
 {
-    int age = 45;
-    float heightInCentimeters = 175.2f;
-    int compensation = 90000;
-    std::string highestDegreeHeld = "PhD";
-    std::string position = "Senior Professor";
+    Teacher();
+    int age;
+    float heightInCentimeters;
+    int compensation;
+    std::string highestDegreeHeld;
+    std::string position;
 
     std::string teach();
     std::string conductPopQuiz();
     std::string gradeStudents();
 };
+
+Teacher::Teacher()
+{
+    age = 45;
+    heightInCentimeters = 175.2f;
+    compensation = 90000;
+    highestDegreeHeld = "PhD";
+    position = "Senior Professor";
+}
 
 std::string Teacher::teach()
 {
@@ -287,16 +366,26 @@ std::string Teacher::gradeStudents()
 
 struct MusicDepartment
 {
-    int numUndergraduateStudents = 100;
-    int numStaff = 15;
-    int numCourses = 10;
-    int numPostgraduateStudents = 30;
-    int numPracticeRooms = 5;
+    MusicDepartment();
+    int numUndergraduateStudents;
+    int numStaff;
+    int numCourses;
+    int numPostgraduateStudents;
+    int numPracticeRooms;
 
     std::string organiseConcert();
     std::string changeCourseContents(std::string course);
     std::string addNewCourse(std::string newCourse);
 };
+
+MusicDepartment::MusicDepartment()
+{
+    numUndergraduateStudents = 100;
+    numStaff = 15;
+    numCourses = 10;
+    numPostgraduateStudents = 30;
+    numPracticeRooms = 5;
+}
 
 std::string MusicDepartment::organiseConcert()
 {
@@ -315,16 +404,26 @@ std::string MusicDepartment::addNewCourse(std::string newCourse1)
 
 struct Cafeteria
 {
-    float costItemOne = 3.50f;
-    float costItemTwo = 5.95f;
-    int numEmployees = 12;
-    float costMonthlyIngredients = 1093.25f;
-    float monthlyRevenue = 50096.95f;
+    Cafeteria();
+    float costItemOne;
+    float costItemTwo;
+    int numEmployees;
+    float costMonthlyIngredients;
+    float monthlyRevenue;
 
     std::string changeMenu();
     std::string serveFood();
     float collectPayment(float payment);
 };
+
+Cafeteria::Cafeteria()
+{
+    costItemOne = 3.50f;
+    costItemTwo = 5.95f;
+    numEmployees = 12;
+    costMonthlyIngredients = 1093.25f;
+    monthlyRevenue = 50096.95f;
+}
 
 std::string Cafeteria::changeMenu()
 {
@@ -343,16 +442,26 @@ float Cafeteria::collectPayment(float payment1)
 
 struct Library
 {
-    int librarianAge = 58;
-    int numEmployees = 5;
-    int numShelves = 50;
-    int numBooks = 3000;
-    float lateFees = 2.5f;
+    Library();
+    int librarianAge;
+    int numEmployees;
+    int numShelves;
+    int numBooks;
+    float lateFees;
 
     std::string checkOutBook();
     std::string returnBook();
     float chargeLateFee(float lateFee, int numDays);
 };
+
+Library::Library()
+{
+    librarianAge = 58;
+    numEmployees = 5;
+    numShelves = 50;
+    numBooks = 3000;
+    lateFees = 2.5f;
+}
 
 std::string Library::checkOutBook()
 {
