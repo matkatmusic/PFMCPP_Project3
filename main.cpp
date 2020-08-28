@@ -210,10 +210,11 @@ struct CoffeeShop
     int numDailyCustomers;
     int numCups;
     int numCoffeeMachines;
+    std::string order {"Latte"};
 
     std::string takeOrder();
-    std::string makeCoffee (std::string order = "Latte");
-    void serveCoffee (std::string order = "Americano");
+    void makeCoffee ();
+    void serveCoffee ();
 };
 
 CoffeeShop::CoffeeShop()
@@ -230,14 +231,14 @@ std::string CoffeeShop::takeOrder()
     return "May I take your order?";
 }
 
-std::string CoffeeShop::makeCoffee(std::string order1)
+void CoffeeShop::makeCoffee()
 {
-    return "I have made 1 " + order1;
+    std::cout << "I have made 1 " + CoffeeShop::order << "\n";
 }
 
-void CoffeeShop::serveCoffee(std::string order1)
+void CoffeeShop::serveCoffee()
 {
-    std::cout << "Here is your " + order1 << "\n";
+    std::cout << "Here is your " + CoffeeShop::order << "\n";
 }
 
 
@@ -509,7 +510,8 @@ int main()
 
     std::cout << "Coffee Shop:\n";
     std::cout << "We have " + std::to_string(coffeeShop1.numCoffeeMachines) + ", and we serve " + std::to_string(coffeeShop1.numDailyCustomers) + " people each day\n";
-    coffeeShop1.serveCoffee("Americano");
+    coffeeShop1.makeCoffee();
+    coffeeShop1.serveCoffee();
     std::cout << "\n";
 
     std::cout << "Student Actions: \n";
