@@ -71,7 +71,10 @@ float CentralProcessingUnit::processData()
 
 struct Cat
 {
-    Cat(): numLegs {4}, mealSize {5}, catWeight {5.5f} {}
+    Cat(): numLegs {4},
+           mealSize {5}, 
+           catWeight {5.5f} 
+           {}
     int numLegs;
     int mealSize;
     float catWeight;
@@ -146,7 +149,9 @@ struct Plane
     
     struct Pilot
     {
-        Pilot(): distanceFlown {100000}, age {30} {}
+        Pilot(): distanceFlown {100000},
+                 age {30} 
+                 {}
         int distanceFlown;
         int age;
         float heightInCentimeters {175.2f};
@@ -282,7 +287,10 @@ std::string Student::skipClass(std::string lesson1)
 
 struct Teacher
 {
-    Teacher(): age {45}, heightInCentimeters {175.2f}, compensation {90000},highestDegreeHeld {"PhD"}, position {"Senior Professor"} {}
+    Teacher(): age {45},
+             heightInCentimeters {175.2f}, compensation {90000},highestDegreeHeld {"PhD"}, 
+             position {"Senior Professor"} 
+             {}
     int age;
     float heightInCentimeters;
     int compensation;
