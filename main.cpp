@@ -238,12 +238,12 @@ std::string CoffeeShop::takeOrder()
 
 void CoffeeShop::makeCoffee()
 {
-    std::cout << "I have made 1 " + CoffeeShop::order << "\n";
+    std::cout << "I have made 1 " + order << "\n";
 }
 
 void CoffeeShop::serveCoffee()
 {
-    std::cout << "Here is your " + CoffeeShop::order << "\n";
+    std::cout << "Here is your " + order << "\n";
 }
 
 
