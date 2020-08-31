@@ -42,26 +42,18 @@ int main()
 
 struct CentralProcessingUnit
 {
-    CentralProcessingUnit();
     int numberOfCores;
     float clockSpeedInGHz;
-    int l1CacheSize;
-    int l2CacheSize;
-    int l3CacheSize;
+    int l1CacheSize {8};
+    int l2CacheSize {16};
+    int l3CacheSize {32};
+
+    CentralProcessingUnit(): numberOfCores{8},clockSpeedInGHz {2.8f} {}
 
     void communicateWithRAM();
     void communicateWithMotherboard();
     float processData();
 };
-
-CentralProcessingUnit::CentralProcessingUnit()
-{
-    numberOfCores = 8;
-    clockSpeedInGHz = 2.8f;
-    l1CacheSize = 8;
-    l2CacheSize = 16;
-    l3CacheSize = 32;
-}
 
 void CentralProcessingUnit::communicateWithRAM()
 {
@@ -79,12 +71,15 @@ float CentralProcessingUnit::processData()
 
 struct Cat
 {
-    Cat();
+    Cat(): numLegs {4},
+           mealSize {5}, 
+           catWeight {5.5f} 
+           {}
     int numLegs;
     int mealSize;
     float catWeight;
-    float tailLength;
-    int killedRats;
+    float tailLength {20.3f};
+    int killedRats {15};
 
     struct Tree
     {
@@ -104,15 +99,6 @@ struct Cat
     void hissAtDog();
     void purr();
 };
-
-Cat::Cat()
-{
-    numLegs = 4;
-    mealSize = 5;
-    catWeight = 5.5f;
-    tailLength = 20.3f;
-    killedRats = 15; 
-}
 
 Cat::Tree::Tree()
 {
@@ -163,12 +149,14 @@ struct Plane
     
     struct Pilot
     {
-        Pilot();
+        Pilot(): distanceFlown {100000},
+                 age {30} 
+                 {}
         int distanceFlown;
         int age;
-        float heightInCentimeters;
-        float weightInKilograms;
-        std::string airline;
+        float heightInCentimeters {175.2f};
+        float weightInKilograms {68.3f};
+        std::string airline {"Emirates"};
 
         std::string flyPlane();
         std::string contactATC();
@@ -187,15 +175,6 @@ Plane::Plane()
     sizeOfFuelTank = 2000;
     numPassengers = 250;
     numDailyFlights = 4;
-}
-
-Plane::Pilot::Pilot()
-{
-    distanceFlown = 100000;
-    age = 30;
-    heightInCentimeters = 175.2f;
-    weightInKilograms = 68.3f;
-    airline = "Emirates";
 }
 
 std::string Plane::Pilot::flyPlane()
@@ -236,10 +215,11 @@ struct CoffeeShop
     int numDailyCustomers;
     int numCups;
     int numCoffeeMachines;
+    std::string order {"Latte"};
 
     std::string takeOrder();
-    std::string makeCoffee (std::string order = "Latte");
-    void serveCoffee (std::string order = "Americano");
+    void makeCoffee ();
+    void serveCoffee ();
 };
 
 CoffeeShop::CoffeeShop()
@@ -256,14 +236,14 @@ std::string CoffeeShop::takeOrder()
     return "May I take your order?";
 }
 
-std::string CoffeeShop::makeCoffee(std::string order1)
+void CoffeeShop::makeCoffee()
 {
-    return "I have made 1 " + order1;
+    std::cout << "I have made 1 " + order << "\n";
 }
 
-void CoffeeShop::serveCoffee(std::string order1)
+void CoffeeShop::serveCoffee()
 {
-    std::cout << "Here is your " + order1 << "\n";
+    std::cout << "Here is your " + order << "\n";
 }
 
 
@@ -307,7 +287,10 @@ std::string Student::skipClass(std::string lesson1)
 
 struct Teacher
 {
-    Teacher();
+    Teacher(): age {45},
+             heightInCentimeters {175.2f}, compensation {90000},highestDegreeHeld {"PhD"}, 
+             position {"Senior Professor"} 
+             {}
     int age;
     float heightInCentimeters;
     int compensation;
@@ -318,15 +301,6 @@ struct Teacher
     std::string conductPopQuiz();
     std::string gradeStudents();
 };
-
-Teacher::Teacher()
-{
-    age = 45;
-    heightInCentimeters = 175.2f;
-    compensation = 90000;
-    highestDegreeHeld = "PhD";
-    position = "Senior Professor";
-}
 
 void Teacher::teach()
 {
@@ -544,7 +518,8 @@ int main()
 
     std::cout << "Coffee Shop:\n";
     std::cout << "We have " + std::to_string(coffeeShop1.numCoffeeMachines) + ", and we serve " + std::to_string(coffeeShop1.numDailyCustomers) + " people each day\n";
-    coffeeShop1.serveCoffee("Americano");
+    coffeeShop1.makeCoffee();
+    coffeeShop1.serveCoffee();
     std::cout << "\n";
 
     std::cout << "Student Actions: \n";
