@@ -116,9 +116,6 @@ struct CarWash //                                   1) define an empty struct fo
 
 
 
-
-
-
 /*
 1) Acoustic Guitar
 5 properties:
@@ -133,19 +130,80 @@ struct CarWash //                                   1) define an empty struct fo
     3) Tune its strings (you would want a nested type "string"?)
  */
 
+struct AcousticGuitar 
+{
+    // number of strings
+    int numStrings = 6;
+
+    // number of frets
+    int numFrets = 18;
+
+    // fret number of capo
+    int capoFretNumber = 7;
+
+    // year it was built
+    int yearOfConstruction = 1972;
+
+    // whether it has amplification
+    bool hasAmplification = true;
+
+    // play a single note
+    void playNote(int stringNumber, int fretNumber);
+
+    // play a chord (would have to refer to some chart of chords)
+    void playChord(std::string chordName);
+
+    // tune a string
+    void tuneString(int stringNumber, float tuningFrequency);
+};
+
+
+
+
+
 /*
 2) Library
 5 properties:
     1) Number of books
     2) Number of members
     3) Fee for returning books late
-    4) Numbero of books each member can have out at once
+    4) Number of books each member can have out at once
     5) Duration that a member can take a book out for
 3 things it can do:
     1) Check out a book
     2) Return a book
     3) Search whether a book is in the libarry
  */
+
+struct Library
+{
+    // number of books
+    int numBooks = 100;
+
+    // number of members
+    int numMembers = 100;
+
+    // fee for late books
+    float lateFee = 1.25f;
+
+    // most books a person can have out
+    int maxBooksLoaned = 5;
+
+    // duration a member can have a book out
+    int maxDaysLoan = 14;
+
+    // check out a book
+    void checkOutBook(std::string bookTitle);
+
+    // return a book
+    void returnBook(std::string bookTitle);
+
+    // check if a book is in the library
+    bool isBookInLibrary(std::string bookTitle);
+};
+
+
+
 
 /*
 3) smart light bulb
