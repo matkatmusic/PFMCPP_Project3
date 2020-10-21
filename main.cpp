@@ -53,59 +53,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) shoe
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) brand 
+    2) size
+    3) color
+    4) condition
+    5) securing method
 3 things it can do:
-    1)
-    2)
-    3)
+    1) be put on
+    2) be taken off
+    3) be thrown away
  */
 
 /*
-Thing 2)
+Thing 2) Wurlitzer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) volume level
+    2) vibrato amount
+    3) model
+    4) condition
+    5) number of keys
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change volume 
+    2) be played
+    3) turn on or off
  */
 
 /*
-Thing 3)
+Thing 3) electric bass
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of strings
+    2) type of pickups
+    3) brand
+    4) model 
+    5) age 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) be played
+    2) be sold
+    3) be restrung
  */
 
 /*
-Thing 4)
+Thing 4) city
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) population 
+    2) size
+    3) GDP
+    4) average age
+    5) country
 3 things it can do:
-    1)
-    2)
-    3)
+    1) vote
+    2) be afected by natural disaster
+    3) build public transportation
  */
 
 
