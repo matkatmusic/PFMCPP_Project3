@@ -108,17 +108,17 @@ Thing 4) city
  */
 
 /*
-Thing 10)
+Thing 10) House
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) bedroom
+    2) kitchen
+    3) bathroom
+    4) living Room
+    5) garage
 3 things it can do:
-    1)
-    2)
-    3)
+    1) add room
+    2) be sold
+    3) be demolished
  */
 
 /*
