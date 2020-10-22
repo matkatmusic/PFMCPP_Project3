@@ -124,73 +124,73 @@ Thing 4) city
  */
 
 /*
-Thing 5)
+Thing 5) bedroom
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) ocupants name
+    2) size of bed
+    3) floor material 
+    4) floor space in square ft
+    5) time since was last cleaned
 3 things it can do:
-    1)
-    2)
-    3)
+    1) be slept in
+    2) be cleaned
+    3) be rearranged
  */
 
 /*
-Thing 6)
+Thing 6) kitchen
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of cabinets
+    2) list of cooking utilities
+    3) number of dirty dishes
+    4) capacity of fridge
+    5) floor space in square ft
 3 things it can do:
-    1)
-    2)
-    3)
+    1) be cooked in
+    2) fridge stocked up 
+    3) be cleaned
  */
 
 /*
-Thing 7)
+Thing 7) bathroom
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) mirror size
+    2) number of sinks
+    3) number of items on counter
+    4) time since was last cleaned
+    5) floor space in square ft
 3 things it can do:
-    1)
-    2)
-    3)
+    1) shower used
+    2) toilet used
+    3) be cleaned
  */
 
 /*
-Thing 8)
+Thing 8) living room
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of sitting places
+    2) size of television
+    3) number of windows
+    4) color of walls
+    5) floor space in square ft
 3 things it can do:
-    1)
-    2)
-    3)
+    1) tv used 
+    2) be painted
+    3) furniture rearanged
  */
 
 /*
-Thing 9)
+Thing 9) garage
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of car spots
+    2) amount of doors
+    3) amount of windows
+    4) number of items of storage inside
+    5) floor space in square ft
 3 things it can do:
-    1)
-    2)
-    3)
+    1) car can be parked inside
+    2) door can open 
+    3) used for alternative uses 
  */
 
 /*
