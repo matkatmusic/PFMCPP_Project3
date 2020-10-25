@@ -128,6 +128,29 @@ Thing 1) shoe
     3) be thrown away
  */
 
+struct shoe
+{
+
+    //brand
+    std::string brand = "Nike";
+    //size
+    double size = 12.5;
+    //color
+    std::string color = "white";
+    //condition
+    std::string condition = "good";
+    //securing method
+    std::string securingMethod = "velcro";
+
+    //be put on
+    void putOn ( shoe shoe );
+    //be taken off
+    void takeOff ( shoe shoe );
+    //be thrown away
+    void throwAway ( shoe shoe );
+
+};
+
 /*
 Thing 2) Wurlitzer
 5 properties:
@@ -141,6 +164,29 @@ Thing 2) Wurlitzer
     2) be played
     3) turn on or off
  */
+
+struct wurlitzer
+{
+
+    //volume level
+    int volumeLevel = 6;
+    //vibrato amount
+    double vibratoAmount = .5;
+    //model
+    std::string model = "200a";
+    //condition
+    std::string condition = "good";
+    //number of keys
+    int numKeys = 49;
+
+    //change volume
+    int changeVolume ( int knobPosition );
+    //be played
+    void play ( wurlitzer wurlitzer );
+    //turn on or off
+    bool power ( wurlitzer wurlitzer );
+
+};
 
 /*
 Thing 3) electric bass
@@ -156,6 +202,29 @@ Thing 3) electric bass
     3) be restrung
  */
 
+struct electricBass
+{
+
+    //number of strings
+    int numStrings = 4;
+    //type of pickups
+    std::string pickup = "precision";
+    //brand
+    std::string brand = "fender";
+    //model
+    std::string model = "precision";
+    //age
+    int yearMade = 1974;
+
+    //be played
+    void play ( electricBass electricBass );
+    //be sold
+    void sold ( electricBass electricBass );
+    //be restrung
+    void restring ( electricBass electricBass );
+
+};
+
 /*
 Thing 4) city
 5 properties:
@@ -170,6 +239,28 @@ Thing 4) city
     3) build public transportation
  */
 
+struct city
+{
+
+    //population
+    int population = 4649231;
+    //size
+    float size = 34.65f;
+    //GDP
+    double GDP = 65569340958.98;
+    //average age
+    int averageAge = 43;
+    //country
+    std::string counntry = "New Zeland";
+
+    //vote
+    void vote ( city city );
+    //be afected by natural disaster
+    void naturalDisaster ( city city );
+    //build public transportation
+    void buildTransportation ( city city );
+
+};
 /*
 Thing 5) bedroom
 5 properties:
@@ -183,6 +274,51 @@ Thing 5) bedroom
     2) be cleaned
     3) be rearranged
  */
+
+struct bedroom
+{
+
+    //ocupants name
+    std::string name = "Josh";
+    //size of bed
+    float bedSize = 9.23f;
+    //floor material 
+    std::string floor = "maple";
+    //floor space in square ft
+    int floorSpace = 43;
+    //time since was last cleaned
+    int lastCleaned = 14;
+
+     struct bed
+    {
+        //height from floor
+        int height = 14;
+        //number of pillows
+        int pillows = 4;
+        //headboard material
+        std::string headboardMaterial = "maple";
+        //size
+        std::string size = "full";
+        //age of bed
+        int bedAge = 3;
+
+        //makebed
+        void makeBed ( bool newSheets = true);
+        //sleep
+        void sleepInBed (std::string sleeper = "jeff", float timeSlept = 8.3f);
+        //new matress
+        void newMatress ( std::string brand = "tempurpedic");
+
+    };
+
+    //be slept in
+    void sleepIn ( bedroom bedroom );
+    //be cleaned
+    void clean ( bedroom bedroom );
+    //be rearranged
+    void rearange ( bedroom bedroom );
+
+};
 
 /*
 Thing 6) kitchen
@@ -198,6 +334,29 @@ Thing 6) kitchen
     3) be cleaned
  */
 
+struct kitchen
+{
+
+    //number of cabinets
+    int cabinets = 18;
+    //list of cooking utilities
+    std::string cookingUtilities = "pan";
+    //number of dirty dishes
+    int dirtyDishes = 8;
+    //capacity of fridge
+    int fridgeSpace = 48;
+    //number of windows
+    int windows = 9;
+
+    //be cooked in
+    void cook ( kitchen kitchen );
+    //fridge stocked up 
+    void fridgeRestock ( kitchen kitchen );
+    //be cleaned
+    void clean ( kitchen kitchen );
+
+};
+
 /*
 Thing 7) bathroom
 5 properties:
@@ -211,6 +370,51 @@ Thing 7) bathroom
     2) toilet used
     3) be cleaned
  */
+
+struct bathroom
+{
+
+    //mirror size
+    int mirrorSize = 8;
+    //number of sinks
+    int numSink = 2;
+    //number of items on counter
+    int counterItems = 8;
+    //time since was last cleaned
+    int timeSinceCleaned = 5;
+    //toilet height in inches
+    int toiletHeight = 17;
+
+    struct shower
+    {
+        //head height
+        int headHeight = 64;
+        //in bath
+        bool inBath = false;
+        //enclosure
+        std::string enclosure = "curtain";
+        //water temperature
+        int waterTemp = 102;
+        //time in shower
+        int showerlength = 12;
+
+        //adjust water amount
+        int waterAmount ( float handlePosition = 0.5f  );
+        //adjust water temp
+        int adjustWaterTemp (float coldPosition = 0.32f , float hotPosition = 0.69f);
+        //drain clog
+        void drainClog ( std::string stuckObject = "hair");
+
+    };
+
+    //shower used
+    void useShower ( shower shower );
+    //toilet used
+    void useToilet ( bathroom bathroom );
+    //be cleaned
+    void clean ( bathroom bathroom );
+
+};
 
 /*
 Thing 8) living room
@@ -226,6 +430,29 @@ Thing 8) living room
     3) furniture rearanged
  */
 
+struct livingRoom
+{
+
+    //number of sitting places
+    int sittingPlaces = 3;
+    //size of television
+    int TVsize = 42;
+    //number of windows
+    int windows = 3;
+    //color of walls
+    std::string wallColor = "red";
+    //number of doors
+    int doors = 3;
+
+    //tv used 
+    void useTV ( livingRoom livingRoom );
+    //be painted
+    void paintRoom ( livingRoom livingRoom );
+    //furniture rearanged
+    void rearange ( livingRoom livingRoom );
+
+};
+
 /*
 Thing 9) garage
 5 properties:
@@ -240,6 +467,29 @@ Thing 9) garage
     3) used for alternative uses 
  */
 
+struct garage
+{
+
+    //number of car spots
+    int carSpots = 1;
+    //amount of doors
+    int doors = 1;
+    //number of windows
+    int windows = 8;
+    //number of items of storage inside
+    int items = 41;
+    //number of lights
+    int lights = 2;
+
+    //car can be parked inside
+    int carsInside ( livingRoom livingRoom );
+    //door can open 
+    void paintRoom ( livingRoom livingRoom );
+    //used for alternative uses 
+    void rearange ( livingRoom livingRoom );
+
+};
+
 /*
 Thing 10) House
 5 properties:
@@ -253,6 +503,29 @@ Thing 10) House
     2) be sold
     3) be demolished
  */
+
+struct house
+{
+
+    //bedroom
+    bedroom sarasRoom;
+    //kitchen
+    kitchen cookery;
+    //bathroom
+    bathroom lavatory;
+    //living Room
+    livingRoom familyRoom;
+    //garage
+    garage storage;
+
+    //add room
+    void addRoom ( std::string kindOfRoom );
+    //be sold
+    void sellHouse ( house );
+    //be demolished
+    void demolish ( house );
+
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
