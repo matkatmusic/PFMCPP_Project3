@@ -132,6 +132,7 @@ struct CarWash //                                   1) define an empty struct fo
 
 struct AcousticGuitar 
 {
+// five properties
     // number of strings
     int numStrings = 6;
 
@@ -147,17 +148,16 @@ struct AcousticGuitar
     // whether it has amplification
     bool hasAmplification = true;
 
+// three functions
     // play a single note
     void playNote(int stringNumber, int fretNumber);
 
-    // play a chord (would have to refer to some chart of chords)
+    // play a chord (would have to refer to some chart of chords, or use an array of fret numbers)
     void playChord(std::string chordName);
 
     // tune a string
     void tuneString(int stringNumber, float tuningFrequency);
 };
-
-
 
 
 
@@ -177,6 +177,7 @@ struct AcousticGuitar
 
 struct Library
 {
+// five properties
     // number of books
     int numBooks = 100;
 
@@ -192,6 +193,7 @@ struct Library
     // duration a member can have a book out
     int maxDaysLoan = 14;
 
+// three functions
     // check out a book
     void checkOutBook(std::string bookTitle);
 
@@ -201,8 +203,6 @@ struct Library
     // check if a book is in the library
     bool isBookInLibrary(std::string bookTitle);
 };
-
-
 
 
 /*
@@ -219,6 +219,37 @@ struct Library
     3) it can send a signal when it needs to be replaced
  */
 
+struct SmartBulb
+{
+// 5 properties:
+//     1) Number of Watts
+    int watts = 200;
+
+//     2) Brightness level
+    float brightness = 0.8f;
+
+//     3) Whether it's currently on or not
+    bool isOn = false;
+
+//     4) Keeps track of total energy it has used
+    float totalEnergy = 0.f;
+
+//     5) Keeps track of the total hours it's been on
+    float totalHoursOn = 0.f;
+
+// 3 things it can do:
+//     1) toggle on/off
+    void toggle();
+
+//     2) turn off automatically after a given time
+    void toggleAfterDelay(float delay);
+
+//     3) it can send a signal when it needs to be replaced
+    void alertReplacement();
+
+};
+
+
 /*
 4) Cat
 5 properties:
@@ -232,6 +263,30 @@ struct Library
     2) It can meow
     3) It can drink water
  */
+struct Cat
+{
+// 5 properties:
+//     1) Age
+    int age = 1;
+//     2) Whether or not it's male
+    bool isMale = false;
+//     3) Whether or not it's a tabby cat
+    bool isTabby = true;
+//     4) How hungry it is
+    float hunger = 0.5f;
+//     5) How thirsty it is
+    float thirst = 0.5f;
+
+// 3 things it can do:
+//     1) It can purr
+    void purr();
+//     2) It can meow
+    void meow();
+//     3) It can drink water
+    void drink(float volumeOfWater = 0.2f);
+};
+
+
 
 /*
 Thing 5) Harmonic set (generates a set of frequencies from two input frequencies)
@@ -247,6 +302,29 @@ Thing 5) Harmonic set (generates a set of frequencies from two input frequencies
     3) filter the frequency set according to certain rules
  */
 
+struct HarmonicSet
+{
+// 5 properties:
+//     1) Bass Frequency
+    float bassFrequency = 220.0f;
+//     2) Generator Frequency 
+    float genFrequency = 440.0f;
+//     3) Minimum output frequency
+    float minFrequency = 220.0f;
+//     4) maximum output frequency
+    float maxFrequency = 8000.0f;
+//     5) generator rule # (would select among a few pre-coded rules)
+    int genRule = 0;
+// 3 things it can do:
+//     1) calculate and output a set of frequencies
+    void playSet(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency);
+//     2) calculate statistics about the frequencies (how harmonically coherent they are, etc)
+    float calculateHarmonicity(float bassFrequency, float genFrequency);
+//     3) filter the frequency set according to certain rules
+    void playFiltered(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency, int genRule);
+};
+
+
 /*
 Thing 6) Rhythmic Rules
 5 properties:
@@ -260,6 +338,43 @@ Thing 6) Rhythmic Rules
     2) modify the rhythmic properties according to a control signal from the UI
     3) modify the meter and tempo according to UI control
  */
+
+struct RhythmicRules
+{
+// 5 properties:
+//     1) density / note gap %
+    float gapPercentage = 0.2f;
+//     2) "convolution rate" (how complicated the rhythms are)
+    float convolutionRate = 0.5f;
+//     3) tempo
+    float tempo = 120.f;
+//     4) rate of variation (how far it randomly strays from the selected settings)
+    float variation = 1.0f;
+//     5) meter / pulse structure (this would have to be a UDT also)
+   // *********
+    struct Meter
+    {
+    // properties
+        int numerator = 4; // top of time signature
+        int denominator = 4; // bottom of time signature
+        int currentBeat = 1; // keeps track of current setGapPercentage
+        int smallestBeat = 8; // indicates eighth-note in this case
+        int beatsPerBigStep = 2; // how many of small beat makes up a major beat
+
+    // functions
+        int bigStep(int currentBeat);
+        int littleStep(int currentBeat);
+        void reset(); // resets to beat 1;
+    };
+
+// 3 things it can do:
+//     1) output a rhythm that controls the pattern generator
+    void outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, struct Meter);
+//     2) modify the rhythmic properties according to a control signal from the UI
+    float setGapPercentage(float newGapPercentage);
+//     3) modify the meter and tempo according to UI control
+    float setTempo(float newTempo);
+};
 
 /*
 Thing 7) Pattern Generator
