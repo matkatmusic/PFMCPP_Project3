@@ -362,8 +362,8 @@ struct RhythmicRules
         int beatsPerBigStep = 2; // how many of small beat makes up a major beat
 
     // functions
-        int bigStep(int currentBeat);
-        int littleStep(int currentBeat);
+        int bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep); // steps forward by major beat
+        int littleStep(int currentBeat, int smallestBeat); // steps forward smaller beat
         void reset(); // resets to beat 1;
     };
 
@@ -390,10 +390,49 @@ Thing 7) Pattern Generator
     3) outputs control signals to the synth
  */
 
+struct PatternGenerator
+{
+//   5 properties:
+//     1) "rootedness" (how often it plays the generator frequencies)
+    float rootedness = 1.0f;
+//     2) repetition rate (how likely to repeat notes)
+    float repetitionPercentage = 0.15f;
+//     3) step size (how far away in the set it will pick the next note)
+    int stepSize = 2;
+//     4) variability rate
+    float variability = 1.0f;
+//     5) fractal dimension (would be used in the pattern calculation)
+    float fractalDimension = 1.618f;
+
+// nested struct:
+    struct Pattern
+    {
+    // 5 properties:
+        bool repeat = false; // whether the sequence repeats
+        int numberOfNotes = 5;  // how long the sequence is
+        int startingMIDI = 69;  // midi note sequence starts on
+        bool isArpeggio = true;    // whether it's a chordal shape
+        std::string patternName = "triads";
+
+    // 3 functions
+        void play();
+        void reverse();
+        void stop();
+    };
+
+// 3 things it can do:
+//     1) receives inpulses from the rhythm generator
+    void getRhythm(RhythmicRules rhythms); // uses UDT
+//     2) calculates next note based on current harmonic set
+    void calculateNote(HarmonicSet harmonies);
+//     3) outputs control signals to the synth 
+    Pattern generatePattern();
+};
+
 /*
 Thing 8) Synthesizer
 5 properties:
-    1) wave shape (int, selects between pre-coded waveshapes)
+    1) wave shape
     2) amplitude
     3) attack time
     4) max polyphony
@@ -403,6 +442,29 @@ Thing 8) Synthesizer
     2) respond to signals from UI display
     3) output audio
  */
+struct Synthesizer
+{
+// 5 properties:
+//     1) wave shape
+    std::string waveShape = "sine";
+//     2) amplitude
+    float amplitude = 1.0f;
+//     3) attack time
+    float attackTime = 2.0f;
+//     4) max polyphony
+    int maxPolyphony = 6;
+//     5) distortion
+    float distortion = 1.0f;
+// 3 things it can do:
+//     1) respond to signals from the pattern generator
+    void getPattern(PatternGenerator patternGen);
+//     2) respond to signals from UI display
+    void getUI();
+//     3) output audio
+    void playAudio(float amplitude, float attackTime, int maxPolyphony, float distortion);
+
+};
+
 
 /*
 Thing 9) Distortion
@@ -417,6 +479,28 @@ Thing 9) Distortion
     2) calculate changes to its values
     3) turn on/off bypass
  */
+struct Distortion
+{
+// 5 properties:
+//     1) brightness
+    float brightness = 0.5f;
+//     2) number of echoes
+    int numEchoes = 3;
+//     3) room size
+    float roomSize = 20.f;
+//     4) hipass filter cutoff
+    float hiPass = 20.0f;
+//     5) lopass filter cutoff
+    float loPass = 2000.0f;
+// 3 things it can do:
+//     1) process a sound input
+    void processInput();
+//     2) calculate changes to its values
+    float calculateBrightness(float roomSize, float hiPass, float loPass);
+//     3) turn on/off bypass
+    bool bypass = false;
+    bool toggleBypass(bool bypass);
+};
 
 /*
 10) Melodic Sequencer
@@ -431,6 +515,28 @@ Thing 9) Distortion
     2) It can display patterns on the screen
     3) It can accept user instructions
  */
+
+struct MelodicSequencer
+{
+// 5 properties:
+//     1) Harmonic set (to take pitches from)
+    HarmonicSet harmonicSet;
+//     2) Rhythmic rules (for deciding when to play what)
+    RhythmicRules rhythmicRules;
+//     3) Pattern generator (brings together harmonic set and rhythm rules)
+    PatternGenerator patternGenerator;
+//     4) Synthesizer (selects/generates the actual sound)
+    Synthesizer synthesizer;
+//     5) Distortion
+    Distortion distortion;
+// 3 things it can do:
+//     1) It can play a melodic sequence
+    void playSequence(bool repeat = true);
+//     2) It can display patterns on the screen
+    void displayUI(int screenWidth = 400, int screenHeight = 300);
+//     3) It can accept user instructions
+    void getUI(int screenWidth = 400, int screenHeight = 300);
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
