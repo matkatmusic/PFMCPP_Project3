@@ -128,9 +128,8 @@ Thing 1) shoe
     3) be thrown away
  */
 
-struct shoe
+struct Shoe
 {
-
     //brand
     std::string brand = "Nike";
     //size
@@ -143,12 +142,11 @@ struct shoe
     std::string securingMethod = "velcro";
 
     //be put on
-    void putOn ( shoe shoe );
+    void putOn ( std::string firstShoe = "L");
     //be taken off
-    void takeOff ( shoe shoe );
+    void takeOff ( std::string firstShoe = "R" );
     //be thrown away
-    void throwAway ( shoe shoe );
-
+    void throwAway ( bool donate = false );
 };
 
 /*
@@ -165,9 +163,8 @@ Thing 2) Wurlitzer
     3) turn on or off
  */
 
-struct wurlitzer
+struct Wurlitzer
 {
-
     //volume level
     int volumeLevel = 6;
     //vibrato amount
@@ -182,10 +179,9 @@ struct wurlitzer
     //change volume
     int changeVolume ( int knobPosition );
     //be played
-    void play ( wurlitzer wurlitzer );
+    void play ( int note = 23 );
     //turn on or off
-    bool power ( wurlitzer wurlitzer );
-
+    bool power ( bool switchPosition = true );
 };
 
 /*
@@ -202,9 +198,8 @@ Thing 3) electric bass
     3) be restrung
  */
 
-struct electricBass
+struct ElectricBass
 {
-
     //number of strings
     int numStrings = 4;
     //type of pickups
@@ -217,12 +212,11 @@ struct electricBass
     int yearMade = 1974;
 
     //be played
-    void play ( electricBass electricBass );
+    void play ( int note =  18 );
     //be sold
-    void sold ( electricBass electricBass );
+    void sold ( int price = 1200 );
     //be restrung
-    void restring ( electricBass electricBass );
-
+    void restring ( int timeSinceRestrung = 0 );
 };
 
 /*
@@ -239,9 +233,8 @@ Thing 4) city
     3) build public transportation
  */
 
-struct city
+struct City
 {
-
     //population
     int population = 4649231;
     //size
@@ -254,12 +247,11 @@ struct city
     std::string counntry = "New Zeland";
 
     //vote
-    void vote ( city city );
+    void vote ( int totalBallots = 4285444 );
     //be afected by natural disaster
-    void naturalDisaster ( city city );
+    void naturalDisaster ( int percentOfPropertiesDamaged = 47 );
     //build public transportation
-    void buildTransportation ( city city );
-
+    void buildTransportation ( int cost = 2433244 );
 };
 /*
 Thing 5) bedroom
@@ -275,9 +267,8 @@ Thing 5) bedroom
     3) be rearranged
  */
 
-struct bedroom
+struct Bedroom
 {
-
     //ocupants name
     std::string name = "Josh";
     //size of bed
@@ -289,7 +280,7 @@ struct bedroom
     //time since was last cleaned
     int lastCleaned = 14;
 
-     struct bed
+    struct Bed
     {
         //height from floor
         int height = 14;
@@ -308,16 +299,13 @@ struct bedroom
         void sleepInBed (std::string sleeper = "jeff", float timeSlept = 8.3f);
         //new matress
         void newMatress ( std::string brand = "tempurpedic");
-
     };
-
     //be slept in
-    void sleepIn ( bedroom bedroom );
+    void sleepIn ( int timeAwake = 843 );
     //be cleaned
-    void clean ( bedroom bedroom );
+    void clean ( bool newSheets = true );
     //be rearranged
-    void rearange ( bedroom bedroom );
-
+    void rearange ( bool bedMoved = false, bool newFurnature = false );
 };
 
 /*
@@ -334,9 +322,8 @@ Thing 6) kitchen
     3) be cleaned
  */
 
-struct kitchen
+struct Kitchen
 {
-
     //number of cabinets
     int cabinets = 18;
     //list of cooking utilities
@@ -349,12 +336,11 @@ struct kitchen
     int windows = 9;
 
     //be cooked in
-    void cook ( kitchen kitchen );
+    void cook ( bool stoveUsed = true );
     //fridge stocked up 
-    void fridgeRestock ( kitchen kitchen );
+    void fridgeRestock ( int fridgeCapacityPercent = 82 );
     //be cleaned
-    void clean ( kitchen kitchen );
-
+    void clean ( bool dishwasherRan = false );
 };
 
 /*
@@ -371,9 +357,8 @@ Thing 7) bathroom
     3) be cleaned
  */
 
-struct bathroom
+struct Bathroom
 {
-
     //mirror size
     int mirrorSize = 8;
     //number of sinks
@@ -385,7 +370,7 @@ struct bathroom
     //toilet height in inches
     int toiletHeight = 17;
 
-    struct shower
+    struct Shower
     {
         //head height
         int headHeight = 64;
@@ -404,16 +389,13 @@ struct bathroom
         int adjustWaterTemp (float coldPosition = 0.32f , float hotPosition = 0.69f);
         //drain clog
         void drainClog ( std::string stuckObject = "hair");
-
     };
-
     //shower used
-    void useShower ( shower shower );
+    void useShower ( Shower Shower );
     //toilet used
-    void useToilet ( bathroom bathroom );
+    void useToilet ( bool seatDownn = false );
     //be cleaned
-    void clean ( bathroom bathroom );
-
+    void clean ( bool bleachUsed = false );
 };
 
 /*
@@ -430,9 +412,8 @@ Thing 8) living room
     3) furniture rearanged
  */
 
-struct livingRoom
+struct LivingRoom
 {
-
     //number of sitting places
     int sittingPlaces = 3;
     //size of television
@@ -445,12 +426,11 @@ struct livingRoom
     int doors = 3;
 
     //tv used 
-    void useTV ( livingRoom livingRoom );
+    void useTV ( bool netflix = true );
     //be painted
-    void paintRoom ( livingRoom livingRoom );
+    void paintRoom ( bool newcolor = false );
     //furniture rearanged
-    void rearange ( livingRoom livingRoom );
-
+    void rearange ( bool newfurnature = false);
 };
 
 /*
@@ -467,9 +447,8 @@ Thing 9) garage
     3) used for alternative uses 
  */
 
-struct garage
+struct Garage
 {
-
     //number of car spots
     int carSpots = 1;
     //amount of doors
@@ -482,12 +461,11 @@ struct garage
     int lights = 2;
 
     //car can be parked inside
-    int carsInside ( livingRoom livingRoom );
+    void parkCar ( bool spotAOcupied = true, bool spotBOcupied = true, bool spotCOcupied = true );
     //door can open 
-    void paintRoom ( livingRoom livingRoom );
+    void doorOpen ( int openSource = 2 );
     //used for alternative uses 
-    void rearange ( livingRoom livingRoom );
-
+    bool carUsage ( std::string garageUsage = "art studio");
 };
 
 /*
@@ -504,27 +482,25 @@ Thing 10) House
     3) be demolished
  */
 
-struct house
+struct House
 {
-
     //bedroom
-    bedroom sarasRoom;
+    Bedroom sarasRoom;
     //kitchen
-    kitchen cookery;
+    Kitchen cookery;
     //bathroom
-    bathroom lavatory;
+    Bathroom lavatory;
     //living Room
-    livingRoom familyRoom;
+    LivingRoom familyRoom;
     //garage
-    garage storage;
+    Garage storage;
 
     //add room
     void addRoom ( std::string kindOfRoom );
     //be sold
-    void sellHouse ( house );
+    void sellHouse ( int askingPrice = 899436, int soldPrice = 804398 );
     //be demolished
-    void demolish ( house );
-
+    void demolish ( int originalWallsRemaining = 1 );
 };
 
 /*
