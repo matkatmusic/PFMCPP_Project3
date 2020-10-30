@@ -196,7 +196,20 @@ struct AcousticGuitar
     void tuneString(int stringNumber, float tuningFrequency);
 };
 
+void AcousticGuitar::playNote(int stringNumber, int fretNumber)
+{
 
+}
+
+void AcousticGuitar::playChord(std::string chordName)
+{
+
+}
+
+void AcousticGuitar::tuneString(int stringNumber, float tuningFrequency)
+{
+
+}
 
 /*
 2) Library
@@ -227,6 +240,20 @@ struct Library
     bool isBookInLibrary(std::string bookTitle);
 };
 
+void Library::checkOutBook(std::string bookTitle)
+{
+
+}
+
+void Library::returnBook(std::string bookTitle)
+{
+
+}
+
+bool Library::isBookInLibrary(std::string bookTitle)
+{
+
+}
 
 /*
 3) smart light bulb
@@ -258,6 +285,21 @@ struct SmartBulb
 
 };
 
+void SmartBulb::toggle()
+{
+
+}
+
+void SmartBulb::toggleAfterDelay(float delay)
+{
+
+}
+
+void SmartBulb::alertReplacement()
+{
+
+}
+
 
 /*
 4) Cat
@@ -285,6 +327,20 @@ struct Cat
     void drink(float volumeOfWater = 0.2f);
 };
 
+void Cat::purr()
+{
+
+}
+
+void Cat::meow()
+{
+
+}
+    
+void Cat::drink(float volumeOfWater)
+{
+
+}
 
 
 /*
@@ -315,6 +371,21 @@ struct HarmonicSet
 
     void playFiltered(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency, int genRule);
 };
+
+void HarmonicSet::playSet(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency)
+{
+
+}
+
+float HarmonicSet::calculateHarmonicity(float bassFrequency, float genFrequency)
+{
+
+}
+
+void HarmonicSet::playFiltered(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency, int genRule)
+{
+
+}
 
 
 /*
@@ -351,12 +422,42 @@ struct RhythmicRules
         void reset(); 
     };
 
-    void outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, struct Meter);
+    void outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, Meter meter);
 
     float setGapPercentage(float newGapPercentage);
 
     float setTempo(float newTempo);
 };
+
+void RhythmicRules::outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, Meter meter)
+{
+
+}
+
+float RhythmicRules::setGapPercentage(float newGapPercentage)
+{
+
+}
+
+float RhythmicRules::setTempo(float newTempo)
+{
+
+}
+
+int RhythmicRules::Meter::bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep)
+{
+
+}
+
+int RhythmicRules::Meter::littleStep(int currentBeat, int smallestBeat)
+{
+
+}
+        
+void RhythmicRules::Meter::reset()
+{
+
+}
 
 /*
 Thing 7) Pattern Generator
@@ -399,6 +500,36 @@ struct PatternGenerator
     Pattern generatePattern();
 };
 
+void PatternGenerator::getRhythm(RhythmicRules rhythms)
+{
+
+}
+
+void PatternGenerator::calculateNote(HarmonicSet harmonies)
+{
+
+}
+    
+PatternGenerator::Pattern PatternGenerator::generatePattern()
+{
+
+}
+
+void PatternGenerator::Pattern::play()
+{
+
+}
+
+void PatternGenerator::Pattern::reverse()
+{
+
+}
+
+void PatternGenerator::Pattern::stop()
+{
+
+}
+
 /*
 Thing 8) Synthesizer
 5 properties:
@@ -425,6 +556,20 @@ struct Synthesizer
 
 };
 
+void Synthesizer::getPattern(PatternGenerator patternGen)
+{
+
+}
+
+void Synthesizer::getUI()
+{
+
+}
+
+void Synthesizer::playAudio(float amplitude, float attackTime, int maxPolyphony, float distortion)
+{
+
+}
 
 /*
 Thing 9) Distortion
@@ -455,6 +600,21 @@ struct Distortion
     bool toggleBypass(bool bypass);
 };
 
+void Distortion::processInput()
+{
+
+}
+
+float Distortion::calculateBrightness(float roomSize, float hiPass, float loPass)
+{
+
+}
+
+bool Distortion::toggleBypass(bool bypass)
+{
+
+}
+
 /*
 10) Melodic Sequencer
 5 properties:
@@ -480,6 +640,21 @@ struct MelodicSequencer
     void displayUI(int screenWidth = 400, int screenHeight = 300);
     void getUI(int screenWidth = 400, int screenHeight = 300);
 };
+
+void MelodicSequencer::playSequence(bool repeat)
+{
+
+}
+
+void MelodicSequencer::displayUI(int screenWidth, int screenHeight)
+{
+
+}
+
+void MelodicSequencer::getUI(int screenWidth, int screenHeight)
+{
+
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
