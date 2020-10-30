@@ -108,6 +108,51 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTravelled;
+
+    struct Foot
+    {
+        void stepForward();
+        int stepSize();
+    };
+
+    Foot leftFoot;
+    Foot rightFoot;
+
+    void run( int howFast, bool startWithLeftFoot);
+};
+
+void Person::Foot::stepForward()
+{
+
+}
+
+int Person::Foot::stepSize()
+{
+
+}
+
+void Person::run( int howFast, bool startWithLeftFoot )
+{
+    if (startWithLeftFoot == true )
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize();
+}
 
 
 
