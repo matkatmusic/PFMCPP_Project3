@@ -178,17 +178,17 @@ struct Shoe
 
 void Shoe::putOn(std::string firstShoe) 
 {
- 
+    firstShoe = "R";
 }
 
 void Shoe::takeOff(std::string firstShoe) 
 {
- 
+    firstShoe = "R";
 }
 
 void Shoe::throwAway(bool donate) 
 {
- 
+    donate = true;
 }
 
 struct Wurlitzer
@@ -201,12 +201,12 @@ struct Wurlitzer
     int output = 23;
     bool on = false;
 
-    int changeVolume ( int knobPosition );
+    void changeVolume ( int knobPosition );
     void play ( int note = 23 );
-    bool power ( bool switchPosition = true );
+    void power ( bool switchPosition = true );
 };
 
-int Wurlitzer::changeVolume( int knobPosition ) 
+void Wurlitzer::changeVolume( int knobPosition ) 
 {
     volumeLevel = knobPosition;
 }
@@ -216,7 +216,7 @@ void Wurlitzer::play( int note )
     output = note;
 }
 
-bool Wurlitzer::power( bool switchPosition ) 
+void Wurlitzer::power( bool switchPosition ) 
 {
     on = switchPosition;
 }
@@ -248,7 +248,7 @@ void ElectricBass::sold( int price )
 
 void ElectricBass::restring( int timeSinceRestrung ) 
 {
-    
+    timeSinceRestrung = 13;
 }
 
 struct City
@@ -273,7 +273,7 @@ void City::vote( int party1Votes, int party2Votes )
     {
         party1InCharge = true;
     }
-    else (party1Votes < party2Votes);
+    else
     {
         party1InCharge = false;
     }
@@ -411,8 +411,8 @@ struct Bathroom
         float waterTemp = 102;
         int showerlength = 12;
 
-        int waterAmount ( float handlePosition = 0.5f  );
-        int adjustWaterTemp (float coldPosition = 0.32f , float hotPosition = 0.69f);
+        float waterAmount ( float handlePosition = 0.5f  );
+        void adjustWaterTemp (float coldPosition = 0.32f , float hotPosition = 0.69f);
         void drainClog ( std::string stuckObject = "hair");
     };
     void useShower ( Shower Shower );
@@ -420,24 +420,25 @@ struct Bathroom
     void clean ( bool bleachUsed = false );
 };
 
-int Bathroom::Shower::waterAmount( float handlePosition ) 
+float Bathroom::Shower::waterAmount( float handlePosition ) 
 {
     return (handlePosition * 24);
 }
 
-int Bathroom::Shower::adjustWaterTemp( float coldPosition, float hotPosition ) 
+void Bathroom::Shower::adjustWaterTemp( float coldPosition, float hotPosition ) 
 {
     waterTemp = ((coldPosition - hotPosition) * 43);
 }
 
 void Bathroom::Shower::drainClog( std::string stuckObject ) 
 {
-
+    stuckObject = "hair";
 }
 
 void Bathroom::useShower( Shower Shower ) 
 {
     sinceShowerUsed = 0;
+    Shower.waterTemp = 54;
 }
 
 void Bathroom::useToilet( bool seatDownn ) 
@@ -501,7 +502,7 @@ struct Garage
 
     void parkCar ( bool spotAOpen = true, bool spotBOpen = true, bool spotCOpen = true );
     void doorOpen ( int openSource = 2 );
-    bool altUsage ( std::string garageUsage = "art studio");
+    void altUsage ( std::string garageUsage = "art studio");
 };
 
 void Garage::parkCar( bool spotAOpen, bool spotBOpen, bool spotCOpen ) 
@@ -523,10 +524,10 @@ void Garage::parkCar( bool spotAOpen, bool spotBOpen, bool spotCOpen )
 
 void Garage::doorOpen( int openSource ) 
 {
-
+    openSource = 2;
 }
 
-bool Garage::altUsage(std::string garageUsage) 
+void Garage::altUsage(std::string garageUsage) 
 {
     if(garageUsage != "park car")
     {
