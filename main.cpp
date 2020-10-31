@@ -8,7 +8,7 @@ Create a branch named Part2
  tasks
  0) delete all of the plain english pseudo-code you added in Part1.
    don't forget to remove the blank lines left behind after you remove your comments
-   - you should be left with only your UDTs.
+   - you should be left with only your UDTs. 
 */
 // example:
 // if you had something like this at the end of Part1e:
