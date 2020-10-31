@@ -136,7 +136,7 @@ void Person::Foot::stepForward()
 
 int Person::Foot::stepSize()
 {
-
+    return 1;
 }
 
 void Person::run( int howFast, bool startWithLeftFoot )
@@ -151,7 +151,7 @@ void Person::run( int howFast, bool startWithLeftFoot )
         rightFoot.stepForward();
         leftFoot.stepForward();
     }
-    distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize();
+    distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize() + howFast;
 }
 
 
@@ -198,17 +198,18 @@ struct AcousticGuitar
 
 void AcousticGuitar::playNote(int stringNumber, int fretNumber)
 {
-
+    stringNumber = stringNumber + fretNumber;
 }
 
 void AcousticGuitar::playChord(std::string chordName)
 {
-
+    chordName = chordName + " strum";
 }
 
 void AcousticGuitar::tuneString(int stringNumber, float tuningFrequency)
 {
-
+    stringNumber += 1;
+    tuningFrequency *= 1.5f;
 }
 
 /*
@@ -242,17 +243,18 @@ struct Library
 
 void Library::checkOutBook(std::string bookTitle)
 {
-
+    std::cout << bookTitle << std::endl;
 }
 
 void Library::returnBook(std::string bookTitle)
 {
-
+    std::cout << bookTitle << std::endl;
 }
 
 bool Library::isBookInLibrary(std::string bookTitle)
 {
-
+    std::cout << bookTitle << std::endl;
+    return true;
 }
 
 /*
@@ -292,7 +294,7 @@ void SmartBulb::toggle()
 
 void SmartBulb::toggleAfterDelay(float delay)
 {
-
+    delay += 1;
 }
 
 void SmartBulb::alertReplacement()
@@ -339,7 +341,7 @@ void Cat::meow()
     
 void Cat::drink(float volumeOfWater)
 {
-
+    volumeOfWater -= 0.2f;
 }
 
 
@@ -361,30 +363,42 @@ struct HarmonicSet
 {
     float bassFrequency = 220.0f;
     float genFrequency = 440.0f;
-    float minFrequency = 220.0f;
-    float maxFrequency = 8000.0f;
-    int genRule = 0;
 
-    void playSet(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency);
+    void playSet(float minFrequency, float maxFrequency);
 
-    float calculateHarmonicity(float bassFrequency, float genFrequency);
+    float calculateHarmonicity();
 
-    void playFiltered(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency, int genRule);
+    void playFiltered(float minFrequency, float maxFrequency, int genRule);
 };
 
-void HarmonicSet::playSet(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency)
+void HarmonicSet::playSet(float minFrequency, float maxFrequency)
 {
-
+    float outputNote = (bassFrequency + genFrequency);
+    if (minFrequency < outputNote)
+    {
+        if (maxFrequency > outputNote)
+        {
+            std::cout << outputNote << std::endl;
+        }
+    }
 }
 
-float HarmonicSet::calculateHarmonicity(float bassFrequency, float genFrequency)
+float HarmonicSet::calculateHarmonicity()
 {
-
+    return bassFrequency + genFrequency;
 }
 
-void HarmonicSet::playFiltered(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency, int genRule)
+void HarmonicSet::playFiltered(float minFrequency, float maxFrequency, int genRule)
 {
-
+    float outputNote = (bassFrequency + genFrequency); 
+    genRule += 1; 
+    if (minFrequency < outputNote)
+    {
+        if (maxFrequency > outputNote)
+        {
+            std::cout << outputNote << std::endl;
+        }
+    }
 }
 
 
@@ -413,45 +427,44 @@ struct RhythmicRules
     {
         int numerator = 4; 
         int denominator = 4; 
-        int currentBeat = 1; 
-        int smallestBeat = 8; 
-        int beatsPerBigStep = 2; 
+        int tempo = 120; 
+        int bars = 8; 
 
         int bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep); 
         int littleStep(int currentBeat, int smallestBeat); 
         void reset(); 
     };
 
-    void outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, Meter meter);
+    void outputRhythm(Meter meter);
 
     float setGapPercentage(float newGapPercentage);
 
     float setTempo(float newTempo);
 };
 
-void RhythmicRules::outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, Meter meter)
+void RhythmicRules::outputRhythm(Meter meter)
 {
-
+    meter.bigStep(1,2,4);
 }
 
 float RhythmicRules::setGapPercentage(float newGapPercentage)
 {
-
+    return newGapPercentage;
 }
 
 float RhythmicRules::setTempo(float newTempo)
 {
-
+    return newTempo;
 }
 
 int RhythmicRules::Meter::bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep)
 {
-
+    return currentBeat + (smallestBeat * beatsPerBigStep);
 }
 
 int RhythmicRules::Meter::littleStep(int currentBeat, int smallestBeat)
 {
-
+    return currentBeat + smallestBeat;
 }
         
 void RhythmicRules::Meter::reset()
@@ -502,17 +515,19 @@ struct PatternGenerator
 
 void PatternGenerator::getRhythm(RhythmicRules rhythms)
 {
-
+    RhythmicRules::Meter meter;
+    rhythms.outputRhythm(meter);
 }
 
 void PatternGenerator::calculateNote(HarmonicSet harmonies)
 {
-
+    harmonies.calculateHarmonicity();
 }
     
 PatternGenerator::Pattern PatternGenerator::generatePattern()
 {
-
+    PatternGenerator::Pattern newPattern;
+    return newPattern;
 }
 
 void PatternGenerator::Pattern::play()
@@ -552,13 +567,13 @@ struct Synthesizer
     float distortion = 1.0f;
     void getPattern(PatternGenerator patternGen);
     void getUI();
-    void playAudio(float amplitude, float attackTime, int maxPolyphony, float distortion);
+    void playAudio(float duration);
 
 };
 
 void Synthesizer::getPattern(PatternGenerator patternGen)
 {
-
+    patternGen.generatePattern();
 }
 
 void Synthesizer::getUI()
@@ -566,9 +581,9 @@ void Synthesizer::getUI()
 
 }
 
-void Synthesizer::playAudio(float amplitude, float attackTime, int maxPolyphony, float distortion)
+void Synthesizer::playAudio(float duration)
 {
-
+    duration += 0.6f;
 }
 
 /*
@@ -588,16 +603,14 @@ struct Distortion
 {
     float brightness = 0.5f;
     int numEchoes = 3;
-    float roomSize = 20.f;
-    float hiPass = 20.0f;
-    float loPass = 2000.0f;
+    float roughness = 0.8f;
+    int vinylTap = 11;
 
     void processInput();
 
     float calculateBrightness(float roomSize, float hiPass, float loPass);
 
-    bool bypass = false;
-    bool toggleBypass(bool bypass);
+    bool toggleBypass(bool bypass = false);
 };
 
 void Distortion::processInput()
@@ -607,12 +620,20 @@ void Distortion::processInput()
 
 float Distortion::calculateBrightness(float roomSize, float hiPass, float loPass)
 {
-
+    if (roomSize < loPass)
+    {
+        return loPass;
+    }
+    if (roomSize > hiPass)
+    {
+        return hiPass;
+    }
+    return roomSize;
 }
 
 bool Distortion::toggleBypass(bool bypass)
 {
-
+    return !bypass;
 }
 
 /*
@@ -638,22 +659,27 @@ struct MelodicSequencer
     Distortion distortion;
     void playSequence(bool repeat = true);
     void displayUI(int screenWidth = 400, int screenHeight = 300);
-    void getUI(int screenWidth = 400, int screenHeight = 300);
+    int getUI(int screenWidth = 400, int screenHeight = 300);
 };
 
 void MelodicSequencer::playSequence(bool repeat)
 {
-
+    if (repeat)
+    {
+        MelodicSequencer newSequencer;
+        newSequencer.playSequence(false);
+    }
 }
 
 void MelodicSequencer::displayUI(int screenWidth, int screenHeight)
 {
-
+    int size = screenWidth * screenHeight;
+    std::cout << size << std::endl;
 }
 
-void MelodicSequencer::getUI(int screenWidth, int screenHeight)
+int MelodicSequencer::getUI(int screenWidth, int screenHeight)
 {
-
+    return screenWidth * screenHeight;
 }
 
 /*
