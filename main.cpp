@@ -116,14 +116,14 @@ struct Person
     unsigned int SATscore;
     int distanceTraveled;
 
-    struct foot
+    struct Foot
     {
         void stepForward();
         int stepSize( int length);
     };
 
-    foot leftFoot;
-    foot rightFoot;
+    Foot leftFoot;
+    Foot rightFoot;
 
     void run(int howFast, bool startWithLeftFoot);
 };
@@ -144,12 +144,12 @@ void Person::run(int howFast, bool startWithLeftFoot)
 }
 
 
-int Person::foot::stepSize(int length)
+int Person::Foot::stepSize(int length)
 {
     return length;
 }
 
-void Person::foot::stepForward() {}
+void Person::Foot::stepForward() {}
 
 
  /*
@@ -474,10 +474,7 @@ struct LivingRoom
 
 void LivingRoom::useTV( bool netflix ) 
 {
-    if(netflix)
-    {
-        sataliteWatched = false;
-    }
+    sataliteWatched = !netflix;
 }
 
 void LivingRoom::paintRoom( bool newcolor ) 
