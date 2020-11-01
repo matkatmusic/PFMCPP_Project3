@@ -108,6 +108,51 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTravelled;
+
+    struct Foot
+    {
+        void stepForward();
+        int stepSize();
+    };
+
+    Foot leftFoot;
+    Foot rightFoot;
+
+    void run( int howFast, bool startWithLeftFoot);
+};
+
+void Person::Foot::stepForward()
+{
+
+}
+
+int Person::Foot::stepSize()
+{
+    return 1;
+}
+
+void Person::run( int howFast, bool startWithLeftFoot )
+{
+    if (startWithLeftFoot == true )
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize() + howFast;
+}
 
 
 
@@ -138,34 +183,34 @@ struct CarWash
 
 struct AcousticGuitar 
 {
-// five properties
-    // number of strings
     int numStrings = 6;
-
-    // number of frets
     int numFrets = 18;
-
-    // fret number of capo
     int capoFretNumber = 7;
-
-    // year it was built
     int yearOfConstruction = 1972;
-
-    // whether it has amplification
     bool hasAmplification = true;
 
-// three functions
-    // play a single note
     void playNote(int stringNumber, int fretNumber);
 
-    // play a chord (would have to refer to some chart of chords, or use an array of fret numbers)
     void playChord(std::string chordName);
 
-    // tune a string
     void tuneString(int stringNumber, float tuningFrequency);
 };
 
+void AcousticGuitar::playNote(int stringNumber, int fretNumber)
+{
+    stringNumber = stringNumber + fretNumber;
+}
 
+void AcousticGuitar::playChord(std::string chordName)
+{
+    chordName = chordName + " strum";
+}
+
+void AcousticGuitar::tuneString(int stringNumber, float tuningFrequency)
+{
+    stringNumber += 1;
+    tuningFrequency *= 1.5f;
+}
 
 /*
 2) Library
@@ -183,33 +228,34 @@ struct AcousticGuitar
 
 struct Library
 {
-// five properties
-    // number of books
     int numBooks = 100;
-
-    // number of members
     int numMembers = 100;
-
-    // fee for late books
     float lateFee = 1.25f;
-
-    // most books a person can have out
     int maxBooksLoaned = 5;
-
-    // duration a member can have a book out
     int maxDaysLoan = 14;
 
-// three functions
-    // check out a book
     void checkOutBook(std::string bookTitle);
 
-    // return a book
     void returnBook(std::string bookTitle);
 
-    // check if a book is in the library
     bool isBookInLibrary(std::string bookTitle);
 };
 
+void Library::checkOutBook(std::string bookTitle)
+{
+    std::cout << bookTitle << std::endl;
+}
+
+void Library::returnBook(std::string bookTitle)
+{
+    std::cout << bookTitle << std::endl;
+}
+
+bool Library::isBookInLibrary(std::string bookTitle)
+{
+    std::cout << bookTitle << std::endl;
+    return true;
+}
 
 /*
 3) smart light bulb
@@ -227,33 +273,34 @@ struct Library
 
 struct SmartBulb
 {
-// 5 properties:
-//     1) Number of Watts
     int watts = 200;
-
-//     2) Brightness level
     float brightness = 0.8f;
-
-//     3) Whether it's currently on or not
     bool isOn = false;
-
-//     4) Keeps track of total energy it has used
     float totalEnergy = 0.f;
-
-//     5) Keeps track of the total hours it's been on
     float totalHoursOn = 0.f;
 
-// 3 things it can do:
-//     1) toggle on/off
     void toggle();
 
-//     2) turn off automatically after a given time
     void toggleAfterDelay(float delay);
 
-//     3) it can send a signal when it needs to be replaced
     void alertReplacement();
 
 };
+
+void SmartBulb::toggle()
+{
+
+}
+
+void SmartBulb::toggleAfterDelay(float delay)
+{
+    delay += 1;
+}
+
+void SmartBulb::alertReplacement()
+{
+
+}
 
 
 /*
@@ -271,27 +318,31 @@ struct SmartBulb
  */
 struct Cat
 {
-// 5 properties:
-//     1) Age
     int age = 1;
-//     2) Whether or not it's male
     bool isMale = false;
-//     3) Whether or not it's a tabby cat
     bool isTabby = true;
-//     4) How hungry it is
     float hunger = 0.5f;
-//     5) How thirsty it is
     float thirst = 0.5f;
 
-// 3 things it can do:
-//     1) It can purr
     void purr();
-//     2) It can meow
     void meow();
-//     3) It can drink water
     void drink(float volumeOfWater = 0.2f);
 };
 
+void Cat::purr()
+{
+
+}
+
+void Cat::meow()
+{
+
+}
+    
+void Cat::drink(float volumeOfWater)
+{
+    volumeOfWater -= 0.2f;
+}
 
 
 /*
@@ -310,25 +361,45 @@ Thing 5) Harmonic set (generates a set of frequencies from two input frequencies
 
 struct HarmonicSet
 {
-// 5 properties:
-//     1) Bass Frequency
     float bassFrequency = 220.0f;
-//     2) Generator Frequency 
     float genFrequency = 440.0f;
-//     3) Minimum output frequency
-    float minFrequency = 220.0f;
-//     4) maximum output frequency
-    float maxFrequency = 8000.0f;
-//     5) generator rule # (would select among a few pre-coded rules)
-    int genRule = 0;
-// 3 things it can do:
-//     1) calculate and output a set of frequencies
-    void playSet(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency);
-//     2) calculate statistics about the frequencies (how harmonically coherent they are, etc)
-    float calculateHarmonicity(float bassFrequency, float genFrequency);
-//     3) filter the frequency set according to certain rules
-    void playFiltered(float bassFrequency, float genFrequency, float minFrequency, float maxFrequency, int genRule);
+
+    void playSet(float minFrequency, float maxFrequency);
+
+    float calculateHarmonicity();
+
+    void playFiltered(float minFrequency, float maxFrequency, int genRule);
 };
+
+void HarmonicSet::playSet(float minFrequency, float maxFrequency)
+{
+    float outputNote = (bassFrequency + genFrequency);
+    if (minFrequency < outputNote)
+    {
+        if (maxFrequency > outputNote)
+        {
+            std::cout << outputNote << std::endl;
+        }
+    }
+}
+
+float HarmonicSet::calculateHarmonicity()
+{
+    return bassFrequency + genFrequency;
+}
+
+void HarmonicSet::playFiltered(float minFrequency, float maxFrequency, int genRule)
+{
+    float outputNote = (bassFrequency + genFrequency); 
+    genRule += 1; 
+    if (minFrequency < outputNote)
+    {
+        if (maxFrequency > outputNote)
+        {
+            std::cout << outputNote << std::endl;
+        }
+    }
+}
 
 
 /*
@@ -347,40 +418,59 @@ Thing 6) Rhythmic Rules
 
 struct RhythmicRules
 {
-// 5 properties:
-//     1) density / note gap %
     float gapPercentage = 0.2f;
-//     2) "convolution rate" (how complicated the rhythms are)
     float convolutionRate = 0.5f;
-//     3) tempo
     float tempo = 120.f;
-//     4) rate of variation (how far it randomly strays from the selected settings)
     float variation = 1.0f;
-//     5) meter / pulse structure (this would have to be a UDT also)
-   // *********
+
     struct Meter
     {
-    // properties
-        int numerator = 4; // top of time signature
-        int denominator = 4; // bottom of time signature
-        int currentBeat = 1; // keeps track of current setGapPercentage
-        int smallestBeat = 8; // indicates eighth-note in this case
-        int beatsPerBigStep = 2; // how many of small beat makes up a major beat
+        int numerator = 4; 
+        int denominator = 4; 
+        int tempo = 120; 
+        int bars = 8; 
 
-    // functions
-        int bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep); // steps forward by major beat
-        int littleStep(int currentBeat, int smallestBeat); // steps forward smaller beat
-        void reset(); // resets to beat 1;
+        int bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep); 
+        int littleStep(int currentBeat, int smallestBeat); 
+        void reset(); 
     };
 
-// 3 things it can do:
-//     1) output a rhythm that controls the pattern generator
-    void outputRhythm(float gapPercentage, float convolutionRate, float tempo, float variation, struct Meter);
-//     2) modify the rhythmic properties according to a control signal from the UI
+    void outputRhythm(Meter meter);
+
     float setGapPercentage(float newGapPercentage);
-//     3) modify the meter and tempo according to UI control
+
     float setTempo(float newTempo);
 };
+
+void RhythmicRules::outputRhythm(Meter meter)
+{
+    meter.bigStep(1,2,4);
+}
+
+float RhythmicRules::setGapPercentage(float newGapPercentage)
+{
+    return newGapPercentage;
+}
+
+float RhythmicRules::setTempo(float newTempo)
+{
+    return newTempo;
+}
+
+int RhythmicRules::Meter::bigStep(int currentBeat, int smallestBeat, int beatsPerBigStep)
+{
+    return currentBeat + (smallestBeat * beatsPerBigStep);
+}
+
+int RhythmicRules::Meter::littleStep(int currentBeat, int smallestBeat)
+{
+    return currentBeat + smallestBeat;
+}
+        
+void RhythmicRules::Meter::reset()
+{
+
+}
 
 /*
 Thing 7) Pattern Generator
@@ -398,42 +488,62 @@ Thing 7) Pattern Generator
 
 struct PatternGenerator
 {
-//   5 properties:
-//     1) "rootedness" (how often it plays the generator frequencies)
     float rootedness = 1.0f;
-//     2) repetition rate (how likely to repeat notes)
     float repetitionPercentage = 0.15f;
-//     3) step size (how far away in the set it will pick the next note)
     int stepSize = 2;
-//     4) variability rate
     float variability = 1.0f;
-//     5) fractal dimension (would be used in the pattern calculation)
     float fractalDimension = 1.618f;
 
-// nested struct:
     struct Pattern
     {
-    // 5 properties:
-        bool repeat = false; // whether the sequence repeats
-        int numberOfNotes = 5;  // how long the sequence is
-        int startingMIDI = 69;  // midi note sequence starts on
-        bool isArpeggio = true;    // whether it's a chordal shape
+
+        bool repeat = false; 
+        int numberOfNotes = 5;  
+        int startingMIDI = 69;  
+        bool isArpeggio = true;    
         std::string patternName = "triads";
 
-    // 3 functions
         void play();
         void reverse();
         void stop();
     };
 
-// 3 things it can do:
-//     1) receives inpulses from the rhythm generator
-    void getRhythm(RhythmicRules rhythms); // uses UDT
-//     2) calculates next note based on current harmonic set
+    void getRhythm(RhythmicRules rhythms); 
     void calculateNote(HarmonicSet harmonies);
-//     3) outputs control signals to the synth 
     Pattern generatePattern();
 };
+
+void PatternGenerator::getRhythm(RhythmicRules rhythms)
+{
+    RhythmicRules::Meter meter;
+    rhythms.outputRhythm(meter);
+}
+
+void PatternGenerator::calculateNote(HarmonicSet harmonies)
+{
+    harmonies.calculateHarmonicity();
+}
+    
+PatternGenerator::Pattern PatternGenerator::generatePattern()
+{
+    PatternGenerator::Pattern newPattern;
+    return newPattern;
+}
+
+void PatternGenerator::Pattern::play()
+{
+
+}
+
+void PatternGenerator::Pattern::reverse()
+{
+
+}
+
+void PatternGenerator::Pattern::stop()
+{
+
+}
 
 /*
 Thing 8) Synthesizer
@@ -450,27 +560,31 @@ Thing 8) Synthesizer
  */
 struct Synthesizer
 {
-// 5 properties:
-//     1) wave shape
     std::string waveShape = "sine";
-//     2) amplitude
     float amplitude = 1.0f;
-//     3) attack time
     float attackTime = 2.0f;
-//     4) max polyphony
     int maxPolyphony = 6;
-//     5) distortion
     float distortion = 1.0f;
-// 3 things it can do:
-//     1) respond to signals from the pattern generator
     void getPattern(PatternGenerator patternGen);
-//     2) respond to signals from UI display
     void getUI();
-//     3) output audio
-    void playAudio(float amplitude, float attackTime, int maxPolyphony, float distortion);
+    void playAudio(float duration);
 
 };
 
+void Synthesizer::getPattern(PatternGenerator patternGen)
+{
+    patternGen.generatePattern();
+}
+
+void Synthesizer::getUI()
+{
+
+}
+
+void Synthesizer::playAudio(float duration)
+{
+    duration += 0.6f;
+}
 
 /*
 Thing 9) Distortion
@@ -487,26 +601,40 @@ Thing 9) Distortion
  */
 struct Distortion
 {
-// 5 properties:
-//     1) brightness
     float brightness = 0.5f;
-//     2) number of echoes
     int numEchoes = 3;
-//     3) room size
-    float roomSize = 20.f;
-//     4) hipass filter cutoff
-    float hiPass = 20.0f;
-//     5) lopass filter cutoff
-    float loPass = 2000.0f;
-// 3 things it can do:
-//     1) process a sound input
+    float roughness = 0.8f;
+    int vinylTap = 11;
+
     void processInput();
-//     2) calculate changes to its values
+
     float calculateBrightness(float roomSize, float hiPass, float loPass);
-//     3) turn on/off bypass
-    bool bypass = false;
-    bool toggleBypass(bool bypass);
+
+    bool toggleBypass(bool bypass = false);
 };
+
+void Distortion::processInput()
+{
+
+}
+
+float Distortion::calculateBrightness(float roomSize, float hiPass, float loPass)
+{
+    if (roomSize < loPass)
+    {
+        return loPass;
+    }
+    if (roomSize > hiPass)
+    {
+        return hiPass;
+    }
+    return roomSize;
+}
+
+bool Distortion::toggleBypass(bool bypass)
+{
+    return !bypass;
+}
 
 /*
 10) Melodic Sequencer
@@ -524,25 +652,35 @@ struct Distortion
 
 struct MelodicSequencer
 {
-// 5 properties:
-//     1) Harmonic set (to take pitches from)
     HarmonicSet harmonicSet;
-//     2) Rhythmic rules (for deciding when to play what)
     RhythmicRules rhythmicRules;
-//     3) Pattern generator (brings together harmonic set and rhythm rules)
     PatternGenerator patternGenerator;
-//     4) Synthesizer (selects/generates the actual sound)
     Synthesizer synthesizer;
-//     5) Distortion
     Distortion distortion;
-// 3 things it can do:
-//     1) It can play a melodic sequence
     void playSequence(bool repeat = true);
-//     2) It can display patterns on the screen
     void displayUI(int screenWidth = 400, int screenHeight = 300);
-//     3) It can accept user instructions
-    void getUI(int screenWidth = 400, int screenHeight = 300);
+    int getUI(int screenWidth = 400, int screenHeight = 300);
 };
+
+void MelodicSequencer::playSequence(bool repeat)
+{
+    if (repeat)
+    {
+        MelodicSequencer newSequencer;
+        newSequencer.playSequence(false);
+    }
+}
+
+void MelodicSequencer::displayUI(int screenWidth, int screenHeight)
+{
+    int size = screenWidth * screenHeight;
+    std::cout << size << std::endl;
+}
+
+int MelodicSequencer::getUI(int screenWidth, int screenHeight)
+{
+    return screenWidth * screenHeight;
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
