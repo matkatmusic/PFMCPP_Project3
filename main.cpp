@@ -171,24 +171,33 @@ struct Shoe
     std::string condition = "good";
     std::string securingMethod = "velcro";
 
-    void putOn ( std::string firstShoe = "L");
-    void takeOff ( std::string firstShoe = "R" );
+    void putOn ( std::string firstShoe = "R", bool leftFirst = true);
+    void takeOff ( std::string firstShoe = "R", bool leftFirst = true );
     void throwAway ( bool donate = false );
 };
 
-void Shoe::putOn(std::string firstShoe) 
+void Shoe::putOn(std::string firstShoe, bool leftFirst) 
 {
-    firstShoe = "R";
+    if (leftFirst)
+    {
+        firstShoe = "L";
+    }
 }
 
-void Shoe::takeOff(std::string firstShoe) 
+void Shoe::takeOff(std::string firstShoe, bool leftFirst) 
 {
-    firstShoe = "R";
+    if (leftFirst)
+    {
+        firstShoe = "L";
+    }
 }
 
 void Shoe::throwAway(bool donate) 
 {
-    donate = true;
+    if (condition == "good")
+    {
+        donate = true;
+    }
 }
 
 struct Wurlitzer
@@ -230,10 +239,11 @@ struct ElectricBass
     int yearMade = 1974;
     int output = 23;
     int cost = 1544;
+    int timeSinceRestrung = 13;
 
     void play ( int note =  18 );
     void sold ( int price = 1200 );
-    void restring ( int timeSinceRestrung = 0 );
+    void restring ( bool restring = true );
 };
 
 void ElectricBass::play( int note ) 
@@ -246,9 +256,12 @@ void ElectricBass::sold( int price )
     cost = price;
 }
 
-void ElectricBass::restring( int timeSinceRestrung ) 
+void ElectricBass::restring( bool restring ) 
 {
-    timeSinceRestrung = 13;
+    if (restring)
+    {
+        timeSinceRestrung = 0;
+    }
 }
 
 struct City
@@ -410,10 +423,11 @@ struct Bathroom
         std::string enclosure = "curtain";
         float waterTemp = 102;
         int showerlength = 12;
+        bool cleanShower = false;
 
         float waterAmount ( float handlePosition = 0.5f  );
         void adjustWaterTemp (float coldPosition = 0.32f , float hotPosition = 0.69f);
-        void drainClog ( std::string stuckObject = "hair");
+        void drainClog ( bool clogged = false);
     };
     void useShower ( Shower Shower );
     void useToilet ( bool seatDownn = false );
@@ -430,15 +444,18 @@ void Bathroom::Shower::adjustWaterTemp( float coldPosition, float hotPosition )
     waterTemp = ((coldPosition - hotPosition) * 43);
 }
 
-void Bathroom::Shower::drainClog( std::string stuckObject ) 
+void Bathroom::Shower::drainClog( bool clogged ) 
 {
-    stuckObject = "hair";
+    if (clogged)
+    {
+        cleanShower = true;
+    }
 }
 
-void Bathroom::useShower( Shower Shower ) 
+void Bathroom::useShower( Shower shower ) 
 {
     sinceShowerUsed = 0;
-    Shower.waterTemp = 54;
+    shower.waterTemp = 54;
 }
 
 void Bathroom::useToilet( bool seatDownn ) 
@@ -499,9 +516,10 @@ struct Garage
     int items = 41;
     int lights = 2;
     int whereToPark = 1;
+    int openSource = 2; 
 
     void parkCar ( bool spotAOpen = true, bool spotBOpen = true, bool spotCOpen = true );
-    void doorOpen ( int openSource = 2 );
+    void doorOpen ( bool fromCar = true );
     void altUsage ( std::string garageUsage = "art studio");
 };
 
@@ -522,9 +540,12 @@ void Garage::parkCar( bool spotAOpen, bool spotBOpen, bool spotCOpen )
 
 }
 
-void Garage::doorOpen( int openSource ) 
+void Garage::doorOpen( bool fromCar ) 
 {
-    openSource = 2;
+    if (fromCar)
+    {
+            openSource = 2;
+    }
 }
 
 void Garage::altUsage(std::string garageUsage) 
