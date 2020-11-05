@@ -103,12 +103,16 @@ AcousticGuitar::AcousticGuitar()
 
 void AcousticGuitar::playNote(int stringNumber, int fretNumber)
 {
-    stringNumber = stringNumber + fretNumber;
+    int noteNumber = ((6 - stringNumber) * 5) + fretNumber;
+    if (stringNumber <= 2) noteNumber -= 1;
+
+    std::cout << "play note: " << noteNumber << std::endl;
 }
 
 void AcousticGuitar::playChord(std::string chordName)
 {
     chordName = chordName + " strum";
+    std::cout << chordName << std::endl;
 }
 
 void AcousticGuitar::tuneString(int stringNumber, float tuningFrequency)
@@ -505,12 +509,13 @@ void PatternGenerator::calculateNote(HarmonicSet harmonies)
 PatternGenerator::Pattern PatternGenerator::generatePattern()
 {
     PatternGenerator::Pattern newPattern;
+    std::cout << "new pattern: 12345" << std::endl;
     return newPattern;
 }
 
 void PatternGenerator::Pattern::play()
 {
-
+    std::cout << patternName << std::endl;
 }
 
 void PatternGenerator::Pattern::reverse()
@@ -613,7 +618,7 @@ Distortion::Distortion()
 
 void Distortion::processInput()
 {
-
+    std::cout << "DISTORRTIIOOOOON"<< std::endl;
 }
 
 float Distortion::calculateBrightness(float roomSize, float hiPass, float loPass)
@@ -668,6 +673,7 @@ MelodicSequencer::MelodicSequencer()
 
 void MelodicSequencer::playSequence(bool repeat)
 {
+    std::cout << "playing sequence 12345" << std::endl;
     if (repeat)
     {
         MelodicSequencer newSequencer;
@@ -704,5 +710,36 @@ int MelodicSequencer::getUI(int screenWidth, int screenHeight)
 int main()
 {
     Example::main();
+
+    AcousticGuitar ag;
+    ag.playChord("G");
+    ag.playNote(6,0); // should be note 0
+    ag.playNote(6,7); // these represent string number and fret number
+    ag.playNote(5,0);
+    ag.playNote(3,4); 
+    ag.playNote(2,0);
+    ag.playChord("D");
+    ag.playChord("A");
+
+
+    PatternGenerator::Pattern pattern;
+    std::cout << "pattern's name: " << pattern.patternName << std::endl;
+    pattern.play(); // prints the same name
+
+    PatternGenerator pg;
+    pg.generatePattern(); // prints "new pattern: 12345"
+
+
+    Distortion ds;
+    ds.processInput();
+    std::cout << "brightness: " << ds.calculateBrightness(250.f, 300.f, 100.f) << std::endl;
+    std::cout << "brightness: " << ds.calculateBrightness(350.f, 300.f, 200.f) << std::endl;
+
+    MelodicSequencer ms;
+    std::cout << "do repeat:"<< std::endl;
+    ms.playSequence(true);
+    std::cout << "don't repeat:"<< std::endl;
+    ms.playSequence(false);
+
     std::cout << "good to go!" << std::endl;
 }
