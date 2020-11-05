@@ -256,7 +256,7 @@ struct Cat
 
     void purr();
     void meow();
-    void drink(float volumeOfWater = 0.2f);
+    void drink(float volumeOfWater);
 };
 
 Cat::Cat()
@@ -265,7 +265,7 @@ Cat::Cat()
     isMale = false;
     isTabby = true;
     hunger = 0.5f;
-    thirst = 0.5f;  
+    thirst = 10.f;  
 }
 
 void Cat::purr()
@@ -275,12 +275,12 @@ void Cat::purr()
 
 void Cat::meow()
 {
-
+    std::cout << "meow! Kitty wants attention" << std::endl;
 }
     
-void Cat::drink(float volumeOfWater)
+void Cat::drink(float volumeOfWater = 0.2f)
 {
-    volumeOfWater -= 0.2f;
+    thirst -= volumeOfWater;
 }
 
 
@@ -722,6 +722,17 @@ int main()
     ag.playChord("A");
 
 
+    Cat cat;
+    cat.meow();
+    std::cout << "cat is tabby? : " << cat.isTabby << std::endl;
+    std::cout << "cat is male? : " << cat.isMale << std::endl;
+    std::cout << "cat thirst before drinking: " << cat.thirst << std::endl;
+    cat.drink();
+    std::cout << "after drinking default: " << cat.thirst << std::endl;
+    cat.drink(2.0f);
+    std::cout << "after drinking 2.0f: " << cat.thirst << std::endl;
+
+
     PatternGenerator::Pattern pattern;
     std::cout << "pattern's name: " << pattern.patternName << std::endl;
     pattern.play(); // prints the same name
@@ -735,11 +746,13 @@ int main()
     std::cout << "brightness: " << ds.calculateBrightness(250.f, 300.f, 100.f) << std::endl;
     std::cout << "brightness: " << ds.calculateBrightness(350.f, 300.f, 200.f) << std::endl;
 
+
     MelodicSequencer ms;
     std::cout << "do repeat:"<< std::endl;
     ms.playSequence(true);
     std::cout << "don't repeat:"<< std::endl;
     ms.playSequence(false);
+
 
     std::cout << "good to go!" << std::endl;
 }
