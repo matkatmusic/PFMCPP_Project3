@@ -62,14 +62,6 @@ int main()
 }
 
 //call Example::main() in main()
-
-
-
-
-
-
-
-
 struct CentralProcessingUnit
 {
     int numberOfCores;
@@ -77,6 +69,8 @@ struct CentralProcessingUnit
     int l1CacheSize {8};
     int l2CacheSize {16};
     int l3CacheSize {32};
+
+    int counter;
 
     CentralProcessingUnit(): numberOfCores{8},clockSpeedInGHz {2.8f} {}
 
@@ -98,6 +92,24 @@ float CentralProcessingUnit::processData()
     float processedData = 1.0f;
     return processedData;
 }
+
+struct cpuCounter
+{
+    CentralProcessingUnit cpu1;
+    int startCounter(int initVal, int maxVal)
+    {
+        int i = 0;
+        cpu1.counter = initVal;
+        while (i < maxVal)
+        {
+            cpu1.counter += 1;
+            if (cpu1.counter == maxVal)
+                return cpu1.counter;
+        }
+        return cpu1.counter;
+    }
+    
+};
 
 struct Cat
 {
@@ -506,9 +518,10 @@ std::string University::holdGraduation()
 #include <iostream>
 int main()
 {
-    Example::main();
+    //Example::main();
 
     CentralProcessingUnit cpu1;
+    cpuCounter counter1;
     Cat cat1;
     Cat::Tree tree1;
     Plane plane1;
@@ -522,6 +535,9 @@ int main()
 
     University university1;
 
+    auto cnt = counter1.startCounter(0,15);
+    std::cout << "cnt.counter: " << cnt << std::endl;
+    /*
     std::cout << "CPU communication \n";
     cpu1.communicateWithRAM();
     cpu1.communicateWithMotherboard();
@@ -577,7 +593,7 @@ int main()
     std::cout << "This University's Music Department has " + std::to_string(university1.musicDepartment1.numUndergraduateStudents) + " students";
     std::cout << "\n";
     std::cout << "\n";
-
+    */
 
 
 
