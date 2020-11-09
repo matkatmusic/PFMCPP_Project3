@@ -71,6 +71,7 @@ struct CentralProcessingUnit
     int l3CacheSize {32};
 
     int counter;
+    int resetTimer;
 
     CentralProcessingUnit(): numberOfCores{8},clockSpeedInGHz {2.8f} {}
 
@@ -93,23 +94,41 @@ float CentralProcessingUnit::processData()
     return processedData;
 }
 
-struct cpuCounter
+struct cpuCounter //For #1
 {
     CentralProcessingUnit cpu1;
     int startCounter(int initVal, int maxVal)
     {
-        int i = 0;
-        cpu1.counter = initVal;
-        while (i < maxVal)
+        
+        for (int i = initVal ; i < maxVal+1 ; i++)
         {
-            cpu1.counter += 1;
+            cpu1.counter = i; 
+            std::cout<<cpu1.counter<<"\n";
             if (cpu1.counter == maxVal)
                 return cpu1.counter;
         }
-        return cpu1.counter;
+    return 0;
     }
     
 };
+struct cpuReset //While #1
+{
+    CentralProcessingUnit cpu1;
+    std::string reset()
+    {
+        int i = 0;
+        cpu1.resetTimer = 0;
+        while (i < 10)
+        {
+            cpu1.resetTimer += 1;
+            std::cout << "It has been " << cpu1.resetTimer << " second(s) since reset was initiated" << std::endl;
+            if (cpu1.resetTimer == 10)
+                return "The CPU has been reset";
+        }
+        return "Error while resetting";
+    }
+};
+
 
 struct Cat
 {
@@ -447,6 +466,8 @@ struct Library
     void checkOutBook();
     std::string returnBook();
     float chargeLateFee(float lateFee, int numDays);
+
+    std::string buyNewBooks(int numNewBooks); 
 };
 
 Library::Library()
@@ -456,6 +477,19 @@ Library::Library()
     numShelves = 50;
     numBooks = 3000;
     lateFees = 2.5f;
+}
+
+std::string buyNewBooks (int numNewBooks) //While #2
+{
+    int i = 0;
+    while (i < numNewBooks)
+    {
+        numBooks++; 
+        if (i == numNewBooks)
+            return "We have bought " + std::to_string(numNewBooks) + " new books for our library" ;
+        i++;
+    }
+    return "We didn't buy enough books";
 }
 
 void Library::checkOutBook()
@@ -483,7 +517,7 @@ struct University
 
     void conductExams();
     float collectFees(int numStudents,float yearlyFees);
-    std::string holdGraduation();
+    std::string holdGraduation(int numStudents);
 };
 
 void University::conductExams()
@@ -496,8 +530,15 @@ float University::collectFees(int numStudents1, float yearlyFees1)
     return numStudents1 * yearlyFees1;
 }
 
-std::string University::holdGraduation()
+std::string University::holdGraduation(int numStudents) //For #2
 {
+    for (int num = 0; num < numStudents + 1; num++)
+    {
+        std::cout << "Calling on student " << num << " to recieve their degree\n";
+        if (num == numStudents)
+            return "You are the last student of the batch, good luck to you all\n";
+    }
+    
     return "Good bye, good luck";
 }
 
@@ -522,6 +563,7 @@ int main()
 
     CentralProcessingUnit cpu1;
     cpuCounter counter1;
+    cpuReset rst1;
     Cat cat1;
     Cat::Tree tree1;
     Plane plane1;
@@ -537,6 +579,10 @@ int main()
 
     auto cnt = counter1.startCounter(0,15);
     std::cout << "cnt.counter: " << cnt << std::endl;
+    
+    auto rst = rst1.reset();
+    std::cout << "Reset message: " << rst << std::endl;
+    
     
     std::cout << "CPU communication \n";
     cpu1.communicateWithRAM();
@@ -594,6 +640,8 @@ int main()
     std::cout << "\n";
     std::cout << "\n";
     
+    auto grad = university1.holdGraduation(20);
+    std::cout << grad << "\n";
 
 
 
