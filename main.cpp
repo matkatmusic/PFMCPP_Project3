@@ -94,12 +94,11 @@ float CentralProcessingUnit::processData()
     return processedData;
 }
 
-struct cpuCounter //For #1
+struct CPUCounter //For #1
 {
     CentralProcessingUnit cpu1;
     int startCounter(int initVal, int maxVal)
     {
-        
         for (int i = initVal ; i < maxVal+1 ; i++)
         {
             cpu1.counter = i; 
@@ -562,7 +561,7 @@ int main()
     Example::main();
 
     CentralProcessingUnit cpu1;
-    cpuCounter counter1;
+    CPUCounter counter1;
     cpuReset rst1;
     Cat cat1;
     Cat::Tree tree1;
