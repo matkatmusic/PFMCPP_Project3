@@ -518,7 +518,7 @@ std::string University::holdGraduation()
 #include <iostream>
 int main()
 {
-    //Example::main();
+    Example::main();
 
     CentralProcessingUnit cpu1;
     cpuCounter counter1;
@@ -537,7 +537,7 @@ int main()
 
     auto cnt = counter1.startCounter(0,15);
     std::cout << "cnt.counter: " << cnt << std::endl;
-    /*
+    
     std::cout << "CPU communication \n";
     cpu1.communicateWithRAM();
     cpu1.communicateWithMotherboard();
@@ -593,7 +593,7 @@ int main()
     std::cout << "This University's Music Department has " + std::to_string(university1.musicDepartment1.numUndergraduateStudents) + " students";
     std::cout << "\n";
     std::cout << "\n";
-    */
+    
 
 
 
