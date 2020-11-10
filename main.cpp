@@ -107,10 +107,10 @@ struct CPUCounter //For #1
                 return cpu1.counter;
         }
     return 0;
-    }
-    
+    }   
 };
-struct cpuReset //While #1
+
+struct CPUReset //While #1
 {
     CentralProcessingUnit cpu1;
     std::string reset()
@@ -478,14 +478,14 @@ Library::Library()
     lateFees = 2.5f;
 }
 
-std::string buyNewBooks (int numNewBooks) //While #2
+std::string Library::buyNewBooks (int numNewBooks) //While #2
 {
     int i = 0;
-    while (i < numNewBooks)
-    {
-        numBooks++; 
+    while (i < numNewBooks + 1)
+    { 
         if (i == numNewBooks)
-            return "We have bought " + std::to_string(numNewBooks) + " new books for our library" ;
+            return "We have bought " + std::to_string(numNewBooks) + " new books for our library\n" + "We now have " + std::to_string(numBooks) + " books in our library\n";
+        numBooks++;
         i++;
     }
     return "We didn't buy enough books";
@@ -562,7 +562,7 @@ int main()
 
     CentralProcessingUnit cpu1;
     CPUCounter counter1;
-    cpuReset rst1;
+    CPUReset rst1;
     Cat cat1;
     Cat::Tree tree1;
     Plane plane1;
@@ -631,6 +631,10 @@ int main()
 
     std::cout << "Library Actions: \n";
     library1.checkOutBook();
+    std::cout << "\n";
+
+    auto msg = library1.buyNewBooks(30);
+    std::cout << msg << std::endl;
     std::cout << "\n";
 
     std::cout << "University Properties and Actions: \n";
