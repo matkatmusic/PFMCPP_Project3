@@ -106,7 +106,7 @@ struct CPUCounter //For #1
             if (cpu1.counter == maxVal)
                 return cpu1.counter;
         }
-    return 0;
+        return 0;
     }   
 };
 
