@@ -54,59 +54,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Can plant
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) tin amount
+    2) raw fish amount
+    3) autoclave capacity
+    4) cans per day
+    5) worker/workhours
 3 things it can do:
-    1)
-    2)
-    3)
+    1) produce canned fish
+    2) load boxes with goods in warehouse
+    3) produce bio scrap
  */
 
 /*
-Thing 2)
+Thing 2) SIP provider
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) supported codecs
+    2) number of simultaneous calls
+    3) FAX support protocol
+    4) price
+    5) SLA conditions
 3 things it can do:
-    1)
-    2)
-    3)
+    1) do calls
+    2) charge customer
+    3) lease traffic
  */
 
 /*
-Thing 3)
+Thing 3) Cat
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of paws
+    2) list of fur colours
+    3) gender
+    4) age
+    5) number of lives
 3 things it can do:
-    1)
-    2)
-    3)
+    1) eat
+    2) sleep
+    3) do mew
  */
 
 /*
-Thing 4)
+Thing 4) Spaceship
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) orbit height
+    2) engine type
+    3) number of crew 
+    4) country of origin
+    5) name
 3 things it can do:
-    1)
-    2)
-    3)
+    1) dock to space station
+    2) fly around planets
+    3) explore space
  */
 
 
