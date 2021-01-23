@@ -125,73 +125,73 @@ Thing 4) Spaceship
  */
 
 /*
-Thing 5)
+Thing 5) DAC
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) samplerate
+    2) bit depth
+    3) SNR
+    4) amount of power consumed
+    5) dynamic range
 3 things it can do:
-    1)
-    2)
-    3)
+    1) recieve PCM signal
+    2) correct errors 
+    3) produce analogue signal
  */
 
 /*
-Thing 6)
+Thing 6) power unit
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) weight
+    2) otput voltage
+    3) input voltage
+    4) output current
+    5) operating and storage temperature ranges
 3 things it can do:
-    1)
-    2)
-    3)
+    1) input power from outlet
+    2) convert voltage
+    3) protect circuit
  */
 
 /*
-Thing 7)
+Thing 7) VCA
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) frequency responce
+    2) insertion loss
+    3) attenuation
+    4) price
+    5) number of channels
 3 things it can do:
-    1)
-    2)
-    3)
+    1) attenuate signal
+    2) consume power
+    3) recieve control signal
  */
 
 /*
-Thing 8)
+Thing 8) headphone amplifier
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) SNR
+    2) output power
+    3) output impendance
+    4) frequency range
+    5) input voltage 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) input signal
+    2) amplify signal
+    3) produce noise
  */
 
 /*
-Thing 9)
+Thing 9) body
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) height
+    2) width
+    3) depth
+    4) colour
+    5) material
 3 things it can do:
-    1)
-    2)
-    3)
+    1) hold internal parts
+    2) protect circuit
+    3) collect dust
  */
 
 /*
@@ -201,7 +201,7 @@ Thing 10) Audio monitor controller
     2) power unit
     3) VCA
     4) headphone amplifier
-    5) crosfeed processor
+    5) body
 3 things it can do:
     1) control volume
     2) set input sources
