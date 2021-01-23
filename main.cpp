@@ -109,17 +109,17 @@ Thing 4) Spaceship
  */
 
 /*
-Thing 10)
+Thing 10) Audio monitor controller
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) DAC
+    2) power unit
+    3) VCA
+    4) headphone amplifier
+    5) crosfeed processor
 3 things it can do:
-    1)
-    2)
-    3)
+    1) control volume
+    2) set input sources
+    3) toggle crosfeed effect
  */
 
 /*
