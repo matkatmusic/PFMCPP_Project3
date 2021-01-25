@@ -27,12 +27,12 @@ I recommend compiling after finishing each one and making sure it compiles
 without errors or warnings before moving on to writing the next UDT. 
 
 1) define an empty struct for each of your 10 types. i.e.:
-*/
+
 struct CarWash
 {
 
 };
-/*
+
 2) Copy your 5 properties & 3 actions into the empty struct body.
     - comment them out.
     
@@ -129,10 +129,31 @@ Thing 1) Can plant
     3) produce bio scrap
  */
 
+struct canPlant
+{
+    //tin amount
+    int tinAmount = 1000;
+    //raw fish amount
+    double rawFish = 100.21;
+    //autoclave capacity
+    int autoclaveLoad = 300;
+    //cans per day
+    int dayCansOut = 900;
+    //worker/workhours
+    float workHours = 12;
+    
+    //produce canned fish
+    int produceCans(double slicedFish, int tinAmount);
+    //load boxes with goods in warehouse
+    void loadBoxes(int boxes, int wareHouseNumber);
+    //produce bio scrap
+    double reportScrapOut(double rawFish, float workHours);
+};
+    
 /*
 Thing 2) SIP provider
 5 properties:
-    1) supported codecs
+    1) name
     2) number of simultaneous calls
     3) FAX support protocol
     4) price
@@ -142,7 +163,26 @@ Thing 2) SIP provider
     2) charge customer
     3) lease traffic
  */
-
+struct sipProvider
+{
+    //supported codecs
+    std::string name = "sipnet";
+    //number of simultaneous calls
+    int calls=2;
+    //FAX support protocol
+    bool t38 = false;
+    //price
+    double price=0;
+    //SLA conditions
+    int slaType = 1;
+    
+    //do calls
+    bool makeCall(int src, int dst);
+    //charge customer
+    float chargeCustomer(double time, int customerId);
+    //lease traffic
+    float traficCount(double time);
+};
 /*
 Thing 3) Cat
 5 properties:
@@ -157,6 +197,26 @@ Thing 3) Cat
     3) do mew
  */
 
+struct Cat
+{
+    //number of paws
+    int paw=4;
+    //list of fur colours
+    char colour;
+    //gender
+    bool gender = 0; //0 female, 1 male
+    //age
+    float age = 3.5f;
+    //number of lives
+    int liveNumber = 1;
+
+    //eat
+    void eat(char foodType);
+    //sleep
+    void sleep (float time);
+    //do mew
+    void mew (int count);
+};
 /*
 Thing 4) Spaceship
 5 properties:
@@ -171,6 +231,27 @@ Thing 4) Spaceship
     3) explore space
  */
 
+struct spaceShip
+{
+    //orbit height
+    float orbitHeight = 1000;
+    //engine type
+    char engineType;
+    //number of crew 
+    int crewNum = 3;
+    //country of origin
+    char country;
+    //name
+    char name;
+
+    //dock to space station
+    bool dock();
+    //fly around planets
+    void makeLoop(int planetNum = 3);
+    //explore space
+    bool takeOf(float startTime);
+
+};
 /*
 Thing 5) DAC
 5 properties:
@@ -184,7 +265,26 @@ Thing 5) DAC
     2) correct errors 
     3) produce analogue signal
  */
-
+struct DAC
+{
+    //samplerate
+    int sampleRate = 48000;
+    //bit depth
+    int bitDepth = 24;
+    //SNR
+    int SNR = 112;
+    //amount of power consumed
+    float amountOfPoerwConsumed = 0.9f;
+    //dynamic range
+    double dynamicRange = 9.9;
+    
+    //recieve PCM signal
+    void readInput(int channelNum=0);
+    //correct errors 
+    bool checkError(long double sampleNum);
+    //produce analogue signal
+    void audioOut(int channelNum=0);
+};
 /*
 Thing 6) power unit
 5 properties:
@@ -199,6 +299,26 @@ Thing 6) power unit
     3) protect circuit
  */
 
+struct PowerUnit
+{
+    //weight
+    float weight = 1.2f;
+    //otput voltage
+    double outVolt = 12;
+    //input voltage
+    double inVolt = 220;
+    //output current
+    int outCurrent = 1;
+    //operating and storage temperature ranges
+    int maxOutTemp = 80;
+     
+    //input power from outlet
+    bool getElectricity(int outletStandart=1);
+    //convert voltage
+    double convertVoltage(double inVolt, double outVolt);
+    //protect circuit
+    bool status(int circuitId=1);
+};
 /*
 Thing 7) VCA
 5 properties:
@@ -212,7 +332,26 @@ Thing 7) VCA
     2) consume power
     3) recieve control signal
  */
-
+struct VCA
+{
+    //frequency responce
+    float freqResponse = 0.5f;
+    //insertion loss
+    double insertLoss = 0.01;
+    //attenuation
+    int attenuation = -100;
+    //price
+    float price = 3;
+    //number of channels
+    int channelNum = 2;
+    
+    //attenuate signal
+    void attenuate(int coefficient = -50);
+    //consume power
+    void inputPower(int amountOfPower = 20);
+    //recieve control signal
+    int readKnob (long double knobAngle = 10.123);
+};
 /*
 Thing 8) headphone amplifier
 5 properties:
@@ -226,7 +365,26 @@ Thing 8) headphone amplifier
     2) amplify signal
     3) produce noise
  */
-
+struct headphoneAmp
+{
+    //SNR
+    int SNR = 112;
+    //output power
+    float outPower = 600.0f;
+    //output impendance
+    int outImpendance = 32;
+    //frequency range
+    int maxFreq = 20000;
+    //input voltage
+    double inVolt = 12;
+    
+    //input signal
+    void getInput(int channelNum = 0);
+    //amplify signal
+    void doAmp(int channelNum = 0);
+    //produce noise
+    bool noiseReduction(int filterNum = 3);
+};
 /*
 Thing 9) body
 5 properties:
@@ -240,7 +398,26 @@ Thing 9) body
     2) protect circuit
     3) collect dust
  */
-
+struct Body
+{
+    //height
+    float height = 6.5f;
+    //width
+    float width = 15.0f;
+    //depth
+    float depth = 10.5f;
+    //colour
+    char colour = 'B';
+    //material
+    char material = 'W';
+    
+     //hold internal parts
+     bool checkTheBolt(int circuitId=1);
+     //protect circuit
+     bool checkShortCircuit(int circuitId=1);
+     //collect dust
+     void alarmOverDust(float time = 10);
+};
 /*
 Thing 10) Audio monitor controller
 5 properties:
