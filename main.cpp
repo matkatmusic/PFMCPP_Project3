@@ -281,9 +281,9 @@ struct SpaceShip
         float age =33.3f;
         
         //do main job
-        void examineAnimal (int date, float time, Cat cat);
+        void examineAnimal(int date, float time, Cat cat);
         //record results
-        bool recordTest (int date, float time, int testNum=0);
+        bool recordTest(int date, float time, int testNum=0);
         //do additional mandatory job
         void examineCrew (int date, float time, crewMember memberId);
     };
@@ -495,11 +495,11 @@ struct MonitorController
     Body body0;
 
     //control volume
-    void setVol (int amount = 0);
+    void setVol(int amount = 0);
     //set input sources
-    bool selectSource (int sourceNum, bool status=0);
+    bool selectSource(int sourceNum, bool status=0);
     //toggle crosfeed effect
-    bool toggleCrossfeed (bool status = 0);
+    bool toggleCrossfeed(bool status = 0);
 };
    
 /*
