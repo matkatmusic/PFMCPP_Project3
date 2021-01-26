@@ -285,7 +285,7 @@ struct SpaceShip
         //record results
         bool recordTest(int date, float time, int testNum=0);
         //do additional mandatory job
-        void examineCrew (int date, float time, crewMember memberId);
+        void examineCrew (int date, float time, CrewMember memberId);
     };
 
     //dock to space station
@@ -488,9 +488,9 @@ struct MonitorController
     //volt controlled attenuator
     VCA VCA0;
     //left channle amplifier
-    headphoneAmp AmpLeft;
+    HeadphoneAmp AmpLeft;
     //right channle amplifier
-    headphoneAmp AmpRight;
+    HeadphoneAmp AmpRight;
     //body of controller
     Body body0;
 
