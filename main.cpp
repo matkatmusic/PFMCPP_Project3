@@ -157,11 +157,11 @@ struct CanPlant
         float hourEnd = 12.0f;
         
         //make a call
-        void makeCall(int customerId=0, float time=0);
+        void makeCall(int customerId = 0, float time = 0);
         //pickup a call
         void pickCall(int number, float time);
         //reserve the order
-        int reserveGood(int customerId, int amount=0);
+        int reserveGood(int customerId, int amount = 0);
     };
     
     //produce canned fish
@@ -175,7 +175,7 @@ struct CanPlant
 /*
 Thing 2) SIP provider
 5 properties:
-    1) name
+    1) supported codecs
     2) number of simultaneous calls
     3) FAX support protocol
     4) price
@@ -324,11 +324,11 @@ struct DAC
     double dynamicRange = 9.9;
     
     //recieve PCM signal
-    void readInput(int channelNum=0);
+    void readInput(int channelNum = 0);
     //correct errors 
     bool checkError(double sampleNum);
     //produce analogue signal
-    void audioOut(int channelNum=0);
+    void audioOut(int channelNum = 0);
 };
 /*
 Thing 6) power unit
@@ -362,7 +362,7 @@ struct PowerUnit
     //convert voltage
     double convertVoltage(double inVolt, double outVolt);
     //protect circuit
-    bool status(int circuitId=1);
+    bool status(int circuitId = 1);
 };
 /*
 Thing 7) VCA
@@ -457,9 +457,9 @@ struct Body
     char material = 'W';
     
      //hold internal parts
-     bool checkTheBolt(int circuitId=1);
+     bool checkTheBolt(int circuitId = 1);
      //protect circuit
-     bool checkShortCircuit(int circuitId=1);
+     bool checkShortCircuit(int circuitId = 1);
      //collect dust
      void alarmOverDust(float time = 10);
 };
@@ -499,7 +499,7 @@ struct MonitorController
     //set input sources
     bool selectSource (int sourceNum, bool status=0);
     //toggle crosfeed effect
-    bool toggleCrossfeed (bool status=0);
+    bool toggleCrossfeed (bool status = 0);
 };
    
 /*
