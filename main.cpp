@@ -142,6 +142,28 @@ struct canPlant
     //worker/workhours
     float workHours = 12;
     
+    //Can plant office worker
+    struct OfficeWorker
+    {
+        //operator Id
+        int callOperatorId = 1;
+        //internal phone number
+        int intNumber;
+        //name
+        std::string operatorName = "Elena";
+        //working hours start
+        float hourStart = 5.5f;
+        //working hours end
+        float hourEnd = 12.0f;
+        
+        //make a call
+        void makeCall(int customerId=0, float time=0);
+        //pickup a call
+        void pickCall(int number, float time);
+        //reserve the order
+        int reserveGood(int customerId, int amount=0);
+    };
+    
     //produce canned fish
     int produceCans(double slicedFish, int tinAmount);
     //load boxes with goods in warehouse
@@ -166,7 +188,7 @@ Thing 2) SIP provider
 struct sipProvider
 {
     //supported codecs
-    std::string name = "sipnet";
+    std::string codecName = "G729";
     //number of simultaneous calls
     int calls=2;
     //FAX support protocol
@@ -243,6 +265,28 @@ struct spaceShip
     char country;
     //name
     char name;
+    
+    //spaship's crew meber
+    struct crewMember
+    {
+        //member's personal id
+        int memberId = 0;
+        //member's name
+        std::string name;
+        //member's role
+        std::string jobRole = "scientist";
+        //member's weight
+        float weight = 70.0f;
+        //member's age
+        float age =33.3f;
+        
+        //do main job
+        void examineAnimal (int date, float time, Cat cat);
+        //record results
+        bool recordTest (int date, float time, int testNum=0);
+        //do additional mandatory job
+        void examineCrew (int date, float time, crewMember memberId);
+    };
 
     //dock to space station
     bool dock();
@@ -252,6 +296,7 @@ struct spaceShip
     bool takeOf(float startTime);
 
 };
+
 /*
 Thing 5) DAC
 5 properties:
@@ -432,6 +477,31 @@ Thing 10) Audio monitor controller
     3) toggle crosfeed effect
  */
 
+struct MonitorController
+{
+    //left channel DAC
+    DAC DACLeft;
+    //right channel DAC
+    DAC DACRight;
+    //power supply unit
+    PowerUnit PSU0;
+    //volt controlled attenuator
+    VCA VCA0;
+    //left channle amplifier
+    headphoneAmp AmpLeft;
+    //right channle amplifier
+    headphoneAmp AmpRight;
+    //body of controller
+    Body body0;
+
+    //control volume
+    void setVol (int amount = 0);
+    //set input sources
+    bool selectSource (int sourceNum, bool status=0);
+    //toggle crosfeed effect
+    bool toggleCrossfeed (bool status=0);
+};
+   
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
