@@ -129,7 +129,7 @@ Thing 1) Can plant
     3) produce bio scrap
  */
 
-struct canPlant
+struct CanPlant
 {
     //tin amount
     int tinAmount = 1000;
@@ -148,7 +148,7 @@ struct canPlant
         //operator Id
         int callOperatorId = 1;
         //internal phone number
-        int intNumber;
+        int intNumber = 1301;
         //name
         std::string operatorName = "Elena";
         //working hours start
@@ -185,16 +185,16 @@ Thing 2) SIP provider
     2) charge customer
     3) lease traffic
  */
-struct sipProvider
+struct SipProvider
 {
     //supported codecs
     std::string codecName = "G729";
     //number of simultaneous calls
-    int calls=2;
+    int calls = 2;
     //FAX support protocol
     bool t38 = false;
     //price
-    double price=0;
+    double price = 0;
     //SLA conditions
     int slaType = 1;
     
@@ -222,9 +222,9 @@ Thing 3) Cat
 struct Cat
 {
     //number of paws
-    int paw=4;
+    int paw = 4;
     //list of fur colours
-    char colour;
+    char colour = 'B';
     //gender
     bool gender = 0; //0 female, 1 male
     //age
@@ -253,26 +253,26 @@ Thing 4) Spaceship
     3) explore space
  */
 
-struct spaceShip
+struct SpaceShip
 {
     //orbit height
     float orbitHeight = 1000;
     //engine type
-    char engineType;
+    std::string engineType = "rocket";
     //number of crew 
     int crewNum = 3;
     //country of origin
-    char country;
+    std::string country = "RU";
     //name
-    char name;
+    std::string name = "Salyut";
     
     //spaship's crew meber
-    struct crewMember
+    struct CrewMember
     {
         //member's personal id
         int memberId = 0;
         //member's name
-        std::string name;
+        std::string name = "Rob";
         //member's role
         std::string jobRole = "scientist";
         //member's weight
@@ -326,7 +326,7 @@ struct DAC
     //recieve PCM signal
     void readInput(int channelNum=0);
     //correct errors 
-    bool checkError(long double sampleNum);
+    bool checkError(double sampleNum);
     //produce analogue signal
     void audioOut(int channelNum=0);
 };
@@ -395,7 +395,7 @@ struct VCA
     //consume power
     void inputPower(int amountOfPower = 20);
     //recieve control signal
-    int readKnob (long double knobAngle = 10.123);
+    int readKnob (double knobAngle = 10.123);
 };
 /*
 Thing 8) headphone amplifier
@@ -410,7 +410,7 @@ Thing 8) headphone amplifier
     2) amplify signal
     3) produce noise
  */
-struct headphoneAmp
+struct HeadphoneAmp
 {
     //SNR
     int SNR = 112;
