@@ -111,25 +111,12 @@ struct CarWash
 struct Limb
 {
     void stepForward();
-    int stepSize(std::string direction = "forward");
+    int stepSize();
 };
 
 int stepSize(std::string direction)
 {
-    if (direction == "up")
-    {
-        return 1;
-    }
-    else if (direction == "forward")
-    {
-        return 2;
-    }
-    else if (direction == "down")
-    {
-        return 3;
-    }
-    
-    return 0;
+    return 1;
 }
     
 struct Person
@@ -196,7 +183,7 @@ struct CanPlant
     void loadBoxes(int boxes, int wareHouseNumber);
     double reportScrapOut(double rawFish, float workHours);
 };
-    
+
 struct SipProvider
 {
     std::string codecName = "G729";
@@ -210,6 +197,17 @@ struct SipProvider
     float traficCount(double time);
 };
 
+bool SipProvider::makeCall(int src, int dst)
+{
+    if (src == dst)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+};
 struct Cat
 {
     int paw = 4;
@@ -329,7 +327,14 @@ struct MonitorController
     bool selectSource(int sourceNum, bool status=0);
     bool toggleCrossfeed(bool status = 0);
 };
-   
+
+void CanPlant::OfficeWorker::makeCall(int customerId, float time)
+{
+    SipProvider sipnet;
+    bool hookup = true;
+    bool dialed = sipnet.makeCall(987654321, 123456789);
+}
+
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
