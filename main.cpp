@@ -241,7 +241,7 @@ struct DAC
     int sampleRate = 48000;
     int bitDepth = 24;
     int SNR = 112;
-    float amountOfPoerwConsumed = 0.9f;
+    float amountOfPowerConsumed = 0.9f;
     double dynamicRange = 9.9;
     
     void readInput(int channelNum = 0);
@@ -296,9 +296,9 @@ struct Body
     char colour = 'B';
     char material = 'W';
     
-     bool checkTheBolt(int circuitId = 1);
-     bool checkShortCircuit(int circuitId = 1);
-     void alarmOverDust(float time = 10);
+    bool checkTheBolt(int circuitId = 1);
+    bool checkShortCircuit(int circuitId = 1);
+    void alarmOverDust(float time = 10);
 };
 
 struct MonitorController
@@ -382,15 +382,15 @@ float SipProvider::traficCount(double time)
 
 void Cat::eat(char foodType)
 {
-     if (foodType == 'F')
-     {
-     Cat::mew(3);
-     }
+    if (foodType == 'F')
+    {
+    Cat::mew(3);
+    }
 }
 
 void Cat::sleep (float time)
 {
-     //zzzzz
+    //zzzzz
 }
 
 void Cat::mew (int count)
@@ -455,6 +455,161 @@ bool SpaceShip::takeOf(float startTime)
     return false;
     }
 }
+
+void DAC::readInput(int channelNum)
+{
+    for (int i=0;i++;i<channelNum)
+    {
+    double a=33/i;
+    }
+}
+
+bool DAC::checkError(double sampleNum)
+{
+    double originalValue = 3.141592;
+    if (sampleNum == originalValue)
+    {
+    return false;
+    }
+    else
+    {
+    return true;
+    }
+}
+
+void DAC::audioOut(int channelNum)
+{
+    int bitDepth = 24;
+    
+    for (int i=0;i++;i<channelNum)
+    {
+    double a = i / bitDepth;
+    }
+}
+
+bool PowerUnit::getElectricity(int outletStandart)
+{
+return true;
+}
+
+double PowerUnit::convertVoltage(double inVolt, double outVolt)
+{
+return outVolt;
+}
+
+bool PowerUnit::status(int circuitId)
+{
+    if (circuitId == 0)
+    {
+    return false;
+    }
+    else
+    {
+    return true;
+    }
+}
+
+void VCA::attenuate(int coefficient)
+{
+    int knobValue = readKnob();
+    int outVolume = knobValue * coefficient;
+}
+
+void VCA::inputPower(int amountOfPower)
+{
+    PowerUnit PSU0;
+    if (amountOfPower < 20)
+    {
+    PSU0.getElectricity(2);
+    }
+}
+
+int VCA::readKnob (double knobAngle)
+{
+    int gain = knobAngle * 1000;
+    return gain;
+}
+
+void HeadphoneAmp::getInput(int channelNum)
+{
+    
+    for (int i=0;i++;i<channelNum)
+    {
+    double a=44/i;
+    }
+
+}
+
+void HeadphoneAmp::doAmp(int channelNum)
+{
+    VCA VCA0;
+    int output;
+    for (int i=0;i++;i<channelNum)
+    {
+    VCA0.attenuate(1);
+    }
+
+}
+
+bool HeadphoneAmp::noiseReduction(int filterNum)
+{
+    return true;
+}
+
+bool Body::checkTheBolt(int circuitId)
+{
+    bool status;
+    if (circuitId == 0) return true;
+    return false;
+}
+
+bool Body::checkShortCircuit(int circuitId)
+{
+    bool status;
+    if (circuitId == 0) return true;
+    return false;
+
+}
+
+void Body::alarmOverDust(float time)
+{
+    /*
+    beep-beep;
+    blink-blink;
+    */
+}
+
+void MonitorController::setVol(int amount)
+{
+    HeadphoneAmp AmpLeft, AmpRight;
+    
+    AmpLeft.doAmp(amount);
+    AmpRight.doAmp(amount);
+}
+
+bool MonitorController::selectSource(int sourceNum, bool status)
+{
+    int inputSource = 0;
+    
+    if (inputSource != sourceNum)
+    {
+        inputSource = sourceNum;
+    }
+     
+    return true;
+}
+
+bool MonitorController::toggleCrossfeed(bool status)
+{
+    bool crossFeedStatus = 0;
+    
+    if (crossFeedStatus != status)
+    {
+        crossFeedStatus = status;
+    }
+    
+    return true;
+} 
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
