@@ -197,17 +197,6 @@ struct SipProvider
     float traficCount(double time);
 };
 
-bool SipProvider::makeCall(int src, int dst)
-{
-    if (src == dst)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-};
 struct Cat
 {
     int paw = 4;
@@ -245,7 +234,6 @@ struct SpaceShip
     bool dock();
     void makeLoop(int planetNum = 3);
     bool takeOf(float startTime);
-
 };
 
 struct DAC
@@ -332,7 +320,140 @@ void CanPlant::OfficeWorker::makeCall(int customerId, float time)
 {
     SipProvider sipnet;
     bool hookup = true;
-    bool dialed = sipnet.makeCall(987654321, 123456789);
+    bool dialed = sipnet.makeCall(intNumber, customerId);
+}
+
+void CanPlant::OfficeWorker::pickCall(int number, float time)
+{
+    bool hookup = true;
+    time++;
+}
+
+int CanPlant::OfficeWorker::reserveGood(int customerId, int amount)
+{
+    return amount++;
+}
+
+int CanPlant::produceCans(double slicedFish, int tinAmount)
+{
+    int amount = slicedFish / tinAmount;
+    return amount;
+}
+
+void CanPlant::loadBoxes(int boxes, int wareHouseNumber)
+{
+    boxes++;
+    wareHouseNumber++;
+}
+
+double CanPlant::reportScrapOut(double rawFish, float workHours)
+{
+    return rawFish * workHours *.01;
+}
+
+bool SipProvider::makeCall(int src, int dst)
+{
+    if (src == dst)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+};
+
+float SipProvider::chargeCustomer(double time, int customerId)
+{
+    if (customerId == 0)
+    {
+    return 0;
+    }
+    else
+    {
+    return time * price;
+    }
+}
+
+float SipProvider::traficCount(double time)
+{
+    return time * 0.1f;
+}
+
+void Cat::eat(char foodType)
+{
+     if (foodType == 'F')
+     {
+     Cat::mew(3);
+     }
+}
+
+void Cat::sleep (float time)
+{
+     //zzzzz
+}
+
+void Cat::mew (int count)
+{
+    count--;
+}
+
+void SpaceShip::CrewMember::examineAnimal(int date, float time, Cat cat)
+{
+    int testNum = 0;
+    if (cat.liveNumber <= 9)
+    {
+    recordTest(date, time, testNum++);
+    }
+}
+
+bool SpaceShip::CrewMember::recordTest(int date, float time, int testNum)
+{
+    if (testNum !=0)
+    {
+    return true;
+    }
+    else
+    {
+    return false;
+    }
+}
+
+void SpaceShip::CrewMember::examineCrew (int date, float time, CrewMember memberId)
+{
+    int testNum = 0;
+    recordTest(date, time, testNum++);
+}
+
+bool SpaceShip::dock()
+{
+    SpaceShip Rassvet;
+    if (Rassvet.orbitHeight != 40.0f)
+    {
+    return true;
+    }
+    else
+    {
+    return false;
+    }
+}
+void SpaceShip::makeLoop(int planetNum )
+{
+    planetNum++;
+}
+
+bool SpaceShip::takeOf(float startTime)
+{
+    SpaceShip Rassvet;
+    startTime--;
+    if (Rassvet.orbitHeight != 0.0f)
+    {
+    return true;
+    }
+    else
+    {
+    return false;
+    }
 }
 
 /*
