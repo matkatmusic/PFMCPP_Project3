@@ -54,59 +54,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Laptop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of storage
+    2) amount of RAM
+    3) amount of video memory
+    4) CPU speed
+    5) number of USB sockets
 3 things it can do:
-    1)
-    2)
-    3)
+    1) store information
+    2) perform calculations
+    3) connect to internet
  */
 
 /*
 Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+5 properties: digital piano
+    1) number of keys
+    2) number of stored effects
+    3) number of pedals
+    4) number of output sockets
+    5) number of EQ sliders
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Play a tune
+    2) connect to laptop
+    3) play metronome beat
  */
 
 /*
-Thing 3)
+Thing 3) football team
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of players
+    2) market price of players
+    3) possession percentage
+    4) league position
+    5) pass-success percentage
 3 things it can do:
-    1)
-    2)
-    3)
+    1) pass accurately
+    2) score goals
+    3) win matches
  */
 
 /*
-Thing 4)
+Thing 4) small business
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of employees
+    2) rent paid per annum
+    3) price charged per unit sold
+    4) cost of materials per unit sold
+    5) administration costs per annum
 3 things it can do:
-    1)
-    2)
-    3)
+    1) produce widgets
+    2) pay employees
+    3) pay dividends
  */
 
 
