@@ -130,7 +130,7 @@ Thing 5) oscillator
 5 properties:
     1) V/Oct input
     2) frequency control
-    3) select between waveforms
+    3) waveform selector
     4) change pulse width
     5) octave control
 3 things it can do:
@@ -168,7 +168,7 @@ Thing 7) filter
  */
 
 /*
-Thing 8) swquencer
+Thing 8) sequencer
 5 properties:
     1) clock input
     2) sequence length control
