@@ -126,73 +126,73 @@ Thing 4) small business
  */
 
 /*
-Thing 5)
+Thing 5) oscillator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) V/Oct input
+    2) frequency control
+    3) select between waveforms
+    4) change pulse width
+    5) octave control
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change note
+    2) select between waveforms
+    3) switch between octaves
  */
 
 /*
-Thing 6)
+Thing 6) envelope generator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) attack control
+    2) decay control
+    3) sustain control
+    4) release control
+    5) gate output
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change attack time
+    2) change sustain level
+    3) output gate signal
  */
 
 /*
-Thing 7)
+Thing 7) filter
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) resonance control
+    2) drive control
+    3) cutoff control
+    4) mode switch
+    5) cutoff modulation input socket
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change drive level
+    2) switch between filter modes
+    3) modulate cutoff frequency
  */
 
 /*
-Thing 8)
+Thing 8) swquencer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) clock input
+    2) sequence length control
+    3) gate input
+    4) range control
+    5) sequence voltage randomiser
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change length of sequence
+    2) change note range of sequence
+    3) randomise notes in sequence
  */
 
 /*
-Thing 9)
+Thing 9) arpeggiator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) root note input
+    2) chord type selector
+    3) arp mode selector
+    4) gate input
+    5) clock input
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change chord
+    2) change arpeggio note order
+    3) output gate signal
  */
 
 /*
