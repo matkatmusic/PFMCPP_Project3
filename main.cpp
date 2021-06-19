@@ -114,17 +114,17 @@ Thing 4) small business
  */
 
 /*
-Thing 10)
+Thing 10) synthesizer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  oscillator
+    2) envelope generator
+    3) filter
+    4) sequencer
+    5) arpeggiator
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change note frequency
+    2) play random order arpeggio
+    3) increase cut off frequency
  */
 
 /*
