@@ -1,5 +1,5 @@
 /*
-Project 3 - Part 1c / 5
+Project 3 - Part 1d / 5
 Video:  Chapter 2 Part 5
 User-Defined Types
 
@@ -12,8 +12,8 @@ What you create in this project will be used as the basis of Project 5 in the co
 ************************
 Part1 purpose:  Learn to write UDTs
 
-You are going to write 10 UDTs in project3.  
-Part1 will be broken up into 5 separate steps
+You are going to write 10 UDTs in project3. 
+Part1 will be broken up into 5 separate steps 
     Part 1a: you will learn to think about an object in terms of its sub-objects.
     Part 1b: you will write 4 un-related UDTs in plain english
     Part 1c: you will write 1 UDT in plain english that will be made of 5 related sub-objects
@@ -21,40 +21,52 @@ Part1 will be broken up into 5 separate steps
     Part 1e: you will convert those 10 plain-english UDTs into code that runs.
 ************************
 
-1) write the 10th UDT
-    come up with an object that is made of 5 smaller parts.
-    These parts will not be defined using Primitives, but instead will be their own UDTs you'll define in Part 1d
-    
-    Here is an example:
-    Cell Phone
+    The goal of this step is to get you to think about breaking down an object into smaller and smaller objects, 
+    until the smallest object is made of up only C++ primitives. 
 
-    A Cell Phone is made up of the following 5 properties:
+    Continuing the previous example:  Cell Phone
+
+    A Cell Phone is made up of the following 5 properties/sub-objects and 3 actions:
         Display
         Memory
         CPU
         Radio
         Applications
-
-    A Cell Phone has 3 things it can do:
+    3 actions:
         make a call
         send a text
         run an application.
 
-    Notice that I did not use "has a display" or "Has memory" or "has a cpu" as one of the properties of the CellPhone
-    
-    Writing 'has a ___" checks whether or not your object **has the ability to do something**.
-    Instead, I wrote "Display" or "CPU".  These are specific objects or amounts. 
-    
-    In C++ terms, this means to I want you to avoid using 'bool' (has a) as a member variable type.
-    Instead, prefer the other primitive types.
+    These 5 properties can be broken down into their own sub-objects and properties. 
 
-    When you choose your 5 smaller parts, remember that each of these 5 Sub Objects will need 
-    to be defined with 5 primitive properties and 3 actions EACH.  
+    If we break down the first property 'Display' into its 5 properties we get:
+        brightness
+        amount of power consumed.
+        pixels
+        width in cm
+        height in cm
+
+    the Display's brightness can be represented with a Primitive, such as a double. 
+
+    The amount of power consumed can also be represented with a Primitive, such as a float or integer (i.e. 250mWa)
+    
+    The 'pixels' property must be represented with an array of Pixel instances, as the screen has more than 1 row of pixels.
+        Arrays have not been discussed and can't be used in this project.
+        Instead, we can use an Integer primitive to store the Number of Pixels:
+
+    Display:
+        Number of Pixels
+        Amount of Power consumed (milliwatt-hours)
+        Brightness
+        width in cm
+        height in cm
+************************
+
+1) Fill in #5 - #9 with plain-english UDTs for the 5 properties you created for UDT #10
+    example: 
+        If #10's first property was 'Engine', then your `Thing 5)` will be `Engine` and 
+        you will need to provide 5 properties and 3 member functions of that Engine object in plain English
 */
-
-
-
-
 
 
 /*
@@ -111,6 +123,76 @@ Thing 4) small business
     1) produce widgets
     2) pay employees
     3) pay dividends
+ */
+
+/*
+Thing 5)
+5 properties:
+    1)
+    2)
+    3)
+    4)
+    5)
+3 things it can do:
+    1)
+    2)
+    3)
+ */
+
+/*
+Thing 6)
+5 properties:
+    1)
+    2)
+    3)
+    4)
+    5)
+3 things it can do:
+    1)
+    2)
+    3)
+ */
+
+/*
+Thing 7)
+5 properties:
+    1)
+    2)
+    3)
+    4)
+    5)
+3 things it can do:
+    1)
+    2)
+    3)
+ */
+
+/*
+Thing 8)
+5 properties:
+    1)
+    2)
+    3)
+    4)
+    5)
+3 things it can do:
+    1)
+    2)
+    3)
+ */
+
+/*
+Thing 9)
+5 properties:
+    1)
+    2)
+    3)
+    4)
+    5)
+3 things it can do:
+    1)
+    2)
+    3)
  */
 
 /*
