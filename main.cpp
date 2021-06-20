@@ -257,7 +257,237 @@ Thing 10) synthesizer
     2) play random order arpeggio
     3) increase cut off frequency
  */
+struct Laptop
+{
+   // 1) amount of storage
+   float ssdCapacity = 500.f;
+   // 2) amount of RAM
+   float randomAccessMemory = 16.f;
+   // 3) amount of video memory
+   float vRam = 4.f;
+   // 4) CPU speed
+   float cpuSpeed = 1.8f;
+   // 5) number of USB sockets
+   int numUsbSockets = 2;
 
+   // 1) store information
+   float checkMemory(float ssdSpaceRemaining = 400.f);
+   // 2) perform calculations
+   bool calculate(bool calcButtonClick = true);
+   // 3) connect to internet
+   bool connect(bool connectedStatus = true);
+};
+
+struct DigitalPiano
+{
+  //  1) number of keys
+  int numberOfKeys = 88;
+  //  2) number of stored effects
+  int storedEffects = 10;
+  //  3) number of pedals
+  int pedals = 3;
+  //  4) number of output sockets
+  int outputSockets = 5;
+  //  5) number of EQ sliders
+  int eqSliders = 3;
+
+   // 1) Play a tune
+   void playSampleTune (int sampleNumber = 7);
+   // 2) connect to laptop
+   bool midiConnectionStatus (bool connected = true);
+   // 3) play metronome beat
+   void metronome (int beatsPerMinute = 120);
+};
+
+struct FootballTeam
+{
+    //1) number of players
+    int players = 11;
+    //2) market price of players
+    float playerValue = 10000000.f;
+    //3) possession percentage
+    float possessionPercentage = 54.f;
+    //4) league position
+    int leaguePosition = 10;
+    //5) pass-success percentage
+    float passSuccessPercentage = 62.f;
+
+    //1) pass accurately
+    int rateTrainingEfficacy(float prevPassSuccess, float currentPassSucess);
+    // 2) score goals
+    int rateAttack(int shotsOnTarget);
+    // 3) win matches
+    int scoreMoreThanTheOtherLot(int goalsFor, int goalsAgainst);
+};
+
+struct SmallBusiness //with nested class and functiosn using UDT parameters
+{
+    // 1) number of employees
+    int countEmployees;
+    // 2) rent paid per annum
+    float annualRent;
+    // 3) price charged per unit sold
+    float assessmentPrice;
+    //4) cost of materials per unit sold
+    float ancillaryCosts;
+    // 5) administration costs per annum
+    float adminCostTotal;
+    
+    struct Assessor
+    {
+    std::string assessorName; 
+    std::string assessorAccountNumber; 
+    float assessorPayRate;
+    };
+
+    
+    // 1) report turnover
+    float calculateTurnover(float assessmentUnitPrice, float ancillaryCosts);
+    // 2) pay employees
+    float calculatePayroll(int countEmployees, float monthlyPayroll);
+    // 3) produce assessments
+    float invoiceReport(Assessor assessorName, float chargeOutRate, float assessorHoursSpent, float supervisionHours, float supervisorRate, int numSubjects, int travelTime);
+    float payAssessor(Assessor assessorName, Assessor accountNumber,float assessorHoursSpent, int travelTime);
+};
+
+struct Oscillator
+{
+    // 1) V/Oct input source
+    int vOctInput = 3;
+    //2) default voltage
+    float defaultVoltage = 0.f;
+    // 3) waveform selection
+    int waveformControlPosition;
+    //4) pulse width percentage
+    float pulseWidthPercent = 50.f;
+    // 5) octave selection
+    int octave = 4;
+    
+    // 1) output a note
+    void outputANote(int outputSocket, float outputVolts);
+    // 2) select between waveforms
+    void selectOscWaveform (int WaveformControlPosition, float waveformModInputVolts);
+    // 3) switch between octaves
+    int getOctave(int octaveControlPosition);
+};
+
+struct EnvelopeGenerator
+{
+   // 1) attack control
+   float attackMaxValue = 1.f;
+   // 2) decay control
+   float decayMinValue = 0.f;
+   // 3) sustain control
+   float sustainDefaultValue = 0.5;
+   // 4) release control
+   std::string label = "Release";
+   // 5) input gate voltage
+   float envGateVoltage = 10;
+
+   // 1) change attack time
+   float getAttackTime(float attackControlValue, float timeMultiplier);
+   // 2) change sustain level
+   float getSustainLevel(float attackControlValue, float susLevelMultiplier);
+   // 3) output gate signal
+   bool isGateOn(float envGateVoltage, float threshold);
+};
+
+struct Filter
+{
+    //1) resonance control
+    float resonanceControlMaxValue = 1.f;
+    //2) drive control
+    float driveControlMinValue = 0.f;
+    //3) cutoff control
+    float cutoffControlDefaultValue = 0.5;
+    //4) mode selection
+    bool IsHighPass = true;
+    //5) cutoff modulation input
+    float cutoffInputVolts;
+
+    //1) change drive level
+    float getDriveLevel(float driveControlValue, float driveInputVolts, float gainPercent); //I have no idea how filters work!!
+    //2) switch between filter modes
+    bool checkFilterMode(bool isHighPass);
+    //3) modulate cutoff frequency
+    float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
+    };
+
+struct Sequencer
+{
+    //1) voltage at clock input
+    int clockInputVolts;
+    //2) sequence length control
+    int seqLength = 8;
+    //3) input gate voltage
+    bool inputGateIsHigh = true;
+    //4) note range control
+    int rangeSemitones = 19;
+    //5) sequence voltage randomisation
+    bool randomInputIsHigh = false;
+    
+    //1) change length of sequence
+    int modulateSeqLength(int SeqControlValue, int seqLengthInputVolts); 
+    //2) change note range of sequence
+    int modulateNoteRange(int rangeControlValue, int rangeLengthInputVolts);
+    //3) randomise notes in sequence (I changed this as I think it owuld need an array inside the function?)
+    //3 quantize sequence
+    void quantizeSequence(int scale, bool quantizeSwitchValue = true);
+};
+
+struct Arpeggiator
+{
+    //1) root note input
+    float arpInputVolts = 1.583f;//
+    //2) chord type selector
+    std::string chordType = "m9";
+    //3) arp mode selector
+    std::string arpMode = "Up/Down";
+    //4) gate input voltage
+    bool isHigh = true;
+    //5) clock input voltage
+    float clockInputVolts;
+
+    //1) modulate chord
+    int modulateChordType(int chordControlValue, float chordModulationInputVolts);
+    //2) modulate arpeggio note order
+    int modulateArpMode(int ModeControlValue, float modeModulationInputVolts);
+    //3) change octave
+    int modulateOctave(int octKnobValue, float octModulationInputVolts);
+};
+
+struct Synthesizer //with nested class
+{
+    Oscillator vOctInput;
+    EnvelopeGenerator  envGateVoltage; 
+    Arpeggiator arpMode;
+    Filter cutoffInputVolts;
+    Sequencer rangeSemitones;
+    
+    struct LFO
+    {
+    float lfoFrequencyHz;
+    int lfoWaveformControlPosition;
+    float lfoPulseWidthPercent;
+    bool resetInputVolts = false;
+    bool slowMode = false;
+    //add functions for LFO
+    
+    void modulatePulseWidth(int lfoPulseWidthControlPosition, float waveformModInputVolts);
+    void selectWaveform (int WaveformControlPosition, float waveformModInputVolts);
+    // 3) switch between octaves
+    int checkSlowMode(bool slowModeSwitchPosition);
+    };
+
+    void selectOscWaveform (int WaveformControlPosition, float waveformModInputVolts);
+    float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
+    void generateArp(Arpeggiator arpInputVolts, Arpeggiator chordType);
+};
+        //1) change note frequency
+
+    //2) play random order arpeggio
+    //3) increase cut off frequency
+//};
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
