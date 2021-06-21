@@ -338,12 +338,12 @@ struct SmallBusiness //with nested class and functiosn using UDT parameters
         std::string assessorName = "Joe Brown"; 
         std::string assessorAccountNumber = "016884546"; 
         float assessorPayRate = 45;
-        std::string assessorAddress = "7 Pimlico Road WC1 3DT"
+        std::string assessorAddress = "7 Pimlico Road WC1 3DT";
         bool dbsCheck = true;
 
         void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
         bool dbsChecked(bool dbsCheck);
-        float prepareReport(float readingTime, int numClients, int numInterviews, float hoursSpent)
+        float prepareReport(float readingTime, int numClients, int numInterviews, float hoursSpent);
     };
 
     
@@ -481,7 +481,7 @@ struct Synthesizer //with nested class
     
     struct LFO
     {
-        float lfoFrequencyHz = 16.35;
+        float lfoFrequencyHz = 16.35f;
         int lfoWaveformControlPosition = 2;
         float lfoPulseWidthPercent = 50;
         bool resetInputVolts = false;
