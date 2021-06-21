@@ -259,44 +259,44 @@ Thing 10) synthesizer
  */
 struct Laptop
 {
-   // 1) amount of storage
-   float ssdCapacity = 500.f;
-   // 2) amount of RAM
-   float randomAccessMemory = 16.f;
-   // 3) amount of video memory
-   float vRam = 4.f;
-   // 4) CPU speed
-   float cpuSpeed = 1.8f;
-   // 5) number of USB sockets
-   int numUsbSockets = 2;
+    //1) amount of storage
+    float ssdCapacity = 500.f;
+    //2) amount of RAM
+    float randomAccessMemory = 16.f;
+    //3) amount of video memory
+    float vRam = 4.f;
+    //4) CPU speed
+    float cpuSpeed = 1.8f;
+    //5) number of USB sockets
+    int numUsbSockets = 2;
 
-   // 1) store information
-   float checkMemory(float ssdSpaceRemaining = 400.f);
-   // 2) perform calculations
-   bool calculate(bool calcButtonClick = true);
-   // 3) connect to internet
-   bool connect(bool connectedStatus = true);
+    //1) store information
+    float checkMemory(float ssdSpaceRemaining = 400.f);
+    //2) perform calculations
+    bool calculate(bool calcButtonClick = true);
+    //3) connect to internet
+    bool connect(bool connectedStatus = true);
 };
 
 struct DigitalPiano
 {
-  //  1) number of keys
-  int numberOfKeys = 88;
-  //  2) number of stored effects
-  int storedEffects = 10;
-  //  3) number of pedals
-  int pedals = 3;
-  //  4) number of output sockets
-  int outputSockets = 5;
-  //  5) number of EQ sliders
-  int eqSliders = 3;
+    //1) number of keys
+    int numberOfKeys = 88;
+    //2) number of stored effects
+    int storedEffects = 10;
+    //3) number of pedals
+    int pedals = 3;
+    //4) number of output sockets
+    int outputSockets = 5;
+    //5) number of EQ sliders
+    int eqSliders = 3;
 
-   // 1) Play a tune
-   void playSampleTune (int sampleNumber = 7);
-   // 2) connect to laptop
-   bool midiConnectionStatus (bool connected = true);
-   // 3) play metronome beat
-   void metronome (int beatsPerMinute = 120);
+    //1) Play a tune
+    void playSampleTune (int sampleNumber = 7);
+    //2) connect to laptop
+    bool midiConnectionStatus (bool connected = true);
+    //3) play metronome beat
+    void metronome (int beatsPerMinute = 120);
 };
 
 struct FootballTeam
@@ -322,74 +322,89 @@ struct FootballTeam
 
 struct SmallBusiness //with nested class and functiosn using UDT parameters
 {
-    // 1) number of employees
-    int countEmployees;
-    // 2) rent paid per annum
-    float annualRent;
-    // 3) price charged per unit sold
-    float assessmentPrice;
+    //1) number of employees
+    int countEmployees = 10;
+    //2) rent paid per annum
+    float annualRent = 10000.f;
+    //3) price charged per unit sold
+    float assessmentPrice = 3240.f;
     //4) cost of materials per unit sold
-    float ancillaryCosts;
-    // 5) administration costs per annum
-    float adminCostTotal;
+    float ancillaryCosts = 320.f;
+    //5) administration costs per annum
+    float adminCostTotal = 15000.f;
     
     struct Assessor
     {
-    std::string assessorName; 
-    std::string assessorAccountNumber; 
-    float assessorPayRate;
+        std::string assessorName = "Joe Brown"; 
+        std::string assessorAccountNumber = "016884546"; 
+        float assessorPayRate = 45;
+        std::string assessorAddress = "7 Pimlico Road WC1 3DT"
+        bool dbsCheck = true;
+
+        void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
+        bool dbsChecked(bool dbsCheck);
+        float prepareReport(float readingTime, int numClients, int numInterviews, float hoursSpent)
     };
 
     
-    // 1) report turnover
+    //1) report turnover
     float calculateTurnover(float assessmentUnitPrice, float ancillaryCosts);
-    // 2) pay employees
+    //2) pay employees
     float calculatePayroll(int countEmployees, float monthlyPayroll);
-    // 3) produce assessments
-    float invoiceReport(Assessor assessorName, float chargeOutRate, float assessorHoursSpent, float supervisionHours, float supervisorRate, int numSubjects, int travelTime);
-    float payAssessor(Assessor assessorName, Assessor accountNumber,float assessorHoursSpent, int travelTime);
+    //3) produce assessments
+    float invoiceReport(Assessor assessorName, 
+                        float chargeOutRate, 
+                        float assessorHoursSpent, 
+                        float supervisionHours, 
+                        float supervisorRate, 
+                        int numSubjects, 
+                        int travelTime);
+    float   payAssessor(Assessor assessorName, //indent ok?
+                        Assessor accountNumber,
+                        float assessorHoursSpent, 
+                        int travelTime);
 };
 
 struct Oscillator
 {
-    // 1) V/Oct input source
+    //1) V/Oct input source
     int vOctInput = 3;
     //2) default voltage
     float defaultVoltage = 0.f;
-    // 3) waveform selection
-    int waveformControlPosition;
+    //3) waveform selection
+    int waveformControlPosition = 4;
     //4) pulse width percentage
     float pulseWidthPercent = 50.f;
-    // 5) octave selection
+    //5) octave selection
     int octave = 4;
     
-    // 1) output a note
+    //1) output a note
     void outputANote(int outputSocket, float outputVolts);
-    // 2) select between waveforms
+    //2) select between waveforms
     void selectOscWaveform (int WaveformControlPosition, float waveformModInputVolts);
-    // 3) switch between octaves
+    //3) switch between octaves
     int getOctave(int octaveControlPosition);
 };
 
 struct EnvelopeGenerator
 {
-   // 1) attack control
-   float attackMaxValue = 1.f;
-   // 2) decay control
-   float decayMinValue = 0.f;
-   // 3) sustain control
-   float sustainDefaultValue = 0.5;
-   // 4) release control
-   std::string label = "Release";
-   // 5) input gate voltage
-   float envGateVoltage = 10;
+   //1) attack control
+    float attackMaxValue = 1.f;
+   //2) decay control
+    float decayMinValue = 0.f;
+   //3) sustain control
+    float sustainDefaultValue = 0.5;
+   //4) release control
+    std::string label = "Release";
+   //5) input gate voltage
+    float envGateVoltage = 10;
 
-   // 1) change attack time
-   float getAttackTime(float attackControlValue, float timeMultiplier);
-   // 2) change sustain level
-   float getSustainLevel(float attackControlValue, float susLevelMultiplier);
-   // 3) output gate signal
-   bool isGateOn(float envGateVoltage, float threshold);
+   //1) change attack time
+    float getAttackTime(float attackControlValue, float timeMultiplier);
+   //2) change sustain level
+    float getSustainLevel(float attackControlValue, float susLevelMultiplier);
+   //3) output gate signal
+    bool isGateOn(float envGateVoltage, float threshold);
 };
 
 struct Filter
@@ -451,7 +466,7 @@ struct Arpeggiator
     //1) modulate chord
     int modulateChordType(int chordControlValue, float chordModulationInputVolts);
     //2) modulate arpeggio note order
-    int modulateArpMode(int ModeControlValue, float modeModulationInputVolts);
+    int modulateArpMode(int modeControlValue, float modeModulationInputVolts);
     //3) change octave
     int modulateOctave(int octKnobValue, float octModulationInputVolts);
 };
@@ -466,27 +481,24 @@ struct Synthesizer //with nested class
     
     struct LFO
     {
-    float lfoFrequencyHz;
-    int lfoWaveformControlPosition;
-    float lfoPulseWidthPercent;
-    bool resetInputVolts = false;
-    bool slowMode = false;
-    //add functions for LFO
+        float lfoFrequencyHz = 16.35;
+        int lfoWaveformControlPosition = 2;
+        float lfoPulseWidthPercent = 50;
+        bool resetInputVolts = false;
+        bool slowMode = false;
     
-    void modulatePulseWidth(int lfoPulseWidthControlPosition, float waveformModInputVolts);
-    void selectWaveform (int WaveformControlPosition, float waveformModInputVolts);
-    // 3) switch between octaves
-    int checkSlowMode(bool slowModeSwitchPosition);
+        void modulatePulseWidth(int lfoPulseWidthControlPosition, float waveformModInputVolts);
+        void selectWaveform (int waveformControlPosition, float waveformModInputVolts);
+        int checkSlowMode(bool slowModeSwitchPosition);
     };
 
     void selectOscWaveform (int WaveformControlPosition, float waveformModInputVolts);
     float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
     void generateArp(Arpeggiator arpInputVolts, Arpeggiator chordType);
 };
-        //1) change note frequency
-
-    //2) play random order arpeggio
-    //3) increase cut off frequency
+     //1) switch between waveforms
+     //2) modulate filter cut off frequency
+     //3) play arpeggio of a given chord 
 //};
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
