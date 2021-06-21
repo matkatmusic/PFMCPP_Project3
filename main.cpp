@@ -35,15 +35,18 @@ struct CarWash
 };
 #endif
 /*
-2) Copy your 5 properties & 3 actions into the empty struct body.
+2) Below your plain-english UDT, Copy your 5 properties & 3 actions into the empty struct body.
     - comment them out.
+    - Do this for all 10 UDTs
     
 3) declare your member variables and member functions underneath each plain-english comment in your struct's body.
     - give the member variables relevant data types
+    - Do this for all 10 UDTs
  
 4) make the function parameter list for those member functions use some of your User-Defined Types
     - You'll write definitions/implementations for these functions in Project3 Part2
     - you'll call each of these functions in Project3 part3
+    - Do this for all 10 UDTs
  
 5) make 2 of the 10 user-defined types have a nested class.  
     - this nested class also needs 5 properties and 3 actions.
@@ -359,7 +362,7 @@ struct SmallBusiness //with nested class and functiosn using UDT parameters
                         float supervisorRate, 
                         int numSubjects, 
                         int travelTime);
-    float   payAssessor(Assessor assessorName, //indent ok?
+    float payAssessor(Assessor assessorName, 
                         Assessor accountNumber,
                         float assessorHoursSpent, 
                         int travelTime);
