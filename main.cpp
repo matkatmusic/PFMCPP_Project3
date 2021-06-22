@@ -363,9 +363,9 @@ struct SmallBusiness //with nested class and functiosn using UDT parameters
                         int numSubjects, 
                         int travelTime);
     float payAssessor(Assessor assessorName, 
-                        Assessor accountNumber, FIXME: indentation
-                        float assessorHoursSpent,  FIXME: indentation
-                        int travelTime); FIXME: indentation
+                      Assessor accountNumber, 
+                      float assessorHoursSpent,  
+                      int travelTime);
 };
 
 struct Oscillator
