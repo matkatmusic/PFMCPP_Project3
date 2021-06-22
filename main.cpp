@@ -384,7 +384,7 @@ struct Oscillator
     //1) output a note
     void outputANote(int outputSocket, float outputVolts);
     //2) select between waveforms
-    void selectOscWaveform (int WaveformControlPosition, float waveformModInputVolts);
+    void selectOscWaveform (int waveformControlPosition, float waveformModInputVolts);
     //3) switch between octaves
     int getOctave(int octaveControlPosition);
 };
@@ -419,9 +419,9 @@ struct Filter
     //3) cutoff control
     float cutoffControlDefaultValue = 0.5;
     //4) mode selection
-    bool IsHighPass = true;
+    bool isHighPass = true;
     //5) cutoff modulation input
-    float cutoffInputVolts;
+    float cutoffInputVolts = 3.f;
 
     //1) change drive level
     float getDriveLevel(float driveControlValue, float driveInputVolts, float gainPercent); //I have no idea how filters work!!
@@ -434,7 +434,7 @@ struct Filter
 struct Sequencer
 {
     //1) voltage at clock input
-    int clockInputVolts;
+    int clockInputVolts = 0;
     //2) sequence length control
     int seqLength = 8;
     //3) input gate voltage
@@ -445,7 +445,7 @@ struct Sequencer
     bool randomInputIsHigh = false;
     
     //1) change length of sequence
-    int modulateSeqLength(int SeqControlValue, int seqLengthInputVolts); 
+    int modulateSeqLength(int seqControlValue, int seqLengthInputVolts); 
     //2) change note range of sequence
     int modulateNoteRange(int rangeControlValue, int rangeLengthInputVolts);
     //3) randomise notes in sequence (I changed this as I think it owuld need an array inside the function?)
@@ -464,7 +464,7 @@ struct Arpeggiator
     //4) gate input voltage
     bool isHigh = true;
     //5) clock input voltage
-    float clockInputVolts;
+    float clockInputVolts = 10.f;
 
     //1) modulate chord
     int modulateChordType(int chordControlValue, float chordModulationInputVolts);
@@ -495,7 +495,7 @@ struct Synthesizer //with nested class
         int checkSlowMode(bool slowModeSwitchPosition);
     };
 
-    void selectOscWaveform (int WaveformControlPosition, float waveformModInputVolts);
+    void selectOscWaveform (int waveformControlPosition, float waveformModInputVolts);
     float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
     void generateArp(Arpeggiator arpInputVolts, Arpeggiator chordType);
 };
