@@ -183,37 +183,37 @@ struct Laptop
     float cpuSpeed = 1.8f;
     int numUsbSockets = 2;
 
-    std::string checkMemory(float ssdSpaceRemaining = 400.f);
-    void displayCalculation(float result = 0.f, bool calcButtonClick = true);
-    void connected(bool connectedStatus = true);
+std::string checkMemory(float ssdSpaceRemaining = 400.f);
+void displayCalculation(float result = 0.f, bool calcButtonClick = true);
+void connected(bool connectedStatus = true);
 };
 
 std::string Laptop::checkMemory(float ssdSpaceRemaining) 
 {
-    if (ssdSpaceRemaining < 100)
+    if(ssdSpaceRemaining < 100)
     { 
-            capacityWarning = "Disk Space Low!";
+        capacityWarning = "Disk Space Low!";
     }
     else
     {
         capacityWarning = "Disk Space OK";
     }
            
-     return capacityWarning;
+    return capacityWarning;
 }
 
 void Laptop::displayCalculation(float result, bool calcButtonClick)
 {
-    if (calcButtonClick == true) 
-        {
-            std::cout << result;
-        }
+    if(calcButtonClick == true) 
+    {
+        std::cout << result;
+    }
           
 }
 
 void Laptop::connected(bool connectedStatus)
 {
-    if (connectedStatus == true)
+    if(connectedStatus == true)
     {
         std::cout<<"Connection made"; 
     }
@@ -238,19 +238,19 @@ void DigitalPiano::identifySampleTune (int sampleNumber)
     switch (sampleNumber)
     {
         case 1:
-        std::cout << "How Long Blues";
-        break;
+            std::cout << "How Long Blues";
+            break;
         case 2:
-        std::cout << "Fur Elise";
-        break;
+            std::cout << "Fur Elise";
+            break;
     }
 }      
 
 void DigitalPiano::midiConnectionStatus (bool connected)
 {
-    if (connected == true)
+    if(connected == true)
     {
-         std::cout<<"Midi connection made"; 
+        std::cout<<"Midi connection made"; 
     }
     else 
     {
@@ -260,7 +260,7 @@ void DigitalPiano::midiConnectionStatus (bool connected)
 
 void DigitalPiano::metronome (bool metronomeOn, int beatsPerMinute)
 {
-    if (metronomeOn == true)
+    if(metronomeOn == true)
     {
         std::cout<<"BPM = " << beatsPerMinute; 
     }
@@ -269,7 +269,6 @@ void DigitalPiano::metronome (bool metronomeOn, int beatsPerMinute)
         std::cout << "-";
     }
 }    
-
 
 struct FootballTeam
 {
@@ -300,8 +299,6 @@ int FootballTeam::scoreMoreThanTheOtherLot(int goalsFor, int goalsAgainst)
     return  goalsFor - goalsAgainst;
 }          
         
-
-
 struct SmallBusiness 
 {
     int countEmployees = 10;
@@ -320,7 +317,7 @@ struct SmallBusiness
         bool dbsCheck = true;
 
         void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
-        bool dbsChecked(bool dbsCheck);
+        void dbsChecked(bool dbsCheck);
         float addendumReport(float readingTime, int numClients, int interviewTime, float writingTime);
     };
 //SmallBusiness member functions
@@ -352,13 +349,12 @@ void SmallBusiness::Assessor::printAssessorDetails(std::string name, std::string
     std::cout << name << std::endl << address << std::endl << accountNumber << std::endl;
 }
 
-bool SmallBusiness::Assessor::dbsChecked(bool check)
+void SmallBusiness::Assessor::dbsChecked(bool check)
 {
     if (check)
     {
         std::cout << "Check OK";
     }
-        return 0;
 }
 
 float SmallBusiness::Assessor::addendumReport(float readingTime, int numClients, int interviewTime, float writingTime)
@@ -391,17 +387,17 @@ void Oscillator::selectOscWaveform(int waveformCtrlPosition, int waveformModInpu
     switch (waveform)
         {
             case 1:
-            std::cout << "Sine";
-            break;
+                std::cout << "Sine";
+                break;
             case 2:
-            std::cout << "Triangle";
-            break;
+                std::cout << "Triangle";
+                break;
             case 3:
             std::cout << "Saw";
-            break;
+                break;
             case 4:
             std::cout << "Square";
-            break;
+                break;
         }
 
 }
@@ -438,7 +434,7 @@ float EnvelopeGenerator::getSustainLevel(float attControlValue, float susMult)
 
 bool EnvelopeGenerator::isGateOn(float envGateVolts, float thresh)
 {
-    if (envGateVolts < thresh)
+    if(envGateVolts < thresh)
     {
         return 1;
     }
@@ -510,7 +506,7 @@ int Sequencer::modulateNoteRange(int rangeControlValue, int rangeLengthInputVolt
 
 int Sequencer::quantizeSequence(int scale, bool quantizeSwitchValue)
 {
-    if (quantizeSwitchValue)
+    if(quantizeSwitchValue)
     {
         return scale;
     }
@@ -589,9 +585,7 @@ void Synthesizer::generateArp(float arpInputVolts, std::string chordType)
 {
     std::cout << "Chord = " << arpInputVolts << chordType;
 }  
-   
-
-// instantiate LFO member functions
+   // instantiate LFO member functions
 float Synthesizer::LFO::modulatePulseWidth(int lfoPulseWidthCtrlPosition, float waveformModInputVolts)
 {
     return lfoPulseWidthCtrlPosition + waveformModInputVolts; 
@@ -604,17 +598,17 @@ int waveform = waveformCtrlPosition + waveformModInputVal;
     switch (waveform)
         {
             case 1:
-            std::cout << "Sine";
-            break;
+                std::cout << "Sine";
+                break;
             case 2:
-            std::cout << "Triangle";
-            break;
+                std::cout << "Triangle";
+                break;
             case 3:
-            std::cout << "Saw";
-            break;
+                std::cout << "Saw";
+                break;
             case 4:
-            std::cout << "Square";
-            break;
+             std::cout << "Square";
+             break;
         }
     }
 /*
