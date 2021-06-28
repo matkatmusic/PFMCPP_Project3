@@ -118,7 +118,7 @@ struct Person
     unsigned int SATScore;
     int distanceTravelled;
 
-void run(int howFast, bool startWithLeftFoot); FIXME indentation
+    void run(int howFast, bool startWithLeftFoot); 
 
 //define Type and include member functions
     struct Leg
@@ -134,8 +134,8 @@ void run(int howFast, bool startWithLeftFoot); FIXME indentation
         
         int stepSize() 
         {
-        int stepLength = 2*legLength * (sineOfLegAngle/2); FIXME indentation
-        return stepLength; FIXME indentation
+            int stepLength = 2*legLength * (sineOfLegAngle/2); 
+            return stepLength;
         }
     }; 
 
@@ -183,9 +183,9 @@ struct Laptop
     float cpuSpeed = 1.8f;
     int numUsbSockets = 2;
 
-std::string checkMemory(float ssdSpaceRemaining = 400.f); FIXME indentation
-void displayCalculation(float result = 0.f, bool calcButtonClick = true); FIXME indentation
-void connected(bool connectedStatus = true); FIXME indentation, function name. Choose a better function name that reflects what this function does.
+        std::string checkMemory(float ssdSpaceRemaining = 400.f);
+        void displayCalculation(float result = 0.f, bool calcButtonClick = true); 
+        void checkConnectionStatus(bool connectedStatus = true);
 };
 
 std::string Laptop::checkMemory(float ssdSpaceRemaining) 
@@ -211,7 +211,7 @@ void Laptop::displayCalculation(float result, bool calcButtonClick)
           
 }
 
-void Laptop::connected(bool connectedStatus)
+void Laptop::checkConnectionStatus(bool connectedStatus)
 {
     if(connectedStatus == true)
     {
@@ -229,8 +229,8 @@ struct DigitalPiano
     int eqSliders = 3;
 
     void identifySampleTune (int sampleNumber = 2);
-    void midiConnectionStatus (bool connected = true); FIXME: midiConnectionStatus is not an action.  Choose a better function name that reflects what this function does.
-    void metronome (bool metronomeOn, int beatsPerMinute = 120); FIXME: metronome is not an action.  Choose a better function name that reflects what this function does.
+    void checkMidiConnectionStatus (bool connected = true); 
+    void metronome (bool metronomeOn, int beatsPerMinute = 120);
 };
 
 void DigitalPiano::identifySampleTune (int sampleNumber)
@@ -246,7 +246,7 @@ void DigitalPiano::identifySampleTune (int sampleNumber)
     }
 }      
 
-void DigitalPiano::midiConnectionStatus (bool connected)
+void DigitalPiano::checkMidiConnectionStatus (bool connected)
 {
     if(connected == true)
     {
@@ -318,12 +318,12 @@ struct SmallBusiness
 
         void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
         void dbsChecked(bool dbsCheck);
-        float addendumReport(float readingTime, int numClients, int interviewTime, float writingTime); FIXME addendumReport isn't an action.  your previous function name was a better choice
+        float getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime); 
     };
 //SmallBusiness member functions
     float calculateTurnover(float assessmentUnitPrice, int numAssessments);
     float calculatePayroll(int countEmployees, float monthlyPay);
-    float invoiceReport(float chargeOutRate, float assessorHoursSpent); FIXME invoiceReport isn't an action.  your previous function name was a better choice
+    float calculateReportInvoiceCost(float chargeOutRate, float assessorHoursSpent); 
     
 };
 //implement SmallBusiness functions outside struct
@@ -337,7 +337,7 @@ float SmallBusiness::calculatePayroll(int numEmployees, float monthlyPay)
     return (monthlyPay * 12) * numEmployees;
 }
 
-float SmallBusiness::invoiceReport(float chargeOutRate, float assessorHoursSpent)
+float SmallBusiness::calculateReportInvoiceCost(float chargeOutRate, float assessorHoursSpent)
 {
     float invoiceTotal = (chargeOutRate * assessorHoursSpent);
     return invoiceTotal;
@@ -357,7 +357,7 @@ void SmallBusiness::Assessor::dbsChecked(bool check)
     }
 }
 
-float SmallBusiness::Assessor::addendumReport(float readingTime, int numClients, int interviewTime, float writingTime)
+float SmallBusiness::Assessor::getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime)
 {
     return (readingTime + interviewTime + writingTime) * numClients;
 }
@@ -385,20 +385,20 @@ void Oscillator::selectOscWaveform(int waveformCtrlPosition, int waveformModInpu
     int waveform = waveformCtrlPosition + waveformModInputVal;
     
     switch (waveform)
-        { FIXME indentation. everything inside the {} needs to be shifted to the left
-            case 1:
-                std::cout << "Sine";
-                break;
-            case 2:
-                std::cout << "Triangle";
-                break;
-            case 3:
-            std::cout << "Saw";
-                break;
-            case 4:
-            std::cout << "Square";
-                break;
-        }
+    {
+        case 1:
+            std::cout << "Sine";
+            break;
+        case 2:
+            std::cout << "Triangle";
+            break;
+        case 3:
+        std::cout << "Saw";
+            break;
+        case 4:
+        std::cout << "Square";
+             break;
+    }
 
 }
 
@@ -418,7 +418,7 @@ struct EnvelopeGenerator
 
     float getAttackTime(float attackControlValue, float timeMultiplier);
     float getSustainLevel(float attackControlValue, float susLevelMultiplier);
-    bool isGateOn(float envGateVoltage, float threshold); FIXME: a better function name is getGateState()
+    bool getGateState(float envGateVoltage, float threshold); 
 
 };
 
@@ -432,16 +432,9 @@ float EnvelopeGenerator::getSustainLevel(float attControlValue, float susMult)
     return attControlValue * susMult;
 }
 
-bool EnvelopeGenerator::isGateOn(float envGateVolts, float thresh)
+bool EnvelopeGenerator::getGateState(float envGateVolts, float thresh)
 {
-    if(envGateVolts < thresh) INFO: use a ternary expression: return (exp) ? a : b;
-    {
-        return 1; FIXME do not use 1 or 0 to represent true or false. spell it out
-    }
-    else
-    {
-        return 0;
-    }
+    return(envGateVolts < thresh) ? true : false;
 }
 
 struct Filter
@@ -464,14 +457,10 @@ float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain)
 
 void displayFilterMode(bool isHp)
 {
-    if (isHp) INFO: use a ternary expression here: std::cout << ( expr ? a : b );
-    {
-        std::cout << "High Pass";
-    }       
-    else
-    {
-        std::cout << "Low Pass";
-    }
+    std::string mode = (isHp) ? "High Pass" : "Low Pass";
+    std::cout << mode;
+    // INFO: use a ternary expression here: std::cout << ( expr ? a : b );
+    //QUESTION couldnt get this to work in one line
 }
 
 float modulFilterCutoff(float freqControlValue, float freqCtrlMultiplier, float modInputVolts)
@@ -506,14 +495,7 @@ int Sequencer::modulateNoteRange(int rangeControlValue, int rangeLengthInputVolt
 
 int Sequencer::quantizeSequence(int scale, bool quantizeSwitchValue)
 {
-    if(quantizeSwitchValue) INFO: use a ternary expression
-    {
-        return scale;
-    }
-    else
-    {
-        return 0;
-    }
+    return (quantizeSwitchValue ? scale : false);
 }
 
 struct Arpeggiator
@@ -596,19 +578,19 @@ void Synthesizer::LFO::selectLfoWaveform (int waveformCtrlPosition, int waveform
 int waveform = waveformCtrlPosition + waveformModInputVal;
     
     switch (waveform)
-        { FIXME indentation. everything inside the { } should be shifted to the left by 1 indent
-            case 1:
-                std::cout << "Sine";
-                break;
-            case 2:
-                std::cout << "Triangle";
-                break;
-            case 3:
-                std::cout << "Saw";
-                break;
-            case 4:
-             std::cout << "Square";
-             break;
+        { 
+        case 1:
+            std::cout << "Sine";
+            break;
+        case 2:
+            std::cout << "Triangle";
+            break;
+        case 3:
+            std::cout << "Saw";
+            break;
+        case 4:
+            std::cout << "Square";
+            break;
         }
     }
 /*
