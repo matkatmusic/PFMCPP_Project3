@@ -215,7 +215,7 @@ void Laptop::checkConnectionStatus(bool connectedStatus)
 {
     if(connectedStatus == true)
     {
-        std::cout<<"Connection made"; 
+        std::cout << "Connection made"; 
     }
 }
 
@@ -250,11 +250,11 @@ void DigitalPiano::checkMidiConnectionStatus (bool connected)
 {
     if(connected == true)
     {
-        std::cout<<"Midi connection made"; 
+        std::cout <<"Midi connection made"; 
     }
     else 
     {
-        std::cout<<"Connect midi cable";
+        std::cout << "Connect midi cable";
     }
 }    
 
@@ -262,7 +262,7 @@ void DigitalPiano::metronome (bool metronomeOn, int beatsPerMinute)
 {
     if(metronomeOn == true)
     {
-        std::cout<<"BPM = " << beatsPerMinute; 
+        std::cout << "BPM = " << beatsPerMinute; 
     }
     else 
     {
@@ -457,10 +457,7 @@ float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain)
 
 void displayFilterMode(bool isHp)
 {
-    std::string mode = (isHp) ? "High Pass" : "Low Pass";
-    std::cout << mode;
-    // INFO: use a ternary expression here: std::cout << ( expr ? a : b );
-    //QUESTION couldnt get this to work in one line
+    std::cout << ((isHp) ? "High Pass" : "Low Pass" );
 }
 
 float modulFilterCutoff(float freqControlValue, float freqCtrlMultiplier, float modInputVolts)
