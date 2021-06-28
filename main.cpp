@@ -118,7 +118,7 @@ struct Person
     unsigned int SATScore;
     int distanceTravelled;
 
-void run(int howFast, bool startWithLeftFoot);
+void run(int howFast, bool startWithLeftFoot); FIXME indentation
 
 //define Type and include member functions
     struct Leg
@@ -134,8 +134,8 @@ void run(int howFast, bool startWithLeftFoot);
         
         int stepSize() 
         {
-        int stepLength = 2*legLength * (sineOfLegAngle/2);
-        return stepLength;
+        int stepLength = 2*legLength * (sineOfLegAngle/2); FIXME indentation
+        return stepLength; FIXME indentation
         }
     }; 
 
@@ -183,9 +183,9 @@ struct Laptop
     float cpuSpeed = 1.8f;
     int numUsbSockets = 2;
 
-std::string checkMemory(float ssdSpaceRemaining = 400.f);
-void displayCalculation(float result = 0.f, bool calcButtonClick = true);
-void connected(bool connectedStatus = true);
+std::string checkMemory(float ssdSpaceRemaining = 400.f); FIXME indentation
+void displayCalculation(float result = 0.f, bool calcButtonClick = true); FIXME indentation
+void connected(bool connectedStatus = true); FIXME indentation
 };
 
 std::string Laptop::checkMemory(float ssdSpaceRemaining) 
@@ -229,7 +229,7 @@ struct DigitalPiano
     int eqSliders = 3;
 
     void identifySampleTune (int sampleNumber = 2);
-    void midiConnectionStatus (bool connected = true);
+    void midiConnectionStatus (bool connected = true); FIXME: 
     void metronome (bool metronomeOn, int beatsPerMinute = 120);
 };
 
@@ -318,12 +318,12 @@ struct SmallBusiness
 
         void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
         void dbsChecked(bool dbsCheck);
-        float addendumReport(float readingTime, int numClients, int interviewTime, float writingTime);
+        float addendumReport(float readingTime, int numClients, int interviewTime, float writingTime); FIXME addendumReport isn't an action.  your previous function name was a better choice
     };
 //SmallBusiness member functions
     float calculateTurnover(float assessmentUnitPrice, int numAssessments);
     float calculatePayroll(int countEmployees, float monthlyPay);
-    float invoiceReport(float chargeOutRate, float assessorHoursSpent);
+    float invoiceReport(float chargeOutRate, float assessorHoursSpent); FIXME invoiceReport isn't an action.  your previous function name was a better choice
     
 };
 //implement SmallBusiness functions outside struct
@@ -385,7 +385,7 @@ void Oscillator::selectOscWaveform(int waveformCtrlPosition, int waveformModInpu
     int waveform = waveformCtrlPosition + waveformModInputVal;
     
     switch (waveform)
-        {
+        { FIXME indentation. everything inside the {} needs to be shifted to the left
             case 1:
                 std::cout << "Sine";
                 break;
@@ -418,7 +418,7 @@ struct EnvelopeGenerator
 
     float getAttackTime(float attackControlValue, float timeMultiplier);
     float getSustainLevel(float attackControlValue, float susLevelMultiplier);
-    bool isGateOn(float envGateVoltage, float threshold);
+    bool isGateOn(float envGateVoltage, float threshold); FIXME: a better function name is getGateState()
 
 };
 
@@ -434,9 +434,9 @@ float EnvelopeGenerator::getSustainLevel(float attControlValue, float susMult)
 
 bool EnvelopeGenerator::isGateOn(float envGateVolts, float thresh)
 {
-    if(envGateVolts < thresh)
+    if(envGateVolts < thresh) INFO: use a ternary expression: return (exp) ? a : b;
     {
-        return 1;
+        return 1; FIXME do not use 1 or 0 to represent true or false. spell it out
     }
     else
     {
@@ -464,7 +464,7 @@ float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain)
 
 void displayFilterMode(bool isHp)
 {
-    if (isHp)
+    if (isHp) INFO: use a ternary expression here: std::cout << ( expr ? a : b );
     {
         std::cout << "High Pass";
     }       
@@ -506,7 +506,7 @@ int Sequencer::modulateNoteRange(int rangeControlValue, int rangeLengthInputVolt
 
 int Sequencer::quantizeSequence(int scale, bool quantizeSwitchValue)
 {
-    if(quantizeSwitchValue)
+    if(quantizeSwitchValue) INFO: use a ternary expression
     {
         return scale;
     }
@@ -596,7 +596,7 @@ void Synthesizer::LFO::selectLfoWaveform (int waveformCtrlPosition, int waveform
 int waveform = waveformCtrlPosition + waveformModInputVal;
     
     switch (waveform)
-        {
+        { FIXME indentation. everything inside the { } should be shifted to the left by 1 indent
             case 1:
                 std::cout << "Sine";
                 break;
