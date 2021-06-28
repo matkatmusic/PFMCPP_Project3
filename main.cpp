@@ -185,7 +185,7 @@ struct Laptop
 
 std::string checkMemory(float ssdSpaceRemaining = 400.f); FIXME indentation
 void displayCalculation(float result = 0.f, bool calcButtonClick = true); FIXME indentation
-void connected(bool connectedStatus = true); FIXME indentation
+void connected(bool connectedStatus = true); FIXME indentation, function name. Choose a better function name that reflects what this function does.
 };
 
 std::string Laptop::checkMemory(float ssdSpaceRemaining) 
@@ -229,8 +229,8 @@ struct DigitalPiano
     int eqSliders = 3;
 
     void identifySampleTune (int sampleNumber = 2);
-    void midiConnectionStatus (bool connected = true); FIXME: 
-    void metronome (bool metronomeOn, int beatsPerMinute = 120);
+    void midiConnectionStatus (bool connected = true); FIXME: midiConnectionStatus is not an action.  Choose a better function name that reflects what this function does.
+    void metronome (bool metronomeOn, int beatsPerMinute = 120); FIXME: metronome is not an action.  Choose a better function name that reflects what this function does.
 };
 
 void DigitalPiano::identifySampleTune (int sampleNumber)
