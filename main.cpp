@@ -4,7 +4,7 @@
  Implementations tasks
  
 Create a branch named Part2
-
+***
  tasks
  0) delete all of the plain english pseudo-code you added in Part1.
    don't forget to remove the blank lines left behind after you remove your comments
@@ -109,7 +109,58 @@ struct CarWash
  */
 
 
+struct Person 
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTravelled;
 
+    void run(int howFast, bool startWithLeftFoot); 
+
+//define Type and include member functions
+    struct Leg
+    {
+        int legLength;
+        int sineOfLegAngle; //(this wouldn't be an int)
+        int numSteps;
+        
+        void stepForward()
+        {
+            numSteps++;
+        }
+        
+        int stepSize() 
+        {
+            int stepLength = 2*legLength * (sineOfLegAngle/2); 
+            return stepLength;
+        }
+    }; 
+
+    Leg leftFoot; // instantiations of Leg struct
+    Leg rightFoot;
+  
+};
+   
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+   
+    if (startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    } 
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+
+    distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize();
+    std::cout << "Current speed is " << howFast << "mph." << std::endl;
+}
 
 
  /*
@@ -124,221 +175,117 @@ struct CarWash
  4) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  */
 
-
-/*
-Thing 1) Laptop
-5 properties:
-    1) amount of storage
-    2) amount of RAM
-    3) amount of video memory
-    4) CPU speed
-    5) number of USB sockets
-3 things it can do:
-    1) store information
-    2) perform calculations
-    3) connect to internet
- */
-
-/*
-Thing 2)
-5 properties: digital piano
-    1) number of keys
-    2) number of stored effects
-    3) number of pedals
-    4) number of output sockets
-    5) number of EQ sliders
-3 things it can do:
-    1) Play a tune
-    2) connect to laptop
-    3) play metronome beat
- */
-
-/*
-Thing 3) football team
-5 properties:
-    1) number of players
-    2) market price of players
-    3) possession percentage
-    4) league position
-    5) pass-success percentage
-3 things it can do:
-    1) pass accurately
-    2) score goals
-    3) win matches
- */
-
-/*
-Thing 4) small business
-5 properties:
-    1) number of employees
-    2) rent paid per annum
-    3) price charged per unit sold
-    4) cost of materials per unit sold
-    5) administration costs per annum
-3 things it can do:
-    1) produce widgets
-    2) pay employees
-    3) pay dividends
- */
-
-/*
-Thing 5) oscillator
-5 properties:
-    1) V/Oct input source
-    2) default voltage
-    3) waveform selection
-    4) pulse width percentage
-    5) octave selection
-3 things it can do:
-    1) change note
-    2) select between waveforms
-    3) switch between octaves
- */
-
-/*
-Thing 6) envelope generator
-5 properties:
-    1) attack control
-    2) decay control
-    3) sustain control
-    4) release control
-    5) input gate voltage
-3 things it can do:
-    1) change attack time
-    2) change sustain level
-    3) output gate signal
- */
-
-/*
-Thing 7) filter
-5 properties:
-    1) resonance control
-    2) drive control
-    3) cutoff control
-    4) mode selection
-    5) cutoff modulation input voltage
-3 things it can do:
-    1) change drive level
-    2) switch between filter modes
-    3) modulate cutoff frequency
- */
-
-/*
-Thing 8) sequencer
-5 properties:
-    1) voltage at clock input
-    2) sequence length control
-    3) input gate voltage
-    4) note range control
-    5) sequence voltage randomisation
-3 things it can do:
-    1) change length of sequence
-    2) change note range of sequence
-    3) randomise notes in sequence
- */
-
-/*
-Thing 9) arpeggiator
-5 properties:
-    1) root note input
-    2) chord type selector
-    3) arp mode selector
-    4) gate input voltage
-    5) clock input voltage
-3 things it can do:
-    1) change chord
-    2) change arpeggio note order
-    3) output gate signal
- */
-
-/*
-Thing 10) synthesizer
-5 properties:
-    1)  oscillator
-    2) envelope generator
-    3) filter
-    4) sequencer
-    5) arpeggiator
-3 things it can do:
-    1) change note frequency
-    2) play random order arpeggio
-    3) increase cut off frequency
- */
 struct Laptop
 {
-    //1) amount of storage
     float ssdCapacity = 500.f;
-    //2) amount of RAM
+    std::string capacityWarning = " ";
     float randomAccessMemory = 16.f;
-    //3) amount of video memory
     float vRam = 4.f;
-    //4) CPU speed
     float cpuSpeed = 1.8f;
-    //5) number of USB sockets
     int numUsbSockets = 2;
 
-    //1) store information
-    float checkMemory(float ssdSpaceRemaining = 400.f);
-    //2) perform calculations
-    bool calculate(bool calcButtonClick = true);
-    //3) connect to internet
-    bool connect(bool connectedStatus = true);
+        std::string checkMemory(float ssdSpaceRemaining = 400.f);
+        void displayCalculation(float result = 0.f, bool calcButtonClick = true); 
+        void checkConnectionStatus(bool connectedStatus = true);
 };
+
+std::string Laptop::checkMemory(float ssdSpaceRemaining) 
+{
+    std::string result = (ssdSpaceRemaining < 100) ? "Disk Space Low!" : "Disk Space OK";
+    return capacityWarning;
+}
+
+void Laptop::displayCalculation(float result, bool calcButtonClick)
+{
+   std::cout << ((calcButtonClick) ? result : 0 );
+}
+
+void Laptop::checkConnectionStatus(bool connectedStatus)
+{
+    std::cout << ((connectedStatus) ? "Connection made" : " " );
+}
+
 
 struct DigitalPiano
 {
-    //1) number of keys
     int numberOfKeys = 88;
-    //2) number of stored effects
     int storedEffects = 10;
-    //3) number of pedals
     int pedals = 3;
-    //4) number of output sockets
     int outputSockets = 5;
-    //5) number of EQ sliders
     int eqSliders = 3;
 
-    //1) Play a tune
-    void playSampleTune (int sampleNumber = 7);
-    //2) connect to laptop
-    bool midiConnectionStatus (bool connected = true);
-    //3) play metronome beat
-    void metronome (int beatsPerMinute = 120);
+    void identifySampleTune (int sampleNumber = 2);
+    void checkMidiConnectionStatus (bool connected = true); 
+    void metronome (bool metronomeOn, int beatsPerMinute = 120);
 };
+
+void DigitalPiano::identifySampleTune (int sampleNumber)
+{
+    switch (sampleNumber)
+    {
+        case 1:
+            std::cout << "How Long Blues";
+            break;
+        case 2:
+            std::cout << "Fur Elise";
+            break;
+    }
+}      
+
+void DigitalPiano::checkMidiConnectionStatus (bool connected)
+{
+    std::cout << ((connected) ? "Midi connection made" : "Connect midi cable" );
+}    
+
+void DigitalPiano::metronome (bool metronomeOn, int beatsPerMinute)
+{
+    if(metronomeOn == true)
+    {
+        std::cout << "BPM = " << beatsPerMinute; 
+    }
+    else 
+    {
+        std::cout << "-";
+    }
+}    
 
 struct FootballTeam
 {
-    //1) number of players
     int players = 11;
-    //2) market price of players
     float playerValue = 10000000.f;
-    //3) possession percentage
     float possessionPercentage = 54.f;
-    //4) league position
     int leaguePosition = 10;
-    //5) pass-success percentage
     float passSuccessPercentage = 62.f;
 
-    //1) pass accurately
-    int rateTrainingEfficacy(float prevPassSuccess, float currentPassSucess);
-    // 2) score goals
-    int rateAttack(int shotsOnTarget);
-    // 3) win matches
+    float rateTrainingEfficacy(float prevPassSuccess, float currentPassSuccess);
+    int rateAttack(int shotsOnTarget, int shotsTotal);
     int scoreMoreThanTheOtherLot(int goalsFor, int goalsAgainst);
 };
 
-struct SmallBusiness //with nested class and functiosn using UDT parameters
+float FootballTeam::rateTrainingEfficacy(float prevPassSuccess, float currentPassSuccess)
 {
-    //1) number of employees
+    return prevPassSuccess  - currentPassSuccess;
+}
+        
+int FootballTeam::rateAttack(int shotsOnTarget, int shotsTotal)
+{
+    int percentAccuracy = int(shotsOnTarget/shotsTotal*100);
+    return percentAccuracy;
+}
+    
+int FootballTeam::scoreMoreThanTheOtherLot(int goalsFor, int goalsAgainst)
+{
+    return  goalsFor - goalsAgainst;
+}          
+        
+struct SmallBusiness 
+{
     int countEmployees = 10;
-    //2) rent paid per annum
     float annualRent = 10000.f;
-    //3) price charged per unit sold
     float assessmentPrice = 3240.f;
-    //4) cost of materials per unit sold
     float ancillaryCosts = 320.f;
-    //5) administration costs per annum
     float adminCostTotal = 15000.f;
+    int numAssessments = 0;
     
     struct Assessor
     {
@@ -349,136 +296,209 @@ struct SmallBusiness //with nested class and functiosn using UDT parameters
         bool dbsCheck = true;
 
         void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
-        bool dbsChecked(bool dbsCheck);
-        float prepareReport(float readingTime, int numClients, int numInterviews, float hoursSpent);
+        void dbsChecked(bool dbsCheck);
+        float getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime); 
     };
-
+//SmallBusiness member functions
+    float calculateTurnover(float assessmentUnitPrice, int numAssessments);
+    float calculatePayroll(int countEmployees, float monthlyPay);
+    float calculateReportInvoiceCost(float chargeOutRate, float assessorHoursSpent); 
     
-    //1) report turnover
-    float calculateTurnover(float assessmentUnitPrice, float ancillaryCosts);
-    //2) pay employees
-    float calculatePayroll(int countEmployees, float monthlyPayroll);
-    //3) produce assessments
-    float invoiceReport(Assessor assessorName, 
-                        float chargeOutRate, 
-                        float assessorHoursSpent, 
-                        float supervisionHours, 
-                        float supervisorRate, 
-                        int numSubjects, 
-                        int travelTime);
-    float payAssessor(Assessor assessorName, 
-                      Assessor accountNumber, 
-                      float assessorHoursSpent,  
-                      int travelTime);
 };
+//implement SmallBusiness functions outside struct
+float SmallBusiness::calculateTurnover(float unitPrice, int numberOfAssessments)
+{
+    return unitPrice * numberOfAssessments;
+}
+
+float SmallBusiness::calculatePayroll(int numEmployees, float monthlyPay)
+{
+    return (monthlyPay * 12) * numEmployees;
+}
+
+float SmallBusiness::calculateReportInvoiceCost(float chargeOutRate, float assessorHoursSpent)
+{
+    float invoiceTotal = (chargeOutRate * assessorHoursSpent);
+    return invoiceTotal;
+}
+
+//implement Assessor functions printAssessorDetails, dbsChecked, prepareReport
+void SmallBusiness::Assessor::printAssessorDetails(std::string name, std::string address, std::string accountNumber)
+{  
+    std::cout << name << std::endl << address << std::endl << accountNumber << std::endl;
+}
+
+void SmallBusiness::Assessor::dbsChecked(bool check)
+{
+    std::cout << ((check) ? "Check OK" : " " );
+}
+
+float SmallBusiness::Assessor::getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime)
+{
+    return (readingTime + interviewTime + writingTime) * numClients;
+}
 
 struct Oscillator
 {
-    //1) V/Oct input source
     int vOctInput = 3;
-    //2) default voltage
     float defaultVoltage = 0.f;
-    //3) waveform selection
     int waveformControlPosition = 4;
-    //4) pulse width percentage
     float pulseWidthPercent = 50.f;
-    //5) octave selection
     int octave = 4;
     
-    //1) output a note
-    void outputANote(int outputSocket, float outputVolts);
-    //2) select between waveforms
-    void selectOscWaveform (int waveformControlPosition, float waveformModInputVolts);
-    //3) switch between octaves
-    int getOctave(int octaveControlPosition);
+    float modulateNote(float inputSocketVolts, float modSocketVolts);
+    void selectOscWaveform (int waveformControlPosition, int waveformModInputValue);
+    float addOctave(int octaveControlPosition, float voltsIn);
 };
+
+float Oscillator::modulateNote(float inputSocketVolts, float modSocketVolts)
+{
+    return inputSocketVolts + modSocketVolts;
+}
+    
+void Oscillator::selectOscWaveform(int waveformCtrlPosition, int waveformModInputVal)
+{
+    int waveform = waveformCtrlPosition + waveformModInputVal;
+    
+    switch (waveform)
+    {
+        case 1:
+            std::cout << "Sine";
+            break;
+        case 2:
+            std::cout << "Triangle";
+            break;
+        case 3:
+            std::cout << "Saw";
+            break;
+        case 4:
+            std::cout << "Square";
+            break;
+    }
+
+}
+
+float Oscillator::addOctave(int octControlPosition, float vIn)
+{
+    return vIn + octControlPosition;
+}
 
 struct EnvelopeGenerator
 {
-   //1) attack control
     float attackMaxValue = 1.f;
-   //2) decay control
     float decayMinValue = 0.f;
-   //3) sustain control
     float sustainDefaultValue = 0.5;
-   //4) release control
     std::string label = "Release";
-   //5) input gate voltage
     float envGateVoltage = 10;
 
-   //1) change attack time
     float getAttackTime(float attackControlValue, float timeMultiplier);
-   //2) change sustain level
     float getSustainLevel(float attackControlValue, float susLevelMultiplier);
-   //3) output gate signal
-    bool isGateOn(float envGateVoltage, float threshold);
+    bool getGateState(float envGateVoltage, float threshold); 
+
 };
+
+float EnvelopeGenerator::getAttackTime(float attControlValue, float timeMult)
+{
+    return attControlValue * timeMult;
+}
+
+float EnvelopeGenerator::getSustainLevel(float attControlValue, float susMult)
+{
+    return attControlValue * susMult;
+}
+
+bool EnvelopeGenerator::getGateState(float envGateVolts, float thresh)
+{
+    return(envGateVolts < thresh) ? true : false;
+}
 
 struct Filter
 {
-    //1) resonance control
     float resonanceControlMaxValue = 1.f;
-    //2) drive control
     float driveControlMinValue = 0.f;
-    //3) cutoff control
     float cutoffControlDefaultValue = 0.5;
-    //4) mode selection
     bool isHighPass = true;
-    //5) cutoff modulation input
     float cutoffInputVolts = 3.f;
 
-    //1) change drive level
-    float getDriveLevel(float driveControlValue, float driveInputVolts, float gainPercent); //I have no idea how filters work!!
-    //2) switch between filter modes
-    bool checkFilterMode(bool isHighPass);
-    //3) modulate cutoff frequency
+    float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain); 
+    void displayFilterMode(bool isHighPass);
     float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
-    };
+};
+
+float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain)
+{
+    return  driveCtrlValue + driveInVolts * gain;
+} 
+
+void displayFilterMode(bool isHp)
+{
+    std::cout << ((isHp) ? "High Pass" : "Low Pass" );
+}
+
+float modulFilterCutoff(float freqControlValue, float freqCtrlMultiplier, float modInputVolts)
+{
+    float cutoff = modInputVolts + freqControlValue * freqCtrlMultiplier;
+    return cutoff;
+}
 
 struct Sequencer
 {
-    //1) voltage at clock input
     int clockInputVolts = 0;
-    //2) sequence length control
     int seqLength = 8;
-    //3) input gate voltage
     bool inputGateIsHigh = true;
-    //4) note range control
     int rangeSemitones = 19;
-    //5) sequence voltage randomisation
     bool randomInputIsHigh = false;
     
-    //1) change length of sequence
-    int modulateSeqLength(int seqControlValue, int seqLengthInputVolts); 
-    //2) change note range of sequence
+    int modulateSeqLength(int seqControlValue, int modLenInputVal); 
     int modulateNoteRange(int rangeControlValue, int rangeLengthInputVolts);
-    //3) randomise notes in sequence (I changed this as I think it owuld need an array inside the function?)
-    //3 quantize sequence
-    void quantizeSequence(int scale, bool quantizeSwitchValue = true);
+    int quantizeSequence(int scale, bool quantizeSwitchValue = true);
 };
+
+int Sequencer::modulateSeqLength(int seqCtrlValue, int modLenInputVal)
+{
+    return seqCtrlValue + modLenInputVal;
+} 
+
+int Sequencer::modulateNoteRange(int rangeControlValue, int rangeLengthInputVolts)
+{
+    int range = rangeControlValue + rangeLengthInputVolts;
+    return range;
+}
+
+int Sequencer::quantizeSequence(int scale, bool quantizeSwitchValue)
+{
+    return (quantizeSwitchValue ? scale : false);
+}
 
 struct Arpeggiator
 {
-    //1) root note input
     float arpInputVolts = 1.583f;//
-    //2) chord type selector
     std::string chordType = "m9";
-    //3) arp mode selector
     std::string arpMode = "Up/Down";
-    //4) gate input voltage
     bool isHigh = true;
-    //5) clock input voltage
     float clockInputVolts = 10.f;
 
-    //1) modulate chord
-    int modulateChordType(int chordControlValue, float chordModulationInputVolts);
-    //2) modulate arpeggio note order
-    int modulateArpMode(int modeControlValue, float modeModulationInputVolts);
-    //3) change octave
-    int modulateOctave(int octKnobValue, float octModulationInputVolts);
+    int modulateChordType(int chordControlValue, int chordModulationInputVal);
+    int modulateArpMode(int modeControlValue, int modeModulationInputVal);
+    int modulateOctave(int octControlValue, int octModulationInputVal);
 };
 
-struct Synthesizer //with nested class
+int Arpeggiator::modulateChordType(int chordCtrlValue, int chordModInputVal)
+{
+    return chordCtrlValue + chordModInputVal;
+}
+
+int Arpeggiator::modulateArpMode(int modeCtrlValue, int modeModInputVal)
+{
+    return modeCtrlValue + modeModInputVal;
+}
+
+int Arpeggiator::modulateOctave(int octCtrlValue, int octModInputVal)
+{
+    return octCtrlValue + octModInputVal;
+}    
+
+struct Synthesizer
 {
     Oscillator vOctInput;
     EnvelopeGenerator  envGateVoltage; 
@@ -494,19 +514,57 @@ struct Synthesizer //with nested class
         bool resetInputVolts = false;
         bool slowMode = false;
     
-        void modulatePulseWidth(int lfoPulseWidthControlPosition, float waveformModInputVolts);
-        void selectWaveform (int waveformControlPosition, float waveformModInputVolts);
+        float modulatePulseWidth(int lfoPulseWidthControlPosition, float waveformModInputVolts);
+        void selectLfoWaveform (int waveformControlPosition, int waveformModInputVolts);
         int checkSlowMode(bool slowModeSwitchPosition);
     };
 
-    void selectOscWaveform (int waveformControlPosition, float waveformModInputVolts);
+    int selectOscWaveform (int waveformControlPosition, int waveformModInputVal);
     float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
-    void generateArp(Arpeggiator arpInputVolts, Arpeggiator chordType);
+    void generateArp(float arpInputVolts, std::string chordType);
 };
-     //1) switch between waveforms
-     //2) modulate filter cut off frequency
-     //3) play arpeggio of a given chord 
-//};
+
+ // instantiate Synthesiser member functions
+int Synthesizer::selectOscWaveform (int waveformCtrlPosition, int waveformModInputVal)
+{
+    return waveformCtrlPosition + waveformModInputVal;
+}
+
+float Synthesizer::modulateFilterCutoff(float frequencyCtrlValue, float freqCtrlMultiplier,float modInputVolts)
+{
+    return (frequencyCtrlValue + modInputVolts) * freqCtrlMultiplier; 
+}
+
+void Synthesizer::generateArp(float arpInputVolts, std::string chordType)
+{
+    std::cout << "Chord = " << arpInputVolts << chordType;
+}  
+   // instantiate LFO member functions
+float Synthesizer::LFO::modulatePulseWidth(int lfoPulseWidthCtrlPosition, float waveformModInputVolts)
+{
+    return lfoPulseWidthCtrlPosition + waveformModInputVolts; 
+}
+    
+void Synthesizer::LFO::selectLfoWaveform (int waveformCtrlPosition, int waveformModInputVal)
+{
+int waveform = waveformCtrlPosition + waveformModInputVal;
+    
+    switch (waveform)
+        { 
+        case 1:
+            std::cout << "Sine";
+            break;
+        case 2:
+            std::cout << "Triangle";
+            break;
+        case 3:
+            std::cout << "Saw";
+            break;
+        case 4:
+            std::cout << "Square";
+            break;
+        }
+    }
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
