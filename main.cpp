@@ -4,7 +4,7 @@
  Implementations tasks
  
 Create a branch named Part2
-
+***
  tasks
  0) delete all of the plain english pseudo-code you added in Part1.
    don't forget to remove the blank lines left behind after you remove your comments
@@ -146,6 +146,7 @@ struct Person
    
 void Person::run(int howFast, bool startWithLeftFoot)
 {
+   
     if (startWithLeftFoot == true)
     {
         leftFoot.stepForward();
@@ -190,33 +191,18 @@ struct Laptop
 
 std::string Laptop::checkMemory(float ssdSpaceRemaining) 
 {
-    if(ssdSpaceRemaining < 100)
-    { 
-        capacityWarning = "Disk Space Low!";
-    }
-    else
-    {
-        capacityWarning = "Disk Space OK";
-    }
-           
+    std::string result = (ssdSpaceRemaining < 100) ? "Disk Space Low!" : "Disk Space OK";
     return capacityWarning;
 }
 
 void Laptop::displayCalculation(float result, bool calcButtonClick)
 {
-    if(calcButtonClick == true) 
-    {
-        std::cout << result;
-    }
-          
+   std::cout << ((calcButtonClick) ? result : 0 );
 }
 
 void Laptop::checkConnectionStatus(bool connectedStatus)
 {
-    if(connectedStatus == true)
-    {
-        std::cout << "Connection made"; 
-    }
+    std::cout << ((connectedStatus) ? "Connection made" : " " );
 }
 
 
@@ -248,14 +234,7 @@ void DigitalPiano::identifySampleTune (int sampleNumber)
 
 void DigitalPiano::checkMidiConnectionStatus (bool connected)
 {
-    if(connected == true)
-    {
-        std::cout <<"Midi connection made"; 
-    }
-    else 
-    {
-        std::cout << "Connect midi cable";
-    }
+    std::cout << ((connected) ? "Midi connection made" : "Connect midi cable" );
 }    
 
 void DigitalPiano::metronome (bool metronomeOn, int beatsPerMinute)
@@ -351,10 +330,7 @@ void SmallBusiness::Assessor::printAssessorDetails(std::string name, std::string
 
 void SmallBusiness::Assessor::dbsChecked(bool check)
 {
-    if (check)
-    {
-        std::cout << "Check OK";
-    }
+    std::cout << ((check) ? "Check OK" : " " );
 }
 
 float SmallBusiness::Assessor::getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime)
@@ -393,11 +369,11 @@ void Oscillator::selectOscWaveform(int waveformCtrlPosition, int waveformModInpu
             std::cout << "Triangle";
             break;
         case 3:
-        std::cout << "Saw";
+            std::cout << "Saw";
             break;
         case 4:
-        std::cout << "Square";
-             break;
+            std::cout << "Square";
+            break;
     }
 
 }
@@ -406,7 +382,6 @@ float Oscillator::addOctave(int octControlPosition, float vIn)
 {
     return vIn + octControlPosition;
 }
-
 
 struct EnvelopeGenerator
 {
