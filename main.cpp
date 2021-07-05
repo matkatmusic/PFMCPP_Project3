@@ -653,7 +653,7 @@ int main()
     //got stuck when i tried to do anything with functions from the nested class Assessor
     SmallBusiness LargerBusiness;
     LargerBusiness.printMe();
-    std::cout << "is profit now immense? " << (((LargerBusiness.assessmentPrice * LargerBusiness.numAssessments) > 1000000) ? "Certainly is! " : "No "); // not very readable but I learned something! But... I get an error if I use "\n" or std::endl?
+    std::cout << "is profit now immense? " << (((LargerBusiness.assessmentPrice * LargerBusiness.numAssessments) > 1000000) ? "Certainly is! " : "No ") << std::endl; 
 
     Oscillator NewOscillator;
 
@@ -666,7 +666,7 @@ int main()
     Filter KitchenFilter;
 
     KitchenFilter.isHighPass = true;
-    std::cout << "Different filter =  "<< ((KitchenFilter.isHighPass) ? "Tea leaves " : "Coffee grinds ");
+    std::cout << "Different filter =  "<< ((KitchenFilter.isHighPass) ? "Tea leaves " : "Coffee grinds ") << std::endl;
     
     Sequencer MySequencer;
 
