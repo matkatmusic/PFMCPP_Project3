@@ -234,6 +234,8 @@ struct SmallBusiness
     void printMe();
     
     SmallBusiness();
+
+    Assessor assessor;
 };
 //implement SmallBusiness functions outside struct
 float SmallBusiness::calculateTurnover(float unitPrice, int numberOfAssessments)
@@ -281,7 +283,7 @@ void SmallBusiness::printMe()
     numAssessments = 100;
 }
 
-/*SmallBusiness::Assessor::Assessor() //not sure what I was doing here!
+SmallBusiness::Assessor::Assessor() 
 {
     std::string name = "Davy Jones"; 
     std::string accountNumber = "216839246"; 
@@ -293,9 +295,9 @@ void SmallBusiness::printMe()
 
 void SmallBusiness::Assessor::Assessor::printMe()
 {
-    std::cout << assessorName << assessorAccountNumber << assessorAddress << std::endl;
+    std::cout << assessorName << " " << assessorAccountNumber << " " << assessorAddress << std::endl;
 }
-*/
+
 
 struct Oscillator
 {
@@ -640,42 +642,45 @@ void Synthesizer::printMe()
 #include <iostream>
 int main()
 {
-    Laptop Laptop2; 
-    Laptop2.printMe();
-    Laptop2.checkMemory(500,200);
+    Laptop laptop2; 
+    laptop2.printMe();
+    laptop2.checkMemory(500,200);
 
-    DigitalPiano DigitalPiano;
-    DigitalPiano.identifySampleTune(1);
+    DigitalPiano digitalPiano;
+    digitalPiano.identifySampleTune(1);
 
-    FootballTeam FootballTeam;
-    std::cout << "Percentage increase =  " << FootballTeam.rateTrainingEfficacy(85,75) << std::endl;
+    FootballTeam footballTeam;
+    std::cout << "Percentage increase =  " << footballTeam.rateTrainingEfficacy(85,75) << std::endl;
+     
+    SmallBusiness::Assessor assessor; //nested class Assessor
+    assessor.printMe();
 
-    //got stuck when i tried to do anything with functions from the nested class Assessor
-    SmallBusiness LargerBusiness;
-    LargerBusiness.printMe();
-    std::cout << "is profit now immense? " << (((LargerBusiness.assessmentPrice * LargerBusiness.numAssessments) > 1000000) ? "Certainly is! " : "No ") << std::endl; 
+    SmallBusiness largerBusiness;
+    largerBusiness.printMe();
+    std::cout << "is profit now immense? " << (((largerBusiness.assessmentPrice * largerBusiness.numAssessments) > 1000000) ? "Certainly is! " : "No ") << std::endl; 
 
-    Oscillator NewOscillator;
+    Oscillator newOscillator;
 
-    NewOscillator.printMe();
+    newOscillator.printMe();
 
-    EnvelopeGenerator EnvelopeGenerator;
+    EnvelopeGenerator envelopeGenerator;
 
-    EnvelopeGenerator.getGateState(9,8);
+    envelopeGenerator.getGateState(9,8);
 
-    Filter KitchenFilter;
+    Filter kitchenFilter;
 
-    KitchenFilter.isHighPass = true;
-    std::cout << "Different filter =  "<< ((KitchenFilter.isHighPass) ? "Tea leaves " : "Coffee grinds ") << std::endl;
+    kitchenFilter.isHighPass = true;
+    std::cout << "Different filter =  "<< ((kitchenFilter.isHighPass) ? "Tea leaves " : "Coffee grinds ") << std::endl;
     
-    Sequencer MySequencer;
+    Sequencer mySequencer;
 
-    MySequencer.printMe();
+    mySequencer.printMe();
 
-    Arpeggiator MyArpeggiator;
+    Arpeggiator myArpeggiator;
     
-    MyArpeggiator.printMe();
-    int chordVal = MyArpeggiator.modulateChordType(0, 1);
+    myArpeggiator.printMe();
+
+        int chordVal = myArpeggiator.modulateChordType(0, 1);
 
         switch (chordVal)
         {
@@ -685,17 +690,17 @@ int main()
             case 2:
                 std::cout << "Chord is minor7" << std::endl;
                 break;
-                case 3:
+            case 3:
                 std::cout << "Chord is Major9" << std::endl;
                 break;
-                case 4:
+            case 4:
                 std::cout << "etc" << std::endl;
                 break;
         }
 
-    Synthesizer NewSynth;
+    Synthesizer newSynth;
     
-    NewSynth.printMe();
+    newSynth.printMe();
 
 
     std::cout << "good to go!";
