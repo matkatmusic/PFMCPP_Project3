@@ -660,27 +660,21 @@ int main()
     std::cout << "is profit now immense? " << (((largerBusiness.assessmentPrice * largerBusiness.numAssessments) > 1000000) ? "Certainly is! " : "No ") << std::endl; 
 
     Oscillator newOscillator;
-
     newOscillator.printMe();
 
     EnvelopeGenerator envelopeGenerator;
-
     envelopeGenerator.getGateState(9,8);
 
     Filter kitchenFilter;
-
     kitchenFilter.isHighPass = true;
     std::cout << "Different filter =  "<< ((kitchenFilter.isHighPass) ? "Tea leaves " : "Coffee grinds ") << std::endl;
     
     Sequencer mySequencer;
-
     mySequencer.printMe();
 
     Arpeggiator myArpeggiator;
-    
     myArpeggiator.printMe();
-
-        int chordVal = myArpeggiator.modulateChordType(0, 1);
+    int chordVal = myArpeggiator.modulateChordType(0, 1);
 
         switch (chordVal)
         {
@@ -699,7 +693,6 @@ int main()
         }
 
     Synthesizer newSynth;
-    
     newSynth.printMe();
 
 
