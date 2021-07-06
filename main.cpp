@@ -288,9 +288,6 @@ SmallBusiness::Assessor::Assessor()
     std::string name = "Davy Jones"; 
     std::string accountNumber = "216839246"; 
     std::string address = "7 Some Road WC1 3DT";
-
-    void printMe();
-    
 }
 
 void SmallBusiness::Assessor::Assessor::printMe()
@@ -542,7 +539,7 @@ void Arpeggiator::printMe()
 //SYNTHESIZER STRUCT
 struct Synthesizer
 {
-    Oscillator vOctInput; // Question - i've forgotten what the next 5 linEs of code do
+    Oscillator vOctInput; 
     EnvelopeGenerator  envGateVoltage; 
     Arpeggiator arpMode;
     Filter cutoffInputVolts;
@@ -676,20 +673,20 @@ int main()
     myArpeggiator.printMe();
     int chordVal = myArpeggiator.modulateChordType(0, 1);
 
-        switch (chordVal)
-        {
-            case 1:
-                std::cout << "Chord is major7" << std::endl;
-                break;
-            case 2:
-                std::cout << "Chord is minor7" << std::endl;
-                break;
-            case 3:
-                std::cout << "Chord is Major9" << std::endl;
-                break;
-            case 4:
-                std::cout << "etc" << std::endl;
-                break;
+    switch (chordVal)
+    {
+        case 1:
+            std::cout << "Chord is major7" << std::endl;
+            break;
+        case 2:
+            std::cout << "Chord is minor7" << std::endl;
+            break;
+        case 3:
+            std::cout << "Chord is Major9" << std::endl;
+            break;
+        case 4:
+            std::cout << "etc" << std::endl;
+            break;
         }
 
     Synthesizer newSynth;
