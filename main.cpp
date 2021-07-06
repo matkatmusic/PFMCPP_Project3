@@ -646,14 +646,14 @@ int main()
     laptop2.printMe();
     laptop2.checkMemory(500,200);
 
-    DigitalPiano digitalPiano;
-    digitalPiano.identifySampleTune(1);
+    DigitalPiano myDigitalPiano;
+    myDigitalPiano.identifySampleTune(1);
 
-    FootballTeam footballTeam;
-    std::cout << "Percentage increase =  " << footballTeam.rateTrainingEfficacy(85,75) << std::endl;
+    FootballTeam myFootballTeam;
+    std::cout << "Percentage increase =  " << myFootballTeam.rateTrainingEfficacy(85,75) << std::endl;
      
-    SmallBusiness::Assessor assessor; //nested class Assessor
-    assessor.printMe();
+    SmallBusiness::Assessor newAssessor; //nested class Assessor
+    newAssessor.printMe();
 
     SmallBusiness largerBusiness;
     largerBusiness.printMe();
@@ -662,8 +662,8 @@ int main()
     Oscillator newOscillator;
     newOscillator.printMe();
 
-    EnvelopeGenerator envelopeGenerator;
-    envelopeGenerator.getGateState(9,8);
+    EnvelopeGenerator envelopeGenerator2;
+    envelopeGenerator2.getGateState(9,8);
 
     Filter kitchenFilter;
     kitchenFilter.isHighPass = true;
