@@ -10,7 +10,7 @@
  0) if you opted to not fill in any of your member functions in part2, 
     fill in ALL of your member functions
     
- 1) Add a constructor for each User-Defined-Type.
+ 1) Add a constructor for each User-Defined-Type. Done
  
  2) For each User-Defined-Type:
         amend some of the member functions to print out something interesting via std::cout
@@ -46,7 +46,7 @@ UDT::UDT()
 
 void UDT::printThing()
 {
-    std::cout << "UDT::printThing() " << a << std::endl;  //2) printing out something interesting
+    std::cout << "\n" << "UDT::printThing() " << a << std::endl;  //2) printing out something interesting
 }
 
 int main()
@@ -70,21 +70,28 @@ int main()
 struct Laptop
 {
     float ssdCapacity = 500.f;
+    float ssdSpaceUsed = 0.f;
     std::string capacityWarning = " ";
     float randomAccessMemory = 16.f;
     float vRam = 4.f;
     float cpuSpeed = 1.8f;
     int numUsbSockets = 2;
 
-        std::string checkMemory(float ssdSpaceRemaining = 400.f);
-        void displayCalculation(float result = 0.f, bool calcButtonClick = true); 
-        void checkConnectionStatus(bool connectedStatus = true);
+    void checkMemory(float ssdCapacity, float ssdSpaceUsed);
+    void displayCalculation(float result = 0.f, bool calcButtonClick = true); 
+    void checkConnectionStatus(bool connectedStatus = true);
+    void printMe();
+
+    Laptop();
 };
 
-std::string Laptop::checkMemory(float ssdSpaceRemaining) 
+
+
+void Laptop::checkMemory(float ssdSize, float ssdUsed) 
 {
-    std::string result = (ssdSpaceRemaining < 100) ? "Disk Space Low!" : "Disk Space OK";
-    return capacityWarning;
+    float ssdSpaceRemaining = ssdSize - ssdUsed;
+    std::string result = (ssdSpaceRemaining < 100) ? "Disk Space Low!  " : "Disk Space OK  ";
+    std::cout <<  result << std::endl;
 }
 
 void Laptop::displayCalculation(float result, bool calcButtonClick)
@@ -96,7 +103,18 @@ void Laptop::checkConnectionStatus(bool connectedStatus)
 {
     std::cout << ((connectedStatus) ? "Connection made" : " " );
 }
+//%%%%%%%%%%%%%%%
 
+Laptop::Laptop() //question - this is constructor? 
+{
+    ssdCapacity = 500.f; 
+    ssdSpaceUsed = 50.f;
+}
+
+void Laptop::printMe()
+{
+    std::cout << "Space left = " << ssdCapacity - ssdSpaceUsed << std::endl;
+}
 
 struct DigitalPiano
 {
@@ -105,10 +123,13 @@ struct DigitalPiano
     int pedals = 3;
     int outputSockets = 5;
     int eqSliders = 3;
+    int sampleNo;
 
     void identifySampleTune (int sampleNumber = 2);
     void checkMidiConnectionStatus (bool connected = true); 
     void metronome (bool metronomeOn, int beatsPerMinute = 120);
+
+    DigitalPiano();
 };
 
 void DigitalPiano::identifySampleTune (int sampleNumber)
@@ -116,10 +137,10 @@ void DigitalPiano::identifySampleTune (int sampleNumber)
     switch (sampleNumber)
     {
         case 1:
-            std::cout << "How Long Blues";
+            std::cout << "Sample tune is - How Long Blues  " << std::endl;
             break;
         case 2:
-            std::cout << "Fur Elise";
+            std::cout << "Sample tune is - Fur Elise  " << std::endl;
             break;
     }
 }      
@@ -140,23 +161,30 @@ void DigitalPiano::metronome (bool metronomeOn, int beatsPerMinute)
         std::cout << "-";
     }
 }    
+//%%%%%%%%%%%%%%
+DigitalPiano::DigitalPiano()
+{
+    sampleNo = 2; 
+}
 
 struct FootballTeam
 {
-    int players = 11;
-    float playerValue = 10000000.f;
-    float possessionPercentage = 54.f;
-    int leaguePosition = 10;
-    float passSuccessPercentage = 62.f;
+    int players;
+    float playerValue;
+    float possessionPercentage;
+    int leaguePosition;
+    float passSuccessPercentage;
 
     float rateTrainingEfficacy(float prevPassSuccess, float currentPassSuccess);
     int rateAttack(int shotsOnTarget, int shotsTotal);
     int scoreMoreThanTheOtherLot(int goalsFor, int goalsAgainst);
+
+    FootballTeam();
 };
 
-float FootballTeam::rateTrainingEfficacy(float prevPassSuccess, float currentPassSuccess)
+float FootballTeam::rateTrainingEfficacy(float currentPassSuccess , float prevPassSuccess)
 {
-    return prevPassSuccess  - currentPassSuccess;
+    return currentPassSuccess - prevPassSuccess;
 }
         
 int FootballTeam::rateAttack(int shotsOnTarget, int shotsTotal)
@@ -169,7 +197,12 @@ int FootballTeam::scoreMoreThanTheOtherLot(int goalsFor, int goalsAgainst)
 {
     return  goalsFor - goalsAgainst;
 }          
-        
+//%%%%%%%%%%%%%%%%%%%%%
+FootballTeam::FootballTeam() 
+{
+   
+}
+
 struct SmallBusiness 
 {
     int countEmployees = 10;
@@ -190,12 +223,19 @@ struct SmallBusiness
         void printAssessorDetails(std::string assessorName, std::string assessorAddress, std::string assessorAccountNumber);
         void dbsChecked(bool dbsCheck);
         float getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime); 
+        void printMe();
+
+        Assessor();
     };
 //SmallBusiness member functions
     float calculateTurnover(float assessmentUnitPrice, int numAssessments);
     float calculatePayroll(int countEmployees, float monthlyPay);
     float calculateReportInvoiceCost(float chargeOutRate, float assessorHoursSpent); 
+    void printMe();
     
+    SmallBusiness();
+
+    Assessor assessor;
 };
 //implement SmallBusiness functions outside struct
 float SmallBusiness::calculateTurnover(float unitPrice, int numberOfAssessments)
@@ -230,22 +270,52 @@ float SmallBusiness::Assessor::getAddendumReportInfo(float readingTime, int numC
     return (readingTime + interviewTime + writingTime) * numClients;
 }
 
+//%%%%%%%%%%%%%%
+SmallBusiness::SmallBusiness()
+{
+
+}
+
+void SmallBusiness::printMe()
+{
+    assessmentPrice = 324000;
+    std::cout << "Cost per assessment is now " << assessmentPrice << std::endl;
+    numAssessments = 100;
+}
+
+SmallBusiness::Assessor::Assessor() 
+{
+    std::string name = "Davy Jones"; 
+    std::string accountNumber = "216839246"; 
+    std::string address = "7 Some Road WC1 3DT";
+}
+
+void SmallBusiness::Assessor::Assessor::printMe()
+{
+    std::cout << assessorName << " " << assessorAccountNumber << " " << assessorAddress << std::endl;
+}
+
+
 struct Oscillator
 {
-    int vOctInput = 3;
+    float vOctInput = 3.f;
     float defaultVoltage = 0.f;
     int waveformControlPosition = 4;
     float pulseWidthPercent = 50.f;
     int octave = 4;
+    float modSocketVolts = 0.f;
     
     float modulateNote(float inputSocketVolts, float modSocketVolts);
     void selectOscWaveform (int waveformControlPosition, int waveformModInputValue);
     float addOctave(int octaveControlPosition, float voltsIn);
+    void printMe();
+
+    Oscillator();
 };
 
-float Oscillator::modulateNote(float inputSocketVolts, float modSocketVolts)
+float Oscillator::modulateNote(float inputVolts, float modVolts)
 {
-    return inputSocketVolts + modSocketVolts;
+    return inputVolts + modVolts;
 }
     
 void Oscillator::selectOscWaveform(int waveformCtrlPosition, int waveformModInputVal)
@@ -274,6 +344,22 @@ float Oscillator::addOctave(int octControlPosition, float vIn)
 {
     return vIn + octControlPosition;
 }
+//%%%%%%%%%%%%%%%%%%%%
+Oscillator::Oscillator()
+{
+    
+}
+
+void Oscillator::printMe()
+{
+    vOctInput = 2.58f;
+    modSocketVolts = 2.167f;
+    float combinedVolts =  vOctInput + modSocketVolts;
+    std::cout << "combinedVolts = " << combinedVolts << std::endl;
+    
+    std::cout << ((combinedVolts > 4) ?  "Voltage is above max value of 4v" : " - ");
+    std::cout << std::endl;
+}
 
 struct EnvelopeGenerator
 {
@@ -281,12 +367,16 @@ struct EnvelopeGenerator
     float decayMinValue = 0.f;
     float sustainDefaultValue = 0.5;
     std::string label = "Release";
-    float envGateVoltage = 10;
+    float envGateVoltage;
+    float threshold;
+    
 
     float getAttackTime(float attackControlValue, float timeMultiplier);
     float getSustainLevel(float attackControlValue, float susLevelMultiplier);
     bool getGateState(float envGateVoltage, float threshold); 
+    void printMe();
 
+    EnvelopeGenerator();
 };
 
 float EnvelopeGenerator::getAttackTime(float attControlValue, float timeMult)
@@ -303,18 +393,34 @@ bool EnvelopeGenerator::getGateState(float envGateVolts, float thresh)
 {
     return(envGateVolts < thresh) ? true : false;
 }
+//%%%%%%%%%%%%%%%%%%%%%%%%
+EnvelopeGenerator::EnvelopeGenerator()
+{
+    envGateVoltage = 0; 
+    threshold = 8;
+    std::cout << ((envGateVoltage>threshold) ? "Gate is on" : "Gate is off");
+    std::cout << std::endl;
+}
+
+void EnvelopeGenerator::printMe()
+
+{
+    std::cout << " Gate is on "; 
+}
 
 struct Filter
 {
-    float resonanceControlMaxValue = 1.f;
-    float driveControlMinValue = 0.f;
-    float cutoffControlDefaultValue = 0.5;
+    float resonanceControlMaxValue;
+    float driveControlMinValue;
+    float cutoffControlDefaultValue;
     bool isHighPass = true;
-    float cutoffInputVolts = 3.f;
+    float cutoffInputVolts;
 
     float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain); 
     void displayFilterMode(bool isHighPass);
-    float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
+    float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier,float modulationInputVolts);
+
+    Filter();
 };
 
 float getDriveLevel(float driveCtrlValue, float driveInVolts, float gain)
@@ -332,18 +438,26 @@ float modulFilterCutoff(float freqControlValue, float freqCtrlMultiplier, float 
     float cutoff = modInputVolts + freqControlValue * freqCtrlMultiplier;
     return cutoff;
 }
+//%%%%%%%%%%%%%%%%%%%%%
+Filter::Filter()
+{
+    
+}
 
 struct Sequencer
 {
-    int clockInputVolts = 0;
-    int seqLength = 8;
-    bool inputGateIsHigh = true;
-    int rangeSemitones = 19;
-    bool randomInputIsHigh = false;
+    int clockInputVolts;
+    int seqLength;
+    bool inputGateIsHigh;
+    int rangeSemitones;
+    bool randomInputIsHigh;
     
     int modulateSeqLength(int seqControlValue, int modLenInputVal); 
     int modulateNoteRange(int rangeControlValue, int rangeLengthInputVolts);
-    int quantizeSequence(int scale, bool quantizeSwitchValue = true);
+    int quantizeSequence(int scale, bool quantizeSwitchValue);
+    void printMe();
+
+    Sequencer();
 };
 
 int Sequencer::modulateSeqLength(int seqCtrlValue, int modLenInputVal)
@@ -361,23 +475,42 @@ int Sequencer::quantizeSequence(int scale, bool quantizeSwitchValue)
 {
     return (quantizeSwitchValue ? scale : false);
 }
+//%%%%%%%%%%%%%%%%%%%%%%%
+Sequencer::Sequencer()
+{
+    clockInputVolts = 0;
+    seqLength = 8;
+    inputGateIsHigh = true;
+    rangeSemitones = 19;
+    randomInputIsHigh = false; 
+}
+
+void Sequencer::printMe()
+{
+    seqLength = 4;
+    std::cout << "seqLength = " << seqLength << std::endl;
+}
 
 struct Arpeggiator
 {
-    float arpInputVolts = 1.583f;//
-    std::string chordType = "m9";
-    std::string arpMode = "Up/Down";
-    bool isHigh = true;
-    float clockInputVolts = 10.f;
+    float arpInputVolts;//
+    std::string chordType;
+    std::string arpMode ;
+    bool isHigh;
+    float clockInputVolts;
 
     int modulateChordType(int chordControlValue, int chordModulationInputVal);
     int modulateArpMode(int modeControlValue, int modeModulationInputVal);
     int modulateOctave(int octControlValue, int octModulationInputVal);
+    void printMe();
+
+    Arpeggiator();
 };
 
 int Arpeggiator::modulateChordType(int chordCtrlValue, int chordModInputVal)
 {
-    return chordCtrlValue + chordModInputVal;
+    int chordIdentifier = chordCtrlValue + chordModInputVal;
+    return chordIdentifier;
 }
 
 int Arpeggiator::modulateArpMode(int modeCtrlValue, int modeModInputVal)
@@ -389,15 +522,29 @@ int Arpeggiator::modulateOctave(int octCtrlValue, int octModInputVal)
 {
     return octCtrlValue + octModInputVal;
 }    
+//%%%%%%%%%%%%%%%%%%%%
+Arpeggiator::Arpeggiator()
+{
+    arpInputVolts = 1.583f;
+    chordType = "m9";
+    arpMode = "Up/Down";
+    isHigh = true;
+    clockInputVolts = 10.f;
+}
 
+void Arpeggiator::printMe()
+{
+    std::cout << "chord = " << chordType << std::endl;
+}
+//SYNTHESIZER STRUCT
 struct Synthesizer
 {
-    Oscillator vOctInput;
+    Oscillator vOctInput; 
     EnvelopeGenerator  envGateVoltage; 
     Arpeggiator arpMode;
     Filter cutoffInputVolts;
     Sequencer rangeSemitones;
-    
+        
     struct LFO
     {
         float lfoFrequencyHz = 16.35f;
@@ -409,14 +556,21 @@ struct Synthesizer
         float modulatePulseWidth(int lfoPulseWidthControlPosition, float waveformModInputVolts);
         void selectLfoWaveform (int waveformControlPosition, int waveformModInputVolts);
         int checkSlowMode(bool slowModeSwitchPosition);
+        void printMe();
+
+        LFO();
+
     };
 
     int selectOscWaveform (int waveformControlPosition, int waveformModInputVal);
-    float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier, float modulationInputVolts);
+    float modulateFilterCutoff(float frequencyControlValue, float freqControlMultiplier,float modulationInputVolts);
     void generateArp(float arpInputVolts, std::string chordType);
+    void printMe();
+
+   Synthesizer(); // constructor
 };
 
- // instantiate Synthesiser member functions
+ // instantiate Synthesizer member functions
 int Synthesizer::selectOscWaveform (int waveformCtrlPosition, int waveformModInputVal)
 {
     return waveformCtrlPosition + waveformModInputVal;
@@ -457,8 +611,18 @@ int waveform = waveformCtrlPosition + waveformModInputVal;
             break;
         }
     }
-/*
- MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
+//%%%%%%%%%%%%%%%%%%
+Synthesizer::Synthesizer()
+{
+
+}
+
+void Synthesizer::printMe()
+{
+    std::cout << "tricky stuff!"  << std::endl;;
+}
+
+ /*MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
  
@@ -471,9 +635,63 @@ int waveform = waveformCtrlPosition + waveformModInputVal;
  Wait for my code review.
  */
 
+
 #include <iostream>
 int main()
 {
-    Example::main();
-    std::cout << "good to go!" << std::endl;
+    Laptop laptop2; 
+    laptop2.printMe();
+    laptop2.checkMemory(500,200);
+
+    DigitalPiano myDigitalPiano;
+    myDigitalPiano.identifySampleTune(1);
+
+    FootballTeam myFootballTeam;
+    std::cout << "Percentage increase =  " << myFootballTeam.rateTrainingEfficacy(85,75) << std::endl;
+     
+    SmallBusiness::Assessor newAssessor; //nested class Assessor
+    newAssessor.printMe();
+
+    SmallBusiness largerBusiness;
+    largerBusiness.printMe();
+    std::cout << "is profit now immense? " << (((largerBusiness.assessmentPrice * largerBusiness.numAssessments) > 1000000) ? "Certainly is! " : "No ") << std::endl; 
+
+    Oscillator newOscillator;
+    newOscillator.printMe();
+
+    EnvelopeGenerator envelopeGenerator2;
+    envelopeGenerator2.getGateState(9,8);
+
+    Filter kitchenFilter;
+    kitchenFilter.isHighPass = true;
+    std::cout << "Different filter =  "<< ((kitchenFilter.isHighPass) ? "Tea leaves " : "Coffee grinds ") << std::endl;
+    
+    Sequencer mySequencer;
+    mySequencer.printMe();
+
+    Arpeggiator myArpeggiator;
+    myArpeggiator.printMe();
+    int chordVal = myArpeggiator.modulateChordType(0, 1);
+
+    switch (chordVal)
+    {
+        case 1:
+            std::cout << "Chord is major7" << std::endl;
+            break;
+        case 2:
+            std::cout << "Chord is minor7" << std::endl;
+            break;
+        case 3:
+            std::cout << "Chord is Major9" << std::endl;
+            break;
+        case 4:
+            std::cout << "etc" << std::endl;
+            break;
+    }
+
+    Synthesizer newSynth;
+    newSynth.printMe();
+
+
+    std::cout << "good to go!";
 }
