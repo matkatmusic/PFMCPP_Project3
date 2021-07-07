@@ -687,7 +687,7 @@ int main()
         case 4:
             std::cout << "etc" << std::endl;
             break;
-        }
+    }
 
     Synthesizer newSynth;
     newSynth.printMe();
