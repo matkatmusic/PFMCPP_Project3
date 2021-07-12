@@ -252,7 +252,6 @@ struct Oscillator
         std::cout  << "Current Octave = " << vOctInput + modSocketVolts << std::endl;
     }
    
-    
 };
 
 float Oscillator::modulateNote(float inputVolts, float modVolts)
@@ -319,7 +318,6 @@ struct EnvelopeGenerator
     }
     
 };
-
 
 float EnvelopeGenerator::getSustainLevel(float attControlValue, float susMult)
 {
@@ -447,7 +445,16 @@ struct Synthesizer
     Arpeggiator arpMode;
     Filter cutoffInputVolts;
     Sequencer rangeSemitones;
+
+    int arpInputVolts { 2 };
+    std::string chordType { " - " };
     
+
+    void generateArpLabel()
+    {
+        chordType = (arpInputVolts = 1) ? "Maj" : "Min";
+        std::cout << "Chord type = " << chordType  << std::endl;
+    }  
     
     struct LFO
     {
@@ -490,10 +497,7 @@ float Synthesizer::modulateFilterCutoff(float frequencyCtrlValue, float freqCtrl
     return (frequencyCtrlValue + modInputVolts) * freqCtrlMultiplier; 
 }
 
-void Synthesizer::generateArp(float arpInputVolts, std::string chordType)
-{
-    std::cout << "Chord = " << arpInputVolts << chordType;
-}  
+
    // LFO member functions
     
 void Synthesizer::LFO::selectLfoWaveform (int waveformCtrlPosition, int waveformModInputVal)
@@ -618,6 +622,7 @@ int main()
 
     Synthesizer newSynth;
     newSynth.printMe();
+    newSynth.generateArpLabel();
     Synthesizer::LFO lfo2;
     lfo2.displayPulseWidth();
 
