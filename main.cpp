@@ -1,41 +1,71 @@
 /*
- Project 3 - Part 4 / 5
- video: Chapter 2 - Part 9
- Member initialization tasks
-
- Create a branch named Part4
+ Project 3 - Part 5 / 5
+ video: Chapter 2 - Part 10
+ Scope and Lifetime tasks
  
- 1) do this for each class in this project: 
-    initialize some of your member variables either in-class or in the Constructor member initializer list.
+Create a branch named Part5
 
- 2) make some of your member functions use those initialized member variables via std::cout statements.
+ video covered:
+    variable scope and lifetime relative to { }
+    while loops
+    for loops()
  
- 3) click the [run] button.  Clear up any errors or warnings as best you can.
+ tasks
+ 
+ 1) add some new member functions to EACH of your types. 
+ 
+ 2) inside these new member functions, use while() and for() loops to do something interesting 
+         a) example: have a loop that modifies a member variable of some object created outside the loop.
+         b) when that member variable reaches a certain threshold, return it mid-loop.
+         c) maybe use function parameters to control the starting value of that member variable or control the threshold
+         
+ 3) call those new member functions in main()
+ 
+ 4) use std::cout statements to print out information about what your loops did.
+    Your code should produce a lot of console output now.
+ 
+ 5) click the [run] button.  Clear up any errors or warnings as best you can.
  */
 
 #include <iostream>
 namespace Example 
 {
-struct UDT  
+struct Bar 
+{ 
+    int num = 0; 
+    Bar(int n) : num(n) { } 
+};
+struct Foo
 {
-    int a; //a member variable
-    float b { 2.f }; //3) in-class initialization
-    UDT() : a(0) { } //3) 'constructor-initializer-list' member variable initialization
-    void printThing()  //the member function
+    Bar scopeLifetimeFunc( int threshold, int startingVal ) //1), 2c) 
     {
-        std::cout << "UDT::printThing() a:" << a << " b: " << b << std::endl;  //4) printing out something interesting
+        Bar bar(startingVal);                //2a)
+        while( bar.num < threshold )         //2a) 
+        { 
+            bar.num += 1;                    //2a)
+            std::cout << "  increasing bar.num: " << bar.num << std::endl; //4)
+            if( bar.num >= threshold )       //2b)
+                return bar;
+        }
+        
+        return Bar {-1}; //if your startingValue >= threshold, the while loop never runs
     }
 };
 
 int main()
 {
-    UDT foo; //instantiating a Foo in main()
-    foo.printThing(); //calling a member function of the instance that was instantiated.
+    Foo foo;
+    auto bar = foo.scopeLifetimeFunc(3, 1);        //3) 
+    
+    std::cout << "bar.num: " << bar.num << std::endl;     //4) 
     return 0;
 }
 }
 
-//call Example::main()
+//call Example::main() in main()
+
+
+
 
 struct Laptop
 {   
