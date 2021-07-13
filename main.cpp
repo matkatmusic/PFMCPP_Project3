@@ -526,10 +526,10 @@ int waveform = waveformCtrlPosition + waveformModInputVal;
     }
  
 
-   Synthesizer::Synthesizer()
-   {
-       std::cout << "Synthesizer constructor doing something" << std::endl;
-   }
+Synthesizer::Synthesizer()
+{
+    std::cout << "Synthesizer constructor doing something" << std::endl;
+}
 
 void Synthesizer::printMe()
 {
