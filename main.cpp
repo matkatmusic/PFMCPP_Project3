@@ -88,7 +88,7 @@ struct DigitalPiano
     void identifySampleTune (int sampleNumber = 2);
     void checkMidiConnectionStatus (bool connected = true);
 
-    void metronome ()
+    void printMetronomeStatus ()
     {
         if(metronomeOn == true)
         {
@@ -165,7 +165,7 @@ struct SmallBusiness
 
     void calculateTurnover()
     {
-        std::cout<< "Business turnover = £" <<assessmentPrice * numAssessments << std::endl;
+        std::cout<< "Business turnover = £" << assessmentPrice * numAssessments << std::endl;
     }
 
     struct Assessor
@@ -181,7 +181,7 @@ struct SmallBusiness
        
         void dbsChecked()
         {
-            std::cout << ((dbsCheck) ? "Check OK" : "Check not yet done") << std::endl;
+            std::cout << (dbsCheck ? "Check OK" : "Check not yet done") << std::endl;
         }
 
         float getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime); 
@@ -212,7 +212,9 @@ float SmallBusiness::calculateReportInvoiceCost(float chargeOutRate, float asses
 //implement Assessor functions printAssessorDetails, dbsChecked, prepareReport
 void SmallBusiness::Assessor::printAssessorDetails(std::string name, std::string address, std::string accountNumber)
 {  
-    std::cout << name << std::endl << address << std::endl << "Account number is " << accountNumber << std::endl;
+    std::cout << name << std::endl;
+    std::cout << address << std::endl;
+    std::cout << "Account number is " << accountNumber << std::endl;
 }
 
 float SmallBusiness::Assessor::getAddendumReportInfo(float readingTime, int numClients, int interviewTime, float writingTime)
@@ -229,7 +231,9 @@ void SmallBusiness::printMe()
 
 void SmallBusiness::Assessor::Assessor::printMe()
 {
-    std::cout << assessorName << " " << assessorAccountNumber << " " << assessorAddress << std::endl;
+    std::cout << assessorName << std::endl;
+    std::cout << "Account number " << assessorAccountNumber << std::endl;
+    std::cout << "Address " << assessorAddress << std::endl;
 }
 
 struct Oscillator
@@ -313,7 +317,7 @@ struct EnvelopeGenerator
 
     void printMe()
     {
-        std::cout << ((envGateVoltage>threshold) ? "Gate is on" : "Gate is off");
+        std::cout << ((envGateVoltage > threshold) ? "Gate is on" : "Gate is off");
         std::cout << std::endl;
     }
     
@@ -472,9 +476,9 @@ struct Synthesizer
         void printMe();
 
         void displayPulseWidth()
-            {
-                std::cout << "Pulse width = " << (lfoPulseWidthPercent) << "%" << std::endl;
-            }
+        {
+            std::cout << "Pulse width = " << (lfoPulseWidthPercent) << "%" << std::endl;
+        }
        
     };
 
@@ -522,10 +526,10 @@ int waveform = waveformCtrlPosition + waveformModInputVal;
     }
  
 
-Synthesizer::Synthesizer()
-{
-    
-}
+   Synthesizer::Synthesizer()
+   {
+       std::cout << "Synthesizer constructor doing something" << std::endl;
+   }
 
 void Synthesizer::printMe()
 {
@@ -557,7 +561,7 @@ int main()
     DigitalPiano myDigitalPiano;
     myDigitalPiano.identifySampleTune(1);
     DigitalPiano janesPiano;
-    janesPiano.metronome();
+    janesPiano.printMetronomeStatus();
 
     
     FootballTeam gdlUnited;
