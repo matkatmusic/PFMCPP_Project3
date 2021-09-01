@@ -75,26 +75,26 @@ Thing 2) Games Console
 5 properties: 
     1) Amount of storage memory
     2) Amount of downloaded games
-    3) Turn on/off button
+    3) Amount of power consumed per hour rms
     4) HDMI Input and output (y/n)
     5) Amount of usb slots
 3 things it can do:
     1)Connect to the internet
     2)Play games from a disk
-    3)Turn on
+    3)Play Videos
  */
 
 /*
 Thing 3) Rollercoaster
 5 properties:
     1) Amount of seats
-    2) number of max speed
-    3) Power on/off controls
+    2) number of max speed mph
+    3) Average number of laps a day
     4) Amount of money to ride
     5) Peak Number of riders a day
 3 things it can do:
-    1) Power up
-    2) be fixed
+    1) stop
+    2) slow down
     3) speed up
  */
 
