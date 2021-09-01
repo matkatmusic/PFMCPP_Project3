@@ -65,18 +65,7 @@ Part1 will be broken up into 5 separate steps
 */
 
 /*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+
 
 
 
@@ -84,25 +73,25 @@ Thing 10)
 /*
 Thing 1) GYM
 5 properties:
-    1) Number of Exercise Machines
-    2) Number of Weekly Customers
-    3) Average time people spend at GYM
-    4) Monthly cost to customer
-    5) amount of profit
+    1) Number of Exercise Machines (int)
+    2) Number of Weekly Customers (float)
+    3) Average time people spend at GYM (float)
+    4) Monthly cost to customer (float)
+    5) amount of profit (float)
 3 things it can do:
     1)provide excersise equipment 
     2)charge customers
-    3)amount of profit
+    3)provide classes
  */
 
 /*
 Thing 2) Games Console
 5 properties: 
-    1) Amount of storage memory
-    2) Amount of downloaded games
-    3) Amount of power consumed per hour rms
-    4) HDMI Input and output (y/n)
-    5) Amount of usb slots
+    1) Amount of storage memory (float)
+    2) Amount of downloaded games (int)
+    3) Amount of power consumed per hour rms (float)
+    4) HDMI Input and output (y/n) (bool)
+    5) Amount of usb slots (int)
 3 things it can do:
     1)Connect to the internet
     2)Play games from a disk
@@ -112,11 +101,11 @@ Thing 2) Games Console
 /*
 Thing 3) Rollercoaster
 5 properties:
-    1) Amount of seats
-    2) number of max speed mph
-    3) Average number of laps a day
-    4) Amount of money to ride
-    5) Peak Number of riders a day
+    1) Amount of seats (int)
+    2) number of max speed mph (int)
+    3) Average number of laps a day (int)
+    4) Amount of money to ride (float)
+    5) Peak Number of riders a day (int)
 3 things it can do:
     1) stop
     2) slow down
@@ -126,19 +115,29 @@ Thing 3) Rollercoaster
 /*
 Thing 4) Art Musuem
 5 properties:
-    1) Number of works of art
-    2) Number of statues
-    3) Most iconic piece
-    4) Number of visitors
-    5) Number of new pieces
+    1) Number of works of art (int)
+    2) Number of statues (int)
+    3) Most iconic piece (std::string" "")
+    4) Number of visitors (int)
+    5) Number of new pieces (int)
 3 things it can do:
     1)Add new pieces
     2)Remove old pieces
     3)Restore ancient art
  */
 
-
-
+/*Thing 10) Music Studio
+5 properties:
+    1)Mixing Desk 
+    2)Imac
+    3)Compressors
+    4)Reverbs
+    5)Speakers
+3 things it can do:
+    1)Output sound
+    2)Mix music
+    3)Compress audio
+*\
 
 
 /*
