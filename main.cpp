@@ -21,6 +21,9 @@ Part1 will be broken up into 5 separate steps, all on the same branch
     Part 1e: you will convert those 10 plain-english UDTs into code that runs.
 ************************
 
+
+
+
 1) Look at the picture of the car interior (Part1a pic.jpg).  
     Fill in the blanks below which break this car interior down into sub-objects.
 
@@ -36,52 +39,68 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3)  music controls
+        4)  horn
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) adjust music volume
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) speedometer
+        2) milage 
+        3) fuel gauge 
+        4) warning signs
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1)inidicate
+        2)window wipe
+        3)spray liquid
     
-Sub Object 3: Environment Controls
-    Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
-    Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+Sub Object 3: 
+    Name 3 things you'll find on the :   Environment Controls
+        1) Air Cooler Control
+        2) Radio Contols
+        3) Hazard Lights Control
+    Name 3 things you can do with the:  Environment Controls
+        1) Adjust or Turn on/off the Air Cooler 
+        2)  Turn on/off the Air Cooler 
+        3) Turn on/off the hazard lights 
 
-Sub Object 4: Infotainment System
-    Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
-    Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+Sub Object 4: 
+    Name 3 things you'll find on the: Infotainment System  
+        1) Sat Nav
+        2) Emails
+        3) Videos
+    Name 3 things you can do with the: Infotainment System 
+        1) Set a route on the Sat Nav
+        2) Send an email
+        3) Play a film 
 
-Sub Object 5: Seat 
-    Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
-    Name 2 things you can do with the:   Seat
-        1)
-        2)
+Sub Object 5: 
+    Name 3 things you'll find on the: Seat 
+        1) Seat headrest mechanism
+        2) Seat back postition adjustment
+        3) Seat bottom position adjustment
+    Name 2 things you can do with the: Seat  
+        1)Adjust the headrest
+        2)Adjust the back position 
 */
+
+struct dog
+{
+int Age;
+float breedNumber;
+bool male;
+unsigned char dogTrainingGrade;
+
+void run (int howFast, bool startWithLeftPaw);
+void rollover (int howMany, bool clockwise);
+};
+
+
+
+
+
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
