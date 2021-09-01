@@ -57,59 +57,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) GYM
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of Exercise Machines
+    2) Number of Weekly Customers
+    3) Average time people spend at GYM
+    4) Monthly cost to customer
+    5) amount of profit
 3 things it can do:
-    1)
-    2)
-    3)
+    1)provide excersise equipment 
+    2)charge customers
+    3)amount of profit
  */
 
 /*
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+Thing 2) Games Console
+5 properties: 
+    1) Amount of storage memory
+    2) Amount of downloaded games
+    3) Turn on/off button
+    4) HDMI Input and output (y/n)
+    5) Amount of usb slots
 3 things it can do:
-    1)
-    2)
-    3)
+    1)Connect to the internet
+    2)Play games from a disk
+    3)Turn on
  */
 
 /*
-Thing 3)
+Thing 3) Rollercoaster
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Amount of seats
+    2) number of max speed
+    3) Power on/off controls
+    4) Amount of money to ride
+    5) Peak Number of riders a day
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Power up
+    2) be fixed
+    3) speed up
  */
 
 /*
-Thing 4)
+Thing 4) Art Musuem
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of works of art
+    2) Number of statues
+    3) Most iconic piece
+    4) Number of visitors
+    5) Number of new pieces
 3 things it can do:
-    1)
-    2)
-    3)
+    1)Add new pieces
+    2)Remove old pieces
+    3)Restore ancient art
  */
 
 
