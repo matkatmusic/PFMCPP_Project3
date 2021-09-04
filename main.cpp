@@ -81,80 +81,6 @@ Part1 will be broken up into 5 separate steps
 */
 
 /*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-
-
-
-
-
 /*
 Thing 1) GYM
 5 properties:
@@ -209,14 +135,84 @@ Thing 4) Art Musuem
     1)Add new pieces
     2)Remove old pieces
     3)Restore ancient art
- */
+        
+        Thing 5) Mixing Desk
+    5 properties:
+        1) Name of brand (std::string)
+        2) Number of Input Channels (int)
+        3) Number of Output Channels (int)
+        4) Does have a Mix bus Compressor (bool)
+        5) Amount of money (int)
+    3 things it can do:
+        1)Turn faders to 0
+        2)Mix bus compression
+        3)Initiate recording
+    */
+
+    /*
+    Thing 6)
+    5 properties:Imac
+        1)Amount of Storage in GB (int)
+        2)Number of pixels in display (int)
+        3)Amount of GPU power in GHz (float)
+        4)Amount of RAM (int)
+        5)Model Number name (std::string)
+    3 things it can do:
+        1)Record inputs to the mixing desk 
+        2)Store the recordings
+        3)Take pictures
+    */
+
+    /*
+    Thing 7)
+    5 properties:Analog Compressors
+        1)Number of knobs of parameters (int)
+        2)Brand and model (std::string)
+        3)Type of analog compressor (std::string)
+        4)Amount of money to buy (float)
+        5)Number of Kilowatts per Hour used (float)
+    3 things it can do:
+        1)Compress incoming audio
+        2)Turn on
+        3)Turn off
+    */
+
+    /*
+    Thing 8)
+    5 properties:Analog Reverb
+        1)Number of presets (int)
+        2)Number of largest size parameter (float)
+        3)Number of knobs (int)
+        4)Amount of money to buy (float)
+        5)colour (std::string)
+    3 things it can do:
+        1)Apply bright plate reverbs
+        2)Apply dark plate reverbs
+        3)Apply large room reverb
+    */
+
+    /*
+    Thing 9) Speakers
+    5 properties:
+        1)Number of Speakers (int)
+        2)Size of speakers in inches (int)
+        3)Number of rms watts per hour (int)
+        4)Number rof max watts per hour (int)
+        5)brand of speakers (std::string)
+    3 things it can do:
+        1)output incoming sound
+        2)Turn on
+        3)Control incoming sound to be louder
+    */
+ 
+ 
 
 /*Thing 10) Music Studio
 5 properties:
     1)Mixing Desk 
     2)Imac
-    3)Compressors
-    4)Reverbs
+    3)Analog Compressors
+    4)Analog Reverbs
     5)Speakers
 3 things it can do:
     1)Output sound
