@@ -475,13 +475,13 @@ struct Speakers
 struct MusicStudio
 {
     //Mixing Desk
-    MixingDesk mixingdesk; 
+    MixingDesk mixingDesk; 
     //Imac
     Imac imac;
     //Analog Compressors
-    AnalogCompressor analogCompressor;
+    AnalogCompressor compressor;
     //Analog Reverbs
-    AnalogReverb analogReverb;
+    AnalogReverb reverb;
     //Speakers
     Speakers speakers;
     //Output sound
