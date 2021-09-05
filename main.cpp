@@ -137,7 +137,7 @@ struct CarWash //                                   1) define an empty struct fo
 
 
 /*
-/*
+
 Thing 1) GYM
 5 properties:
     1) Number of Exercise Machines (int)
@@ -150,6 +150,26 @@ Thing 1) GYM
     2)charge customers
     3)provide classes
  */
+
+ struct GYM
+ {
+    //Number of Exercise Machines 
+    int numExerciseMachines = 18;
+    //Number of Weekly Customers 
+    float numWeeklyCustomers = 103.2f; 
+    //Average time people spend at GYM in minutes
+    float averageTimeSpend = 40.4f;
+    //Monthly cost to customer 
+    float monthlyPrice = 14.99f;
+    //amount of profit 
+    float amountOfProfit = 1100.f; 
+    //Tour of the gym to customers
+    void giveTour();
+    //charge customers
+    float chargeCustomer (bool monthlyPrice = true);
+    //provide classes
+    void provideClasses ();
+ };
 
 /*
 Thing 2) Games Console
@@ -164,7 +184,43 @@ Thing 2) Games Console
     2)Play games from a disk
     3)Play Videos
  */
+struct GamesConsole
+{
+    //Amount of storage memory 
+    float storageInSSD = 256.f;
+    //Amount of downloaded games 
+    int downloadedGames = 4;
+    //Amount of power consumed per hour rms 
+    float WattsPerHourRMS = 100;
+    //HDMI Input and output 
+    bool hasHDMI= true; 
+    //Amount of usb slots 
+    int usbSlots = 4;
+    //Connect to the internet
+    struct HarrysConsole
+    {
+       //digital games on harrys console
+       int digitalGames = 10;
+       //number of controller
+       int controller = 2;
+       //Brand-new yes
+       bool isBrandNew = false;
+       //brand
+       std::string brand = "Playstation";
+       //price
+       float price = 499.99f;
 
+       void swapConsoleWithHarry();
+       void TurnOnHarrysConsole ();
+       float askHarryPrice ();
+    };
+
+    void connectToInternet ();
+    //Play games from a disk
+    void playGameFromDisk ();
+    //Play Videos
+    void playVideo ();
+};
 /*
 Thing 3) Rollercoaster
 5 properties:
@@ -178,7 +234,25 @@ Thing 3) Rollercoaster
     2) slow down
     3) speed up
  */
-
+struct Rollercoaster
+{
+    //Amount of seats (int)
+    int amountOfSeats = 40;
+    //number of max speed mph (int)
+    int maxSpeedMph = 80;
+    //Average number of laps a day (int)
+    int averageLaps = 30;
+    //Amount of money to ride (float)
+    float cost = 2.99f;
+    //Peak Number of riders a day (int)
+    int ridersPerDayInPeakTime = 200;
+    //stop
+    void stop ();
+    //slow down
+    void slowDown ();
+    //speed up
+    void speedUp ();
+};
 /*
 Thing 4) Art Musuem
 5 properties:
@@ -190,9 +264,30 @@ Thing 4) Art Musuem
 3 things it can do:
     1)Add new pieces
     2)Remove old pieces
-    3)Restore ancient art
-        
-        Thing 5) Mixing Desk
+    3)Restore ancient art */
+
+struct artMusuem
+{
+//Number of works of art (int)
+int worksOfArt = 90;
+//Number of statues (int)
+int statues = 20;
+// Most iconic piece (std::string" "")
+std::string mostFamous = "TheMonaLisa";
+//) Number of visitors (int)
+int vistorsPerYear = 19000;
+//Number of new pieces (int)
+int NumberOfNewPieces = 20;
+//Add new pieces
+void addNewArt (bool statue = true, bool painting = false);
+//Remove old pieces
+void removeOld ();
+//Restore ancient art
+void restoreArt ();
+};
+
+/*
+Thing 5) Mixing Desk
     5 properties:
         1) Name of brand (std::string)
         2) Number of Input Channels (int)
@@ -204,7 +299,24 @@ Thing 4) Art Musuem
         2)Mix bus compression
         3)Initiate recording
     */
-
+struct mixingDesk
+{
+//Name of brand 
+std::string brand = "AWS";
+//Number of Input Channels 
+int inputChannels = 24;
+//Number of Output Channels 
+int outputChannels = 24;
+//Does have a Mix bus Compressor 
+bool hasMixBusCompressor = true;
+//Amount of money 
+int cost = 70000;
+//Turn faders to 0
+void Faders0();
+//Mix bus compression
+bool mixBusOn ();
+//Initiate recording
+};
     /*
     Thing 6)
     5 properties:Imac
@@ -218,11 +330,29 @@ Thing 4) Art Musuem
         2)Store the recordings
         3)Take pictures
     */
-
+struct Imac
+{
+//Amount of Storage in GB 
+int StorageInGB = 256;
+//Number of pixels in display
+int pixels = 4056;
+//Amount of GPU power in GHz
+int GpuInGHz = 8;
+//Amount of RAM 
+int RamInGB = 2;
+//Model Number name
+std::string modelName = "TY34550B";
+//Record inputs in to the mixing desk 
+void record ();
+//Store the recordings
+void save ();
+//Take pictures
+void takePicture ();
+};
     /*
     Thing 7)
     5 properties:Analog Compressors
-        1)Number of knobs of parameters (int)
+        1)Number of knobs of parameters 
         2)Brand and model (std::string)
         3)Type of analog compressor (std::string)
         4)Amount of money to buy (float)
@@ -232,7 +362,25 @@ Thing 4) Art Musuem
         2)Turn on
         3)Turn off
     */
-
+struct analogCompressor
+{
+    //Number of knobs of parameters
+    int numberOfKnobs = 4;
+    //Brand and model
+    std::string brand = "Drawmer";
+    //Type of analog compressor
+    std::string type = "FET";
+    //Amount of money to buy
+    float price = 1999.99f;
+    //Number of Kilowatts per Hour used
+    int wattsPerHour = 200;
+    //Compress incoming audio
+    void compress (int ratio, float threshold);
+    //Turn on
+    void turnOn ();
+    //Turn off
+    void turnOff ();
+};
     /*
     Thing 8)
     5 properties:Analog Reverb
@@ -246,7 +394,39 @@ Thing 4) Art Musuem
         2)Apply dark plate reverbs
         3)Apply large room reverb
     */
+struct analogReverb
+{
+    //Number of presets
+    int numOfpreSets = 200;
+    //)Number of largest size parameter
+    float numOfMaxSizeVerb = 1000;
+    //Number of knobs
+    int numOfKnobs = 12;
+        struct parameters
+        {
+            float roomSize = 100.f;
+            int decayInMiliSeconds = 10;
+            int presetNum = 1;
+            float delayInMiliSeconds = 100;
+            bool lowCutFilter = true;
 
+             void type (std::string type1 = "Plate", std::string type2 = "Spring");
+             void accessParameters ();
+             void resetParameters ();
+
+
+        };    
+    //Amount of money to buy 
+    double cost = 2999.99;
+    //colour
+    std::string colour = "Silver";
+    //Apply bright plate reverbs
+    void brightPlate ();
+    //Apply dark plate reverbs
+    void DarkPlate ();
+    //Apply large room reverb
+    void largeRoomVerb ();
+};
     /*
     Thing 9) Speakers
     5 properties:
@@ -261,7 +441,25 @@ Thing 4) Art Musuem
         3)Control incoming sound to be louder
     */
  
- 
+struct speakers
+{
+    //Number of Speakers
+    int numOfSpeakers = 6;
+    //Size of speakers in inches
+    int size = 6;
+    //Number of rms watts per hour
+    int rmsPerHourWatts = 200;
+    //Number rof max watts per hour 
+    int maxWattsPerHour = 500;
+    //brand of speakers
+    std::string brand = "krk";
+    //output incoming sound
+    void soundOn ();
+    //Turn on
+    void turnOn ();
+    //Control incoming sound to be louder
+    int soundLouder ();
+};
 
 /*Thing 10) Music Studio
 5 properties:
@@ -274,8 +472,26 @@ Thing 4) Art Musuem
     1)Output sound
     2)Mix music
     3)Compress audio
-*\
-
+*/
+struct musicStudio
+{
+//Mixing Desk
+mixingDesk Mixingdesk; 
+//Imac
+Imac imac;
+//Analog Compressors
+analogCompressor AnalogCompressor;
+//Analog Reverbs
+analogReverb AnalogReverb;
+//Speakers
+speakers Speakers;
+//Output sound
+bool outputSound (bool SoundOn = true, bool turnOn = true);
+//Mix music
+void mixMusic ();
+//Compress audio
+void compress (bool compress = true);
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
