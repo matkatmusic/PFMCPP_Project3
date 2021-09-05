@@ -151,7 +151,7 @@ Thing 1) GYM
     3)provide classes
  */
 
- struct GYM
+struct GYM
  {
     //Number of Exercise Machines 
     int numExerciseMachines = 18;
@@ -166,9 +166,9 @@ Thing 1) GYM
     //Tour of the gym to customers
     void giveTour();
     //charge customers
-    float chargeCustomer (bool monthlyPrice = true);
+    float chargeCustomer(bool monthlyPrice = true);
     //provide classes
-    void provideClasses ();
+    void provideClasses();
  };
 
 /*
@@ -191,35 +191,35 @@ struct GamesConsole
     //Amount of downloaded games 
     int downloadedGames = 4;
     //Amount of power consumed per hour rms 
-    float WattsPerHourRMS = 100;
+    float wattsPerHourRMS = 100;
     //HDMI Input and output 
     bool hasHDMI= true; 
     //Amount of usb slots 
     int usbSlots = 4;
     //Connect to the internet
-    struct HarrysConsole
+    struct Game
     {
-       //digital games on harrys console
-       int digitalGames = 10;
-       //number of controller
-       int controller = 2;
-       //Brand-new yes
-       bool isBrandNew = false;
-       //brand
-       std::string brand = "Playstation";
+       //story completed percentage
+       float storyCompletedPercentage  = 99.4f;
+       //Zombies killed
+       int zombiesKilled = 2905;
+       //Special Outfit unlocked
+       bool SpecialOutfitUnlocked = false;
+       //name of the game
+       std::string gameName = "Resident Evil";
        //price
-       float price = 499.99f;
+       float price = 49.99f;
 
-       void swapConsoleWithHarry();
-       void TurnOnHarrysConsole ();
-       float askHarryPrice ();
+       void launchResidentEvil();
+       void playStoryMode();
+       float gameTimeHoursSpent();
     };
 
-    void connectToInternet ();
+    void connectToInternet();
     //Play games from a disk
-    void playGameFromDisk ();
+    void playGameFromDisk();
     //Play Videos
-    void playVideo ();
+    void playVideo();
 };
 /*
 Thing 3) Rollercoaster
@@ -247,11 +247,11 @@ struct Rollercoaster
     //Peak Number of riders a day (int)
     int ridersPerDayInPeakTime = 200;
     //stop
-    void stop ();
+    void stop();
     //slow down
-    void slowDown ();
+    void slowDown();
     //speed up
-    void speedUp ();
+    void speedUp();
 };
 /*
 Thing 4) Art Musuem
@@ -266,24 +266,24 @@ Thing 4) Art Musuem
     2)Remove old pieces
     3)Restore ancient art */
 
-struct artMusuem
+struct ArtMusuem
 {
-//Number of works of art (int)
-int worksOfArt = 90;
-//Number of statues (int)
-int statues = 20;
-// Most iconic piece (std::string" "")
-std::string mostFamous = "TheMonaLisa";
-//) Number of visitors (int)
-int vistorsPerYear = 19000;
-//Number of new pieces (int)
-int NumberOfNewPieces = 20;
-//Add new pieces
-void addNewArt (bool statue = true, bool painting = false);
-//Remove old pieces
-void removeOld ();
-//Restore ancient art
-void restoreArt ();
+    //Number of works of art (int)
+    int worksOfArt = 90;
+    //Number of statues (int)
+    int statues = 20;
+    // Most iconic piece (std::string" "")
+    std::string mostFamous = "TheMonaLisa";
+    //) Number of visitors (int)
+    int vistorsPerYear = 19000;
+    //Number of new pieces (int)
+    int numberOfNewPieces = 20;
+    //Add new pieces
+    void addNewArt(bool statue = true, bool painting = false);
+    //Remove old pieces
+    void removeOld();
+    //Restore ancient art
+    void restoreArt();
 };
 
 /*
@@ -299,23 +299,24 @@ Thing 5) Mixing Desk
         2)Mix bus compression
         3)Initiate recording
     */
-struct mixingDesk
+struct MixingDesk
 {
-//Name of brand 
-std::string brand = "AWS";
-//Number of Input Channels 
-int inputChannels = 24;
-//Number of Output Channels 
-int outputChannels = 24;
-//Does have a Mix bus Compressor 
-bool hasMixBusCompressor = true;
-//Amount of money 
-int cost = 70000;
-//Turn faders to 0
-void Faders0();
-//Mix bus compression
-bool mixBusOn ();
-//Initiate recording
+    //Name of brand 
+    std::string brand = "AWS";
+    //Number of Input Channels  
+    int inputChannels = 24;
+    //Number of Output Channels 
+    int outputChannels = 24;
+    //Does have a Mix bus Compressor 
+    bool hasMixBusCompressor = true;
+    //Amount of money 
+    int cost = 70000;
+    //Turn faders to 0
+    void faders0();
+    //Mix bus compression
+    bool mixBusOn();
+    //Initiate recording
+    void recordFromDesk();
 };
     /*
     Thing 6)
@@ -332,22 +333,22 @@ bool mixBusOn ();
     */
 struct Imac
 {
-//Amount of Storage in GB 
-int StorageInGB = 256;
-//Number of pixels in display
-int pixels = 4056;
-//Amount of GPU power in GHz
-int GpuInGHz = 8;
-//Amount of RAM 
-int RamInGB = 2;
-//Model Number name
-std::string modelName = "TY34550B";
-//Record inputs in to the mixing desk 
-void record ();
-//Store the recordings
-void save ();
-//Take pictures
-void takePicture ();
+    //Amount of Storage in GB 
+    int storageInGB = 256;
+    //Number of pixels in display
+    int pixels = 4056;
+    //Amount of GPU power in GHz
+    int gpuInGHz = 8;
+    //Amount of RAM 
+    int ramInGB = 2;
+    //Model Number name
+    std::string modelName = "TY34550B";
+    //Record inputs in to the mixing desk 
+    void record();
+    //Store the recordings
+    void save();
+    //Take pictures
+    void takePicture();
 };
     /*
     Thing 7)
@@ -362,7 +363,7 @@ void takePicture ();
         2)Turn on
         3)Turn off
     */
-struct analogCompressor
+struct AnalogCompressor
 {
     //Number of knobs of parameters
     int numberOfKnobs = 4;
@@ -377,9 +378,9 @@ struct analogCompressor
     //Compress incoming audio
     void compress (int ratio, float threshold);
     //Turn on
-    void turnOn ();
+    void turnOn();
     //Turn off
-    void turnOff ();
+    void turnOff();
 };
     /*
     Thing 8)
@@ -394,7 +395,7 @@ struct analogCompressor
         2)Apply dark plate reverbs
         3)Apply large room reverb
     */
-struct analogReverb
+struct AnalogReverb
 {
     //Number of presets
     int numOfpreSets = 200;
@@ -402,7 +403,7 @@ struct analogReverb
     float numOfMaxSizeVerb = 1000;
     //Number of knobs
     int numOfKnobs = 12;
-        struct parameters
+        struct Parameters
         {
             float roomSize = 100.f;
             int decayInMiliSeconds = 10;
@@ -410,9 +411,9 @@ struct analogReverb
             float delayInMiliSeconds = 100;
             bool lowCutFilter = true;
 
-             void type (std::string type1 = "Plate", std::string type2 = "Spring");
-             void accessParameters ();
-             void resetParameters ();
+            void type (std::string type1 = "Plate", std::string type2 = "Spring");
+            void accessParameters();
+            void resetParameters();
 
 
         };    
@@ -421,11 +422,11 @@ struct analogReverb
     //colour
     std::string colour = "Silver";
     //Apply bright plate reverbs
-    void brightPlate ();
+    void applyBrightPlate();
     //Apply dark plate reverbs
-    void DarkPlate ();
+    void applyDarkPlate();
     //Apply large room reverb
-    void largeRoomVerb ();
+    void applyLargeRoomVerb();
 };
     /*
     Thing 9) Speakers
@@ -441,7 +442,7 @@ struct analogReverb
         3)Control incoming sound to be louder
     */
  
-struct speakers
+struct Speakers
 {
     //Number of Speakers
     int numOfSpeakers = 6;
@@ -454,11 +455,11 @@ struct speakers
     //brand of speakers
     std::string brand = "krk";
     //output incoming sound
-    void soundOn ();
+    void soundOn();
     //Turn on
-    void turnOn ();
+    void turnOn();
     //Control incoming sound to be louder
-    int soundLouder ();
+    int soundLouder();
 };
 
 /*Thing 10) Music Studio
@@ -473,24 +474,24 @@ struct speakers
     2)Mix music
     3)Compress audio
 */
-struct musicStudio
+struct MusicStudio
 {
-//Mixing Desk
-mixingDesk Mixingdesk; 
-//Imac
-Imac imac;
-//Analog Compressors
-analogCompressor AnalogCompressor;
-//Analog Reverbs
-analogReverb AnalogReverb;
-//Speakers
-speakers Speakers;
-//Output sound
-bool outputSound (bool SoundOn = true, bool turnOn = true);
-//Mix music
-void mixMusic ();
-//Compress audio
-void compress (bool compress = true);
+    //Mixing Desk
+    MixingDesk mixingdesk; 
+    //Imac
+    Imac Imac;
+    //Analog Compressors
+    AnalogCompressor analogCompressor;
+    //Analog Reverbs
+    AnalogReverb analogReverb;
+    //Speakers
+    Speakers speakers;
+    //Output sound
+    bool outputSound(bool soundOn = true, bool turnOn = true);
+    //Mix music
+    void mixMusic();
+    //Compress audio
+    void compress(bool compress = true);
 };
 
 /*
