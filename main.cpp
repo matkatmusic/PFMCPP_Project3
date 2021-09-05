@@ -477,7 +477,7 @@ struct MusicStudio
     //Mixing Desk
     MixingDesk mixingdesk; 
     //Imac
-    Imac Imac;
+    Imac imac;
     //Analog Compressors
     AnalogCompressor analogCompressor;
     //Analog Reverbs
