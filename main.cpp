@@ -204,7 +204,7 @@ struct GamesConsole
        //Zombies killed
        int zombiesKilled = 2905;
        //Special Outfit unlocked
-       bool SpecialOutfitUnlocked = false;
+       bool specialOutfitUnlocked = false;
        //name of the game
        std::string gameName = "Resident Evil";
        //price
@@ -403,20 +403,18 @@ struct AnalogReverb
     float numOfMaxSizeVerb = 1000;
     //Number of knobs
     int numOfKnobs = 12;
-        struct Parameters
-        {
-            float roomSize = 100.f;
-            int decayInMiliSeconds = 10;
-            int presetNum = 1;
-            float delayInMiliSeconds = 100;
-            bool lowCutFilter = true;
+    struct Parameters
+    {
+        float roomSize = 100.f;
+        int decayInMiliSeconds = 10;
+        int presetNum = 1;
+        float delayInMiliSeconds = 100;
+        bool lowCutFilter = true;
 
-            void type (std::string type1 = "Plate", std::string type2 = "Spring");
-            void accessParameters();
-            void resetParameters();
-
-
-        };    
+        void type (std::string type1 = "Plate", std::string type2 = "Spring");
+        void accessParameters();
+        void resetParameters();
+    };    
     //Amount of money to buy 
     double cost = 2999.99;
     //colour
@@ -458,8 +456,8 @@ struct Speakers
     void soundOn();
     //Turn on
     void turnOn();
-    //Control incoming sound to be louder
-    int soundLouder();
+    //boost incoming sound 
+    int boostIncomingSound();
 };
 
 /*Thing 10) Music Studio
