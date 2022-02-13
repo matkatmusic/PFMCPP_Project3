@@ -36,51 +36,52 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) horn pad
+        4) airbag
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
-        
+        2) unswer phone call
+        3) honk the horn
+
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) speedometer
+        2) fuel gauge
+        3) turn signal indicators
+        4) tachometer
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) visualise the car's travelling speed 
+        2) visualise the engine's rpm
+        3) visualize the amount of fuel within the car's tank
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) air conditioner 
+        2) temperature
+        3) air circulation       
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) switch on the air conditioner 
+        2) set the internal temperature
+        3) choose air circulation modes
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) radio
+        2) bluetooth
+        3) navigator 
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) selct a radio to listen to
+        2) set up a bluetooth device
+        3) acess the navigation system
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) reclainer 
+        2) legs spacer
+        3) warmer 
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) adujus the reclainer's angle
+        2) set the seat's tempurature
 */
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
