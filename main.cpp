@@ -36,51 +36,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) horn 
+        4) stereo controls
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) manouver vehicle
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) air conditioning controls
+        2) radio controls
+        3) seat warmers
+        4) infotainment system
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) control in car temperature
+        2) switch between radio channels
+        3) update navigation preferences
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) seat warming control
+        2) fan level amount
+        3) air recirculation preference
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) make car colder
+        2) increase fan speed
+        3) de mist windscreen
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) volume control
+        2) bluetooth input
+        3) track selection panel
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) rock out
+        2) connect mobile/mp3 player
+        3) change EQ settings
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) crumbs
+        2) lumbar support
+        3) seatbelt
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) adjust ride height
+        2) adjust headrest
 */
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
