@@ -155,59 +155,59 @@ Part 1b Assignment: 1 Step
 */
 
 /*
-Thing 1)
+Thing 1) Bicycle
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of wheels (int)
+    2) miles covered by month (float)
+    3) number of punctures suffered (int) 
+    4) amount of fitness gained (double)
+    5) number of gears fitted (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) travel from point a to point b
+    2) beat busy london traffic
+    3) use cycle paths
  */
 
 /*
-Thing 2)
+Thing 2) Coffee Machine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of coffees made per week (int)
+    2) amount of water needed (float)
+    3) number of steam wands (int)
+    4) adjustable temperature control (bool)  
+    5) number of groupheads per machine (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) will steam milk
+    2) brew espresso 
+    3) dispense hot water
  */
 
 /*
-Thing 3)
+Thing 3) Supermarket
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of isles  (int)
+    2) amount of frozen food per store (int)
+    3) number of tills (int)
+    4) includes self service till (bool)
+    5) number of fresh products  (double)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) support healthy diet
+    2) offer budget alternatives
+    3) feed a family
  */
 
 /*
-Thing 4)
+Thing 4) Toaster 
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of volts needed for power (float)
+    2) number of bread racks (int)
+    3) amount of toasting control (float)
+    4) number of buttons on control panel (init)
+    5) defrost function (bool)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) defrost and toast bread
+    2) collect crumbs
+    3) offer snacking option
  */
 
  /*
@@ -280,17 +280,17 @@ Define an object that is made of 5 sub-objects.
 */
 
 /*
-Thing 10)
+Thing 10) Synth    
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) display
+    2) keyboard
+    3) patch storage (memory)
+    4) channel outputs
+    5) global tune function
 3 things it can do:
-    1)
-    2)
-    3)
+    1) make sound
+    2) sample audio
+    3) create melody
  */
 
 /*
