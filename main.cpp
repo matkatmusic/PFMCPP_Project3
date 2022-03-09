@@ -465,7 +465,7 @@ Thing 10) car components
     2) engine
     3) battery
     4) coolant plumbing circuit
-    5) HVAC circuit
+    5) engine controller
 3 things it can do:
     1) idle
     2) impart torque on the differential
