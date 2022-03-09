@@ -53,51 +53,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) Call controls
+        4) Navegation menu controls
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) accept calls
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) Speedometer    
+        2) Fuel gauge 
+        3) Turn Signal indicators
+        4) Tachometer
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) Check fuel level
+        2) Check lights indicators
+        3) Check speed
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) AC controls
+        2) Heating Controls
+        3) AC Vents
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) Adjust AC power
+        2) Adjust Heating Temperature
+        3) Adjust Air flow
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) Display
+        2) Volume controls
+        3) Navigation system
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) Pair a smartphone
+        2) Browse music
+        3) Search for a destination
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) Seatbelt
+        2) Inclination wheel
+        3) Position lever
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) Adjust inclination
+        2) Adjust position 
 */
 
 /*
@@ -154,61 +154,8 @@ Part 1b Assignment: 1 Step
         'int float double bool char std::string'.
 */
 
-/*
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
-/*
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
-/*
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
  /*
 Part 1c - Lesson
@@ -279,19 +226,7 @@ Define an object that is made of 5 sub-objects.
     you'll define these 5 sub-objects in Part 1d.
 */
 
-/*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+
 
 /*
 Part 1d - Lesson
@@ -384,75 +319,7 @@ each property for UDTs 5 - 9.
 Step 3 is written below UDTs 5 - 9
 */
 
-/*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 /*
 ===================
@@ -471,9 +338,142 @@ MOVE THEM BELOW this block comment and put them in numerical order
 After you have MOVED your 10 UDTs, send me a DM with your pull request link.
 I will review the pseudo-code that you have written.
 */
+/*
+Thing 1) Car Workshop
+5 properties: 
+    1) number of employees
+    2) number of cars to repair
+    3) number of parts available
+    4) amount of profit made from repairs
+    5) number of calls received that day
+3 things it can do:
+    1) repair car engines
+    2) repair car tires
+    3) change car windshield
+ */
 
+/*
+Thing 2) Library
+5 properties:
+    1) number of books
+    2) number of clients
+    3) number of employees
+    4) number of loans
+    5) number of tables
+3 things it can do:
+    1) lend books
+    2) research data base
+    3) read books
+ */
 
+/*
+Thing 3) Music Studio
+5 properties:
+    1) number of instruments
+    2) number of input channels
+    3) number of speakers
+    4) number of tracks recorded
+    5) number of engineers
+3 things it can do:
+    1) record vocals
+    2) mix music
+    3) use plugins
+ */
 
+/*
+Thing 4) Audio Interface
+5 properties:
+    1) number of inputs (int)
+    2) number of outputs (int)
+    3) sample rate (float)
+    4) brand (std::string)
+    5) weight (float)
+3 things it can do:
+    1) record instruments
+    2) reproduce sound
+    3) set gain 
+/*
+Thing 5) CPU
+5 properties:
+    1) Number of cores (int)
+    2) Number of threads (int)
+    3) Clock speed (float)
+    4) Cache (int)
+    5) TDP (int)
+3 things it can do:
+    1) calculations
+    2) run programs
+    3) i/o operations
+ */
+
+/*
+Thing 6) GPU
+5 properties:
+    1) Boost clock (float)
+    2) Item weight (float)
+    3) Cuda cores (double)
+    4) Ram size (int)
+    5) brand (sdt::string)
+3 things it can do:
+    1) Video editing
+    2) Machine Learning
+    3) 3D rendering
+ */
+
+/*
+Thing 7) RAM
+5 properties:
+    1) Memory speed (double)
+    2) Memory Size (int)
+    3) brand (std::string)
+    4) length (float)
+    5) Voltage (float)
+3 things it can do:
+    1) Load applications
+    2) Edit a spreadsheet
+    3) Browsing internet
+ */
+
+/*
+Thing 8) Display
+5 properties:
+    1) number of pixels (int)
+    2) screen size (int)
+    3) brightness (int)
+    4) refresh rate (int)
+    5) response time (int)
+3 things it can do:
+    1) reproduce image
+    2) display information
+    3) display video graphics
+ */
+
+/*
+Thing 9) motherboard
+5 properties:
+    1) number of inputs (int)
+    2) brand (std::string)
+    3) number of pci slots (int)
+    4) Ram Memory size (int)
+    5) item weight (float)
+3 things it can do:
+    1) allows parts to communicate
+    2) select boot drive
+    3) change bios settings
+ */
+/*
+Thing 10) Computer
+5 properties:
+    1) CPU
+    2) GPU
+    3) RAM
+    4) Display
+    5) Keyboard
+3 things it can do:
+    1) create plugins
+    2) mix music
+    3) browse the internet
+ */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
