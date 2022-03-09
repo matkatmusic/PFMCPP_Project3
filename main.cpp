@@ -53,51 +53,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) cabin audio controls
+        4) turn signal lever
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) adjust music volume
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) speedometer  
+        2) rpm indicator
+        3) oil temperature indicator
+        4) gas level indicator
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) See which drive configuration you're in (park, neutral, etc)
+        2) check your speed
+        3) check your engine's rpm
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) seat heater controls
+        2) airflow temperature knob
+        3) air recycle button
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) increase the airflow
+        2) raise the temperature of the air that's flowing
+        3) turn on the seat heater
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) audio on/off button
+        2) radio frequency dial
+        3) hazard indicator controls
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) change radio stations
+        2) raise the music volume
+        3) turn on hazard indicators
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) backrest
+        2) lever to move the seat
+        3) seat cushion
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) lean the seat backward   
+        2) slide the seat closer to the steering wheel
 */
 
 /*
@@ -153,62 +153,6 @@ Part 1b Assignment: 1 Step
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 */
-
-/*
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
  /*
 Part 1c - Lesson
@@ -278,20 +222,6 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 */
-
-/*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 /*
 Part 1d - Lesson
@@ -385,76 +315,6 @@ Step 3 is written below UDTs 5 - 9
 */
 
 /*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
 ===================
 Part 1d assignment: Step 3
 ===================
@@ -472,8 +332,145 @@ After you have MOVED your 10 UDTs, send me a DM with your pull request link.
 I will review the pseudo-code that you have written.
 */
 
+/*
+Thing 1) dog
+5 properties:
+    1) fur color (std::string)
+    2) weight (float)
+    3) age (int)
+    4) number of cat roommates (int)
+    5) number of walks needed per day (int)
+3 things it can do:
+    1) play at the dog park
+    2) chew furniture
+    3) bark at other dogs
+ */
 
+/*
+Thing 2) synthesizer
+5 properties:
+    1) attack fader position (int)
+    2) lfo depth position (float)
+    3) lfo rate (float)
+    4) filter cutoff amount (float)
+    5) noise level (int)
+3 things it can do:
+    1) assign lfo to another parameter
+    2) play a sequence
+    3) lower the volume
+ */
 
+/*
+Thing 3) laptop
+5 properties:
+    1) battery level (int)
+    2) wifi signal reception level (float)
+    3) color of the computer (std::string)
+    4) age of the computer (int)
+    5) number of times it's been dropped (int)
+3 things it can do:
+    1) adjust the display brightness
+    2) capture a screenshot
+    3) send an email
+ */
+
+/*
+Thing 4) refrigerator
+5 properties:
+    1) number of vegetables inside (int)
+    2) temperature inside (float)
+    3) location within the house (std::string)
+    4) power draw (double)
+    5) time elapsed making ice (float)
+3 things it can do:
+    1) dispense water
+    2) store food
+    3) adjust temperature inside
+ */
+
+/*
+Thing 5) drive shaft
+5 properties:
+    1) material composition (std::string)
+    2) rotations per minute (int)
+    3) torque amount in N*m (double)
+    4) length in cm (float)
+    5) engaged with transmission (bool)
+3 things it can do:
+    1) increase speed
+    2) increase torque
+    3) fail structurally
+ */
+
+/*
+Thing 6) engine
+5 properties:
+    1) fuel flow rate (float)
+    2) cylinder arrangement pattern (std::string)
+    3) number of spark plug misfires (int)
+    4) valve pulse width percentage (int)
+    5) horsepower generated (float)
+3 things it can do:
+    1) adjust valve timing
+    2) command spark plugs to power
+    3) bypass airflow
+ */
+
+/*
+Thing 7) battery
+5 properties:
+    1) voltage level (float)
+    2) current draw in amps (double)
+    3) weight (float)
+    4) volume in m^3 (int)
+    5) age (int)
+3 things it can do:
+    1) charge
+    2) discharge
+    3) catch on fire
+ */
+
+/*
+Thing 8) coolant plumbing circuit
+5 properties:
+    1) number of valves (int)
+    2) efficiency percentage (float)
+    3) pump power draw in watts (float)
+    4) fan speed percentage (int)
+    5) type of coolant (std::string)
+3 things it can do:
+    1) adjust air flow by adjusting fan speed
+    2) adjust coolant flow 
+    3) leak coolant
+ */
+
+/*
+Thing 9) engine controller
+5 properties:
+    1) number of outputs (int)
+    2) highest temperature reading (float)
+    3) highest temperature channel name (std::string)
+    4) data rate in Hz (int)
+    5) output voltage (float)
+3 things it can do:
+    1) command a different fuel flow amount
+    2) cruise control
+    3) raise an alert on the dash
+ */
+
+/*
+Thing 10) car components
+5 properties:
+    1) drive shaft
+    2) engine
+    3) battery
+    4) coolant plumbing circuit
+    5) HVAC circuit
+3 things it can do:
+    1) idle
+    2) impart torque on the differential
+    3) misfire spark plugs
+ */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
