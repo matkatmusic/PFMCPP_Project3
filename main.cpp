@@ -186,146 +186,293 @@ struct CarWash //                                   1) define an empty struct fo
     */
 };
 
-
 /*
 Thing 1) dog
-5 properties:
-    1) fur color (std::string)
-    2) weight (float)
-    3) age (int)
-    4) number of cat roommates (int)
-    5) number of walks needed per day (int)
-3 things it can do:
-    1) play at the dog park
-    2) chew furniture
-    3) bark at other dogs
  */
+struct Dog
+{
+    // fur color
+    std::string furColor = "black";
+    // weight in kg
+    float weight = 20.f;
+    // age in years
+    int age = 2;
+    // number of cat roommates
+    int numCatRoommates = 2;
+    // number of walks needed per day
+    int walksNeededDaily = 3;
+
+    // play at the dog park
+    void playAtDogPark(bool isParkOpen, float timeSinceLastPlay, int energyLevelOutOfTen = 5);
+    // chew furniture
+    void chewFurniture(bool isHungry, bool isBored, int energyLevelOutOfTen = 5);
+    // bark at other dogs
+    void bark(bool isOtherDogOutside);
+};
 
 /*
 Thing 2) synthesizer
-5 properties:
-    1) attack fader position (int)
-    2) lfo depth position (float)
-    3) lfo rate (float)
-    4) filter cutoff amount (float)
-    5) noise level (int)
-3 things it can do:
-    1) assign lfo to another parameter
-    2) play a sequence
-    3) lower the volume
  */
+struct Synthesizer 
+{
+    // attack fader position
+    int attackFaderPosition = 1;
+    // lfo depth position
+    float lfoDepthPosition = 14.6f;
+    // lfo rate in Hz
+    float lfoRate = 0.02f;
+    // filter cutoff amount in dB
+    float fliterCutoffAmount = 125.f;
+    // noise level
+    int noiseLevel = 8;
+
+    struct Oscillator
+    {
+        // frequency in Hz
+        float frequency = 440.f;
+        // Oscillator waveform
+        std::string waveform = "Saw";
+        // detune setting
+        float detuneSetting = -0.04f;
+        // unison setting
+        int unisonSetting = 2;
+        // blend amount
+        int blendAmount = 34;
+
+        // pan the oscillator
+        void pan(bool panDirection, float panAmount = 0.f);
+        // modulate another parameter
+        void modulateParameter(std::string whichParameter = "Oscillator 2", float modulationDepth = 0.f);
+        // self tune the synth
+        float selfTune(float targetNote, float referenceFrequency); // returns tuned frequency
+    };
+
+    // assign lfo to another parameter
+    void assignLfo(float lfoDepthPosition, float lfoRate, std::string assignedParameter, bool retrigger = false);
+    // play a sequence
+    void playSequence(std::string storedSequenceSettings, bool enabled = false);
+    // lower the volume
+    int lowerVolume(int desiredLevel, int currentLevel); // returns new volume level
+
+};
 
 /*
 Thing 3) laptop
-5 properties:
-    1) battery level (int)
-    2) wifi signal reception level (float)
-    3) color of the computer (std::string)
-    4) age of the computer (int)
-    5) number of times it's been dropped (int)
-3 things it can do:
-    1) adjust the display brightness
-    2) capture a screenshot
-    3) send an email
  */
+
+struct Laptop
+{
+    // battery level
+    int batteryLevelPercentage = 85;
+    // wifi signal reception level
+    float wifiSignalLevel = 3.24f;
+    // color of the laptop
+    std::string color = "silver";
+    // age of computer in years
+    int age = 2;
+    // number of times the computer has been dropped
+    int numTimesDropped = 1;
+
+    // adjust the display brightness
+    int adjustDisplayBrightness(int currentSetting, int desiredSetting); // returns new brightness level
+    // capture a screenshot
+    std::string captureScreenshot(bool buttonClick, bool isScreenshotAllowed = true); // returns screenshot file path
+    // send an email
+    void sendEmail(std::string recipient, std::string subject, std::string emailBody = "");
+};
 
 /*
 Thing 4) refrigerator
-5 properties:
-    1) number of vegetables inside (int)
-    2) temperature inside (float)
-    3) location within the house (std::string)
-    4) power draw (double)
-    5) time elapsed making ice (float)
-3 things it can do:
-    1) dispense water
-    2) store food
-    3) adjust temperature inside
  */
+struct Refrigerator 
+{
+    // number of vegetables inside
+    int numVegetables = 20;
+    // temperature inside
+    float temperatureInside = 37.45f;
+    // location within the house
+    std::string locationInHouse = "kitchen";
+    // power draw in watts
+    double powerDraw = 230;
+    // time elapsed making ice
+    float minutesElapsedMakingIce = 20;
+
+    // dispense water
+    void dispenseWater(bool enabled = false);
+    // store food
+    void storeFood(bool isPowered = true);
+    // adjust temperature
+    float adjustTemperature(float currentTemperature, float desiredTemperature); // returns new temperature
+};
 
 /*
 Thing 5) drive shaft
-5 properties:
-    1) material composition (std::string)
-    2) rotations per minute (int)
-    3) torque amount in N*m (double)
-    4) length in cm (float)
-    5) engaged with transmission (bool)
-3 things it can do:
-    1) increase speed
-    2) increase torque
-    3) fail structurally
  */
+struct DriveShaft
+{
+    // material composition
+    std::string materialComposition = "steel";
+    // rotations per minute
+    int rotationsPerMinute = 2000;
+    // torque amount in N*m
+    double torqueAmount = 450.03872;
+    // length in cm
+    float length = 74.8237f;
+    // engaged with transmission
+    bool engagedWithTransmission = false;
+
+    // increase speed
+    void increaseSpeed(float currentSpeed, float desiredSpeed, float speedLimit = 100.f);
+    // increase torque
+    void increaseTorque(float torqueLevel);
+    // fail structurally
+    void failStructurally(float maxLoad, float currentLoad);
+};
 
 /*
 Thing 6) engine
-5 properties:
-    1) fuel flow rate (float)
-    2) cylinder arrangement pattern (std::string)
-    3) number of spark plug misfires (int)
-    4) valve pulse width percentage (int)
-    5) horsepower generated (float)
-3 things it can do:
-    1) adjust valve timing
-    2) command spark plugs to power
-    3) bypass airflow
  */
+
+struct Engine
+{
+    // fuel flow rate in kg/s
+    float fuelFlowRate = 0.45f;
+    // cylinder arrangement pattern
+    std::string cylinderPattern = "V";
+    // number of spark plug misfires
+    int numSparkPlugMisfires = 2;
+    // valve pulse width percentage
+    int valvePulseWidthPercentage = 35;
+    // horespower generated
+    float horsepowerGenerated = 84;
+
+    // adjust valve timing
+    float adjustValveTiming(float currentSetting, float desiredFlowRate); // returns new timing value
+    // command spark plugs on
+    void commandSparkPlugs(bool enabled = false);
+    // bypass airflow
+    void bypassAirflow(bool enabled = false);
+};
 
 /*
 Thing 7) battery
-5 properties:
-    1) voltage level (float)
-    2) current draw in amps (double)
-    3) weight (float)
-    4) volume in m^3 (int)
-    5) age (int)
-3 things it can do:
-    1) charge
-    2) discharge
-    3) catch on fire
  */
+struct Battery 
+{
+    // voltage level
+    float voltage = 27.f; // in volts
+    // current draw
+    double currentDraw = 3.84; // in amps
+    // weight
+    float weight = 10.7f; // in kg
+    // volume
+    int volume = 2; // in m^3
+    // age
+    int ageInYears = 3;
+
+    // charge
+    void charge(bool enabled = false, float maxVoltage = 28.f);
+    // discharge
+    void discharge(float currentVoltage, bool enabled = false, float maxDischargeRateAmps = 3.f);
+    // catch on fire
+    void catchOnFire(float tempLimit, float minVoltage = 2.4f);
+};
 
 /*
 Thing 8) coolant plumbing circuit
-5 properties:
-    1) number of valves (int)
-    2) efficiency percentage (float)
-    3) pump power draw in watts (float)
-    4) fan speed percentage (int)
-    5) type of coolant (std::string)
-3 things it can do:
-    1) adjust air flow by adjusting fan speed
-    2) adjust coolant flow 
-    3) leak coolant
  */
+struct CoolantPlumbingCircuit
+{
+    // number of valves
+    int numValves = 3;
+    // efficiency percentage
+    float efficiencyPercentage = 73;
+    // pump power draw
+    float pumpPowerDrawWatts = 49;
+    // fan speed percentage
+    int fanSpeedPercentage = 79;
+    // coolant type
+    std::string coolantType = "IAT";
+
+    // adjust airflow by adjusting fan speed
+    void setFanSpeed(float fanSetting, float currentSpeed);
+    // adjust coolant flow through pump speed
+    void setPumpSpeed(float pumpSetting, float currentSpeed);
+    // leak coolant
+    void leakCoolant(int numberOfCracksInPlumbing);
+};
 
 /*
 Thing 9) engine controller
-5 properties:
-    1) number of outputs (int)
-    2) highest temperature reading (float)
-    3) highest temperature channel name (std::string)
-    4) data rate in Hz (int)
-    5) output voltage (float)
 3 things it can do:
     1) command a different fuel flow amount
     2) cruise control
     3) raise an alert on the dash
  */
+struct EngineController 
+{
+    // number of outputs
+    int numOutputs = 23;
+    // highest temperature reading
+    float highestTempInput = 175.074f;
+    // highest temperature channel name
+    std::string highestTempChannel = "cylinder 1";
+    // data rate in hz
+    int dataRate = 23; // in Hz
+    // output voltatge
+    float outputVoltage = 11.86f;
+
+    // command a different fuel flow amount
+    int setFuelFlowRate(float desiredFlowRate, float currentFlowRate); // returns pump speed
+    // set cruise control
+    void setCruiseControl(float desiredSpeed, float currentSpeed);
+    // raise an alert on the dash
+    void raiseAlert(bool enabled = false);
+};
 
 /*
 Thing 10) car components
-5 properties:
-    1) drive shaft
-    2) engine
-    3) battery
-    4) coolant plumbing circuit
-    5) engine controller
-3 things it can do:
-    1) idle
-    2) impart torque on the differential
-    3) misfire spark plugs
  */
+struct CarComponents
+{
+    // drive shaft
+    DriveShaft driveShaft;
+    // engine
+    Engine engine;
+    // battery
+    Battery battery;
+    // coolant plumbing circuit
+    CoolantPlumbingCircuit plumbingCircuit;
+    // engine controller
+
+    struct Cabin
+    {
+        // number of seats
+        int numSeats = 5;
+        // sun roof
+        bool sunRoof = true;
+        // cabin temperature
+        float cabinTemperature = 76.f;
+        // number of doors
+        int numDoors = 2;
+        // number of heated seats
+        bool isConvertible = false;
+
+        // open the sun roof
+        int openSunRoof(float amount, bool enabled = false); // returns how far the window was opened
+        // turns on the seat heaters
+        void turnSeatHeatersOn(bool enabled = false, float desiredTemp = 85);
+        // roll down the windows
+        void rollDownWindows(int numberOfWindows, std::string whichWindows, int amountPercent = 100); 
+    };
+
+    // idle
+    void idleConfiguration(int rpmSetting, std::string tranmissionConfiguration = "Park");
+    // impart torque on the differential
+    float setTorque(float torqueSetting, float desiredTorque); // returns amount in n*m
+    // misfire spark plugs
+    void misfireSparkPlugs(int sparkPlugAge, int engineRunTime);
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
