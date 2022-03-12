@@ -444,6 +444,7 @@ struct CarComponents
     // coolant plumbing circuit
     CoolantPlumbingCircuit plumbingCircuit;
     // engine controller
+    EngineController engineController;
 
     struct Cabin
     {
@@ -465,6 +466,9 @@ struct CarComponents
         // roll down the windows
         void rollDownWindows(int numberOfWindows, std::string whichWindows, int amountPercent = 100); 
     };
+
+    // car cabing
+    Cabin cabin;
 
     // idle
     void idleConfiguration(int rpmSetting, std::string tranmissionConfiguration = "Park");
