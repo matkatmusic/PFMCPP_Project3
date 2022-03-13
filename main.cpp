@@ -108,9 +108,53 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
+    struct Foot
+    {
+        int numSteps;
+        int stepDistance;
+        void stepForward();
+        int stepSize();
+    };
 
+    Foot leftFoot;
+    Foot rightFoot;
 
+    void run(int howFast, bool startWithLeftFoot);
+};
+
+void Person::Foot::stepForward()
+{
+    numSteps += 1;
+}
+
+int Person::Foot::stepSize()
+{
+    return stepDistance * numSteps;
+}
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if (startWithLeftFoot && howFast >= 2) // added howFast to prevent console warning
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else 
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += rightFoot.stepSize() + leftFoot.stepSize();
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -125,298 +169,626 @@ struct CarWash
  if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
  */
 
-
-/*
-Thing 1) dog
- */
 struct Dog
 {
-    // fur color
     std::string furColor = "black";
-    // weight in kg
     float weight = 20.f;
-    // age in years
     int age = 2;
-    // number of cat roommates
     int numCatRoommates = 2;
-    // number of walks needed per day
     int walksNeededDaily = 3;
 
-    // play at the dog park
-    void playAtDogPark(bool isParkOpen, float timeSinceLastPlay, int energyLevelOutOfTen = 5);
-    // chew furniture
-    void chewFurniture(bool isHungry, bool isBored, int energyLevelOutOfTen = 5);
-    // bark at other dogs
-    void bark(bool isOtherDogOutside);
+    bool playAtDogPark(bool isParkOpen, float timeSinceLastPlay, int energyLevelOutOfTen = 5);
+    bool chewFurniture(bool isHungry, bool isBored, int energyLevelOutOfTen = 5);
+    bool bark(bool isOtherDogOutside);
 };
 
-/*
-Thing 2) synthesizer
- */
+// switched the output to bool instead of void in order for function to make more sense
+bool Dog::playAtDogPark(bool isParkOpen, float timeSinceLastPlay, int energyLevelOutOfTen)
+{
+    if (isParkOpen && timeSinceLastPlay > 300.5f && energyLevelOutOfTen > 7)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+// switched the output to bool instead of void in order for function to make more sense
+bool Dog::chewFurniture(bool isHungry, bool isBored, int energyLevelOutOfTen)
+{
+    if (isHungry && isBored && energyLevelOutOfTen > 6)
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
+}
+
+// switched the output to bool instead of void in order for function to make more sense
+bool Dog::bark(bool isOtherDogOutside)
+{
+    if (isOtherDogOutside)
+    {
+        return true;
+    }
+    return false;
+}
+
 struct Synthesizer 
 {
-    // attack fader position
     int attackFaderPosition = 1;
-    // lfo depth position
     float lfoDepthPosition = 14.6f;
-    // lfo rate in Hz
     float lfoRate = 0.02f;
-    // filter cutoff amount in dB
     float fliterCutoffAmount = 125.f;
-    // noise level
     int noiseLevel = 8;
+    float outputSignal = 0.f;
+    float clock = 0.f;
+    bool trig = false;
+    float parameterInitial;
+    bool lfoEnabled = false;
+    std::string validParameter;
+    std::string midiInfo;
 
     struct Oscillator
     {
-        // frequency in Hz
         float frequency = 440.f;
-        // Oscillator waveform
         std::string waveform = "Saw";
-        // detune setting
         float detuneSetting = -0.04f;
-        // unison setting
         int unisonSetting = 2;
-        // blend amount
         int blendAmount = 34;
+        float outputRight = 0.f;
+        float outputLeft = 0.f;
+        int tunedFrequency;
+        float parameterLevel;
+        std::string validOscParameter;
 
-        // pan the oscillator
         void pan(bool panDirection, float panAmount = 0.f);
-        // modulate another parameter
         void modulateParameter(std::string whichParameter = "Oscillator 2", float modulationDepth = 0.f);
-        // self tune the synth
-        float selfTune(float targetNote, float referenceFrequency); // returns tuned frequency
+        float selfTune(int targetNote, int referenceFrequency);
     };
 
-    // assign lfo to another parameter
-    void assignLfo(float lfoDepthPosition, float lfoRate, std::string assignedParameter, bool retrigger = false);
-    // play a sequence
+    void assignLfo(float lfoDepthPosition, float rate, std::string assignedParameter, bool retrigger = false);
     void playSequence(std::string storedSequenceSettings, bool enabled = false);
-    // lower the volume
-    int lowerVolume(int desiredLevel, int currentLevel); // returns new volume level
+    int lowerVolume(int desiredLevel, int currentLevel);
 
 };
 
-/*
-Thing 3) laptop
- */
+void Synthesizer::Oscillator::pan(bool panDirection, float panAmount)
+{
+    if (panDirection)
+    {
+        outputRight += panAmount;
+        outputLeft -= panAmount;
+    }
+    else 
+    {
+        outputRight -= panAmount;
+        outputLeft += panAmount;
+    }
+    
+}
+
+void Synthesizer::Oscillator::modulateParameter(std::string whichParameter, float modulationDepth)
+{
+    // writing the real version of parameter modulation would add a lot more parameters and subclasses and I'm not sure if that's in the scope of this assignment, so this is just a simplistic exmple
+    if (whichParameter == validOscParameter)
+    {
+        parameterLevel = modulationDepth;
+        outputRight = parameterLevel;
+        outputLeft = parameterLevel;
+    }
+}
+
+// changed frequencies to ints to make the function make more sense and prevent warnings about float comparisons
+float Synthesizer::Oscillator::selfTune(int targetNote, int referenceFrequency)
+{
+    tunedFrequency = referenceFrequency;
+    while (tunedFrequency != targetNote)
+    {
+        if (tunedFrequency < targetNote)
+        {
+            tunedFrequency += 1;
+        }
+        else
+        {
+            tunedFrequency -= 1;
+        }
+    }
+    return tunedFrequency;
+}
+
+void Synthesizer::assignLfo(float depthPosition, float rate, std::string assignedParameter, bool retrigger)
+{
+    while (lfoEnabled && assignedParameter == validParameter)
+    {
+        float increase = depthPosition / rate;
+        float parameterPosition = parameterInitial;
+        float clockInitial = clock;
+        while (clock - clockInitial > clock / rate)
+        {
+            if (retrigger && trig)
+            {
+                break;
+            }
+            else if (lfoEnabled == false)
+            {
+                break;
+            }
+            if (clock - clockInitial >= (1.f / rate) * 0.5f)
+            {
+                parameterPosition += increase;
+            }
+            else 
+            {
+                parameterPosition -= increase;
+            }
+        }
+    }
+    
+}
+
+void Synthesizer::playSequence(std::string storedSequenceSettings, bool enabled)
+{
+    if (enabled)
+    {
+        midiInfo += storedSequenceSettings;
+    }
+}
+
+int Synthesizer::lowerVolume(int desiredLevel, int currentLevel)
+{
+    while (desiredLevel != currentLevel)
+    {
+        currentLevel -= 1;
+    }
+    return currentLevel;
+}
 
 struct Laptop
 {
-    // battery level
     int batteryLevelPercentage = 85;
-    // wifi signal reception level
     float wifiSignalLevel = 3.24f;
-    // color of the laptop
     std::string color = "silver";
-    // age of computer in years
     int age = 2;
-    // number of times the computer has been dropped
     int numTimesDropped = 1;
+    std::string emailContents = "";
 
-    // adjust the display brightness
-    int adjustDisplayBrightness(int currentSetting, int desiredSetting); // returns new brightness level
-    // capture a screenshot
-    std::string captureScreenshot(bool buttonClick, bool isScreenshotAllowed = true); // returns screenshot file path
-    // send an email
+    int adjustDisplayBrightness(int currentSetting, int desiredSetting);
+    std::string captureScreenshot(bool buttonClick, bool isScreenshotAllowed = true);
     void sendEmail(std::string recipient, std::string subject, std::string emailBody = "");
 };
 
-/*
-Thing 4) refrigerator
- */
+int Laptop::adjustDisplayBrightness(int currentSetting, int desiredSetting)
+{
+    while (currentSetting != desiredSetting)
+    {
+        if (currentSetting < desiredSetting)
+        {
+            currentSetting += 1;
+        }
+        else
+        {
+            currentSetting -= 1;
+        }
+    }
+    return currentSetting;
+}
+
+std::string Laptop::captureScreenshot(bool buttonClick, bool isScreenshotAllowed)
+{
+    if (buttonClick && isScreenshotAllowed)
+    {
+        return "Capture";
+    }
+    else if (buttonClick)
+    {
+        return "Invalid";
+    }
+    else
+    {
+        return "None";
+    }
+}
+
+void Laptop::sendEmail(std::string recipient, std::string subject, std::string emailBody)
+{
+    emailContents = recipient + subject + emailBody;
+}
+
 struct Refrigerator 
 {
-    // number of vegetables inside
     int numVegetables = 20;
-    // temperature inside
     float temperatureInside = 37.45f;
-    // location within the house
     std::string locationInHouse = "kitchen";
-    // power draw in watts
-    double powerDraw = 230;
-    // time elapsed making ice
-    float minutesElapsedMakingIce = 20;
+    double powerDraw = 230.1;
+    float minutesElapsedMakingIce = 20.f;
+    bool enableDispenser = false;
+    bool storeFoodInFridge = false;
 
-    // dispense water
     void dispenseWater(bool enabled = false);
-    // store food
     void storeFood(bool isPowered = true);
-    // adjust temperature
-    float adjustTemperature(float currentTemperature, float desiredTemperature); // returns new temperature
+    int adjustTemperature(int currentTemperature, int desiredTemperature);
 };
 
-/*
-Thing 5) drive shaft
- */
+void Refrigerator::dispenseWater(bool enabled)
+{
+    if (enabled)
+    {
+        enableDispenser = true;
+    }
+    else
+    {
+        enableDispenser = false;
+    }
+}
+
+void Refrigerator::storeFood(bool isPowered)
+{
+    if (isPowered)
+    {
+        storeFoodInFridge = true;
+    }
+    else
+    {
+        storeFoodInFridge = false;
+    }
+}
+
+// changed frequencies to ints to make the function make more sense and prevent warnings about float comparisons
+int Refrigerator::adjustTemperature(int currentTemperature, int desiredTemperature)
+{
+    while (currentTemperature != desiredTemperature)
+    {
+        if (currentTemperature < desiredTemperature)
+        {
+            currentTemperature += 1;
+        }
+        else
+        {
+            currentTemperature -= 1;
+        }
+    }
+    return currentTemperature;
+}
+
 struct DriveShaft
 {
-    // material composition
     std::string materialComposition = "steel";
-    // rotations per minute
     int rotationsPerMinute = 2000;
-    // torque amount in N*m
     double torqueAmount = 450.03872;
-    // length in cm
     float length = 74.8237f;
-    // engaged with transmission
     bool engagedWithTransmission = false;
+    bool structurallyFailed = false;
 
-    // increase speed
     void increaseSpeed(float currentSpeed, float desiredSpeed, float speedLimit = 100.f);
-    // increase torque
     void increaseTorque(float torqueLevel);
-    // fail structurally
     void failStructurally(float maxLoad, float currentLoad);
 };
 
-/*
-Thing 6) engine
- */
+void DriveShaft::increaseSpeed(float currentSpeed, float desiredSpeed, float speedLimit)
+{
+    while (currentSpeed < desiredSpeed && currentSpeed < speedLimit)
+    {
+        currentSpeed += 1.5f;
+    }
+}
+
+void DriveShaft::increaseTorque(float torqueLevel)
+{
+    torqueLevel += 100.f;
+}
+
+void DriveShaft::failStructurally(float maxLoad, float currentLoad)
+{
+    if (currentLoad > maxLoad)
+    {
+        structurallyFailed = true;
+    }
+}
 
 struct Engine
 {
-    // fuel flow rate in kg/s
     float fuelFlowRate = 0.45f;
-    // cylinder arrangement pattern
     std::string cylinderPattern = "V";
-    // number of spark plug misfires
     int numSparkPlugMisfires = 2;
-    // valve pulse width percentage
+    bool sparkPlugPowerOn = false;
     int valvePulseWidthPercentage = 35;
-    // horespower generated
-    float horsepowerGenerated = 84;
+    float horsepowerGenerated = 84.f;
+    bool bypassEnabled = false;
 
-    // adjust valve timing
-    float adjustValveTiming(float currentSetting, float desiredFlowRate); // returns new timing value
-    // command spark plugs on
+    int adjustValveTiming(int currentSetting, int desiredFlowRate);
     void commandSparkPlugs(bool enabled = false);
-    // bypass airflow
     void bypassAirflow(bool enabled = false);
 };
 
-/*
-Thing 7) battery
- */
+// switched to int to prevent warnings
+int Engine::adjustValveTiming(int currentSetting, int desiredFlowRate)
+{
+    while (currentSetting != desiredFlowRate)
+    {
+        if (currentSetting < desiredFlowRate)
+        {
+            currentSetting += 1;
+        }
+        else
+        {
+            currentSetting -= 1;
+        }
+    }
+    return currentSetting;
+}
+
+void Engine::commandSparkPlugs(bool enabled)
+{
+    if (enabled)
+    {
+        sparkPlugPowerOn = true;
+    }
+}
+
+void Engine::bypassAirflow(bool enabled)
+{
+    if (enabled)
+    {
+        bypassEnabled = true;
+    }
+}
+
 struct Battery 
 {
-    // voltage level
-    float voltage = 27.f; // in volts
-    // current draw
-    double currentDraw = 3.84; // in amps
-    // weight
-    float weight = 10.7f; // in kg
-    // volume
-    int volume = 2; // in m^3
-    // age
+    float voltage = 27.f;
+    double currentDraw = 3.84;
+    float weight = 10.7f;
+    float dischargeRate;
+    int volume = 2;
     int ageInYears = 3;
+    bool chargeActive = false;
+    bool dischargeActive = false;
+    bool fire;
+    float cellTemperature;
 
-    // charge
     void charge(bool enabled = false, float maxVoltage = 28.f);
-    // discharge
     void discharge(float currentVoltage, bool enabled = false, float maxDischargeRateAmps = 3.f);
-    // catch on fire
     void catchOnFire(float tempLimit, float minVoltage = 2.4f);
 };
 
-/*
-Thing 8) coolant plumbing circuit
- */
+void Battery::charge(bool enabled, float maxVoltage)
+{
+    if (enabled && voltage < maxVoltage)
+    {
+        chargeActive = true;
+    }
+}
+
+void Battery::discharge(float currentVoltage, bool enabled, float maxDischargeRateAmps)
+{
+    while (enabled)
+    {
+        currentVoltage = voltage;
+        dischargeActive = true;
+        if (dischargeRate > maxDischargeRateAmps)
+        {
+            dischargeActive = false;
+            enabled = false;
+        }
+    }
+}
+
+void Battery::catchOnFire(float tempLimit, float minVoltage)
+{
+    if (voltage < minVoltage && cellTemperature > tempLimit)
+    {
+        fire = true;
+    }
+}
+
 struct CoolantPlumbingCircuit
 {
-    // number of valves
     int numValves = 3;
-    // efficiency percentage
-    float efficiencyPercentage = 73;
-    // pump power draw
-    float pumpPowerDrawWatts = 49;
-    // fan speed percentage
+    float efficiencyPercentage = 73.f;
+    float pumpPowerDrawWatts = 49.f;
     int fanSpeedPercentage = 79;
-    // coolant type
     std::string coolantType = "IAT";
+    bool leak = false;
 
-    // adjust airflow by adjusting fan speed
     void setFanSpeed(float fanSetting, float currentSpeed);
-    // adjust coolant flow through pump speed
     void setPumpSpeed(float pumpSetting, float currentSpeed);
-    // leak coolant
     void leakCoolant(int numberOfCracksInPlumbing);
 };
 
-/*
-Thing 9) engine controller
-3 things it can do:
-    1) command a different fuel flow amount
-    2) cruise control
-    3) raise an alert on the dash
- */
+void CoolantPlumbingCircuit::setFanSpeed(float fanSetting, float currentSpeed)
+{
+    // allow the setting to get within 1% to be more realistic with floats
+    if (currentSpeed < fanSetting - fanSetting * 0.01f)
+    {
+        currentSpeed += 0.01f;
+    }
+    else if (currentSpeed > fanSetting + fanSetting * 0.01f)
+    {
+        currentSpeed -= 0.01f;
+    }
+}
+
+void CoolantPlumbingCircuit::setPumpSpeed(float pumpSetting, float currentSpeed)
+{
+    // same logic for percentages as the function above
+    if (currentSpeed < pumpSetting - pumpSetting * 0.01f)
+    {
+        currentSpeed += 0.1f;
+    }
+    else if (currentSpeed > pumpSetting + pumpSetting * 0.01f)
+    {
+        currentSpeed -= 0.1f;
+    }
+}
+
+void CoolantPlumbingCircuit::leakCoolant(int numberOfCracksInPlumbing)
+{
+    if (numberOfCracksInPlumbing > 5)
+    {
+        leak = true;
+    }
+}
+
 struct EngineController 
 {
-    // number of outputs
     int numOutputs = 23;
-    // highest temperature reading
     float highestTempInput = 175.074f;
-    // highest temperature channel name
     std::string highestTempChannel = "cylinder 1";
-    // data rate in hz
-    int dataRate = 23; // in Hz
-    // output voltatge
+    int dataRate = 23;
     float outputVoltage = 11.86f;
+    bool alert;
+    int alertLevel;
 
-    // command a different fuel flow amount
-    int setFuelFlowRate(float desiredFlowRate, float currentFlowRate); // returns pump speed
-    // set cruise control
+    float setFuelFlowRate(float desiredFlowRate, float currentFlowRate);
     void setCruiseControl(float desiredSpeed, float currentSpeed);
-    // raise an alert on the dash
     void raiseAlert(bool enabled = false);
 };
 
-/*
-Thing 10) car components
- */
+float EngineController::setFuelFlowRate(float desiredFlowRate, float currentFlowRate)
+{
+    while (currentFlowRate < desiredFlowRate - desiredFlowRate * 0.01f || currentFlowRate > desiredFlowRate + desiredFlowRate * 0.01f)  
+        if (currentFlowRate < desiredFlowRate)
+        {
+            currentFlowRate += 0.1f;
+        }
+        else
+        {
+            currentFlowRate -= 0.1f;
+        }
+    return currentFlowRate;
+}
+
+void EngineController::setCruiseControl(float desiredSpeed, float currentSpeed)
+{
+    if (currentSpeed < desiredSpeed - desiredSpeed * 0.01f)
+    {
+        currentSpeed += 0.1f;
+    }
+    else if (currentSpeed > desiredSpeed + desiredSpeed * 0.01f)
+    {
+        currentSpeed -= 0.1f;
+    }
+}
+
+void EngineController::raiseAlert(bool enabled)
+{
+    if (enabled)
+    {
+        alert = true;
+        alertLevel = 10;
+    }
+}
+
 struct CarComponents
 {
-    // drive shaft
     DriveShaft driveShaft;
-    // engine
     Engine engine;
-    // battery
     Battery battery;
-    // coolant plumbing circuit
     CoolantPlumbingCircuit plumbingCircuit;
-    // engine controller
     EngineController engineController;
 
     struct Cabin
     {
-        // number of seats
         int numSeats = 5;
-        // sun roof
         bool sunRoof = true;
-        // cabin temperature
+        float sunRoofPosition = 100.f;
         float cabinTemperature = 76.f;
-        // number of doors
         int numDoors = 2;
-        // number of heated seats
         bool isConvertible = false;
+        int currentSeatHeaterTemp;
+        float windowPosition;
+        std::string validWindows;
 
-        // open the sun roof
-        int openSunRoof(float amount, bool enabled = false); // returns how far the window was opened
-        // turns on the seat heaters
-        void turnSeatHeatersOn(bool enabled = false, float desiredTemp = 85);
-        // roll down the windows
+        float openSunRoof(float amount, bool enabled = false);
+        void turnSeatHeatersOn(bool enabled = false, int desiredTemp = 85);
         void rollDownWindows(int numberOfWindows, std::string whichWindows, int amountPercent = 100); 
     };
 
-    // car cabing
     Cabin cabin;
+    bool misfire = false;
 
-    // idle
     void idleConfiguration(int rpmSetting, std::string tranmissionConfiguration = "Park");
-    // impart torque on the differential
-    float setTorque(float torqueSetting, float desiredTorque); // returns amount in n*m
-    // misfire spark plugs
+    float setTorque(float torqueSetting, float desiredTorque);
     void misfireSparkPlugs(int sparkPlugAge, int engineRunTime);
 };
+
+float CarComponents::Cabin::openSunRoof(float amount, bool enabled)
+{
+    if (enabled)
+    {
+        sunRoofPosition -= amount;
+    }
+    return sunRoofPosition;
+}
+
+void CarComponents::Cabin::turnSeatHeatersOn(bool enabled, int desiredTemp)
+{
+    while (enabled)
+    {
+        if (desiredTemp < currentSeatHeaterTemp)
+        {
+            currentSeatHeaterTemp -= 1;
+        }
+        else 
+        {
+            currentSeatHeaterTemp += 1;
+        }
+    }
+}
+
+void CarComponents::Cabin::rollDownWindows(int numberOfWindows, std::string whichWindows, int amountPercent)
+{
+    while (numberOfWindows != 0 && whichWindows == validWindows)
+    {
+        windowPosition -= (amountPercent / 100) * windowPosition;
+        numberOfWindows -= 1;
+    }
+}
+
+void CarComponents::idleConfiguration(int rpmSetting, std::string tranmissionConfiguration)
+{
+    if (tranmissionConfiguration == "Park")
+    {
+        rpmSetting = 2400;
+    }
+    else if (tranmissionConfiguration == "Drive")
+    {
+        rpmSetting = 2500;
+    }
+    else 
+    {
+        rpmSetting = 2200;
+    }
+}
+
+float CarComponents::setTorque(float torqueSetting, float desiredTorque)
+{
+    while (desiredTorque < torqueSetting - torqueSetting * 0.01f || desiredTorque > torqueSetting + torqueSetting * 0.01f )
+    {
+        if (desiredTorque< torqueSetting)
+        {
+            torqueSetting += 0.1f;
+        }
+        else
+        {
+            torqueSetting -= 0.1f;
+        }
+    }
+    return torqueSetting;
+}
+
+void CarComponents::misfireSparkPlugs(int sparkPlugAge, int engineRunTime)
+{
+    if (sparkPlugAge > 4 && engineRunTime > 2000)
+    {
+        misfire = true;
+    }
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
