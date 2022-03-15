@@ -155,60 +155,7 @@ Part 1b Assignment: 1 Step
 */
 
 /*
-Thing 1) Bicycle
-5 properties:
-    1) number of wheels (int)
-    2) miles covered by month (float)
-    3) number of punctures suffered (int) 
-    4) amount of fitness gained (double)
-    5) number of gears fitted (int)
-3 things it can do:
-    1) travel from point a to point b
-    2) beat busy london traffic
-    3) use cycle paths
- */
 
-/*
-Thing 2) Coffee Machine
-5 properties:
-    1) number of coffees made per week (int)
-    2) amount of water needed (float)
-    3) number of steam wands (int)
-    4) adjustable temperature control (bool)  
-    5) number of groupheads per machine (int)
-3 things it can do:
-    1) will steam milk
-    2) brew espresso 
-    3) dispense hot water
- */
-
-/*
-Thing 3) Supermarket
-5 properties:
-    1) number of isles  (int)
-    2) amount of frozen food per store (int)
-    3) number of tills (int)
-    4) includes self service till (bool)
-    5) number of fresh products  (double)
-3 things it can do:
-    1) support healthy diet
-    2) offer budget alternatives
-    3) feed a family
- */
-
-/*
-Thing 4) Toaster 
-5 properties:
-    1) number of volts needed for power (float)
-    2) number of bread racks (int)
-    3) amount of toasting control (float)
-    4) number of buttons on control panel (init)
-    5) defrost function (bool)
-3 things it can do:
-    1) defrost and toast bread
-    2) collect crumbs
-    3) offer snacking option
- */
 
  /*
 Part 1c - Lesson
@@ -280,18 +227,6 @@ Define an object that is made of 5 sub-objects.
 */
 
 /*
-Thing 10) Synth    
-5 properties:
-    1) display
-    2) keyboard
-    3) patch storage (memory)
-    4) channel outputs
-    5) global tune function
-3 things it can do:
-    1) make sound
-    2) sample audio
-    3) create melody
- */
 
 /*
 Part 1d - Lesson
@@ -385,74 +320,6 @@ Step 3 is written below UDTs 5 - 9
 */
 
 /*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 /*
 ===================
@@ -471,9 +338,144 @@ MOVE THEM BELOW this block comment and put them in numerical order
 After you have MOVED your 10 UDTs, send me a DM with your pull request link.
 I will review the pseudo-code that you have written.
 */
+/*
+Thing 1) Bicycle
+5 properties:
+    1) Number of wheels (int)
+    2) Miles covered by month (float)
+    3) Number of punctures suffered (int) 
+    4) Amount of fitness gained (double)
+    5) Number of gears fitted (int)
+3 things it can do:
+    1) Travel from point a to point b
+    2) Beat busy london traffic
+    3) Use cycle paths
 
+/*
+Thing 2) Coffee Machine
+5 properties:
+    1) Number of coffees made per week (int)
+    2) Amount of water needed (float)
+    3) Number of steam wands (int)
+    4) Adjustable temperature control (bool)  
+    5) Number of groupheads per machine (int)
+3 things it can do:
+    1) Will steam milk
+    2) Brew espresso 
+    3) Dispense hot water
+ */
 
+/*
+Thing 3) Supermarket
+5 properties:
+    1) Number of isles  (int)
+    2) Amount of frozen food per store (int)
+    3) Number of tills (int)
+    4) Includes self service till (bool)
+    5) Number of fresh products  (double)
+3 things it can do:
+    1) Support healthy diet
+    2) Offer budget alternatives
+    3) Feed a family
+ */
 
+/*
+Thing 4) Toaster 
+5 properties:
+    1) Number of volts needed for power (float)
+    2) Number of bread racks (int)
+    3) Amount of toasting control (float)
+    4) Number of buttons on control panel (init)
+    5) Defrost function (bool)
+3 things it can do:
+    1) Defrost and toast bread
+    2) Collect crumbs
+    3) Offer snacking option
+ */
+
+/*
+Thing 5) Remote Control
+5 properties:
+    1) Speed Control (int)    
+    2) RF reciever (double)  
+    3) Steerig Control (float)
+    4) Power On/Off Switch (bool)
+    5) Steering Trim Control (float)
+3 things it can do:
+    1) Controls RC Car  
+    2) Sends RF frequency to motor
+    3) Controls direction
+ */
+
+/*
+Thing 6) Battery Pack
+5 properties:
+    1) Battery capacity (int)
+    2) Temperature control (float)
+    3) Voltage output (double)
+    4) Control over charge capacity (int)
+    5) Battery health monitor (char)
+3 things it can do:
+    1) Powers Vehicle
+    2) Sends low power signal
+    3) Monitors charging cycle
+ */
+
+/*
+Thing 7) Wheels
+5 properties:
+    1) Number of spokes (int)
+    2) Strength (int)
+    3) Lightweight (float)
+    4) Can spin (bool)
+    5) Durability (int)
+3 things it can do:
+    1) Determine grip
+    2) Use momentum
+    3) Increase speed
+ */
+
+/*
+Thing 8) Suspension
+5 properties:
+    1) Compression control (double)
+    2) Rebound amount (char)
+    3) Spring length (int)
+    4) Lockout control (bool)
+    5) Canister capacity (float)
+3 things it can do:
+    1) Dampen surface feel
+    2) Protect wheels
+    3) Offer comfort
+ */
+
+/*
+Thing 9) Electric Motor
+5 properties:
+    1) Drive shaft (bool)
+    2) Linear power curve (float)
+    3) Torque control (float)
+    4) Rated voltage amount (double)
+    5) Number of magnets (int)
+3 things it can do:
+    1) Convert electrical power to mechanical
+    2) Control power transfer to wheels
+    3) Allow RC Car to move
+ */
+
+/*
+Thing 10) RC Car        
+5 properties:
+    1) Remote control
+    2) Battery pack
+    3) Wheels
+    4) Suspension
+    5) Motor
+3 things it can do:
+    1) move from a to b
+    2) race other cars
+    3) attempt stunts
+ */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
