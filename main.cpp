@@ -199,7 +199,29 @@ Thing 1) Bicycle
     2) Beat busy london traffic
     3) Use cycle paths
 
+
+struct Bicyle
+{
+    //number of wheels (int)
+    int numOfWheels = 4;
+    //miles covered by month (float)
+    float milesCoveredInMonth = 4.2f
+    //number of punctures suffered (int) 
+    int puncSuffered = 1;
+    //amount of fitness gained (double)
+    double fitnessGained = 10;
+    //number of gears fitted (int)
+    int numOfGears = 11;
+    //travel from point a to point b
+    void travelFromAToB;
+    //beat busy london traffic
+    bool beatLondonTraffic = true;
+    //use cycle paths
+    bool UseCyclePaths = true;
+};
 /*
+
+
 Thing 2) Coffee Machine
 5 properties:
     1) Number of coffees made per week (int)
@@ -211,6 +233,18 @@ Thing 2) Coffee Machine
     1) Will steam milk
     2) Brew espresso 
     3) Dispense hot water
+
+struct CoffeeMachine
+{
+    //number of coffees made per week
+    //amount of water needed
+    //number of steam wands
+    //adjustable temperature control
+    //number of groupheads per machine
+    //will steam milk
+    //brew espresso
+    //dispense hot water
+};
  */
 
 /*
@@ -225,6 +259,18 @@ Thing 3) Supermarket
     1) Support healthy diet
     2) Offer budget alternatives
     3) Feed a family
+
+struct Supermarket
+{
+    //number of isles
+    //amount of frozen food per store
+    //number of tills
+    //includes self service till
+    //number of fresh products
+    //supper healthy diet
+    //offer budget alternatives
+    //feed a family
+};
  */
 
 /*
@@ -239,6 +285,18 @@ Thing 4) Toaster
     1) Defrost and toast bread
     2) Collect crumbs
     3) Offer snacking option
+
+struct Toaster
+{
+    //number of volts needed for power
+    //number of bread racks
+    //amount of toasting control
+    //number of buttons on control panel
+    //defrost function
+    //defrost and toast bread
+    //collect crumbs
+    //offer snacking option
+};
  */
 
 /*
@@ -253,6 +311,18 @@ Thing 5) Remote Control
     1) Controls RC Car  
     2) Sends RF frequency to motor
     3) Controls direction
+
+struct RemoteControl
+{
+    //speed control
+    //rf reciever
+    //steering control    
+    //power on/off switch
+    //steering trim control
+    //controls rc car
+    //sends rf frequency to motor
+    //controls direction
+};
  */
 
 /*
@@ -267,6 +337,18 @@ Thing 6) Battery Pack
     1) Powers Vehicle
     2) Sends low power signal
     3) Monitors charging cycle
+
+struct BatteryPack
+{
+    //battery capacity
+    //temperature control
+    //voltage output
+    //control over charge capacity
+    //battery health monitor
+    //powers vehicle
+    //sends low power signal
+    //monitors charging cycle
+};
  */
 
 /*
@@ -281,6 +363,18 @@ Thing 7) Wheels
     1) Determine grip
     2) Use momentum
     3) Increase speed
+
+struct Wheels
+{
+    //number of spoked
+    //strength
+    //lightweight
+    //can spin
+    //durability
+    //determine grip
+    //use momentum
+    //increase speed
+};
  */
 
 /*
@@ -295,6 +389,17 @@ Thing 8) Suspension
     1) Dampen surface feel
     2) Protect wheels
     3) Offer comfort
+
+struct Suspension
+{
+    //compression control
+    //rebound amount
+    //spring length
+    //lockout control
+    //canister capicity
+    //dampen surface feel
+    //offer comfort
+};
  */
 
 /*
@@ -309,6 +414,18 @@ Thing 9) Electric Motor
     1) Convert electrical power to mechanical
     2) Control power transfer to wheels
     3) Allow RC Car to move
+
+struct ElectricMotor
+{
+    //drive shaft
+    //linear power curve
+    //torque control
+    //rated voltage amount
+    //number of magnets
+    //convert electrical power to mechanical
+    //control power transfer to wheels
+    //allow rc car to move
+};
  */
 
 /*
@@ -323,6 +440,18 @@ Thing 10) RC Car
     1) move from a to b
     2) race other cars
     3) attempt stunts
+
+stuct RCCar
+{
+    //remote control    
+    //battery pack
+    //wheels
+    //suspension
+    //motor
+    //move from a to b 
+    //race other cars
+    //attempt stunts
+};
  */
 
 /*
