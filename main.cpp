@@ -53,51 +53,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) volume controls 
+        4) turn signal controls
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) turn down the radio
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) Speedometer
+        2) Fuel gauge
+        3) Odometer
+        4) Turn signal indicators
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) view current speed
+        2) view how much fuel is left
+        3) view which direction the car is moving
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) air quality control
+        2) heater
+        3) A/C
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) set climate control on auto
+        2) turn on heater
+        3) turn off A/C
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) radio
+        2) car rearview
+        3) time
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) set radio channels
+        2) activate parking assistance
+        3) set time
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) headrest 
+        2) seatbelt
+        3) base
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) lean back
+        2) sit 
 */
 
 /*
@@ -154,61 +154,6 @@ Part 1b Assignment: 1 Step
         'int float double bool char std::string'.
 */
 
-/*
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
  /*
 Part 1c - Lesson
@@ -278,20 +223,6 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 */
-
-/*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 /*
 Part 1d - Lesson
@@ -385,76 +316,6 @@ Step 3 is written below UDTs 5 - 9
 */
 
 /*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
 ===================
 Part 1d assignment: Step 3
 ===================
@@ -472,7 +333,145 @@ After you have MOVED your 10 UDTs, send me a DM with your pull request link.
 I will review the pseudo-code that you have written.
 */
 
+/*
+Thing 1) Cat
+5 properties:
+    1) number of ears  (int)
+    2) its name (std::string)
+    3) amount of daily food intake (float)
+    4) color of its fur (std::string)
+    5) length of its tail (double)
+3 things it can do:
+    1) it can scratch furniture
+    2) it can make noises
+    3) it can sleep
+ */
 
+/*
+Thing 2) Range
+5 properties:
+    1) number of racks in the oven (int)
+    2) maximum temperature its oven can reach (int)
+    3) its fuel type (std::string)
+    4) number of cooktops (int)
+    5) its width and height (float)
+3 things it can do:
+    1) bake cookies 
+    2) heat up food
+    3) boil water
+ */
+
+/*
+Thing 3) shopping cart
+5 properties: 
+    1) its material (std::string)
+    2) number of wheels (int)
+    3) color of its handle (std::string)
+    4) its width and height (float)
+    5) which store it belongs to (std::string)
+3 things it can do:
+    1) carries groceries 
+    2) it can roll down a hill
+    3) can be parked in a cart corral 
+ */
+
+/*
+Thing 4) wind
+5 properties:
+    1) speed (double)
+    2) direction (std::string)
+    3) its definition (std:: string)
+    4) its cause (std:: string)
+    5) its use (std:: string)
+3 things it can do:
+    1) it transports seeds
+    2) it turns wind turbines 
+    3) it helps birds travel 
+ */
+
+/*
+Thing 5) wings
+5 properties:
+    1) flexibility in ft - can flex 26.25ft before they fail (float)
+    2) amount of fuel each wing carries in gal (int)
+    3) number of ailerons on the rear of the wings (int)
+    4) number of engines attached to the lower side of the wings (int)
+    5) wingspan  in ft  (int)
+3 things it can do:
+    1) generate lift 
+    2) reduce drag
+    3) permit lower landing speed 
+ */
+
+/*
+Thing 6) landing gear
+5 properties:
+    1) diameter of each wheel (float)
+    2) number of wheels (int)
+    3) weight of the nose landing gear (float)
+    4) number of the four main landing gear mechanisms (int)
+    5) pressure of the tires (float)
+3 things it can do:
+    1) dissipate the kinetic energy of landing impact
+    2) prevent the fuselage from hitting the ground
+    3) provide support during takeoff
+ */
+
+/*
+Thing 7) tail
+5 properties:
+    1) weight of lower rudder (float)
+    2) length of lower rudder (float )
+    3) things its auxiliary power unit can do (std::string)
+    4) weight of upper rudder (float)
+    5) height of upper rudder (float)
+3 things it can do:
+    1) its small engine powers the jet's electrical when on the ground
+    2) its power unit powers the air-conditioning systems when on the ground
+    3) its rudder section helps turn the airplane from right to left in flight
+ */
+
+/*
+Thing 8) passenger cabin
+5 properties:
+    1) number of seats (int)
+    2) material of seat cover (std::string)
+    3) number of toilets (int)
+    4) weight of carry-on luggage (float)
+    5) aisle width (float)
+3 things it can do:
+    1) seats passengers
+    2) provides entertianment system
+    3) provides waste removal system
+ */
+
+/*
+Thing 9) fuselage
+5 properties:
+    1) thickness of fuselage wall in in (float)
+    2) weight of exterior paint in lbs (int)
+    3) its material (std::string)
+    4) diameter of the fuselage
+    5) weight of the fuselage 
+3 things it can do:
+    1) it gives the jet its structure
+    2) it provides heat insulation
+    3) it provides sound insulation 
+ */
+
+/*
+Thing 10) jumbo jet
+5 properties:
+    1) wings
+    2) landing gear
+    3) tail
+    4) passenger cabin
+    5) fuselage
+3 things it can do:
+    1) it can transport passengers
+    2) it can fly
+    3) it can carry cargo
+ */
 
 
 /*
