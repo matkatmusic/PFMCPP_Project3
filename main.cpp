@@ -200,7 +200,29 @@ Thing 1) Cat
     2) it can make noises
     3) it can sleep
  */
+struct Cat
+{
+// 1) number of ears  (int)
+int catEars = 2;
+// 2) its name (std::string)
+std::string catName = "Fluffers";
+// 3) amount of daily food intake (float)
+float dailyFoodIntake = 1.4f;
+// 4) color of its fur (std::string)
+std::string furColor = "brown";
+ // 5) length of its tail (double)
+double tailLength = 5.3432;
 
+struct Mittens 
+{
+int birthYear = 2020;
+bool isNice = false;
+};
+
+void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
+void makeNoise(std::string noise = "meow", bool foodBowlEmpty = true);
+bool sleep(bool nightTime = false, float horusOfSleep = 5.2f);
+};
 /*
 Thing 2) Range
 5 properties:
@@ -214,7 +236,31 @@ Thing 2) Range
     2) heat up food
     3) boil water
  */
+struct Range
+{
+// 1) number of racks in the oven (int)
+int numOfRack = 3;
+// 2) maximum temperature its oven can reach (int)
+int maxTemp = 450;
+// 3) its fuel type (std::string)
+std::string fuelType = "gas";
+// 4) number of cooktops (int)
+int numOfTops = 4;
+// 5) its width (float)
+int width = 36;
 
+struct myRange 
+{
+std::string lastRepair = "Y1999";
+};
+
+// 1) bake cookies 
+void bakeCookies ( int numOfTray = 3, int numOfCookiesPerTray = 8);
+// 2) heat up food
+void heatFood (bool useCookTop = true, int numOfMins = 12);
+// 3) boil water
+void boilWater (int waterInLiters = 1, float timeToBoil = 13.34f);
+};
 /*
 Thing 3) shopping cart
 5 properties: 
