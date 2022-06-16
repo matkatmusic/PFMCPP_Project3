@@ -254,7 +254,7 @@ struct Range
     std::string lastRepair = "Y1999";
     };
 
-// 1) bake cookies 
+    // 1) bake cookies 
     void bakeCookies ( int numOfTray = 3, int numOfCookiesPerTray = 8);
     // 2) heat up food
     void heatFood (bool useCookTop = true, int numOfMins = 12);
@@ -274,6 +274,31 @@ Thing 3) shopping cart
     2) it can roll down a hill
     3) can be parked in a cart corral 
  */
+struct shoppingCart 
+{
+    // 1) its material (std::string)
+    std::string cartMaterial = "al";
+    // 2) number of wheels (int)
+    int numWheels = 4;
+    // 3) color of its handle (std::string)
+    std::string colorHandle = "red";
+    // 4) its width (float)
+    float cartWidth = 24.1f;
+    // 5) which store it belongs to (std::string)
+    std::string cartStore = "Albertsons";
+
+    struct myCart
+    {
+    std::string storeCartBelongsTo = "Shaws";
+    };
+
+    // 1) carries groceries 
+    void carryGrocery (bool badWheels = false, float weightLimit =  40.2f);
+    // 2) it can roll down a hill
+    void cartRollsDown (bool steepHill = false, float velocity = 30.2f);
+    // 3) can be parked in a cart corral 
+    bool cartParked (std::string cartLocation = "corral", bool cartMoves = false);
+};
 
 /*
 Thing 4) wind
