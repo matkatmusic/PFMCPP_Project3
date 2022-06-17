@@ -259,7 +259,7 @@ struct Range
     // 3) boil water
     int timeNeededToBoilWater (int waterInLiters, bool coldWater);
 
-    myRange myLatestRange;
+    myRange myFirstRange;
 };
 /*
 Thing 3) shopping cart
