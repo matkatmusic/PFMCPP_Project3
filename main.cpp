@@ -314,6 +314,33 @@ Thing 4) wind
     3) it helps birds travel 
  */
 
+struct wind
+{
+    // 1) speed (float)
+    double windSpeed = 3.4234898;
+    // 2) direction (std::string)
+    std::string windDirection = "North";
+    // 3) its definition (std:: string)
+    std::string windDefinition = "movement in air molecules";
+    // 4) its cause (std:: string)
+    std::string windCause = "difference in gas density";
+    // 5) its use (std:: string)
+    std::string windUse = "wind energy";
+
+    struct tomorrowForecast 
+    {
+    std::string windDirection = "North East";
+    };
+
+    // 1) it transports seeds
+     void windTransportSeeds (int numSeed = 4, float windGust = 3.42f);
+    // 2) it turns wind turbines 
+     void windTurnTurbines (std::string windDirection = "North", bool turnTurbine = true, float windGust = 34.2f);
+    // 3) it helps birds travel 
+     void windHelpBirdTravel (std::string windDirection = "North", bool birdFly = true, float windGust = 34.2f);
+
+}; 
+
 /*
 Thing 5) wings
 5 properties:
@@ -327,6 +354,32 @@ Thing 5) wings
     2) reduce drag
     3) permit lower landing speed 
  */
+struct planeWings  
+{
+    // 1) flexibility in ft - can flex 26.25ft before they fail (float)
+    float flex = 25.3f;
+    // 2) amount of fuel each wing carries in gal (int)
+    int fuelCarried = 23;
+    // 3) number of ailerons on the rear of the wings (int)
+    int numOfAilerons = 4;
+    // 4) number of engines attached to the lower side of the wings (int)
+    int numEngines = 4;
+    // 5) wingspan  in ft  (float)
+    float wingSpan = 195.3f;
+
+    struct jumboJet 
+    {
+    std::string model = "747";
+    };
+
+    // 1) generate lift 
+    void generateLift (bool planeFly = true, std::string windDrection = "East");
+    // 2) reduce drag
+    void reduceDrag  (float windGust = 80.23f);
+    // 3) permit lower landing speed 
+    bool landingSuccess (bool landed =  true, float landingSpeed = 30.2f);
+
+};
 
 /*
 Thing 6) landing gear
@@ -341,6 +394,32 @@ Thing 6) landing gear
     2) prevent the fuselage from hitting the ground
     3) provide support during takeoff
  */
+struct landingGear
+{
+    // 1) diameter of each wheel (float)
+    float wheelDiameter = 3.21f;
+    // 2) number of wheels (int)
+    int numWheels = 8;
+    // 3) weight of the nose landing gear (float)
+    float weightOfNose = 34.2f;
+    // 4) number of the four main landing gear mechanisms (int)
+    int numMainLandingGear  = 16;
+    // 5) pressure of the tires (float)
+    float pressureTire = 200.1f;
+
+     struct jumboJet 
+    {
+    std::string model = "747";
+    int additionalLandingGear = 4;
+    };
+
+    // 1) dissipate the kinetic energy of landing impact
+    void reduceLandingImpact (float tirePressure = 250.2f);
+    // 2) prevent the fuselage from hitting the ground
+    void preventFuselageHittingGround (bool fuselageHitGround = false);
+    // 3) provide support during takeoff
+    void supportDuringTakeOff (bool takeOff = true);
+};
 
 /*
 Thing 7) tail
@@ -355,7 +434,32 @@ Thing 7) tail
     2) its power unit powers the air-conditioning systems when on the ground
     3) its rudder section helps turn the airplane from right to left in flight
  */
+struct planeTail 
+{
+    // 1) weight of lower rudder (float)
+    float weightLowerRudder =  2400.1f;
+    // 2) length of lower rudder (float )
+    float lengthOfLowerRudder = 421.5f;
+    // 3) things its auxiliary power unit can do (std::string)
+    std::string auxPower = "helps plane turn";
+    // 4) weight of upper rudder (float)
+    float weigtUpperRudder = 2400.1f;
+    // 5) height of upper rudder (float)
+    float heightUpperRudder = 421.5f;
 
+     struct jumboJet 
+    {
+    std::string model = "747";
+    bool rudderHasExtraFlap = false;
+    };
+
+    // 1) its small engine powers the jet's electrical when on the ground
+    void smallEngineRuns (bool electricalsOn = true);
+    // 2) its power unit powers the air-conditioning systems when on the ground
+    void powerUnitRuns (bool airConditioningOn = true);
+    // 3) its rudder section helps turn the airplane from right to left in flight
+    void rudderHelpsPlaneTurn (bool lowerRudderOpen = true);
+};
 /*
 Thing 8) passenger cabin
 5 properties:
@@ -369,6 +473,32 @@ Thing 8) passenger cabin
     2) provides entertianment system
     3) provides waste removal system
  */
+struct passengerCabin
+{
+    // 1) number of seats (int)
+    int numSeats = 416;
+    // 2) material of seat cover (std::string)
+    std::string seatMaterial = "leather";
+    // 3) number of toilets (int)
+    int numToilets = 4;
+    // 4) weight of carry-on luggage (float)
+    float weightCarryOn = 1;
+    // 5) aisle width (float)
+    float aisleWidth = 42.1f;
+
+    struct jumboJet 
+    {
+    std::string model = "747";
+    bool passengersOnBoard = true;
+    };
+
+    // 1) seats passengers
+    void jetSeatsPassengers (int numPassengers = 200);
+    // 2) provides entertianment system
+    void entertainmentSystemRunning (int numOfScreens = 450);
+    // 3) provides waste removal system
+    void wasteRemovalSystemRunning (int numOfToilets = 4);
+};
 
 /*
 Thing 9) fuselage
@@ -383,6 +513,32 @@ Thing 9) fuselage
     2) it provides heat insulation
     3) it provides sound insulation 
  */
+struct fuselage
+{
+    // 1) thickness of fuselage wall in in (float)
+    float thicknessFuselageWall = 24.2f;
+    // 2) weight of exterior paint in lbs (int)
+    int weightExteriorPaint = 4233;
+    // 3) its material (std::string)
+    std::string planeMaterial = "aluminum";
+    // 4) diameter of the fuselage
+    float diameterFuselage = 523.2f;
+    // 5) weight of the fuselage 
+    float weightFuselage = 234.4f;
+
+    struct jumboJet 
+    {
+    std::string model = "747";
+    std::string fuselageShape  = "round";
+    };
+
+    // 1) it gives the jet its structure
+    void keepPlaneStructure (float fuselageDiameter = 234.3f);
+    // 2) it provides heat insulation
+    void keepsHeatOut (std::string fuselageMaterial = "material");
+    // 3) it provides sound insulation 
+    void keepSoundProof (std::string fuselageMaterial = "material");
+};
 
 /*
 Thing 10) jumbo jet
@@ -397,6 +553,31 @@ Thing 10) jumbo jet
     2) it can fly
     3) it can carry cargo
  */
+struct jumboJet
+{
+    // 1) wings
+    int numWings = 2;
+    // 2) landing gear
+    int numLandingGear = 16;
+    // 3) tail
+    std::string tailUse = "keeps aux power unit";
+    // 4) passenger cabin
+    int numPassengerSeats = 450;
+    // 5) fuselage
+    float fuselageDiameter = 242.34f;
+
+    struct model747 
+    {
+    bool currentlyInUse = true;
+    };
+
+    // 1) it can transport passengers
+    void transportPassenger();
+    // 2) it can fly
+    void planeFly();
+    // 3) it can carry cargo
+    void carryCargo();
+};
 
 
 /*
