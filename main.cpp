@@ -215,8 +215,8 @@ struct Cat
 
     struct Mittens 
     {
-    int birthYear = 2020;
-    bool isNice = false;
+        int birthYear = 2020;
+        bool isNice = false;
     };
 
     void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
@@ -251,7 +251,7 @@ struct Range
 
     struct myRange 
     {
-    std::string lastRepair = "Y1999";
+        std::string lastRepair = "Y1999";
     };
 
     // 1) bake cookies 
@@ -289,7 +289,7 @@ struct shoppingCart
 
     struct myCart
     {
-    std::string storeCartBelongsTo = "Shaws";
+        std::string storeCartBelongsTo = "Shaws";
     };
 
     // 1) carries groceries 
@@ -329,7 +329,7 @@ struct wind
 
     struct tomorrowForecast 
     {
-    std::string windDirection = "North East";
+        std::string windDirection = "North East";
     };
 
     // 1) it transports seeds
@@ -369,7 +369,7 @@ struct planeWings
 
     struct jumboJet 
     {
-    std::string model = "747";
+        std::string model = "747";
     };
 
     // 1) generate lift 
@@ -409,8 +409,8 @@ struct landingGear
 
      struct jumboJet 
     {
-    std::string model = "747";
-    int additionalLandingGear = 4;
+        std::string model = "747";
+        int additionalLandingGear = 4;
     };
 
     // 1) dissipate the kinetic energy of landing impact
@@ -449,8 +449,8 @@ struct planeTail
 
      struct jumboJet 
     {
-    std::string model = "747";
-    bool rudderHasExtraFlap = false;
+        std::string model = "747";
+        bool rudderHasExtraFlap = false;
     };
 
     // 1) its small engine powers the jet's electrical when on the ground
@@ -488,8 +488,8 @@ struct passengerCabin
 
     struct jumboJet 
     {
-    std::string model = "747";
-    bool passengersOnBoard = true;
+        std::string model = "747";
+        bool passengersOnBoard = true;
     };
 
     // 1) seats passengers
@@ -528,8 +528,8 @@ struct fuselage
 
     struct jumboJet 
     {
-    std::string model = "747";
-    std::string fuselageShape  = "round";
+        std::string model = "747";
+        std::string fuselageShape  = "round";
     };
 
     // 1) it gives the jet its structure
@@ -568,7 +568,7 @@ struct jumboJet
 
     struct model747 
     {
-    bool currentlyInUse = true;
+        bool currentlyInUse = true;
     };
 
     // 1) it can transport passengers
