@@ -189,16 +189,6 @@ struct CarWash //                                   1) define an empty struct fo
 
 /*
 Thing 1) Cat
-5 properties:
-    1) number of ears  (int)
-    2) its name (std::string)
-    3) amount of daily food intake (float)
-    4) color of its fur (std::string)
-    5) length of its tail (double)
-3 things it can do:
-    1) it can scratch furniture
-    2) it can make noises
-    3) it can sleep
  */
 struct Cat
 {
@@ -217,31 +207,30 @@ struct Cat
     {
         int birthYear = 2020;
         bool isNice = false;
+        int numLegs = 4;
+        int numWhiskers = 20;
+        std::string catBreed = "Tabby";
+
+        void feedMittens(float singlePortion, bool catHungry);
+        void petMittens(bool catAffectionate, float minutesToPet);
+        int milesMittensTravelsDaily(bool rainyWeather, float avgCatTravels = 20.f);
     };
 
     void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
     void makeNoise(std::string noise = "meow", bool foodBowlEmpty = true);
-    bool sleep(bool nightTime = false, float horusOfSleep = 5.2f);
+    bool sleep(bool nightTime);
+
+    Mittens mittensJunior; 
 };
 /*
 Thing 2) Range
-5 properties:
-    1) number of racks in the oven (int)
-    2) maximum temperature its oven can reach (int)
-    3) its fuel type (std::string)
-    4) number of cooktops (int)
-    5) its width and height (float)
-3 things it can do:
-    1) bake cookies 
-    2) heat up food
-    3) boil water
  */
 struct Range
 {
     // 1) number of racks in the oven (int)
     int numOfRack = 3;
     // 2) maximum temperature its oven can reach (int)
-    int maxTemp = 450;
+    int maxTempOven = 450;
     // 3) its fuel type (std::string)
     std::string fuelType = "gas";
     // 4) number of cooktops (int)
@@ -252,6 +241,15 @@ struct Range
     struct myRange 
     {
         std::string lastRepair = "Y1999";
+        std::string rangeColor = "chrome";
+        int howOld = 40;
+        float height = 5.f;
+        bool isElectric = false;
+
+        float measureFuelEfficiency (float outputPerMin, bool aboveAverage);
+        int numOfPurchasedLastYear (int numOfBuyers, float satisfactionRating);
+        void repairRange (std::string brand, int numRepairTechiniciansAvaialbe = 2);
+        
     };
 
     // 1) bake cookies 
@@ -259,25 +257,17 @@ struct Range
     // 2) heat up food
     void heatFood (bool useCookTop = true, int numOfMins = 12);
     // 3) boil water
-    void boilWater (int waterInLiters = 1, float timeToBoil = 13.34f);
+    int timeNeededToBoilWater (int waterInLiters, bool coldWater);
+
+    myRange myLatestRange;
 };
 /*
 Thing 3) shopping cart
-5 properties: 
-    1) its material (std::string)
-    2) number of wheels (int)
-    3) color of its handle (std::string)
-    4) its width and height (float)
-    5) which store it belongs to (std::string)
-3 things it can do:
-    1) carries groceries 
-    2) it can roll down a hill
-    3) can be parked in a cart corral 
  */
 struct shoppingCart 
 {
     // 1) its material (std::string)
-    std::string cartMaterial = "al";
+    std::string cartMaterial = "aluminum";
     // 2) number of wheels (int)
     int numWheels = 4;
     // 3) color of its handle (std::string)
@@ -287,33 +277,17 @@ struct shoppingCart
     // 5) which store it belongs to (std::string)
     std::string cartStore = "Albertsons";
 
-    struct myCart
-    {
-        std::string storeCartBelongsTo = "Shaws";
-    };
-
     // 1) carries groceries 
     void carryGrocery (bool badWheels = false, float weightLimit =  40.2f);
     // 2) it can roll down a hill
-    void cartRollsDown (bool steepHill = false, float velocity = 30.2f);
+    void cartRollsDown (bool steepHill, float velocity = 30.2f);
     // 3) can be parked in a cart corral 
     bool cartParked (std::string cartLocation = "corral", bool cartMoves = false);
 };
 
 /*
 Thing 4) wind
-5 properties:
-    1) speed (double)
-    2) direction (std::string)
-    3) its definition (std:: string)
-    4) its cause (std:: string)
-    5) its use (std:: string)
-3 things it can do:
-    1) it transports seeds
-    2) it turns wind turbines 
-    3) it helps birds travel 
  */
-
 struct wind
 {
     // 1) speed (float)
@@ -327,32 +301,17 @@ struct wind
     // 5) its use (std:: string)
     std::string windUse = "wind energy";
 
-    struct tomorrowForecast 
-    {
-        std::string windDirection = "North East";
-    };
-
     // 1) it transports seeds
      void windTransportSeeds (int numSeed = 4, float windGust = 3.42f);
     // 2) it turns wind turbines 
-     void windTurnTurbines (std::string windDirection = "North", bool turnTurbine = true, float windGust = 34.2f);
+     void windTurnTurbines (std::string windDirection, bool turnTurbine = true, float windGust = 34.2f);
     // 3) it helps birds travel 
-     void windHelpBirdTravel (std::string windDirection = "North", bool birdFly = true, float windGust = 34.2f);
+     void windHelpBirdTravel (std::string windDirection, bool birdFly, float windGust = 34.2f);
 
 }; 
 
 /*
 Thing 5) wings
-5 properties:
-    1) flexibility in ft - can flex 26.25ft before they fail (float)
-    2) amount of fuel each wing carries in gal (int)
-    3) number of ailerons on the rear of the wings (int)
-    4) number of engines attached to the lower side of the wings (int)
-    5) wingspan  in ft  (int)
-3 things it can do:
-    1) generate lift 
-    2) reduce drag
-    3) permit lower landing speed 
  */
 struct planeWings  
 {
@@ -367,13 +326,8 @@ struct planeWings
     // 5) wingspan  in ft  (float)
     float wingSpan = 195.3f;
 
-    struct jumboJet 
-    {
-        std::string model = "747";
-    };
-
     // 1) generate lift 
-    void generateLift (bool planeFly = true, std::string windDrection = "East");
+    void generateLift (bool planeFly, std::string windDrection = "East");
     // 2) reduce drag
     void reduceDrag  (float windGust = 80.23f);
     // 3) permit lower landing speed 
@@ -383,16 +337,6 @@ struct planeWings
 
 /*
 Thing 6) landing gear
-5 properties:
-    1) diameter of each wheel (float)
-    2) number of wheels (int)
-    3) weight of the nose landing gear (float)
-    4) number of the four main landing gear mechanisms (int)
-    5) pressure of the tires (float)
-3 things it can do:
-    1) dissipate the kinetic energy of landing impact
-    2) prevent the fuselage from hitting the ground
-    3) provide support during takeoff
  */
 struct landingGear
 {
@@ -407,12 +351,6 @@ struct landingGear
     // 5) pressure of the tires (float)
     float pressureTire = 200.1f;
 
-     struct jumboJet 
-    {
-        std::string model = "747";
-        int additionalLandingGear = 4;
-    };
-
     // 1) dissipate the kinetic energy of landing impact
     void reduceLandingImpact (float tirePressure = 250.2f);
     // 2) prevent the fuselage from hitting the ground
@@ -423,16 +361,6 @@ struct landingGear
 
 /*
 Thing 7) tail
-5 properties:
-    1) weight of lower rudder (float)
-    2) length of lower rudder (float )
-    3) things its auxiliary power unit can do (std::string)
-    4) weight of upper rudder (float)
-    5) height of upper rudder (float)
-3 things it can do:
-    1) its small engine powers the jet's electrical when on the ground
-    2) its power unit powers the air-conditioning systems when on the ground
-    3) its rudder section helps turn the airplane from right to left in flight
  */
 struct planeTail 
 {
@@ -447,12 +375,6 @@ struct planeTail
     // 5) height of upper rudder (float)
     float heightUpperRudder = 421.5f;
 
-     struct jumboJet 
-    {
-        std::string model = "747";
-        bool rudderHasExtraFlap = false;
-    };
-
     // 1) its small engine powers the jet's electrical when on the ground
     void smallEngineRuns (bool electricalsOn = true);
     // 2) its power unit powers the air-conditioning systems when on the ground
@@ -462,16 +384,6 @@ struct planeTail
 };
 /*
 Thing 8) passenger cabin
-5 properties:
-    1) number of seats (int)
-    2) material of seat cover (std::string)
-    3) number of toilets (int)
-    4) weight of carry-on luggage (float)
-    5) aisle width (float)
-3 things it can do:
-    1) seats passengers
-    2) provides entertianment system
-    3) provides waste removal system
  */
 struct passengerCabin
 {
@@ -486,12 +398,6 @@ struct passengerCabin
     // 5) aisle width (float)
     float aisleWidth = 42.1f;
 
-    struct jumboJet 
-    {
-        std::string model = "747";
-        bool passengersOnBoard = true;
-    };
-
     // 1) seats passengers
     void jetSeatsPassengers (int numPassengers = 200);
     // 2) provides entertianment system
@@ -502,16 +408,6 @@ struct passengerCabin
 
 /*
 Thing 9) fuselage
-5 properties:
-    1) thickness of fuselage wall in in (float)
-    2) weight of exterior paint in lbs (int)
-    3) its material (std::string)
-    4) diameter of the fuselage
-    5) weight of the fuselage 
-3 things it can do:
-    1) it gives the jet its structure
-    2) it provides heat insulation
-    3) it provides sound insulation 
  */
 struct fuselage
 {
@@ -526,12 +422,6 @@ struct fuselage
     // 5) weight of the fuselage 
     float weightFuselage = 234.4f;
 
-    struct jumboJet 
-    {
-        std::string model = "747";
-        std::string fuselageShape  = "round";
-    };
-
     // 1) it gives the jet its structure
     void keepPlaneStructure (float fuselageDiameter = 234.3f);
     // 2) it provides heat insulation
@@ -542,42 +432,27 @@ struct fuselage
 
 /*
 Thing 10) jumbo jet
-5 properties:
-    1) wings
-    2) landing gear
-    3) tail
-    4) passenger cabin
-    5) fuselage
-3 things it can do:
-    1) it can transport passengers
-    2) it can fly
-    3) it can carry cargo
  */
 struct jumboJet
 {
     // 1) wings
-    int numWings = 2;
+    planeWings rightWings;
     // 2) landing gear
-    int numLandingGear = 16;
+    landingGear wheels;
     // 3) tail
-    std::string tailUse = "keeps aux power unit";
+    planeTail lowerRudder;
     // 4) passenger cabin
-    int numPassengerSeats = 450;
+    passengerCabin touristClass;
     // 5) fuselage
-    float fuselageDiameter = 242.34f;
-
-    struct model747 
-    {
-        bool currentlyInUse = true;
-    };
+    fuselage lastRepair; 
 
     // 1) it can transport passengers
-    void transportPassenger();
+    int numOfPassengers(std::string destination, float flightDuration);
     // 2) it can fly
-    void planeFly();
+    bool planeFly(bool safetyInspection, double windGust);
     // 3) it can carry cargo
-    void carryCargo();
-};
+    bool carryCargo(int maxWeightPermitLuggagePerPassenger, bool cargoAreaInspectionPassed);
+}; 
 
 
 /*
