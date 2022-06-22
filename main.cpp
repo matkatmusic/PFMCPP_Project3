@@ -203,7 +203,7 @@ struct Cat
      // 5) length of its tail (double)
     double tailLength = 5.3432;
 
-    struct Mittens 
+    struct Kitten 
     {
         int birthYear = 2020;
         bool isNice = false;
@@ -211,16 +211,16 @@ struct Cat
         int numWhiskers = 20;
         std::string catBreed = "Tabby";
 
-        void feedMittens(float singlePortion, bool catHungry);
-        void petMittens(bool catAffectionate, float minutesToPet);
-        int milesMittensTravelsDaily(bool rainyWeather, float avgCatTravels = 20.f);
+        void feedKitten(float singlePortion, bool catHungry);
+        void petKitten(bool catAffectionate, float minutesToPet);
+        int milesKittenTravelsDaily(bool rainyWeather, float avgCatTravels = 20.f);
     };
 
     void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
     void makeNoise(std::string noise = "meow", bool foodBowlEmpty = true);
     bool sleep(bool nightTime);
 
-    Mittens mittensJunior; 
+    Kitten kittenJunior; 
 };
 /*
 Thing 2) Range
@@ -238,13 +238,13 @@ struct Range
     // 5) its width (float)
     int width = 36;
 
-    struct myRange 
+    struct RangeControls
     {
-        std::string lastRepair = "Y1999";
-        std::string rangeColor = "chrome";
-        int howOld = 40;
-        float height = 5.f;
-        bool isElectric = false;
+        std::string clockSettingOption = "24hrs";
+        std::string controlPanelColor = "chrome";
+        int controlPanelWidth = 24;
+        bool supportsWifi = true;
+        bool isAnalog = false;
 
         float measureFuelEfficiency (float outputPerMin, bool aboveAverage);
         int numOfPurchasedLastYear (int numOfBuyers, float satisfactionRating);
@@ -259,12 +259,20 @@ struct Range
     // 3) boil water
     int timeNeededToBoilWater (int waterInLiters, bool coldWater);
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    RangeControls updatedSettings;
+=======
     myRange myFirstRange;
+>>>>>>> origin/Part1
+=======
+    myRange myFirstRange;
+>>>>>>> origin/Part1
 };
 /*
 Thing 3) shopping cart
  */
-struct shoppingCart 
+struct ShoppingCart 
 {
     // 1) its material (std::string)
     std::string cartMaterial = "aluminum";
@@ -280,15 +288,15 @@ struct shoppingCart
     // 1) carries groceries 
     void carryGrocery (bool badWheels = false, float weightLimit =  40.2f);
     // 2) it can roll down a hill
-    void cartRollsDown (bool steepHill, float velocity = 30.2f);
+    void rollsDownHill (bool steepHill, float velocity = 30.2f);
     // 3) can be parked in a cart corral 
-    bool cartParked (std::string cartLocation = "corral", bool cartMoves = false);
+    bool isParked (std::string location = "corral", bool moves = false);
 };
 
 /*
 Thing 4) wind
  */
-struct wind
+struct Wind
 {
     // 1) speed (float)
     double windSpeed = 3.4234898;
@@ -302,18 +310,18 @@ struct wind
     std::string windUse = "wind energy";
 
     // 1) it transports seeds
-     void windTransportSeeds (int numSeed = 4, float windGust = 3.42f);
+     void transportSeeds (int numSeed = 4, float windGust = 3.42f);
     // 2) it turns wind turbines 
-     void windTurnTurbines (std::string windDirection, bool turnTurbine = true, float windGust = 34.2f);
+     void turnTurbines (std::string windDirection, bool turnTurbine = true, float windGust = 34.2f);
     // 3) it helps birds travel 
-     void windHelpBirdTravel (std::string windDirection, bool birdFly, float windGust = 34.2f);
+     void helpBirdTravel (std::string windDirection, bool birdFly, float windGust = 34.2f);
 
 }; 
 
 /*
 Thing 5) wings
  */
-struct planeWings  
+struct PlaneWings  
 {
     // 1) flexibility in ft - can flex 26.25ft before they fail (float)
     float flex = 25.3f;
@@ -338,7 +346,7 @@ struct planeWings
 /*
 Thing 6) landing gear
  */
-struct landingGear
+struct LandingGear
 {
     // 1) diameter of each wheel (float)
     float wheelDiameter = 3.21f;
@@ -362,7 +370,7 @@ struct landingGear
 /*
 Thing 7) tail
  */
-struct planeTail 
+struct PlaneTail 
 {
     // 1) weight of lower rudder (float)
     float weightLowerRudder =  2400.1f;
@@ -376,16 +384,16 @@ struct planeTail
     float heightUpperRudder = 421.5f;
 
     // 1) its small engine powers the jet's electrical when on the ground
-    void smallEngineRuns (bool electricalsOn = true);
+    void runSmallEngine (bool electricalsOn = true);
     // 2) its power unit powers the air-conditioning systems when on the ground
-    void powerUnitRuns (bool airConditioningOn = true);
-    // 3) its rudder section helps turn the airplane from right to left in flight
-    void rudderHelpsPlaneTurn (bool lowerRudderOpen = true);
+    void runPowerUnit (bool airConditioningOn = true);
+    // 3) its rudder section turns the airplane from right to left in flight
+    void turnPlane (bool lowerRudderOpen = true);
 };
 /*
 Thing 8) passenger cabin
  */
-struct passengerCabin
+struct PassengerCabin
 {
     // 1) number of seats (int)
     int numSeats = 416;
@@ -398,18 +406,18 @@ struct passengerCabin
     // 5) aisle width (float)
     float aisleWidth = 42.1f;
 
-    // 1) seats passengers
-    void jetSeatsPassengers (int numPassengers = 200);
-    // 2) provides entertianment system
-    void entertainmentSystemRunning (int numOfScreens = 450);
-    // 3) provides waste removal system
-    void wasteRemovalSystemRunning (int numOfToilets = 4);
+    // 1) carry passengers
+    void carryPassengers (int numPassengers = 200);
+    // 2) run entertianment system
+    void runEntertainmentSystem (int numOfScreens = 450);
+    // 3) run 
+    void eatMeals (int numOfMeals = 250);
 };
 
 /*
 Thing 9) fuselage
  */
-struct fuselage
+struct Fuselage
 {
     // 1) thickness of fuselage wall in in (float)
     float thicknessFuselageWall = 24.2f;
@@ -422,35 +430,35 @@ struct fuselage
     // 5) weight of the fuselage 
     float weightFuselage = 234.4f;
 
-    // 1) it gives the jet its structure
+    // 1) holds up the plane structure 
     void keepPlaneStructure (float fuselageDiameter = 234.3f);
-    // 2) it provides heat insulation
+    // 2) insulates from external temperature
     void keepsHeatOut (std::string fuselageMaterial = "material");
-    // 3) it provides sound insulation 
-    void keepSoundProof (std::string fuselageMaterial = "material");
+    // 3) stores cargo  
+    void storeCargo (float cargoWeightLimit = 567.f);
 };
 
 /*
 Thing 10) jumbo jet
  */
-struct jumboJet
+struct JumboJet
 {
     // 1) wings
-    planeWings rightWings;
+    PlaneWings rightWings;
     // 2) landing gear
-    landingGear wheels;
+    LandingGear wheels;
     // 3) tail
-    planeTail lowerRudder;
+    PlaneTail lowerRudder;
     // 4) passenger cabin
-    passengerCabin touristClass;
+    PassengerCabin touristClass;
     // 5) fuselage
-    fuselage lastRepair; 
+    Fuselage lastRepair; 
 
-    // 1) it can transport passengers
+    // 1) Compute fuel needed for trip
     int numOfPassengers(std::string destination, float flightDuration);
-    // 2) it can fly
+    // 2) Taxi to runway
     bool planeFly(bool safetyInspection, double windGust);
-    // 3) it can carry cargo
+    // 3) Load or unload cargo
     bool carryCargo(int maxWeightPermitLuggagePerPassenger, bool cargoAreaInspectionPassed);
 }; 
 
