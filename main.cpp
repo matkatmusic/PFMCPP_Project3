@@ -211,8 +211,8 @@ struct Cat
         int numWhiskers = 20;
         std::string catBreed = "Tabby";
 
-        void feed(float singlePortion, bool catHungry);
-        void pet(bool catAffectionate, float minutesToPet);
+        void feed(float singlePortion, bool isHungry);
+        void pet(bool isAffectionate, float minutesToPet);
         int roamNeighborhood(bool rainyWeather, float avgCatTravels = 20.f);
     };
 
@@ -246,28 +246,20 @@ struct Range
         bool supportsWifi = true;
         bool isAnalog = false;
 
-        float measureFuelEfficiency (float outputPerMin, bool aboveAverage);
-        int numOfPurchasedLastYear (int numOfBuyers, float satisfactionRating);
-        void repairRange (std::string brand, int numRepairTechiniciansAvaialbe = 2);
+        void informTime (bool timeUpdated);
+        void indicateRepairDate (int date, float needsRepair);
+        bool selfCleans (std::string brand, bool settingsOn);
         
     };
 
-    // 1) bake cookies 
-    void bakeCookies ( int numOfTray = 3, int numOfCookiesPerTray = 8);
-    // 2) heat up food
-    void heatFood (bool useCookTop = true, int numOfMins = 12);
+    // 1) consumes fuel 
+    void consumeFuel ( std::string fuelSource, bool rangeOn);
+    // 2) breaks down
+    void breaksDown (int ageOfHeatingElement);
     // 3) boil water
-    int timeNeededToBoilWater (int waterInLiters, bool coldWater);
+    int heatsTheKitchen (float durationOperated);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     RangeControls updatedSettings;
-=======
-    myRange myFirstRange;
->>>>>>> origin/Part1
-=======
-    myRange myFirstRange;
->>>>>>> origin/Part1
 };
 /*
 Thing 3) shopping cart
@@ -334,12 +326,12 @@ struct PlaneWings
     // 5) wingspan  in ft  (float)
     float wingSpan = 195.3f;
 
-    // 1) generate lift 
+    // 1) generates lift 
     void generateLift (bool planeFly, std::string windDrection = "East");
-    // 2) reduce drag
+    // 2) reduces drag
     void reduceDrag  (float windGust = 80.23f);
-    // 3) permit lower landing speed 
-    bool landingSuccess (bool landed =  true, float landingSpeed = 30.2f);
+    // 3) lowers landing speed 
+    bool lowersLandingSpeed (int drag, bool landed =  false, float landingSpeed = 30.2f);
 
 };
 
@@ -359,11 +351,11 @@ struct LandingGear
     // 5) pressure of the tires (float)
     float pressureTire = 200.1f;
 
-    // 1) dissipate the kinetic energy of landing impact
+    // 1) dissipates the kinetic energy of landing impact
     void reduceLandingImpact (float tirePressure = 250.2f);
-    // 2) prevent the fuselage from hitting the ground
+    // 2) prevents the fuselage from hitting the ground
     void preventFuselageHittingGround (bool fuselageHitGround = false);
-    // 3) provide support during takeoff
+    // 3) support the plane during takeoff
     void supportDuringTakeOff (bool takeOff = true);
 };
 
@@ -408,10 +400,10 @@ struct PassengerCabin
 
     // 1) carry passengers
     void carryPassengers (int numPassengers = 200);
-    // 2) run entertianment system
-    void runEntertainmentSystem (int numOfScreens = 450);
-    // 3) run 
-    void eatMeals (int numOfMeals = 250);
+    // 2) carry toilets
+    void carryToietls (int numOfToilets);
+    // 3) carry 
+    void carryBlankets (int numPassengers, int numBlanketsPerPassenger);
 };
 
 /*
@@ -431,7 +423,7 @@ struct Fuselage
     float weightFuselage = 234.4f;
 
     // 1) holds up the plane structure 
-    void keepPlaneStructure (float fuselageDiameter = 234.3f);
+    void formsPlaneStructure (float fuselageDiameter = 234.3f);
     // 2) insulates from external temperature
     void keepsHeatOut (std::string fuselageMaterial = "material");
     // 3) stores cargo  
@@ -454,10 +446,10 @@ struct JumboJet
     // 5) fuselage
     Fuselage lastRepair; 
 
-    // 1) Compute fuel needed for trip
-    int numOfPassengers(std::string destination, float flightDuration);
+    // 1) carry passengers
+    int carryPassengers(std::string destination, int numOfPassengers);
     // 2) Taxi to runway
-    bool planeFly(bool safetyInspection, double windGust);
+    bool fly(bool safetyInspection, double windGust);
     // 3) Load or unload cargo
     bool carryCargo(int maxWeightPermitLuggagePerPassenger, bool cargoAreaInspectionPassed);
 }; 
