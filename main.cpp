@@ -291,22 +291,22 @@ Thing 4) wind
 struct Wind
 {
     // 1) speed (float)
-    double windSpeed = 3.4234898;
+    double speed = 3.4234898;
     // 2) direction (std::string)
-    std::string windDirection = "North";
+    std::string direction = "North";
     // 3) its definition (std:: string)
-    std::string windDefinition = "movement in air molecules";
+    std::string definition = "movement in air molecules";
     // 4) its cause (std:: string)
-    std::string windCause = "difference in gas density";
+    std::string cause = "difference in gas density";
     // 5) its use (std:: string)
-    std::string windUse = "wind energy";
+    std::string use = "wind energy";
 
     // 1) it transports seeds
-     void transportSeeds (int numSeed = 4, float windGust = 3.42f);
+     void transportSeeds (int numSeed = 4, float gust = 3.42f);
     // 2) it turns wind turbines 
-     void turnTurbines (std::string windDirection, bool turnTurbine = true, float windGust = 34.2f);
+     void turnTurbines (std::string direction, bool turnTurbine = true, float gust = 34.2f);
     // 3) it helps birds travel 
-     void helpBirdTravel (std::string windDirection, bool birdFly, float windGust = 34.2f);
+     void helpBirdTravel (std::string direction, bool birdFly, float gust = 34.2f);
 
 }; 
 
@@ -327,9 +327,9 @@ struct PlaneWings
     float wingSpan = 195.3f;
 
     // 1) generates lift 
-    void generateLift (bool planeFly, std::string windDrection = "East");
+    void generateLift (bool planeFly, std::string drection = "East");
     // 2) reduces drag
-    void reduceDrag  (float windGust = 80.23f);
+    void reduceDrag  (float gust = 80.23f);
     // 3) lowers landing speed 
     bool lowersLandingSpeed (int drag, bool landed =  false, float landingSpeed = 30.2f);
 
@@ -449,7 +449,7 @@ struct JumboJet
     // 1) carry passengers
     int carryPassengers(std::string destination, int numOfPassengers);
     // 2) Taxi to runway
-    bool fly(bool safetyInspection, double windGust);
+    bool fly(bool safetyInspection, double gust);
     // 3) Load or unload cargo
     bool carryCargo(int maxWeightPermitLuggagePerPassenger, bool cargoAreaInspectionPassed);
 }; 
