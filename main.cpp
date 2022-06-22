@@ -211,9 +211,9 @@ struct Cat
         int numWhiskers = 20;
         std::string catBreed = "Tabby";
 
-        void feedKitten(float singlePortion, bool catHungry);
-        void petKitten(bool catAffectionate, float minutesToPet);
-        int milesKittenTravelsDaily(bool rainyWeather, float avgCatTravels = 20.f);
+        void feed(float singlePortion, bool catHungry);
+        void pet(bool catAffectionate, float minutesToPet);
+        int roamNeighborhood(bool rainyWeather, float avgCatTravels = 20.f);
     };
 
     void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
