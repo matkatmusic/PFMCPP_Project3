@@ -309,8 +309,8 @@ struct ShoppingCart
     std::string cartStore = "Albertsons";
 
     bool carryGrocery (bool badWheels = false, float weightLimit =  40.2f);
-    bool rollsDownHill (bool steepHill, float velocity = 30.2f);
-    bool isParked (std::string cartLocation = "corral", bool moves = false);
+    bool rollsDownHill (bool steepHill, bool fast);
+    bool isParked (std::string cartLocation = "corral");
 };
 
 bool ShoppingCart::carryGrocery (bool badWheels, float weight)
@@ -319,17 +319,11 @@ bool ShoppingCart::carryGrocery (bool badWheels, float weight)
 }
 bool ShoppingCart::rollsDownHill (bool steepHill, bool fast)
 {
-    if(steepHill)
-    {
-        fast = true; 
-    }
+    if(steepHill) return fast;
 }
-bool ShoppingCart::isParked (std::string cartLocation, bool moves);
+bool ShoppingCart::isParked (std::string cartLocation);
 {
-    if(cartLocation == "corral")
-    {
-        moves = false;
-    }
+    if(cartLocation == "corral") return true;
 }
 
 struct Wind
@@ -341,7 +335,7 @@ struct Wind
     std::string use = "wind energy";
 
      bool transportSeeds (int numSeed = 4, float gust = 3.42f);
-     void turnTurbines (std::string direction, bool turnTurbine = true, float gust = 34.2f);
+     void turnTurbines (std::string direction, float gust = 34.2f);
      void helpBirdTravel (std::string direction, bool birdFly, float gust = 34.2f);
 }; 
 bool Wind::transportSeeds (int numSeed, float gust)
@@ -351,12 +345,9 @@ bool Wind::transportSeeds (int numSeed, float gust)
         return true;
     }
 }
-bool Wind::turnTurbines (std::string direction, bool turnTurbine, float gust)
+bool Wind::turnTurbines (std::string direction, float gust)
 {
-    if(direction == "north west" && gust > 80.f)
-    {
-        return true;
-    }
+    if(direction == "north west" && gust > 80.f)  return true;
 }
 void Wind::helpBirdTravel (std::string direction, bool birdFly, float gust)
 {
@@ -409,15 +400,16 @@ struct LandingGear
     int numMainLandingGear  = 16;
     float pressureTire = 200.1f;
 
-    void reduceLandingImpact (float tirePressure = 250.2f, int landingSpeed);
+    int reduceLandingImpact (float tirePressure = 250.2f, int landingSpeed = 20);
     bool preventFuselageHittingGround (bool retractLandingGear = false);
     bool toggleLandingGear (bool takeOff = true);
 };
 
-void LandingGear::reduceLandingImpact (float tirePressure, )
+int LandingGear::reduceLandingImpact (float tirePressure, int landingSpeed)
 {
     int calculateImpact();
     if(tirePressure > 200) calculateImpact();  
+    return landingSpeed;
 }
 bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
 {
@@ -541,11 +533,11 @@ bool JumboJet::fly(bool safetyInspection, double gust)
 }
 bool JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger, bool inspectionPassed)
 {
-    void checkWeight();
+    int checkWeight();
     if(inspectionPassed) 
     {
-    bool result = checkWeight();
-    if(result)  std::cout << "Cargo under weigth limit " << maxWeightPermitLuggagePerPassenger << std::endl;
+    int result = checkWeight();
+    if(result < maxWeightPermitLuggagePerPassenger)  std::cout << "Cargo under weigth limit " << std::endl;
     }
 }
 
