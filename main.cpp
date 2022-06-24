@@ -198,7 +198,7 @@ struct Cat
 
     void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
     void makeNoise(std::string noise = "meow", bool foodBowlEmpty = true);
-    bool sleep(int time, bool isAsleep = true);
+    bool sleep(bool isAsleep = true);
 
     Kitten kittenJunior; 
 };
@@ -242,13 +242,29 @@ void Cat::makeNoise(std::string noise, bool foodBowlEmpty)
     }
 }
 
-bool Cat::sleep(std::string time, bool isAsleep)
+struct Time
 {
+    int year = 2022, 
+    month = 6, 
+    day = 23, 
+    hour = 7, 
+    minute = 1, 
+    second = 5;
+    bool isPM = true;
+};
+
+bool Cat::sleep(bool isAsleep)
+{
+    Time startTime, endTime;
+    startTime.hour = 0;
+    endTime.hour = 5;
     
-    
-    if(std::string('00:00:00') < time && time < std::string('00:50:00') )
+    if( startTime.hour > 0 && 
+        startTime.isPM == false && 
+        endTime.hour < 5 && 
+        endTime.isPM == false )
     {
-        return isAsleep;
+       return isAsleep;
     }
     return !isAsleep;
 }
@@ -272,7 +288,7 @@ struct Range
 
         std::string informCurrentTime (bool timeUpdated);
         std::string indicateRepairDate (std::string date, bool needsRepair);
-        bool selfCleans (bool settingsOn);
+        bool selfCleans (bool settingsOn = true);
         
     };
 
@@ -303,10 +319,8 @@ std::string Range::RangeControls::indicateRepairDate (std::string date, bool nee
 }
 bool Range::RangeControls::selfCleans (bool settingsOn)
 {
-    while(settingsOn)
-    {
-        return true;
-    }
+    while(settingsOn) return settingsOn;
+    return !settingsOn;
 }
 
 struct ShoppingCart 
@@ -389,7 +403,7 @@ struct PlaneWings
 
 bool PlaneWings::generateLift (bool planeFly, std::string direction)
 {   
-    int upwardForce;
+    int upwardForce =3;
     if(direction == "down" && upwardForce)
     {
         planeFly = true;
@@ -423,7 +437,7 @@ struct LandingGear
 
 int LandingGear::reduceLandingImpact (float tirePressure, int landingSpeed)
 {
-    int calculateImpact;
+    int calculateImpact = 3 * landingSpeed;
     if(tirePressure > 200) return calculateImpact;  
     return landingSpeed;
 }
@@ -434,7 +448,7 @@ bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
 }
 bool LandingGear::toggleLandingGear (bool takeOff)
 {
-    bool retractLandingGear;
+    bool retractLandingGear = true;
     if(takeOff) return !retractLandingGear;
     
 }
@@ -522,7 +536,7 @@ bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
 }
 void Fuselage::storeCargo (float cargoWeight)
 {
-    int weightLimit;
+    int weightLimit = 1;
     if(cargoWeight <weightLimit)std::cout << "load cargo" << std::endl;
 }
 
@@ -536,25 +550,25 @@ struct JumboJet
 
     void carryPassengers(std::string destination, int numOfPassengers);
     bool fly(bool safetyInspection, double gust);
-    bool carryCargo(int maxWeightPermitLuggagePerPassenger, bool inspectionPassed);
+    bool carryCargo(int maxWeightPermitLuggagePerPassenger);
 }; 
 
 void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
 {
     std::cout << "Carrying " << numOfPassengers << " to " << destination << std::endl;
 }
+
 bool JumboJet::fly(bool safetyInspection, double gust)
 {
     if(safetyInspection && gust < 40) return true;
+    return false;
 }
-bool JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger, bool inspectionPassed)
+
+bool JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
 {
-    int checkWeight;
-    if(inspectionPassed) 
-    {
-    int result = checkWeight;
-    if(result < maxWeightPermitLuggagePerPassenger)  std::cout << "Cargo under weigth limit " << std::endl;
-    }
+    std::string checkWeight = (maxWeightPermitLuggagePerPassenger <= 1) ?  "pass": "fail";
+    if(checkWeight == "pass") std::cout << "Load cargo" << std::endl;
+    std::cout << "Do not load cargo" << std::endl;
 }
 
 /*
