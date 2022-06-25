@@ -28,6 +28,7 @@ Thing: Car Wash
 
 #include <iostream>
 #include <string>
+
 namespace Part1eVersion 
 {
 struct CarWash        
@@ -107,11 +108,59 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Person
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    
+    void run(int, bool);
+    void stepForward();
+    float stepSize();
 
+    struct Foot
+    {
+        int footSize;
+        int stepDistance;
+        int timeTaken;
+        void moveForward(int numSteps)
+        {
+            numSteps += 1;
+        }
+                
+        int stepSize()
+        {
+            return footSize + stepDistance; 
+        }
+        void stepForward(bool move = false)
+        {
+            if (move) moveForward(1);
+        }
+    };
+        
+    Foot leftFoot, rightFoot; 
+    void run(int, int); 
+};
 
-
-
-
+void Person::run(int howFast, bool startWithLeftFoot)
+{   
+    int timeTaken = 1;
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else 
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
+    howFast = distanceTraveled / timeTaken;
+}
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
     If you have 'unused parameter' warnings, you aren't using one of your function parameters in your implementation.
@@ -126,23 +175,12 @@ struct CarWash
  4) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
  if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
  */
-
-
-
-/*
-Thing 1) Cat
- */
 struct Cat
 {
-    // 1) number of ears  (int)
     int catEars = 2;
-    // 2) its name (std::string)
     std::string catName = "Fluffers";
-    // 3) amount of daily food intake (float)
     float dailyFoodIntake = 1.4f;
-    // 4) color of its fur (std::string)
     std::string furColor = "brown";
-     // 5) length of its tail (double)
     double tailLength = 5.3432;
 
     struct Kitten 
@@ -155,29 +193,89 @@ struct Cat
 
         void feed(float singlePortion, bool isHungry);
         void pet(bool isAffectionate, float minutesToPet);
-        int roamNeighborhood(bool rainyWeather, float avgCatTravels = 20.f);
+        void roamNeighborhood(bool rainyWeather, float avgCatTravels = 20.f);
     };
 
     void scratchFurniture(bool isChair = false, int numberOfFurniture = 10);
     void makeNoise(std::string noise = "meow", bool foodBowlEmpty = true);
-    bool sleep(bool nightTime);
+    bool sleep(bool isAsleep = true);
 
     Kitten kittenJunior; 
 };
-/*
-Thing 2) Range
- */
+
+void Cat::Kitten::feed(float singlePortion, bool isHungry)
+{
+    if(isHungry)
+    {
+        singlePortion = 6.f;
+    }
+}
+
+void Cat::Kitten::pet(bool isAffectionate, float minutesToPet)
+{
+    if(isAffectionate)
+    {
+        minutesToPet = 20.f;
+    }
+}
+void Cat::Kitten::roamNeighborhood(bool rainyWeather, float avgCatTravels)
+{
+    float milesTraveled;
+    if(!rainyWeather)
+    {
+        milesTraveled = avgCatTravels * 2;
+    }
+}
+void Cat::scratchFurniture(bool isChair, int numFurnitureDestroyed)
+{
+    if(!isChair)
+    {
+       numFurnitureDestroyed += 1;
+    }
+        
+}
+void Cat::makeNoise(std::string noise, bool foodBowlEmpty)
+{
+    if(foodBowlEmpty)
+    {
+        noise = "meow";
+    }
+}
+
+struct Time
+{
+    int year = 2022, 
+    month = 6, 
+    day = 23, 
+    hour = 7, 
+    minute = 1, 
+    second = 5;
+    bool isPM = true;
+};
+
+bool Cat::sleep(bool isAsleep)
+{
+    Time startTime, endTime;
+    startTime.hour = 0;
+    endTime.hour = 5;
+    
+    if( startTime.hour > 0 && 
+        startTime.isPM == false && 
+        endTime.hour < 5 && 
+        endTime.isPM == false )
+    {
+       return isAsleep;
+    }
+    return !isAsleep;
+}
+
+
 struct Range
 {
-    // 1) number of racks in the oven (int)
     int numOfRack = 3;
-    // 2) maximum temperature its oven can reach (int)
     int maxTempOven = 450;
-    // 3) its fuel type (std::string)
     std::string fuelType = "gas";
-    // 4) number of cooktops (int)
     int numOfTops = 4;
-    // 5) its width (float)
     int width = 36;
 
     struct RangeControls
@@ -188,214 +286,319 @@ struct Range
         bool supportsWifi = true;
         bool isAnalog = false;
 
-        void informTime (bool timeUpdated);
-        void indicateRepairDate (int date, float needsRepair);
-        bool selfCleans (std::string brand, bool settingsOn);
+        std::string informCurrentTime (bool timeUpdated);
+        void indicateRepairDate (std::string date, bool needsRepair);
+        bool selfCleans (bool heavyCleaning = true, std::string setting = "");
         
     };
 
-    // 1) consumes fuel 
     void consumeFuel ( std::string fuelSource, bool rangeOn);
-    // 2) breaks down
     void breaksDown (int ageOfHeatingElement);
-    // 3) boil water
     int heatsTheKitchen (float durationOperated);
 
     RangeControls updatedSettings;
 };
-/*
-Thing 3) shopping cart
- */
+std::string Range::RangeControls::informCurrentTime (bool timeUpdated)
+{
+    std::string updatedTime, currentTime;
+    if(timeUpdated) 
+        return updatedTime;
+    return currentTime;
+
+}
+void Range::RangeControls::indicateRepairDate (std::string date, bool needsRepair)
+{
+    if(needsRepair)
+    {
+        std::cout << "Range needs repair by " << date << std::endl;
+    }
+    else
+    {
+        std::cout << "Range In Good Shape" << std::endl;
+    }
+    
+}
+bool Range::RangeControls::selfCleans (bool heavyCleaning, std::string setting)
+{
+    if( setting == "heavy")
+        return heavyCleaning;
+    return !heavyCleaning;
+} 
+
+
 struct ShoppingCart 
 {
-    // 1) its material (std::string)
     std::string cartMaterial = "aluminum";
-    // 2) number of wheels (int)
     int numWheels = 4;
-    // 3) color of its handle (std::string)
     std::string colorHandle = "red";
-    // 4) its width (float)
     float cartWidth = 24.1f;
-    // 5) which store it belongs to (std::string)
     std::string cartStore = "Albertsons";
 
-    // 1) carries groceries 
-    void carryGrocery (bool badWheels = false, float weightLimit =  40.2f);
-    // 2) it can roll down a hill
-    void rollsDownHill (bool steepHill, float velocity = 30.2f);
-    // 3) can be parked in a cart corral 
-    bool isParked (std::string location = "corral", bool moves = false);
+    bool carryGrocery (bool badWheels = false, float weightLimit =  40.2f);
+    bool rollsDownHill (bool steepHill, bool fast);
+    bool isParked (std::string cartLocation = "corral");
 };
 
-/*
-Thing 4) wind
- */
+bool ShoppingCart::carryGrocery (bool badWheels, float weight)
+{
+    if(badWheels && weight <= 40.2f) 
+        return true;
+    return false;
+}
+bool ShoppingCart::rollsDownHill (bool steepHill, bool fast)
+{
+    if(steepHill) 
+        return fast;
+    return !fast;
+}
+bool ShoppingCart::isParked (std::string cartLocation)
+{
+    if(cartLocation == "corral") 
+        return true;
+    return false;
+}
+
 struct Wind
 {
-    // 1) speed (float)
     double speed = 3.4234898;
-    // 2) direction (std::string)
-    std::string direction = "North";
-    // 3) its definition (std:: string)
+    std::string direction = "North West";
     std::string definition = "movement in air molecules";
-    // 4) its cause (std:: string)
     std::string cause = "difference in gas density";
-    // 5) its use (std:: string)
     std::string use = "wind energy";
 
-    // 1) it transports seeds
-     void transportSeeds (int numSeed = 4, float gust = 3.42f);
-    // 2) it turns wind turbines 
-     void turnTurbines (std::string direction, bool turnTurbine = true, float gust = 34.2f);
-    // 3) it helps birds travel 
-     void helpBirdTravel (std::string direction, bool birdFly, float gust = 34.2f);
-
+     bool transportSeeds (int numSeed = 4, float gust = 3.42f);
+     bool turnTurbines (std::string, float gust = 34.2f);
+     void helpBirdTravel (std::string direction2, bool birdFly, float gust = 34.2f);
 }; 
+bool Wind::transportSeeds (int numSeed, float gust)
+{
+    if(numSeed<=10 && gust > 30)
+        return true;
+    return false;
 
-/*
-Thing 5) wings
- */
+}
+bool Wind::turnTurbines (std::string direction1, float gust)
+{
+    if(direction1 == "North West" && gust > 80.f)  
+        return true;
+    return false;
+}
+void Wind::helpBirdTravel (std::string direction2, bool birdFly, float gust)
+{
+    std::string birdDirection;
+    if(direction2 == birdDirection && gust < 100)
+    {
+        birdFly = true;
+    }
+}
+
 struct PlaneWings  
 {
-    // 1) flexibility in ft - can flex 26.25ft before they fail (float)
     float flex = 25.3f;
-    // 2) amount of fuel each wing carries in gal (int)
     int fuelCarried = 23;
-    // 3) number of ailerons on the rear of the wings (int)
     int numOfAilerons = 4;
-    // 4) number of engines attached to the lower side of the wings (int)
     int numEngines = 4;
-    // 5) wingspan  in ft  (float)
     float wingSpan = 195.3f;
 
-    // 1) generates lift 
     void generateLift (bool planeFly, std::string drection = "East");
-    // 2) reduces drag
-    void reduceDrag  (float gust = 80.23f);
-    // 3) lowers landing speed 
-    bool lowersLandingSpeed (int drag, bool landed =  false, float landingSpeed = 30.2f);
-
+    bool reduceDrag  (float tailwind = 10.f);
+    void lowersLandingSpeed (int drag, bool landed =  false, float landingSpeed = 30.2f);
 };
 
-/*
-Thing 6) landing gear
- */
+void PlaneWings::generateLift (bool planeFly, std::string direction)
+{   
+    int upwardForce =3;
+    if(direction == "down" && upwardForce)
+        planeFly = true;
+}
+bool PlaneWings::reduceDrag (float tailwind)
+{
+    if(tailwind < 10.f) 
+        return true;
+    return false;
+}
+void PlaneWings::lowersLandingSpeed (int drag, bool landed, float landingSpeed )
+{
+    if(!landed)
+    {
+        landingSpeed -= drag;
+    }
+}
+
 struct LandingGear
 {
-    // 1) diameter of each wheel (float)
     float wheelDiameter = 3.21f;
-    // 2) number of wheels (int)
     int numWheels = 8;
-    // 3) weight of the nose landing gear (float)
     float weightOfNose = 34.2f;
-    // 4) number of the four main landing gear mechanisms (int)
     int numMainLandingGear  = 16;
-    // 5) pressure of the tires (float)
     float pressureTire = 200.1f;
 
-    // 1) dissipates the kinetic energy of landing impact
-    void reduceLandingImpact (float tirePressure = 250.2f);
-    // 2) prevents the fuselage from hitting the ground
-    void preventFuselageHittingGround (bool fuselageHitGround = false);
-    // 3) support the plane during takeoff
-    void supportDuringTakeOff (bool takeOff = true);
+    int reduceLandingImpact (float tirePressure = 250.2f, int landingSpeed = 20);
+    bool preventFuselageHittingGround (bool retractLandingGear = false);
+    bool toggleLandingGear (bool takeOff = true);
 };
 
-/*
-Thing 7) tail
- */
+int LandingGear::reduceLandingImpact (float tirePressure, int landingSpeed)
+{
+    int calculateImpact = 3 * landingSpeed;
+    if(tirePressure > 200) 
+        return calculateImpact;  
+    return landingSpeed;
+}
+bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
+{
+    if(!retractLandingGear)
+         return true;
+    return false;
+}
+bool LandingGear::toggleLandingGear (bool takeOff)
+{
+    bool retractLandingGear = true;
+    if(takeOff) 
+        return !retractLandingGear;
+    return retractLandingGear; 
+}
+
 struct PlaneTail 
 {
-    // 1) weight of lower rudder (float)
     float weightLowerRudder =  2400.1f;
-    // 2) length of lower rudder (float )
     float lengthOfLowerRudder = 421.5f;
-    // 3) things its auxiliary power unit can do (std::string)
     std::string auxPower = "helps plane turn";
-    // 4) weight of upper rudder (float)
     float weigtUpperRudder = 2400.1f;
-    // 5) height of upper rudder (float)
     float heightUpperRudder = 421.5f;
-
-    // 1) its small engine powers the jet's electrical when on the ground
-    void runSmallEngine (bool electricalsOn = true);
-    // 2) its power unit powers the air-conditioning systems when on the ground
-    void runPowerUnit (bool airConditioningOn = true);
-    // 3) its rudder section turns the airplane from right to left in flight
+    int powerConsumed = 1;
+    
+    void showAlertMsg (bool);
+    void consumePower (bool);
     void turnPlane (bool lowerRudderOpen = true);
 };
-/*
-Thing 8) passenger cabin
- */
+
+void alert()
+{
+    std::cout << "Electricals are running" << std::endl;
+}
+
+void PlaneTail::showAlertMsg (bool switchOn)
+{ 
+    // when the switch is on, alert to pilot electicals are running
+    if(switchOn)
+        alert();
+    std::cout << "Electricals are not running" << std::endl;
+}
+
+void PlaneTail::consumePower (bool engineRunning)
+{
+    if (engineRunning) 
+    {
+        std::cout << "Engine running" << "\n";
+        powerConsumed += 1; 
+    }
+    std::cout << "Small engine not running" << std::endl;
+    
+}
+
+void PlaneTail::turnPlane (bool lowerRudderOpen)
+{
+    bool right = false;
+    if(lowerRudderOpen) 
+        right = true; 
+    std::cout << "Stay on course" << std::endl;
+}
+
 struct PassengerCabin
 {
-    // 1) number of seats (int)
     int numSeats = 416;
-    // 2) material of seat cover (std::string)
     std::string seatMaterial = "leather";
-    // 3) number of toilets (int)
     int numToilets = 4;
-    // 4) weight of carry-on luggage (float)
     float weightCarryOn = 1;
-    // 5) aisle width (float)
     float aisleWidth = 42.1f;
 
-    // 1) carry passengers
     void carryPassengers (int numPassengers = 200);
-    // 2) carry toilets
-    void carryToietls (int numOfToilets);
-    // 3) carry 
-    void carryBlankets (int numPassengers, int numBlanketsPerPassenger);
+    void carryToilets (int numOfToilets);
+    void blanketsAlert (int numPassengers, int numBlanketsPerPassenger);
 };
 
-/*
-Thing 9) fuselage
- */
+using namespace std;
+
+void PassengerCabin::carryPassengers (int numPassengers)
+{
+    cout << "Carrying: " << numPassengers << "passengers"<<endl;
+}
+
+void PassengerCabin::carryToilets (int numOfToilets)
+{
+    cout << "Carrying: " << numOfToilets << "toilets"<<endl;  
+}
+
+void PassengerCabin::blanketsAlert (int numPassengers, int numBlankets)
+{
+    if(numPassengers < numBlankets)
+    {
+        cout << "Carrying: " << numBlankets << "blankets"<<endl;
+    }
+    cout << "Stock " << (numPassengers - numBlankets) << "more blankets at least" << endl;
+}
+
 struct Fuselage
 {
-    // 1) thickness of fuselage wall in in (float)
     float thicknessFuselageWall = 24.2f;
-    // 2) weight of exterior paint in lbs (int)
     int weightExteriorPaint = 4233;
-    // 3) its material (std::string)
     std::string planeMaterial = "aluminum";
-    // 4) diameter of the fuselage
-    float diameterFuselage = 523.2f;
-    // 5) weight of the fuselage 
+    float diameterFuselage = 20.2f;
     float weightFuselage = 234.4f;
 
-    // 1) holds up the plane structure 
     void formsPlaneStructure (float fuselageDiameter = 234.3f);
-    // 2) insulates from external temperature
-    void keepsHeatOut (std::string fuselageMaterial = "material");
-    // 3) stores cargo  
+    bool keepsHeatOut (std::string fuselageMaterial);
     void storeCargo (float cargoWeightLimit = 567.f);
 };
+void Fuselage::formsPlaneStructure (float fuselageDiameter)
+{
+    float planeBodyWidth = 20.f;
+    planeBodyWidth = fuselageDiameter;
+}
+bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
+{
+    if(fuselageMaterial == "aluminum") 
+        return true;
+    return false;
+}
+void Fuselage::storeCargo (float cargoWeight)
+{
+    int weightLimit = 1;
+    if(cargoWeight < weightLimit)
+        std::cout << "load cargo" << std::endl;
+}
 
-/*
-Thing 10) jumbo jet
- */
 struct JumboJet
 {
-    // 1) wings
     PlaneWings rightWings;
-    // 2) landing gear
     LandingGear wheels;
-    // 3) tail
     PlaneTail lowerRudder;
-    // 4) passenger cabin
     PassengerCabin touristClass;
-    // 5) fuselage
     Fuselage lastRepair; 
 
-    // 1) carry passengers
-    int carryPassengers(std::string destination, int numOfPassengers);
-    // 2) Taxi to runway
+    void carryPassengers(std::string destination, int numOfPassengers);
     bool fly(bool safetyInspection, double gust);
-    // 3) Load or unload cargo
-    bool carryCargo(int maxWeightPermitLuggagePerPassenger, bool cargoAreaInspectionPassed);
+    void carryCargo(int maxWeightPermitLuggagePerPassenger);
 }; 
 
+void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
+{
+    std::cout << "Carrying " << numOfPassengers << " to " << destination << std::endl;
+}
+
+bool JumboJet::fly(bool safetyInspection, double gust)
+{
+    return safetyInspection && gust < 40; 
+}
+
+void JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
+{
+    std::string checkWeight = (maxWeightPermitLuggagePerPassenger <= 1) ?  "pass": "fail";
+    if(checkWeight == "pass") 
+        std::cout << "Load cargo" << std::endl;
+    std::cout << "Do not load cargo" << std::endl;
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -416,3 +619,4 @@ int main()
 {
     std::cout << "good to go!" << std::endl;
 }
+
