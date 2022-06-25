@@ -287,7 +287,7 @@ struct Range
         bool isAnalog = false;
 
         std::string informCurrentTime (bool timeUpdated);
-        std::string indicateRepairDate (std::string date, bool needsRepair);
+        void indicateRepairDate (std::string date, bool needsRepair);
         bool selfCleans (bool settingsOn = true);
         
     };
@@ -305,11 +305,11 @@ std::string Range::RangeControls::informCurrentTime (bool timeUpdated)
     return currentTime;
 
 }
-std::string Range::RangeControls::indicateRepairDate (std::string date, bool needsRepair)
+void Range::RangeControls::indicateRepairDate (std::string date, bool needsRepair)
 {
     if(needsRepair)
     {
-        return date; 
+        std::cout << "Range needs repair by " << date << std::endl;
     }
     else
     {
@@ -338,15 +338,21 @@ struct ShoppingCart
 
 bool ShoppingCart::carryGrocery (bool badWheels, float weight)
 {
-    if(badWheels && weight <= 40.2f) return true;
+    if(badWheels && weight <= 40.2f) 
+        return true;
+    return false;
 }
 bool ShoppingCart::rollsDownHill (bool steepHill, bool fast)
 {
-    if(steepHill) return fast;
+    if(steepHill) 
+        return fast;
+    return !fast;
 }
 bool ShoppingCart::isParked (std::string cartLocation)
 {
-    if(cartLocation == "corral") return true;
+    if(cartLocation == "corral") 
+        return true;
+    return false;
 }
 
 struct Wind
@@ -364,9 +370,9 @@ struct Wind
 bool Wind::transportSeeds (int numSeed, float gust)
 {
     if(numSeed<=10 && gust > 30)
-    {
         return true;
-    }
+    return false;
+
 }
 bool Wind::turnTurbines (std::string direction1, float gust)
 {
@@ -396,23 +402,22 @@ struct PlaneWings
     int numEngines = 4;
     float wingSpan = 195.3f;
 
-    bool generateLift (bool planeFly, std::string drection = "East");
+    void generateLift (bool planeFly, std::string drection = "East");
     bool reduceDrag  (float tailwind = 10.f);
     void lowersLandingSpeed (int drag, bool landed =  false, float landingSpeed = 30.2f);
 };
 
-bool PlaneWings::generateLift (bool planeFly, std::string direction)
+void PlaneWings::generateLift (bool planeFly, std::string direction)
 {   
     int upwardForce =3;
     if(direction == "down" && upwardForce)
-    {
         planeFly = true;
-    }
-    
 }
 bool PlaneWings::reduceDrag (float tailwind)
 {
-    if(tailwind < 10.f) return true;
+    if(tailwind < 10.f) 
+        return true;
+    return false;
 }
 void PlaneWings::lowersLandingSpeed (int drag, bool landed, float landingSpeed )
 {
@@ -444,13 +449,15 @@ int LandingGear::reduceLandingImpact (float tirePressure, int landingSpeed)
 bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
 {
     if(!retractLandingGear)
-    return true;
+         return true;
+    return false;
 }
 bool LandingGear::toggleLandingGear (bool takeOff)
 {
     bool retractLandingGear = true;
-    if(takeOff) return !retractLandingGear;
-    
+    if(takeOff) 
+        return !retractLandingGear;
+    return retractLandingGear; 
 }
 
 struct PlaneTail 
@@ -460,21 +467,35 @@ struct PlaneTail
     std::string auxPower = "helps plane turn";
     float weigtUpperRudder = 2400.1f;
     float heightUpperRudder = 421.5f;
-
-    void runSmallEngine (bool electricalsOn = true);
-    void runPowerUnit (bool airConditioningOn = true);
+    int powerConsumed = 1;
+    
+    void showAlertMsg (bool);
+    void consumePower (bool);
     void turnPlane (bool lowerRudderOpen = true);
 };
-void PlaneTail::runSmallEngine (bool electricalsOn)
+
+void alert()
 {
-    void turnOn();
-    if(!electricalsOn) turnOn();
+    std::cout << "Electricals are running" << std::endl;
 }
-void PlaneTail::runPowerUnit (bool airConditioningOn)
+
+void PlaneTail::showAlertMsg (bool switchOn)
+{ 
+    // when the switch is on, alert to pilot electicals are running
+    if(switchOn)
+        alert();
+    std::cout << "Electricals are not running" << std::endl;
+}
+
+void PlaneTail::consumePower (bool engineRunning)
 {
-    void turnOn();
-    if(!airConditioningOn) turnOn();
+    while (engineRunning) {
+        std::cout << "Engine running" << "\n";
+        powerConsumed++;
+    }
+    
 }
+
 void PlaneTail::turnPlane (bool lowerRudderOpen)
 {
     bool right;
@@ -492,7 +513,7 @@ struct PassengerCabin
 
     void carryPassengers (int numPassengers = 200);
     void carryToilets (int numOfToilets);
-    void carryBlankets (int numPassengers, int numBlanketsPerPassenger);
+    void blanketsAlert (int numPassengers, int numBlanketsPerPassenger);
 };
 using namespace std;
 void PassengerCabin::carryPassengers (int numPassengers)
@@ -503,14 +524,14 @@ void PassengerCabin::carryToilets (int numOfToilets)
 {
     cout << "Carrying: " << numOfToilets << "toilets"<<endl;  
 }
-void PassengerCabin::carryBlankets (int numPassengers, int numBlankets)
+
+void PassengerCabin::blanketsAlert (int numPassengers, int numBlankets)
 {
-    void stockMoreBlankets();
     if(numPassengers < numBlankets)
     {
     cout << "Carrying: " << numBlankets << "blankets"<<endl;
     };
-    stockMoreBlankets();
+    cout << "Stock " << (numPassengers - numBlankets) << "more blankets at least"<<endl;
 }
 
 struct Fuselage
@@ -532,7 +553,9 @@ void Fuselage::formsPlaneStructure (float fuselageDiameter)
 }
 bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
 {
-    if(fuselageMaterial == "aluminum") return true;
+    if(fuselageMaterial == "aluminum") 
+        return true;
+    return false;
 }
 void Fuselage::storeCargo (float cargoWeight)
 {
@@ -550,7 +573,7 @@ struct JumboJet
 
     void carryPassengers(std::string destination, int numOfPassengers);
     bool fly(bool safetyInspection, double gust);
-    bool carryCargo(int maxWeightPermitLuggagePerPassenger);
+    void carryCargo(int maxWeightPermitLuggagePerPassenger);
 }; 
 
 void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
@@ -564,7 +587,7 @@ bool JumboJet::fly(bool safetyInspection, double gust)
     return false;
 }
 
-bool JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
+void JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
 {
     std::string checkWeight = (maxWeightPermitLuggagePerPassenger <= 1) ?  "pass": "fail";
     if(checkWeight == "pass") std::cout << "Load cargo" << std::endl;
