@@ -108,7 +108,6 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
-
 struct Person
 {
     int age;
@@ -145,24 +144,6 @@ struct Person
         Foot leftFoot, rightFoot;
         void run(int, int);
 };
-
-
- /*
- 2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
-    If you have 'unused parameter' warnings, you aren't using one of your function parameters in your implementation.
-    Solution: use the parameter in your implementation.
-
-    If you have 'shadows a field of <classname>' warnings, a local variable in the function has the same name as a class member.  
-    This local variable could also be a function parameter with the same name as the class member.
-    Solution: change the local variable's name so it is different from the class member variable's name.
- 
- 3) be sure to write the correct full qualified name for the nested type's member functions.
- 
- 4) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
- if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
- */
-
-
 
 void Person::run(int howFast, bool startWithLeftFoot)
 {   
