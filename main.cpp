@@ -421,7 +421,7 @@ void PlaneWings::lowersLandingSpeed (int drag, bool landed, float landingSpeed )
 {
     if(!landed)
     {
-     landingSpeed -= drag;
+        landingSpeed -= drag;
     }
 }
 
@@ -441,7 +441,8 @@ struct LandingGear
 int LandingGear::reduceLandingImpact (float tirePressure, int landingSpeed)
 {
     int calculateImpact = 3 * landingSpeed;
-    if(tirePressure > 200) return calculateImpact;  
+    if(tirePressure > 200) 
+        return calculateImpact;  
     return landingSpeed;
 }
 bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
@@ -487,18 +488,20 @@ void PlaneTail::showAlertMsg (bool switchOn)
 
 void PlaneTail::consumePower (bool engineRunning)
 {
-    while (engineRunning) {
+    if (engineRunning) {
         std::cout << "Engine running" << "\n";
-        powerConsumed++;
+        powerConsumed+= 1;
     }
+    std::cout << "Small engine not running" << std::endl;
     
 }
 
 void PlaneTail::turnPlane (bool lowerRudderOpen)
 {
-    bool right;
-    if(lowerRudderOpen) right = true; 
-    
+    bool right = false;
+    if(lowerRudderOpen) 
+        right = true; 
+    std::cout << "Stay on course" << std::endl;
 }
 
 struct PassengerCabin
@@ -513,11 +516,14 @@ struct PassengerCabin
     void carryToilets (int numOfToilets);
     void blanketsAlert (int numPassengers, int numBlanketsPerPassenger);
 };
+
 using namespace std;
+
 void PassengerCabin::carryPassengers (int numPassengers)
 {
     cout << "Carrying: " << numPassengers << "passengers"<<endl;
 }
+
 void PassengerCabin::carryToilets (int numOfToilets)
 {
     cout << "Carrying: " << numOfToilets << "toilets"<<endl;  
@@ -527,9 +533,9 @@ void PassengerCabin::blanketsAlert (int numPassengers, int numBlankets)
 {
     if(numPassengers < numBlankets)
     {
-    cout << "Carrying: " << numBlankets << "blankets"<<endl;
-    };
-    cout << "Stock " << (numPassengers - numBlankets) << "more blankets at least"<<endl;
+        cout << "Carrying: " << numBlankets << "blankets"<<endl;
+    }
+    cout << "Stock " << (numPassengers - numBlankets) << "more blankets at least" << endl;
 }
 
 struct Fuselage
