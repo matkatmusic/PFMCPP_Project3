@@ -141,8 +141,8 @@ struct Person
         }
     };
         
-        Foot leftFoot, rightFoot; FIXME: indentation
-        void run(int, int); FIXME: indentation
+    Foot leftFoot, rightFoot; 
+    void run(int, int); 
 };
 
 void Person::run(int howFast, bool startWithLeftFoot)
@@ -488,9 +488,10 @@ void PlaneTail::showAlertMsg (bool switchOn)
 
 void PlaneTail::consumePower (bool engineRunning)
 {
-    if (engineRunning) { FIXME: curly braces go on their own line
+    if (engineRunning) 
+    {
         std::cout << "Engine running" << "\n";
-        powerConsumed+= 1; FIXME: spacing 
+        powerConsumed += 1; 
     }
     std::cout << "Small engine not running" << std::endl;
     
@@ -588,7 +589,7 @@ void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
 
 bool JumboJet::fly(bool safetyInspection, double gust)
 {
-        return safetyInspection && gust < 40; FIXME: indentation
+    return safetyInspection && gust < 40; 
 }
 
 void JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
