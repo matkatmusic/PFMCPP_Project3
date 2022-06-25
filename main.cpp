@@ -121,7 +121,8 @@ struct Person
     void stepForward();
     float stepSize();
 
-    struct Foot{
+    struct Foot
+    {
         int footSize;
         int stepDistance;
         int timeTaken;
@@ -136,8 +137,7 @@ struct Person
         }
         void stepForward(bool move = false)
         {
-            if (move == true) moveForward(1);
-            return;
+            if (move) moveForward(1);
         }
     };
         
@@ -288,7 +288,7 @@ struct Range
 
         std::string informCurrentTime (bool timeUpdated);
         void indicateRepairDate (std::string date, bool needsRepair);
-        bool selfCleans (bool settingsOn = true);
+        bool selfCleans (bool heavyCleaning = true, std::string setting = "");
         
     };
 
@@ -301,7 +301,8 @@ struct Range
 std::string Range::RangeControls::informCurrentTime (bool timeUpdated)
 {
     std::string updatedTime, currentTime;
-    if(timeUpdated) return updatedTime;
+    if(timeUpdated) 
+        return updatedTime;
     return currentTime;
 
 }
@@ -313,15 +314,17 @@ void Range::RangeControls::indicateRepairDate (std::string date, bool needsRepai
     }
     else
     {
-    std::cout << "Range In Good Shape" << std::endl;
+        std::cout << "Range In Good Shape" << std::endl;
     }
     
 }
-bool Range::RangeControls::selfCleans (bool settingsOn)
+bool Range::RangeControls::selfCleans (bool heavyCleaning, std::string setting)
 {
-    while(settingsOn) return settingsOn;
-    return !settingsOn;
-}
+    if( setting == "heavy")
+        return heavyCleaning;
+    return !heavyCleaning;
+} 
+
 
 struct ShoppingCart 
 {
@@ -377,13 +380,8 @@ bool Wind::transportSeeds (int numSeed, float gust)
 bool Wind::turnTurbines (std::string direction1, float gust)
 {
     if(direction1 == "North West" && gust > 80.f)  
-    {
         return true;
-    }
-    else
-    {
-        return false;
-    }
+    return false;
 }
 void Wind::helpBirdTravel (std::string direction2, bool birdFly, float gust)
 {
@@ -539,7 +537,7 @@ struct Fuselage
     float thicknessFuselageWall = 24.2f;
     int weightExteriorPaint = 4233;
     std::string planeMaterial = "aluminum";
-    float diameterFuselage = 523.2f;
+    float diameterFuselage = 20.2f;
     float weightFuselage = 234.4f;
 
     void formsPlaneStructure (float fuselageDiameter = 234.3f);
@@ -548,7 +546,7 @@ struct Fuselage
 };
 void Fuselage::formsPlaneStructure (float fuselageDiameter)
 {
-    float planeBodyWidth;
+    float planeBodyWidth = 20.f;
     planeBodyWidth = fuselageDiameter;
 }
 bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
@@ -560,7 +558,8 @@ bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
 void Fuselage::storeCargo (float cargoWeight)
 {
     int weightLimit = 1;
-    if(cargoWeight <weightLimit)std::cout << "load cargo" << std::endl;
+    if(cargoWeight < weightLimit)
+        std::cout << "load cargo" << std::endl;
 }
 
 struct JumboJet
@@ -583,14 +582,14 @@ void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
 
 bool JumboJet::fly(bool safetyInspection, double gust)
 {
-    if(safetyInspection && gust < 40) return true;
-    return false;
+        return safetyInspection && gust < 40;
 }
 
 void JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
 {
     std::string checkWeight = (maxWeightPermitLuggagePerPassenger <= 1) ?  "pass": "fail";
-    if(checkWeight == "pass") std::cout << "Load cargo" << std::endl;
+    if(checkWeight == "pass") 
+        std::cout << "Load cargo" << std::endl;
     std::cout << "Do not load cargo" << std::endl;
 }
 
