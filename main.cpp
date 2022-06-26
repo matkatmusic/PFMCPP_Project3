@@ -117,8 +117,11 @@ void Cat::Kitten::feed(bool isHungry)
 {
     float singlePortion = 0;
     if(isHungry)
+    {
         singlePortion = 6.f;
-        std::cout << "Kitty can have " << singlePortion << " oz of food." << std::endl;
+    }
+    std::cout << "Kitty can have " << singlePortion << " oz of food." << std::endl;
+    
 }
 
 void Cat::Kitten::pet(bool isAffectionate, float minutesToPet)
@@ -148,8 +151,14 @@ void Cat::makeNoise(bool foodBowlEmpty)
 {
     std::string noise = "";
     if(foodBowlEmpty)
+    {
         noise = "meow";
-    noise = "purr";
+
+    }
+    else 
+    {
+        noise = "purr";
+    }
     std::cout << "Cat goes: " << noise << std::endl;
 }
 
@@ -246,7 +255,7 @@ Range::RangeControls::RangeControls()
 
 void Range::RangeControls::informCurrentTime (bool timeUpdated)
 {
-    std::string updatedTime, currentTime = "12:00:00";
+    std::string updatedTime = "17:00:00", currentTime = "12:00:00";
     if(timeUpdated) 
         std::cout << "Time updated to: " << updatedTime << std::endl;
     std::cout << "Current time is: " << currentTime << std::endl;
@@ -286,7 +295,7 @@ struct ShoppingCart
     void isParked (int, std::string, int);
 };
 
-ShoppingCart::ShoppingCart ()
+ShoppingCart::ShoppingCart()
 {
     std::cout << "Shopping cart being constructed!" << std::endl;
 }
@@ -333,9 +342,11 @@ Wind::Wind()
 void Wind::transportSeeds (int numSeeds, std::string treeName, int milesTraveled)
 {
     if(treeName == "poplar")
+    {
         numSeeds = 25000000;
         milesTraveled = 20;
-        std::cout << "Strong wind can disperse " << numSeeds << " " << treeName << " seeds up to " << milesTraveled << " miles." << std::endl;
+    }
+    std::cout << "Strong wind can disperse " << numSeeds << " " << treeName << " seeds up to " << milesTraveled << " miles." << std::endl;
 }
 
 bool Wind::turnTurbines (std::string direction1, float gust)
@@ -376,8 +387,10 @@ void PlaneWings::generateLift (bool upwardForce, std::string airDirection)
 {   
     std::string planeStatus = "stays on the ground";
     if (airDirection == "down" && upwardForce)
+    {
         planeStatus = "goes up";
-        std::cout << "When the air goes " << airDirection << " the upward force creates lift and the plane " << planeStatus << std::endl;
+    }
+    std::cout << "When the air goes " << airDirection << " the upward force creates lift and the plane " << planeStatus << std::endl;
 }
 
 bool PlaneWings::reduceDrag (float tailwind)
@@ -417,14 +430,18 @@ int LandingGear::reduceLandingImpact (float tirePressure, int landingSpeed)
 {
     int calculateImpact = 3 * landingSpeed;
     if(tirePressure > 200) 
+    {
         return calculateImpact;  
+    }
     return landingSpeed;
 }
 
 bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
 {
     if(!retractLandingGear)
+    {
          return true;
+    }
     return false;
 }
 
@@ -460,16 +477,13 @@ PlaneTail::PlaneTail()
     std::cout << "Plane Tail being constructed!"  << std::endl;
 }
 
-// void alert()
-// {
-//     std::cout << "Electricals are running" << std::endl;
-// }
-
 void PlaneTail::runPowerUnit (std::string planeStatus)
 { 
     bool powerUnitRunning = false; 
     if(planeStatus == "on the ground")
+    {
         powerUnitRunning = true;
+    }
         std::cout << "The auxilary power unit runs while the aircraft is " << planeStatus << std::endl;
 }
 
@@ -560,16 +574,16 @@ void Fuselage::formsPlaneStructure (float fuselageDiameter)
 
 bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
 {
-    if(fuselageMaterial == "aluminum") 
-        return true;
-    return false;
+    return fuselageMaterial == "aluminum";
 }
 
 void Fuselage::storeCargo (float cargoWeight)
 {
     int weightLimit = 1;
     if(cargoWeight < weightLimit)
+    {
         std::cout << "Load cargo!" << std::endl;
+    }
     std::cout << "Warning: cargo weight over limit!" << std::endl;
 }
 
@@ -599,7 +613,9 @@ void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
     int windInBeaufort = 0;
     std::string safeWeather = (precipitation > 0 && windInBeaufort > 11)? "unsafe": "safe";
     if(safeWeather == "unsafe")
+    {
          std::cout << "Flight canceled due to " << safeWeather << " weather condition." << std::endl;
+    }
     std::cout << "Carrying " << numOfPassengers << " passengers to " << destination << std::endl;
 }
 
