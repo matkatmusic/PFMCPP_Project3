@@ -743,7 +743,6 @@ int main()
 
     std::cout << "Much of the 747 is made from  "<< DeltaAirFuselage.planeMaterial << " covered with " << DeltaAirFuselage.weightExteriorPaint << " lbs of exterior paint." << std::endl;
     
-    
     JumboJet Delta;
 
     Delta.carryPassengers("Tampa", 100);
