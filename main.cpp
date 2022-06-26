@@ -593,7 +593,7 @@ Fuselage::Fuselage()
 
 void Fuselage::formsPlaneStructure (float fuselageDiameter)
 {
-    float planeBodyWidth = 0.f;
+    float planeBodyWidth = 20.f;
     float thicknessExteriorPaintAdds = 1.f;
     planeBodyWidth = fuselageDiameter + thicknessExteriorPaintAdds; 
 }
