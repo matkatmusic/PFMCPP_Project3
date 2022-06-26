@@ -233,17 +233,23 @@ void Range::consumeFuel(std::string fuelSource = "electric", int energyEfficienc
 
 void Range::breaksDown (int ageOfHeatingElement)
 {
-    if( ageOfHeatingElement >= 50) FIXME: curly braces
+    if( ageOfHeatingElement >= 50) 
+    {
         std::cout << "It'll break down within a year." << std::endl;
-    if( ageOfHeatingElement> 10 && ageOfHeatingElement < 50) FIXME: curly braces
+    }
+    if( ageOfHeatingElement> 10 && ageOfHeatingElement < 50)
+    {
         std::cout << "Range can be used for a few more years." << std::endl;
+    }
 }
 
 void Range::heatsTheKitchen(int durationOperated, int ovenTemp)
 {
     int kitchenTemp = 70;
-    if(durationOperated > 0 && ovenTemp > 0) FIXME: curly braces
+    if(durationOperated > 0 && ovenTemp > 0)
+    {
         kitchenTemp = kitchenTemp + (ovenTemp / 100) * (durationOperated/4);
+    }
     std::cout << "Currently kitchen temp is " << kitchenTemp << " due to oven use." << std::endl;
 }
 
@@ -256,8 +262,10 @@ Range::RangeControls::RangeControls()
 void Range::RangeControls::informCurrentTime (bool timeUpdated)
 {
     std::string updatedTime = "17:00:00", currentTime = "12:00:00";
-    if(timeUpdated)  FIXME: curly braces
+    if(timeUpdated)
+    {
         std::cout << "Time updated to: " << updatedTime << std::endl;
+    }
     std::cout << "Current time is: " << currentTime << std::endl;
 
 }
@@ -275,8 +283,10 @@ void Range::RangeControls::indicateRepairDate (std::string date, bool needsRepai
 }
 bool Range::RangeControls::selfCleans (bool heavyCleaning, std::string setting)
 {
-    if( setting == "heavy") FIXME: curly braces
+    if( setting == "heavy")
+    {
         return heavyCleaning;
+    }
     return !heavyCleaning;
 } 
 
@@ -302,14 +312,18 @@ ShoppingCart::ShoppingCart()
 
 bool ShoppingCart::carryGrocery (bool badWheels, float weight)
 {
-    if(badWheels && weight <= 40.2f)  FIXME: curly braces
+    if(badWheels && weight <= 40.2f)
+    {
         return true;
+    }
     return false;
 }
 bool ShoppingCart::rollsDownHill (bool steepHill, bool fast)
 {
-    if(steepHill)  FIXME: curly braces
+    if(steepHill)
+    {
         return fast;
+    }
     return !fast;
 }
 void ShoppingCart::isParked(int numCartsInCorral = 1, std::string  cartLocation = "corral", int totalNumCarts = 100)
@@ -351,8 +365,10 @@ void Wind::transportSeeds (int numSeeds, std::string treeName, int milesTraveled
 
 bool Wind::turnTurbines (std::string direction1, float gust)
 {
-    if(direction1 == "North West" && gust > 80.f)   FIXME: curly braces
+    if(direction1 == "North West" && gust > 80.f)
+    {
         return true;
+    }
     return false;
 }
 void Wind::helpBirdTravel (std::string direction2, bool birdFly, float gust)
@@ -447,14 +463,22 @@ bool LandingGear::preventFuselageHittingGround (bool retractLandingGear)
 
 void LandingGear::toggleLandingGear (bool takeOff, std::string landingGearStatus)
 {
-    if(takeOff && landingGearStatus == "extended") FIXME: curly braces, use else if
+    if(takeOff && landingGearStatus == "extended")
+    {
         std::cout << "Warning! Landing gear postion: " << landingGearStatus << std::endl;
-    if(takeOff && landingGearStatus == "retracted") FIXME: curly braces, use else if
+    }
+    else if(takeOff && landingGearStatus == "retracted")
+    {
          std::cout << "Safe flight. Landing gear position: " << landingGearStatus << std::endl;
-    if(!takeOff && landingGearStatus == "extended") FIXME: curly braces, use else if
+    }
+    else if(!takeOff && landingGearStatus == "extended")
+    {
         std::cout << "Ready to land. Landing gear position: " << landingGearStatus << std::endl;
-    if(!takeOff && landingGearStatus == "retracted") FIXME: curly braces, use else if
+    }
+    else if(!takeOff && landingGearStatus == "retracted") 
+    {
         std::cout << "Warning! Landing gear postion: " << landingGearStatus << std::endl;
+    }
 }
 
 struct PlaneTail 
@@ -484,7 +508,7 @@ void PlaneTail::runPowerUnit (std::string planeStatus)
     {
         powerUnitRunning = true;
     }
-        std::cout << "The auxilary power unit runs while the aircraft is " << planeStatus << std::endl; FIXME: indentation
+    std::cout << "The auxilary power unit runs while the aircraft is " << planeStatus << std::endl; 
 }
 
 void PlaneTail::consumePower (bool engineRunning)
@@ -501,8 +525,10 @@ void PlaneTail::consumePower (bool engineRunning)
 void PlaneTail::turnPlane (bool lowerRudderOpen)
 {
     bool right = false;
-    if(lowerRudderOpen)  FIXME: curly braces
+    if(lowerRudderOpen)
+    {
         right = true; 
+    }
     std::cout << "Stay on course" << std::endl;
 }
 
@@ -567,14 +593,16 @@ Fuselage::Fuselage()
 
 void Fuselage::formsPlaneStructure (float fuselageDiameter)
 {
-    float planeBodyWidth = 20.f;
-    planeBodyWidth = fuselageDiameter; FIXME: don't init a variable then overwrite it immediately
+    float planeBodyWidth = 0.f;
+    float thicknessExteriorPaintAdds = 1.f;
+    planeBodyWidth = fuselageDiameter + thicknessExteriorPaintAdds; 
 }
 
 
 bool Fuselage::keepsHeatOut (std::string fuselageMaterial)
 {
-    return fuselageMaterial == "aluminum"; FIXME: compare strings with string. "alumnimum" is not a std::string.
+    std::string materialName = "aluminum";
+    return fuselageMaterial == materialName;
 }
 
 void Fuselage::storeCargo (float cargoWeight)
@@ -627,8 +655,10 @@ bool JumboJet::fly(bool safetyInspection, double gust)
 void JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
 {
     std::string checkWeight = (maxWeightPermitLuggagePerPassenger <= 1) ?  "pass": "fail";
-    if(checkWeight == "pass")  FIXME: curly braces
+    if(checkWeight == "pass")
+    {
         std::cout << "Load cargo" << std::endl;
+    }
     std::cout << "Do not load cargo" << std::endl;
 }
 
