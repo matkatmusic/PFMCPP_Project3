@@ -329,7 +329,7 @@ bool ShoppingCart::rollsDownHill (bool steepHill, bool fast)
 void ShoppingCart::isParked(int numCartsInCorral = 1, std::string  cartLocation = "corral", int totalNumCarts = 100)
 {
     int missingCarts = totalNumCarts - numCartsInCorral;
-    if(cartLocation == "corral")
+    if(cartLocation == "corral")FIXME: curly braces
         std::cout << "Cart is safely parked in " << cartLocation << std::endl;
     std::cout << missingCarts << " cart(s) need(s) to be moved to the cart coarral." << std::endl;
 }
@@ -343,9 +343,9 @@ struct Wind
     std::string cause = "difference in gas density";
     std::string use = "wind energy";
 
-     void transportSeeds (int, std::string, int);
-     bool turnTurbines (std::string, float gust = 34.2f);
-     void helpBirdTravel (std::string direction2, bool birdFly, float gust = 34.2f);
+     void transportSeeds (int, std::string, int);FIXME: indentation
+     bool turnTurbines (std::string, float gust = 34.2f);FIXME: indentation
+     void helpBirdTravel (std::string direction2, bool birdFly, float gust = 34.2f);FIXME: indentation
 }; 
 
 Wind::Wind()
@@ -642,7 +642,7 @@ void JumboJet::carryPassengers(std::string destination, int numOfPassengers)
     std::string safeWeather = (precipitation > 0 && windInBeaufort > 11)? "unsafe": "safe";
     if(safeWeather == "unsafe")
     {
-         std::cout << "Flight canceled due to " << safeWeather << " weather condition." << std::endl;
+         std::cout << "Flight canceled due to " << safeWeather << " weather condition." << std::endl; FIXME: indentation
     }
     std::cout << "Carrying " << numOfPassengers << " passengers to " << destination << std::endl;
 }
@@ -658,7 +658,7 @@ void JumboJet::carryCargo(int maxWeightPermitLuggagePerPassenger)
     if(checkWeight == "pass")
     {
         std::cout << "Load cargo" << std::endl;
-    }
+    } FIXME: add else if
     std::cout << "Do not load cargo" << std::endl;
 }
 
