@@ -335,11 +335,11 @@ I will review the pseudo-code that you have written.
 /*
 Thing 1) Guitar
 5 properties:
-    1) number of strings
-    2) body wood type
-    3) brand name
-    4) body shape
-    5) size
+    1) number of strings (unsigned int)
+    2) body wood type (string)
+    3) brand name (string)
+    4) body shape (string)
+    5) size (char)
 3 things it can do:
     1) play a chord
     2) play a solo
@@ -349,11 +349,11 @@ Thing 1) Guitar
 /*
 Thing 2) wind mill
 5 properties:
-    1) number of blades
-    2) rotational speed
-    3) pole height
-    4) amount of energy generated in a day
-    5) blade length
+    1) number of blades (unsigned int)
+    2) rotational speed (float)
+    3) pole height (float)
+    4) amount of energy generated in a day (float)
+    5) blade length (unsigned int)
 3 things it can do:
     1) convert mechanical energy into electrical energy
     2) rotate their baldes
@@ -363,11 +363,11 @@ Thing 2) wind mill
 /*
 Thing 3) Motorcycle
 5 properties:
-    1) RPMs
-    2) color
-    3) size
-    4) engine type
-    5) brand name
+    1) RPMs (usigned int)
+    2) color (string)
+    3) size (unsigned int)
+    4) engine type (string)
+    5) brand name (string)
 3 things it can do:
     1) accelerate
     2) consume gas
@@ -377,11 +377,11 @@ Thing 3) Motorcycle
 /*
 Thing 4) Drill set
 5 properties:
-    1) drill bit material
-    2) drill bit diameter
-    3) angular speed
-    4) number of chargers
-    5) brand name
+    1) drill bit material (string)
+    2) drill bit diameter (unsigned int)
+    3) angular speed (float)
+    4) number of chargers (unsigned int)
+    5) brand name (string)
 3 things it can do:
     1) drill concrete
     2) unscrew in the left or right direction
