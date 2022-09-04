@@ -1,4 +1,3 @@
-Code project 3
 /*
 Project 3 - Part 1a-d / 5
 Video:  Chapter 2 Part 5
