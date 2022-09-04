@@ -1,3 +1,4 @@
+Code project 3
 /*
 Project 3 - Part 1a-d / 5
 Video:  Chapter 2 Part 5
@@ -53,51 +54,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) honk
+        4) radio volume controls
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) adjust volume settings
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) velocimeter
+        2) gear shift indicator
+        3) engine temperature reader
+        4) tachometer
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) read the car speed
+        2) monitor the engine temperature
+        3) check the gear shift that is engaged
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) AC system ON/OFF button
+        2) Fan speed control
+        3) Car cabin temperature reader
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) Monitor car cabin temperature
+        2) Turn AC system ON and OFF
+        3) Control the fan's speed
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) compact disc tray
+        2) radio station dial
+        3) number pad
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) dial a phone number
+        2) select radio station
+        3) play music from a compact disc
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) heat actuators
+        2) seat controls
+        3) seat recline button
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) adjust seat settings
+        2) control the seat temperature
 */
 
 /*
@@ -153,62 +154,6 @@ Part 1b Assignment: 1 Step
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 */
-
-/*
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
  /*
 Part 1c - Lesson
@@ -278,20 +223,6 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 */
-
-/*
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
 
 /*
 Part 1d - Lesson
@@ -385,76 +316,6 @@ Step 3 is written below UDTs 5 - 9
 */
 
 /*
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
-/*
 ===================
 Part 1d assignment: Step 3
 ===================
@@ -472,8 +333,145 @@ After you have MOVED your 10 UDTs, send me a DM with your pull request link.
 I will review the pseudo-code that you have written.
 */
 
+/*
+Thing 1) Guitar
+5 properties:
+    1) number of strings
+    2) body wood type
+    3) brand name
+    4) body shape
+    5) size
+3 things it can do:
+    1) play a chord
+    2) play a solo
+    3) connect to amplifier
+ */
 
+/*
+Thing 2) wind mill
+5 properties:
+    1) number of blades
+    2) rotational speed
+    3) pole height
+    4) amount of energy generated in a day
+    5) blade length
+3 things it can do:
+    1) convert mechanical energy into electrical energy
+    2) rotate their baldes
+    3) connect to the electrical grid
+ */
 
+/*
+Thing 3) Motorcycle
+5 properties:
+    1) RPMs
+    2) color
+    3) size
+    4) engine type
+    5) brand name
+3 things it can do:
+    1) accelerate
+    2) consume gas
+    3) cruise
+ */
+
+/*
+Thing 4) Drill set
+5 properties:
+    1) drill bit material
+    2) drill bit diameter
+    3) angular speed
+    4) number of chargers
+    5) brand name
+3 things it can do:
+    1) drill concrete
+    2) unscrew in the left or right direction
+    3) set rotatory speed
+ */
+
+/*
+Thing 5) Speakers
+5 properties:
+    1) loudness (float)
+    2) resistance (unsigned int)
+    3) distortion (float)
+    4) diameter (double)
+    5) amount of power required in mW (unsigned int)
+3 things it can do:
+    1) play sound
+    2) consume power
+    3) set playback level
+ */
+
+/*
+Thing 6) Microphones
+5 properties:
+    1) sensitivity (float)
+    2) power supply (unsigned int)
+    3) acoustic overload point (float)
+    4) technology (string)
+    5) transduction type (bool)
+3 things it can do:
+    1) capture sound
+    2) set input gain
+    3) read sensitivity
+ */
+
+/*
+Thing 7) Antenna
+5 properties:
+    1) tuning radio-frequency (float)
+    2) size (int)
+    3) communication technology (string)
+    4) power consumption (float)
+    5) low power mode (bool)
+3 things it can do:
+    1) remote control
+    2) audio streaming
+    3) consumes power
+ */
+
+/*
+Thing 8) MCU
+5 properties:
+    1) type of microcontroller (string)
+    2) supported number of bits (int)
+    3) type of nonvolatile memory (string)
+    4) RAM size
+    5) number of input ports
+3 things it can do:
+    1) fetch instructions from memory
+    2) decode instructions into commands
+    3) execute commands
+ */
+
+/*
+Thing 9) Battery
+5 properties:
+    1) operating time (float)
+    2) technology principle (string)
+    3) rechargeable (bool)
+    4) charging speed (float)
+    5) diameter (float)
+3 things it can do:
+    1) power the speaker
+    2) power the microphone
+    3) read capacity
+ */
+
+/*
+Thing 10) Hearing aid
+5 properties:
+    1) Speakers
+    2) Microphone
+    3) Antenna
+    4) MCU
+    5) Battery
+3 things it can do:
+    1) amplify audio signals
+    2) listen to music
+    3) connect to smartphone
+ */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
