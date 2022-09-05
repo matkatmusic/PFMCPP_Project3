@@ -186,7 +186,6 @@ struct CarWash //                                   1) define an empty struct fo
     */
 };
 
-
 /*
 Thing 1) Guitar
 5 properties:
@@ -200,6 +199,52 @@ Thing 1) Guitar
     2) play a solo
     3) connect to amplifier
  */
+struct Guitar
+{
+    // number of strings
+    unsigned int numberOfStrings = 6;
+    // body wood type (string)
+    std::string boydWoodType = "Mahogany";
+    // brand name (string)
+    std::string brandName = "Jackson";
+    // body shape (string)
+    std::string bodyShape = "Default";
+    // size (char)    
+    char size = 'M'; // S, M, L, XL
+
+    // 5) nested class
+    struct GuitarString
+    {
+        // Gauge
+        float gauge = 0.0f;
+        float tension = 0.0f;
+        std::string coreMaterial = "Steel";
+        std::string windingType = "Round Wound";
+        bool coated = false;
+
+        bool isCoated(); // enquire whether the string is coated or not
+        void setTension(float tension);
+        float getGauge(); // get information about string's gauge
+    };
+
+    // play a chord
+    void playChord(std::string chord = "G");
+    // play a solo
+    void PlaySolo();
+    // connect to amplifier
+    bool connectToAmplifier(); // return a bool to indicate whether or not the guitar is connected to an amplifier
+
+    // 4) function member with UDT as input parameter
+    void tuneString(GuitarString stringToTune, std::string key);
+
+    GuitarString stringE;
+    GuitarString stringA;
+    GuitarString stringD;
+    GuitarString stringG;
+    GuitarString stringB;
+    GuitarString stringEs;
+
+};
 
 /*
 Thing 2) wind mill
@@ -211,9 +256,30 @@ Thing 2) wind mill
     5) blade length (unsigned int)
 3 things it can do:
     1) convert mechanical energy into electrical energy
-    2) rotate their baldes
+    2) rotate their blades
     3) connect to the electrical grid
  */
+struct WindMill
+{
+    // number of blades
+    unsigned int numberOfBlades = 3;
+    // rotational speed
+    float rotationalSpeed = 0.0f;
+    // pole height
+    float poleHeight = 10.0f;
+    // amount of mechanical energy generated per day
+    float mechanicalEnergyGeneratedPerDay = 100.0f;
+    // blade length
+    unsigned int bladeLength = 20;
+
+    // convert mechanical energy into electrical energy
+    float convertMechEnergyToElEnergy(float mechanicalEnergy = 50.0f); // returns electrical energy
+    // rotate wind mill's blades
+    bool rotateBlades(float rotationalSpeed = 100.0f); // confirm whether or not the blades are rotating
+    // connect to the electrical grid
+    bool connectToGrid(); // confirm whether or not the wind mill is connected to the grid
+
+};
 
 /*
 Thing 3) Motorcycle
@@ -225,9 +291,50 @@ Thing 3) Motorcycle
     5) brand name (string)
 3 things it can do:
     1) accelerate
-    2) consume gas
+    2) consume gas, read tank level
     3) cruise
  */
+struct MotorCycle
+{
+    // revolutiosn per minute
+    unsigned int revolutionsPerMinute = 45;
+    // color
+    std::string color =  "blue";
+    // size
+    unsigned int size = 30;
+    // engine type
+    std::string engineType = "motorV";
+    // brand name
+    std::string brandName = "Kawasaki";
+
+    // 5) nested class
+    struct Wheel
+    {
+        bool isBalanced = true;
+        float rimRadius = 310.0f; // in mm
+        unsigned int rimModulus = 69; // in GPa
+        std::string material = "Alloy";
+        float currentPressure = 36.0f; // PSI
+
+        bool isWheelPressureLow(); // read whether the wheel pressure is low
+        // set wheel balance to true
+        void balanceWheel();
+        // read if wheels are balanced
+        bool isWheelBalanced(); // read whether or not the Wheel is balanced
+    };
+
+    // accelerate
+    void accelerate(float acceleration = 1.2f);
+    // consume gas, read tank level
+    float readGasTankLevel(); // return percentage of full tank
+    // cruise
+    bool cruise(float speed); // confirm whether or not the vehicle is cruising
+    // change Wheel
+    void getNewWheel(Wheel newWheel);
+
+    Wheel frontWheel;
+    Wheel backWheel;
+};
 
 /*
 Thing 4) Drill set
@@ -242,6 +349,27 @@ Thing 4) Drill set
     2) unscrew in the left or right direction
     3) set rotatory speed
  */
+struct DrillSet
+{
+    // drill bit material
+    std::string drillbitMaterial = "Steel";
+    // drill bit diameter
+    unsigned int drillbitDiameter = 2;
+    // angular speed
+    float angularSpeed = 0.0f;
+    // number of chargers
+    unsigned int numberOfChargers = 2;
+    // brand name
+    std::string brandName = "Bosch";
+
+    // can the drill bit drill concrete?
+    bool canDrillConcrete(std::string drillbitMaterial); // confirm whether or not the drill bit can drill concrete
+    // unscrew in the left or right direction
+    void setDirectionOfRotation(int direction = -1); // left= -1, right = 1
+    // set rotatory speed
+    void setRotatorySpeed(float angularSpeed = 2.0f);
+    
+};
 
 /*
 Thing 5) Speakers
@@ -257,6 +385,28 @@ Thing 5) Speakers
     3) set playback level
  */
 
+struct Speaker
+{
+    // loudness
+    float loudness = 90.0f;
+    // resistance
+    unsigned int resistance = 4;
+    // distortion
+    float distortion = 0.1f;
+    // diameter
+    double diameter = 20.1;
+    // amount of power required in mW
+    unsigned int powerAmount = 10;
+
+    // play sound
+    void playSound();
+    // power consumed
+    float powerConsumption(unsigned int resistance = 4, float voltageInput = 1.0f);
+    // set playback level
+    void setPlaybackLevel(unsigned int volumeIndex);
+
+};
+
 /*
 Thing 6) Microphones
 5 properties:
@@ -264,43 +414,35 @@ Thing 6) Microphones
     2) power supply (unsigned int)
     3) acoustic overload point (float)
     4) technology (string)
-    5) transduction type (bool)
+    5) transduction type (string)
 3 things it can do:
     1) capture sound
     2) set input gain
     3) read sensitivity
  */
+struct Microphone
+{
+    // sensitivity
+    float sensitivity = -54.0f;
+    // power supply
+    unsigned int powerSupply = 1.0f;
+    // acoustic overload point in dB
+    float acousticOverloadPoint = 124.0f;
+    // technology
+    std::string technology = "MEMS";
+    // transduction type
+    std::string transductionType = "Dynamic";
+
+    // capture sound
+    void captureSound(float duration);
+    // set input gain
+    void setInputGain(float gain);
+    // read sensitivity
+    float getSensitivity(); // return microphone sensitivity
+};
 
 /*
-Thing 7) Antenna
-5 properties:
-    1) tuning radio-frequency (float)
-    2) size (int)
-    3) communication technology (string)
-    4) power consumption (float)
-    5) low power mode (bool)
-3 things it can do:
-    1) remote control
-    2) audio streaming
-    3) consumes power
- */
-
-/*
-Thing 8) MCU
-5 properties:
-    1) type of microcontroller (string)
-    2) supported number of bits (int)
-    3) type of nonvolatile memory (string)
-    4) RAM size
-    5) number of input ports
-3 things it can do:
-    1) fetch instructions from memory
-    2) decode instructions into commands
-    3) execute commands
- */
-
-/*
-Thing 9) Battery
+Thing 7) Battery
 5 properties:
     1) operating time (float)
     2) technology principle (string)
@@ -312,6 +454,96 @@ Thing 9) Battery
     2) power the microphone
     3) read capacity
  */
+struct Battery
+{
+    // operating time
+    float operatingTime = 3.5f;
+    // technology principle
+    std::string technologyPrinciple = "XM3";
+    // rechargeable
+    bool isBatteryRechargeable = true;
+    // charging speed
+    float chargingSpeed = 5.0f;
+    // diameter
+    float diameter = 3.0f;
+
+    // power the speaker
+    bool powerSpeaker(); // provide power to speaker
+    // power the microphone
+    bool powerMicrophone(); // provide power to microphones
+    // read capacity
+    float readCapacity(); // read the current battery's capacity
+};
+
+/*
+Thing 8) Antenna
+5 properties:
+    1) tuning radio-frequency (float)
+    2) size (unsigned int)
+    3) communication technology (string)
+    4) power consumption (float)
+    5) low power mode (bool)
+3 things it can do:
+    1) remote control
+    2) audio streaming
+    3) consumes power
+ */
+struct Antenna
+{
+    // tuning radio-frequency
+    float tuningRadioFrequency = 2.4f;
+    // size
+    unsigned int size = 1;
+    // communication technology
+    std::string communicationTechnology = "COM";
+    // low power mode
+    bool lowPowerMode = false;
+    // use user-defined type
+    Battery battery;
+
+    // remote control
+    bool setRemoteControl(); // enable remote control
+    // audio streaming
+    bool enableAudioStreaming(); // enable audio streaming though the antenna
+    // consume power
+    float powerConsumption(Battery batteryA, float voltageInput = 1.0f); // 4) return power consumed by Antenna given a particular battery UDT and voltage input
+    
+};
+
+/*
+Thing 9) MCU
+5 properties:
+    1) type of microcontroller (string)
+    2) supported number of bits (unsigned int)
+    3) type of nonvolatile memory (string)
+    4) RAM size (unsigned int)
+    5) number of input ports (unsigned int)
+3 things it can do:
+    1) fetch instructions from memory
+    2) decode instructions into commands
+    3) execute commands
+ */
+struct MicrocontrollerUnit
+{
+    // type of microcontroller
+    std::string microcontrollerType = "D1";
+    // supported number of bits
+    unsigned int numberOfBits = 32;
+    // type of nonvolatile memory
+    std::string memoryType = "RAM";
+    // RAM size
+    unsigned int ramSize = 512;
+    // number of input ports
+    unsigned int numberInputPorts = 4;
+
+    // fetch instructions from memory
+    std::string fetchInstructionsFromMemory(std::string memoryType = "RAM"); // get next instruction
+    // decode instructions into command
+    unsigned int decodeInstruction(std::string instruction = "Iddle"); // map instruction to unique number
+    // execute command
+    void executeCommand(unsigned int numericCommand = 0);
+    
+};
 
 /*
 Thing 10) Hearing aid
@@ -326,6 +558,28 @@ Thing 10) Hearing aid
     2) listen to music
     3) connect to smartphone
  */
+
+struct HearingAid
+{
+    // Speakers
+    Speaker speaker;
+    // Microphone
+    Microphone mic;
+    // Antenna
+    Antenna antenna;
+    // MCU
+    MicrocontrollerUnit microController;
+    // Battery
+    Battery battery;
+
+    // amplify audio signals
+    void amplifyAudioSignals(Microphone microphoneA, float gain); // 4) some of input parameters is a UDT
+    // listen to music
+    void listenToMusic(Speaker speakerA, float gain);
+    // connect to smartphone. 4) some of input parameters is a UDT
+    bool connectToSmartphone(std::string handshakingID = "AAAA"); // confirm whether or not the conenction to a smartphone was succesful
+    
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
