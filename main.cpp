@@ -213,7 +213,7 @@ struct Guitar
     char size = 'M'; // S, M, L, XL
 
     // 5) nested class
-    struct GuitarString
+    struct String
     {
         // Gauge
         float gauge = 0.0f;
@@ -235,14 +235,14 @@ struct Guitar
     bool connectToAmplifier(); // return a bool to indicate whether or not the guitar is connected to an amplifier
 
     // 4) function member with UDT as input parameter
-    void tuneString(GuitarString stringToTune, std::string key);
+    void tuneString(String stringToTune, std::string key);
 
-    GuitarString stringE;
-    GuitarString stringA;
-    GuitarString stringD;
-    GuitarString stringG;
-    GuitarString stringB;
-    GuitarString stringEs;
+    String stringE;
+    String stringA;
+    String stringD;
+    String stringG;
+    String stringB;
+    String stringEs;
 
 };
 
