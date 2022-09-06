@@ -1,169 +1,77 @@
- /*
- Project 3 - Part 2 / 5
- Video: Chapter 2 Part 6
- Implementations tasks
- 
-Create a branch named Part2
-
- tasks
- 0) delete all of the plain english pseudo-code you added in Part1.
-   don't forget to remove the blank lines left behind after you remove your comments
-   - you should be left with only your UDTs.
-*/
-// example:
-// if you had something like this at the end of Part1e:
 /*
-Thing: Car Wash   
-    5 properties:
-        - number of vacuum cleaners
-        - number of eco-friendly cleaning supplies
-        - stores the amount of water used per week.
-        - stores amount of profit made per week
-        - number of cars serviced per day
-    3 things it can do:
-        - wash and wax car
-        - charge customer
-        - detail the car interior
+ Project 3 - Part 3 / 5
+ video: Chapter 2 - Part 8
+ Constructors tasks
+
+ Create a branch named Part3
+
+ On this new branch:
+
+ 0) if you opted to not fill in any of your member functions in part2, 
+    fill in ALL of your member functions
+    
+ 1) Add a constructor for each User-Defined-Type.
+    The constructor should be the first declaration in your UDT, before all member variables and member functions.
+    add a std::cout message in the constructor that prints out the name of the class being constructed.  
+    When you run your code, you'll see the order that your objects are created in the program output. 
+ 
+ 2) For each User-Defined-Type:
+        amend some of the member functions to print out something interesting via std::cout
+ 
+ 3) Instantiate 1 or 2 instances of EACH of your user-defined types in the main() function.  
+    You should have at least 12 different variables declared in main(), because you have written 12 different types (including the nested types)
+
+ 4) For each instantiated UDT: 
+        call each of that instance's member functions.
+        You're doing this to show that your code doesn't produce warnings when you call the functions that take arguments.
+ 
+ 5) add some std::cout statements in main() that print out your UDT's member variable values or values returned from your UDT member functions (if they return values)
+ 
+ After you finish defining each type/function:
+ click the [run] button.  Clear up any errors or warnings as best you can.
+ if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
+ 
+ example:
  */
 
 #include <iostream>
-#include <string>
-namespace Part1eVersion 
+namespace Example 
 {
-struct CarWash        
+struct UDT  // my user defined type named 'UDT'
 {
-    //number of vacuum cleaners                     
-    int numVacuumCleaners = 3; 
-    //number of eco-friendly cleaning supplies      
-    int numEcoFriendlyCleaningSupplies = 20;     
-    //stores the amount of water used per week.     
-    float waterUsedPerWeek = 200.f;            
-    //stores amount of profit made per week         
-    float profitPerWeek = 495.95f;               
-    //number of cars serviced per day               
-    int numberOfCarsServiced = 10;               
-    
-    struct Car  
-    {
-        bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
-        int year = 1985;
-        std::string manufacturer = "Toyota";
-        std::string model = "Corolla";
-
-        void fillTank(float costPerGallon, double fuelAmountInGallons = 2.0, bool requiresDiesel = false);  
-        void breakDown(std::string failureType, bool requiresTow = false);
-        int getMilesTraveledAnnually(bool includeUberLyftTrips);
-    };
-
-    //wash and wax car
-    void washAndWaxCar( Car car ); 
-    //charge customer
-    float chargeCustomer(float discountPercentage);
-    //detail the car interior
-    void detailInterior( Car car );
-    
-    Car carBeingServiced;  
-};
-}
-
-//this is what I want to see after the code is cleaned up: 
-namespace Part2Version
-{
-struct CarWash        
-{
-    int numVacuumCleaners = 3; 
-    int numEcoFriendlyCleaningSupplies = 20;     
-    float waterUsedPerWeek = 200.f;            
-    float profitPerWeek = 495.95f;               
-    int numberOfCarsServiced = 10;               
-    
-    struct Car  
-    {
-        bool isAPickupTruck = false;
-        float gasMileage = 26.2f;        
-        int year = 1985;
-        std::string manufacturer = "Toyota";
-        std::string model = "Corolla";
-
-        void fillTank(double fuelAmountInGallons = 2.0);  
-        void breakDown(std::string failureType, bool requiresTow = false);
-        int getMilesTraveledAnnually(bool includeUberLyftTrips);
-    };
-
-    void washAndWaxCar( Car car ); 
-    float chargeCustomer(float discountPercentage);
-    void detailInterior( Car car );
-    
-    Car carBeingServiced;  
-};
-}
-  /*
-    The above snippet is just an example showing you how to clean up your code.  
-    Do not put your cleaned up code into a namespace like I have done here.
-
- 1) write the definition for the Type that leftFoot and rightFoot are instantiations of.
-    don't forget to define and implement the member functions 'stepForward()' and 'stepSize()'
-    you should be able to deduce the return type of those functions based on their usage in Person::run()
-    You'll need to insert the Person struct from the video in the space below.
- */
-struct Limb
-{
-    int steps = 0;
-
-    int stepForward();
-    int stepSize();
+    int thing = 0; //a member variable
+    UDT();              //1) the constructor
+    void printThing();  //the member function
 };
 
-int Limb::stepForward()
+//the function definitions are outside of the class
+UDT::UDT()
 {
-    steps += 1;
-
-    return steps;
+    std::cout << "UDT being constructed!" << std::endl; //1) 
 }
 
-int Limb::stepSize()
+void UDT::printThing()
 {
-    return steps;
+    std::cout << "UDT::printThing() " << thing << std::endl;  //2) printing out something interesting
 }
 
-struct Person
+int main()
 {
-    Limb leftFoot;
-    Limb rightFoot;
-
-    int age;
-    int height;
-    float hairLength;
-    float GPA;
-    unsigned int SATScore;
-    int distanceTraveled = 0;
-
-    int run( int, bool );
-};
-
-int Person::run( int howFast, bool startWithLeftFoot)
-{
-    if(startWithLeftFoot)
-        return ( leftFoot.stepForward() + rightFoot.stepForward() ) * howFast;
-
-    return ( rightFoot.stepForward() + leftFoot.stepForward() ) * howFast;
+    UDT foo;              //3) instantiating a UDT named 'foo' in main()
+    foo.printThing();     //4) calling a member function of the UDT instance.
+    
+    //5) a std::cout statement accessing foo's member variable.
+    //It also demonstrates a 'ternary expression', which is syntactic shorthand for an 'if/else' expression
+    std::cout << "Is foo's member var 'thing' equal to 0? " << (foo.thing == 0 ? "Yes" : "No") << "\n";
+    
+    return 0;
 }
+} //end namespace Example
 
- /*
- 2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
-    If you have 'unused parameter' warnings, you aren't using one of your function parameters in your implementation.
-    Solution: use the parameter in your implementation.
+//insert Example::main() into main() of user's repo.
 
-    If you have 'shadows a field of <classname>' warnings, a local variable in the function has the same name as a class member.  
-    This local variable could also be a function parameter with the same name as the class member.
-    Solution: change the local variable's name so it is different from the class member variable's name.
- 
- 3) be sure to write the correct full qualified name for the nested type's member functions.
- 
- 4) After you finish defining each type/function, click the [run] button.  Clear up any errors or warnings as best you can.
- if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
- */
+
+
 
 struct Guitar
 {
@@ -625,5 +533,8 @@ bool HearingAid::connectToSmartphone(std::string handShakingID)
 #include <iostream>
 int main()
 {
+    Example::main();
+    
+    
     std::cout << "good to go!" << std::endl;
 }
