@@ -107,10 +107,48 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Limb
+{
+    int steps = 0;
 
+    int stepForward();
+    int stepSize();
+};
 
+int Limb::stepForward()
+{
+    steps += 1;
 
+    return steps;
+}
 
+int Limb::stepSize()
+{
+    return steps;
+}
+
+struct Person
+{
+    Limb leftFoot;
+    Limb rightFoot;
+
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled = 0;
+
+    int run( int, bool );
+};
+
+int Person::run( int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot)
+        return ( leftFoot.stepForward() + rightFoot.stepForward() ) * howFast;
+
+    return ( rightFoot.stepForward() + leftFoot.stepForward() ) * howFast;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -127,56 +165,33 @@ struct CarWash
  if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
  */
 
-
-/*
-Thing 1) Guitar
-5 properties:
-    1) number of strings (unsigned int)
-    2) body wood type (string)
-    3) brand name (string)
-    4) body shape (string)
-    5) size (char)
-3 things it can do:
-    1) play a chord
-    2) play a solo
-    3) connect to amplifier
- */
 struct Guitar
 {
-    // number of strings
-    unsigned int numberOfStrings = 6;
-    // body wood type (string)
-    std::string boydWoodType = "Mahogany";
-    // brand name (string)
-    std::string brandName = "Jackson";
-    // body shape (string)
-    std::string bodyShape = "Default";
-    // size (char)    
-    char size = 'M'; // S, M, L, XL
 
-    // 5) nested class
+    unsigned int numberOfStrings = 6;
+    std::string boydWoodType = "Mahogany";
+    std::string brandName = "Jackson";
+    std::string bodyShape = "Default";  
+    char size = 'M'; // S, M, L, XL
+    std::string chordToPlay = "None";
+
     struct String
     {
-        // Gauge
         float gauge = 0.0f;
         float tension = 0.0f;
         std::string coreMaterial = "Steel";
         std::string windingType = "Round Wound";
         bool coated = false;
 
-        bool isCoated(); // enquire whether the string is coated or not
-        void setTension(float tension);
-        float getGauge(); // get information about string's gauge
+        bool isCoated();
+        void setTension(float);
+        float getGauge();
     };
 
-    // play a chord
     void playChord(std::string chord = "G");
-    // play a solo
     void PlaySolo();
-    // connect to amplifier
-    bool connectToAmplifier(); // return a bool to indicate whether or not the guitar is connected to an amplifier
+    int connectToAmplifier(std::string);
 
-    // 4) function member with UDT as input parameter
     void tuneString(String stringToTune, std::string key);
 
     String stringE;
@@ -188,68 +203,96 @@ struct Guitar
 
 };
 
-/*
-Thing 2) wind mill
-5 properties:
-    1) number of blades (unsigned int)
-    2) rotational speed (float)
-    3) pole height (float)
-    4) amount of energy generated in a day (float)
-    5) blade length (unsigned int)
-3 things it can do:
-    1) convert mechanical energy into electrical energy
-    2) rotate their blades
-    3) connect to the electrical grid
- */
+bool Guitar::String::isCoated()
+{
+    return coated;
+}
+
+void Guitar::String::setTension(float localTension)
+{
+    tension = localTension;
+}
+
+float Guitar::String::getGauge()
+{
+    return gauge;
+}
+
+void Guitar::playChord(std::string chord)
+{
+    chordToPlay = chord;
+}
+void Guitar::PlaySolo()
+{
+    // do nothing
+}
+int Guitar::connectToAmplifier(std::string chord)
+{
+    int lowPowerMode = 1;
+
+    if(chord != "None")
+        lowPowerMode = 0;
+    
+    return lowPowerMode;
+}
+
 struct WindMill
 {
-    // number of blades
     unsigned int numberOfBlades = 3;
-    // rotational speed
     float rotationalSpeed = 0.0f;
-    // pole height
-    float poleHeight = 10.0f;
-    // amount of mechanical energy generated per day
+    int timesConnectedToGrid = 0;
     float mechanicalEnergyGeneratedPerDay = 100.0f;
-    // blade length
     unsigned int bladeLength = 20;
+    bool isConnectedToGrid = false;
 
-    // convert mechanical energy into electrical energy
-    float convertMechEnergyToElEnergy(float mechanicalEnergy = 50.0f); // returns electrical energy
-    // rotate wind mill's blades
-    bool rotateBlades(float rotationalSpeed = 100.0f); // confirm whether or not the blades are rotating
-    // connect to the electrical grid
-    bool connectToGrid(); // confirm whether or not the wind mill is connected to the grid
+    float convertMechEnergyToElEnergy(float mechanicalEnergy = 50.0f);
+    bool rotateBlades(float rotationalSpeed = 100.0f);
+    bool connectToGrid();
 
 };
 
-/*
-Thing 3) Motorcycle
-5 properties:
-    1) RPMs (usigned int)
-    2) color (string)
-    3) size (unsigned int)
-    4) engine type (string)
-    5) brand name (string)
-3 things it can do:
-    1) accelerate
-    2) consume gas, read tank level
-    3) cruise
- */
+float WindMill::convertMechEnergyToElEnergy(float mechanicalEnergy)
+{
+    // Electrical energy is 3.45 times mechanical energy
+    return 3.45f * mechanicalEnergy;
+}
+
+bool WindMill::rotateBlades(float rotSpeed)
+{
+    bool isRotating = false;
+
+    if(rotSpeed > 0.0f)
+    {
+        rotationalSpeed = rotSpeed;
+        isRotating = true;
+    }
+    else
+    {
+        rotationalSpeed = 0.0f;
+    }
+    
+    return isRotating;
+}
+
+bool WindMill::connectToGrid()
+{
+    isConnectedToGrid = true;
+    timesConnectedToGrid += 1;
+
+    return isConnectedToGrid;
+}
+
 struct MotorCycle
 {
-    // revolutiosn per minute
-    unsigned int revolutionsPerMinute = 45;
-    // color
+    float revolutionsPerMinute = 45.0f;
     std::string color =  "blue";
-    // size
     unsigned int size = 30;
-    // engine type
     std::string engineType = "motorV";
-    // brand name
     std::string brandName = "Kawasaki";
+    float gasLevel = 50.0f;
+    const float fullGasLevel = 65.0f;
+    bool isCruising = false;
 
-    // 5) nested class
     struct Wheel
     {
         bool isBalanced = true;
@@ -258,270 +301,312 @@ struct MotorCycle
         std::string material = "Alloy";
         float currentPressure = 36.0f; // PSI
 
-        bool isWheelPressureLow(); // read whether the wheel pressure is low
-        // set wheel balance to true
+        bool isWheelPressureLow();
         void balanceWheel();
-        // read if wheels are balanced
-        bool isWheelBalanced(); // read whether or not the Wheel is balanced
+        bool isWheelBalanced();
     };
 
-    // accelerate
     void accelerate(float acceleration = 1.2f);
-    // consume gas, read tank level
-    float readGasTankLevel(); // return percentage of full tank
-    // cruise
-    bool cruise(float speed); // confirm whether or not the vehicle is cruising
-    // change Wheel
-    void getNewWheel(Wheel newWheel);
+    float readGasTankLevel();
+    bool cruise(float speed);
+    void getNewWheels(Wheel newWheel);
 
     Wheel frontWheel;
     Wheel backWheel;
 };
 
-/*
-Thing 4) Drill set
-5 properties:
-    1) drill bit material (string)
-    2) drill bit diameter (unsigned int)
-    3) angular speed (float)
-    4) number of chargers (unsigned int)
-    5) brand name (string)
-3 things it can do:
-    1) drill concrete
-    2) unscrew in the left or right direction
-    3) set rotatory speed
- */
+bool MotorCycle::Wheel::isWheelPressureLow()
+{
+    bool isPressureLow = false;
+
+    if(currentPressure < 32.0f)
+        isPressureLow = true;
+
+    return isPressureLow;
+}
+
+void MotorCycle::Wheel::balanceWheel()
+{
+    isBalanced = true;
+}
+
+bool MotorCycle::Wheel::isWheelBalanced()
+{
+    return isBalanced;
+}
+
+void MotorCycle::accelerate(float acceleration)
+{
+    revolutionsPerMinute *= acceleration;
+}
+
+float MotorCycle::readGasTankLevel()
+{
+    float percentGasLevel = gasLevel / fullGasLevel * 100.0f;
+
+    return percentGasLevel;
+}
+
+bool MotorCycle::cruise(float speed)
+{
+    isCruising = true;
+    revolutionsPerMinute = speed;
+
+    return isCruising;
+}
+
+void MotorCycle::getNewWheels(MotorCycle::Wheel wheelA)
+{
+    frontWheel = wheelA;
+    backWheel = wheelA;
+}
+
 struct DrillSet
 {
-    // drill bit material
     std::string drillbitMaterial = "Steel";
-    // drill bit diameter
     unsigned int drillbitDiameter = 2;
-    // angular speed
     float angularSpeed = 0.0f;
-    // number of chargers
     unsigned int numberOfChargers = 2;
-    // brand name
     std::string brandName = "Bosch";
+    int directionOfRotation = 1;
 
-    // can the drill bit drill concrete?
     bool canDrillConcrete(std::string drillbitMaterial); // confirm whether or not the drill bit can drill concrete
-    // unscrew in the left or right direction
     void setDirectionOfRotation(int direction = -1); // left= -1, right = 1
-    // set rotatory speed
     void setRotatorySpeed(float angularSpeed = 2.0f);
     
 };
 
-/*
-Thing 5) Speakers
-5 properties:
-    1) loudness (float)
-    2) resistance (unsigned int)
-    3) distortion (float)
-    4) diameter (double)
-    5) amount of power required in mW (unsigned int)
-3 things it can do:
-    1) play sound
-    2) consume power
-    3) set playback level
- */
+bool DrillSet::canDrillConcrete(std::string drillbitMaterialA)
+{
+    if(drillbitMaterialA == "Steel")
+        return true;
+
+    return false;
+}
+
+void DrillSet::setDirectionOfRotation(int direction)
+{
+    directionOfRotation = direction;
+}
+
+void DrillSet::setRotatorySpeed(float angularSpeedA)
+{
+    angularSpeed = angularSpeedA;
+}
 
 struct Speaker
 {
-    // loudness
     float loudness = 90.0f;
-    // resistance
-    unsigned int resistance = 4;
-    // distortion
+    float resistance = 4.0f;
     float distortion = 0.1f;
-    // diameter
     double diameter = 20.1;
-    // amount of power required in mW
     unsigned int powerAmount = 10;
+    bool isPlaying = false;
 
-    // play sound
     void playSound();
-    // power consumed
-    float powerConsumption(unsigned int resistance = 4, float voltageInput = 1.0f);
-    // set playback level
+    float powerConsumption(float voltageInput = 1.0f);
     void setPlaybackLevel(unsigned int volumeIndex);
 
 };
 
-/*
-Thing 6) Microphones
-5 properties:
-    1) sensitivity (float)
-    2) power supply (unsigned int)
-    3) acoustic overload point (float)
-    4) technology (string)
-    5) transduction type (string)
-3 things it can do:
-    1) capture sound
-    2) set input gain
-    3) read sensitivity
- */
+void Speaker::playSound()
+{
+    isPlaying = true;
+}
+
+float Speaker::powerConsumption(float voltageInput)
+{
+    float power = ( voltageInput * voltageInput ) / resistance;
+
+    return power;
+}
+
+void Speaker::setPlaybackLevel(unsigned int volumeIndex)
+{
+    if(volumeIndex > 10)
+        loudness += 6.0f;
+    else
+        loudness -= 6.0f;
+}
+
 struct Microphone
 {
-    // sensitivity
     float sensitivity = -54.0f;
-    // power supply
     unsigned int powerSupply = 1.0f;
-    // acoustic overload point in dB
     float acousticOverloadPoint = 124.0f;
-    // technology
     std::string technology = "MEMS";
-    // transduction type
     std::string transductionType = "Dynamic";
+    bool isCapturing = false;
+    float inputGain;
 
-    // capture sound
-    void captureSound(float duration);
-    // set input gain
+    void captureSound();
     void setInputGain(float gain);
-    // read sensitivity
     float getSensitivity(); // return microphone sensitivity
 };
 
-/*
-Thing 7) Battery
-5 properties:
-    1) operating time (float)
-    2) technology principle (string)
-    3) rechargeable (bool)
-    4) charging speed (float)
-    5) diameter (float)
-3 things it can do:
-    1) power the speaker
-    2) power the microphone
-    3) read capacity
- */
+void Microphone::captureSound()
+{
+    isCapturing  = true;
+}
+
+void Microphone::setInputGain(float gain)
+{
+    inputGain = gain;
+}
+
+float Microphone::getSensitivity()
+{
+    return sensitivity;
+}
+
 struct Battery
 {
-    // operating time
     float operatingTime = 3.5f;
-    // technology principle
     std::string technologyPrinciple = "XM3";
-    // rechargeable
     bool isBatteryRechargeable = true;
-    // charging speed
     float chargingSpeed = 5.0f;
-    // diameter
     float diameter = 3.0f;
+    bool isConnectedToSpeaker = false;
+    bool isConnectedToMic = false;
 
-    // power the speaker
     bool powerSpeaker(); // provide power to speaker
-    // power the microphone
     bool powerMicrophone(); // provide power to microphones
-    // read capacity
     float readCapacity(); // read the current battery's capacity
 };
 
-/*
-Thing 8) Antenna
-5 properties:
-    1) tuning radio-frequency (float)
-    2) size (unsigned int)
-    3) communication technology (string)
-    4) power consumption (float)
-    5) low power mode (bool)
-3 things it can do:
-    1) remote control
-    2) audio streaming
-    3) consumes power
- */
+bool Battery::powerSpeaker()
+{
+    isConnectedToSpeaker = true;
+
+    return isConnectedToSpeaker;
+}
+
+bool Battery::powerMicrophone()
+{
+    isConnectedToMic = true;
+
+    return isConnectedToMic;
+}
+
+float Battery::readCapacity()
+{
+    return operatingTime;
+}
+
 struct Antenna
 {
-    // tuning radio-frequency
     float tuningRadioFrequency = 2.4f;
-    // size
     unsigned int size = 1;
-    // communication technology
     std::string communicationTechnology = "COM";
-    // low power mode
     bool lowPowerMode = false;
-    // use user-defined type
     Battery battery;
+    bool isRemoteControl = false;
 
-    // remote control
-    bool setRemoteControl(); // enable remote control
-    // audio streaming
-    bool enableAudioStreaming(); // enable audio streaming though the antenna
-    // consume power
-    float powerConsumption(Battery batteryA, float voltageInput = 1.0f); // 4) return power consumed by Antenna given a particular battery UDT and voltage input
-    
+    bool setRemoteControl();
+    bool enableAudioStreaming();
+    float powerConsumption(Battery batteryA, float voltageInput = 1.0f);
 };
 
-/*
-Thing 9) MCU
-5 properties:
-    1) type of microcontroller (string)
-    2) supported number of bits (unsigned int)
-    3) type of nonvolatile memory (string)
-    4) RAM size (unsigned int)
-    5) number of input ports (unsigned int)
-3 things it can do:
-    1) fetch instructions from memory
-    2) decode instructions into commands
-    3) execute commands
- */
-struct MicrocontrollerUnit
+bool Antenna::setRemoteControl()
 {
-    // type of microcontroller
+    lowPowerMode = false;
+    isRemoteControl = true;
+
+    return isRemoteControl;
+}
+
+bool Antenna::enableAudioStreaming()
+{
+    lowPowerMode = false;
+    battery.powerSpeaker();
+
+    return battery.isConnectedToSpeaker;
+}
+
+float Antenna::powerConsumption(Battery batteryA, float voltageInput)
+{
+    return batteryA.operatingTime + ( voltageInput * voltageInput );
+}
+
+struct MicroControllerUnit
+{
     std::string microcontrollerType = "D1";
-    // supported number of bits
     unsigned int numberOfBits = 32;
-    // type of nonvolatile memory
     std::string memoryType = "RAM";
-    // RAM size
     unsigned int ramSize = 512;
-    // number of input ports
     unsigned int numberInputPorts = 4;
 
-    // fetch instructions from memory
-    std::string fetchInstructionsFromMemory(std::string memoryType = "RAM"); // get next instruction
-    // decode instructions into command
-    unsigned int decodeInstruction(std::string instruction = "Iddle"); // map instruction to unique number
-    // execute command
+    std::string fetchInstructionsFromMemory(std::string memoryType = "RAM");
+    unsigned int decodeInstruction(std::string instruction = "Idle");
     void executeCommand(unsigned int numericCommand = 0);
     
 };
 
-/*
-Thing 10) Hearing aid
-5 properties:
-    1) Speakers
-    2) Microphone
-    3) Antenna
-    4) MCU
-    5) Battery
-3 things it can do:
-    1) amplify audio signals
-    2) listen to music
-    3) connect to smartphone
- */
+std::string MicroControllerUnit::fetchInstructionsFromMemory(std::string memoryTypeA)
+{
+    std::string instruction;
+    memoryType = memoryTypeA;
+    
+    if(memoryType == "RAM")
+        instruction = "ABAB";
+    else if(memoryType == "ROM")
+        instruction = "CDCD";
+    else
+        instruction = "Idle";
+
+    return instruction;
+}
+
+unsigned int MicroControllerUnit::decodeInstruction(std::string instruction)
+{
+    unsigned int decodedInstruction;
+
+    if(instruction == "ABAB")
+        decodedInstruction = 3;
+    else if(instruction == "CDCD")
+        decodedInstruction = 2;
+    else if(instruction == "Idle")
+        decodedInstruction = 1;
+    else
+        decodedInstruction = 0;
+
+    return decodedInstruction;
+}
 
 struct HearingAid
 {
-    // Speakers
     Speaker speaker;
-    // Microphone
     Microphone mic;
-    // Antenna
     Antenna antenna;
-    // MCU
-    MicrocontrollerUnit microController;
-    // Battery
+    MicroControllerUnit microController;
     Battery battery;
 
-    // amplify audio signals
-    void amplifyAudioSignals(Microphone microphoneA, float gain); // 4) some of input parameters is a UDT
-    // listen to music
-    void listenToMusic(Speaker speakerA, float gain);
-    // connect to smartphone. 4) some of input parameters is a UDT
-    bool connectToSmartphone(std::string handshakingID = "AAAA"); // confirm whether or not the conenction to a smartphone was succesful
+    void amplifyAudioSignals(Microphone microphoneA, float gain);
+    void listenToMusic();
+    bool connectToSmartphone(std::string handShakingID = "ABAB");
     
 };
+
+void HearingAid::amplifyAudioSignals(Microphone microphoneA, float gain)
+{
+    microphoneA.setInputGain(gain);
+}
+
+void HearingAid::listenToMusic()
+{
+    speaker.setPlaybackLevel(8);
+    speaker.playSound();
+}
+
+bool HearingAid::connectToSmartphone(std::string handShakingID)
+{
+    unsigned int numericInstruction = microController.decodeInstruction(handShakingID);
+
+    if(numericInstruction == 3)
+        return true;
+
+    return false;
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
