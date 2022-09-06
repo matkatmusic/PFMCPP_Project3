@@ -109,15 +109,17 @@ struct CarWash
  */
 struct Limb
 {
-    int steps;
+    int steps = 0;
 
-    void stepForward();
+    int stepForward();
     int stepSize();
 };
 
-void Limb::stepForward()
+int Limb::stepForward()
 {
-    steps += 1; 
+    steps += 1;
+
+    return steps;
 }
 
 int Limb::stepSize()
@@ -135,8 +137,18 @@ struct Person
     float hairLength;
     float GPA;
     unsigned int SATScore;
-    int distanceTraveled;
+    int distanceTraveled = 0;
+
+    int run( int, bool );
 };
+
+int Person::run( int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot)
+        return ( leftFoot.stepForward() + rightFoot.stepForward() ) * howFast;
+
+    return ( rightFoot.stepForward() + leftFoot.stepForward() ) * howFast;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -161,7 +173,7 @@ struct Guitar
     std::string brandName = "Jackson";
     std::string bodyShape = "Default";  
     char size = 'M'; // S, M, L, XL
-    std::string chordToPlay;
+    std::string chordToPlay = "None";
 
     struct String
     {
@@ -178,7 +190,7 @@ struct Guitar
 
     void playChord(std::string chord = "G");
     void PlaySolo();
-    bool connectToAmplifier();
+    int connectToAmplifier(std::string);
 
     void tuneString(String stringToTune, std::string key);
 
@@ -214,17 +226,21 @@ void Guitar::PlaySolo()
 {
     // do nothing
 }
-bool Guitar::connectToAmplifier()
+int Guitar::connectToAmplifier(std::string chord)
 {
-    bool isConnectedToAmp = true;
-    return isConnectedToAmp;
+    int lowPowerMode = 1;
+
+    if(chord != "None")
+        lowPowerMode = 0;
+    
+    return lowPowerMode;
 }
 
 struct WindMill
 {
     unsigned int numberOfBlades = 3;
     float rotationalSpeed = 0.0f;
-    float poleHeight = 10.0f;
+    int timesConnectedToGrid = 0;
     float mechanicalEnergyGeneratedPerDay = 100.0f;
     unsigned int bladeLength = 20;
     bool isConnectedToGrid = false;
@@ -251,7 +267,9 @@ bool WindMill::rotateBlades(float rotSpeed)
         isRotating = true;
     }
     else
+    {
         rotationalSpeed = 0.0f;
+    }
     
     return isRotating;
 }
@@ -259,6 +277,7 @@ bool WindMill::rotateBlades(float rotSpeed)
 bool WindMill::connectToGrid()
 {
     isConnectedToGrid = true;
+    timesConnectedToGrid += 1;
 
     return isConnectedToGrid;
 }
@@ -323,9 +342,7 @@ void MotorCycle::accelerate(float acceleration)
 
 float MotorCycle::readGasTankLevel()
 {
-    float percentGasLevel;
-
-    percentGasLevel = gasLevel / fullGasLevel * 100.0f;
+    float percentGasLevel = gasLevel / fullGasLevel * 100.0f;
 
     return percentGasLevel;
 }
@@ -399,16 +416,17 @@ void Speaker::playSound()
 
 float Speaker::powerConsumption(float voltageInput)
 {
-    float power;
-
-    power = ( voltageInput * voltageInput ) / resistance;
+    float power = ( voltageInput * voltageInput ) / resistance;
 
     return power;
 }
 
 void Speaker::setPlaybackLevel(unsigned int volumeIndex)
 {
-    loudness *= static_cast<float>(volumeIndex);
+    if(volumeIndex > 10)
+        loudness += 6.0f;
+    else
+        loudness -= 6.0f;
 }
 
 struct Microphone
@@ -519,7 +537,7 @@ struct MicroControllerUnit
     unsigned int numberInputPorts = 4;
 
     std::string fetchInstructionsFromMemory(std::string memoryType = "RAM");
-    unsigned int decodeInstruction(std::string instruction = "Iddle");
+    unsigned int decodeInstruction(std::string instruction = "Idle");
     void executeCommand(unsigned int numericCommand = 0);
     
 };
@@ -534,7 +552,7 @@ std::string MicroControllerUnit::fetchInstructionsFromMemory(std::string memoryT
     else if(memoryType == "ROM")
         instruction = "CDCD";
     else
-        instruction = "Iddle";
+        instruction = "Idle";
 
     return instruction;
 }
@@ -547,7 +565,7 @@ unsigned int MicroControllerUnit::decodeInstruction(std::string instruction)
         decodedInstruction = 3;
     else if(instruction == "CDCD")
         decodedInstruction = 2;
-    else if(instruction == "Iddle")
+    else if(instruction == "Idle")
         decodedInstruction = 1;
     else
         decodedInstruction = 0;
@@ -582,9 +600,7 @@ void HearingAid::listenToMusic()
 
 bool HearingAid::connectToSmartphone(std::string handShakingID)
 {
-    unsigned int numericInstruction;
-    
-    numericInstruction = microController.decodeInstruction(handShakingID);
+    unsigned int numericInstruction = microController.decodeInstruction(handShakingID);
 
     if(numericInstruction == 3)
         return true;
