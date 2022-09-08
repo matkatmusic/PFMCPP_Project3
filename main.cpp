@@ -396,7 +396,7 @@ struct Microphone
     std::string technology = "MEMS";
     std::string transductionType = "Dynamic";
     bool isCapturing = false;
-    float inputGain;
+    float inputGain; FIXME: initialize your variables
 
     void captureSound();
     void setInputGain(float gain);
