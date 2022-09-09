@@ -1,74 +1,44 @@
 /*
- Project 3 - Part 3 / 5
- video: Chapter 2 - Part 8
- Constructors tasks
+ Project 3 - Part 4 / 5
+ video: Chapter 2 - Part 9
+ Member initialization tasks
 
- Create a branch named Part3
+ Create a branch named Part4
+ 
+ 1) do this for each class in this project: 
+    initialize some of your member variables either in-class or in the Constructor member initializer list.
+    Show me that you understand how to use these language features.
 
- On this new branch:
-
- 0) if you opted to not fill in any of your member functions in part2,
-    fill in ALL of your member functions
-    
- 1) Add a constructor for each User-Defined-Type.
-    The constructor should be the first declaration in your UDT, before all member variables and member functions.
-    add a std::cout message in the constructor that prints out the name of the class being constructed.
-    When you run your code, you'll see the order that your objects are created in the program output.
+ 2) make some of your member functions use those initialized member variables via std::cout statements.
  
- 2) For each User-Defined-Type:
-        amend some of the member functions to print out something interesting via std::cout
- 
- 3) Instantiate 1 or 2 instances of EACH of your user-defined types in the main() function.
-    You should have at least 12 different variables declared in main(), because you have written 12 different types (including the nested types)
-
- 4) For each instantiated UDT:
-        call each of that instance's member functions.
-        You're doing this to show that your code doesn't produce warnings when you call the functions that take arguments.
- 
- 5) add some std::cout statements in main() that print out your UDT's member variable values or values returned from your UDT member functions (if they return values)
- 
- After you finish defining each type/function:
- click the [run] button.  Clear up any errors or warnings as best you can.
+ 3) click the [run] button.  Clear up any errors or warnings as best you can.
  if your code produces a -Wpadded warning, add '-Wno-padded' to the .replit file with the other compiler flags (-Weverything -Wno-missing-prototypes etc etc)
- 
- example:
  */
 
 #include <iostream>
-namespace Example
+namespace Example 
 {
-struct UDT  // my user defined type named 'UDT'
+struct UDT  
 {
-    int thing = 0; //a member variable
-    UDT();              //1) the constructor
-    void printThing();  //the member function
+    int a; //a member variable that IS NOT initialized in-class
+    float b { 2.f }; //a member variable that IS initialized in-class
+    UDT() : a(0) { } // 'constructor-initializer-list' initializing the member that wasn't initialized in-class.
+    void printAandB()  //the member function
+    {
+        std::cout << "UDT::printAandB() a:" << a << " b: " << b << std::endl;  //2) printing out something interesting
+    }
 };
-
-//the function definitions are outside of the class
-UDT::UDT()
-{
-    std::cout << "UDT being constructed!" << std::endl; //1)
-}
-
-void UDT::printThing()
-{
-    std::cout << "UDT::printThing() " << thing << std::endl;  //2) printing out something interesting
-}
 
 int main()
 {
-    UDT foo;              //3) instantiating a UDT named 'foo' in main()
-    foo.printThing();     //4) calling a member function of the UDT instance.
-    
-    //5) a std::cout statement accessing foo's member variable.
-    //It also demonstrates a 'ternary expression', which is syntactic shorthand for an 'if/else' expression
-    std::cout << "Is foo's member var 'thing' equal to 0? " << (foo.thing == 0 ? "Yes" : "No") << "\n";
-    
+    UDT foo; //instantiating a Foo in main()
+    foo.printAandB(); //calling a member function of the instance that was instantiated.
     return 0;
 }
-} //end namespace Example
+}
 
-//insert Example::main() into main() of user's repo.
+//call Example::main()
+
 
 struct Guitar
 {
