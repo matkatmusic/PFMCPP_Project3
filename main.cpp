@@ -44,21 +44,22 @@ struct Guitar
 {
 
     Guitar();
-    unsigned int numberOfStrings = 6;
-    std::string boydWoodType = "Mahogany";
-    std::string brandName = "Jackson";
-    std::string bodyShape = "Default";
-    char size = 'M'; // S, M, L, XL
-    std::string chordToPlay = "None";
+    unsigned int numberOfStrings;
+    std::string bodyWoodType;
+    std::string brandName;
+    std::string bodyShape;
+    char size; // S, M, L, XL
+    std::string chordToPlay;
 
     struct String
     {
         String();
-        float gauge = 0.0f;
-        float tension = 0.0f;
-        std::string coreMaterial = "Steel";
-        std::string windingType = "Round Wound";
-        bool coated = false;
+        // Initialize variables in class
+        float gauge { 0.0f };
+        float tension { 0.0f };
+        std::string coreMaterial{ "Steel" };
+        std::string windingType{ "Wound Round" };
+        bool coated { false };
 
         bool isCoated();
         void setTension(float);
@@ -80,14 +81,23 @@ struct Guitar
 
 };
 
-Guitar::Guitar()
+Guitar::Guitar() : // Initialize variables in initializer list
+numberOfStrings(6),
+bodyWoodType("Mahogany"),
+brandName("Jackson"),
+bodyShape("Default"),
+size('M'),
+chordToPlay("None")
 {
     std::cout << "Guitar being constructed!" << std::endl;
+
+    std::cout << "Guitar brand initialized to " + brandName << std::endl;
 }
 
 Guitar::String::String()
 {
     std::cout << "String being constructed as Guitar is constructed" << std::endl;
+    std::cout << "String core material initialized to " + coreMaterial << std::endl;
 }
 bool Guitar::String::isCoated()
 {
@@ -128,12 +138,12 @@ struct WindMill
 {
     WindMill();
 
-    unsigned int numberOfBlades = 3;
-    float rotationalSpeed = 0.0f;
-    int timesConnectedToGrid = 0;
-    float mechanicalEnergyGeneratedPerDay = 100.0f;
-    unsigned int bladeLength = 20;
-    bool isConnectedToGrid = false;
+    unsigned int numberOfBlades;
+    float rotationalSpeed;
+    int timesConnectedToGrid;
+    float mechanicalEnergyGeneratedPerDay;
+    unsigned int bladeLength;
+    bool isConnectedToGrid;
 
     float convertMechEnergyToElEnergy(float mechanicalEnergy = 50.0f);
     bool rotateBlades(float rotationalSpeed = 100.0f);
@@ -141,9 +151,18 @@ struct WindMill
 
 };
 
-WindMill::WindMill()
+WindMill::WindMill() : // Initialize variables in initializer list
+numberOfBlades(3),
+rotationalSpeed(0.0f),
+timesConnectedToGrid(0),
+mechanicalEnergyGeneratedPerDay(100.f),
+bladeLength(20),
+isConnectedToGrid(false)
 {
     std::cout << "WindMill being constructed!" << std::endl;
+
+    std::cout << "Wind Mill number of blades initialized to " << numberOfBlades << " blades" << std::endl;
+    
 }
 
 float WindMill::convertMechEnergyToElEnergy(float mechanicalEnergy)
@@ -184,23 +203,24 @@ bool WindMill::connectToGrid()
 struct MotorCycle
 {
     MotorCycle();
-    float revolutionsPerMinute = 45.0f;
-    std::string color =  "blue";
-    unsigned int size = 30;
-    std::string engineType = "motorV";
-    std::string brandName = "Kawasaki";
-    float gasLevel = 50.0f;
-    const float fullGasLevel = 65.0f;
-    bool isCruising = false;
+    float revolutionsPerMinute;
+    std::string color;
+    unsigned int size;
+    std::string engineType;
+    std::string brandName;
+    float gasLevel;
+    const float fullGasLevel{ 65.0f };
+    bool isCruising;
 
     struct Wheel
     {
         Wheel();
-        bool isBalanced = true;
-        float rimRadius = 310.0f; // in mm
-        unsigned int rimModulus = 69; // in GPa
-        std::string material = "Alloy";
-        float currentPressure = 36.0f; // PSI
+        // Initialize variables in class
+        bool isBalanced{ true };
+        float rimRadius{ 310.0f }; // in mm
+        unsigned int rimModulus{ 69 }; // in GPa
+        std::string material{ "Alloy" };
+        float currentPressure{ 36.0f }; // PSI
 
         bool isWheelPressureLow();
         void balanceWheel();
@@ -218,7 +238,18 @@ struct MotorCycle
 
 MotorCycle::MotorCycle()
 {
+    // Initialize variables in constructor body
+    revolutionsPerMinute = 45.0f;
+    color = "blue";
+    size = 30;
+    engineType = "MotorV";
+    brandName = "Kawasaki";
+    gasLevel = 50.0f;
+    isCruising = false;
+    
     std::cout << "MotorCycle being constructed!" << std::endl;
+
+    std::cout << "Motorcycle cruising initialized to " << (isCruising ? "Yes" : "No") << std::endl; 
 }
 
 MotorCycle::Wheel::Wheel()
@@ -280,12 +311,12 @@ void MotorCycle::getNewWheels(MotorCycle::Wheel wheelA)
 struct DrillSet
 {
     DrillSet();
-    std::string drillbitMaterial = "Steel";
-    unsigned int drillbitDiameter = 2;
-    float angularSpeed = 0.0f;
-    unsigned int numberOfChargers = 2;
-    std::string brandName = "Bosch";
-    int directionOfRotation = 1;
+    std::string drillbitMaterial;
+    unsigned int drillbitDiameter;
+    float angularSpeed;
+    unsigned int numberOfChargers;
+    std::string brandName;
+    int directionOfRotation;
 
     bool canDrillConcrete(std::string drillbitMaterial); // confirm whether or not the drill bit can drill concrete
     void setDirectionOfRotation(int direction = -1); // left= -1, right = 1
@@ -293,7 +324,13 @@ struct DrillSet
     
 };
 
-DrillSet::DrillSet()
+DrillSet::DrillSet() : // Initialize variables in initializer list
+drillbitMaterial("Steel"),
+drillbitDiameter(2),
+angularSpeed(0.0f),
+numberOfChargers(2),
+brandName("Bosch"),
+directionOfRotation(1)
 {
     std::cout << "DrillSet being constructed" << std::endl;
 }
@@ -319,12 +356,13 @@ void DrillSet::setRotatorySpeed(float angularSpeedA)
 struct Speaker
 {
     Speaker();
-    float loudness = 90.0f;
-    float resistance = 4.0f;
-    float distortion = 0.1f;
-    double diameter = 20.1;
-    unsigned int powerAmount = 10;
-    bool isPlaying = false;
+    //Initialize variables in-class
+    float loudness{ 90.0f };
+    float resistance{ 4.0f };
+    float distortion{ 0.1f };
+    double diameter{ 20.1 };
+    unsigned int powerAmount{ 10 };
+    bool isPlaying{ false };
 
     void playSound();
     float powerConsumption(float voltageInput = 1.0f);
@@ -360,13 +398,13 @@ void Speaker::setPlaybackLevel(unsigned int volumeIndex)
 struct Microphone
 {
     Microphone();
-    float sensitivity = -54.0f;
-    unsigned int powerSupply = 1.0f;
-    float acousticOverloadPoint = 124.0f;
-    std::string technology = "MEMS";
-    std::string transductionType = "Dynamic";
-    bool isCapturing = false;
-    float inputGain = 1.0f;
+    float sensitivity;
+    unsigned int powerSupply;
+    float acousticOverloadPoint;
+    std::string technology;
+    std::string transductionType;
+    bool isCapturing;
+    float inputGain;
 
     void captureSound();
     void setInputGain(float gain);
@@ -375,7 +413,18 @@ struct Microphone
 
 Microphone::Microphone()
 {
+    // Initialize variables in constructor body
+    sensitivity = -54.0f;
+    powerSupply = 1.0f;
+    acousticOverloadPoint = 124.0f;
+    technology = "MEMS";
+    transductionType = "Dynamic";
+    isCapturing = false;
+    inputGain = 1.0f;
+    
     std::cout << "Microphone being constructed!" << std::endl;
+
+    std::cout << "Is microphone initialized to capture sound? " << (isCapturing ? "Yes":"No") << std::endl;
 }
 
 void Microphone::captureSound()
@@ -399,13 +448,14 @@ float Microphone::getSensitivity()
 struct Battery
 {
     Battery();
-    float operatingTime = 3.5f;
-    std::string technologyPrinciple = "XM3";
-    bool isBatteryRechargeable = true;
-    float chargingSpeed = 5.0f;
-    float diameter = 3.0f;
-    bool isConnectedToSpeaker = false;
-    bool isConnectedToMic = false;
+    // Initialize variables in class
+    float operatingTime{ 3.5f };
+    std::string technologyPrinciple{ "XM3" };
+    bool isBatteryRechargeable{ true };
+    float chargingSpeed{ 5.0f };
+    float diameter{ 3.0f };
+    bool isConnectedToSpeaker{ false };
+    bool isConnectedToMic{ false };
 
     bool powerSpeaker(); // provide power to speaker
     bool powerMicrophone(); // provide power to microphones
@@ -442,19 +492,24 @@ float Battery::readCapacity()
 struct Antenna
 {
     Antenna();
-    float tuningRadioFrequency = 2.4f;
-    unsigned int size = 1;
-    std::string communicationTechnology = "COM";
-    bool lowPowerMode = false;
+    float tuningRadioFrequency;
+    unsigned int size;
+    std::string communicationTechnology;
+    bool lowPowerMode;
     Battery battery;
-    bool isRemoteControl = false;
+    bool isRemoteControl;
 
     bool setRemoteControl();
     bool enableAudioStreaming();
     float powerConsumption(Battery batteryA, float voltageInput = 1.0f);
 };
 
-Antenna::Antenna()
+Antenna::Antenna() : // Initialize in initializer list
+tuningRadioFrequency(2.4f),
+size(1),
+communicationTechnology("COM"),
+lowPowerMode(false),
+isRemoteControl(false)
 {
     std::cout << "Antenna being constructed!" << std::endl;
 }
@@ -488,11 +543,11 @@ float Antenna::powerConsumption(Battery batteryA, float voltageInput)
 struct MicroControllerUnit
 {
     MicroControllerUnit();
-    std::string microcontrollerType = "D1";
-    unsigned int numberOfBits = 32;
-    std::string memoryType = "RAM";
-    unsigned int ramSize = 512;
-    unsigned int numberInputPorts = 4;
+    std::string microcontrollerType;
+    unsigned int numberOfBits;
+    std::string memoryType;
+    unsigned int ramSize;
+    unsigned int numberInputPorts;
 
     std::string fetchInstructionsFromMemory(std::string memoryType = "RAM");
     unsigned int decodeInstruction(std::string instruction = "Idle");
@@ -502,6 +557,13 @@ struct MicroControllerUnit
 
 MicroControllerUnit::MicroControllerUnit()
 {
+    // Initialize variables in constructor body
+    microcontrollerType = "D1";
+    numberOfBits = 32;
+    memoryType = "RAM";
+    ramSize = 512;
+    numberInputPorts = 4;
+    
     std::cout << "MicroControllerUnit being constructed!" << std::endl;
 }
 
