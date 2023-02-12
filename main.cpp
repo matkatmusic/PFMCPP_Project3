@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1)  Vending Machine
 5 properties:
-    1)  number of cokes
-    2)  number of mountain dews
-    3)  number of quarters 
-    4)  number of dimes
-    5)  number of nickels
+    1)  number of cokes (int)
+    2)  number of mountain dews (int)
+    3)  number of quarters (int)
+    4)  number of dimes (int)
+    5)  number of nickels (int)
 3 things it can do:
     1)  deliver soda
     2)  make change
@@ -210,11 +210,11 @@ Thing 1)  Vending Machine
 
 Thing 2)  Battle Tank
 5 properties:
-    1) fuel supply
-    2) bullet supply
-    3) turret angle
-    4)  grenade supply
-    5)  number of operators
+    1) fuel supply  (float)
+    2) bullet supply (int)
+    3) turret angle (float)
+    4)  grenade supply (int)
+    5)  number of operators (int)
 3 things it can do:
     1)  aim turret
     2)  fire bullets
@@ -222,11 +222,11 @@ Thing 2)  Battle Tank
 
 Thing 3)  digital camera    
 5 properties:
-    1)   light level
-    2)   available storage
-    3)   zoom degree
-    4)   horizontal resolution
-    5)   veritcal resolution
+    1)   light level (float)
+    2)   available storage (int)
+    3)   zoom degree (float)
+    4)   horizontal resolution (int)
+    5)   vertical resolution (int)
 3 things it can do:
     1)   set zoom
     2)   take picture
@@ -234,11 +234,11 @@ Thing 3)  digital camera
 
 Thing 4)  submarine
 5 properties:
-    1)  depth
-    2)  heading
-    3)  water pressure
-    4)  number of shipmen
-    5)  number of torpedos
+    1)  depth (float)
+    2)  heading (float)
+    3)  water pressure (float)
+    4)  number of shipmen (int)
+    5)  number of torpedos (int)
 3 things it can do:
     1)  set depth
     2)  set direction
