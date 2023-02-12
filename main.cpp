@@ -337,17 +337,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
+Thing 10) Answering Machine 
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Microfone
+    2) Phone connection
+    3) Speaker
+    4) Tape
+    5) Controls
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  Answer and Record Message
+    2)  Playback Message
+    3)  Erase Messages
  */
 
  /*
