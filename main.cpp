@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1)  Vending Machine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  number of cokes
+    2)  number of mountain dews
+    3)  number of quarters 
+    4)  number of dimes
+    5)  number of nickels
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  deliver soda
+    2)  make change
+    3)   display price
 
-Thing 2)
+Thing 2)  Battle Tank
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) fuel supply
+    2) bullet supply
+    3) turret angle
+    4)  grenade supply
+    5)  number of operators
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  aim turret
+    2)  fire bullets
+    3)  launch grenades
 
-Thing 3)
+Thing 3)  digital camera    
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)   light level
+    2)   available storage
+    3)   zoom degree
+    4)   horizontal resolution
+    5)   veritcal resolution
 3 things it can do:
-    1)
-    2)
-    3)
+    1)   set zoom
+    2)   take picture
+    3)   delete picture
 
-Thing 4)
+Thing 4)  submarine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  depth
+    2)  heading
+    3)  water pressure
+    4)  number of shipmen
+    5)  number of torpedos
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  set depth
+    2)  set direction
+    3)  fire torpedo
 */
 
 /*
