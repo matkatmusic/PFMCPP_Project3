@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3)  horn button
+            4) phone button
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) honk horn
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) odometer
+            2) tachometer
+            3) speedmoter
+            4) highlight indicator
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display speed
+            2) display rpm
+            3) reset odometer
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1)  internal lighting switch
+            2)  tempertaure control
+            3)  aircon switch
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) set tempurature
+            2) illuminate cabin
+            3) aircon on/off
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio
+            2) bluetooth pairing button
+            3) 
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) set station
+            2) turn on sound
+            3) pair with phone
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) armrest
+            2) heater
+            3) backrest
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) tilt forward
+            2) heat
 */
 
 /*
