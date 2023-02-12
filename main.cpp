@@ -337,18 +337,18 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Answering Machine 
+Thing 10) Government
 5 properties:
-    1) Microfone
-    2) Phone connection
-    3) Speaker
-    4) Tape
-    5) Controls
+    1) Executive Branch
+    2) Legislative Branch
+    3) Judicial Branch
+    4) Army 
+    5) Deep State
 3 things it can do:
-    1)  Answer and Record Message
-    2)  Playback Message
-    3)  Erase Messages
- */
+    1)  Go to war
+    2)  Levy Tax
+    3)  Propagandize Citizens
+*/
 
  /*
 =================
@@ -434,65 +434,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Executive Branch    
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  Name of President
+    2)  Number of secret service
+    3)  Location of President
+    4)  Nuclear Suitcase codes
+    5)  Days remaining in office.
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  Enact excecutive order
+    2)  Give a speech
+    3)  Initiate covert ops
 
-Thing 6)
+Thing 6 Legislative Branch
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of Lefties
+    2) Number of righties
+    3) Current bill under consideration
+    4) Hours remaining for debate
+    5) 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Vote on bill.
+    2) Debate bill. 
+    3) Trade stocks.
 
-Thing 7)
+Thing 7) Judicial Brance
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of cases on docket
+    2) Days remaining in current session
+    3) Current case
+    4) Next Case
+    5) Number of active Justices
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  Judge case
+    2)  Remand case to lower court
+    3)  Listen to testimony
 
-Thing 8)
+Thing 8) Army
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  Number of officers
+    2)  Number of soldiers
+    3)  Soldier morale rating
+    4)  Number of tanks
+    5)  Number of bullets
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  Develop attack plans
+    2)  Invade country
+    3)  Clean Barracks
 
-Thing 9)
+Thing 9)  Deep State
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1)  Numnber of embedded bureacrats
+    2)  Number of embedded journalists
+ `  3)  Percentage of comprimised politicians
+    4)  Secret codeword
+    5)  Sacred Number
 3 things it can do:
-    1)
-    2)
-    3)
+    1)  Coerce legislators
+    2)  Engineer narrative
+    3)  Supress information
  */
 
 /*
