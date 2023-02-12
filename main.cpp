@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)  Vending Machine
-5 properties:
-    1)  number of cokes (int)
-    2)  number of mountain dews (int)
-    3)  number of quarters (int)
-    4)  number of dimes (int)
-    5)  number of nickels (int)
-3 things it can do:
-    1)  deliver soda
-    2)  make change
-    3)   display price
 
-Thing 2)  Battle Tank
-5 properties:
-    1) fuel supply  (float)
-    2) bullet supply (int)
-    3) turret angle (float)
-    4)  grenade supply (int)
-    5)  number of operators (int)
-3 things it can do:
-    1)  aim turret
-    2)  fire bullets
-    3)  launch grenades
-
-Thing 3)  digital camera    
-5 properties:
-    1)   light level (float)
-    2)   available storage (int)
-    3)   zoom degree (float)
-    4)   horizontal resolution (int)
-    5)   vertical resolution (int)
-3 things it can do:
-    1)   set zoom
-    2)   take picture
-    3)   delete picture
-
-Thing 4)  submarine
-5 properties:
-    1)  depth (float)
-    2)  heading (float)
-    3)  water pressure (float)
-    4)  number of shipmen (int)
-    5)  number of torpedos (int)
-3 things it can do:
-    1)  set depth
-    2)  set direction
-    3)  fire torpedo
 */
 
 /*
@@ -337,17 +291,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Government
-5 properties:
-    1) Executive Branch
-    2) Legislative Branch
-    3) Judicial Branch
-    4) Army 
-    5) Deep State
-3 things it can do:
-    1)  Go to war
-    2)  Levy Tax
-    3)  Propagandize Citizens
+
 */
 
  /*
@@ -434,65 +378,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5) Executive Branch    
-5 properties:
-    1)  Name of President
-    2)  Number of secret service
-    3)  Location of President
-    4)  Nuclear Suitcase codes
-    5)  Days remaining in office.
-3 things it can do:
-    1)  Enact excecutive order
-    2)  Give a speech
-    3)  Initiate covert ops
 
-Thing 6 Legislative Branch
-5 properties:
-    1) Number of Lefties
-    2) Number of righties
-    3) Current bill under consideration
-    4) Hours remaining for debate
-    5) 
-3 things it can do:
-    1) Vote on bill.
-    2) Debate bill. 
-    3) Trade stocks.
-
-Thing 7) Judicial Brance
-5 properties:
-    1) Number of cases on docket
-    2) Days remaining in current session
-    3) Current case
-    4) Next Case
-    5) Number of active Justices
-3 things it can do:
-    1)  Judge case
-    2)  Remand case to lower court
-    3)  Listen to testimony
-
-Thing 8) Army
-5 properties:
-    1)  Number of officers
-    2)  Number of soldiers
-    3)  Soldier morale rating
-    4)  Number of tanks
-    5)  Number of bullets
-3 things it can do:
-    1)  Develop attack plans
-    2)  Invade country
-    3)  Clean Barracks
-
-Thing 9)  Deep State
-5 properties:
-    1)  Numnber of embedded bureacrats
-    2)  Number of embedded journalists
- `  3)  Percentage of comprimised politicians
-    4)  Secret codeword
-    5)  Sacred Number
-3 things it can do:
-    1)  Coerce legislators
-    2)  Engineer narrative
-    3)  Supress information
  */
 
 /*
@@ -545,10 +431,124 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+Thing 1)  Vending Machine
+5 properties:
+    1)  number of cokes (int)
+    2)  number of mountain dews (int)
+    3)  number of quarters (int)
+    4)  number of dimes (int)
+    5)  number of nickels (int)
+3 things it can do:
+    1)  deliver soda
+    2)  make change
+    3)   display price
 
+Thing 2)  Battle Tank
+5 properties:
+    1) fuel supply  (float)
+    2) bullet supply (int)
+    3) turret angle (float)
+    4)  grenade supply (int)
+    5)  number of operators (int)
+3 things it can do:
+    1)  aim turret
+    2)  fire bullets
+    3)  launch grenades
 
+Thing 3)  digital camera    
+5 properties:
+    1)   light level (float)
+    2)   available storage (int)
+    3)   zoom degree (float)
+    4)   horizontal resolution (int)
+    5)   vertical resolution (int)
+3 things it can do:
+    1)   set zoom
+    2)   take picture
+    3)   delete picture
 
+Thing 4)  submarine
+5 properties:
+    1)  depth (float)
+    2)  heading (float)
+    3)  water pressure (float)
+    4)  number of shipmen (int)
+    5)  number of torpedos (int)
+3 things it can do:
+    1)  set depth
+    2)  set direction
+    3)  fire torpedo
+Thing 5) Executive Branch    
+5 properties:
+    1)  Name of President (std::string)
+    2)  Number of secret service (int)
+    3)  Location of President (std::string)
+    4)  Nuclear Suitcase code (int)
+    5)  Days remaining in office. (int)
+3 things it can do:
+    1)  Enact excecutive order
+    2)  Give a speech
+    3)  Initiate covert ops
 
+Thing 6 Legislative Branch
+5 properties:
+    1) Number of Lefties (int)
+    2) Number of righties (int)
+    3) Current bill under consideration (int)
+    4) Hours remaining for debate (int)
+    5) Currently in session (bool)
+3 things it can do:
+    1) Vote on bill.
+    2) Debate bill. 
+    3) Trade stocks.
+
+Thing 7) Judicial Brance
+5 properties:
+    1) Number of cases on docket (int)
+    2) Days remaining in current session (int)
+    3) Current case number (int)
+    4) Next Case number (int)
+    5) Currently in session (bool)
+3 things it can do:
+    1)  Judge case
+    2)  Remand case to lower court
+    3)  Listen to testimony
+
+Thing 8) Army
+5 properties:
+    1)  Number of officers (int)
+    2)  Number of soldiers (int)
+    3)  Soldier morale rating (float)
+    4)  Number of tanks (int)
+    5)  Number of bullets (int)
+3 things it can do:
+    1)  Develop attack plans
+    2)  Invade country
+    3)  Clean Barracks
+
+Thing 9)  Deep State
+5 properties:
+    1)  Numnber of embedded bureacrats (int)
+    2)  Number of embedded journalists (int)
+ `  3)  Percentage of comprimised politicians (float)
+    4)  Secret codeword (std::string)
+    5)  Sacred Number (int)
+3 things it can do:
+    1)  Coerce legislators
+    2)  Engineer narrative
+    3)  Supress information
+
+Thing 10) Government
+5 properties:
+    1) Executive Branch
+    2) Legislative Branch
+    3) Judicial Branch
+    4) Army 
+    5) Deep State
+3 things it can do:
+    1)  Go to war
+    2)  Levy Tax
+    3)  Propagandize Citizens
 
 
 
