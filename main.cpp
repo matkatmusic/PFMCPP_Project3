@@ -81,53 +81,53 @@ Part 1a - Step 2: Assignment
 Main Object: Car Interior
     Sub Object: Steering Wheel
         Name 4 nouns you'll find on the [Sub Object]
-            1) paddle shifters
-            2) 'cruise control' controls
-            3) 
-            4) 
+            1) the paddle shifters
+            2) the "cruise control" controls
+            3) volume controls
+            4) logo
         Name 2 actions that the [Sub Object] can do:
-            1) adjust cruise control settings.
-            2)
+            1) adjust the cruise control settings.
+            2) change the direction
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
-        Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) speedometer
+            2) engine temperature
+            3) fuel level
+            4) turn signal led
+        Name 3 actions that the [Subobject] can perform:
+            1) blink to show the direction
+            2) indicate overheating
+            3) indicate direction of travel
     
-    Sub Object: Environment Controls
-        Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-        Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+    Sub-object: Environmental controls
+        List 3 names you will find on the [Subobject].
+            1) window regulator
+            2) parking brake
+            3) ventilation control
+        Name 3 actions that the [Subobject] can perform:
+            1) open the window
+            2) apply the parking brake
+            3) increase the temperature
 
-    Sub Object: Infotainment System
-        Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-        Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+    Sub-object: Infotainment system
+        Name 3 names you will find on the [Subobject].
+            1) volume button
+            2) source selection button
+            3) clock
+        Name 3 actions that the [Subobject] can perform:
+            1) increase the volume
+            2) set source to bluetooth
+            3) mute the sound
 
-    Sub Object: Seat 
-        Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-        Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+    Sub-Object: Seat 
+        Name 3 names you will find on the [Subobject].
+            1) seat back
+            2) seat cushion
+            3) armrest
+        Name 2 actions that the [Subobject] can perform:
+            1) seat heats up
+            2) seat tilts
 */
 
 /*
