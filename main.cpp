@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) stringed instrument
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of strings
+    2) length
+    3) width
+    4) presence of a fixed easel
+    5) note la plus grave possible
 3 things it can do:
-    1)
-    2)
-    3)
+    1) start to play
+    2) play louder
+    3) stop to play
 
-Thing 2)
+Thing 2) Bicycle
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) wheels number
+    2) wheel diameter 
+    3) height of the saddle
+    4) maximum speed
+    5) number of speeds
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change speed
+    2) speed up
+    3) start
 
-Thing 3)
+Thing 3) sander
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) start button
+    2) speed adjustment button
+    3) face disc
+    4) dust collector
+    5) engine
 3 things it can do:
-    1)
-    2)
-    3)
+    1) start to sand
+    2) increase speed
+    3) empty dust collector
 
-Thing 4)
+Thing 4) woodshop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) table saw
+    2) router
+    3) sander
+    4) jointer
+    5) vacuum cleaner
 3 things it can do:
-    1)
-    2)
-    3)
+    1) join two boards
+    2) plane a board
+    3) cut a board
 */
 
 /*
