@@ -434,65 +434,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) sander
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) disc diameter (float)
+    2) number of speeds (int)
+    3) maximum speed in rpm (int)
+    4) minimum speed in rpm (int)
+    5) power in w (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) start to sand
+    2) increase speed
+    3) empty dust collector
 
-Thing 6)
+Thing 6) table saw
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) diameter blade (float)
+    2) power in w (int)
+    3) maximum cuting height (float)
+    4) length (float)
+    5) width (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) start
+    2) raise the blade
+    3) lower the blade
 
-Thing 7)
+Thing 7) jointer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) power in w (int)
+    2) maximum wood height (float)
+    3) rotation speed (int)
+    4) maximum wood width (float)
+    5) speed in m/s (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) increase the height
+    2) decrease the height
+    3) start
 
-Thing 8)
+Thing 8) vacuum cleaner
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) power in w (int)
+    2) size of bag (float)
+    3) airflow (float)
+    4) pipe length (float)
+    5) pipe diameter (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) start
+    2) stop 
+    3) empty dust bag
 
-Thing 9)
+Thing 9) plunge saw
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) power in w (int)
+    2) maximum height (float)
+    3) maximum angle (float)
+    4) blade diameter (float)
+    5) rotation speed (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) adjust the height
+    2) adjust the angle
+    3) start
  */
 
 /*
