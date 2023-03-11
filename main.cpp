@@ -494,7 +494,7 @@ Thing 5) Sander
 
 Thing 6) Table saw
 5 properties:
-    1) diameter blade (float)
+    1) blade diameter (float)
     2) power in w (int)
     3) maximum cuting height (float)
     4) length (float)
@@ -526,7 +526,7 @@ Thing 8) Vacuum cleaner
 3 things it can do:
     1) start
     2) stop 
-    3) empty dust bag
+    3) check if the bag is full
 
 Thing 9) Plunge saw
 5 properties:
