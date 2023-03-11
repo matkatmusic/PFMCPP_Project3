@@ -222,27 +222,27 @@ Thing 2) Bicycle
 
 Thing 3) sander
 5 properties:
-    1) start button
-    2) speed adjustment button
-    3) face disc
-    4) dust collector
-    5) engine
+    1) disc diameter
+    2) number of speeds
+    3) maximum speed in rpm
+    4) minimum speed in rpm
+    5) power in w
 3 things it can do:
     1) start to sand
     2) increase speed
     3) empty dust collector
 
-Thing 4) woodshop
+Thing 4) table saw
 5 properties:
-    1) table saw
-    2) router
-    3) sander
-    4) jointer
-    5) vacuum cleaner
+    1) diameter blade
+    2) power in w
+    3) maximum cuting height
+    4) length
+    5) width
 3 things it can do:
-    1) join two boards
-    2) plane a board
-    3) cut a board
+    1) start
+    2) raise the blade
+    3) lower the blade
 */
 
 /*
