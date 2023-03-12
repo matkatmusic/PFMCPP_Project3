@@ -449,10 +449,15 @@ struct StringedInstrument
 {
 // 5 properties:
 //     1) number of strings (int)
+    int stringNumbers = 5;
 //     2) length (float)
+    float length=50.4f;
 //     3) width (float)
+    float width = 30.2f;
 //     4) presence of a fixed easel (bool)
+    bool fixedEasel = true;
 //     5) note la plus grave possible (std::string or int)
+    int lowestNote = 48;
 // 3 things it can do:
 //     1) start to play
 //     2) play louder
@@ -479,10 +484,15 @@ struct Bicycle
 {
 // 5 properties:
 //     1) wheels number (int)
+    int wheelNumber = 2;
 //     2) wheel diameter (float)
+    float weelDiameter = 70.5f;
 //     3) height of the saddle (float)
+    float saddleHeight = 60.4f;
 //     4) maximum speed (int)
+    int maximumSpeed = 30;
 //     5) number of speeds (int)
+    int speedNumber = 6;
 // 3 things it can do:
 //     1) change speed
 //     2) speed up
@@ -508,10 +518,15 @@ struct Monitor
 {
 // 5 properties:
 //     1) number of pixels in height (int)
+    int pixelHeight= 1080;
 //     2) number of pixels in width (int)
+    int pixelWidth = 1920;
 //     3) maximum brightness (int)
+    int maxBrightness = 800;
 //     4) maximum contrast  (int)
+    int maxContrast = 1500;
 //     5) power in w (int)
+    int power = 150;
 // 3 things it can do:
 //     1) increase brightness
 //     2) decrease brightness
@@ -537,10 +552,15 @@ struct Headphone
 {
 // 5 properties:
 //     1) lowest frequency (int)
+    int lowestFreq = 30;
 //     2) highest frequency (int)
+    int highestFreq = 22500;
 //     3) bluetooth (bool)
+    bool bluetooth = false;
 //     4) weight (float)
+    float weight = 2.3f;
 //     5) width (float)
+    float width = 30.2f;
 // 3 things it can do:
 //     1) plug or connect
 //     2) increase volume
@@ -566,10 +586,16 @@ struct Sander
 {
 // 5 properties:
 //     1) disc diameter (float)
+    float discDiameter = 150.0f;
 //     2) number of speeds (int)
+    int speedsNumber = 6;
 //     3) maximum speed in rpm (int)
+    int maxSpeed = 900;
 //     4) minimum speed in rpm (int)
+    int minSpeed = 100;
 //     5) power in w (int)
+    int power = 150;
+
 // 3 things it can do:
 //     1) start to sand
 //     2) increase speed
@@ -595,10 +621,15 @@ struct TableSaw
 {
 // 5 properties:
 //     1) blade diameter (float)
+    float bladeDiameter = 30.5f;
 //     2) power in w (int)
+    int power = 1500;
 //     3) maximum cuting height (float)
+    float maxCutHeight = 8.3f;
 //     4) length (float)
+    float length = 60.5f;
 //     5) width (float)
+    float width = 40.2f;
 // 3 things it can do:
 //     1) start
 //     2) raise the blade
@@ -624,10 +655,15 @@ struct Jointer
 {
 // 5 properties:
 //     1) power in w (int)
+    int power = 1500;
 //     2) maximum wood height (float)
+    float maxWoodHeight = 12.7f;
 //     3) rotation speed (int)
+    int rotationSpeed = 5000;
 //     4) maximum wood width (float)
+    float maxWoodWidth = 41.0f;
 //     5) speed in m/s (float)
+    float speed = 3.4f;
 // 3 things it can do:
 //     1) increase the height
 //     2) decrease the height
@@ -653,10 +689,15 @@ struct VacuumCleaner
 {
 // 5 properties:
 //     1) power in w (int)
+    int power = 800;
 //     2) size of bag (float)
+    float bagSize = 50.3f;
 //     3) airflow (float)
+    float airFlow = 50.4f;
 //     4) pipe length (float)
+    float pipeLength = 2.5f;
 //     5) pipe diameter (float)
+    float pipeDiameter = 0.5f;
 // 3 things it can do:
 //     1) start
 //     2) stop 
@@ -682,10 +723,15 @@ struct PlungeSaw
 {
 // 5 properties:
 //     1) power in w (int)
+    int power = 900;
 //     2) maximum height (float)
+    float maxHeight = 9.2;
 //     3) maximum angle (float)
+    float maxAngle = 46.5;
 //     4) blade diameter (float)
+    float bladeDiameter = 25.3;
 //     5) rotation speed (int)
+    int rotationSpeed = 5000;
 // 3 things it can do:
 //     1) adjust the height
 //     2) adjust the angle
@@ -713,10 +759,15 @@ struct WoodShop
 {
 // 5 properties:
 //     1) Sander
+    Sander sander;
 //     2) Table saw
+    TableSaw tableSaw;
 //     3) Jointer
+    Jointer jointer;
 //     4) Vacuum cleaner
+    VacuumCleaner vacuumCleaner;
 //     5) Plunge saw
+    PlungeSaw plungeSaw;
 // 3 things it can do:
 //     1) join two boards
 //     2) cut a board
