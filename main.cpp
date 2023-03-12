@@ -911,7 +911,7 @@ struct StringedInstrument
 //     1) number of strings (int)
     int stringNumbers = 5;
 //     2) length (float)
-    float length=50.4f;
+    float length = 50.4f;
 //     3) width (float)
     float width = 30.2f;
 //     4) presence of a fixed easel (bool)
@@ -957,7 +957,7 @@ struct Bicycle
 //     5) number of speeds (int)
     int speedNumber = 6;
 
- struct Wheel 
+     struct Wheel 
     {
         bool tubeless = true;
         int raysNumber = 36;
@@ -1001,7 +1001,7 @@ struct Monitor
 {
 // 5 properties:
 //     1) number of pixels in height (int)
-    int pixelHeight= 1080;
+    int pixelHeight = 1080;
 //     2) number of pixels in width (int)
     int pixelWidth = 1920;
 //     3) maximum brightness (int)
@@ -1042,13 +1042,13 @@ struct Headphone
 //     2) highest frequency (int)
     int highestFreq = 22500;
 //     3) bluetooth (bool)
-    bool bluetooth = false;
+    bool hasBluetooth = false;
 //     4) weight (float)
     float weight = 2.3f;
 //     5) width (float)
     float width = 30.2f;
 
- struct Speaker
+    struct Speaker
     {
         int impedance = 8;
         float depth = 5.3f;
