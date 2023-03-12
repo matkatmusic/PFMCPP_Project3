@@ -503,6 +503,19 @@ struct Bicycle
     void speedUp (int howMuch);
 //     3) start
     void start();
+
+    struct Wheel 
+    {
+        bool tubeless = true;
+        int raysNumber = 36;
+        float tireWidth = 6.2f;
+        float rayLength = 30.2f;
+        float tireDiameter = 80.5f;
+    
+        void slowDown();
+        void stop();
+        void speedUp();
+    };
 };
 /*
 
@@ -577,6 +590,20 @@ struct Headphone
     void increaseVolume();
 //     3) decrease volume
     void decreaseVolume();
+
+    struct Speaker
+    {
+        int impedance = 8;
+        float depth = 5.3f;
+        float membraneDiameter = 3.4f;
+        std::string brand = "sennheiser";
+        float earDistance = 2.5f;
+    
+        void membraneUp();
+        void membraneDown();
+        void membraneBreak();
+    };
+
 };
 /*
 
