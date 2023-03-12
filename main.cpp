@@ -447,7 +447,16 @@ Thing 1) Stringed instrument
 
 struct StringedInstrument 
 {
-
+// 5 properties:
+//     1) number of strings (int)
+//     2) length (float)
+//     3) width (float)
+//     4) presence of a fixed easel (bool)
+//     5) note la plus grave possible (std::string or int)
+// 3 things it can do:
+//     1) start to play
+//     2) play louder
+//     3) stop to play
 };
 /*
 
@@ -468,7 +477,16 @@ Thing 2) Bicycle
 
 struct Bicycle 
 {
-
+// 5 properties:
+//     1) wheels number (int)
+//     2) wheel diameter (float)
+//     3) height of the saddle (float)
+//     4) maximum speed (int)
+//     5) number of speeds (int)
+// 3 things it can do:
+//     1) change speed
+//     2) speed up
+//     3) start
 };
 /*
 
@@ -488,7 +506,16 @@ Thing 3) Monitor
 
 struct Monitor 
 {
-
+// 5 properties:
+//     1) number of pixels in height (int)
+//     2) number of pixels in width (int)
+//     3) maximum brightness (int)
+//     4) maximum contrast  (int)
+//     5) power in w (int)
+// 3 things it can do:
+//     1) increase brightness
+//     2) decrease brightness
+//     3) increase contrast
 };
 /*
 
@@ -508,7 +535,16 @@ Thing 4) Headphone
 
 struct Headphone 
 {
-
+// 5 properties:
+//     1) lowest frequency (int)
+//     2) highest frequency (int)
+//     3) bluetooth (bool)
+//     4) weight (float)
+//     5) width (float)
+// 3 things it can do:
+//     1) plug or connect
+//     2) increase volume
+//     3) decrease volume
 };
 /*
 
@@ -528,7 +564,16 @@ Thing 5) Sander
 
 struct Sander
 {
-
+// 5 properties:
+//     1) disc diameter (float)
+//     2) number of speeds (int)
+//     3) maximum speed in rpm (int)
+//     4) minimum speed in rpm (int)
+//     5) power in w (int)
+// 3 things it can do:
+//     1) start to sand
+//     2) increase speed
+//     3) empty dust collector
 };
 /*
 
@@ -548,7 +593,16 @@ Thing 6) Table saw
 
 struct TableSaw 
 {
-
+// 5 properties:
+//     1) blade diameter (float)
+//     2) power in w (int)
+//     3) maximum cuting height (float)
+//     4) length (float)
+//     5) width (float)
+// 3 things it can do:
+//     1) start
+//     2) raise the blade
+//     3) lower the blade
 };
 /*
 
@@ -568,7 +622,16 @@ Thing 7) Jointer
 
 struct Jointer 
 {
-
+// 5 properties:
+//     1) power in w (int)
+//     2) maximum wood height (float)
+//     3) rotation speed (int)
+//     4) maximum wood width (float)
+//     5) speed in m/s (float)
+// 3 things it can do:
+//     1) increase the height
+//     2) decrease the height
+//     3) start
 };
 /*
 
@@ -588,7 +651,16 @@ Thing 8) Vacuum cleaner
 
 struct VacuumCleaner 
 {
-
+// 5 properties:
+//     1) power in w (int)
+//     2) size of bag (float)
+//     3) airflow (float)
+//     4) pipe length (float)
+//     5) pipe diameter (float)
+// 3 things it can do:
+//     1) start
+//     2) stop 
+//     3) check if the bag is full
 };
 /*
 
@@ -608,7 +680,16 @@ Thing 9) Plunge saw
 
 struct PlungeSaw 
 {
-
+// 5 properties:
+//     1) power in w (int)
+//     2) maximum height (float)
+//     3) maximum angle (float)
+//     4) blade diameter (float)
+//     5) rotation speed (int)
+// 3 things it can do:
+//     1) adjust the height
+//     2) adjust the angle
+//     3) start
 };
 /*
 
@@ -630,7 +711,16 @@ Thing 10) Woodshop
 
 struct WoodShop
 {
-
+// 5 properties:
+//     1) Sander
+//     2) Table saw
+//     3) Jointer
+//     4) Vacuum cleaner
+//     5) Plunge saw
+// 3 things it can do:
+//     1) join two boards
+//     2) cut a board
+//     3) plane a board
 };
 
 /*
