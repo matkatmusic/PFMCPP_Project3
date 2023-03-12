@@ -496,15 +496,8 @@ struct Bicycle
     int maximumSpeed = 30;
 //     5) number of speeds (int)
     int speedNumber = 6;
-// 3 things it can do:
-//     1) change speed
-    void changeSpeed();
-//     2) speed up
-    void speedUp (int howMuch);
-//     3) start
-    void start();
 
-    struct Wheel 
+ struct Wheel 
     {
         bool tubeless = true;
         int raysNumber = 36;
@@ -512,10 +505,21 @@ struct Bicycle
         float rayLength = 30.2f;
         float tireDiameter = 80.5f;
     
-        void slowDown();
+        void slowDown(float brakingPower);
         void stop();
         void speedUp();
     };
+
+
+// 3 things it can do:
+//     1) change speed
+    void changeSpeed(Wheel frontWheel, Wheel backWheel);
+//     2) speed up
+    void speedUp (int howMuch, Wheel frontWheel, Wheel backWheel);
+//     3) start
+    void start(Wheel frontWheel, Wheel backWheel);
+
+   
 };
 /*
 
@@ -583,15 +587,8 @@ struct Headphone
     float weight = 2.3f;
 //     5) width (float)
     float width = 30.2f;
-// 3 things it can do:
-//     1) plug or connect
-    void connect();
-//     2) increase volume
-    void increaseVolume();
-//     3) decrease volume
-    void decreaseVolume();
 
-    struct Speaker
+ struct Speaker
     {
         int impedance = 8;
         float depth = 5.3f;
@@ -599,10 +596,21 @@ struct Headphone
         std::string brand = "sennheiser";
         float earDistance = 2.5f;
     
-        void membraneUp();
-        void membraneDown();
+        void membraneUp(float currentIntensity);
+        void membraneDown(float currentIntensity);
         void membraneBreak();
     };
+
+
+// 3 things it can do:
+//     1) plug or connect
+    void connect();
+//     2) increase volume
+    void increaseVolume(Speaker leftSpeaker,Speaker rightSpeaker);
+//     3) decrease volume
+    void decreaseVolume(Speaker leftSpeaker,Speaker rightSpeaker);
+
+   
 
 };
 /*
