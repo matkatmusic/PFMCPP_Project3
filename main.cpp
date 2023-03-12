@@ -443,6 +443,14 @@ Thing 1) Stringed instrument
     1) start to play
     2) play louder
     3) stop to play
+*/
+
+struct StringedInstrument 
+{
+
+};
+/*
+
 
 Thing 2) Bicycle
 5 properties:
@@ -456,6 +464,14 @@ Thing 2) Bicycle
     2) speed up
     3) start
 
+*/
+
+struct Bicycle 
+{
+
+};
+/*
+
 Thing 3) Monitor
 5 properties:
     1) number of pixels in height (int)
@@ -467,6 +483,14 @@ Thing 3) Monitor
     1) increase brightness
     2) decrease brightness
     3) increase contrast
+
+*/
+
+struct Monitor 
+{
+
+};
+/*
 
 Thing 4) Headphone
 5 properties:
@@ -480,6 +504,14 @@ Thing 4) Headphone
     2) increase volume
     3) decrease volume
 
+*/
+
+struct Headphone 
+{
+
+};
+/*
+
 Thing 5) Sander
 5 properties:
     1) disc diameter (float)
@@ -491,6 +523,14 @@ Thing 5) Sander
     1) start to sand
     2) increase speed
     3) empty dust collector
+
+*/
+
+struct Sander
+{
+
+};
+/*
 
 Thing 6) Table saw
 5 properties:
@@ -504,6 +544,14 @@ Thing 6) Table saw
     2) raise the blade
     3) lower the blade
 
+*/
+
+struct TableSaw 
+{
+
+};
+/*
+
 Thing 7) Jointer
 5 properties:
     1) power in w (int)
@@ -515,6 +563,14 @@ Thing 7) Jointer
     1) increase the height
     2) decrease the height
     3) start
+
+*/
+
+struct Jointer 
+{
+
+};
+/*
 
 Thing 8) Vacuum cleaner
 5 properties:
@@ -528,6 +584,14 @@ Thing 8) Vacuum cleaner
     2) stop 
     3) check if the bag is full
 
+*/
+
+struct VacuumCleaner 
+{
+
+};
+/*
+
 Thing 9) Plunge saw
 5 properties:
     1) power in w (int)
@@ -539,6 +603,14 @@ Thing 9) Plunge saw
     1) adjust the height
     2) adjust the angle
     3) start
+
+*/
+
+struct PlungeSaw 
+{
+
+};
+/*
 
 Thing 10) Woodshop
 5 properties:
@@ -555,6 +627,11 @@ Thing 10) Woodshop
 */
 
 
+
+struct WoodShop
+{
+
+};
 
 /*
 =================
