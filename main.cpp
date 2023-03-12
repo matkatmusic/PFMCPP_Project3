@@ -460,8 +460,11 @@ struct StringedInstrument
     int lowestNote = 48;
 // 3 things it can do:
 //     1) start to play
+    void startToPlay();
 //     2) play louder
+    void playLouder(int howLoud);
 //     3) stop to play
+    void stopToPlay();
 };
 /*
 
@@ -495,8 +498,11 @@ struct Bicycle
     int speedNumber = 6;
 // 3 things it can do:
 //     1) change speed
+    void changeSpeed();
 //     2) speed up
+    void speedUp (int howMuch);
 //     3) start
+    void start();
 };
 /*
 
@@ -529,8 +535,11 @@ struct Monitor
     int power = 150;
 // 3 things it can do:
 //     1) increase brightness
+    void increaseBrightness();
 //     2) decrease brightness
+    void decreaseBrightness();
 //     3) increase contrast
+    void increaseContrast();
 };
 /*
 
@@ -563,8 +572,11 @@ struct Headphone
     float width = 30.2f;
 // 3 things it can do:
 //     1) plug or connect
+    void connect();
 //     2) increase volume
+    void increaseVolume();
 //     3) decrease volume
+    void decreaseVolume();
 };
 /*
 
@@ -598,8 +610,11 @@ struct Sander
 
 // 3 things it can do:
 //     1) start to sand
+    void startToSand ();
 //     2) increase speed
+    void increaseSpeed();
 //     3) empty dust collector
+    void emptyDustCollector();
 };
 /*
 
@@ -632,8 +647,11 @@ struct TableSaw
     float width = 40.2f;
 // 3 things it can do:
 //     1) start
+    void start();
 //     2) raise the blade
+    void raiseTheBlade(int howMuch);
 //     3) lower the blade
+    void lowerTheBlade(int howMuch);
 };
 /*
 
@@ -666,8 +684,11 @@ struct Jointer
     float speed = 3.4f;
 // 3 things it can do:
 //     1) increase the height
+    void increaseHeight();
 //     2) decrease the height
+    void decreaseHeight();
 //     3) start
+    void start();
 };
 /*
 
@@ -700,8 +721,11 @@ struct VacuumCleaner
     float pipeDiameter = 0.5f;
 // 3 things it can do:
 //     1) start
+    void start();
 //     2) stop 
+    void stop();
 //     3) check if the bag is full
+    bool isBagFull();
 };
 /*
 
@@ -725,17 +749,20 @@ struct PlungeSaw
 //     1) power in w (int)
     int power = 900;
 //     2) maximum height (float)
-    float maxHeight = 9.2;
+    float maxHeight = 9.2f;
 //     3) maximum angle (float)
-    float maxAngle = 46.5;
+    float maxAngle = 46.5f;
 //     4) blade diameter (float)
-    float bladeDiameter = 25.3;
+    float bladeDiameter = 25.3f;
 //     5) rotation speed (int)
     int rotationSpeed = 5000;
 // 3 things it can do:
 //     1) adjust the height
+    void adjustTheHeight(float height);
 //     2) adjust the angle
+    void adjustTheAngle(float angle);
 //     3) start
+    void start();
 };
 /*
 
@@ -770,8 +797,11 @@ struct WoodShop
     PlungeSaw plungeSaw;
 // 3 things it can do:
 //     1) join two boards
+    void joinBoards();
 //     2) cut a board
+    void cutBoard();
 //     3) plane a board
+    void planeBoard();
 };
 
 /*
