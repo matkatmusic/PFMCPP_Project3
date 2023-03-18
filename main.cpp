@@ -220,29 +220,29 @@ Thing 2) Employee
     2) work shift
     3) collect pay
 
-Thing 3)
+Thing 3) Computer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Files
+    2) Directories
+    3) hard drive
+    4) ram
+    5) cpu
 3 things it can do:
-    1)
-    2)
-    3)
+    1) boot an ooperating system
+    2) run software
+    3) save files
 
-Thing 4)
+Thing 4) building
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) rooms
+    2) hallways
+    3) elevator
+    4) carpet
+    5) ceilings
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide a place of business
+    2) provide a dwelling
+    3) proved space for government work
 */
 
 /*
