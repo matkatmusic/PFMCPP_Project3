@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) Student
 5 properties:
-    1) grade
-    2) gpa
-    3) number of friends
-    4) favorite class
-    5) major
+    1) grade stg::string
+    2) gpa float
+    3) number of friends int
+    4) favorite class std::string
+    5) major std::string
 3 things it can do:
     1) Homework
     2) Take exams
@@ -210,11 +210,11 @@ Thing 1) Student
 
 Thing 2) Employee
 5 properties:
-    1) job title
-    2) hourly wage
-    3) shift number
-    4) Name
-    5) Employee Id
+    1) job title std::string
+    2) hourly wage float
+    3) shift number int
+    4) Name std::string
+    5) Employee Id int
 3 things it can do:
     1) come to work
     2) work shift
@@ -222,11 +222,11 @@ Thing 2) Employee
 
 Thing 3) Computer
 5 properties:
-    1) Files
-    2) Directories
-    3) hard drive
-    4) ram
-    5) cpu
+    1) Files int
+    2) Directories int
+    3) hard drive std::string
+    4) ram float
+    5) cpu float
 3 things it can do:
     1) boot an ooperating system
     2) run software
@@ -234,11 +234,11 @@ Thing 3) Computer
 
 Thing 4) building
 5 properties:
-    1) rooms
-    2) hallways
-    3) elevator
-    4) carpet
-    5) ceilings
+    1) rooms int
+    2) hallways int
+    3) elevator int
+    4) carpet float
+    5) ceilings int
 3 things it can do:
     1) provide a place of business
     2) provide a dwelling
@@ -305,6 +305,14 @@ Example:
 */
 
 /*
+
+
+
+*/ 
+
+
+
+/*
 ===================
 Part 1c - Step 2: Assignment
 ===================
@@ -336,18 +344,19 @@ Part 1c - Step 4: Assignment
 Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
+UDT: Stove
+A Stove is comprised of the following objects:
+    Burners
+    OvenDoor
+    TemperatureGuage
+    Racks
+    Timer
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+An Oven has three things it can do
+    toast bread
+    boil water
+    broil chicken
+
  */
 
  /*
