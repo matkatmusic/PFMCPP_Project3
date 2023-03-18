@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn
+            4) emblem
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) sound horn
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) odometer
+            3) gear indicator
+            4) cycles
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) indicate speed
+            2) indicate mileage
+            3) indicate state
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) heat control
+            2) air control
+            3) fan control
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) adjust heat
+            2) adjust air
+            3) adjust fan speed
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio frequency chooser
+            2) play
+            3) stop
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) play music
+            2) stop music
+            3) adjust radio frequency
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) recline control
+            2) backwards/forwards control
+            3) headrest adjuster
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) reclines the seat
+            2) adjusts the headrest
 */
 
 /*
@@ -196,29 +196,29 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) Student
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) grade
+    2) gpa
+    3) number of friends
+    4) favorite class
+    5) major
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Homework
+    2) Take exams
+    3) disrupt class
 
-Thing 2)
+Thing 2) Employee
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) job title
+    2) hourly wage
+    3) shift number
+    4) Name
+    5) Employee Id
 3 things it can do:
-    1)
-    2)
-    3)
+    1) come to work
+    2) work shift
+    3) collect pay
 
 Thing 3)
 5 properties:
