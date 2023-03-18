@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) Student
-5 properties:
-    1) grade stg::string
-    2) gpa float
-    3) number of friends int
-    4) favorite class std::string
-    5) major std::string
-3 things it can do:
-    1) Homework
-    2) Take exams
-    3) disrupt class
 
-Thing 2) Employee
-5 properties:
-    1) job title std::string
-    2) hourly wage float
-    3) shift number int
-    4) Name std::string
-    5) Employee Id int
-3 things it can do:
-    1) come to work
-    2) work shift
-    3) collect pay
-
-Thing 3) Computer
-5 properties:
-    1) Files int
-    2) Directories int
-    3) hard drive std::string
-    4) ram float
-    5) cpu float
-3 things it can do:
-    1) boot an ooperating system
-    2) run software
-    3) save files
-
-Thing 4) building
-5 properties:
-    1) rooms int
-    2) hallways int
-    3) elevator int
-    4) carpet float
-    5) ceilings int
-3 things it can do:
-    1) provide a place of business
-    2) provide a dwelling
-    3) proved space for government work
 */
 
 /*
@@ -443,65 +397,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -553,10 +449,116 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+/*
+Thing 1) Student
+5 properties:
+    1) grade stg::string
+    2) gpa float
+    3) number of friends int
+    4) favorite class std::string
+    5) major std::string
+3 things it can do:
+    1) Homework
+    2) Take exams
+    3) disrupt class
 
+Thing 2) Employee
+5 properties:
+    1) job title std::string
+    2) hourly wage float
+    3) shift number int
+    4) Name std::string
+    5) Employee Id int
+3 things it can do:
+    1) come to work
+    2) work shift
+    3) collect pay
 
+Thing 3) Computer
+5 properties:
+    1) Files int
+    2) Directories int
+    3) hard drive std::string
+    4) ram float
+    5) cpu float
+3 things it can do:
+    1) boot an ooperating system
+    2) run software
+    3) save files
 
+Thing 4) building
+5 properties:
+    1) rooms int
+    2) hallways int
+    3) elevator int
+    4) carpet float
+    5) ceilings int
+3 things it can do:
+    1) provide a place of business
+    2) provide a dwelling
+    3) proved space for government work
 
+Thing 5) Burners
+5 properties:
+    1) type std::string
+    2) maxHeatTemp float
+    3) circumference float
+    4) diameter float
+    5) drippan int
+3 things it can do:
+    1) broil
+    2) boil
+    3) fry
+
+Thing 6) Oven Door
+5 properties:
+    1)numhandles int
+    2) numWindows int
+    3) brand std::string
+    4) frameBuildingMaterial std::string
+    5) insulationType std::string
+3 things it can do:
+    1) open
+    2) close
+    3) hold in heat
+
+Thing 7)TemperatureGuage
+5 properties:
+    1) typeofDisplay std::string
+    2) temperature float
+    3) time float
+    4) material std::string
+    5) power std::string (on or off could be bool)
+3 things it can do:
+    1) display temperature
+    2) raise temperature
+    3) lower temperature
+
+Thing 8) Racks
+5 properties:
+    1) numRacks int
+    2) material std::string
+    3) brand std::string
+    4) maxTemp float
+    5) i really just cant think of another property of a stupid oven rack
+3 things it can do:
+    1) induction cooking
+    2) invection cooking
+    3) hold food
+
+Thing 9) Timer
+5 properties:
+    1) currentTime float
+    2) type std::string
+    3) material std::string
+    4) brand std::string
+    5) amountTimeLeft float
+3 things it can do:
+    1) Countdown Timer
+    2) display current time
+    3) can be manually set
+
+*/
 
 
 
