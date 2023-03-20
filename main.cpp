@@ -107,9 +107,55 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Person 
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled=0;
+
+    struct Foot
+    {
+        int footSize;
+        void stepForward();
+        int stepSize();
+    };
+    Foot leftFoot;
+    Foot rightFoot;
+
+    void run( int howFast, bool startWithLeftFoot);
+
+    
+   
+};
+
+void Person::Foot::stepForward()
+{
+    //i'm not sure i understand the purpose of this function
+}
+int Person::Foot::stepSize()
+{
+    return 6;
+}
 
 
-
+void Person::run (int howFast, bool startWithLeftFoot)
+{
+    
+    if (startWithLeftFoot)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+distanceTraveled += (leftFoot.stepSize() + rightFoot.stepSize())*howFast;
+}
 
 
  /*
@@ -138,12 +184,27 @@ struct StringedInstrument
     float length = 50.4f;
     float width = 30.2f;
     bool fixedEasel = true;
-    int lowestNote = 48;
+    int powerInDb = 0;
 
     void startToPlay();
     void playLouder(int howLoud);
     void stopToPlay();
 };
+
+void StringedInstrument::startToPlay()
+{
+    //the music begins
+}
+
+void StringedInstrument::playLouder(int howLoud)
+{
+powerInDb += howLoud;  
+}
+
+void StringedInstrument::stopToPlay()
+{
+    //the music begins
+}
 
 struct Bicycle 
 {
@@ -152,6 +213,8 @@ struct Bicycle
     float saddleHeight = 60.4f;
     int maximumSpeed = 30;
     int speedNumber = 6;
+    int bicycleSpeed = 30;
+    
 
      struct Wheel 
     {
@@ -160,16 +223,53 @@ struct Bicycle
         float tireWidth = 6.2f;
         float rayLength = 30.2f;
         float tireDiameter = 80.5f;
+        float wheelSpeed = 20.0f;
     
         void slowDown(float brakingPower);
         void stop();
         void speedUp();
+        void start();
     };
 
     void changeSpeed(Wheel frontWheel, Wheel backWheel);
     void speedUp (int howMuch, Wheel frontWheel, Wheel backWheel);
     void start(Wheel frontWheel, Wheel backWheel);
 };
+
+void Bicycle::Wheel::slowDown(float brakingPower)
+{
+   wheelSpeed /= brakingPower;
+}
+void Bicycle::Wheel::stop()
+{
+    //the wheel stops
+}
+void Bicycle::Wheel::speedUp()
+{
+    //the wheels speeds up
+}
+void Bicycle::Wheel::start()
+{
+    //the wheel starts
+}
+
+void Bicycle::changeSpeed(Wheel frontWheel, Wheel backWheel)
+{
+    frontWheel.speedUp();
+    backWheel.speedUp();
+}
+void Bicycle::speedUp (int howMuch, Wheel frontWheel, Wheel backWheel)
+{
+    frontWheel.speedUp();
+    backWheel.speedUp();
+    bicycleSpeed *= howMuch;
+}
+void Bicycle::start(Wheel frontWheel, Wheel backWheel)
+{
+    frontWheel.start();
+    backWheel.start();
+}
+
 
 struct Monitor 
 {
@@ -194,21 +294,51 @@ struct Headphone
 
     struct Speaker
     {
-        int impedance = 8;
+        float impedance = 8.0f;
         float depth = 5.3f;
         float membraneDiameter = 3.4f;
         std::string brand = "sennheiser";
         float earDistance = 2.5f;
     
         void membraneUp(float currentIntensity);
-        void membraneDown(float currentIntensity);
-        void membraneBreak();
+        void decreaseVolume();
+        void increaseVolume();
     };
 
     void connect();
     void increaseVolume(Speaker leftSpeaker,Speaker rightSpeaker);
     void decreaseVolume(Speaker leftSpeaker,Speaker rightSpeaker);
 };
+
+void Headphone::Speaker::membraneUp(float currentIntensity)
+{
+    impedance *= currentIntensity;
+}
+void Headphone::Speaker::decreaseVolume()
+{
+    // the volume decreases
+}
+void Headphone::Speaker::increaseVolume()
+{
+     // the volume decreases
+}
+
+void Headphone::connect()
+{
+    //the headphone connects
+}
+void Headphone::increaseVolume(Speaker leftSpeaker,Speaker rightSpeaker)
+{
+    leftSpeaker.increaseVolume();
+    rightSpeaker.increaseVolume();
+}
+
+void Headphone::decreaseVolume(Speaker leftSpeaker,Speaker rightSpeaker)
+{
+    leftSpeaker.decreaseVolume();
+    rightSpeaker.decreaseVolume();
+}
+
 
 struct Sander
 {
@@ -227,14 +357,28 @@ struct TableSaw
 {
     float bladeDiameter = 30.5f;
     int power = 1500;
-    float maxCutHeight = 8.3f;
+    float cutHeight = 8.3f;
     float length = 60.5f;
     float width = 40.2f;
 
     void start();
-    void raiseTheBlade(int howMuch);
-    void lowerTheBlade(int howMuch);
+    void raiseTheBlade(float howMuch);
+    void lowerTheBlade(float howMuch);
 };
+
+void TableSaw::start()
+{
+    //the tablesaw starts
+}
+void TableSaw::raiseTheBlade(float howMuch)
+{
+    cutHeight *= howMuch;
+}
+
+void TableSaw::lowerTheBlade(float howMuch)
+{
+    cutHeight *= howMuch;
+}
 
 struct Jointer 
 {
@@ -249,6 +393,19 @@ struct Jointer
     void start();
 };
 
+void Jointer::increaseHeight()
+{
+    //increase height of the jointer
+}
+void Jointer::decreaseHeight()
+{
+    //decrease height of the jointer
+}
+void Jointer::start()
+{
+    //the jointer starts
+}
+
 struct VacuumCleaner 
 {
     int power = 800;
@@ -262,18 +419,45 @@ struct VacuumCleaner
     bool isBagFull();
 };
 
+void VacuumCleaner::start()
+{
+    //the vacuum cleaner starts
+}
+void VacuumCleaner::stop()
+{
+    //the vacuum cleaner stops
+}
+bool VacuumCleaner::isBagFull()
+{
+    //check if the bag is full or not
+    return true;
+}
+
 struct PlungeSaw 
 {
     int power = 900;
-    float maxHeight = 9.2f;
-    float maxAngle = 46.5f;
+    float height = 9.2f;
+    float angle = 46.5f;
     float bladeDiameter = 25.3f;
     int rotationSpeed = 5000;
 
-    void adjustTheHeight(float height);
-    void adjustTheAngle(float angle);
+    void adjustTheHeight(float newHeight);
+    void adjustTheAngle(float newAngle);
     void start();
 };
+
+void PlungeSaw::adjustTheHeight(float newHeight)
+{
+    height=newHeight;
+}
+void PlungeSaw::adjustTheAngle(float newAngle)
+{
+    angle=newAngle;
+}
+void PlungeSaw::start()
+{
+    //the plungesaw starts
+}
 
 struct WoodShop
 {
@@ -287,6 +471,19 @@ struct WoodShop
     void cutBoard();
     void planeBoard();
 };
+
+void WoodShop::joinBoards()
+{
+    //a lot of functions to join 2 boards
+}
+void WoodShop::cutBoard()
+{
+    //a lot of functions to cut a board
+}
+void WoodShop::planeBoard()
+{
+    //a lot of functions to plane a board
+}
 
 int main()
 {
