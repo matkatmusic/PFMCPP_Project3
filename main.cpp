@@ -629,251 +629,7 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
 
-struct Student
-{
-   
-//    5 properties:
-//      1) grade std::string
-    std::string grade="11";
-//      2) gpa float
-    float gpa = 3.2f;
-//      3) number of friends int
-    int numFriends = 3;
-//      4) favorite class std::string
-    std::string favClass = "Math";
-//      5) major std::string
-    std::string major = "English";
-    struct Class
-    {
-        std::string className = "Calculus";
-        std::string classSylabus = "....";
-        char highGrade = 'A';
-        char lowGrade = 'F';
-        std::string classMaterial = "....";
 
-        void teachClass(std::string className);
-        void takeClass(std::string className);
-        float classGrade(Student student, std::string className = "English");
-    };
-//    3 things it can do:
-//        1) Homework
-    Class thisClass;
-    void doHomework(Class test);
-//        2) Take exams
-    void takeExams();
-//        3) disrupt class
-    void disruptClass();
-
-};
-
-struct Employee
-{
-//.    5 properties:
-//      1) job title std::string
-    std::string jobTitle = "Designer";
-//      2) hourly wage float
-    float hourlyWage = 3.5f;
-//      3) shift number int
-    int shiftNumber = 2;
-//      4) Name std::string
-    std::string name = "Ted";
-//      5) Employee Id int
-    int employeeId = 57;
-//    3 things it can do:
-//        1) come to work
-    void comeToWork();
-//        2) work shift
-    void workShift(int shiftNumber);
-//        3) collect pay
-    float collectPlay(float hourlyWage);
-
-};
-
-struct Computer
-{
-//    5 properties:
-//      1) Files int
-    int files = 10;
-//      2) Directories int
-    int directories = 3;
-//      3) hard drive std::string
-    std::string hardDrive = "C";
-//      4) ram float
-    float ram = 96.2f;
-//      5) cpu float
-    float cpu = 16.7f;
-    struct File
-    {
-        std::string fileType = "Excel";
-        std::string fileName = "Test";
-        int fileSize = 100000;
-        std::string fileExtension = "xslx";
-        std::string fileLocation = "C\\:Files";
-        File getFile(std::string fileName);
-        float loadFile(std::string fileName);
-        std::string getFileType(std::string fileName, std::string fileExtension);
-    };
-//    3 things it can do:
-//        1) boot an ooperating system
-    File currentFile;
-    void bootComputer();
-//        2) run software
-    bool runSofware(std::string type);
-//        3) save files
-    void saveFile(File file);
-    
-};
-struct Building
-{
-//    5 properties:
-//      1) rooms int
-    int rooms = 16;
-//      2) hallways int
-
-    int hallways = 8;
-//      3) elevators int
-    int elevators = 1;
-//      4) carpet float
-    float carpet = 19.3f;
-//      5) ceilings int
-    int ceilings = 8;        
-//      3 things it can do:
-//        1) provide a place of business
-    void providePlaceOfBusiness(std::string businessType);
-//        2) provide a dwelling
-    void provideDwelling(int squareFeet);
-//        3) provide space for government work
-    void provideSpaceForGovWork(int squareFeet);
-    
-};
-
-struct Burner
-{
-//.    5 properties:
-//        1) type std::string
-    std::string type = "Gas";
-//        2) maxHeatTemp float
-    float maxHeatTemp = 320.5f;
-//        3) circumference float
-    float circumference = 16.4f;
-//        4) diameter float
-    float diameter = 10.2f;
-//        5) drippan int
-    int dripPan = 5;
-//    3 things it can do:
-//        1) broil
-    void broil(std::string foodType);
-//        2) boil
-    void boil(int burnerNumber);
-//        3) fry
-    void fry(int burnerNumber);
-
-};
-
-struct Racks
-{
-//.    5 properties:
-//      1) numRacks int
-    int numRacks = 3;
-//      2) material std::string
-    std::string material = "Metal";
-//      3) brand std::string
-    std::string brand = "Kenmore";
-//      4) maxTemp float
-    float maxTemp = 530.4f;
-/*        5) i really just cant think of another property         of a stupid oven rack */
-//    3 things it can do:
-//        1) induction cooking
-    void inductionCooking(int rackNumber);
-//        2) invection cooking
-    void invectionCooking(int rackNumber);
-//    3) hold food
-    void holdFood(int rackNumber);
-    
-};
-
-
-struct OvenDoor
-{
-//      5 properties:
-//        1)numhandles int
-    int numHandles = 2;
-//        2) numWindows int
-    int numWindows = 1;
-//        3) brand std::string
-    std::string brand = "Kenmore";
-//        4) frameBuildingMaterial std::string
-    std::string frameMaterial = "Metal";
-//        5) insulationType std::string
-    std::string insulationType = "None";
-//    3 things it can do:
-//        1) open
-    void open();
-//        2) close
-    void close();
-//        3) hold in heat
-    void holdInHeat();
-
-};
-
-struct TemperatureGuage
-{
-//    5 properties:
-//        1) typeofDisplay std::string
-    std::string displayType = "digital";
-//        2) temperature float
-    float temperature = 200.7f;
-//        3) time float
-    float time = 160.5f;
-//        4) material std::string
-    std::string material = "glass";
-//  power std::string (on or off could be bool)
-    bool power = true;
-//    3 things it can do:
-//        1) display temperature
-    int displayTemperature();
-//        2) raise temperature
-    void raiseTemperature();
-//        3) lower temperature
-    void lowerTemperature();
-    
-};
-
-struct Timer
-{
-//    5 properties:
-//      1) currentTime float
-    float currentTime = 110.6f;
-//      2) type std::string
-    std::string type = "digital";
-//      3) material std::string
-    std::string material = "glass";
-//      4) brand std::string
-    std::string brand = "Kenmore";
-//      5) amountTimeLeft float
-    float amountTimeLeft = 234.5f;
-//    3 things it can do:
-//        1) Countdown Timer
-    float countDownTimer(float timeAmount);
-//        2) display current time
-    float displayCurrentTime();
-//     3) can be manually set
-    void setTime(float time);
-    
-
-};
-
-struct Oven
-{
-    Burner burners[4];
-    Timer timer;
-    TemperatureGuage tempGuage;
-    OvenDoor ovenDoor;
-    Racks racks;
-    void turnOnBurner(Burner burner);
-    void setTimer(float time);
-    TemperatureGuage setTemp(int Temp);
-};
 /*
 =================
 Part 1e - Step 2: Commit
@@ -1265,7 +1021,251 @@ Part 1e - Step 19: Request a review
 /*
 paste your code below
 */
+struct Student
+{
+   
+//    5 properties:
+//      1) grade std::string
+    std::string grade="11";
+//      2) gpa float
+    float gpa = 3.2f;
+//      3) number of friends int
+    int numFriends = 3;
+//      4) favorite class std::string
+    std::string favClass = "Math";
+//      5) major std::string
+    std::string major = "English";
+    struct Class
+    {
+        std::string className = "Calculus";
+        std::string classSylabus = "....";
+        char highGrade = 'A';
+        char lowGrade = 'F';
+        std::string classMaterial = "....";
 
+        void teachClass(std::string className);
+        void takeClass(std::string className);
+        float classGrade(Student student, std::string className = "English");
+    };
+//    3 things it can do:
+//        1) Homework
+    Class thisClass;
+    void doHomework(Class test);
+//        2) Take exams
+    void takeExams();
+//        3) disrupt class
+    void disruptClass();
+
+};
+
+struct Employee
+{
+//.    5 properties:
+//      1) job title std::string
+    std::string jobTitle = "Designer";
+//      2) hourly wage float
+    float hourlyWage = 3.5f;
+//      3) shift number int
+    int shiftNumber = 2;
+//      4) Name std::string
+    std::string name = "Ted";
+//      5) Employee Id int
+    int employeeId = 57;
+//    3 things it can do:
+//        1) come to work
+    void comeToWork();
+//        2) work shift
+    void workShift(int shiftNumber);
+//        3) collect pay
+    float collectPlay(float hourlyWage);
+
+};
+
+struct Computer
+{
+//    5 properties:
+//      1) Files int
+    int files = 10;
+//      2) Directories int
+    int directories = 3;
+//      3) hard drive std::string
+    std::string hardDrive = "C";
+//      4) ram float
+    float ram = 96.2f;
+//      5) cpu float
+    float cpu = 16.7f;
+    struct File
+    {
+        std::string fileType = "Excel";
+        std::string fileName = "Test";
+        int fileSize = 100000;
+        std::string fileExtension = "xslx";
+        std::string fileLocation = "C\\:Files";
+        File getFile(std::string fileName);
+        float loadFile(std::string fileName);
+        std::string getFileType(std::string fileName, std::string fileExtension);
+    };
+//    3 things it can do:
+//        1) boot an ooperating system
+    File currentFile;
+    void bootComputer();
+//        2) run software
+    bool runSofware(std::string type);
+//        3) save files
+    void saveFile(File file);
+    
+};
+struct Building
+{
+//    5 properties:
+//      1) rooms int
+    int rooms = 16;
+//      2) hallways int
+
+    int hallways = 8;
+//      3) elevators int
+    int elevators = 1;
+//      4) carpet float
+    float carpet = 19.3f;
+//      5) ceilings int
+    int ceilings = 8;        
+//      3 things it can do:
+//        1) provide a place of business
+    void providePlaceOfBusiness(std::string businessType);
+//        2) provide a dwelling
+    void provideDwelling(int squareFeet);
+//        3) provide space for government work
+    void provideSpaceForGovWork(int squareFeet);
+    
+};
+
+struct Burner
+{
+//.    5 properties:
+//        1) type std::string
+    std::string type = "Gas";
+//        2) maxHeatTemp float
+    float maxHeatTemp = 320.5f;
+//        3) circumference float
+    float circumference = 16.4f;
+//        4) diameter float
+    float diameter = 10.2f;
+//        5) drippan int
+    int dripPan = 5;
+//    3 things it can do:
+//        1) broil
+    void broil(std::string foodType);
+//        2) boil
+    void boil(int burnerNumber);
+//        3) fry
+    void fry(int burnerNumber);
+
+};
+
+struct Racks
+{
+//.    5 properties:
+//      1) numRacks int
+    int numRacks = 3;
+//      2) material std::string
+    std::string material = "Metal";
+//      3) brand std::string
+    std::string brand = "Kenmore";
+//      4) maxTemp float
+    float maxTemp = 530.4f;
+/*        5) i really just cant think of another property         of a stupid oven rack */
+//    3 things it can do:
+//        1) induction cooking
+    void inductionCooking(int rackNumber);
+//        2) invection cooking
+    void invectionCooking(int rackNumber);
+//    3) hold food
+    void holdFood(int rackNumber);
+    
+};
+
+
+struct OvenDoor
+{
+//      5 properties:
+//        1)numhandles int
+    int numHandles = 2;
+//        2) numWindows int
+    int numWindows = 1;
+//        3) brand std::string
+    std::string brand = "Kenmore";
+//        4) frameBuildingMaterial std::string
+    std::string frameMaterial = "Metal";
+//        5) insulationType std::string
+    std::string insulationType = "None";
+//    3 things it can do:
+//        1) open
+    void open();
+//        2) close
+    void close();
+//        3) hold in heat
+    void holdInHeat();
+
+};
+
+struct TemperatureGuage
+{
+//    5 properties:
+//        1) typeofDisplay std::string
+    std::string displayType = "digital";
+//        2) temperature float
+    float temperature = 200.7f;
+//        3) time float
+    float time = 160.5f;
+//        4) material std::string
+    std::string material = "glass";
+//  power std::string (on or off could be bool)
+    bool power = true;
+//    3 things it can do:
+//        1) display temperature
+    int displayTemperature();
+//        2) raise temperature
+    void raiseTemperature();
+//        3) lower temperature
+    void lowerTemperature();
+    
+};
+
+struct Timer
+{
+//    5 properties:
+//      1) currentTime float
+    float currentTime = 110.6f;
+//      2) type std::string
+    std::string type = "digital";
+//      3) material std::string
+    std::string material = "glass";
+//      4) brand std::string
+    std::string brand = "Kenmore";
+//      5) amountTimeLeft float
+    float amountTimeLeft = 234.5f;
+//    3 things it can do:
+//        1) Countdown Timer
+    float countDownTimer(float timeAmount);
+//        2) display current time
+    float displayCurrentTime();
+//     3) can be manually set
+    void setTime(float time);
+    
+
+};
+
+struct Oven
+{
+    Burner burners[4];
+    Timer timer;
+    TemperatureGuage tempGuage;
+    OvenDoor ovenDoor;
+    Racks racks;
+    void turnOnBurner(Burner burner);
+    void setTimer(float time);
+    TemperatureGuage setTemp(int Temp);
+};
 
 
 
