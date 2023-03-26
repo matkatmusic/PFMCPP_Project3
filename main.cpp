@@ -862,6 +862,18 @@ struct Timer
     
 
 };
+
+struct Oven
+{
+    Burner burners[4];
+    Timer timer;
+    TemperatureGuage tempGuage;
+    OvenDoor ovenDoor;
+    Racks racks;
+    void turnOnBurner(Burner burner);
+    void setTimer(float time);
+    TemperatureGuage setTemp(int Temp);
+};
 /*
 =================
 Part 1e - Step 2: Commit
