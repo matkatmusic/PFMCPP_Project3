@@ -540,7 +540,7 @@ Thing 8) Racks
     2) material std::string
     3) brand std::string
     4) maxTemp float
-    5) i really just cant think of another property of a stupid oven rack
+    5) width in inches
 3 things it can do:
     1) induction cooking
     2) invection cooking
@@ -558,6 +558,17 @@ Thing 9) Timer
     2) display current time
     3) can be manually set
 
+Thing 10) Oven
+    5 properties:
+    1) Burner
+    2) Timer
+    3) Racks
+    4) TemperatureGuage
+    5) OvenDoor
+ 3 things it can do
+    1) turn on burner
+    2) set time
+    3) set temp
 */
 
 
@@ -1026,7 +1037,7 @@ struct Student
    
 //    5 properties:
 //      1) grade std::string
-    std::string grade="11";
+    std::string grade = "11";
 //      2) gpa float
     float gpa = 3.2f;
 //      3) number of friends int
@@ -1045,7 +1056,7 @@ struct Student
 
         void teachClass(std::string className);
         void takeClass(std::string className);
-        float classGrade(Student student, std::string className = "English");
+        float assignHomework(Student student, std::string className = "English");
     };
 //    3 things it can do:
 //        1) Homework
@@ -1077,7 +1088,7 @@ struct Employee
 //        2) work shift
     void workShift(int shiftNumber);
 //        3) collect pay
-    float collectPlay(float hourlyWage);
+    float collectPay(float hourlyWage);
 
 };
 
@@ -1173,6 +1184,8 @@ struct Racks
     std::string brand = "Kenmore";
 //      4) maxTemp float
     float maxTemp = 530.4f;
+
+    float widthInInches = 20.6f;
 /*        5) i really just cant think of another property         of a stupid oven rack */
 //    3 things it can do:
 //        1) induction cooking
@@ -1235,7 +1248,7 @@ struct Timer
 {
 //    5 properties:
 //      1) currentTime float
-    float currentTime = 110.6f;
+    float currentTime = 610.6f;
 //      2) type std::string
     std::string type = "digital";
 //      3) material std::string
@@ -1243,7 +1256,7 @@ struct Timer
 //      4) brand std::string
     std::string brand = "Kenmore";
 //      5) amountTimeLeft float
-    float amountTimeLeft = 234.5f;
+    float secondsRemaining = 234.5f;
 //    3 things it can do:
 //        1) Countdown Timer
     float countDownTimer(float timeAmount);
@@ -1257,7 +1270,7 @@ struct Timer
 
 struct Oven
 {
-    Burner burners[4];
+    Burner burner;
     Timer timer;
     TemperatureGuage tempGuage;
     OvenDoor ovenDoor;
