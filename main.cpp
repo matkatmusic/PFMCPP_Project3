@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn
+            4) emblem
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) sound horn
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) odometer
+            3) gear indicator
+            4) cycles
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) indicate speed
+            2) indicate mileage
+            3) indicate state
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) heat control
+            2) air control
+            3) fan control
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) adjust heat
+            2) adjust air
+            3) adjust fan speed
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio frequency chooser
+            2) play
+            3) stop
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) play music
+            2) stop music
+            3) adjust radio frequency
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) recline control
+            2) backwards/forwards control
+            3) headrest adjuster
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) reclines the seat
+            2) adjusts the headrest
 */
 
 /*
@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -305,6 +259,14 @@ Example:
 */
 
 /*
+
+
+
+*/ 
+
+
+
+/*
 ===================
 Part 1c - Step 2: Assignment
 ===================
@@ -336,18 +298,19 @@ Part 1c - Step 4: Assignment
 Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
+UDT: Stove
+A Stove is comprised of the following objects:
+    Burners
+    OvenDoor
+    TemperatureGuage
+    Racks
+    Timer
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+An Oven has three things it can do
+    toast bread
+    boil water
+    broil chicken
+
  */
 
  /*
@@ -434,65 +397,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -544,10 +449,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+/*
+Thing 1) Student
+5 properties:
+    1) grade std::string
+    2) gpa float
+    3) number of friends int
+    4) favorite class std::string
+    5) major std::string
+3 things it can do:
+    1) Homework
+    2) Take exams
+    3) disrupt class
 
+Thing 2) Employee
+5 properties:
+    1) job title std::string
+    2) hourly wage float
+    3) shift number int
+    4) Name std::string
+    5) Employee Id int
+3 things it can do:
+    1) come to work
+    2) work shift
+    3) collect pay
 
+Thing 3) Computer
+5 properties:
+    1) Files int
+    2) Directories int
+    3) hard drive std::string
+    4) ram float
+    5) cpu float
+3 things it can do:
+    1) boot an ooperating system
+    2) run software
+    3) save files
 
+Thing 4) building
+5 properties:
+    1) rooms int
+    2) hallways int
+    3) elevator int
+    4) carpet float
+    5) ceilings int
+3 things it can do:
+    1) provide a place of business
+    2) provide a dwelling
+    3) proved space for government work
 
+Thing 5) Burners
+5 properties:
+    1) type std::string
+    2) maxHeatTemp float
+    3) circumference float
+    4) diameter float
+    5) drippan int
+3 things it can do:
+    1) broil
+    2) boil
+    3) fry
+
+Thing 6) Oven Door
+5 properties:
+    1)numhandles int
+    2) numWindows int
+    3) brand std::string
+    4) frameBuildingMaterial std::string
+    5) insulationType std::string
+3 things it can do:
+    1) open
+    2) close
+    3) hold in heat
+
+Thing 7)TemperatureGuage
+5 properties:
+    1) typeofDisplay std::string
+    2) temperature float
+    3) time float
+    4) material std::string
+    5) power std::string (on or off could be bool)
+3 things it can do:
+    1) display temperature
+    2) raise temperature
+    3) lower temperature
+
+Thing 8) Racks
+5 properties:
+    1) numRacks int
+    2) material std::string
+    3) brand std::string
+    4) maxTemp float
+    5) width in inches
+3 things it can do:
+    1) induction cooking
+    2) invection cooking
+    3) hold food
+
+Thing 9) Timer
+5 properties:
+    1) currentTime float
+    2) type std::string
+    3) material std::string
+    4) brand std::string
+    5) amountTimeLeft float
+3 things it can do:
+    1) Countdown Timer
+    2) display current time
+    3) can be manually set
+
+Thing 10) Oven
+    5 properties:
+    1) Burner
+    2) Timer
+    3) Racks
+    4) TemperatureGuage
+    5) OvenDoor
+ 3 things it can do
+    1) turn on burner
+    2) set time
+    3) set temp
+*/
 
 
 
@@ -617,6 +639,7 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
+
 
 /*
 =================
@@ -1009,7 +1032,253 @@ Part 1e - Step 19: Request a review
 /*
 paste your code below
 */
+struct Student
+{
+   
+//    5 properties:
+//      1) grade std::string
+    std::string grade = "11";
+//      2) gpa float
+    float gpa = 3.2f;
+//      3) number of friends int
+    int numFriends = 3;
+//      4) favorite class std::string
+    std::string favClass = "Math";
+//      5) major std::string
+    std::string major = "English";
+    struct Class
+    {
+        std::string className = "Calculus";
+        std::string classSylabus = "....";
+        char highGrade = 'A';
+        char lowGrade = 'F';
+        std::string classMaterial = "....";
 
+        void teachClass(std::string className);
+        void takeClass(std::string className);
+        float assignHomework(Student student, std::string className = "English");
+    };
+//    3 things it can do:
+//        1) Homework
+    Class thisClass;
+    void doHomework(Class test);
+//        2) Take exams
+    void takeExams();
+//        3) disrupt class
+    void disruptClass();
+
+};
+
+struct Employee
+{
+//.    5 properties:
+//      1) job title std::string
+    std::string jobTitle = "Designer";
+//      2) hourly wage float
+    float hourlyWage = 3.5f;
+//      3) shift number int
+    int shiftNumber = 2;
+//      4) Name std::string
+    std::string name = "Ted";
+//      5) Employee Id int
+    int employeeId = 57;
+//    3 things it can do:
+//        1) come to work
+    void comeToWork();
+//        2) work shift
+    void workShift(int shiftNumber);
+//        3) collect pay
+    float collectPay(float hourlyWage);
+
+};
+
+struct Computer
+{
+//    5 properties:
+//      1) Files int
+    int files = 10;
+//      2) Directories int
+    int directories = 3;
+//      3) hard drive std::string
+    std::string hardDrive = "C";
+//      4) ram float
+    float ram = 96.2f;
+//      5) cpu float
+    float cpu = 16.7f;
+    struct File
+    {
+        std::string fileType = "Excel";
+        std::string fileName = "Test";
+        int fileSize = 100000;
+        std::string fileExtension = "xslx";
+        std::string fileLocation = "C\\:Files";
+        File getFile(std::string fileName);
+        float loadFile(std::string fileName);
+        std::string getFileType(std::string fileName, std::string fileExtension);
+    };
+//    3 things it can do:
+//        1) boot an ooperating system
+    File currentFile;
+    void bootComputer();
+//        2) run software
+    bool runSofware(std::string type);
+//        3) save files
+    void saveFile(File file);
+    
+};
+struct Building
+{
+//    5 properties:
+//      1) rooms int
+    int rooms = 16;
+//      2) hallways int
+
+    int hallways = 8;
+//      3) elevators int
+    int elevators = 1;
+//      4) carpet float
+    float carpet = 19.3f;
+//      5) ceilings int
+    int ceilings = 8;        
+//      3 things it can do:
+//        1) provide a place of business
+    void providePlaceOfBusiness(std::string businessType);
+//        2) provide a dwelling
+    void provideDwelling(int squareFeet);
+//        3) provide space for government work
+    void provideSpaceForGovWork(int squareFeet);
+    
+};
+
+struct Burner
+{
+//.    5 properties:
+//        1) type std::string
+    std::string type = "Gas";
+//        2) maxHeatTemp float
+    float maxHeatTemp = 320.5f;
+//        3) circumference float
+    float circumference = 16.4f;
+//        4) diameter float
+    float diameter = 10.2f;
+//        5) drippan int
+    int dripPan = 5;
+//    3 things it can do:
+//        1) broil
+    void broil(std::string foodType);
+//        2) boil
+    void boil(int burnerNumber);
+//        3) fry
+    void fry(int burnerNumber);
+
+};
+
+struct Racks
+{
+//.    5 properties:
+//      1) numRacks int
+    int numRacks = 3;
+//      2) material std::string
+    std::string material = "Metal";
+//      3) brand std::string
+    std::string brand = "Kenmore";
+//      4) maxTemp float
+    float maxTemp = 530.4f;
+
+    float widthInInches = 20.6f;
+/*        5) i really just cant think of another property         of a stupid oven rack */
+//    3 things it can do:
+//        1) induction cooking
+    void inductionCooking(int rackNumber);
+//        2) invection cooking
+    void invectionCooking(int rackNumber);
+//    3) hold food
+    void holdFood(int rackNumber);
+    
+};
+
+
+struct OvenDoor
+{
+//      5 properties:
+//        1)numhandles int
+    int numHandles = 2;
+//        2) numWindows int
+    int numWindows = 1;
+//        3) brand std::string
+    std::string brand = "Kenmore";
+//        4) frameBuildingMaterial std::string
+    std::string frameMaterial = "Metal";
+//        5) insulationType std::string
+    std::string insulationType = "None";
+//    3 things it can do:
+//        1) open
+    void open();
+//        2) close
+    void close();
+//        3) hold in heat
+    void holdInHeat();
+
+};
+
+struct TemperatureGuage
+{
+//    5 properties:
+//        1) typeofDisplay std::string
+    std::string displayType = "digital";
+//        2) temperature float
+    float temperature = 200.7f;
+//        3) time float
+    float time = 160.5f;
+//        4) material std::string
+    std::string material = "glass";
+//  power std::string (on or off could be bool)
+    bool power = true;
+//    3 things it can do:
+//        1) display temperature
+    int displayTemperature();
+//        2) raise temperature
+    void raiseTemperature();
+//        3) lower temperature
+    void lowerTemperature();
+    
+};
+
+struct Timer
+{
+//    5 properties:
+//      1) currentTime float
+    float currentTime = 610.6f;
+//      2) type std::string
+    std::string type = "digital";
+//      3) material std::string
+    std::string material = "glass";
+//      4) brand std::string
+    std::string brand = "Kenmore";
+//      5) amountTimeLeft float
+    float secondsRemaining = 234.5f;
+//    3 things it can do:
+//        1) Countdown Timer
+    float countDownTimer(float timeAmount);
+//        2) display current time
+    float displayCurrentTime();
+//     3) can be manually set
+    void setTime(float time);
+    
+
+};
+
+struct Oven
+{
+    Burner burner;
+    Timer timer;
+    TemperatureGuage tempGuage;
+    OvenDoor ovenDoor;
+    Racks racks;
+    void turnOnBurner(Burner burner);
+    void setTimer(float time);
+    TemperatureGuage setTemp(int Temp);
+};
 
 
 
