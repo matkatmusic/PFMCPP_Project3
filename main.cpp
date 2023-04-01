@@ -371,13 +371,28 @@ struct Burner
     float maxHeatTemp = 320.5f;
     float circumference = 16.4f;
     float diameter = 10.2f;
-    int dripPan = 5;
+    int number = 1;
 
     void broil(std::string foodType);
     void boil(int burnerNumber);
     void fry(int burnerNumber);
 
 };
+
+void Burner::boil(int burnerNumber)
+{
+    std::cout << "Now boiling on burner number " << burnerNumber;
+}
+
+void Burner::broil(std::string foodType)
+{
+    std::cout << "Now broiling " << foodType;
+}
+
+void Burner::fry(int burnerNumber)
+{
+    std::cout << "Now frying on burner number " << burnerNumber; 
+}
 
 struct Racks
 {
@@ -393,6 +408,21 @@ struct Racks
     
 };
 
+void Racks::holdFood(int rackNumber)
+{
+    std::cout << "Now holding food on rack number " << rackNumber;    
+}
+
+void Racks::inductionCooking(int rackNumber)
+{
+    std::cout << "Now induction cooking on rack number " << rackNumber;
+}
+
+void Racks::invectionCooking(int rackNumber)
+{
+    std::cout << "Now invection cooking on rack number " << rackNumber;
+}
+
 
 struct OvenDoor
 {
@@ -406,6 +436,21 @@ struct OvenDoor
     void holdInHeat();
 };
 
+void OvenDoor::open()
+{
+    std::cout << "Oven door is now open";
+}
+
+void OvenDoor::close()
+{
+    std::cout << "Oven door is now closed";
+}
+
+void OvenDoor::holdInHeat()
+{
+    std::cout << "Oven door is holding in heat";
+}
+
 struct TemperatureGuage
 {
     std::string displayType = "digital";
@@ -413,23 +458,56 @@ struct TemperatureGuage
     std::string material = "glass";
     bool power = true;
 
-    int displayTemperature();
+    float displayTemperature();
     void raiseTemperature();
     void lowerTemperature();  
 };
 
+float TemperatureGuage::displayTemperature()
+{
+    std::cout << this->temperature;
+    return this->temperature;
+}
+
+void TemperatureGuage::raiseTemperature()
+{
+    std::cout << "Temperature has been raised by 5 degrees";
+}
+
+void TemperatureGuage::lowerTemperature()
+{
+    std::cout << "Temperature has been lowered by 5 degrees";
+}
 struct Timer
 {
     float currentTime = 610.6f;
     std::string type = "digital";
     std::string material = "glass";
     std::string brand = "Kenmore";
-    float secondsRemaining = 234.5f;
+    int secondsRemaining = 234;
 
     float countDownTimer(float timeAmount);
     float displayCurrentTime();
     void setTime(float time);
 };
+
+float Timer::countDownTimer(float timeAmount)
+{
+    std::cout << "You have " << timeAmount << "minutes left in the timer";
+    return timeAmount - 1;
+}
+
+float Timer::displayCurrentTime()
+{
+    std::cout << "The current time is " << this->currentTime << " minutes past midnight";
+    return this->currentTime;
+}
+
+void Timer::setTime(float time)
+{
+    std::cout << "You have set the time to " << time << " minutes past midnight";
+}
+
 
 struct Oven
 {
@@ -438,10 +516,29 @@ struct Oven
     TemperatureGuage tempGuage;
     OvenDoor ovenDoor;
     Racks racks;
-    void turnOnBurner(Burner burner);
-    void setTimer(float time);
-    TemperatureGuage setTemp(int Temp);
+
+    void turnOnBurner();
+    int getTimer();
+    TemperatureGuage setTemp(int temp);
 };
+
+void Oven::turnOnBurner()
+{
+    std::cout << "Burner number " << this->burner.number << " has been turned on";
+        
+}
+
+int Oven::getTimer()
+{
+    std::cout << this->timer.secondsRemaining << " seconds are remaining";
+    return this->timer.secondsRemaining;
+}
+
+TemperatureGuage Oven::setTemp(int temp)
+{
+    std::cout << "The tem is now set to " << temp;
+    return this->tempGuage;
+}
 
 
 
