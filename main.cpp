@@ -230,18 +230,19 @@ void Student::disruptClass(){
     std::cout << "Student throws a paper ball towards the teacher";
 }
 
-void Student::Class::teachClass(std::string className){
-    std::cout << className << " is in session";
+void Student::Class::teachClass(std::string classDistinction){
+    std::cout << classDistinction<< " is in session";
 }
 
-void Student::Class::takeClass(std::string className)
+void Student::Class::takeClass(std::string classDistinction)
 {
-    std::cout << "Taking class : " << className; 
+    std::cout << "Taking class : " << classDistinction; 
 }
 
-float Student::Class::assignHomework(Student student, std::string className)
+float Student::Class::assignHomework(Student student, std::string classDistinction)
 {
-    std::cout << student.name << " has been assigned homework for "<< className;
+    std::cout << student.name << " has been assigned homework for "<< classDistinction;
+    return 1.0f;
 }
 struct Employee
 {
@@ -262,14 +263,14 @@ void Employee::comeToWork()
     std::cout << "Heading to work for the day";
 }
 
-void Employee::workShift(int shiftNumber)
+void Employee::workShift(int shift)
 {
-    std::cout << name << " is starting work on shift number: " << shiftNumber;  
+    std::cout << name << " is starting work on shift number: " << shift;  
 }
 
-float Employee::collectPay(float hourlyWage)
+float Employee::collectPay(float wage)
 {
-    float pay = 8*hourlyWage;
+    float pay = 8*wage;
     std::cout << name << " just got paid.";
     return pay;
 }
@@ -318,21 +319,22 @@ void Computer::saveFile(File file)
     std::cout << file.fileName << " has been saved";
 }
 
-Computer::File Computer::File::getFile(std::string fileName)
+Computer::File Computer::File::getFile(std::string file)
 {
-    std::cout << "retrieving " << fileName;
+    std::cout << "retrieving " << file;
     return *this;
 }
 
-float Computer::File::loadFile(std::string fileName)
+float Computer::File::loadFile(std::string file)
 {
-    std::cout << fileName << " has been loaded";
+    std::cout << file << " has been loaded";
     return 1.0f;
 }
 
-std::string Computer::File::getFileType(std::string fileName, std::string fileExtension)
+std::string Computer::File::getFileType(std::string file, std::string fileExt)
 {
-    std::cout << "Your file " << fileName << "." << fileExtension << " is a Word document";
+    std::cout << "Your file " << file << "." << fileExt << " is a Word document";
+    return "running";
 }
 struct Building
 {
@@ -347,6 +349,21 @@ struct Building
     void provideSpaceForGovWork(int squareFeet);
     
 };
+
+void Building::provideDwelling(int squareFeet)
+{
+    std::cout << "You have " << squareFeet << " squarefeet in which to live";
+}
+
+void Building::providePlaceOfBusiness(std::string businessType)
+{
+    std::cout << "You have now rented space for your " << businessType << " business";
+}
+
+void Building::provideSpaceForGovWork(int squareFeet)
+{
+    std::cout << "You now have " << squareFeet << " squarefeet in which to run your govt offices";
+}
 
 struct Burner
 {
