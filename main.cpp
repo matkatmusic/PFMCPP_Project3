@@ -196,6 +196,7 @@ struct Student
     int numFriends = 3;
     std::string favClass = "Math";
     std::string major = "English";
+
     struct Class
     {
         std::string className = "Calculus";
@@ -213,7 +214,6 @@ struct Student
     void doHomework(Class test);
     void takeExams();
     void disruptClass();
-
 };
 
 void Student::doHomework(Class test)
@@ -244,6 +244,7 @@ float Student::Class::assignHomework(Student student, std::string classDistincti
     std::cout << student.name << " has been assigned homework for "<< classDistinction;
     return 1.0f;
 }
+
 struct Employee
 {
     std::string jobTitle = "Designer";
@@ -255,7 +256,6 @@ struct Employee
     void comeToWork();
     void workShift(int shiftNumber);
     float collectPay(float hourlyWage);
-
 };
 
 void Employee::comeToWork()
@@ -298,8 +298,7 @@ struct Computer
     File currentFile;
     void bootComputer();
     bool runSofware(std::string type);
-    void saveFile(File file);
-    
+    void saveFile(File file);   
 };
 
 void Computer::bootComputer()
@@ -336,6 +335,7 @@ std::string Computer::File::getFileType(std::string file, std::string fileExt)
     std::cout << "Your file " << file << "." << fileExt << " is a Word document";
     return "running";
 }
+
 struct Building
 {
     int rooms = 16;
@@ -346,8 +346,7 @@ struct Building
 
     void providePlaceOfBusiness(std::string businessType);
     void provideDwelling(int squareFeet);
-    void provideSpaceForGovWork(int squareFeet);
-    
+    void provideSpaceForGovWork(int squareFeet);  
 };
 
 void Building::provideDwelling(int squareFeet)
@@ -376,7 +375,6 @@ struct Burner
     void broil(std::string foodType);
     void boil(int burnerNumber);
     void fry(int burnerNumber);
-
 };
 
 void Burner::boil(int burnerNumber)
@@ -422,7 +420,6 @@ void Racks::invectionCooking(int rackNumber)
 {
     std::cout << "Now invection cooking on rack number " << rackNumber;
 }
-
 
 struct OvenDoor
 {
@@ -478,6 +475,7 @@ void TemperatureGuage::lowerTemperature()
 {
     std::cout << "Temperature has been lowered by 5 degrees";
 }
+
 struct Timer
 {
     float currentTime = 610.6f;
@@ -508,7 +506,6 @@ void Timer::setTime(float time)
     std::cout << "You have set the time to " << time << " minutes past midnight";
 }
 
-
 struct Oven
 {
     Burner burner;
@@ -524,8 +521,7 @@ struct Oven
 
 void Oven::turnOnBurner()
 {
-    std::cout << "Burner number " << this->burner.number << " has been turned on";
-        
+    std::cout << "Burner number " << this->burner.number << " has been turned on";      
 }
 
 int Oven::getTimer()
