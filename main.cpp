@@ -124,10 +124,10 @@ struct Person
     int distanceTraveled;
     Limb leftFoot, rightFoot;
 
-    void run(int howFast, bool startWithLeftFoot);
+    void run(bool startWithLeftFoot);
 };
 
-void Person::run(int howFast, bool startWithLeftFoot)
+void Person::run(bool startWithLeftFoot)
 {
    if(startWithLeftFoot)
    {
@@ -190,6 +190,7 @@ int Limb::stepSize()
 
 struct Student
 {
+    std::string name = "Ted";
     std::string grade = "11";
     float gpa = 3.2f;
     int numFriends = 3;
@@ -215,6 +216,33 @@ struct Student
 
 };
 
+void Student::doHomework(Class test)
+{
+    std::cout << "Homework is done for class: " << test.className;
+}
+
+void Student::takeExams()
+{
+    std::cout << "zexams are finished!";
+}
+
+void Student::disruptClass(){
+    std::cout << "Student throws a paper ball towards the teacher";
+}
+
+void Student::Class::teachClass(std::string className){
+    std::cout << className << " is in session";
+}
+
+void Student::Class::takeClass(std::string className)
+{
+    std::cout << "Taking class : " << className; 
+}
+
+float Student::Class::assignHomework(Student student, std::string className)
+{
+    std::cout << student.name << " has been assigned homework for "<< className;
+}
 struct Employee
 {
     std::string jobTitle = "Designer";
@@ -228,6 +256,23 @@ struct Employee
     float collectPay(float hourlyWage);
 
 };
+
+void Employee::comeToWork()
+{
+    std::cout << "Heading to work for the day";
+}
+
+void Employee::workShift(int shiftNumber)
+{
+    std::cout << name << " is starting work on shift number: " << shiftNumber;  
+}
+
+float Employee::collectPay(float hourlyWage)
+{
+    float pay = 8*hourlyWage;
+    std::cout << name << " just got paid.";
+    return pay;
+}
 
 struct Computer
 {
@@ -255,6 +300,40 @@ struct Computer
     void saveFile(File file);
     
 };
+
+void Computer::bootComputer()
+{
+    std::cout << "Computer is booting";
+}
+
+bool Computer::runSofware(std::string type)
+{
+    std::cout << type << " is now running";
+    bool isRunning = true;
+    return isRunning;
+}
+
+void Computer::saveFile(File file)
+{
+    std::cout << file.fileName << " has been saved";
+}
+
+Computer::File Computer::File::getFile(std::string fileName)
+{
+    std::cout << "retrieving " << fileName;
+    return *this;
+}
+
+float Computer::File::loadFile(std::string fileName)
+{
+    std::cout << fileName << " has been loaded";
+    return 1.0f;
+}
+
+std::string Computer::File::getFileType(std::string fileName, std::string fileExtension)
+{
+    std::cout << "Your file " << fileName << "." << fileExtension << " is a Word document";
+}
 struct Building
 {
     int rooms = 16;
