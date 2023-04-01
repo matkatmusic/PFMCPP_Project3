@@ -107,8 +107,51 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Limb
+{   
+    int stSize;
+    void stepForward();
+    int stepSize();
+};
 
+struct Person 
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    Limb leftFoot, rightFoot;
 
+    void run(int howFast, bool startWithLeftFoot);
+};
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+   if(startWithLeftFoot)
+   {
+       leftFoot.stepForward();
+       rightFoot.stepForward();
+   }
+   else
+   {
+       rightFoot.stepForward();
+       leftFoot.stepForward();
+   }
+
+    distanceTraveled += rightFoot.stepSize() + leftFoot.stepSize();
+}
+
+void Limb::stepForward()
+{
+    std::cout << "took a step";
+}
+
+int Limb::stepSize()
+{
+    return stSize;
+}
 
 
 
