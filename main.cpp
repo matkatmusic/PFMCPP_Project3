@@ -7,8 +7,8 @@ Video:  Chapter 2 Part 5
 User-Defined Types
 
 Purpose: The entire purpose of Project 3 is to get you 
-writing real C++ code that compiles and runs and to reinforce the syntax habits 
-that C++ requires.  
+writing real C++ code that compiles and runs and to 
+reinforce the syntax habits that C++ requires.  
 What you create in this project will be used as the basis of 
 Project 5.
 
