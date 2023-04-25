@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) Television
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) level of volume
+    2) level of brightness
+    3) number of screen modes
+    4) television model name
+    5) number of inputs
 3 things it can do:
-    1)
-    2)
-    3)
+    1) increase volume
+    2) change display settings
+    3) decrease brightness
 
-Thing 2)
+Thing 2) Massage Chair
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of vibration controls
+    2) amount of pressure applied
+    3) degree of backrest recline
+    4) amount of time per massage
+    5) degree of footrest incline
 3 things it can do:
-    1)
-    2)
-    3)
+    1) control vibration speed
+    2) increase pressure of massage
+    3) display timer
 
-Thing 3)
+Thing 3) College Student
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of enrolled classes
+    2) grade point average
+    3) name of student
+    4) subject of major
+    5) expected graduation date
 3 things it can do:
-    1)
-    2)
-    3)
+    1) study
+    2) procrastinate
+    3) dance
 
-Thing 4)
+Thing 4)  Pet Cat
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of eyes
+    2) legnth of tail
+    3) color of fur
+    4) age of pet cat
+    5) name of pet cat
 3 things it can do:
-    1)
-    2)
-    3)
+    1) eat food
+    2) knock over objects
+    3) scratch visitors
 */
 
 /*
