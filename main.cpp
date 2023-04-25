@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) Television
 5 properties:
-    1) level of volume
-    2) level of brightness
-    3) number of screen modes
-    4) television model name
-    5) number of inputs
+    1) level of volume (float)
+    2) level of brightness (double)
+    3) number of screen modes (int)
+    4) television model name (std::string)
+    5) number of inputs (int)
 3 things it can do:
     1) increase volume
     2) change display settings
@@ -210,11 +210,11 @@ Thing 1) Television
 
 Thing 2) Massage Chair
 5 properties:
-    1) number of vibration controls
-    2) amount of pressure applied
-    3) degree of backrest recline
-    4) amount of time per massage
-    5) degree of footrest incline
+    1) number of vibration controls (int)
+    2) amount of pressure applied (double)
+    3) degree of backrest recline (float)
+    4) amount of time per massage (float)
+    5) degree of footrest incline (float)
 3 things it can do:
     1) control vibration speed
     2) increase pressure of massage
@@ -222,27 +222,28 @@ Thing 2) Massage Chair
 
 Thing 3) College Student
 5 properties:
-    1) number of enrolled classes
-    2) grade point average
-    3) name of student
-    4) subject of major
-    5) expected graduation date
+    1) number of enrolled classes (int)
+    2) grade point average (double)
+    3) name of student (std::string)
+    4) subject of major (std::string)
+    5) expected graduation date (int)
 3 things it can do:
     1) study
     2) watch television
     3) dance
 
-Thing 4)  Pet Cat
+Thing 4) Pet Cat
 5 properties:
-    1) number of eyes
-    2) legnth of tail
-    3) color of fur
-    4) age of pet cat
-    5) name of pet cat
+    1) number of eyes (int)
+    2) legnth of tail (double)
+    3) color of fur (std::string)
+    4) age of pet cat (int)
+    5) name of pet cat (std::string)
 3 things it can do:
     1) eat food
     2) knock over objects
     3) scratch visitors
+
 */
 
 /*
@@ -337,17 +338,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
+Thing 10) Girlfriend
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) human
+    2) personality type
+    3) physical attributes
+    4) education level
+    5) home
 3 things it can do:
-    1)
-    2)
-    3)
+    1) plan date
+    2) present ideas
+    3) build furniture
  */
 
  /*
