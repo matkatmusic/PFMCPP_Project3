@@ -229,7 +229,7 @@ Thing 3) College Student
     5) expected graduation date
 3 things it can do:
     1) study
-    2) procrastinate
+    2) watch television
     3) dance
 
 Thing 4)  Pet Cat
