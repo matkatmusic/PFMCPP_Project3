@@ -488,18 +488,18 @@ struct CollegeStudent
     void attendStudyHall();
     //2) watch television
     void watchTelevision();
-    //3) dance 
-    void 
+    //3) dance to music
+    void danceToMusic();
 };
 
 struct PetCat
 {
     //1) number of eyes (int)
-    int
+    int numOfEyes = 2;
     //2) legnth of tail (double)
-    double
+    double legnthOfTail = 10.35;
     //3) color of fur (std::string
-    std::string
+    std::string furColor = ""
     //4) age of pet cat (int)
     int
     //5) name of pet cat (std::string)
