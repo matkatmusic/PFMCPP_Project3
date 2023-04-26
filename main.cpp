@@ -425,6 +425,7 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+/*
 Thing 1) Television
 5 properties:
     1) level of volume (float)
@@ -436,6 +437,28 @@ Thing 1) Television
     1) increase volume
     2) change display settings
     3) decrease brightness
+*/
+struct Television
+{
+    // 1) level of volume (float)
+    float levelOfVolume = 50.f;
+    // 2) level of brightness (double)
+    double levelOfBrightness = 87.56;
+    // 3) number of screen modes (int)
+    int numOfScreenModes = 6;
+    // 4) television manufacturer (std::string)
+    std::string televisionManufacturer = "Samsung";
+    // 5) number of inputs (int)
+    int numOfInputs = 4;
+
+//3 things it can do:
+    // 1) increase volume
+    int increaseVolume(int decibelOutput); //returns decibel volume ++
+    // 2) change display settings
+    void changeDisplaySettings();
+    // 3) decrease brightness
+    double decreaseBrightness(int nitOput); // returns nit value --
+}
 
 Thing 2) Massage Chair
 5 properties:
@@ -491,7 +514,7 @@ Thing 6) Social Status
     2) occupation (std::string)
     3) number of friends (int)
     4) amount of income per year (double)
-    5) number of club memberships
+    5) number of club memberships (int)
 3 things it can do:
     1) attract more friends
     2) get exclusive deals
@@ -536,7 +559,7 @@ Thing 9) Home
 Thing 10) Girlfriend
 5 properties:
     1) human
-    2) personality type
+    2) social status
     3) physical attributes
     4) education level
     5) home
@@ -544,9 +567,6 @@ Thing 10) Girlfriend
     1) plan date
     2) present ideas
     3) build furniture
-
-
-
 
 /*
 =================
