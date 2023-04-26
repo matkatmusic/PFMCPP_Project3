@@ -425,19 +425,7 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
-/*
-Thing 1) Television
-5 properties:
-    1) level of volume (float)
-    2) level of brightness (double)
-    3) number of screen modes (int)
-    4) television model name (std::string)
-    5) number of inputs (int)
-3 things it can do:
-    1) increase volume
-    2) change display settings
-    3) decrease brightness
-*/
+
 struct Television
 {
     // 1) level of volume (float)
@@ -451,123 +439,204 @@ struct Television
     // 5) number of inputs (int)
     int numOfInputs = 4;
 
-//3 things it can do:
+    //3 things it can do:
     // 1) increase volume
     int increaseVolume(int decibelOutput); //returns decibel volume ++
     // 2) change display settings
     void changeDisplaySettings();
     // 3) decrease brightness
     double decreaseBrightness(int nitOput); // returns nit value --
-}
+};
 
-Thing 2) Massage Chair
-5 properties:
-    1) number of vibration controls (int)
-    2) amount of pressure applied (double)
-    3) degree of backrest recline (float)
-    4) amount of time per massage (float)
-    5) degree of footrest incline (float)
-3 things it can do:
-    1) control vibration speed
-    2) increase pressure of massage
-    3) display timer
+struct MassageChair
+{
+    //1) number of vibration controls (int)
+    int
+    //2) amount of pressure applied (double)
+    double
+    //3) degree of backrest recline (float)
+    float
+    //4) amount of time per massage (float)
+    float
+    //5) degree of footrest incline (float)
+    float
 
-Thing 3) College Student
-5 properties:
-    1) number of enrolled classes (int)
-    2) grade point average (double)
-    3) name of student (std::string)
-    4) subject of major (std::string)
-    5) expected graduation date (int)
-3 things it can do:
-    1) study
-    2) watch television
-    3) dance
+    //3 things it can do:
+    //1) control vibration speed
+    void
+    //2) increase pressure of massage
+    void
+    //3) display timer
+    void
+};
 
-Thing 4) Pet Cat
-5 properties:
-    1) number of eyes (int)
-    2) legnth of tail (double)
-    3) color of fur (std::string)
-    4) age of pet cat (int)
-    5) name of pet cat (std::string)
-3 things it can do:
-    1) eat food
-    2) knock over objects
-    3) scratch visitors
-    
-Thing 5) Human
-5 properties:
-    1) age in years (int)
-    2) name (std::string)
-    3) ethnicity (std::string)
-    4) date of birth (int)
-    5) blood type (std:: string)
-3 things it can do:
-    1) increase in years
-    2) change name
-    3) donate blood
+struct CollegeStudent
+{
+    //1) number of enrolled classes (int)
+    int
+    //2) grade point average (double)
+    double
+    //3) name of student (std::string)
+    std::string
+    //4) subject of major (std::string)
+    std::string
+    //5) expected graduation date (int)
+    int
 
-Thing 6) Social Status
-5 properties:
-    1) net worth (double)
-    2) occupation (std::string)
-    3) number of friends (int)
-    4) amount of income per year (double)
-    5) number of club memberships (int)
-3 things it can do:
-    1) attract more friends
-    2) get exclusive deals
-    3) bypass societal norms
+    //3 things it can do:
+    //1) study
+    void
+    //2) watch television
+    void
+    //3) dance
+    void
+};
 
-Thing 7) Physical Attribrutes
-5 properties:
-    1) amount of limbs (int)
-    2) eye color (std::string)
-    3) hieght (float)
-    4) weight(float)
-    5) hair color (std:: string)
-3 things it can do:
-    1) select hair color
-    2) increase wieght
-    3) lose limbs
+struct PetCat
+{
+    //1) number of eyes (int)
+    int
+    //2) legnth of tail (double)
+    double
+    //3) color of fur (std::string
+    std::string
+    //4) age of pet cat (int)
+    int
+    //5) name of pet cat (std::string)
+    std::string
 
-Thing 8) Education Level
-5 properties:
-    1) name of most recent school (std::string)
-    2) number of years attended (int)
-    3) highest degree attained (std::string)
-    4) position in class (int)
-    5) major studied (std::string)
-3 things it can do:
-    1) add degree
-    2) drop out of school
-    3) change major
+    //3 things it can do:
+    //1) eat food
+    void
+    //2) knock over objects
+    void
+    //3) scratch visitors
+    void
+};
 
-Thing 9) Home
-5 properties:
-    1) number of rooms (int)
-    2) property size (double)
-    3) location of home (std::string)
-    4) property value (double)
-    5) number of appliances (int)
-3 things it can do:
-    1) increase in value over time
-    2) add room to house
-    3) deteriorate over time
+struct Human
+{
+    //1) age in years (int)
+    int
+    //2) name (std::string)
+    std::string
+    //3) ethnicity (std::string)
+    std::string
+    //4) date of birth (int)
+    int
+    //5) blood type (std:: string)
+    std::string
+        
+    //3 things it can do:
+    //1) increase in years
+    void
+    //2) change name
+    void
+    //3) donate blood
+    void
+};
 
-Thing 10) Girlfriend
-5 properties:
-    1) human
-    2) social status
-    3) physical attributes
-    4) education level
-    5) home
-3 things it can do:
-    1) plan date
-    2) present ideas
-    3) build furniture
+struct SocialStatus
+{
+    //1) net worth (double)
+    double
+    //2) occupation (std::string)
+    std::string
+    //3) number of friends (int)
+    int
+    //4) amount of income per year (double)
+    double
+    //5) number of club memberships (int)
+    int
+                 
+    //3 things it can do:
+    //1) attract more friends
+    void
+    //2) get exclusive deals
+    void
+    //3) bypass societal norms
+    void
+};
 
+struct PhysicalAttribrutes
+{
+    //1) amount of limbs (int)
+    int
+    //2) eye color (std::string)
+    std::string
+    //3) hieght (float)
+    float
+    //4) weight(float)
+    float
+    //5) hair color (std:: string)
+    std::string
+
+    //3 things it can do:
+    //1) select hair color
+    void
+    //2) increase wieght
+    void
+    //3) lose limbs
+    void
+};
+
+struct EducationLevel
+{
+    //1) name of most recent school (std::string)
+    std::string
+    //2) number of years attended (int)
+    int
+    //3) highest degree attained (std::string)
+    std::string
+    //4) position in class (int)
+    int
+    //5) major studied (std::string)
+    std::string
+                   
+    //3 things it can do:
+    //1) add degree
+    void
+    //2) drop out of school
+    void
+    //3) change major
+    void
+};
+
+struct Home
+{
+    //1) number of rooms (int)
+    int
+    //2) property size (double)
+    double
+    //3) location of home (std::string)
+    std::string
+    //4) property value (double)
+    double
+    //5) number of appliances (int)
+    int
+
+    //3 things it can do:
+    //1) increase in value over time
+    void
+    //2) add room to house
+    void
+    //3) deteriorate over time
+    void
+};
+
+struct Girlfriend
+{
+    //1) human
+    //2) social status
+    //3) physical attributes
+    //4) education level
+    //5) home
+
+    //3 things it can do:
+    //1) plan date
+    //2) present ideas
+    //3) build furniture
+};
 /*
 =================
 Part 1d - Step 7: Commit
