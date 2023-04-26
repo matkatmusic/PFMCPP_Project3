@@ -451,23 +451,23 @@ struct Television
 struct MassageChair
 {
     //1) number of vibration controls (int)
-    int
-    //2) amount of pressure applied (double)
-    double
+    int numOfVibrationControls = 9;
+    //2) amount of pressure applied (int)
+    int appliedPressure = 10; //measured in PSI
     //3) degree of backrest recline (float)
-    float
+    float backrestReclineAngle = 34.6f;
     //4) amount of time per massage (float)
-    float
+    float massageDuration = 30.f;
     //5) degree of footrest incline (float)
-    float
+    float footrestInclineAngle = 90.f;
 
     //3 things it can do:
-    //1) control vibration speed
-    void
+    //1) give massage
+    void giveMassage();
     //2) increase pressure of massage
-    void
+    int increaseAppliedPressure(appliedPressure); //returns appliedPressure++
     //3) display timer
-    void
+    double showTimer (massageDuration) // displays how much time is left on massage.
 };
 
 struct CollegeStudent
@@ -539,7 +539,7 @@ struct Human
 struct SocialStatus
 {
     //1) net worth (double)
-    double
+    double netWorth = 109841.65;
     //2) occupation (std::string)
     std::string
     //3) number of friends (int)
