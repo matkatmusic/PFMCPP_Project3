@@ -526,7 +526,20 @@ struct Human
     int dateOfBirth = 12181989;
     //5) blood type (std:: string)
     std::string bloodType = "O Negative";
+
+    struct HealthStatus
+    {
+        int numOfHealthComplications = 0;
+        bool chronicDiseasesPresent = false;
+        std::string dateOfLastCheckup = "23 Feburary 2022";
+        float bodyMassIndex = 23.8f;
+        std::string bloodPressureLevel = "120/83 mmHg";
+
+        void contractSTD(std::string whichSTD, std::string dateContracted);
+        void developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName);
+        void scheduleCheckUp(std::string returnDate, bool sameDoctor);
         
+    }    
     //3 things it can do:
     //1) start War
     void startWar();
