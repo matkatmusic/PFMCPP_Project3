@@ -351,13 +351,13 @@ Thing 10) Girlfriend
     3) build furniture
  */
 
- /*
+/*
 =================
 Part 1c - Step 5: Commit
 =================
 Now that you've made changes to the code, make a commit!
 Be sure to make the commit message meaningful.
- */
+*/
 
 /*
 *********************************************************************************
@@ -435,65 +435,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Human
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) age in years (int)
+    2) name (std::string)
+    3) ethnicity (std::string)
+    4) date of birth (int)
+    5) blood type (std:: string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) increase in years
+    2) change name
+    3) donate blood
 
-Thing 6)
+Thing 6) Social Status
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) net worth (double)
+    2) occupation (std::string)
+    3) number of friends (int)
+    4) amount of income per year (double)
+    5) number of club memberships
 3 things it can do:
-    1)
-    2)
-    3)
+    1) attract more friends
+    2) get exclusive deals
+    3) bypass societal norms
 
-Thing 7)
+Thing 7) Physical Attribrutes
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) amount of limbs (int)
+    2) eye color (std::string)
+    3) hieght (float)
+    4) weight(float)
+    5) hair color (std:: string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) select hair color
+    2) increase wieght
+    3) lose limbs
 
-Thing 8)
+Thing 8) Education Level
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) name of most recent school (std::string)
+    2) number of years attended (int)
+    3) highest degree attained (std::string)
+    4) position in class (int)
+    5) major studied (std::string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) add degree
+    2) drop out of school
+    3) change major
 
-Thing 9)
+Thing 9) Home
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of rooms (int)
+    2) property size (double)
+    3) location of home (std::string)
+    4) property value (double)
+    5) number of appliances (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) increase in value over time
+    2) add room to house
+    3) deteriorate over time
  */
 
 /*
