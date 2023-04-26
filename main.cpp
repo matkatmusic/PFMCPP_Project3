@@ -499,41 +499,41 @@ struct PetCat
     //2) legnth of tail (double)
     double legnthOfTail = 10.35;
     //3) color of fur (std::string
-    std::string furColor = ""
+    std::string furColor = "Grey & White"
     //4) age of pet cat (int)
-    int
+    int ageOfCat = 3;
     //5) name of pet cat (std::string)
-    std::string
+    std::string nameOfPetCat = "Doris"
 
     //3 things it can do:
     //1) eat food
-    void
+    void eatFood();
     //2) knock over objects
-    void
+    void knockOverObjects();
     //3) scratch visitors
-    void
+    void scratchVisitors();
 };
 
 struct Human
 {
     //1) age in years (int)
-    int
+    int ageInYears = 33;
     //2) name (std::string)
-    std::string
+    std::string nameOfHuman = "Jason Blake";
     //3) ethnicity (std::string)
-    std::string
+    std::string ethnicity = "Black/African American";
     //4) date of birth (int)
-    int
+    int dateOfBirth = 12181989;
     //5) blood type (std:: string)
-    std::string
+    std::string bloodType = "O Negative"
         
     //3 things it can do:
-    //1) increase in years
-    void
-    //2) change name
-    void
+    //1) start War
+    void startWar();
+    //2) go to sleep
+    void goToSleep();
     //3) donate blood
-    void
+    void donateBlood();
 };
 
 struct SocialStatus
@@ -541,87 +541,87 @@ struct SocialStatus
     //1) net worth (double)
     double netWorth = 109841.65;
     //2) occupation (std::string)
-    std::string
+    std::string occupation = "Accountant";
     //3) number of friends (int)
-    int
+    int numOfFriends = 28;
     //4) amount of income per year (double)
-    double
+    double annualIncome = 181650.23; //in USD
     //5) number of club memberships (int)
-    int
+    int numOfClubMemberships = 5;
                  
     //3 things it can do:
     //1) attract more friends
-    void
+    void attractMoreFriends();
     //2) get exclusive deals
-    void
+    void getExclusiveDeals();
     //3) bypass societal norms
-    void
+    void bypassSocietalNorms();
 };
 
 struct PhysicalAttribrutes
 {
     //1) amount of limbs (int)
-    int
+    int amountOfLimbs = 4;
     //2) eye color (std::string)
-    std::string
+    std::string currentEyeColor = "brown";
     //3) hieght (float)
-    float
+    float currentHieght = 5.7f;
     //4) weight(float)
-    float
+    float currentWeight = 167.93f;
     //5) hair color (std:: string)
-    std::string
+    std::string currentHairColor = "Dark Brown";
 
     //3 things it can do:
     //1) select hair color
-    void
-    //2) increase wieght
-    void
+    void selectHairColor();
+    //2) increase weight
+    void increaseWeight();
     //3) lose limbs
-    void
+    void loseLimbs();
 };
 
 struct EducationLevel
 {
     //1) name of most recent school (std::string)
-    std::string
+    std::string mostRecentSchool = "Florida Atlantic University";
     //2) number of years attended (int)
-    int
+    int numOfYearsAttended = 6;
     //3) highest degree attained (std::string)
-    std::string
+    std::string highestDegreeAttained = "Master of Arts";
     //4) position in class (int)
-    int
+    int positionInClass = 211;
     //5) major studied (std::string)
-    std::string
+    std::string subjectMajor = "Finance";
                    
     //3 things it can do:
     //1) add degree
-    void
+    void addDegree();
     //2) drop out of school
-    void
+    void dropOutOfSchool();
     //3) change major
-    void
+    void changeMajor();
 };
 
 struct Home
 {
     //1) number of rooms (int)
-    int
+    int numOfRooms = 5;
     //2) property size (double)
-    double
+    double propertySize = 1373.56;
     //3) location of home (std::string)
-    std::string
+    std::string homeAddress = "123 Main St, Orange Grove CA, 34567";
     //4) property value (double)
-    double
+    double propertyValue = 375400;
     //5) number of appliances (int)
-    int
+    int numOfAppliances = 10;
 
     //3 things it can do:
     //1) increase in value over time
-    void
+    void appreaciateInValue();
     //2) add room to house
-    void
+    void addRoomToHouse();
     //3) deteriorate over time
-    void
+    void deteriorateOverTime();
 };
 
 struct Girlfriend
