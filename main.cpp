@@ -467,7 +467,7 @@ struct MassageChair
     //2) play background sound
     void playBackgroundSound(); 
     //3) display timer
-    double displayTimer (massageDuration); // displays how much time is left on massage.
+    double displayTimer (double massageDuration); // displays how much time is left on massage.
 };
 
 struct CollegeStudent
@@ -480,8 +480,8 @@ struct CollegeStudent
     std::string studentName = "Bob Macdonald";
     //4) subject of major (std::string)
     std::string subjectMajor = "Graphic Design";
-    //5) expected graduation date (int)
-    int expectedGraduationDate = 06082024;
+    //5) expected graduation date (std::string)
+    std::string expectedGraduationDate = "08 June 2024";
 
     //3 things it can do:
     //1) attend study hall
@@ -499,11 +499,11 @@ struct PetCat
     //2) legnth of tail (double)
     double legnthOfTail = 10.35;
     //3) color of fur (std::string
-    std::string furColor = "Grey & White"
+    std::string furColor = "Grey & White";
     //4) age of pet cat (int)
     int ageOfCat = 3;
     //5) name of pet cat (std::string)
-    std::string nameOfPetCat = "Doris"
+    std::string nameOfPetCat = "Doris";
 
     //3 things it can do:
     //1) eat food
@@ -525,15 +525,15 @@ struct Human
     //4) date of birth (int)
     int dateOfBirth = 12181989;
     //5) blood type (std:: string)
-    std::string bloodType = "O Negative"
+    std::string bloodType = "O Negative";
         
     //3 things it can do:
     //1) start War
     void startWar();
     //2) go to sleep
-    void goToSleep();
+    void goToSleep(int howLong);
     //3) donate blood
-    void donateBlood();
+    void donateBlood(bool giveLeftArm);
 };
 
 struct SocialStatus
@@ -551,7 +551,7 @@ struct SocialStatus
                  
     //3 things it can do:
     //1) attract more friends
-    void attractMoreFriends();
+    void attractMoreFriends(bool rejectNewFriend);
     //2) get exclusive deals
     void getExclusiveDeals();
     //3) bypass societal norms
@@ -573,9 +573,9 @@ struct PhysicalAttribrutes
 
     //3 things it can do:
     //1) select hair color
-    void selectHairColor();
+    void selectHairColor(std::string colorChoice);
     //2) increase weight
-    void increaseWeight();
+    float increaseWeight(int addedPounds); //returns current weight + amount of lbs added.
     //3) lose limbs
     void loseLimbs();
 };
@@ -595,11 +595,11 @@ struct EducationLevel
                    
     //3 things it can do:
     //1) add degree
-    void addDegree();
+    std::string addDegree(std::string newestDegree); //returns newly added degree
     //2) drop out of school
     void dropOutOfSchool();
     //3) change major
-    void changeMajor();
+    std::string changeMajor(std::string whichMajor, std::string degreeLevel); //returns options for majors in accordance with associated degree level
 };
 
 struct Home
@@ -621,7 +621,7 @@ struct Home
     //2) add room to house
     void addRoomToHouse();
     //3) deteriorate over time
-    void deteriorateOverTime();
+    std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
 };
 
 struct Girlfriend
