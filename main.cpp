@@ -464,32 +464,32 @@ struct MassageChair
     //3 things it can do:
     //1) give massage
     void giveMassage();
-    //2) increase pressure of massage
-    int increaseAppliedPressure(appliedPressure); //returns appliedPressure++
+    //2) play background sound
+    void playBackgroundSound(); 
     //3) display timer
-    double showTimer (massageDuration) // displays how much time is left on massage.
+    double displayTimer (massageDuration); // displays how much time is left on massage.
 };
 
 struct CollegeStudent
 {
     //1) number of enrolled classes (int)
-    int
+    int numOfEnrolledClasses = 7;
     //2) grade point average (double)
-    double
+    double gpa = 3.64;
     //3) name of student (std::string)
-    std::string
+    std::string studentName = "Bob Macdonald";
     //4) subject of major (std::string)
-    std::string
+    std::string subjectMajor = "Graphic Design";
     //5) expected graduation date (int)
-    int
+    int expectedGraduationDate = 06082024;
 
     //3 things it can do:
-    //1) study
-    void
+    //1) attend study hall
+    void attendStudyHall();
     //2) watch television
-    void
-    //3) dance
-    void
+    void watchTelevision();
+    //3) dance 
+    void 
 };
 
 struct PetCat
