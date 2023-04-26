@@ -505,6 +505,18 @@ struct PetCat
     //5) name of pet cat (std::string)
     std::string nameOfPetCat = "Doris";
 
+    struct CatFoodRobot
+    {
+        int amountOfFoodStorage = 10; //in lbs
+        std::string nameOfManufacturer = "Greyson";
+        bool powerOn = true;
+        float amountOfFoodDispensed = 3.4f; //in oz
+        int displayBrightness = 20;
+
+        void dispenseFood(float howMuchFood, double whatTimeToFeed, int HowOftenToFeed, double recordTimeOfFeed);
+        double getLastDispenseTime(double timeOfFeed, double timeSinceLastFeed); // returns last time robot dispensed food
+        void playAudioMessage();
+    };
     //3 things it can do:
     //1) eat food
     void eatFood();
@@ -538,8 +550,7 @@ struct Human
         void contractSTD(std::string whichSTD, std::string dateContracted);
         void developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName);
         void scheduleCheckUp(std::string returnDate, bool sameDoctor);
-        
-    }    
+    };   
     //3 things it can do:
     //1) start War
     void startWar();
