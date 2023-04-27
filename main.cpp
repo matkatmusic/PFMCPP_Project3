@@ -652,16 +652,18 @@ struct Home
 
 struct Girlfriend
 {
-    //1) human
-    //2) social status
-    //3) physical attributes
-    //4) education level
-    //5) home
+    Human human;
+    SocialStatus socialStatus;
+    PhysicalAttribrutes physicalAttribrutes;
+    EducationLevel educationLevel;
+    Home home;
 
-    //3 things it can do:
-    //1) plan date
+    //1) plan dinner date
+    std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, double whatTime); //should return prompt controlled by if statements
     //2) present ideas
+    void presentIdeas();
     //3) build furniture
+    bool buildFurniture (bool carpetrySkills, EducationLevel Tradeschool); //returns true based on EducationLevel
 };
 /*
 =================
