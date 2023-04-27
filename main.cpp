@@ -518,12 +518,13 @@ struct PetCat
         void playAudioMessage();
     };
     //3 things it can do:
-    //1) eat food
-    void eatFood();
+    //1) break cat food robot
+    void breakCatFoodRobot(CatFoodRobot newRobot);
     //2) knock over objects
     void knockOverObjects();
     //3) scratch visitors
     void scratchVisitors();
+    CatFoodRobot currentCatFeeder;
 };
 
 struct Human
@@ -552,12 +553,13 @@ struct Human
         void scheduleCheckUp(std::string returnDate, bool sameDoctor);
     };   
     //3 things it can do:
-    //1) start War
-    void startWar();
+    //1) visit the doctor
+    void visitDoctor(HealthStatus updateHealthStatus);
     //2) go to sleep
     void goToSleep(int howLong);
     //3) donate blood
     void donateBlood(bool giveLeftArm);
+    HealthStatus annualCheckup;
 };
 
 struct SocialStatus
