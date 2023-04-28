@@ -963,26 +963,26 @@ struct PetCat
     //5) name of pet cat (std::string)
     std::string nameOfPetCat = "Doris";
 
-    struct CatFoodRobot
+    struct CatCollar
     {
-        int amountOfFoodStorage = 10; //in lbs
-        std::string nameOfManufacturer = "Greyson";
-        bool powerOn = true;
-        float amountOfFoodDispensed = 3.4f; //in oz
-        int displayBrightness = 20;
+        std::string materialOfCollar = "Nylon";
+        float collarMeasurement = 10.2f;
+        bool isWaterProof = true;
+        bool hasCollarBuckle = true;
+        int numOfHolesForBuckle = 4;
 
-        void dispenseFood(float howMuchFood, double whatTimeToFeed, int HowOftenToFeed, double recordTimeOfFeed);
-        double getLastDispenseTime(double timeOfFeed, double timeSinceLastFeed); // returns last time robot dispensed food
-        void playAudioMessage();
+        void repelFleas(int repellantStrength, double repellantExpiration);
+        double attachLeash();
+        double trackLocation(bool containsGPS, double locationX, double locationY); //returns GPS coordinants
     };
     //3 things it can do:
     //1) break cat food robot
-    void breakCatFoodRobot(CatFoodRobot newRobot);
+    void takeOffCollar(CatCollar newCollar);
     //2) knock over objects
     void knockOverObjects();
     //3) scratch visitors
     void scratchVisitors();
-    CatFoodRobot currentCatFeeder;
+    CatCollar replacementCollar;
 };
 
 struct Human
