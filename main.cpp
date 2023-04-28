@@ -3,7 +3,7 @@
  Video: Chapter 2 Part 6
  Implementations tasks
  
-Create a branch named Part2
+Create a branch named Part2 
 
  tasks
  0) delete all of the plain english pseudo-code you added in Part1.
