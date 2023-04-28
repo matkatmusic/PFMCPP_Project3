@@ -1017,7 +1017,7 @@ struct Human
     void goToSleep(int howLong);
     //3) donate blood
     void donateBlood(bool giveLeftArm);
-    HealthStatus annualCheckup;
+    HealthStatus healthStatus;
 };
 
 struct SocialStatus
@@ -1064,7 +1064,7 @@ struct PhysicalAttribrutes
     void loseLimbs();
 };
 
-struct EducationLevel
+struct Education
 {
     //1) name of most recent school (std::string)
     std::string mostRecentSchool = "Florida Atlantic University";
@@ -1113,7 +1113,7 @@ struct Girlfriend
     Human human;
     SocialStatus socialStatus;
     PhysicalAttribrutes physicalAttribrutes;
-    EducationLevel educationLevel;
+    Education education;
     Home home;
 
     //1) plan dinner date
@@ -1121,7 +1121,7 @@ struct Girlfriend
     //2) present ideas
     void presentIdeas();
     //3) build furniture
-    bool buildFurniture (bool carpetrySkills, EducationLevel Tradeschool); //returns true based on EducationLevel
+    bool buildFurniture (bool carpetrySkills, Education Tradeschool); //returns true based on EducationLevel
 };
 int main()
 {
