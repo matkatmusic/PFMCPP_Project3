@@ -7,8 +7,8 @@ Video:  Chapter 2 Part 5
 User-Defined Types
 
 Purpose: The entire purpose of Project 3 is to get you 
-writing real C++ code that compiles and runs and to reinforce the syntax habits 
-that C++ requires.  
+writing real C++ code that compiles and runs and to 
+reinforce the syntax habits that C++ requires.  
 What you create in this project will be used as the basis of 
 Project 5.
 
@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) car horn
+            4) air bag
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) shift transmission gear.
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) tachometer
+            3) turn signal
+            4) LCD display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) measure speed
+            2) display current gear state
+            3) display internal temperature
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) front temperature knob
+            2) rear temperature knob
+            3) reset button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) increase air flow 
+            2) decrease air temperature
+            3) reset settings
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio system
+            2) phone controls
+            3) power button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) power on system
+            2) increase radio volume
+            3) seek radio station
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) seat bottom
+            2) backrest
+            3) power controls
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust seat bottom
+            2) adjust backrest
 */
 
 /*
@@ -196,53 +196,6 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -336,27 +289,15 @@ Part 1c - Step 4: Assignment
 Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
+*/
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
-
- /*
+/*
 =================
 Part 1c - Step 5: Commit
 =================
 Now that you've made changes to the code, make a commit!
 Be sure to make the commit message meaningful.
- */
+*/
 
 /*
 *********************************************************************************
@@ -433,67 +374,7 @@ example:
     If #10's first property was 'Engine', then `Thing 5)` will be `Engine`. 
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
-
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
- */
+*/
 
 /*
 =================
@@ -544,13 +425,6 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
-
-
-
-
-
-
-
 
 /*
 =================
@@ -1010,14 +884,245 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct Television
+{
+    // 1) level of volume (float)
+    float levelOfVolume = 50.f;
+    // 2) level of brightness (double)
+    double levelOfBrightness = 87.56;
+    // 3) number of screen modes (int)
+    int numOfScreenModes = 6;
+    // 4) television manufacturer (std::string)
+    std::string televisionManufacturer = "Samsung";
+    // 5) number of inputs (int)
+    int numOfInputs = 4;
 
+    //3 things it can do:
+    // 1) increase volume
+    int increaseVolume(int decibelOutput); //returns decibel volume ++
+    // 2) change display settings
+    void changeDisplaySettings();
+    // 3) decrease brightness
+    double decreaseBrightness(int nitOput); // returns nit value --
+};
 
+struct MassageChair
+{
+    //1) number of vibration controls (int)
+    int numOfVibrationControls = 9;
+    //2) amount of pressure applied (int)
+    int appliedPressure = 10; //measured in PSI
+    //3) degree of backrest recline (float)
+    float backrestReclineAngle = 34.6f;
+    //4) amount of time per massage (float)
+    float massageDuration = 30.f;
+    //5) degree of footrest incline (float)
+    float footrestInclineAngle = 90.f;
 
+    //3 things it can do:
+    //1) give massage
+    void giveMassage();
+    //2) play background sound
+    void playBackgroundSound(); 
+    //3) display timer
+    double displayTimer (double massageDuration); // displays how much time is left on massage.
+};
 
+struct CollegeStudent
+{
+    //1) number of enrolled classes (int)
+    int numOfEnrolledClasses = 7;
+    //2) grade point average (double)
+    double gpa = 3.64;
+    //3) name of student (std::string)
+    std::string studentName = "Bob Macdonald";
+    //4) subject of major (std::string)
+    std::string subjectMajor = "Graphic Design";
+    //5) expected graduation date (std::string)
+    std::string expectedGraduationDate = "08 June 2024";
 
+    //3 things it can do:
+    //1) attend study hall
+    void attendStudyHall();
+    //2) watch television
+    void watchTelevision();
+    //3) dance to music
+    void danceToMusic();
+};
 
+struct PetCat
+{
+    //1) number of eyes (int)
+    int numOfEyes = 2;
+    //2) legnth of tail (double)
+    double legnthOfTail = 10.35;
+    //3) color of fur (std::string
+    std::string furColor = "Grey & White";
+    //4) age of pet cat (int)
+    int ageOfCat = 3;
+    //5) name of pet cat (std::string)
+    std::string nameOfPetCat = "Doris";
 
+    struct CatCollar
+    {
+        std::string materialOfCollar = "Nylon";
+        float collarMeasurement = 10.2f;
+        bool isWaterProof = true;
+        bool hasCollarBuckle = true;
+        int numOfHolesForBuckle = 4;
 
+        void repelFleas(int repellantStrength, double repellantExpiration);
+        double attachLeash();
+        double trackLocation(bool containsGPS, double locationX, double locationY); //returns GPS coordinants
+    };
+    //3 things it can do:
+    //1) break cat food robot
+    void takeOffCollar(CatCollar newCollar);
+    //2) knock over objects
+    void knockOverObjects();
+    //3) scratch visitors
+    void scratchVisitors();
+    CatCollar replacementCollar;
+};
+
+struct Human
+{
+    //1) age in years (int)
+    int ageInYears = 33;
+    //2) name (std::string)
+    std::string nameOfHuman = "Jason Blake";
+    //3) ethnicity (std::string)
+    std::string ethnicity = "Black/African American";
+    //4) date of birth (int)
+    int dateOfBirth = 12181989;
+    //5) blood type (std:: string)
+    std::string bloodType = "O Negative";
+
+    struct HealthStatus
+    {
+        int numOfHealthComplications = 0;
+        bool chronicDiseasesPresent = false;
+        std::string dateOfLastCheckup = "23 Feburary 2022";
+        float bodyMassIndex = 23.8f;
+        std::string bloodPressureLevel = "120/83 mmHg";
+
+        void contractSTD(std::string whichSTD, std::string dateContracted);
+        void developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName);
+        void scheduleCheckUp(std::string returnDate, bool sameDoctor);
+    };   
+    //3 things it can do:
+    //1) visit the doctor
+    void visitDoctor(HealthStatus updateHealthStatus);
+    //2) go to sleep
+    void goToSleep(int howLong);
+    //3) donate blood
+    void donateBlood(bool giveLeftArm);
+    HealthStatus healthStatus;
+};
+
+struct SocialStatus
+{
+    //1) net worth (double)
+    double netWorth = 109841.65;
+    //2) occupation (std::string)
+    std::string occupation = "Accountant";
+    //3) number of friends (int)
+    int numOfFriends = 28;
+    //4) amount of income per year (double)
+    double annualIncome = 181650.23; //in USD
+    //5) number of club memberships (int)
+    int numOfClubMemberships = 5;
+                 
+    //3 things it can do:
+    //1) attract more friends
+    void attractMoreFriends(bool rejectNewFriend);
+    //2) get exclusive deals
+    void getExclusiveDeals();
+    //3) bypass societal norms
+    void bypassSocietalNorms();
+};
+
+struct PhysicalAttribrutes
+{
+    //1) amount of limbs (int)
+    int amountOfLimbs = 4;
+    //2) eye color (std::string)
+    std::string currentEyeColor = "brown";
+    //3) hieght (float)
+    float currentHieght = 5.7f;
+    //4) weight(float)
+    float currentWeight = 167.93f;
+    //5) hair color (std:: string)
+    std::string currentHairColor = "Dark Brown";
+
+    //3 things it can do:
+    //1) select hair color
+    void selectHairColor(std::string colorChoice);
+    //2) increase weight
+    float increaseWeight(int addedPounds); //returns current weight + amount of lbs added.
+    //3) lose limbs
+    void loseLimbs();
+};
+
+struct Education
+{
+    //1) name of most recent school (std::string)
+    std::string mostRecentSchool = "Florida Atlantic University";
+    //2) number of years attended (int)
+    int numOfYearsAttended = 6;
+    //3) highest degree attained (std::string)
+    std::string highestDegreeAttained = "Master of Arts";
+    //4) position in class (int)
+    int positionInClass = 211;
+    //5) major studied (std::string)
+    std::string subjectMajor = "Finance";
+                   
+    //3 things it can do:
+    //1) add degree
+    std::string addDegree(std::string newestDegree); //returns newly added degree
+    //2) drop out of school
+    void dropOutOfSchool();
+    //3) change major
+    std::string changeMajor(std::string whichMajor, std::string degreeLevel); //returns options for majors in accordance with associated degree level
+};
+
+struct Home
+{
+    //1) number of rooms (int)
+    int numOfRooms = 5;
+    //2) property size (double)
+    double propertySize = 1373.56;
+    //3) location of home (std::string)
+    std::string homeAddress = "123 Main St, Orange Grove CA, 34567";
+    //4) property value (double)
+    double propertyValue = 375400;
+    //5) number of appliances (int)
+    int numOfAppliances = 10;
+
+    //3 things it can do:
+    //1) increase in value over time
+    void appreaciateInValue();
+    //2) add room to house
+    void addRoomToHouse();
+    //3) deteriorate over time
+    std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
+};
+
+struct Girlfriend
+{
+    Human human;
+    SocialStatus socialStatus;
+    PhysicalAttribrutes physicalAttribrutes;
+    Education education;
+    Home home;
+
+    //1) plan dinner date
+    std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, double whatTime); //should return prompt controlled by if statements
+    //2) present ideas
+    void presentIdeas();
+    //3) build furniture
+    bool buildFurniture (bool carpetrySkills, Education Tradeschool); //returns true based on EducationLevel
+};
 int main()
 {
     std::cout << "good to go!" << std::endl;
