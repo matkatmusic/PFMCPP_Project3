@@ -185,8 +185,55 @@ struct Television
 
     int increaseVolume(int decibelOutput); //returns decibel volume ++
     void changeDisplaySettings();
-    double decreaseBrightness(int nitOput); // returns nit value --
+    int decreaseBrightness(int nitOutput); // returns nit value --
 };
+
+int Television::increaseVolume(int decibelOutput)
+{
+    decibelOutput = 0;
+    decibelOutput++;
+    return decibelOutput;
+}
+
+void Television::changeDisplaySettings()
+{
+    int displaySelector = 0;
+    int displaySetting = 0;
+    int tvInput1 = 1;
+    int tvInput2 = 2;
+    int tvInputHDMI = 3;
+    int tvInputBT = 4;
+    std::cout << "Please select Input (1, 2, 3 or 4)\n";
+    std::cin >> displaySelector;
+    
+    if(displaySelector == 1)
+    {
+        displaySetting = tvInput1;
+    } 
+    else if(displaySelector == 2) 
+    {
+        displaySetting = tvInput2;
+    }
+    else if (displaySelector == 3)
+    {
+        displaySetting = tvInputHDMI;
+    }
+    else if (displaySelector == 4)
+    {
+        displaySetting = tvInputBT;
+    }
+    else
+    {
+        std::cout << "Inavlid Selection";
+    }
+}
+
+int Television::decreaseBrightness(int nitOutput)
+{
+    nitOutput = 100.00;
+    nitOutput--;
+    return nitOutput;
+}
 
 struct MassageChair
 {
