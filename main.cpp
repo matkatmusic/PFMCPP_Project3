@@ -203,7 +203,7 @@ void Television::changeDisplaySettings()
     int tvInput2 = 2;
     int tvInputHDMI = 3;
     int tvInputBT = 4;
-    std::cout << "Please select Input (1, 2, 3 or 4)\n";
+    std::cout << "Please select Input 1, 2, 3 HDMI, or 4 BlueTooth\n";
     std::cin >> displaySelector;
     
     if(displaySelector == 1)
@@ -245,8 +245,57 @@ struct MassageChair
 
     void giveMassage();
     void playBackgroundSound(); 
-    double displayTimer (double massageDuration); // displays how much time is left on massage.
+    double displayTimer (double msgDuration); // displays how much time is left on massage.
 };
+
+void MassageChair::giveMassage()
+{
+    
+}
+
+void MassageChair::playBackgroundSound()
+{
+    
+}
+
+double MassageChair::displayTimer(double msgDuration)
+{
+    double chairClock = 0;
+    char durationSelected = 'a';
+    double countdown = 30.00;
+    msgDuration = countdown;
+    while(durationSelected == 'a')
+    {
+        std::cout << "how long will your massage be\n";
+        std::cout << "a) 1hr, b) 30mins c) 10mins\n";
+        std::cin >> durationSelected;
+
+        if(durationSelected == 'a')
+        {
+        countdown = 60.00;
+        }
+        else if(durationSelected == 'b')
+        {
+        countdown = 30.00;
+        }
+        else if(durationSelected == 'c')
+        {
+        countdown = 10.00;
+        }
+        else
+        {
+        std::cout << "Invalid Selection Please Select a) b) or c)";
+        }
+    }
+    chairClock = countdown;
+    for(double i = chairClock; i > 0.0; i--)
+    {
+        countdown = countdown - i;
+        std::cout << countdown;
+    }
+
+    return countdown;
+}
 
 struct CollegeStudent
 {
@@ -260,6 +309,12 @@ struct CollegeStudent
     void watchTelevision();
     void danceToMusic();
 };
+
+void CollegeStudent::attendStudyHall()
+{
+    
+}
+
 
 struct PetCat
 {
