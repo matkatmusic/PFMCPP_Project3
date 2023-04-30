@@ -411,28 +411,38 @@ void Human::HealthStatus::contractSTD(std::string whichSTD, std::string dateCont
 
 void Human::HealthStatus::developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName)
 {
-    
+    isHeredity = true;
+    knownSymptoms = "None";
+    conditionName = "N/A";
 }
 
 void Human::HealthStatus::scheduleCheckUp(std::string returnDate, bool sameDoctor)
 {
-    
+    returnDate = "Day/Month/Year";
+    sameDoctor = true;
 }
 
 void Human::visitDoctor(HealthStatus updateHealthStatus)
 {
-    updateHealthStatus.contractSTD("HPV", "06/06/2006");
+    updateHealthStatus.contractSTD("STD Name", "Day/Month/Year");
     
 }
 
 void Human::goToSleep(int howLong)
 {
-    
+    howLong = 8; //in hours 
 }
 
 void Human::donateBlood(bool giveLeftArm)
 {
-    
+    if(giveLeftArm == true)
+    {
+         std::cout << "you have decided to donate from your left arm\n";
+    }
+    else
+    {
+        std::cout << "you have decided to donate from your right arm\n";
+    }
 }
 
 struct SocialStatus
@@ -450,17 +460,17 @@ struct SocialStatus
 
 void SocialStatus::attractMoreFriends(bool rejectNewFriend)
 {
-    
+    rejectNewFriend = false;
 }
 
 void SocialStatus::getExclusiveDeals()
 {
-    
+    std::cout << "you are entitled to exclusive deals";
 }
 
 void SocialStatus::bypassSocietalNorms()
 {
-    
+    std::cout << "you are NOT beholden to social norms";
 }
 
 struct PhysicalAttribrutes
@@ -472,23 +482,24 @@ struct PhysicalAttribrutes
     std::string currentHairColor = "Dark Brown";
 
     void selectHairColor(std::string colorChoice);
-    float increaseWeight(int addedPounds); //returns current weight + amount of lbs added.
+    float increaseWeight(float addedPounds); //returns current weight + amount of lbs added.
     void loseLimbs();
 };
 
 void PhysicalAttribrutes::selectHairColor(std::string colorChoice)
 {
-    
+    colorChoice = "New Color";
 }
 
-float PhysicalAttribrutes::increaseWeight(int addedPounds)
+float PhysicalAttribrutes::increaseWeight(float addedPounds)
 {
-    
+    addedPounds++; 
+    return addedPounds;
 }
 
 void PhysicalAttribrutes::loseLimbs()
 {
-    
+    std::cout << "you lost a limb";
 }
 
 struct Education
@@ -506,7 +517,8 @@ struct Education
 
 std::string Education::addDegree(std::string newestDegree)
 {
-    
+    newestDegree = "Degree Name";
+    return newestDegree;
 }
 
 void Education::dropOutOfSchool()
@@ -516,7 +528,9 @@ void Education::dropOutOfSchool()
 
 std::string Education::changeMajor(std::string whichMajor, std::string degreeLevel)
 {
-    
+    whichMajor = "New Major Name";
+    degreeLevel = "AA, AS, BA, BS, MA, MS, or PHD";
+    return "you have changed majors";
 }
 
 struct Home
@@ -544,6 +558,8 @@ void Home::addRoomToHouse()
 
 std::string Home::deteriorateOverTime(std::string brokenItem)
 {
+    brokenItem = "Item that is broken";
+    return brokenItem;
     
 }
 
@@ -555,14 +571,18 @@ struct Girlfriend
     Education education;
     Home home;
 
-    std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, double whatTime); //should return prompt controlled by if statements
+    std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
     void presentIdeas();
     bool buildFurniture (bool carpetrySkills, Education Tradeschool); //returns true based on EducationLevel
 };
 
-std::string Girlfriend::planDinnerDate(std::string whatRestaurant, std::string whenToGo, double whatTime)
+std::string Girlfriend::planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime)
 {
-    
+    std::string dinnerPlans = whatRestaurant + whenToGo + whatTime;
+    whatRestaurant = "this Restaurnt";
+    whenToGo = "Day/Month/Year";
+    whatTime = "8:00pm";
+    return dinnerPlans;
 }
 
 void Girlfriend::presentIdeas()
@@ -572,7 +592,13 @@ void Girlfriend::presentIdeas()
 
 bool Girlfriend::buildFurniture (bool carpetrySkills, Education Tradeschool)
 {
-    
+    carpetrySkills = false;
+    Tradeschool.numOfYearsAttended = 0;
+    Tradeschool.mostRecentSchool = "N/A";
+    Tradeschool.highestDegreeAttained = "N/A";
+    Tradeschool.positionInClass = 0;
+    Tradeschool.subjectMajor = "N/A";
+    return false;
 }
 
 int main()
