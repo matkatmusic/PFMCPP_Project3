@@ -315,6 +315,16 @@ void CollegeStudent::attendStudyHall()
     
 }
 
+void CollegeStudent::watchTelevision()
+{
+
+}
+
+void CollegeStudent::danceToMusic()
+{
+    
+}
+
 
 struct PetCat
 {
@@ -342,6 +352,21 @@ struct PetCat
     CatCollar replacementCollar;
 };
 
+void PetCat::takeOffCollar(CatCollar newCollar)
+{
+    
+}
+
+void PetCat::knockOverObjects()
+{
+    
+}
+
+void PetCat::scratchVisitors()
+{
+    
+}
+
 struct Human
 {
     int ageInYears = 33;
@@ -368,6 +393,21 @@ struct Human
     HealthStatus healthStatus;
 };
 
+void Human::visitDoctor(HealthStatus updateHealthStatus)
+{
+    
+}
+
+void Human::goToSleep(int howLong)
+{
+    
+}
+
+void Human::donateBlood(bool giveLeftArm)
+{
+    
+}
+
 struct SocialStatus
 {
     double netWorth = 109841.65;
@@ -380,6 +420,21 @@ struct SocialStatus
     void getExclusiveDeals();
     void bypassSocietalNorms();
 };
+
+void SocialStatus::attractMoreFriends(bool rejectNewFriend)
+{
+    
+}
+
+void SocialStatus::getExclusiveDeals()
+{
+    
+}
+
+void SocialStatus::bypassSocietalNorms()
+{
+    
+}
 
 struct PhysicalAttribrutes
 {
@@ -394,6 +449,21 @@ struct PhysicalAttribrutes
     void loseLimbs();
 };
 
+void PhysicalAttribrutes::selectHairColor(std::string colorChoice)
+{
+    
+}
+
+float PhysicalAttribrutes::increaseWeight(int addedPounds)
+{
+    
+}
+
+void PhysicalAttribrutes::loseLimbs()
+{
+    
+}
+
 struct Education
 {
     std::string mostRecentSchool = "Florida Atlantic University";
@@ -406,6 +476,21 @@ struct Education
     void dropOutOfSchool();
     std::string changeMajor(std::string whichMajor, std::string degreeLevel); //returns options for majors in accordance with associated degree level
 };
+
+std::string Education::addDegree(std::string newestDegree)
+{
+    
+}
+
+void Education::dropOutOfSchool()
+{
+    
+}
+
+std::string Education::changeMajor(std::string whichMajor, std::string degreeLevel)
+{
+    
+}
 
 struct Home
 {
@@ -420,6 +505,21 @@ struct Home
     std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
 };
 
+void Home::appreaciateInValue()
+{
+    
+}
+
+void Home::addRoomToHouse()
+{
+    
+}
+
+std::string Home::deteriorateOverTime(std::string brokenItem)
+{
+    
+}
+
 struct Girlfriend
 {
     Human human;
@@ -432,6 +532,22 @@ struct Girlfriend
     void presentIdeas();
     bool buildFurniture (bool carpetrySkills, Education Tradeschool); //returns true based on EducationLevel
 };
+
+std::string Girlfriend::planDinnerDate(std::string whatRestaurant, std::string whenToGo, double whatTime)
+{
+    
+}
+
+void Girlfriend::presentIdeas()
+{
+    
+}
+
+bool Girlfriend::buildFurniture (bool carpetrySkills, Education Tradeschool)
+{
+    
+}
+
 int main()
 {
     std::cout << "good to go!" << std::endl;
