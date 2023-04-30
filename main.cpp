@@ -109,20 +109,24 @@ struct CarWash
  */
 struct Limb
 {
+    int numOfSteps;
+    float lengthOfLimb;
+    bool lowerBodyLimb = true;
+    bool synovialJoint = true;
+    int phalanges = 14;
+    
     void stepForward();
     int stepSize(int stepMeasurement);
 };
 
 void Limb::stepForward()
 {
-    
+    numOfSteps++;
 }
 
 int Limb::stepSize(int stepMeasurement)
 {
-   int totalSteps = 0;
-    totalSteps += stepMeasurement;
-    return totalSteps;
+    return stepMeasurement;
 }
 
 struct Person
@@ -226,12 +230,15 @@ void Television::changeDisplaySettings()
     {
         std::cout << "Inavlid Selection";
     }
+
+    std::cout << displaySetting << "Selected\n";
 }
 
 int Television::decreaseBrightness(int nitOutput)
 {
     nitOutput = 100.00;
     nitOutput--;
+    std::cout << nitOutput;
     return nitOutput;
 }
 
@@ -250,12 +257,12 @@ struct MassageChair
 
 void MassageChair::giveMassage()
 {
-    
+   std::cout << "Please remove shoes, and relax!!\n"; 
 }
 
 void MassageChair::playBackgroundSound()
 {
-    
+    std::cout << "Now playing\n";
 }
 
 double MassageChair::displayTimer(double msgDuration)
@@ -333,6 +340,7 @@ struct PetCat
     std::string furColor = "Grey & White";
     int ageOfCat = 3;
     std::string nameOfPetCat = "Doris";
+    bool maleGender = false;
 
     struct CatCollar
     {
@@ -354,17 +362,18 @@ struct PetCat
 
 void PetCat::takeOffCollar(CatCollar newCollar)
 {
-    
+    std::cout << "Your cat has removed her collar please replace it\n"; 
+    replacementCollar = newCollar;
 }
 
 void PetCat::knockOverObjects()
 {
-    
+    std::cout << "Your cat has knock over an Object\n";
 }
 
 void PetCat::scratchVisitors()
 {
-    
+    std::cout << "You cat has scratched a visitor\n";
 }
 
 struct Human
@@ -393,8 +402,26 @@ struct Human
     HealthStatus healthStatus;
 };
 
+void Human::HealthStatus::contractSTD(std::string whichSTD, std::string dateContracted)
+{
+    whichSTD = "None";
+    dateContracted = "N/A";
+    std::cout << "Your tested positive for the folling STD" << whichSTD << "which was contracted on" << dateContracted <<" \n";
+}
+
+void Human::HealthStatus::developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName)
+{
+    
+}
+
+void Human::HealthStatus::scheduleCheckUp(std::string returnDate, bool sameDoctor)
+{
+    
+}
+
 void Human::visitDoctor(HealthStatus updateHealthStatus)
 {
+    updateHealthStatus.contractSTD("HPV", "06/06/2006");
     
 }
 
