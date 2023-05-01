@@ -271,36 +271,28 @@ double MassageChair::displayTimer(double msgDuration)
     char durationSelected = 'a';
     double countdown = 30.00;
     msgDuration = countdown;
-    while(durationSelected == 'a')
-    {
-        std::cout << "how long will your massage be\n";
-        std::cout << "a) 1hr, b) 30mins c) 10mins\n";
-        std::cin >> durationSelected;
+    std::cout << "how long will your massage be\n";
+    std::cout << "a) 1hr, b) 30mins c) 10mins\n";
+    std::cin >> durationSelected;
 
-        if(durationSelected == 'a')
-        {
+    if(durationSelected == 'a')
+    {
         countdown = 60.00;
-        }
-        else if(durationSelected == 'b')
-        {
-        countdown = 30.00;
-        }
-        else if(durationSelected == 'c')
-        {
-        countdown = 10.00;
-        }
-        else
-        {
-        std::cout << "Invalid Selection Please Select a) b) or c)";
-        }
     }
-    chairClock = countdown;
-    for(double i = chairClock; i > 0.0; i--)
+    else if(durationSelected == 'b')
     {
-        countdown = countdown - i;
-        std::cout << countdown;
+        countdown = 30.00;
     }
-
+    else if(durationSelected == 'c')
+    {
+        countdown = 10.00;
+    }
+    else
+    {
+        std::cout << "Invalid Selection Please Select a) b) or c)";
+    }
+    
+    chairClock = countdown;
     return countdown;
 }
 
@@ -573,7 +565,7 @@ struct Girlfriend
 
     std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
     void presentIdeas();
-    bool buildFurniture (bool carpetrySkills, Education Tradeschool); //returns true based on EducationLevel
+    bool buildFurniture (bool carpetrySkills, Education tradeschool); //returns true based on EducationLevel
 };
 
 std::string Girlfriend::planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime)
@@ -590,14 +582,14 @@ void Girlfriend::presentIdeas()
     
 }
 
-bool Girlfriend::buildFurniture (bool carpetrySkills, Education Tradeschool)
+bool Girlfriend::buildFurniture (bool carpetrySkills, Education tradeschool)
 {
     carpetrySkills = false;
-    Tradeschool.numOfYearsAttended = 0;
-    Tradeschool.mostRecentSchool = "N/A";
-    Tradeschool.highestDegreeAttained = "N/A";
-    Tradeschool.positionInClass = 0;
-    Tradeschool.subjectMajor = "N/A";
+    tradeschool.numOfYearsAttended = 0;
+    tradeschool.mostRecentSchool = "N/A";
+    tradeschool.highestDegreeAttained = "N/A";
+    tradeschool.positionInClass = 0;
+    tradeschool.subjectMajor = "N/A";
     return false;
 }
 
