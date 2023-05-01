@@ -109,7 +109,7 @@ struct CarWash
  */
 struct Limb
 {
-    int& numOfSteps;
+    int numOfSteps;
     float lengthOfLimb;
     bool lowerBodyLimb = true;
     bool synovialJoint = true;
@@ -187,12 +187,12 @@ struct Television
     std::string televisionManufacturer = "Samsung";
     int numOfInputs = 4;
 
-    int increaseVolume(int& decibelOutput); //returns decibel volume ++
+    int increaseVolume(int decibelOutput); //returns decibel volume ++
     void changeDisplaySettings();
-    int decreaseBrightness(int& nitOutput); // returns nit value --
+    int decreaseBrightness(int nitOutput); // returns nit value --
 };
 
-int Television::increaseVolume(int& decibelOutput)
+int Television::increaseVolume(int decibelOutput)
 {
     ++decibelOutput;
     return decibelOutput;
@@ -233,7 +233,7 @@ void Television::changeDisplaySettings()
     std::cout << displaySetting << "Selected\n";
 }
 
-int Television::decreaseBrightness(int& nitOutput)
+int Television::decreaseBrightness(int nitOutput)
 {
     nitOutput = 100.00;
     --nitOutput;
@@ -473,7 +473,7 @@ struct PhysicalAttribrutes
     std::string currentHairColor = "Dark Brown";
 
     void selectHairColor(std::string colorChoice);
-    float increaseWeight(float& addedPounds); //returns current weight + amount of lbs added.
+    float increaseWeight(float addedPounds); //returns current weight + amount of lbs added.
     void loseLimbs();
 };
 
@@ -482,7 +482,7 @@ void PhysicalAttribrutes::selectHairColor(std::string colorChoice)
     colorChoice = "New Color";
 }
 
-float PhysicalAttribrutes::increaseWeight(float& addedPounds)
+float PhysicalAttribrutes::increaseWeight(float addedPounds)
 {
     ++addedPounds; 
     return addedPounds;
