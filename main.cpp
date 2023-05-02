@@ -207,7 +207,6 @@ void Television::changeDisplaySettings()
     int tvInputHDMI = 3;
     int tvInputBT = 4;
     std::cout << "Please select Input 1, 2, 3 HDMI, or 4 BlueTooth\n";
-    std::cin >> displaySelector;
     
     if(displaySelector == 1)
     {
@@ -272,7 +271,6 @@ double MassageChair::displayTimer(double msgDuration)
     msgDuration = countdown;
     std::cout << "how long will your massage be\n";
     std::cout << "a) 1hr, b) 30mins c) 10mins\n";
-    std::cin >> durationSelected;
 
     if(durationSelected == 'a')
     {
