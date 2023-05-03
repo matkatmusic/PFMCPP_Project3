@@ -3,7 +3,7 @@
  Video: Chapter 2 Part 6
  Implementations tasks
  
-Create a branch named Part2
+Create a branch named Part2 
 
  tasks
  0) delete all of the plain english pseudo-code you added in Part1.
@@ -107,10 +107,57 @@ struct CarWash
     you should be able to deduce the return type of those functions based on their usage in Person::run()
     You'll need to insert the Person struct from the video in the space below.
  */
+struct Limb
+{
+    int numOfSteps;
+    float lengthOfLimb;
+    bool lowerBodyLimb = true;
+    bool synovialJoint = true;
+    int phalanges = 14;
+    
+    void stepForward();
+    int stepSize(int stepMeasurement);
+};
 
+void Limb::stepForward()
+{
+    ++numOfSteps;
+}
 
+int Limb::stepSize(int stepMeasurement)
+{
+    return stepMeasurement;
+}
 
+struct Person
+{
+    Limb leftFoot;
+    Limb rightFoot;
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
 
+    void run(int howFast, bool startWithLeftFoot);
+};
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{ 
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    } 
+    else 
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize(0) + rightFoot.stepSize(0);
+    howFast = 1;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -134,82 +181,155 @@ struct CarWash
 
 struct Television
 {
-    // 1) level of volume (float)
     float levelOfVolume = 50.f;
-    // 2) level of brightness (double)
     double levelOfBrightness = 87.56;
-    // 3) number of screen modes (int)
     int numOfScreenModes = 6;
-    // 4) television manufacturer (std::string)
     std::string televisionManufacturer = "Samsung";
-    // 5) number of inputs (int)
     int numOfInputs = 4;
 
-    //3 things it can do:
-    // 1) increase volume
     int increaseVolume(int decibelOutput); //returns decibel volume ++
-    // 2) change display settings
     void changeDisplaySettings();
-    // 3) decrease brightness
-    double decreaseBrightness(int nitOput); // returns nit value --
+    int decreaseBrightness(int nitOutput); // returns nit value --
 };
+
+int Television::increaseVolume(int decibelOutput)
+{
+    ++decibelOutput;
+    return decibelOutput;
+}
+
+void Television::changeDisplaySettings()
+{
+    int displaySelector = 0;
+    int displaySetting = 0;
+    int tvInput1 = 1;
+    int tvInput2 = 2;
+    int tvInputHDMI = 3;
+    int tvInputBT = 4;
+    std::cout << "Please select Input 1, 2, 3 HDMI, or 4 BlueTooth\n";
+    
+    if(displaySelector == 1)
+    {
+        displaySetting = tvInput1;
+    } 
+    else if(displaySelector == 2) 
+    {
+        displaySetting = tvInput2;
+    }
+    else if (displaySelector == 3)
+    {
+        displaySetting = tvInputHDMI;
+    }
+    else if (displaySelector == 4)
+    {
+        displaySetting = tvInputBT;
+    }
+    else
+    {
+        std::cout << "Inavlid Selection";
+    }
+
+    std::cout << displaySetting << "Selected\n";
+}
+
+int Television::decreaseBrightness(int nitOutput)
+{
+    nitOutput = 100.00;
+    --nitOutput;
+    std::cout << nitOutput;
+    return nitOutput;
+}
 
 struct MassageChair
 {
-    //1) number of vibration controls (int)
     int numOfVibrationControls = 9;
-    //2) amount of pressure applied (int)
     int appliedPressure = 10; //measured in PSI
-    //3) degree of backrest recline (float)
     float backrestReclineAngle = 34.6f;
-    //4) amount of time per massage (float)
     float massageDuration = 30.f;
-    //5) degree of footrest incline (float)
     float footrestInclineAngle = 90.f;
 
-    //3 things it can do:
-    //1) give massage
     void giveMassage();
-    //2) play background sound
     void playBackgroundSound(); 
-    //3) display timer
-    double displayTimer (double massageDuration); // displays how much time is left on massage.
+    double displayTimer (double msgDuration); // displays how much time is left on massage.
 };
+
+void MassageChair::giveMassage()
+{
+   std::cout << "Please remove shoes, and relax!!\n"; 
+}
+
+void MassageChair::playBackgroundSound()
+{
+    std::cout << "Now playing\n";
+}
+
+double MassageChair::displayTimer(double msgDuration)
+{
+    double chairClock = 0;
+    char durationSelected = 'a';
+    double countdown = 30.00;
+    msgDuration = countdown;
+    std::cout << "how long will your massage be\n";
+    std::cout << "a) 1hr, b) 30mins c) 10mins\n";
+
+    if(durationSelected == 'a')
+    {
+        countdown = 60.00;
+    }
+    else if(durationSelected == 'b')
+    {
+        countdown = 30.00;
+    }
+    else if(durationSelected == 'c')
+    {
+        countdown = 10.00;
+    }
+    else
+    {
+        std::cout << "Invalid Selection Please Select a) b) or c)";
+    }
+    
+    chairClock = countdown;
+    return countdown;
+}
 
 struct CollegeStudent
 {
-    //1) number of enrolled classes (int)
     int numOfEnrolledClasses = 7;
-    //2) grade point average (double)
     double gpa = 3.64;
-    //3) name of student (std::string)
     std::string studentName = "Bob Macdonald";
-    //4) subject of major (std::string)
     std::string subjectMajor = "Graphic Design";
-    //5) expected graduation date (std::string)
     std::string expectedGraduationDate = "08 June 2024";
 
-    //3 things it can do:
-    //1) attend study hall
     void attendStudyHall();
-    //2) watch television
     void watchTelevision();
-    //3) dance to music
     void danceToMusic();
 };
 
+void CollegeStudent::attendStudyHall()
+{
+    
+}
+
+void CollegeStudent::watchTelevision()
+{
+
+}
+
+void CollegeStudent::danceToMusic()
+{
+    
+}
+
+
 struct PetCat
 {
-    //1) number of eyes (int)
     int numOfEyes = 2;
-    //2) legnth of tail (double)
     double legnthOfTail = 10.35;
-    //3) color of fur (std::string
     std::string furColor = "Grey & White";
-    //4) age of pet cat (int)
     int ageOfCat = 3;
-    //5) name of pet cat (std::string)
     std::string nameOfPetCat = "Doris";
+    bool maleGender = false;
 
     struct CatCollar
     {
@@ -223,27 +343,34 @@ struct PetCat
         double attachLeash();
         double trackLocation(bool containsGPS, double locationX, double locationY); //returns GPS coordinants
     };
-    //3 things it can do:
-    //1) break cat food robot
     void takeOffCollar(CatCollar newCollar);
-    //2) knock over objects
     void knockOverObjects();
-    //3) scratch visitors
     void scratchVisitors();
     CatCollar replacementCollar;
 };
 
+void PetCat::takeOffCollar(CatCollar newCollar)
+{
+    std::cout << "Your cat has removed her collar please replace it\n"; 
+    replacementCollar = newCollar;
+}
+
+void PetCat::knockOverObjects()
+{
+    std::cout << "Your cat has knock over an Object\n";
+}
+
+void PetCat::scratchVisitors()
+{
+    std::cout << "You cat has scratched a visitor\n";
+}
+
 struct Human
 {
-    //1) age in years (int)
     int ageInYears = 33;
-    //2) name (std::string)
     std::string nameOfHuman = "Jason Blake";
-    //3) ethnicity (std::string)
     std::string ethnicity = "Black/African American";
-    //4) date of birth (int)
     int dateOfBirth = 12181989;
-    //5) blood type (std:: string)
     std::string bloodType = "O Negative";
 
     struct HealthStatus
@@ -258,103 +385,172 @@ struct Human
         void developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName);
         void scheduleCheckUp(std::string returnDate, bool sameDoctor);
     };   
-    //3 things it can do:
-    //1) visit the doctor
     void visitDoctor(HealthStatus updateHealthStatus);
-    //2) go to sleep
     void goToSleep(int howLong);
-    //3) donate blood
     void donateBlood(bool giveLeftArm);
     HealthStatus healthStatus;
 };
 
+void Human::HealthStatus::contractSTD(std::string whichSTD, std::string dateContracted)
+{
+    whichSTD = "None";
+    dateContracted = "N/A";
+    std::cout << "Your tested positive for the folling STD" << whichSTD << "which was contracted on" << dateContracted <<" \n";
+}
+
+void Human::HealthStatus::developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName)
+{
+    isHeredity = true;
+    knownSymptoms = "None";
+    conditionName = "N/A";
+}
+
+void Human::HealthStatus::scheduleCheckUp(std::string returnDate, bool sameDoctor)
+{
+    returnDate = "Day/Month/Year";
+    sameDoctor = true;
+}
+
+void Human::visitDoctor(HealthStatus updateHealthStatus)
+{
+    updateHealthStatus.contractSTD("STD Name", "Day/Month/Year");
+    
+}
+
+void Human::goToSleep(int howLong)
+{
+    howLong = 8; //in hours 
+}
+
+void Human::donateBlood(bool giveLeftArm)
+{
+    if(giveLeftArm == true)
+    {
+         std::cout << "you have decided to donate from your left arm\n";
+    }
+    else
+    {
+        std::cout << "you have decided to donate from your right arm\n";
+    }
+}
+
 struct SocialStatus
 {
-    //1) net worth (double)
     double netWorth = 109841.65;
-    //2) occupation (std::string)
     std::string occupation = "Accountant";
-    //3) number of friends (int)
     int numOfFriends = 28;
-    //4) amount of income per year (double)
     double annualIncome = 181650.23; //in USD
-    //5) number of club memberships (int)
     int numOfClubMemberships = 5;
                  
-    //3 things it can do:
-    //1) attract more friends
     void attractMoreFriends(bool rejectNewFriend);
-    //2) get exclusive deals
     void getExclusiveDeals();
-    //3) bypass societal norms
     void bypassSocietalNorms();
 };
 
+void SocialStatus::attractMoreFriends(bool rejectNewFriend)
+{
+    rejectNewFriend = false;
+}
+
+void SocialStatus::getExclusiveDeals()
+{
+    std::cout << "you are entitled to exclusive deals";
+}
+
+void SocialStatus::bypassSocietalNorms()
+{
+    std::cout << "you are NOT beholden to social norms";
+}
+
 struct PhysicalAttribrutes
 {
-    //1) amount of limbs (int)
     int amountOfLimbs = 4;
-    //2) eye color (std::string)
     std::string currentEyeColor = "brown";
-    //3) hieght (float)
     float currentHieght = 5.7f;
-    //4) weight(float)
     float currentWeight = 167.93f;
-    //5) hair color (std:: string)
     std::string currentHairColor = "Dark Brown";
 
-    //3 things it can do:
-    //1) select hair color
     void selectHairColor(std::string colorChoice);
-    //2) increase weight
-    float increaseWeight(int addedPounds); //returns current weight + amount of lbs added.
-    //3) lose limbs
+    float increaseWeight(float addedPounds); //returns current weight + amount of lbs added.
     void loseLimbs();
 };
 
+void PhysicalAttribrutes::selectHairColor(std::string colorChoice)
+{
+    colorChoice = "New Color";
+}
+
+float PhysicalAttribrutes::increaseWeight(float addedPounds)
+{
+    ++addedPounds; 
+    return addedPounds;
+}
+
+void PhysicalAttribrutes::loseLimbs()
+{
+    std::cout << "you lost a limb";
+}
+
 struct Education
 {
-    //1) name of most recent school (std::string)
     std::string mostRecentSchool = "Florida Atlantic University";
-    //2) number of years attended (int)
     int numOfYearsAttended = 6;
-    //3) highest degree attained (std::string)
     std::string highestDegreeAttained = "Master of Arts";
-    //4) position in class (int)
     int positionInClass = 211;
-    //5) major studied (std::string)
     std::string subjectMajor = "Finance";
                    
-    //3 things it can do:
-    //1) add degree
     std::string addDegree(std::string newestDegree); //returns newly added degree
-    //2) drop out of school
     void dropOutOfSchool();
-    //3) change major
     std::string changeMajor(std::string whichMajor, std::string degreeLevel); //returns options for majors in accordance with associated degree level
 };
 
+std::string Education::addDegree(std::string newestDegree)
+{
+    newestDegree = "Degree Name";
+    return newestDegree;
+}
+
+void Education::dropOutOfSchool()
+{
+    
+}
+
+std::string Education::changeMajor(std::string whichMajor, std::string degreeLevel)
+{
+    whichMajor = "New Major Name";
+    degreeLevel = "AA, AS, BA, BS, MA, MS, or PHD";
+    return "you have changed majors";
+}
+
 struct Home
 {
-    //1) number of rooms (int)
     int numOfRooms = 5;
-    //2) property size (double)
     double propertySize = 1373.56;
-    //3) location of home (std::string)
     std::string homeAddress = "123 Main St, Orange Grove CA, 34567";
-    //4) property value (double)
     double propertyValue = 375400;
-    //5) number of appliances (int)
     int numOfAppliances = 10;
 
-    //3 things it can do:
-    //1) increase in value over time
     void appreaciateInValue();
-    //2) add room to house
     void addRoomToHouse();
-    //3) deteriorate over time
     std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
 };
+
+void Home::appreaciateInValue()
+{
+    
+}
+
+void Home::addRoomToHouse()
+{
+    
+}
+
+std::string Home::deteriorateOverTime(std::string brokenItem)
+{
+    brokenItem = "Item that is broken";
+    return brokenItem;
+    
+}
 
 struct Girlfriend
 {
@@ -364,13 +560,36 @@ struct Girlfriend
     Education education;
     Home home;
 
-    //1) plan dinner date
-    std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, double whatTime); //should return prompt controlled by if statements
-    //2) present ideas
+    std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
     void presentIdeas();
-    //3) build furniture
-    bool buildFurniture (bool carpetrySkills, Education Tradeschool); //returns true based on EducationLevel
+    bool buildFurniture (bool carpetrySkills, Education tradeschool); //returns true based on EducationLevel
 };
+
+std::string Girlfriend::planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime)
+{
+    std::string dinnerPlans = whatRestaurant + whenToGo + whatTime;
+    whatRestaurant = "this Restaurnt";
+    whenToGo = "Day/Month/Year";
+    whatTime = "8:00pm";
+    return dinnerPlans;
+}
+
+void Girlfriend::presentIdeas()
+{
+    
+}
+
+bool Girlfriend::buildFurniture (bool carpetrySkills, Education tradeschool)
+{
+    carpetrySkills = false;
+    tradeschool.numOfYearsAttended = 0;
+    tradeschool.mostRecentSchool = "N/A";
+    tradeschool.highestDegreeAttained = "N/A";
+    tradeschool.positionInClass = 0;
+    tradeschool.subjectMajor = "N/A";
+    return false;
+}
+
 int main()
 {
     std::cout << "good to go!" << std::endl;
