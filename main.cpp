@@ -81,6 +81,8 @@ struct Television
     std::string televisionManufacturer = "Samsung";
     int numOfInputs = 4;
 
+    Television();
+
     int increaseVolume(int decibelOutput); //returns decibel volume ++
     void changeDisplaySettings();
     int decreaseBrightness(int nitOutput); // returns nit value --
@@ -142,6 +144,8 @@ struct MassageChair
     float massageDuration = 30.f;
     float footrestInclineAngle = 90.f;
 
+    MassageChair();
+
     void giveMassage();
     void playBackgroundSound(); 
     double displayTimer (double msgDuration); // displays how much time is left on massage.
@@ -195,6 +199,8 @@ struct CollegeStudent
     std::string subjectMajor = "Graphic Design";
     std::string expectedGraduationDate = "08 June 2024";
 
+    CollegeStudent();
+
     void attendStudyHall();
     void watchTelevision();
     void danceToMusic();
@@ -233,10 +239,15 @@ struct PetCat
         bool hasCollarBuckle = true;
         int numOfHolesForBuckle = 4;
 
+        CatCollar();
+
         void repelFleas(int repellantStrength, double repellantExpiration);
         double attachLeash();
         double trackLocation(bool containsGPS, double locationX, double locationY); //returns GPS coordinants
     };
+
+    PetCat();
+
     void takeOffCollar(CatCollar newCollar);
     void knockOverObjects();
     void scratchVisitors();
@@ -275,10 +286,15 @@ struct Human
         float bodyMassIndex = 23.8f;
         std::string bloodPressureLevel = "120/83 mmHg";
 
+        HealthStatus();
+
         void contractSTD(std::string whichSTD, std::string dateContracted);
         void developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName);
         void scheduleCheckUp(std::string returnDate, bool sameDoctor);
-    };   
+    };
+
+    Human();
+
     void visitDoctor(HealthStatus updateHealthStatus);
     void goToSleep(int howLong);
     void donateBlood(bool giveLeftArm);
@@ -335,6 +351,8 @@ struct SocialStatus
     int numOfFriends = 28;
     double annualIncome = 181650.23; //in USD
     int numOfClubMemberships = 5;
+
+    SocialStatus();
                  
     void attractMoreFriends(bool rejectNewFriend);
     void getExclusiveDeals();
@@ -364,6 +382,8 @@ struct PhysicalAttribrutes
     float currentWeight = 167.93f;
     std::string currentHairColor = "Dark Brown";
 
+    PhysicalAttribrutes();
+
     void selectHairColor(std::string colorChoice);
     float increaseWeight(float addedPounds); //returns current weight + amount of lbs added.
     void loseLimbs();
@@ -392,6 +412,8 @@ struct Education
     std::string highestDegreeAttained = "Master of Arts";
     int positionInClass = 211;
     std::string subjectMajor = "Finance";
+
+    Education();
                    
     std::string addDegree(std::string newestDegree); //returns newly added degree
     void dropOutOfSchool();
@@ -424,6 +446,8 @@ struct Home
     double propertyValue = 375400;
     int numOfAppliances = 10;
 
+    Home();
+
     void appreaciateInValue();
     void addRoomToHouse();
     std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
@@ -453,6 +477,8 @@ struct Girlfriend
     PhysicalAttribrutes physicalAttribrutes;
     Education education;
     Home home;
+
+    Girlfriend();
 
     std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
     void presentIdeas();
