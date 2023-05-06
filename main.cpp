@@ -96,6 +96,7 @@ Television::Television()
 int Television::increaseVolume(int decibelOutput)
 {
     ++decibelOutput;
+    std::cout << decibelOutput << "\n";
     return decibelOutput;
 }
 
@@ -127,10 +128,10 @@ void Television::changeDisplaySettings()
     }
     else
     {
-        std::cout << "Inavlid Selection";
+        std::cout << "Inavlid Selection \n";
     }
 
-    std::cout << displaySetting << "Selected\n";
+    std::cout << displaySetting << " Selected\n";
 }
 
 int Television::decreaseBrightness(int nitOutput)
@@ -175,8 +176,8 @@ double MassageChair::displayTimer(double msgDuration)
 {
     double chairClock = 0;
     char durationSelected = 'a';
-    double countdown = 30.00;
-    msgDuration = countdown;
+    double countdown = 0;
+    countdown = msgDuration;
     std::cout << "how long will your massage be\n";
     std::cout << "a) 1hr, b) 30mins c) 10mins\n";
 
@@ -438,7 +439,7 @@ struct PhysicalAttribrutes
 
     void selectHairColor(std::string colorChoice);
     float increaseWeight(float addedPounds); //returns current weight + amount of lbs added.
-    void loseLimbs();
+    void loseLimb();
 };
 
 PhysicalAttribrutes::PhysicalAttribrutes()
@@ -456,7 +457,7 @@ float PhysicalAttribrutes::increaseWeight(float addedPounds)
     return addedPounds;
 }
 
-void PhysicalAttribrutes::loseLimbs()
+void PhysicalAttribrutes::loseLimb()
 {
     --amountOfLimbs;
     std::cout << "you lost a limb you now have " << amountOfLimbs << "limbs!\n";
@@ -534,7 +535,6 @@ std::string Home::deteriorateOverTime(std::string brokenItem)
 {
     brokenItem = "Item that is broken";
     return brokenItem;
-    
 }
 
 struct Girlfriend
@@ -548,7 +548,7 @@ struct Girlfriend
     Girlfriend();
 
     std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
-    void presentIdeas();
+    void presentIdeas(Human girlfriend);
     bool buildFurniture (bool carpetrySkills, Education tradeschool); //returns true based on EducationLevel
 };
 
@@ -566,9 +566,9 @@ std::string Girlfriend::planDinnerDate(std::string whatRestaurant, std::string w
     return dinnerPlans;
 }
 
-void Girlfriend::presentIdeas()
+void Girlfriend::presentIdeas(Human girlfriend)
 {
-   std::cout << human.nameOfHuman << "has an interesting proposal you should consider\n"; 
+    std::cout << girlfriend.nameOfHuman << " has an interesting proposal you should consider\n"; 
 }
 
 bool Girlfriend::buildFurniture (bool carpetrySkills, Education tradeschool)
@@ -588,41 +588,66 @@ int main()
 
     Television samsung;
     samsung.decreaseBrightness(98);
+    samsung.changeDisplaySettings();
+    samsung.increaseVolume(37);
 
     MassageChair osakiOS4000T;
     osakiOS4000T.giveMassage();
+    osakiOS4000T.displayTimer(60.000);
+    osakiOS4000T.playBackgroundSound();
+    
 
     CollegeStudent rickSanchez;
     rickSanchez.attendStudyHall();
-
-    PetCat doris;
-    doris.knockOverObjects();
+    rickSanchez.danceToMusic();
+    rickSanchez.watchTelevision();
 
     PetCat::CatCollar friscoBreakaway;
     friscoBreakaway.repelFleas(10, "12/12/2012");
-
-    Human julieBerkowitz;
-    julieBerkowitz.goToSleep(10);
-
+    
+    PetCat doris;
+    doris.knockOverObjects();
+    doris.scratchVisitors();
+    doris.takeOffCollar(friscoBreakaway);
+    
     Human::HealthStatus may5thUpdate;
     may5thUpdate.contractSTD("Cold Sore", "10/28/2021");
+    may5thUpdate.developeHealthCondition(false, "small blisters around body", "chickenpox");
+    may5thUpdate.scheduleCheckUp("11/22/2024", true);
+
+    Human julianneCabour;
+    julianneCabour.nameOfHuman = "Julianne Cabour";
+    julianneCabour.goToSleep(10);
+    julianneCabour.donateBlood(false);
+    julianneCabour.visitDoctor(may5thUpdate);
 
     SocialStatus upperClass;
     upperClass.attractMoreFriends(false);
+    upperClass.bypassSocietalNorms();
+    upperClass.getExclusiveDeals();
 
     PhysicalAttribrutes weak;
     weak.increaseWeight(7.0);
-
+    weak.loseLimb();
+    weak.selectHairColor("Purple");
+    
     Education graphicDesigner;
     graphicDesigner.changeMajor("Business", "BA");
+    graphicDesigner.addDegree("Computer Science");
+    graphicDesigner.dropOutOfSchool();
 
     Home residence;
     residence.addRoomToHouse();
+    residence.appreaciateInValue();
+    residence.deteriorateOverTime("roofing");
 
-    Girlfriend julianneCabour;
-    julianneCabour.buildFurniture(false, graphicDesigner);
+    Girlfriend babe;
+    babe.buildFurniture(false, graphicDesigner);
+    babe.presentIdeas(julianneCabour);
+    babe.planDinnerDate("Arbys", "05/08/2023", "07:30");
 
-    
+    std::cout << "home address: " << residence.homeAddress << "\n";
+    std::cout << "Social Status Occupation: " << upperClass.occupation << "\n";
     
     std::cout << "good to go!" << std::endl;
 }
