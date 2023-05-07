@@ -153,7 +153,7 @@ struct MassageChair
 
     void giveMassage();
     void playBackgroundSound(); 
-    double displayTimer (double msgDuration); // displays how much time is left on massage.
+    double displayTimer (); // displays how much time is left on massage.
 };
 
 MassageChair::MassageChair()
@@ -172,14 +172,12 @@ void MassageChair::playBackgroundSound()
     std::cout << "Now playing! \n";
 }
 
-double MassageChair::displayTimer(double msgDuration)
+double MassageChair::displayTimer()
 {
-    double chairClock = 0;
     char durationSelected = 'a';
     double countdown = 0;
-    countdown = msgDuration;
     std::cout << "how long will your massage be\n";
-    std::cout << "a) 1hr, b) 30mins c) 10mins\n";
+    std::cout << "a) 60mins, b) 30mins c) 15mins\n";
 
     if(durationSelected == 'a')
     {
@@ -197,8 +195,6 @@ double MassageChair::displayTimer(double msgDuration)
     {
         std::cout << "Invalid Selection Please Select a) b) or c)";
     }
-    
-    chairClock = countdown;
     return countdown;
 }
 
@@ -350,8 +346,6 @@ Human::Human()
 
 void Human::HealthStatus::contractSTD(std::string whichSTD, std::string dateContracted)
 {
-    whichSTD = "None";
-    dateContracted = "N/A";
     std::cout << "Your tested positive for the folling STD" << whichSTD << "which was contracted on" << dateContracted <<" \n";
 }
 
@@ -448,7 +442,7 @@ PhysicalAttribrutes::PhysicalAttribrutes()
 }
 void PhysicalAttribrutes::selectHairColor(std::string colorChoice)
 {
-    colorChoice = "New Color";
+    std::cout << colorChoice << " has been selected as the new hair color\n";
 }
 
 float PhysicalAttribrutes::increaseWeight(float addedPounds)
@@ -485,7 +479,6 @@ Education::Education()
 
 std::string Education::addDegree(std::string newestDegree)
 {
-    newestDegree = "Degree Name";
     return newestDegree;
 }
 
@@ -533,7 +526,6 @@ void Home::addRoomToHouse()
 
 std::string Home::deteriorateOverTime(std::string brokenItem)
 {
-    brokenItem = "Item that is broken";
     return brokenItem;
 }
 
@@ -593,7 +585,7 @@ int main()
 
     MassageChair osakiOS4000T;
     osakiOS4000T.giveMassage();
-    osakiOS4000T.displayTimer(60.000);
+    osakiOS4000T.displayTimer();
     osakiOS4000T.playBackgroundSound();
     
 
