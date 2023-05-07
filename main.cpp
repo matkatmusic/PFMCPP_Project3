@@ -187,9 +187,9 @@ struct CollegeStudent
 {
     int numOfEnrolledClasses = 7;
     double gpa = 3.64;
-    std::string studentName = "Bob Macdonald";
-    std::string subjectMajor = "Graphic Design";
-    std::string expectedGraduationDate = "08 June 2024";
+    std::string studentName = "Student's Name";
+    std::string subjectMajor = "Subject Major";
+    std::string expectedGraduationDate = "DD MM YY";
 
     CollegeStudent();
 
@@ -215,7 +215,7 @@ void CollegeStudent::watchTelevision(CollegeStudent newStudent)
 
 void CollegeStudent::danceToMusic()
 {
-    
+    std::cout << studentName << " is now dancing to the music\n";
 }
 
 
