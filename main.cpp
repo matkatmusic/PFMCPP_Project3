@@ -146,14 +146,14 @@ struct MassageChair
     int numOfVibrationControls = 9;
     int appliedPressure = 10; //measured in PSI
     float backrestReclineAngle = 34.6f;
-    float massageDuration = 30.f;
+    double massageDuration = 30.00;
     float footrestInclineAngle = 90.f;
 
     MassageChair();
 
-    void giveMassage();
+    void giveMassage(bool startMassage);
     void playBackgroundSound(); 
-    double displayTimer(); // displays how much time is left on massage.
+    double displayTimer(double msgDuration); // displays how much time is left on massage.
 };
 
 MassageChair::MassageChair()
@@ -161,10 +161,14 @@ MassageChair::MassageChair()
     std::cout << "MassageChair is being constructed!" << std::endl;
 }
 
-void MassageChair::giveMassage()
+void MassageChair::giveMassage(bool startMassage)
 {
-    std::cout << "Please remove shoes, and relax!!\n";
-    std::cout << "Enjoy your " << massageDuration << "minute massage!\n";
+    if(startMassage == true)
+    {
+        std::cout << "Please remove shoes, and relax!!\n";
+    }
+    
+    std::cout << "No Massage For You!\n";
 }
 
 void MassageChair::playBackgroundSound()
@@ -172,30 +176,11 @@ void MassageChair::playBackgroundSound()
     std::cout << "Now playing! \n";
 }
 
-double MassageChair::displayTimer()
+double MassageChair::displayTimer(double msgDuration)
 {
-    char durationSelected = 'a';
-    double countdown = 0;
-    std::cout << "how long will your massage be\n";
-    std::cout << "a) 60mins, b) 30mins c) 15mins\n";
-
-    if(durationSelected == 'a')
-    {
-        countdown = 60.00;
-    }
-    else if(durationSelected == 'b')
-    {
-        countdown = 30.00;
-    }
-    else if(durationSelected == 'c')
-    {
-        countdown = 10.00;
-    }
-    else
-    {
-        std::cout << "Invalid Selection Please Select a) b) or c)";
-    }
-    return countdown;
+    std::cout << "now counting down from " << msgDuration << "minuntes\n";
+    
+    return msgDuration;
 }
 
 struct CollegeStudent
@@ -209,7 +194,7 @@ struct CollegeStudent
     CollegeStudent();
 
     void attendStudyHall();
-    void watchTelevision();
+    void watchTelevision(CollegeStudent newStudent);
     void danceToMusic();
 };
 
@@ -223,9 +208,9 @@ void CollegeStudent::attendStudyHall()
     std::cout << studentName << "is now attending study hall\n";
 }
 
-void CollegeStudent::watchTelevision()
+void CollegeStudent::watchTelevision(CollegeStudent newStudent)
 {
-
+    std::cout << newStudent.studentName << " is now watching TV\n";
 }
 
 void CollegeStudent::danceToMusic()
@@ -584,15 +569,16 @@ int main()
     samsung.increaseVolume(37);
 
     MassageChair osakiOS4000T;
-    osakiOS4000T.giveMassage();
-    osakiOS4000T.displayTimer();
+    osakiOS4000T.giveMassage(true);
+    osakiOS4000T.displayTimer(60.00);
     osakiOS4000T.playBackgroundSound();
     
 
     CollegeStudent rickSanchez;
+    rickSanchez.studentName = "Rick Sanchez";
     rickSanchez.attendStudyHall();
     rickSanchez.danceToMusic();
-    rickSanchez.watchTelevision();
+    rickSanchez.watchTelevision(rickSanchez);
 
     PetCat::CatCollar friscoBreakaway;
     friscoBreakaway.repelFleas(10, "12/12/2012");
