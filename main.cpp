@@ -153,7 +153,7 @@ struct MassageChair
 
     void giveMassage();
     void playBackgroundSound(); 
-    double displayTimer (); // displays how much time is left on massage.
+    double displayTimer(); // displays how much time is left on massage.
 };
 
 MassageChair::MassageChair()
