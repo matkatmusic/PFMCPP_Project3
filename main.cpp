@@ -235,12 +235,13 @@ struct PetCat
         bool isWaterProof = true;
         bool hasCollarBuckle = true;
         int numOfHolesForBuckle = 4;
+        double globalPositionSystem;
 
         CatCollar();
 
         void repelFleas(int repellantStrength, std::string repellantExpiration);
         void attachLeash();
-        double trackLocation(bool containsGPS, double locationX, double locationY); //returns GPS coordinants
+        int tightenCollar(int bucklePosition);
     };
 
     PetCat();
@@ -256,15 +257,32 @@ PetCat::CatCollar::CatCollar()
     std::cout << "CatCollar is being constructed!" << std::endl; 
 }
 
-void PetCat::CatCollar::attachLeash()
-{
-    std::cout << "Now attaching leash... is this collar water proof?" << isWaterProof << "\n";
-}
-
 void PetCat::CatCollar::repelFleas(int repellantStrength, std::string repellantExpiration)
 {
     std::cout << repellantStrength << "is the repellant strength of this collar\n"; 
     std::cout << repellantExpiration << "is the expiration date\n";
+}
+
+void PetCat::CatCollar::attachLeash()
+{
+    std::cout << "Now attaching leash...\n";
+    
+    if(isWaterProof == true)
+    {
+        std::cout << "don't be afraid to get a little wet\n";  
+    }
+}
+
+int PetCat::CatCollar::tightenCollar(int bucklePosition)
+{ 
+    if(hasCollarBuckle == true && bucklePosition <= numOfHolesForBuckle)
+    {
+        --bucklePosition;
+        std::cout << "collar has been tightened\n";
+    }
+    std::cout << "This collar only has " << numOfHolesForBuckle << " please inut a whole number smaller or equal to that\n";
+    
+    return bucklePosition;
 }
 
 PetCat::PetCat()
@@ -582,6 +600,8 @@ int main()
 
     PetCat::CatCollar friscoBreakaway;
     friscoBreakaway.repelFleas(10, "12/12/2012");
+    friscoBreakaway.attachLeash();
+    friscoBreakaway.tightenCollar(3);
     
     PetCat doris;
     doris.knockOverObjects();
