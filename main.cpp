@@ -179,7 +179,6 @@ void MassageChair::playBackgroundSound()
 double MassageChair::displayTimer(double msgDuration)
 {
     std::cout << "now counting down from " << msgDuration << "minuntes\n";
-    
     return msgDuration;
 }
 
@@ -281,7 +280,6 @@ int PetCat::CatCollar::tightenCollar(int bucklePosition)
         std::cout << "collar has been tightened\n";
     }
     std::cout << "This collar only has " << numOfHolesForBuckle << " please inut a whole number smaller or equal to that\n";
-    
     return bucklePosition;
 }
 
@@ -298,12 +296,12 @@ void PetCat::takeOffCollar(CatCollar newCollar)
 
 void PetCat::knockOverObjects()
 {
-    std::cout << "Your cat has knock over an Object\n";
+    std::cout << nameOfPetCat << " has knock over an Object\n";
 }
 
 void PetCat::scratchVisitors()
 {
-    std::cout << "You cat has scratched a visitor\n";
+    std::cout << nameOfPetCat << " has scratched a visitor\n";
 }
 
 struct Human
@@ -325,7 +323,7 @@ struct Human
         HealthStatus();
 
         void contractSTD(std::string whichSTD, std::string dateContracted);
-        void developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName);
+        void developeHealthCondition(bool isHereditary, std::string knownSymptoms, std::string conditionName);
         void scheduleCheckUp(std::string returnDate, bool sameDoctor);
     };
 
@@ -349,14 +347,15 @@ Human::Human()
 
 void Human::HealthStatus::contractSTD(std::string whichSTD, std::string dateContracted)
 {
-    std::cout << "Your tested positive for the folling STD" << whichSTD << "which was contracted on" << dateContracted <<" \n";
+    std::cout << "Your tested positive for the folling STD " << whichSTD << " which was contracted on" << dateContracted <<" \n";
 }
 
-void Human::HealthStatus::developeHealthCondition(bool isHeredity, std::string knownSymptoms, std::string conditionName)
+void Human::HealthStatus::developeHealthCondition(bool isHereditary, std::string knownSymptoms, std::string conditionName)
 {
-    isHeredity = true;
-    knownSymptoms = "None";
-    conditionName = "N/A";
+    std::cout << "You have noticed having" << knownSymptoms << " \n";
+    std::cout << "which are symptoms of " << conditionName << " \n";
+    
+    if(isHereditary == true) std::cout << "this condition is hereditary";
 }
 
 void Human::HealthStatus::scheduleCheckUp(std::string returnDate, bool sameDoctor)
@@ -367,14 +366,18 @@ void Human::HealthStatus::scheduleCheckUp(std::string returnDate, bool sameDocto
 
 void Human::visitDoctor(HealthStatus updateHealthStatus)
 {
-    updateHealthStatus.contractSTD("STD Name", "Day/Month/Year");
-    
+    //I would ideally update all the member variables of HealthStatus here with std::cin's.
+    std::cout << "Blood Pressure: " << updateHealthStatus.bloodPressureLevel << " \n";
+    std::cout << "Body Mass Index: " << updateHealthStatus.bodyMassIndex << " \n";
+    std::cout << "Chronic Diseases Present: " << updateHealthStatus.chronicDiseasesPresent << " \n";
+    std::cout << "Date Of Last Check-Up: " << updateHealthStatus.dateOfLastCheckup << " \n";
+    std::cout << "Number of Complications: " << updateHealthStatus.numOfHealthComplications << " \n";
+    //here I would replace dateOfLastCheckup with todays date.
 }
 
 void Human::goToSleep(int howLong)
 {
-    howLong = 8; //in hours 
-    std::cout << nameOfHuman << "is going to get " << howLong << "hours of sleep!\n";
+    std::cout << nameOfHuman << " is going to get " << howLong << " hours of sleep!\n";
 }
 
 void Human::donateBlood(bool giveLeftArm)
@@ -411,12 +414,19 @@ SocialStatus::SocialStatus()
 
 void SocialStatus::attractMoreFriends(bool rejectNewFriend)
 {
-    rejectNewFriend = false;
+    if(rejectNewFriend == false) 
+    {
+        std::cout << "you now have 1 new friend added to your network!\n";
+    }
+    else
+    {
+        std::cout << "NO NEW FRIENDS!!\n";
+    }
 }
 
 void SocialStatus::getExclusiveDeals()
 {
-    std::cout << "because of your" << netWorth << " net worth you are entitled to exclusive deals\n";
+    std::cout << "because of your " << netWorth << " net worth you are entitled to exclusive deals\n";
 }
 
 void SocialStatus::bypassSocietalNorms()
@@ -529,6 +539,7 @@ void Home::addRoomToHouse()
 
 std::string Home::deteriorateOverTime(std::string brokenItem)
 {
+    std::cout << brokenItem << " is broken, replace it now.\n";
     return brokenItem;
 }
 
@@ -544,7 +555,7 @@ struct Girlfriend
 
     std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
     void presentIdeas(Human girlfriend);
-    bool buildFurniture (bool carpetrySkills, Education tradeschool); //returns true based on EducationLevel
+    bool buildFurniture (Human girlfriend, bool carpetrySkills);
 };
 
 Girlfriend::Girlfriend()
@@ -566,14 +577,14 @@ void Girlfriend::presentIdeas(Human girlfriend)
     std::cout << girlfriend.nameOfHuman << " has an interesting proposal you should consider\n"; 
 }
 
-bool Girlfriend::buildFurniture (bool carpetrySkills, Education tradeschool)
+bool Girlfriend::buildFurniture (Human girlfriend, bool carpetrySkills)
 {
-    carpetrySkills = false;
-    tradeschool.numOfYearsAttended = 0;
-    tradeschool.mostRecentSchool = "N/A";
-    tradeschool.highestDegreeAttained = "N/A";
-    tradeschool.positionInClass = 0;
-    tradeschool.subjectMajor = "N/A";
+    if(carpetrySkills == true)
+    {
+        std::cout << girlfriend.nameOfHuman << "can build whatever you need.\n";
+        return true;
+    }
+    std::cout << girlfriend.nameOfHuman << " cannot build you furniture.\n";
     return false;
 }
 
@@ -640,7 +651,7 @@ int main()
     residence.deteriorateOverTime("roofing");
 
     Girlfriend babe;
-    babe.buildFurniture(false, graphicDesigner);
+    babe.buildFurniture(julianneCabour, false);
     babe.presentIdeas(julianneCabour);
     babe.planDinnerDate("Arbys", "05/08/2023", "07:30");
 
