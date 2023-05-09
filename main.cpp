@@ -60,9 +60,9 @@ struct Foo
 int main()
 {
     Foo foo;
-    auto bar = foo.scopeLifetimeFunc(3, 1);        //3) 
+    auto bar = foo.scopeLifetimeFunc(3, 1);        //3)  
     
-    std::cout << "bar.num: " << bar.num << std::endl;     //4) 
+    std::cout << "bar.num: " << bar.num << std::endl;     //4)  
     return 0;
 }
 }
