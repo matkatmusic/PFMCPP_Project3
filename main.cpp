@@ -101,7 +101,6 @@ void Television::changeDisplaySettings()
     {
         std::cout << "Inavlid Selection \n";
     }
-
     std::cout << displaySetting << " Selected\n";
 }
 
@@ -150,7 +149,6 @@ void MassageChair::giveMassage(bool startMassage)
     {
         std::cout << "Please remove shoes, and relax!!\n";
     }
-    
     std::cout << "No Massage For You!\n";
 }
 
@@ -597,20 +595,23 @@ void Education::printEducationVars()
 
 struct Home
 {
-    int numOfRooms = 5;
-    double propertySize = 1373.56;
+    int numOfRooms;
+    double propertySize;
     std::string homeAddress = "123 Main St, Orange Grove CA, 34567";
-    double propertyValue = 375400;
-    int numOfAppliances = 10;
+    double propertyValue {375400.00};
+    int numOfAppliances {10};
 
     Home();
 
     void appreaciateInValue();
     void addRoomToHouse();
     std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
+    void printHomeVars();
 };
 
-Home::Home()
+Home::Home() :
+numOfRooms(5),
+propertySize(1373.56)
 {
     std::cout << "Home being constructed!" << std::endl;
 }
@@ -630,6 +631,15 @@ std::string Home::deteriorateOverTime(std::string brokenItem)
 {
     std::cout << brokenItem << " is broken, replace it now.\n";
     return brokenItem;
+}
+
+void Home::printHomeVars()
+{
+    std::cout << "numOfRooms: " << numOfRooms << " \n";
+    std::cout << "propertySize: " << propertySize << " \n";
+    std::cout << "homeAddress: " << homeAddress << "\n";
+    std::cout << "propertyValue:  " << propertyValue << "\n";
+    std::cout << "numOfAppliances: " << numOfAppliances << "\n\n"; 
 }
 
 struct Girlfriend
@@ -747,6 +757,7 @@ int main()
     residence.addRoomToHouse();
     residence.appreaciateInValue();
     residence.deteriorateOverTime("roofing");
+    residence.printHomeVars();
 
     Girlfriend babe;
     babe.buildFurniture(julianneCabour, false);
