@@ -42,13 +42,19 @@ int main()
 
 struct Television
 {
-    float levelOfVolume = 50.f;
+    float levelOfVolume;
     double levelOfBrightness = 87.56;
-    int numOfScreenModes = 6;
+    int numOfScreenModes;
     std::string televisionManufacturer = "Samsung";
-    int numOfInputs = 4;
+    int numOfInputs;
 
-    Television();
+    Television() : 
+    numOfScreenModes(6),
+    levelOfVolume(50.f),
+    numOfInputs(4)
+    {
+        
+    }
 
     int increaseVolume(int decibelOutput); //returns decibel volume ++
     void changeDisplaySettings();
