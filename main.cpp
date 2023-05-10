@@ -80,6 +80,7 @@ struct Television
     int numOfScreenModes;
     std::string televisionManufacturer = "Samsung";
     int numOfInputs;
+    int numOfChannels {200};
 
     Television();
 
@@ -87,6 +88,14 @@ struct Television
     void changeDisplaySettings();
     int decreaseBrightness(int nitOutput); // returns nit value --
     void printTelevisionVars();
+    int changeTheChannel(int channelNum)
+    {
+        for(int i = channelNum; i < numOfChannels; ++i)
+        {
+            std::cout << "Now watching Channel: " << i << " \n";
+        }
+        return channelNum;
+    }
 };
 
 Television::Television() : 
