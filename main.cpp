@@ -611,6 +611,22 @@ struct SocialStatus
     void attractMoreFriends(bool rejectNewFriend);
     void getExclusiveDeals();
     void bypassSocietalNorms();
+    double capitalGainsFromInvestment(double moneyInvested, int forHowLong)
+    {
+        std::cout << "your current balance before the investment is: " << netWorth << " \n";
+        double interest = moneyInvested * 0.12;
+        int investmentTerm = 0;
+        
+        while(investmentTerm < forHowLong)
+        {
+            moneyInvested += interest;
+            std::cout << moneyInvested << " added to your bank account\n";
+            netWorth += moneyInvested;
+            ++investmentTerm;
+        }
+        std::cout << "your new balance is: " << netWorth << " \n";
+        return netWorth;
+    }
     void printSocialStatusVars();
 };
 
@@ -897,10 +913,11 @@ int main()
     julianneCabour.visitDoctor(may5thUpdate);
     julianneCabour.printHumanVars();
 
-    SocialStatus upperClass;
+    SocialStatus upperClass; //done
     upperClass.attractMoreFriends(false);
     upperClass.bypassSocietalNorms();
     upperClass.getExclusiveDeals();
+    upperClass.capitalGainsFromInvestment(100, 10);
     upperClass.printSocialStatusVars();
 
     PhysicalAttribrutes weak;
