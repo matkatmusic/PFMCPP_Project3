@@ -321,6 +321,7 @@ struct PetCat
     int ageOfCat;
     std::string nameOfPetCat;
     bool maleGender;
+    bool catHungry = true;
 
     struct CatCollar
     {
@@ -329,6 +330,7 @@ struct PetCat
         bool isWaterProof = true;
         bool hasCollarBuckle;
         int numOfHolesForBuckle;
+        int leashLength;
 
         CatCollar();
 
@@ -336,6 +338,21 @@ struct PetCat
         void attachLeash();
         int tightenCollar(int bucklePosition);
         void printCatCollarVars();
+        int leashExtend(int desiredLength)
+        {
+            if(desiredLength > leashLength)
+            {
+                std::cout << "leash isn't that long!\n";
+            }
+            else
+            {
+                for(int i = 0; i < desiredLength; ++i)
+                {
+                    std::cout << "extending to " << i << " \n";
+                }
+            }
+            return desiredLength;
+        }
     };
 
     PetCat();
@@ -345,11 +362,31 @@ struct PetCat
     void scratchVisitors();
     CatCollar replacementCollar;
     void printPetCatVars();
+    void catEatFood()
+    {
+        int nomNomNom = 0;
+        
+        if(catHungry == true)
+        {
+            while(catHungry == true && nomNomNom <= 3)
+            {
+                ++nomNomNom;
+                std::cout << "nom nom nom... im still hungry!\n";
+                
+                if(nomNomNom > 3)
+                {
+                    std::cout << "Meow... I'm Full now.\n";
+                    catHungry = false;
+                }   
+            }
+        }
+    }
 };
 
 PetCat::CatCollar::CatCollar() :
 hasCollarBuckle(true),
-numOfHolesForBuckle(4)
+numOfHolesForBuckle(4),
+leashLength(10)
 {
     std::cout << "CatCollar is being constructed!" << std::endl; 
 }
@@ -377,7 +414,10 @@ int PetCat::CatCollar::tightenCollar(int bucklePosition)
         --bucklePosition;
         std::cout << "collar has been tightened\n";
     }
-    std::cout << "This collar only has " << numOfHolesForBuckle << " please inut a whole number smaller or equal to that\n";
+    else
+    {
+        std::cout << "This collar only has " << numOfHolesForBuckle << " please inut a whole number smaller or equal to that\n";
+    }
     return bucklePosition;
 }
 
@@ -811,12 +851,14 @@ int main()
     friscoBreakaway.repelFleas(10, "12/12/2012");
     friscoBreakaway.attachLeash();
     friscoBreakaway.tightenCollar(3);
+    friscoBreakaway.leashExtend(11);
     friscoBreakaway.printCatCollarVars();
     
     PetCat doris;
     doris.knockOverObjects();
     doris.scratchVisitors();
     doris.takeOffCollar(friscoBreakaway);
+    doris.catEatFood();
     doris.printPetCatVars();
     
     Human::HealthStatus may5thUpdate;
