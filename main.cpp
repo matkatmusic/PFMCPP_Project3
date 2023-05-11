@@ -71,8 +71,6 @@ int main()
 
 
 
-
-
 struct Television
 {
     float levelOfVolume;
@@ -471,11 +469,13 @@ struct Human
     std::string ethnicity = "Black/African American";
     int dateOfBirth;
     std::string bloodType;
+    int amountOfBlood;
 
     struct HealthStatus
     {
         int numOfHealthComplications {0};
         bool chronicDiseasesPresent {false};
+        bool goToAppointment = false;
         std::string dateOfLastCheckup = "23 Feburary 2022";
         float bodyMassIndex;
         std::string bloodPressureLevel;
@@ -486,13 +486,24 @@ struct Human
         void developeHealthCondition(bool isHereditary, std::string knownSymptoms, std::string conditionName);
         void scheduleCheckUp(std::string returnDate, bool sameDoctor);
         void printHealthStatusVars();
+        int countdownNextVisit(int daysSinceLastVisit)
+        {
+            int daysLeft = 365 - daysSinceLastVisit;
+            
+            for(int i = daysLeft; i > 0; --i)
+            {
+                std::cout << i << " days left until next visit\n";
+            }
+            goToAppointment = true;
+            return daysLeft;
+        }
     };
 
     Human();
 
     void visitDoctor(HealthStatus updateHealthStatus);
     void goToSleep(int howLong);
-    void donateBlood(bool giveLeftArm);
+    void donateBlood(Human girlfriend, bool giveLeftArm);
     HealthStatus healthStatus;
     void printHumanVars();
 };
@@ -506,7 +517,8 @@ bloodPressureLevel("120/83 mmHg")
 
 Human::Human() :
 dateOfBirth(12181989),
-bloodType("O Negative")
+bloodType("O Negative"),
+amountOfBlood(5000) //mL
 {
     std::cout << "Human being constructed!" << std::endl;
 }
@@ -548,6 +560,7 @@ void Human::visitDoctor(HealthStatus updateHealthStatus)
     std::cout << "Date Of Last Check-Up: " << updateHealthStatus.dateOfLastCheckup << " \n";
     std::cout << "Number of Complications: " << updateHealthStatus.numOfHealthComplications << " \n";
     //here I would replace dateOfLastCheckup with todays date.
+    updateHealthStatus.goToAppointment = false;
 }
 
 void Human::goToSleep(int howLong)
@@ -555,7 +568,7 @@ void Human::goToSleep(int howLong)
     std::cout << nameOfHuman << " is going to get " << howLong << " hours of sleep!\n";
 }
 
-void Human::donateBlood(bool giveLeftArm)
+void Human::donateBlood(Human girlfriend, bool giveLeftArm)
 {
     if(giveLeftArm == true)
     {
@@ -565,6 +578,15 @@ void Human::donateBlood(bool giveLeftArm)
     {
         std::cout << "you have decided to donate from your right arm\n";
     }
+    int bloodDonated = 0;
+    
+    while(bloodDonated < 500 || girlfriend.amountOfBlood < 4000)
+    {
+        bloodDonated += 100;
+        girlfriend.amountOfBlood -= 100;
+        std::cout << "still donating: " << bloodDonated << "/500... hang in there.\n";
+    }
+    std::cout << "all done, go home\n";
 }
 
 void Human::printHumanVars()
@@ -829,7 +851,7 @@ int main()
     samsung.decreaseBrightness(98);
     samsung.changeDisplaySettings();
     samsung.increaseVolume(37);
-    samsung.scanForChannels(197);
+    samsung.scanForChannels(191);
     samsung.printTelevisionVars();
 
     MassageChair osakiOS4000T; //done
@@ -838,39 +860,40 @@ int main()
     osakiOS4000T.playBackgroundSound();
     osakiOS4000T.printMassageChairVars();
 
-    CollegeStudent rickSanchez;
+    CollegeStudent rickSanchez; //done
     rickSanchez.studentName = "Rick Sanchez";
     rickSanchez.booksRead = 0;
     rickSanchez.attendStudyHall();
     rickSanchez.danceToMusic();
     rickSanchez.watchTelevision(rickSanchez);
-    rickSanchez.readBook(3);
+    rickSanchez.readBook(10);
     rickSanchez.printCollegeStudent();
 
-    PetCat::CatCollar friscoBreakaway;
+    PetCat::CatCollar friscoBreakaway; //done
     friscoBreakaway.repelFleas(10, "12/12/2012");
     friscoBreakaway.attachLeash();
     friscoBreakaway.tightenCollar(3);
-    friscoBreakaway.leashExtend(11);
+    friscoBreakaway.leashExtend(8);
     friscoBreakaway.printCatCollarVars();
     
-    PetCat doris;
+    PetCat doris; //done
     doris.knockOverObjects();
     doris.scratchVisitors();
     doris.takeOffCollar(friscoBreakaway);
     doris.catEatFood();
     doris.printPetCatVars();
     
-    Human::HealthStatus may5thUpdate;
+    Human::HealthStatus may5thUpdate; //done
     may5thUpdate.contractSTD("Cold Sore", "10/28/2021");
     may5thUpdate.developeHealthCondition(false, "small blisters around body", "chickenpox");
     may5thUpdate.scheduleCheckUp("11/22/2024", true);
+    may5thUpdate.countdownNextVisit(355);
     may5thUpdate.printHealthStatusVars();
 
-    Human julianneCabour;
+    Human julianneCabour; //done
     julianneCabour.nameOfHuman = "Julianne Cabour";
     julianneCabour.goToSleep(10);
-    julianneCabour.donateBlood(false);
+    julianneCabour.donateBlood(julianneCabour, false);
     julianneCabour.visitDoctor(may5thUpdate);
     julianneCabour.printHumanVars();
 
@@ -905,6 +928,5 @@ int main()
 
     std::cout << "home address: " << residence.homeAddress << "\n";
     std::cout << "Social Status Occupation: " << upperClass.occupation << "\n";
-    
     std::cout << "good to go!" << std::endl;
 }
