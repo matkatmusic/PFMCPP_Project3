@@ -748,6 +748,16 @@ struct Education
     std::string addDegree(std::string newestDegree); //returns newly added degree
     void dropOutOfSchool();
     std::string changeMajor(std::string whichMajor, std::string degreeLevel); //returns options for majors in accordance with associated degree level
+    void attainNewDegree(int howLongIsProgram, Education moreEducation)
+    {
+        for(int yrsComplete = 0; yrsComplete <= howLongIsProgram; ++yrsComplete)
+        {
+            int yrsLeft = howLongIsProgram - yrsComplete;
+            std::cout << "you've completed " << yrsComplete << " you have " << yrsLeft << " until program is complete\n";
+            ++moreEducation.numOfYearsAttended;
+        }
+        std::cout << "New degree compelete!\n";
+    }
     void printEducationVars();
 };
 
@@ -788,12 +798,14 @@ struct Home
     int numOfRooms;
     double propertySize;
     std::string homeAddress = "123 Main St, Orange Grove CA, 34567";
+    std::string homeColor = "New Color";
     double propertyValue {375400.00};
     int numOfAppliances {10};
 
     Home();
 
     void appreaciateInValue();
+    std::string newPaintColor(std::string whatColor);
     void addRoomToHouse();
     std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
     void printHomeVars();
@@ -804,6 +816,12 @@ numOfRooms(5),
 propertySize(1373.56)
 {
     std::cout << "Home being constructed!" << std::endl;
+}
+
+std::string Home::newPaintColor(std::string whatColor)
+{
+    homeColor = whatColor;
+    return whatColor;
 }
 
 void Home::appreaciateInValue()
@@ -947,16 +965,18 @@ int main()
     weak.hitPuberty(julianneCabour, weak);
     weak.printPhysicalAttribrutesVars();
     
-    Education graphicDesigner;
+    Education graphicDesigner; //done
     graphicDesigner.changeMajor("Business", "BA");
     graphicDesigner.addDegree("Computer Science");
     graphicDesigner.dropOutOfSchool();
+    graphicDesigner.attainNewDegree(6, graphicDesigner);
     graphicDesigner.printEducationVars();
 
     Home residence;
     residence.addRoomToHouse();
     residence.appreaciateInValue();
     residence.deteriorateOverTime("roofing");
+    residence.newPaintColor("white");
     residence.printHomeVars();
 
     Girlfriend babe;
