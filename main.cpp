@@ -692,14 +692,12 @@ struct PhysicalAttribrutes
                 newPhysAtt.currentHeight += 0.1f;
                 std::cout << "you grew to " << newPhysAtt.currentHeight << " wow you're getting tall!\n";
             }
-            return newPhysAtt.currentHeight;
         }
         else
         {
             std::cout << "you are to old to go through puberty\n";
-            return newPhysAtt.currentHeight;
         }
-        
+        return newPhysAtt.currentHeight;
     }
 };
 
