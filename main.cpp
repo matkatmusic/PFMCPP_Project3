@@ -90,7 +90,7 @@ struct Television
     {
         for(int i = channelNumStart; i < numOfChannels; ++i)
         {
-            std::cout << "Now watching Channel: " << i << " \n";
+            std::cout << "Discovered Channel: " << i << " \n";
         }
         return channelNumStart;
     }
@@ -470,6 +470,7 @@ struct Human
     int dateOfBirth;
     std::string bloodType;
     int amountOfBlood;
+    bool isAngry = false;
 
     struct HealthStatus
     {
@@ -867,6 +868,27 @@ struct Girlfriend
     std::string planDinnerDate(std::string whatRestaurant, std::string whenToGo, std::string whatTime); //should return prompt controlled by if statements
     void presentIdeas(Human girlfriend);
     bool buildFurniture (Human girlfriend, bool carpetrySkills);
+    int bringUpIssue(Human girlfriend, int timesAsked, std::string issueName)
+    {
+        while(timesAsked < 3)
+        {
+            girlfriend.isAngry = false;
+            std::cout << "hey just reminding you to address the " << issueName << " \n";
+            ++timesAsked;
+        }
+        while(timesAsked < 10)
+        {
+            girlfriend.isAngry = true;
+            std::cout << "Are you even going to do anything about the " << issueName << " \n";
+            ++timesAsked;
+        }
+        if(timesAsked > 10)
+        {
+            std::cout << "I give up, Im not wasting my energy...\n";
+            girlfriend.isAngry = false;
+        }
+        return timesAsked;
+    }
 };
 
 Girlfriend::Girlfriend()
@@ -976,17 +998,18 @@ int main()
     graphicDesigner.attainNewDegree(6, graphicDesigner);
     graphicDesigner.printEducationVars();
 
-    Home residence;
+    Home residence; //done
     residence.addRoomToHouse();
     residence.appreaciateInValue(5);
     residence.deteriorateOverTime("roofing");
     residence.newPaintColor("white");
     residence.printHomeVars();
 
-    Girlfriend babe;
+    Girlfriend babe; //done
     babe.buildFurniture(julianneCabour, false);
     babe.presentIdeas(julianneCabour);
     babe.planDinnerDate("Arbys", "05/08/2023", "07:30");
+    babe.bringUpIssue(julianneCabour, 1, "oil change");
 
     std::cout << "home address: " << residence.homeAddress << "\n";
     std::cout << "Social Status Occupation: " << upperClass.occupation << "\n";
