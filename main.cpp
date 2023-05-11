@@ -804,7 +804,7 @@ struct Home
 
     Home();
 
-    void appreaciateInValue();
+    void appreaciateInValue(int years);
     std::string newPaintColor(std::string whatColor);
     void addRoomToHouse();
     std::string deteriorateOverTime(std::string brokenItem); //display what needs to be fixed.
@@ -824,9 +824,13 @@ std::string Home::newPaintColor(std::string whatColor)
     return whatColor;
 }
 
-void Home::appreaciateInValue()
+void Home::appreaciateInValue(int years)
 {
-    
+    for(int i = 0; i < years; ++i)
+    {
+        propertyValue += 10560.95;
+        std::cout << "your home's value went up to" << propertyValue << " \n";
+    }
 }
 
 void Home::addRoomToHouse()
@@ -974,7 +978,7 @@ int main()
 
     Home residence;
     residence.addRoomToHouse();
-    residence.appreaciateInValue();
+    residence.appreaciateInValue(5);
     residence.deteriorateOverTime("roofing");
     residence.newPaintColor("white");
     residence.printHomeVars();
