@@ -88,13 +88,13 @@ struct Television
     void changeDisplaySettings();
     int decreaseBrightness(int nitOutput); // returns nit value --
     void printTelevisionVars();
-    int changeTheChannel(int channelNum)
+    int scanForChannels(int channelNumStart)
     {
-        for(int i = channelNum; i < numOfChannels; ++i)
+        for(int i = channelNumStart; i < numOfChannels; ++i)
         {
             std::cout << "Now watching Channel: " << i << " \n";
         }
-        return channelNum;
+        return channelNumStart;
     }
 };
 
@@ -174,8 +174,18 @@ struct MassageChair
 
     void giveMassage(bool startMassage);
     void playBackgroundSound(); 
-    double displayTimer(double msgDuration); // displays how much time is left on massage.
+    int displayTimer(int msgDuration); // displays how much time is left on massage.
     void printMassageChairVars();
+    bool startVibration(bool startMassage)
+    {
+        startMassage == false ? std::cout << "would you like to start a massage?\n" : std::cout <<  "starting\n";
+        while(startMassage == true)
+        {
+            --massageDuration;
+            massageDuration < 0.1 ? startMassage = false : startMassage = true;
+        }
+        return startMassage;
+    }  
 };
 
 MassageChair::MassageChair() :
@@ -191,7 +201,10 @@ void MassageChair::giveMassage(bool startMassage)
     {
         std::cout << "Please remove shoes, and relax!!\n";
     }
-    std::cout << "No Massage For You!\n";
+    else
+    {
+        std::cout << "No Massage For You!\n";
+    }
 }
 
 void MassageChair::playBackgroundSound()
@@ -199,9 +212,32 @@ void MassageChair::playBackgroundSound()
     std::cout << "Now playing! \n";
 }
 
-double MassageChair::displayTimer(double msgDuration)
+int MassageChair::displayTimer(int msgDuration)
 {
     std::cout << "now counting down from " << msgDuration << "minuntes\n";
+    int secs = 60, mins = msgDuration;
+    
+    while(mins >= 0)
+    {
+        --secs;
+        
+        if(mins > 0 && secs == 0)
+        {
+            --mins;
+            secs += 60;
+            
+            while(mins == 0 && secs > 0)
+            {
+                --secs;
+            }
+        }
+        else if(mins == 0 && secs < 0)
+        {
+            std::cout << "Massage Complete\n";
+            break;
+        }
+        std::cout << mins << " : " << secs << "\n";
+    }
     return msgDuration;
 }
 
@@ -218,6 +254,7 @@ struct CollegeStudent
 {
     int numOfEnrolledClasses {7};
     double gpa {3.64};
+    int booksRead = 0;
     std::string studentName = "Student's Name";
     std::string subjectMajor;
     std::string expectedGraduationDate;
@@ -228,6 +265,21 @@ struct CollegeStudent
     void watchTelevision(CollegeStudent newStudent);
     void danceToMusic();
     void printCollegeStudent();
+    int readBook(int totalPages)
+    {
+        for(int i = 1; i <= totalPages; ++i)
+        {
+            std::cout << "Page " << i << " complete\n";
+            
+            if(i == totalPages)
+            {
+                std::cout << "book complete\n";
+                ++booksRead;
+            }
+        }
+        std::cout << "congratulations!! you have finished book number: " << booksRead << " \n";
+        return booksRead;   
+    }
 };
 
 CollegeStudent::CollegeStudent() :
@@ -733,23 +785,26 @@ int main()
 {
     Example::main();
 
-    Television samsung;
+    Television samsung; //done
     samsung.decreaseBrightness(98);
     samsung.changeDisplaySettings();
     samsung.increaseVolume(37);
+    samsung.scanForChannels(197);
     samsung.printTelevisionVars();
 
-    MassageChair osakiOS4000T;
+    MassageChair osakiOS4000T; //done
     osakiOS4000T.giveMassage(true);
-    osakiOS4000T.displayTimer(60.00);
+    osakiOS4000T.displayTimer(1);
     osakiOS4000T.playBackgroundSound();
     osakiOS4000T.printMassageChairVars();
 
     CollegeStudent rickSanchez;
     rickSanchez.studentName = "Rick Sanchez";
+    rickSanchez.booksRead = 0;
     rickSanchez.attendStudyHall();
     rickSanchez.danceToMusic();
     rickSanchez.watchTelevision(rickSanchez);
+    rickSanchez.readBook(3);
     rickSanchez.printCollegeStudent();
 
     PetCat::CatCollar friscoBreakaway;
