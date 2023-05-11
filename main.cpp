@@ -672,7 +672,7 @@ struct PhysicalAttribrutes
 {
     int amountOfLimbs {4};
     std::string currentEyeColor {"brown"};
-    float currentHieght = 5.7f;
+    float currentHeight = 4.7f;
     float currentWeight;
     std::string currentHairColor;
 
@@ -682,6 +682,24 @@ struct PhysicalAttribrutes
     float increaseWeight(float addedPounds); //returns current weight + amount of lbs added.
     void loseLimb();
     void printPhysicalAttribrutesVars();
+    float hitPuberty(Human newHuman, PhysicalAttribrutes newPhysAtt)
+    {
+        if(newHuman.ageInYears < 16)
+        {
+            while(newPhysAtt.currentHeight <= 5.0f)
+            {
+                newPhysAtt.currentHeight += 0.1f;
+                std::cout << "you grew to " << newPhysAtt.currentHeight << " wow you're getting tall!\n";
+            }
+            return newPhysAtt.currentHeight;
+        }
+        else
+        {
+            std::cout << "you are to old to go through puberty\n";
+            return newPhysAtt.currentHeight;
+        }
+        
+    }
 };
 
 PhysicalAttribrutes::PhysicalAttribrutes() :
@@ -712,7 +730,7 @@ void PhysicalAttribrutes::printPhysicalAttribrutesVars()
 {
     std::cout << "amountOfLimbs: " << amountOfLimbs << " \n";
     std::cout << "currentEyeColor: " << currentEyeColor << " \n";
-    std::cout << "currentHieght: " << currentHieght << "\n";
+    std::cout << "currentHeight: " << currentHeight << "\n";
     std::cout << "currentWeight:  " << currentWeight << "\n";
     std::cout << "currentHairColor: " << currentHairColor << "\n\n";  
 }
@@ -908,6 +926,7 @@ int main()
 
     Human julianneCabour; //done
     julianneCabour.nameOfHuman = "Julianne Cabour";
+    julianneCabour.ageInYears = 13;
     julianneCabour.goToSleep(10);
     julianneCabour.donateBlood(julianneCabour, false);
     julianneCabour.visitDoctor(may5thUpdate);
@@ -920,10 +939,12 @@ int main()
     upperClass.capitalGainsFromInvestment(100, 10);
     upperClass.printSocialStatusVars();
 
-    PhysicalAttribrutes weak;
+    PhysicalAttribrutes weak; //done
+    weak.currentHeight = 4.9f;
     weak.increaseWeight(7.0);
     weak.loseLimb();
     weak.selectHairColor("Purple");
+    weak.hitPuberty(julianneCabour, weak);
     weak.printPhysicalAttribrutesVars();
     
     Education graphicDesigner;
