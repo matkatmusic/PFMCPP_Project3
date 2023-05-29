@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) Grocery Store
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of employees
+    2) amount of groceries sold per week
+    3) amount of profit made per week
+    4) number of shopping carts
+    5) number of square feet
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide groceries
+    2) charge customer
+    3) bag groceries
 
-Thing 2)
+Thing 2) Airplane
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of seats
+    2) number of engines
+    3) number of flights per week
+    4) amount of fuel used per week
+    5) number of customers flown per week
 3 things it can do:
-    1)
-    2)
-    3)
+    1) fly customer
+    2) take off
+    3) land
 
-Thing 3)
+Thing 3) laptop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of keys
+    2) screen resolution
+    3) size of screen
+    4) cpu speed
+    5) amount of memory
 3 things it can do:
-    1)
-    2)
-    3)
+    1) play music
+    2) solve calculations
+    3) play movies
 
-Thing 4)
+Thing 4) refrigerator
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of shelves
+    2) interior size in sq. inches
+    3) color
+    4) amount of electricity used
+    5) loudness in decibels
 3 things it can do:
-    1)
-    2)
-    3)
+    1) keep food cold
+    2) keep food frozen
+    3) make ice
 */
 
 /*
