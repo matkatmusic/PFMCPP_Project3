@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) Grocery Store
-5 properties:
-    1) number of employees (int)
-    2) amount of groceries sold per week (float)
-    3) amount of profit made per week (float)
-    4) number of shopping carts (int)
-    5) number of square feet (float)
-3 things it can do:
-    1) provide groceries
-    2) charge customer
-    3) bag groceries
 
-Thing 2) Airplane
-5 properties:
-    1) number of seats (int)
-    2) number of engines (int)
-    3) number of flights per week (int)
-    4) amount of fuel used per week (flot)
-    5) number of customers flown per week (int)
-3 things it can do:
-    1) fly customer
-    2) take off
-    3) land
-
-Thing 3) laptop
-5 properties:
-    1) number of keys (int)
-    2) screen resolution (int)
-    3) size of screen (int)
-    4) cpu speed (int)
-    5) amount of memory (int)
-3 things it can do:
-    1) play music
-    2) solve calculations
-    3) play movies
-
-Thing 4) refrigerator
-5 properties:
-    1) number of shelves (int)
-    2) interior size in sq. inches (float)
-    3) color (std::string)
-    4) amount of electricity used (float)
-    5) loudness in decibels (float)
-3 things it can do:
-    1) keep food cold
-    2) keep food frozen
-    3) make ice
 */
 
 /*
@@ -337,17 +291,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Laptop
-5 properties:
-    1) Keyboard
-    2) Speakers
-    3) Display
-    4) CPU
-    5) Memory
-3 things it can do:
-    1) play audio
-    2) play video
-    3) run an application
+
  */
 
  /*
@@ -421,9 +365,7 @@ Display:
 
 As you can see, the 'Display' UDT has been broken down to the 
 point of being able to describe it with C++ primitives. 
-*/
 
-/*
 ===================
 Part 1d - Step 2: Assignment
 ===================
@@ -434,65 +376,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5) Keyboard
-5 properties:
-    1) key height mm
-    2) key travel mm
-    3) backlit
-    4) number pad
-    5) touchbar
-3 things it can do:
-    1) illuminate
-    2) enter data
-    3) control audio
 
-Thing 6) Speakers
-5 properties:
-    1) number of speakers
-    2) frequency response
-    3) maximum volume before distortion
-    4) size of speakers
-    5) shape of speakers
-3 things it can do:
-    1) play music
-    2) sound alerts
-    3) increase/decrease volume
-
-Thing 7) Display
-5 properties:
-    1) number of pixels
-    2) refresh rate
-    3) size width
-    4) size height
-    5) brand
-3 things it can do:
-    1) change brightness
-    2) change resolution
-    3) turn pixels on and off
-
-Thing 8) CPU
-5 properties:
-    1) speed in hz
-    2) number of cores
-    3) brand
-    4) power consumed
-    5) amount of cache
-3 things it can do:
-    1) perform calculations
-    2) consume energy
-    3) create heat
-
-Thing 9) Memory
-5 properties:
-    1) amount in gb
-    2) number of dimms
-    3) price
-    4) brand
-    5) size
-3 things it can do:
-    1) store user data
-    2) consume energy
-    3) store machine data
  */
 
 /*
@@ -544,13 +428,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+/*
 
+Thing 1) Grocery Store
+5 properties:
+    1) number of employees (int)
+    2) amount of groceries sold per week (float)
+    3) amount of profit made per week (float)
+    4) number of shopping carts (int)
+    5) number of square feet (float)
+3 things it can do:
+    1) provide groceries
+    2) charge customer
+    3) bag groceries
 
+Thing 2) Airplane
+5 properties:
+    1) number of seats (int)
+    2) number of engines (int)
+    3) number of flights per week (int)
+    4) amount of fuel used per week (flot)
+    5) number of customers flown per week (int)
+3 things it can do:
+    1) fly customer
+    2) take off
+    3) land
 
+Thing 3) laptop
+5 properties:
+    1) number of keys (int)
+    2) screen resolution (int)
+    3) size of screen (int)
+    4) cpu speed (int)
+    5) amount of memory (int)
+3 things it can do:
+    1) play music
+    2) solve calculations
+    3) play movies
 
+Thing 4) refrigerator
+5 properties:
+    1) number of shelves (int)
+    2) interior size in sq. inches (float)
+    3) color (std::string)
+    4) amount of electricity used (float)
+    5) loudness in decibels (float)
+3 things it can do:
+    1) keep food cold
+    2) keep food frozen
+    3) make ice
 
+Thing 5) Keyboard
+5 properties:
+    1) key height mm (double)
+    2) key travel mm (double)
+    3) backlit (bool)
+    4) number pad (bool)
+    5) caps lock (bool)
+3 things it can do:
+    1) illuminate
+    2) enter data
+    3) control audio
 
+Thing 6) Speakers
+5 properties:
+    1) number of speakers (int)
+    2) frequency range (double)
+    3) power consumption (float)
+    4) size of speakers (float)
+    5) shape of speakers (std::string)
+3 things it can do:
+    1) play music
+    2) sound alerts
+    3) increase/decrease volume
 
+Thing 7) Display
+5 properties:
+    1) number of pixels (double)
+    2) refresh rate (float)
+    3) size width (float)
+    4) size height (float)
+    5) touchscreen (bool)
+3 things it can do:
+    1) change brightness
+    2) change resolution
+    3) turn pixels on and off
+
+Thing 8) CPU
+5 properties:
+    1) speed in ghz (float)
+    2) number of cores (int)
+    3) brand (std::string)
+    4) power consumed (float)
+    5) amount of cache mb (float)
+3 things it can do:
+    1) perform calculations
+    2) consume energy
+    3) create heat
+
+Thing 9) Memory
+5 properties:
+    1) amount in gb (float)
+    2) form factor (std::string)
+    3) price (float)
+    4) brand (std::string)
+    5) model number (std::string)
+3 things it can do:
+    1) store user data
+    2) consume energy
+    3) store machine data
+
+Thing 10) Laptop
+5 properties:
+    1) Keyboard
+    2) Speakers
+    3) Display
+    4) CPU
+    5) Memory
+3 things it can do:
+    1) play audio
+    2) play video
+    3) run an application
 
 /*
 =================
