@@ -203,54 +203,6 @@ Part 1b - Step 2: Assignment
         primitives.
         c) pick properties that can eventually be represented with
         'int float double bool char std::string'.
-
-Thing 1) Microphone
-5 properties:
-    1) Number of polar patterns (int)
-    2) Number of polar patterns (int)
-    3) Price (float)
-    4) Brand Name (std::string)
-    5) Year built (int)
-3 things it can do:
-    1) Record audio
-    2) Change polar patterns
-    3) Adjust gain
-
-Thing 2) Electric Guitar
-5 properties:
-    1) Number of strings (int)
-    2) Number of frets (int)
-    3) Length of neck (double)
-    4) Weight (float)
-    5) Type of wood (std::string)
-3 things it can do: 
-    1) Play notes
-    2) Adjust tone knob
-    3) Plug in to amp
-
-Thing 3) Gym
-5 properties:
-    1) Number of barbells (int)
-    2) Number of treadmills (int)
-    3) Number of weight machines (int)
-    4) Membership cost (float)
-    5) Number of members (int)
-3 things it can do: 
-    1) Accept new members
-    2) Schedule classes
-    3) Send promotional material
-
-Thing 4) Blender
-5 properties:
-    1) Number of blades (int)
-    2) Size of pitcher (float)
-    3) Number of blend options (int)
-    4) Loudness of machine (double)
-    5) Length of cord (float)
-3 things it can do:
-    1) Crush ice
-    2) Blend food
-    3) Detach lid
 */
 
 /*
@@ -347,18 +299,6 @@ Part 1c - Step 4: Assignment
 Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will
 be their own UDTs you'll define these 5 sub-objects in Part 1d.
-
-Thing 10) Laptop
-5 properties:
-    1) Display
-    2) Keyboard
-    3) Trackpad
-    4) Storage
-    5) Processor
-3 things it can do:
-    1) Play games
-    2) Take notes
-    3) Watch videos
  */
 
 /*
@@ -447,6 +387,106 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine
 object in plain English. Remember to pick properties that can be represented
 with 'int float double bool char std::string'.
+ */
+
+/*
+=================
+Part 1d - Step 3: Commit
+=================
+Now that you've made changes to the code, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+/*
+================
+Part 1d - Step 4: Assignment
+================
+    - write the name of the primitive type you'll be using after each property
+for UDTs 5 - 9.
+    - You already did this for UDTs 1-4 in Part 1c.
+    - Pick properties that can be represented with 'int float double bool char
+std::string'
+
+example:
+    Display:
+        Number of Pixels (int)
+        Amount of Power consumed (milliwatt-hours) (float)
+        Brightness (double)
+        width in cm (int)
+        height in cm (int)
+*/
+
+/*
+=================
+Part 1d - Step 5: Commit
+=================
+Now that you've made changes to the code, make a commit!
+Be sure to make the commit message meaningful.
+*/
+
+/*
+===================
+Part 1d - Step 6: assignment
+===================
+You've just defined 10 UDTs!
+4 of them are unrelated (UDTs 1-4).
+5 of them form the sub-objects that make up the 10th UDT.
+
+MOVE THEM to the space below this block comment and put them in numerical order
+(1 - 10).
+    DO NOT COPY.
+    CUT AND PASTE.
+    I do not want to see 2 copies of your Plain-English UDTs.
+    I only want to see the 10 UDTs written BELOW this block comment, in
+numerical order (1 - 10). simply CUT and PASTE them in the space provided below:
+
+Thing 1) Microphone
+5 properties:
+    1) Number of polar patterns (int)
+    2) Number of polar patterns (int)
+    3) Price (float)
+    4) Brand Name (std::string)
+    5) Year built (int)
+3 things it can do:
+    1) Record audio
+    2) Change polar patterns
+    3) Adjust gain
+
+Thing 2) Electric Guitar
+5 properties:
+    1) Number of strings (int)
+    2) Number of frets (int)
+    3) Length of neck (double)
+    4) Weight (float)
+    5) Type of wood (std::string)
+3 things it can do: 
+    1) Play notes
+    2) Adjust tone knob
+    3) Plug in to amp
+
+Thing 3) Gym
+5 properties:
+    1) Number of barbells (int)
+    2) Number of treadmills (int)
+    3) Number of weight machines (int)
+    4) Membership cost (float)
+    5) Number of members (int)
+3 things it can do: 
+    1) Accept new members
+    2) Schedule classes
+    3) Send promotional material
+
+Thing 4) Blender
+5 properties:
+    1) Number of blades (int)
+    2) Size of pitcher (float)
+    3) Number of blend options (int)
+    4) Loudness of machine (double)
+    5) Length of cord (float)
+3 things it can do:
+    1) Crush ice
+    2) Blend food
+    3) Detach lid
 
 Thing 5) Display
 5 properties:
@@ -507,59 +547,18 @@ Thing 9) Processor
     1) Control data flow
     2) Modulate power 
     3) Execute instructions
- */
 
-/*
-=================
-Part 1d - Step 3: Commit
-=================
-Now that you've made changes to the code, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-/*
-================
-Part 1d - Step 4: Assignment
-================
-    - write the name of the primitive type you'll be using after each property
-for UDTs 5 - 9.
-    - You already did this for UDTs 1-4 in Part 1c.
-    - Pick properties that can be represented with 'int float double bool char
-std::string'
-
-example:
-    Display:
-        Number of Pixels (int)
-        Amount of Power consumed (milliwatt-hours) (float)
-        Brightness (double)
-        width in cm (int)
-        height in cm (int)
-*/
-
-/*
-=================
-Part 1d - Step 5: Commit
-=================
-Now that you've made changes to the code, make a commit!
-Be sure to make the commit message meaningful.
-*/
-
-/*
-===================
-Part 1d - Step 6: assignment
-===================
-You've just defined 10 UDTs!
-4 of them are unrelated (UDTs 1-4).
-5 of them form the sub-objects that make up the 10th UDT.
-
-MOVE THEM to the space below this block comment and put them in numerical order
-(1 - 10).
-    DO NOT COPY.
-    CUT AND PASTE.
-    I do not want to see 2 copies of your Plain-English UDTs.
-    I only want to see the 10 UDTs written BELOW this block comment, in
-numerical order (1 - 10). simply CUT and PASTE them in the space provided below:
-
+Thing 10) Laptop
+5 properties:
+    1) Display
+    2) Keyboard
+    3) Trackpad
+    4) Storage
+    5) Processor
+3 things it can do:
+    1) Play games
+    2) Take notes
+    3) Watch videos
 
 */
 
