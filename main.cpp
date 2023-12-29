@@ -450,11 +450,11 @@ with 'int float double bool char std::string'.
 
 Thing 5) Display
 5 properties:
-    1) Horizontal size in inches
-    2) Vertical size in inches
-    3) Refresh rate in FPS
-    4) Display material
-    5) Number of pixels
+    1) Horizontal size in inches (float)
+    2) Vertical size in inches (float)
+    3) Refresh rate in FPS (int)
+    4) Display material (std::string)
+    5) Number of pixels (int)
 3 things it can do:
     1) Display images
     2) Change brightness
@@ -462,11 +462,11 @@ Thing 5) Display
 
 Thing 6) Keyboard
 5 properties:
-    1) Number of keys
-    2) Language 
-    3) Keyboard size
-    4) Keyboard switch type
-    5) Keyboard brightness
+    1) Number of keys (int)
+    2) Language (std::string)
+    3) Keyboard size in inches (float)
+    4) Keyboard switch type (std::string)
+    5) Keyboard brightness (float)
 3 things it can do: 
     1) Type text
     2) Enter hotkeys
@@ -474,11 +474,11 @@ Thing 6) Keyboard
 
 Thing 7) Trackpad
 5 properties:
-    1) Number of touch inputs
-    2) Number of buttons
-    3) Trackpad horizontal size in inches
-    4) Trackpad vertical size in inches
-    5) Trackpad material
+    1) Number of touch inputs (int)
+    2) Number of buttons (int)
+    3) Trackpad horizontal size in inches (float)
+    4) Trackpad vertical size in inches (float)
+    5) Trackpad material (std::string)
 3 things it can do:
     1) Left Click
     2) Right Click
@@ -486,11 +486,11 @@ Thing 7) Trackpad
 
 Thing 8) Storage
 5 properties:
-    1) Storage capacity
-    2) Storage type
-    3) Storage speed 
-    4) Number of storage modules
-    5) Storage interface
+    1) Storage capacity (double)
+    2) Storage type (std::string)
+    3) Storage speed (double)
+    4) Number of storage modules (int)
+    5) Storage interface (std::string)
 3 things it can do:
     1) Store files
     2) Retrieve files
@@ -498,11 +498,11 @@ Thing 8) Storage
 
 Thing 9) Processor
 5 properties:
-    1) Processor speed
-    2) Processor power consumption
-    3) Number of cores
-    4) Processor brand
-    5) Processor heat maximum in celsius 
+    1) Processor speed (double)
+    2) Processor power consumption (double)
+    3) Number of cores (int)
+    4) Processor brand (std::string)
+    5) Processor heat maximum in celsius (float)
 3 things it can do:
     1) Control data flow
     2) Modulate power 
