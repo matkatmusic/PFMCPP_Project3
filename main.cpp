@@ -206,11 +206,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) Microphone
 5 properties:
-    1) Number of polar patterns
-    2) Number of polar patterns
-    3) Price
-    4) Brand Name
-    5) Year built
+    1) Number of polar patterns (int)
+    2) Number of polar patterns (int)
+    3) Price (float)
+    4) Brand Name (std::string)
+    5) Year built (int)
 3 things it can do:
     1) Record audio
     2) Change polar patterns
@@ -218,11 +218,11 @@ Thing 1) Microphone
 
 Thing 2) Electric Guitar
 5 properties:
-    1) Number of strings
-    2) Number of frets
-    3) Length of neck
-    4) Weight
-    5) Type of wood
+    1) Number of strings (int)
+    2) Number of frets (int)
+    3) Length of neck (float)
+    4) Weight (float)
+    5) Type of wood (std::string)
 3 things it can do: 
     1) Play notes
     2) Adjust tone knob
@@ -230,11 +230,11 @@ Thing 2) Electric Guitar
 
 Thing 3) Gym
 5 properties:
-    1) Number of barbells
-    2) Number of treadmills
-    3) Number of weight machines
-    4) Membership cost
-    5) Number of members
+    1) Number of barbells (int)
+    2) Number of treadmills (int)
+    3) Number of weight machines (int)
+    4) Membership cost (float)
+    5) Number of members (int)
 3 things it can do: 
     1) Accept new members
     2) Schedule classes
@@ -242,11 +242,11 @@ Thing 3) Gym
 
 Thing 4) Blender
 5 properties:
-    1) Number of blades
-    2) Size of pitcher
-    3) Number of blend options
-    4) Loudness of machine
-    5) Length of cord
+    1) Number of blades (int)
+    2) Size of pitcher (float)
+    3) Number of blend options (int)
+    4) Loudness of machine (double)
+    5) Length of cord (float)
 3 things it can do:
     1) Crush ice
     2) Blend food
