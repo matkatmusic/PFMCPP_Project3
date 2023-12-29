@@ -220,7 +220,7 @@ Thing 2) Electric Guitar
 5 properties:
     1) Number of strings (int)
     2) Number of frets (int)
-    3) Length of neck (float)
+    3) Length of neck (double)
     4) Weight (float)
     5) Type of wood (std::string)
 3 things it can do: 
@@ -348,17 +348,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will
 be their own UDTs you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
+Thing 10) Laptop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Display
+    2) Keyboard
+    3) RAM
+    4) Storage
+    5) Processor
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Play games
+    2) Take notes
+    3) Watch videos
  */
 
 /*
