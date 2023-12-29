@@ -352,7 +352,7 @@ Thing 10) Laptop
 5 properties:
     1) Display
     2) Keyboard
-    3) RAM
+    3) Trackpad
     4) Storage
     5) Processor
 3 things it can do:
@@ -448,65 +448,65 @@ example:
 object in plain English. Remember to pick properties that can be represented
 with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Display
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Horizontal size in inches
+    2) Vertical size in inches
+    3) Refresh rate in FPS
+    4) Display material
+    5) Number of pixels
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Display images
+    2) Change brightness
+    3) Go to sleep
 
-Thing 6)
+Thing 6) Keyboard
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+    1) Number of keys
+    2) Language 
+    3) Keyboard size
+    4) Keyboard switch type
+    5) Keyboard brightness
+3 things it can do: 
+    1) Type text
+    2) Enter hotkeys
+    3) Change language
 
-Thing 7)
+Thing 7) Trackpad
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Number of touch inputs
+    2) Number of buttons
+    3) Trackpad horizontal size in inches
+    4) Trackpad vertical size in inches
+    5) Trackpad material
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Left Click
+    2) Right Click
+    3) Swipe
 
-Thing 8)
+Thing 8) Storage
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Storage capacity
+    2) Storage type
+    3) Storage speed 
+    4) Number of storage modules
+    5) Storage interface
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Store files
+    2) Retrieve files
+    3) Delete files
 
-Thing 9)
+Thing 9) Processor
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Processor speed
+    2) Processor power consumption
+    3) Number of cores
+    4) Processor brand
+    5) Processor heat maximum in celsius 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Control data flow
+    2) Modulate power 
+    3) Execute instructions
  */
 
 /*
@@ -559,6 +559,8 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I do not want to see 2 copies of your Plain-English UDTs.
     I only want to see the 10 UDTs written BELOW this block comment, in
 numerical order (1 - 10). simply CUT and PASTE them in the space provided below:
+
+
 */
 
 /*
