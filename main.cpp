@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) volume controls
+            4) speaker mute knob
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) adjust volume settings.
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer display
+            2) odometer
+            3) fuel gauge   
+            4) road temperture display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
-    
+            1) display current speed
+            2) indicate current mode of auto transmition
+            3) display currrent fuel level
+
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air condition activation button
+            2) temperature control dial left
+            3) increase fan speed button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioning
+            2) adjust temperature for the left zone
+            3) increase fan speed
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) on-off toggle button
+            2) volume control dial
+            3) radio source selector button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on/off the infotainment system
+            2) adjust volume
+            3) choose raido as the media source
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) electrict positioning of the backrest
+            2) seat positon memory storage 
+            3) seat belt
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust backrest position
+            2) store/recall all seat position data
 */
 
 /*
