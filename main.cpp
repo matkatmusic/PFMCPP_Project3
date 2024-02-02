@@ -240,7 +240,7 @@ Thing 4) dog park
     4) community involvement
     5) accessibility and inclusivity
 3 things it can do:
-    1    ) provide off-leash exercise and socialization
+    1) provide off-leash exercise and socialization
     2) foster community connections
     3) educate about responsible dog ownership
 */
@@ -301,7 +301,23 @@ Example:
 
     When you choose your 5 smaller parts, remember that each of 
     these 5 Sub Objects will need to be defined with 5 primitive 
-    properties and 3 actions EACH.
+    prop    erties and 3 actions EACH.
+
+UDT: 
+    MyUDT Synthiziser
+
+    My Syntheziser is built using the following 5 UDTs:
+        keybed
+        oscillators 
+        filter
+        modulator
+        envelope generators
+        
+    My syntheziser has 3 things it can do:
+        generate sound
+        control pitch
+        modulatate ampplitude
+    
 */
 
 /*
@@ -318,6 +334,62 @@ example:
         Brightness (double)
         area in cm2 (int)
         brand (std::string)
+
+myUDT
+    keybed proporties
+        number of keys (int)
+        type (std::string)
+        length (float)
+        number of sensors (int)
+        brand (std::string)
+    keybed actions
+        register midi note number (int)
+        register key velocity (int)
+        register release point (float) 
+    
+    oscillator
+        oscillator 1 type (std::string)
+        waveform (std::string)
+        frequency (double)
+        amplitude (double)
+        oscilator sync (bool)
+    oscillator actions
+        shifting wayform (std::string)
+        folding waveform (int)
+        detune oscilator 1 against oscilator 2 (double)
+    
+    filter
+        type (std::string)
+        cutoff frequency (float)
+        Q factor (float)
+        resonance (float)
+        can self-osscillate (bool)
+    filter actions
+        filter out high frequencies e.i. low-pass filter is closed (float)  
+        filter out low frequencies e.i. high-pass filter is closed (float)
+        self-oscillation happenning (int)   
+        
+    modulator
+        modulation type (std::string)
+        modulation frequency (double)
+        modulation rate (unsiged int)
+        modulation sync to clock rate (bool)
+        keyboard tracking amount (int)
+    modulator actions
+        LFO cyclically rises and lowers the amplitude for tremolo effect (unsiged int)
+        LFO cyclically rises and lowers the frequency for vibrato effect (unsiged int)
+        keyboard tracking open up high pass fiter when higher pitch notes are pressed (int)
+
+    envelope generators
+        attack time (float)
+        decay time (float)
+        sustain level (float)
+        release time (float)
+        inverse emvelope (bool)
+    envelope generators actions
+        sound is fading in (unsiged int)
+        soound is sustained (unsiged int)
+        sound is fading out after key is released (unsiged int)
 */
 
 /*
