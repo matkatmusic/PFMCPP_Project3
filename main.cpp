@@ -127,7 +127,7 @@ Main Object: Car Interior
             3) seat belt
         Name 2 actions that the [Sub Object] can do:
             1) adjust backrest position
-            2) store/recall all seat position data
+            2) store/recall seat position data
 */
 
 /*
@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) Coffee Shop
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of baristas at work
+    2) variety of Coffee Beans
+    3) use of Eco-friendly Packaging
+    4) amount of Revenue Generated per Day
+    5) number of custumors served per hour
 3 things it can do:
-    1)
-    2)
-    3)
+    1) brew and Serve Coffee
+    2) upsell Pastries and Snacks
+    3) provide an unique custumor experience
 
-Thing 2)
+Thing 2) Yoga Institute
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of Yoga Instructors
+    2) variety of Yoga Styles Offered
+    3) use of Planet-friendly Yoga Equipment
+    4) number of classes offered per Week
+    5) community and membership programs
 3 things it can do:
-    1)
-    2)
-    3)
+    1) lead yoga classes
+    2) host yoga retreats and workshops
+    3) provide yoga teacher training programs
 
-Thing 3)
+Thing 3) Public Library
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of books in collection
+    2) varity of media formats available
+    3) use of technology and resources
+    4) number of programs and events offered
+    5) community outreach and services
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide access to books and resources:
+    2) offer educational and cultural programs:
+    3) support information and technology access:
 
-Thing 4)
+Thing 4) dog park
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) size of the park
+    2) amenities available
+    3) rules and regulations
+    4) community involvement
+    5) accessibility and inclusivity
 3 things it can do:
-    1)
-    2)
-    3)
+    1    ) provide off-leash exercise and socialization
+    2) foster community connections
+    3) educate about responsible dog ownership
 */
 
 /*
