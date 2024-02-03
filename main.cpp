@@ -335,41 +335,40 @@ example:
         area in cm2 (int)
         brand (std::string)
 
-myUDT
-    keybed proporties
-        number of keys (int)
-        type (std::string)
-        length (float)
-        number of sensors (int)
-        brand (std::string)   
-    
-    oscillator proporties
-        oscillator 1 type (std::string)
-        waveform (std::string)
-        frequency (double)
-        amplitude (double)
-        oscilator sync (bool)
+Thing 1) Coffee Shop
+5 properties:
+    1) number of baristas at work (int)
+    2) variety of coffee beans (std::string)
+    3) use of eco-friendly packaging (bool)
+    4) amount of revenue generated per day (float)    
+    5) number of custumors served per hour (int)
 
-    filter proporties
-        type (std::string)
-        cutoff frequency (float)
-        Q factor (float)
-        resonance (float)
-        can self-osscillate (bool)
-         
-    modulator proporties
-        modulation type (std::string)
-        modulation frequency (double)
-        modulation rate (unsiged int)
-        modulation sync to clock rate (bool)
-        keyboard tracking amount (int)
-    
-    envelope generators proporties
-        attack time (float)
-        decay time (float)
-        sustain level (float)
-        release time (float)
-        inverse emvelope (bool)
+
+Thing 2) Yoga Institute
+5 properties:
+    1) number of yoga instructors (int)
+    2) variety of yoga styles offered (std::string)
+    3) use of planet-friendly yoga equipment (bool)
+    4) number of classes offered per Week (int)
+    5) community and membership programs 
+
+
+Thing 3) Public Library
+5 properties:
+    1) number of books in collection (int)
+    2) varity of media formats available (std::string)
+    3) use of technology and resources (bool)
+    4) number of programs and events offered 
+    5) community outreach and services (bool)
+
+
+Thing 4) dog park
+5 properties:
+    1) size of the park (float)
+    2) amenities available (std::string) // fenced-in play areas, agility equipment, water stations, waste disposal stations, benches, shade structures etc.
+    3) rules and regulations (std::string) // leash requirements, vaccination and licensing policies, owner responsibilities, and guidelines for dog behavior, to ensure the safety and well-being of all park visitors.
+    4) community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
+    5) accessibility and inclusivity (bool) //  features such as wheelchair-accessible paths, designated parking spaces, and accommodations for service animals to promote inclusivity and equal access.
 */
 
 /*
@@ -395,7 +394,7 @@ Thing 10) gameboy
     2) directional pad controler
     3) A and B game buttons
     4) plastic housing
-    5) game cartridge slot
+    5) game cartridge
 3 things it can do:
     1) play game
     2) load game
@@ -501,51 +500,51 @@ Thing 5) dot-matrix screen
 
 Thing 6) directional pressure pad controler
 5 properties:
-    1) Number of sencors under the pad 
-    2)
-    3)
-    4)
-    5)
+    1) Number of directions supported 
+    2) Number of sencors under the pad    
+    3) tactile feedback
+    4) physical design
+    5) pad color
 3 things it can do:
-    1)
-    2)
-    3)
+    1) control gameplay
+    2) control game settings
+    3) select highscorers initials
 
 Thing 7) A and B game buttons
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) perform actions determind by the game code 
+    2) tactile feedback
+    3) physical design
+    4) button color 
+    5) button size    
 3 things it can do:
-    1)
-    2)
-    3)
+    1) execute gameplay actions
+    2) control game settings 
+    3) confirm highscoer initials 
 
-Thing 8) plast housing
+Thing 8) plastic housing
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) housing material
+    2) housing color
+    3) housing size height
+    4) housing size width
+    5) housing size depth
 3 things it can do:
-    1)
-    2)
-    3)
+    1) secure game cartridge connection
+    2) keep electronic components in place
+    3) offer an easy, comfertable gaming experience
 
-Thing 9) cartridge slot
+Thing 9) game cartridge
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) lable design
+    2) capasity
+    3) facilitates storing game status 
+    4) gameboy compatibility 
+    5) Lockout Chip installed
 3 things it can do:
-    1)
-    2)
-    3)
+    1) authentication checking cartridge
+    2) load game into gameboy
+    3) stores game status
  */
 
 /*
