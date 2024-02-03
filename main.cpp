@@ -301,7 +301,7 @@ Example:
 
     When you choose your 5 smaller parts, remember that each of 
     these 5 Sub Objects will need to be defined with 5 primitive 
-    prop    erties and 3 actions EACH.
+    properties and 3 actions EACH.
 
 UDT: 
     MyUDT Synthiziser
@@ -316,7 +316,7 @@ UDT:
     My syntheziser has 3 things it can do:
         generate sound
         control pitch
-        modulatate ampplitude
+        modulatate amplitude
     
 */
 
@@ -341,55 +341,35 @@ myUDT
         type (std::string)
         length (float)
         number of sensors (int)
-        brand (std::string)
-    keybed actions
-        register midi note number (int)
-        register key velocity (int)
-        register release point (float) 
+        brand (std::string)   
     
-    oscillator
+    oscillator proporties
         oscillator 1 type (std::string)
         waveform (std::string)
         frequency (double)
         amplitude (double)
         oscilator sync (bool)
-    oscillator actions
-        shifting wayform (std::string)
-        folding waveform (int)
-        detune oscilator 1 against oscilator 2 (double)
-    
-    filter
+
+    filter proporties
         type (std::string)
         cutoff frequency (float)
         Q factor (float)
         resonance (float)
         can self-osscillate (bool)
-    filter actions
-        filter out high frequencies e.i. low-pass filter is closed (float)  
-        filter out low frequencies e.i. high-pass filter is closed (float)
-        self-oscillation happenning (int)   
-        
-    modulator
+         
+    modulator proporties
         modulation type (std::string)
         modulation frequency (double)
         modulation rate (unsiged int)
         modulation sync to clock rate (bool)
         keyboard tracking amount (int)
-    modulator actions
-        LFO cyclically rises and lowers the amplitude for tremolo effect (unsiged int)
-        LFO cyclically rises and lowers the frequency for vibrato effect (unsiged int)
-        keyboard tracking open up high pass fiter when higher pitch notes are pressed (int)
-
-    envelope generators
+    
+    envelope generators proporties
         attack time (float)
         decay time (float)
         sustain level (float)
         release time (float)
         inverse emvelope (bool)
-    envelope generators actions
-        sound is fading in (unsiged int)
-        soound is sustained (unsiged int)
-        sound is fading out after key is released (unsiged int)
 */
 
 /*
@@ -409,17 +389,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
+Thing 10) gameboy
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) dot-matrix screen 
+    2) directional pad controler
+    3) A and B game buttons
+    4) plastic housing
+    5) game cartridge slot
 3 things it can do:
-    1)
-    2)
-    3)
+    1) play game
+    2) load game
+    3) store high score lists
  */
 
  /*
@@ -505,8 +485,33 @@ example:
     If #10's first property was 'Engine', then `Thing 5)` will be `Engine`. 
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
+ */
 
-Thing 5)
+Thing 5) dot-matrix screen
+5 properties:
+    1) number of dots 
+    2) number of rows 
+    3) number of columns
+    4) brighness
+    5) power consumption
+3 things it can do:
+    1) display text
+    2) display images
+    3) display graphics
+
+Thing 6) directional pressure pad controler
+5 properties:
+    1) Number of sencors under the pad 
+    2)
+    3)
+    4)
+    5)
+3 things it can do:
+    1)
+    2)
+    3)
+
+Thing 7) A and B game buttons
 5 properties:
     1)
     2)
@@ -518,7 +523,7 @@ Thing 5)
     2)
     3)
 
-Thing 6)
+Thing 8) plast housing
 5 properties:
     1)
     2)
@@ -530,31 +535,7 @@ Thing 6)
     2)
     3)
 
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
+Thing 9) cartridge slot
 5 properties:
     1)
     2)
