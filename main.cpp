@@ -624,179 +624,146 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
 
-/*
-Thing 1) Coffee Shop
-    5 properties:
-        1) number of baristas at work (int)
-        2) variety of coffee beans (std::string)
-        3) use of eco-friendly packaging (bool)
-        4) amount of revenue generated per day (float)    
-        5) number of custumors served per hour (int)
-    3 Things It Can Do:
-        1) brew and sell coffee
-        2) upsell pastries and snacks
-        3) provide a relaxing customer experience
-*/
 struct CoffeeShop
 {
-      
+    // 5 properties:
+    //    - number of baristas at work (int)
+    //    - variety of coffee beans (std::string)
+    //    - use of eco-friendly packaging (bool)
+    //    - amount of revenue generated per day (float)    
+    //    - number of custumors served per hour (int)
+    // 3 Things It Can Do:
+    //    - brew and sell coffee
+    //    - upsell pastries and snacks
+    //    - provide a relaxing customer experience
 };
-/*
-Thing 2) Yoga Institute
-    5 properties:
-        1) number of yoga instructors (int)
-        2) variety of yoga styles offered (std::string)
-        3) use of planet-friendly yoga equipment (bool)
-        4) number of classes offered per Week (int)
-        5) community and membership programs 
-    3 Things It Can Do:
-        1) Lead Yoga Classes
-        2) Host Yoga Retreats and Workshops
-        3) Provide Yoga Teacher Training Programs
-*/
+
 struct YogaInstitute
 {
-
+    // 5 properties:
+    //    - number of yoga instructors (int)
+    //    - variety of yoga styles offered (std::string)
+    //    - use of planet-friendly yoga equipment (bool)
+    //    - number of classes offered per Week (int)
+    //    - community and membership programs 
+    // 3 Things It Can Do:
+    //    - lead yoga classes
+    //    - host yoga retreats and workshops
+    //    - provide yoga teacher training programs
 };
-/*
-Thing 3) Public Library
-    5 properties:
-        1) number of books in collection (int)
-        2) varity of media formats available (std::string)
-        3) use of technology and resources (bool)
-        4) number of programs and events offered 
-        5) community outreach and services (bool)
-    3 Things It Can Do:
-        1) provide access to books and resources
-        2) offer educational and cultural programs
-        3) support information and technology access    
-*/
+
 struct PublicLibrary
 {
-
+    // 5 properties:
+    //    - number of books in collection (int)
+    //    - varity of media formats available (std::string)
+    //    - use of technology and resources (bool)
+    //    - number of programs and events offered 
+    //    - community outreach and services (bool)
+    // 3 Things It Can Do:
+    //    - provide access to books and resources
+    //    - offer educational and cultural programs
+    //    - support information and technology access    
 };
-/*
-Thing 4) dog park
-    5 properties:
-        1) size of the park (float)
-        2) amenities available (std::string) // fenced-in play areas, agility equipment, water stations, etc.
-        3) rules and regulations (std::string) // leash requirements, etc., to ensure the safety and well-being of all park visitors.
-        4) community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
-        5) accessibility and inclusivity (bool) // wheelchair-accessible paths, designated parking spaces, to promote inclusivity and equal access.
-    3 Things It Can Do:
-        1) provide off-leash exercise and socialization:
-        2) foster community connections:
-        3) educate about responsible dog ownership:
-*/
+
 struct DogPark
 {
-
+    // 5 properties:
+    //    - size of the park (float)
+    //    - amenities available (std::string) // fenced-in play areas, agility equipment, water stations, etc.
+    //    - rules and regulations (std::string) // leash requirements, etc., to ensure the safety and well-being of all park visitors.
+    //    - community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
+    //    - accessibility and inclusivity (bool) // wheelchair-accessible paths, designated parking spaces, to promote inclusivity and equal access.
+    // 3 Things It Can Do:
+    //    - provide off-leash exercise and socialization:
+    //    - foster community connections:
+    //    - educate about responsible dog ownership:
 };
-/*
-Thing 5) dot-matrix screen
-    5 properties:
-        1) number of dots (int)
-        2) number of rows (int)
-        3) number of columns (int)
-        4) brightness (int) 
-        5) power consumption (float)
-    3 things it can do:
-        1) display text (void)
-        2) display images (void)
-        3) display graphics (void)
-*/
+
 struct DotMatrixScreen
 {
-
+    // 5 properties:
+    //    - number of dots (int)
+    //    - number of rows (int)
+    //    - number of columns (int)
+    //    - brightness (int) 
+    //    - power consumption (float)
+    // 3 things it can do:
+    //    - display text (void)
+    //    - display images (void)
+    //    . display graphics (void)
 };
-/*    
-Thing 6) directional pressure pad controler
-    5 properties:
-        1) Number of directions supported (int) 
-        2) Number of sencors under the pad (int)    
-        3) tactile feedback (bool)
-        4) physical design (std::string)
-        5) pad color (std::string)
-    3 things it can do:
-        1) control gameplay (void)
-        2) control game settings (void)
-        3) select highscorers initials (void)
-*/
+
 struct DirectionalPadControler
 {
-
+    // 5 properties:
+    //    - Number of directions supported (int) 
+    //    - Number of sencors under the pad (int)    
+    //    - tactile feedback (bool)
+    //    - physical design (std::string)
+    //    - pad color (std::string)
+    // 3 things it can do:
+    //    - control gameplay (void)
+    //    - control game settings (void)
+    //    - select highscorers initials (void)
 };
-/*    
-Thing 7) A and B game buttons
-    5 properties:
-        1) number of gam buttons (int) 
-        2) tactile feedback (bool)
-        3) physical design (std::string)
-        4) button color (std::string)
-        5) button size (std::string)   
-    3 things it can do:
-        1) execute gameplay actions (void)
-        2) control game settings (void)
-        3) confirm highscoer initials (void)
-*/
+
 struct GameButtons
 {
-
+    // 5 properties:
+    //    - number of gam buttons (int) 
+    //    - tactile feedback (bool)
+    //    - physical design (std::string)
+    //    - button color (std::string)
+    //    - button size (std::string)   
+    // 3 things it can do:
+    //    - execute gameplay actions (void)
+    //    - control game settings (void)
+    //    - confirm highscoer initials (void)
 };
-/*
-Thing 8) plastic housing
-    5 properties:
-        1) housing material (std::string)
-        2) housing color (std::string)
-        3) housing size height (float)
-        4) housing size width (float)
-        5) housing size depth (float)
-    3 things it can do:
-        1) secure game cartridge connection (void)
-        2) keep electronic components in place (void)
-        3) offer an easy, comfertable gaming experience (void)
-*/
+
 struct PlasticHousing
 {
-
+    // 5 properties:
+    //    - housing material (std::string)
+    //    - housing color (std::string)
+    //    - housing size height (float)
+    //    - housing size width (float)
+    //    - housing size depth (float)
+    // 3 things it can do:
+    //    - secure game cartridge connection (void)
+    //    - keep electronic components in place (void)
+    //    - offer an easy, comfertable gaming experience (void)
 };
-/*
-Thing 9) game cartridge
-    5 properties:
-        1) battery powered memory (bool)
-        2) capasity in kb (int) 
-        3) game cartridge color (std::string)     
-        4) gameboy compatibility (bool) 
-        5) Lockout Chip installed (bool)
-    3 things it can do:
-        1) authentication checking cartridge (void)
-        2) load game into gameboy (void)
-        3) stores game status (void)
-*/
+
 struct GameCartridge
 {
-
+    // 5 properties:
+    //    - battery powered memory (bool)
+    //    - capasity in kb (int) 
+    //    - game cartridge color (std::string)     
+    //    - gameboy compatibility (bool) 
+    //    - Lockout Chip installed (bool)
+    // 3 things it can do:
+    //    - authentication checking cartridge (void)
+    //    - load game into gameboy (void)
+    //    - stores game status (void)
 };
-/*
-Thing 10) gameboy
-    5 properties:
-        1) dot-matrix screen 
-        2) directional pad controler
-        3) A and B game buttons
-        4) plastic housing
-        5) game cartridge
-    3 things it can do:
-        1) play game
-        2) load game
-        3) store high score lists
-*/
+
 struct Gameboy
 {
-
+    // 5 properties:
+    //    - dot-matrix screen 
+    //    - directional pad controler
+    //    - A and B game buttons
+    //    - plastic housing
+    //    - game cartridge
+    // 3 things it can do:
+    //    - play game
+    //    - load game
+    //    - store high score lists
 };
 
-
-    
 /*
 =================
 Part 1e - Step 2: Commit
