@@ -544,7 +544,7 @@ Thing 9) game cartridge
 3 things it can do:
     1) authentication checking cartridge
     2) load game into gameboy
-    3) stores game status
+    3) stores game status 
  */
 
 /*
