@@ -450,101 +450,101 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
-     Thing 1) Coffee Shop
-     5 properties:
-         1) number of baristas at work (int)
-         2) variety of coffee beans (std::string)
-         3) use of eco-friendly packaging (bool)
-         4) amount of revenue generated per day (float)    
-         5) number of custumors served per hour (int)
+    Thing 1) Coffee Shop
+    5 properties:
+        1) number of baristas at work (int)
+        2) variety of coffee beans (std::string)
+        3) use of eco-friendly packaging (bool)
+        4) amount of revenue generated per day (float)    
+        5) number of custumors served per hour (int)
 
 
-     Thing 2) Yoga Institute
-     5 properties:
-         1) number of yoga instructors (int)
-         2) variety of yoga styles offered (std::string)
-         3) use of planet-friendly yoga equipment (bool)
-         4) number of classes offered per Week (int)
-         5) community and membership programs 
+    Thing 2) Yoga Institute
+    5 properties:
+        1) number of yoga instructors (int)
+        2) variety of yoga styles offered (std::string)
+        3) use of planet-friendly yoga equipment (bool)
+        4) number of classes offered per Week (int)
+        5) community and membership programs 
 
 
-     Thing 3) Public Library
-     5 properties:
-         1) number of books in collection (int)
-         2) varity of media formats available (std::string)
-         3) use of technology and resources (bool)
-         4) number of programs and events offered 
-         5) community outreach and services (bool)
+    Thing 3) Public Library
+    5 properties:
+        1) number of books in collection (int)
+        2) varity of media formats available (std::string)
+        3) use of technology and resources (bool)
+        4) number of programs and events offered 
+        5) community outreach and services (bool)
 
 
-     Thing 4) dog park
-     5 properties:
-         1) size of the park (float)
-         2) amenities available (std::string) // fenced-in play areas, agility equipment, water stations, etc.
-         3) rules and regulations (std::string) // leash requirements, etc., to ensure the safety and well-being of all park visitors.
-         4) community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
-         5) accessibility and inclusivity (bool) // wheelchair-accessible paths, designated parking spaces, to promote inclusivity and equal access.
+    Thing 4) dog park
+    5 properties:
+        1) size of the park (float)
+        2) amenities available (std::string) // fenced-in play areas, agility equipment, water stations, etc.
+        3) rules and regulations (std::string) // leash requirements, etc., to ensure the safety and well-being of all park visitors.
+        4) community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
+        5) accessibility and inclusivity (bool) // wheelchair-accessible paths, designated parking spaces, to promote inclusivity and equal access.
 
 
     Thing 5) dot-matrix screen
     5 properties:
-    1) number of dots (int)
-    2) number of rows (int)
-         3) number of columns (int)
-         4) brightness (int) 
-         5) power consumption (float)
-     3 things it can do:
-         1) display text (void)
-         2) display images (void)
-         3) display graphics (void)
+        1) number of dots (int)
+        2) number of rows (int)
+        3) number of columns (int)
+        4) brightness (int) 
+        5) power consumption (float)
+    3 things it can do:
+        1) display text (void)
+        2) display images (void)
+        3) display graphics (void)
 
-     Thing 6) directional pressure pad controler
-     5 properties:
-         1) Number of directions supported (int) 
-         2) Number of sencors under the pad (int)    
-         3) tactile feedback (bool)
-         4) physical design (std::string)
-         5) pad color (std::string)
-     3 things it can do:
-         1) control gameplay (void)
-         2) control game settings (void)
-         3) select highscorers initials (void)
+    Thing 6) directional pressure pad controler
+    5 properties:
+        1) Number of directions supported (int) 
+        2) Number of sencors under the pad (int)    
+        3) tactile feedback (bool)
+        4) physical design (std::string)
+        5) pad color (std::string)
+    3 things it can do:
+        1) control gameplay (void)
+        2) control game settings (void)
+        3) select highscorers initials (void)
 
-     Thing 7) A and B game buttons
-     5 properties:
-         1) number of gam buttons (int) 
-         2) tactile feedback (bool)
-         3) physical design (std::string)
-         4) button color (std::string)
-         5) button size (std::string)   
-     3 things it can do:
-         1) execute gameplay actions (void)
-         2) control game settings (void)
-         3) confirm highscoer initials (void)
+    Thing 7) A and B game buttons
+    5 properties:
+        1) number of gam buttons (int) 
+        2) tactile feedback (bool)
+        3) physical design (std::string)
+        4) button color (std::string)
+        5) button size (std::string)   
+    3 things it can do:
+        1) execute gameplay actions (void)
+        2) control game settings (void)
+        3) confirm highscoer initials (void)
 
-     Thing 8) plastic housing
-     5 properties:
-         1) housing material (std::string)
-         2) housing color (std::string)
-         3) housing size height (float)
-         4) housing size width (float)
-         5) housing size depth (float)
-     3 things it can do:
-         1) secure game cartridge connection (void)
-         2) keep electronic components in place (void)
-         3) offer an easy, comfertable gaming experience (void)
+    Thing 8) plastic housing
+    5 properties:
+        1) housing material (std::string)
+        2) housing color (std::string)
+        3) housing size height (float)
+        4) housing size width (float)
+        5) housing size depth (float)
+    3 things it can do:
+        1) secure game cartridge connection (void)
+        2) keep electronic components in place (void)
+        3) offer an easy, comfertable gaming experience (void)
 
-     Thing 9) game cartridge
-     5 properties:
-         1) battery powered memory (bool)
-         2) capasity in kb (int) 
-         3) game cartridge color (std::string)     
-         4) gameboy compatibility (bool) 
-         5) Lockout Chip installed (bool)
-     3 things it can do:
-         1) authentication checking cartridge (void)
-         2) load game into gameboy (void)
-         3) stores game status (void)
+    Thing 9) game cartridge
+    5 properties:
+        1) battery powered memory (bool)
+        2) capasity in kb (int) 
+        3) game cartridge color (std::string)     
+        4) gameboy compatibility (bool) 
+        5) Lockout Chip installed (bool)
+    3 things it can do:
+        1) authentication checking cartridge (void)
+        2) load game into gameboy (void)
+        3) stores game status (void)
 
     Thing 10) gameboy
     5 properties:
