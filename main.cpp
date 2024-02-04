@@ -627,11 +627,11 @@ Notice that the struct name 'CarWash' conforms with the Course Coding Standard, 
 struct CoffeeShop
 {
     // 5 properties:
-    //    - number of baristas at work (int)
-    //    - variety of coffee beans (std::string)
-    //    - use of eco-friendly packaging (bool)
-    //    - amount of revenue generated per day (float)    
-    //    - number of custumors served per hour (int)
+    int numBaristasAtWork = 3;
+    std::string coffeeBeanVariants = "Robusta, Arabica, Liberica";
+    int numEcoFriendlyPackaging = 4;
+    float amountRevenuePerDay = 2300.5f;   
+    int numCustumorsServedPerHour = 12;
     // 3 Things It Can Do:
     //    - brew and sell coffee
     //    - upsell pastries and snacks
@@ -641,11 +641,11 @@ struct CoffeeShop
 struct YogaInstitute
 {
     // 5 properties:
-    //    - number of yoga instructors (int)
-    //    - variety of yoga styles offered (std::string)
-    //    - use of planet-friendly yoga equipment (bool)
-    //    - number of classes offered per Week (int)
-    //    - community and membership programs 
+    int numYogaInstructors = 14;
+    std::string YogaStyleOffered = "Hatha, Vinyasa, Power Yoga";
+    int numOfPlanetFriendlyEquipment = 7;
+    int numClassesOfferedPerWeek = 31;
+    std::string communityAndMembershipPrograms = "Yoga Club, Yoga Summer Camp, Neighbor Yoga, Member-get-member";
     // 3 Things It Can Do:
     //    - lead yoga classes
     //    - host yoga retreats and workshops
@@ -655,13 +655,13 @@ struct YogaInstitute
 struct PublicLibrary
 {
     // 5 properties:
-    //    - number of books in collection (int)
-    //    - varity of media formats available (std::string)
-    //    - use of technology and resources (bool)
-    //    - number of programs and events offered 
-    //    - community outreach and services (bool)
+    int numBooksInCollection = 43569;
+    std::string mediaFormatsAvailable = "Hardcover, Paperback, E-books, Audiobooks, DVDs";
+        std::string technologyAndResources = "Digital Librarian, online search and reservations, Printing, Scanning, Streaming, Self Service Checkout, Self Service Return";    
+    std::string typesOfEventsOffered = "Book Clubs, Author Talks, Book Signings, Children's Storytime, Art Exhibitions, Panel Discussions, Holiday Programs"; 
+    std::string communityOutreachAndServices = "Bookstore, Library Cards, Bulletin Board, Newspaper Reading Area, Turist Flyers";
     // 3 Things It Can Do:
-    //    - provide access to books and resources
+    //    - provide access to books and resourcesA
     //    - offer educational and cultural programs
     //    - support information and technology access    
 };
@@ -669,11 +669,11 @@ struct PublicLibrary
 struct DogPark
 {
     // 5 properties:
-    //    - size of the park (float)
-    //    - amenities available (std::string) // fenced-in play areas, agility equipment, water stations, etc.
-    //    - rules and regulations (std::string) // leash requirements, etc., to ensure the safety and well-being of all park visitors.
-    //    - community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
-    //    - accessibility and inclusivity (bool) // wheelchair-accessible paths, designated parking spaces, to promote inclusivity and equal access.
+    float sizeOfParkInSquareFeet = 3500.5f;
+    std::string amenitiesAvailable = "Fenced-in play areas, agility equipment, water stations, waste disposal stations, benches, shade structures";
+    std::string rulesAndRegulations = "leash requirements, vaccination requirements, licensing policies, owner responsibilities, guidelines for dog behavior";
+    bool communityInvolvement = true; 
+    std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
     // 3 Things It Can Do:
     //    - provide off-leash exercise and socialization:
     //    - foster community connections:
@@ -683,11 +683,11 @@ struct DogPark
 struct DotMatrixScreen
 {
     // 5 properties:
-    //    - number of dots (int)
-    //    - number of rows (int)
-    //    - number of columns (int)
-    //    - brightness (int) 
-    //    - power consumption (float)
+    int numDotsPerRow = 160; 
+    int numRows = 144;
+    int numColumns = 160;
+    bool fixedLevelOfBrightness = true;  
+    float averagePowerConsumptionPerHourInWatt = 0.7f;
     // 3 things it can do:
     //    - display text (void)
     //    - display images (void)
@@ -697,11 +697,11 @@ struct DotMatrixScreen
 struct DirectionalPadControler
 {
     // 5 properties:
-    //    - Number of directions supported (int) 
-    //    - Number of sencors under the pad (int)    
-    //    - tactile feedback (bool)
-    //    - physical design (std::string)
-    //    - pad color (std::string)
+    int numOfDirectSupported = 4;
+    int numSencors = 4;  
+    bool tactileFeedback = true;
+    std::string physicalDesign = "xShaped";
+    std::string padColor = "Black";
     // 3 things it can do:
     //    - control gameplay (void)
     //    - control game settings (void)
@@ -711,25 +711,25 @@ struct DirectionalPadControler
 struct GameButtons
 {
     // 5 properties:
-    //    - number of gam buttons (int) 
-    //    - tactile feedback (bool)
-    //    - physical design (std::string)
-    //    - button color (std::string)
-    //    - button size (std::string)   
+    int numGameButtons = 2;
+    int tactileFeedback = true;
+    std::string physicalDesign = "round";
+    std::string buttonColor = "color";
+    float buttonSizeØInMm = 0.9f;    
     // 3 things it can do:
     //    - execute gameplay actions (void)
     //    - control game settings (void)
     //    - confirm highscoer initials (void)
 };
 
-struct PlasticHousing
+struct Housing
 {
     // 5 properties:
-    //    - housing material (std::string)
-    //    - housing color (std::string)
-    //    - housing size height (float)
-    //    - housing size width (float)
-    //    - housing size depth (float)
+    std::string housingMaterial = "plastic";
+    std::string housingColor = "LightGray";
+    float sizeHeightInMm = 148;
+    float sizeWidthInMm = 90;
+    float sizeDepthInMm = 32;
     // 3 things it can do:
     //    - secure game cartridge connection (void)
     //    - keep electronic components in place (void)
@@ -739,11 +739,11 @@ struct PlasticHousing
 struct GameCartridge
 {
     // 5 properties:
-    //    - battery powered memory (bool)
-    //    - capasity in kb (int) 
-    //    - game cartridge color (std::string)     
-    //    - gameboy compatibility (bool) 
-    //    - Lockout Chip installed (bool)
+    bool batteryPoweredMemory = true;
+    int RamCapasityInKb = 128;
+    std::string cartridgeColor = "LightGray";   
+    bool gameboyCompatibility = true;
+    bool LockoutChip = true;
     // 3 things it can do:
     //    - authentication checking cartridge (void)
     //    - load game into gameboy (void)
@@ -753,11 +753,11 @@ struct GameCartridge
 struct Gameboy
 {
     // 5 properties:
-    //    - dot-matrix screen 
-    //    - directional pad controler
-    //    - A and B game buttons
-    //    - plastic housing
-    //    - game cartridge
+    DotMatrixScreen dotMatrixScreen; 
+    DirectionalPadControler directionalPadControler;
+    GameButtons gameButtons;
+    Housing housing;
+    GameCartridge gameCartridge;
     // 3 things it can do:
     //    - play game
     //    - load game
