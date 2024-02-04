@@ -660,6 +660,22 @@ struct PublicLibrary
         std::string technologyAndResources = "Digital Librarian, online search and reservations, Printing, Scanning, Streaming, Self Service Checkout, Self Service Return";    
     std::string typesOfEventsOffered = "Book Clubs, Author Talks, Book Signings, Children's Storytime, Art Exhibitions, Panel Discussions, Holiday Programs"; 
     std::string communityOutreachAndServices = "Bookstore, Library Cards, Bulletin Board, Newspaper Reading Area, Turist Flyers";
+        
+    //start of nested class:
+    struct PersonalLenderIdCard
+    {
+        //5 member variables
+        bool isValid = false;
+        int age = 36;        
+        int numBooksStatusDueReturn = 0;
+        int numPrePaidCoffeeCredits = 3;
+        bool CanTakeHomeSencoredMaterials = true;
+        // 3 member functions
+        float TopUpCoffeeCredits (float costPerCredit, int numCredits); // Returns cost of toping up credits 
+        float chargeLateReturns(int numLateBooks, float amountLateFee); // Returns the total cost of late returns
+        bool hasToiletKeyNumber3(bool getKeyBack); // Returns true if the toilet key number 3 is in the possession of the person.
+    }; //End of nested class
+    
     // 3 Things It Can Do:
     void provideAccessToBooksAndResources();
     void offerEducationalAndCulturalPrograms();
@@ -674,6 +690,23 @@ struct DogPark
     std::string rulesAndRegulations = "leash requirements, vaccination requirements, licensing policies, owner responsibilities, guidelines for dog behavior";
     bool communityInvolvement = true; 
     std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
+
+    // start of nested class:
+    struct AccessibilityScoreIndex
+    {
+        //5 member variables
+        void physicalAccessibility(std::string wheelchairAccessiblePaths, std::string designatedParkingSpaces);
+        void sensoryAccessibility(std::string tactileMaps, std::string brailleSignage, std::string auditorySignals);
+        void cognitiveAccessibility(std::string clearSignage, std::string intuitiveWayfinding);
+        int AccessibilityIndex = 7; // total number of accsessibility elements implemented. Don't no how to calcuate this. 
+        bool complaintProcesInPlace = true;
+        // 3 member functions.  
+        // they take multiple parameters. some parameters have default values.
+        void accessibilityCheckAndMaintenance(std::string installAllRamps, bool cleearAllPaths = true, int numWorkingToilets = 3); // returns 'good to go' if all items are approved. 
+        bool testingEmergincyReadyness(std::string emergencyType, std::string subjectTypeHuman, bool requiresHeartChock = false); // Returns weather went acceptable or not.
+        int inforcingParkRules(int numLeachVialations, int numDogOwnerConflictSolving, bool policeInvolved); // returns the number of park rules violaitons.
+    }; //End of nested class    
+    
     // 3 Things It Can Do:
     void provideOffLeashExerciseAndSocialization();
     void fosterCommunityConnections();
