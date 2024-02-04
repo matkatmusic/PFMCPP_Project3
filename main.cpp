@@ -633,9 +633,9 @@ struct CoffeeShop
     float amountRevenuePerDay = 2300.5f;   
     int numCustumorsServedPerHour = 12;
     // 3 Things It Can Do:
-    //    - brew and sell coffee
-    //    - upsell pastries and snacks
-    //    - provide a relaxing customer experience
+    int brewAndSellCoffee(int numCoffeeCups, float priceCoffeeCups); // Renders total amount charged for x cuos of coffee.
+    int upsellPastriesAndSnacks(int numPastries, int numSnacks, float pricePastries, float priceSnacks); // Returns total amount charged for x pieces of pastries/snacks.
+    void provideRelaxingCustomerExperience();
 };
 
 struct YogaInstitute
@@ -647,9 +647,9 @@ struct YogaInstitute
     int numClassesOfferedPerWeek = 31;
     std::string communityAndMembershipPrograms = "Yoga Club, Yoga Summer Camp, Neighbor Yoga, Member-get-member";
     // 3 Things It Can Do:
-    //    - lead yoga classes
-    //    - host yoga retreats and workshops
-    //    - provide yoga teacher training programs
+    void leadYogaClasses();
+    float payroleYagoInstructors(float hourlyRate, int hoursWorked); // Returns the total payroll for a yoga instructor
+    float towelRental(int numTowels, float  rentalPerTowel); // returnss tha total cost of renting towels.
 };
 
 struct PublicLibrary
@@ -661,11 +661,11 @@ struct PublicLibrary
     std::string typesOfEventsOffered = "Book Clubs, Author Talks, Book Signings, Children's Storytime, Art Exhibitions, Panel Discussions, Holiday Programs"; 
     std::string communityOutreachAndServices = "Bookstore, Library Cards, Bulletin Board, Newspaper Reading Area, Turist Flyers";
     // 3 Things It Can Do:
-    //    - provide access to books and resourcesA
-    //    - offer educational and cultural programs
-    //    - support information and technology access    
+    void provideAccessToBooksAndResources();
+    void offerEducationalAndCulturalPrograms();
+    float chargeLateReturnFees(float amountDue); 
 };
-
+    
 struct DogPark
 {
     // 5 properties:
@@ -675,9 +675,9 @@ struct DogPark
     bool communityInvolvement = true; 
     std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
     // 3 Things It Can Do:
-    //    - provide off-leash exercise and socialization:
-    //    - foster community connections:
-    //    - educate about responsible dog ownership:
+    void provideOffLeashExerciseAndSocialization();
+    void fosterCommunityConnections();
+    void spreadsResponsibleDogOwnership();
 };
 
 struct DotMatrixScreen
@@ -686,12 +686,12 @@ struct DotMatrixScreen
     int numDotsPerRow = 160; 
     int numRows = 144;
     int numColumns = 160;
-    bool fixedLevelOfBrightness = true;  
+    float levelOfBrightnessFrom1To10 = 7;  
     float averagePowerConsumptionPerHourInWatt = 0.7f;
     // 3 things it can do:
-    //    - display text (void)
-    //    - display images (void)
-    //    . display graphics (void)
+    float setBrightness(float BrightnessLvl); // Returns a float value representing the level of brightness.
+    void displayImages();
+    void displayGraphics();
 };
 
 struct DirectionalPadControler
@@ -703,9 +703,9 @@ struct DirectionalPadControler
     std::string physicalDesign = "xShaped";
     std::string padColor = "Black";
     // 3 things it can do:
-    //    - control gameplay (void)
-    //    - control game settings (void)
-    //    - select highscorers initials (void)
+    std::string controlPlayerMovement(std::string moveUp);
+    void confirmSettings();
+    void selectHighscorersInitials();
 };
 
 struct GameButtons
@@ -713,13 +713,13 @@ struct GameButtons
     // 5 properties:
     int numGameButtons = 2;
     int tactileFeedback = true;
-    std::string physicalDesign = "round";
-    std::string buttonColor = "color";
+    std::string physicalDesign = "round, black";
+    bool binarySencor = true;
     float buttonSizeØInMm = 0.9f;    
     // 3 things it can do:
-    //    - execute gameplay actions (void)
-    //    - control game settings (void)
-    //    - confirm highscoer initials (void)
+    void executeAction();
+    void adjustSettings();
+    void confirmHighscoerInitials();
 };
 
 struct Housing
@@ -731,9 +731,9 @@ struct Housing
     float sizeWidthInMm = 90;
     float sizeDepthInMm = 32;
     // 3 things it can do:
-    //    - secure game cartridge connection (void)
-    //    - keep electronic components in place (void)
-    //    - offer an easy, comfertable gaming experience (void)
+    void secureGameCartridgeConnection();
+    void keepElectronicComponentsInPlace();
+    void offerComfertableGamingExperience();
 };
 
 struct GameCartridge
@@ -745,9 +745,9 @@ struct GameCartridge
     bool gameboyCompatibility = true;
     bool LockoutChip = true;
     // 3 things it can do:
-    //    - authentication checking cartridge (void)
-    //    - load game into gameboy (void)
-    //    - stores game status (void)
+    bool authenticationCheckingCartridge(bool isAuthenticated); // returns true if cartridge is authenticated
+    bool gamesuccesfullyLaoded(bool gameLoaded); // returns true if game is loaded)
+    void saveGameStatus();
 };
 
 struct Gameboy
@@ -759,9 +759,9 @@ struct Gameboy
     Housing housing;
     GameCartridge gameCartridge;
     // 3 things it can do:
-    //    - play game
-    //    - load game
-    //    - store high score lists
+    void playGame();
+    void loadGame();
+    void storeHighScoreLists();
 };
 
 /*
