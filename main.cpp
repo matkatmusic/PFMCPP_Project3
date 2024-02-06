@@ -633,8 +633,10 @@ struct CoffeeShop
     float amountRevenuePerDay = 2300.5f;   
     int numCustumorsServedPerHour = 12;
     // 3 Things It Can Do:
-    int brewAndSellCoffee(int numCoffeeCups, float priceCoffeeCups); // Renders total amount charged for x cuos of coffee.
-    int upsellPastriesAndSnacks(int numPastries, int numSnacks, float pricePastries, float priceSnacks); // Returns total amount charged for x pieces of pastries/snacks.
+    int brewAndSellCoffee(int numCoffeeCups, float priceCoffeeCups); 
+    // Returms total amount charged for x cups of coffee.
+    int upsellPastriesAndSnacks(int numPastries, int numSnacks, float pricePastries, float priceSnacks); 
+    // Returns total amount charged for numPastries plus numSnacks.
     void provideRelaxingCustomerExperience();
 };
 
@@ -648,8 +650,10 @@ struct YogaInstitute
     std::string communityAndMembershipPrograms = "Yoga Club, Yoga Summer Camp, Neighbor Yoga, Member-get-member";
     // 3 Things It Can Do:
     void leadYogaClasses();
-    float payroleYagoInstructors(float hourlyRate, int hoursWorked); // Returns the total payroll for a yoga instructor
-    float towelRental(int numTowels, float  rentalPerTowel); // returnss tha total cost of renting towels.
+    float payroleYagoInstructors(float hourlyRate, int hoursWorked); 
+    // Returns the total payroll for a yoga instructor
+    float towelRental(int numTowels, float  rentalPerTowel); 
+    // returnss tha total cost of renting towels.
 };
 
 struct PublicLibrary
@@ -671,40 +675,44 @@ struct PublicLibrary
         int numPrePaidCoffeeCredits = 3;
         bool CanTakeHomeSencoredMaterials = true;
         // 3 member functions
-        float TopUpCoffeeCredits (float costPerCredit, int numCredits); // Returns cost of toping up credits 
-        float chargeLateReturns(int numLateBooks, float amountLateFee); // Returns the total cost of late returns
-        bool hasToiletKeyNumber3(bool getKeyBack); // Returns true if the toilet key number 3 is in the possession of the person.
+        float TopUpCoffeeCredits (float costPerCredit, int numCredits); 
+        // Returns cost of toping up credits 
+        float chargeLateReturns(int numLateBooks, float amountLateFee); 
+        // Returns the total cost of late returns
+        bool hasToiletKeyNumber3(bool getKeyBack); 
+        // Returns true if the toilet key number 3 is in the possession of the person.
     }; //End of nested class
     
     // 3 Things It Can Do:
     void provideAccessToBooksAndResources();
-    void offerEducationalAndCulturalPrograms();
+    bool feesNotPaid(PersonalLenderIdCard personCardImpounded);// Used User-defined type as parameter // Returns true if the person shoud have their card impounded
     float chargeLateReturnFees(float amountDue); 
 };
     
 struct DogPark
 {
     // 5 properties:
-    float sizeOfParkInSquareFeet = 3500.5f;
+    int sizeOfParkInSquareFeet = 3500;
     std::string amenitiesAvailable = "Fenced-in play areas, agility equipment, water stations, waste disposal stations, benches, shade structures";
     std::string rulesAndRegulations = "leash requirements, vaccination requirements, licensing policies, owner responsibilities, guidelines for dog behavior";
     bool communityInvolvement = true; 
     std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
 
     // start of nested class:
-    struct AccessibilityScoreIndex
+    struct Accessibility
     {
         //5 member variables
-        void physicalAccessibility(std::string wheelchairAccessiblePaths, std::string designatedParkingSpaces);
-        void sensoryAccessibility(std::string tactileMaps, std::string brailleSignage, std::string auditorySignals);
+        void wheelchairAccessibility(bool wheelchairAccessiblePaths = true);
+        void sensoryAccessibility(std::string tactileMaps, std::string brailleSignage);
         void cognitiveAccessibility(std::string clearSignage, std::string intuitiveWayfinding);
-        int AccessibilityIndex = 7; // total number of accsessibility elements implemented. Don't no how to calcuate this. 
+        void AccessibilityScore(Accessibility); // Returns a meassure for user satisfaction accsessibility elements implemented. Don't no how to calcuate this. 
         bool complaintProcesInPlace = true;
         // 3 member functions.  
         // they take multiple parameters. some parameters have default values.
-        void accessibilityCheckAndMaintenance(std::string installAllRamps, bool cleearAllPaths = true, int numWorkingToilets = 3); // returns 'good to go' if all items are approved. 
+        void accessibilityCheckAndMaintenance(std::string installAllRamps, bool cleearAllPaths = true, int numWorkingToilets = 5); // returns 'good to go' if all items are approved. 
         bool testingEmergincyReadyness(std::string emergencyType, std::string subjectTypeHuman, bool requiresHeartChock = false); // Returns weather went acceptable or not.
-        int inforcingParkRules(int numLeachVialations, int numDogOwnerConflictSolving, bool policeInvolved); // returns the number of park rules violaitons.
+        int inforcingParkRules(int numLeachVialations, int numDogOwnerConflictSolving, bool policeInvolved); 
+        // returns the number of park rules violaitons.
     }; //End of nested class    
     
     // 3 Things It Can Do:
@@ -722,7 +730,8 @@ struct DotMatrixScreen
     float levelOfBrightnessFrom1To10 = 7;  
     float averagePowerConsumptionPerHourInWatt = 0.7f;
     // 3 things it can do:
-    float setBrightness(float BrightnessLvl); // Returns a float value representing the level of brightness.
+    float setBrightness(float BrightnessLvl); 
+    // Returns a float value representing the level of brightness.
     void displayImages();
     void displayGraphics();
 };
@@ -736,7 +745,8 @@ struct DirectionalPadControler
     std::string physicalDesign = "xShaped";
     std::string padColor = "Black";
     // 3 things it can do:
-    std::string controlPlayerMovement(std::string moveUp);
+    void controlPlayerMovement(DirectionalPadControler up);
+    // Used User-defined type as parameter.
     void confirmSettings();
     void selectHighscorersInitials();
 };
@@ -750,7 +760,7 @@ struct GameButtons
     bool binarySencor = true;
     float buttonSizeØInMm = 0.9f;    
     // 3 things it can do:
-    void executeAction();
+    void executeAction(GameButtons buttonApressed); //Used User-defined type as parameter.
     void adjustSettings();
     void confirmHighscoerInitials();
 };
@@ -778,9 +788,13 @@ struct GameCartridge
     bool gameboyCompatibility = true;
     bool LockoutChip = true;
     // 3 things it can do:
-    bool authenticationCheckingCartridge(bool isAuthenticated); // returns true if cartridge is authenticated
-    bool gamesuccesfullyLaoded(bool gameLoaded); // returns true if game is loaded)
-    void saveGameStatus();
+    bool authenticationCheckingCartridge(bool isAuthenticated); 
+    // returns true if cartridge is authenticated
+    std::string gamesuccesfullyLaoded(bool gameLoaded); 
+    // returns game start from stage after last completed stage
+    void insertGameCartridge(GameCartridge gammeTitleA); 
+    // Used User-defined type as parameter.
+    // Returns string of the game status.
 };
 
 struct Gameboy
