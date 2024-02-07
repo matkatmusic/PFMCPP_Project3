@@ -806,8 +806,9 @@ struct Gameboy
     Housing housing;
     GameCartridge gameCartridge;
     // 3 things it can do:
-    void playGame();
-    void loadGame();
+    bool playGame(std::string gameTitle);//Retuens true if if gaame gameTitle runs
+    void loadGame(std::string gameTitle); //Returns true if gameTitle is loaded
+    );
     void storeHighScoreLists();
 };
 
