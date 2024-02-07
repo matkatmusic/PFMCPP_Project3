@@ -808,7 +808,6 @@ struct Gameboy
     // 3 things it can do:
     bool playGame(std::string gameTitle);//Retuens true if if gaame gameTitle runs
     void loadGame(std::string gameTitle); //Returns true if gameTitle is loaded
-    );
     void storeHighScoreLists();
 };
 
