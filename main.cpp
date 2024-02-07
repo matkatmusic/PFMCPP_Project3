@@ -624,192 +624,7 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
 
-struct CoffeeShop
-{
-    // 5 properties:
-    int numBaristasAtWork = 3;
-    std::string coffeeBeanVariants = "Robusta, Arabica, Liberica";
-    int numEcoFriendlyPackaging = 4;
-    float amountRevenuePerDay = 2300.5f;   
-    int numCustumorsServedPerHour = 12;
-    // 3 Things It Can Do:
-    int brewAndSellCoffee(int numCoffeeCups, float priceCoffeeCups); 
-    // Returms total amount charged for x cups of coffee.
-    int upsellPastriesAndSnacks(int numPastries, int numSnacks, float pricePastries, float priceSnacks); 
-    // Returns total amount charged for numPastries plus numSnacks.
-    void provideRelaxingCustomerExperience();
-};
 
-struct YogaInstitute
-{
-    // 5 properties:
-    int numYogaInstructors = 14;
-    std::string YogaStyleOffered = "Hatha, Vinyasa, Power Yoga";
-    int numOfPlanetFriendlyEquipment = 7;
-    int numClassesOfferedPerWeek = 31;
-    std::string communityAndMembershipPrograms = "Yoga Club, Yoga Summer Camp, Neighbor Yoga, Member-get-member";
-    // 3 Things It Can Do:
-    void leadYogaClasses();
-    float payroleYagoInstructors(float hourlyRate, int hoursWorked); 
-    // Returns the total payroll for a yoga instructor
-    float towelRental(int numTowels, float  rentalPerTowel); 
-    // returnss tha total cost of renting towels.
-};
-
-struct PublicLibrary
-{
-    // 5 properties:
-    int numBooksInCollection = 43569;
-    std::string mediaFormatsAvailable = "Hardcover, Paperback, E-books, Audiobooks, DVDs";
-        std::string technologyAndResources = "Digital Librarian, online search and reservations, Printing, Scanning, Streaming, Self Service Checkout, Self Service Return";    
-    std::string typesOfEventsOffered = "Book Clubs, Author Talks, Book Signings, Children's Storytime, Art Exhibitions, Panel Discussions, Holiday Programs"; 
-    std::string communityOutreachAndServices = "Bookstore, Library Cards, Bulletin Board, Newspaper Reading Area, Turist Flyers";
-        
-    //start of nested class:
-    struct PersonalLenderIdCard
-    {
-        //5 member variables
-        bool isValid = false;
-        int age = 36;        
-        int numBooksStatusDueReturn = 0;
-        int numPrePaidCoffeeCredits = 3;
-        bool CanTakeHomeSencoredMaterials = true;
-        // 3 member functions
-        float TopUpCoffeeCredits (float costPerCredit, int numCredits); 
-        // Returns cost of toping up credits 
-        float chargeLateReturns(int numLateBooks, float amountLateFee); 
-        // Returns the total cost of late returns
-        bool hasToiletKeyNumber3(bool getKeyBack); 
-        // Returns true if the toilet key number 3 is in the possession of the person.
-    }; //End of nested class
-    
-    // 3 Things It Can Do:
-    void provideAccessToBooksAndResources();
-    bool feesNotPaid(PersonalLenderIdCard personCardImpounded);// Used User-defined type as parameter // Returns true if the person shoud have their card impounded
-    float chargeLateReturnFees(float amountDue); 
-};
-    
-struct DogPark
-{
-    // 5 properties:
-    int sizeOfParkInSquareFeet = 3500;
-    std::string amenitiesAvailable = "Fenced-in play areas, agility equipment, water stations, waste disposal stations, benches, shade structures";
-    std::string rulesAndRegulations = "leash requirements, vaccination requirements, licensing policies, owner responsibilities, guidelines for dog behavior";
-    bool communityInvolvement = true; 
-    std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
-
-    // start of nested class:
-    struct Accessibility
-    {
-        //5 member variables
-        void wheelchairAccessibility(bool wheelchairAccessiblePaths = true);
-        void sensoryAccessibility(std::string tactileMaps, std::string brailleSignage);
-        void cognitiveAccessibility(std::string clearSignage, std::string intuitiveWayfinding);
-        void AccessibilityScore(Accessibility); // Returns a meassure for user satisfaction accsessibility elements implemented. Don't no how to calcuate this. 
-        bool complaintProcesInPlace = true;
-        // 3 member functions.  
-        // they take multiple parameters. some parameters have default values.
-        void accessibilityCheckAndMaintenance(std::string installAllRamps, bool cleearAllPaths = true, int numWorkingToilets = 5); // returns 'good to go' if all items are approved. 
-        bool testingEmergincyReadyness(std::string emergencyType, std::string subjectTypeHuman, bool requiresHeartChock = false); // Returns weather went acceptable or not.
-        int inforcingParkRules(int numLeachVialations, int numDogOwnerConflictSolving, bool policeInvolved); 
-        // returns the number of park rules violaitons.
-    }; //End of nested class    
-    
-    // 3 Things It Can Do:
-    void provideOffLeashExerciseAndSocialization();
-    void fosterCommunityConnections();
-    void spreadsResponsibleDogOwnership();
-};
-
-struct DotMatrixScreen
-{
-    // 5 properties:
-    int numDotsPerRow = 160; 
-    int numRows = 144;
-    int numColumns = 160;
-    float levelOfBrightnessFrom1To10 = 7;  
-    float averagePowerConsumptionPerHourInWatt = 0.7f;
-    // 3 things it can do:
-    float setBrightness(float BrightnessLvl); 
-    // Returns a float value representing the level of brightness.
-    void displayImages();
-    void displayGraphics();
-};
-
-struct DirectionalPadControler
-{
-    // 5 properties:
-    int numOfDirectSupported = 4;
-    int numSencors = 4;  
-    bool tactileFeedback = true;
-    std::string physicalDesign = "xShaped";
-    std::string padColor = "Black";
-    // 3 things it can do:
-    void controlPlayerMovement(DirectionalPadControler up);
-    // Used User-defined type as parameter.
-    void confirmSettings();
-    void selectHighscorersInitials();
-};
-
-struct GameButtons
-{
-    // 5 properties:
-    int numGameButtons = 2;
-    int tactileFeedback = true;
-    std::string physicalDesign = "round, black";
-    bool binarySencor = true;
-    float buttonSizeØInMm = 0.9f;    
-    // 3 things it can do:
-    void executeAction(GameButtons buttonApressed); //Used User-defined type as parameter.
-    void adjustSettings();
-    void confirmHighscoerInitials();
-};
-
-struct Housing
-{
-    // 5 properties:
-    std::string housingMaterial = "plastic";
-    std::string housingColor = "LightGray";
-    float sizeHeightInMm = 148;
-    float sizeWidthInMm = 90;
-    float sizeDepthInMm = 32;
-    // 3 things it can do:
-    void secureGameCartridgeConnection();
-    void keepElectronicComponentsInPlace();
-    void offerComfertableGamingExperience();
-};
-
-struct GameCartridge
-{
-    // 5 properties:
-    bool batteryPoweredMemory = true;
-    int RamCapasityInKb = 128;
-    std::string cartridgeColor = "LightGray";   
-    bool gameboyCompatibility = true;
-    bool LockoutChip = true;
-    // 3 things it can do:
-    bool authenticationCheckingCartridge(bool isAuthenticated); 
-    // returns true if cartridge is authenticated
-    std::string gamesuccesfullyLaoded(bool gameLoaded); 
-    // returns game start from stage after last completed stage
-    void insertGameCartridge(GameCartridge gammeTitleA); 
-    // Used User-defined type as parameter.
-    // Returns string of the game status.
-};
-
-struct Gameboy
-{
-    // 5 properties:
-    DotMatrixScreen dotMatrixScreen; 
-    DirectionalPadControler directionalPadControler;
-    GameButtons gameButtons;
-    Housing housing;
-    GameCartridge gameCartridge;
-    // 3 things it can do:
-    bool playGame(std::string gameTitle);//Retuens true if if gaame gameTitle runs
-    void loadGame(std::string gameTitle); //Returns true if gameTitle is loaded
-    void storeHighScoreLists();
-};
 
 /*
 =================
@@ -1203,7 +1018,192 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+    struct CoffeeShop
+    {
+        // 5 properties:
+        int numBaristasAtWork = 3;
+        std::string coffeeBeanVariants = "Robusta, Arabica, Liberica";
+        int numEcoFriendlyPackaging = 4;
+        float amountRevenuePerDay = 2300.5f;   
+        int numCustumorsServedPerHour = 12;
+        // 3 Things It Can Do:
+        int brewAndSellCoffee(int numCoffeeCups, float priceCoffeeCups); 
+        // Returms total amount charged for x cups of coffee.
+        int upsellPastriesAndSnacks(int numPastries, int numSnacks, float pricePastries, float priceSnacks); 
+        // Returns total amount charged for numPastries plus numSnacks.
+        void provideRelaxingCustomerExperience();
+    };
 
+    struct YogaInstitute
+    {
+        // 5 properties:
+        int numYogaInstructors = 14;
+        std::string YogaStyleOffered = "Hatha, Vinyasa, Power Yoga";
+        int numOfPlanetFriendlyEquipment = 7;
+        int numClassesOfferedPerWeek = 31;
+        std::string communityAndMembershipPrograms = "Yoga Club, Yoga Summer Camp, Neighbor Yoga, Member-get-member";
+        // 3 Things It Can Do:
+        void leadYogaClasses();
+        float payroleYagoInstructors(float hourlyRate, int hoursWorked); 
+        // Returns the total payroll for a yoga instructor
+        float towelRental(int numTowels, float  rentalPerTowel); 
+        // returnss tha total cost of renting towels.
+    };
+
+    struct PublicLibrary
+    {
+        // 5 properties:
+        int numBooksInCollection = 43569;
+        std::string mediaFormatsAvailable = "Hardcover, Paperback, E-books, Audiobooks, DVDs";
+            std::string technologyAndResources = "Digital Librarian, online search and reservations, Printing, Scanning, Streaming, Self Service Checkout, Self Service Return";    
+        std::string typesOfEventsOffered = "Book Clubs, Author Talks, Book Signings, Children's Storytime, Art Exhibitions, Panel Discussions, Holiday Programs"; 
+        std::string communityOutreachAndServices = "Bookstore, Library Cards, Bulletin Board, Newspaper Reading Area, Turist Flyers";
+
+        //start of nested class:
+        struct PersonalLenderIdCard
+        {
+            //5 member variables
+            bool isValid = false;
+            int age = 36;        
+            int numBooksStatusDueReturn = 0;
+            int numPrePaidCoffeeCredits = 3;
+            bool CanTakeHomeSencoredMaterials = true;
+            // 3 member functions
+            float TopUpCoffeeCredits (float costPerCredit, int numCredits); 
+            // Returns cost of toping up credits 
+            float chargeLateReturns(int numLateBooks, float amountLateFee); 
+            // Returns the total cost of late returns
+            bool hasToiletKeyNumber3(bool getKeyBack); 
+            // Returns true if the toilet key number 3 is in the possession of the person.
+        }; //End of nested class
+
+        // 3 Things It Can Do:
+        void provideAccessToBooksAndResources();
+        bool feesNotPaid(PersonalLenderIdCard personCardImpounded);// Used User-defined type as parameter // Returns true if the person shoud have their card impounded
+        float chargeLateReturnFees(float amountDue); 
+    };
+
+    struct DogPark
+    {
+        // 5 properties:
+        int sizeOfParkInSquareFeet = 3500;
+        std::string amenitiesAvailable = "Fenced-in play areas, agility equipment, water stations, waste disposal stations, benches, shade structures";
+        std::string rulesAndRegulations = "leash requirements, vaccination requirements, licensing policies, owner responsibilities, guidelines for dog behavior";
+        bool communityInvolvement = true; 
+        std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
+
+        // start of nested class:
+        struct Accessibility
+        {
+            //5 member variables
+            void wheelchairAccessibility(bool wheelchairAccessiblePaths = true);
+            void sensoryAccessibility(std::string tactileMaps, std::string brailleSignage);
+            void cognitiveAccessibility(std::string clearSignage, std::string intuitiveWayfinding);
+            void AccessibilityScore(Accessibility); // Returns a meassure for user satisfaction accsessibility elements implemented. Don't no how to calcuate this. 
+            bool complaintProcesInPlace = true;
+            // 3 member functions.  
+            // they take multiple parameters. some parameters have default values.
+            void accessibilityCheckAndMaintenance(std::string installAllRamps, bool cleearAllPaths = true, int numWorkingToilets = 5); // returns 'good to go' if all items are approved. 
+            bool testingEmergincyReadyness(std::string emergencyType, std::string subjectTypeHuman, bool requiresHeartChock = false); // Returns weather went acceptable or not.
+            int inforcingParkRules(int numLeachVialations, int numDogOwnerConflictSolving, bool policeInvolved); 
+            // returns the number of park rules violaitons.
+        }; //End of nested class    
+
+        // 3 Things It Can Do:
+        void provideOffLeashExerciseAndSocialization();
+        void fosterCommunityConnections();
+        void spreadsResponsibleDogOwnership();
+    };
+
+    struct DotMatrixScreen
+    {
+        // 5 properties:
+        int numDotsPerRow = 160; 
+        int numRows = 144;
+        int numColumns = 160;
+        float levelOfBrightnessFrom1To10 = 7;  
+        float averagePowerConsumptionPerHourInWatt = 0.7f;
+        // 3 things it can do:
+        float setBrightness(float BrightnessLvl); 
+        // Returns a float value representing the level of brightness.
+        void displayImages();
+        void displayGraphics();
+    };
+
+    struct DirectionalPadControler
+    {
+        // 5 properties:
+        int numOfDirectSupported = 4;
+        int numSencors = 4;  
+        bool tactileFeedback = true;
+        std::string physicalDesign = "xShaped";
+        std::string padColor = "Black";
+        // 3 things it can do:
+        void controlPlayerMovement(DirectionalPadControler up);
+        // Used User-defined type as parameter.
+        void confirmSettings();
+        void selectHighscorersInitials();
+    };
+
+    struct GameButtons
+    {
+        // 5 properties:
+        int numGameButtons = 2;
+        int tactileFeedback = true;
+        std::string physicalDesign = "round, black";
+        bool binarySencor = true;
+        float buttonSizeØInMm = 0.9f;    
+        // 3 things it can do:
+        void executeAction(GameButtons buttonApressed); //Used User-defined type as parameter.
+        void adjustSettings();
+        void confirmHighscoerInitials();
+    };
+
+    struct Housing
+    {
+        // 5 properties:
+        std::string housingMaterial = "plastic";
+        std::string housingColor = "LightGray";
+        float sizeHeightInMm = 148;
+        float sizeWidthInMm = 90;
+        float sizeDepthInMm = 32;
+        // 3 things it can do:
+        void secureGameCartridgeConnection();
+        void keepElectronicComponentsInPlace();
+        void offerComfertableGamingExperience();
+    };
+
+    struct GameCartridge
+    {
+        // 5 properties:
+        bool batteryPoweredMemory = true;
+        int RamCapasityInKb = 128;
+        std::string cartridgeColor = "LightGray";   
+        bool gameboyCompatibility = true;
+        bool LockoutChip = true;
+        // 3 things it can do:
+        bool authenticationCheckingCartridge(bool isAuthenticated); 
+        // returns true if cartridge is authenticated
+        std::string gamesuccesfullyLaoded(bool gameLoaded); 
+        // returns game start from stage after last completed stage
+        void insertGameCartridge(GameCartridge gammeTitleA); 
+        // Used User-defined type as parameter.
+        // Returns string of the game status.
+    };
+
+    struct Gameboy
+    {
+        // 5 properties:
+        DotMatrixScreen dotMatrixScreen; 
+        DirectionalPadControler directionalPadControler;
+        GameButtons gameButtons;
+        Housing housing;
+        GameCartridge gameCartridge;
+        // 3 things it can do:
+        bool playGame(std::string gameTitle);//Retuens true if if gaame gameTitle runs
+        void loadGame(std::string gameTitle); //Returns true if gameTitle is loaded
+        void storeHighScoreLists();
+    };
 
 
 
