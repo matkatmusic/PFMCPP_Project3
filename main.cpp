@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) volume controls
+            4) speaker mute knob
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) adjust volume settings.
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer display
+            2) odometer
+            3) fuel gauge   
+            4) road temperture display
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
-    
+            1) display current speed
+            2) indicate current mode of auto transmition
+            3) display currrent fuel level
+
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air condition activation button
+            2) temperature control dial left
+            3) increase fan speed button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioning
+            2) adjust temperature for the left zone
+            3) increase fan speed
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) on-off toggle button
+            2) volume control dial
+            3) radio source selector button
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on/off the infotainment system
+            2) adjust volume
+            3) choose raido as the media source
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) electrict positioning of the backrest
+            2) seat positon memory storage 
+            3) seat belt
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust backrest position
+            2) store/recall seat position data
 */
 
 /*
@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -302,6 +256,22 @@ Example:
     When you choose your 5 smaller parts, remember that each of 
     these 5 Sub Objects will need to be defined with 5 primitive 
     properties and 3 actions EACH.
+
+UDT: 
+    MyUDT Synthiziser
+
+    My Syntheziser is built using the following 5 UDTs:
+        keybed
+        oscillators 
+        filter
+        modulator
+        envelope generators
+        
+    My syntheziser has 3 things it can do:
+        generate sound
+        control pitch
+        modulatate amplitude
+    
 */
 
 /*
@@ -318,6 +288,8 @@ example:
         Brightness (double)
         area in cm2 (int)
         brand (std::string)
+
+
 */
 
 /*
@@ -337,17 +309,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+
  */
 
  /*
@@ -433,67 +395,8 @@ example:
     If #10's first property was 'Engine', then `Thing 5)` will be `Engine`. 
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
-
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
+
 
 /*
 =================
@@ -545,12 +448,115 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+/*
+    Thing 1) Coffee Shop
+    5 properties:
+        1) number of baristas at work (int)
+        2) variety of coffee beans (std::string)
+        3) use of eco-friendly packaging (bool)
+        4) amount of revenue generated per day (float)    
+        5) number of custumors served per hour (int)
 
 
+    Thing 2) Yoga Institute
+    5 properties:
+        1) number of yoga instructors (int)
+        2) variety of yoga styles offered (std::string)
+        3) use of planet-friendly yoga equipment (bool)
+        4) number of classes offered per Week (int)
+        5) community and membership programs 
 
 
+    Thing 3) Public Library
+    5 properties:
+        1) number of books in collection (int)
+        2) varity of media formats available (std::string)
+        3) use of technology and resources (bool)
+        4) number of programs and events offered 
+        5) community outreach and services (bool)
 
 
+    Thing 4) dog park
+    5 properties:
+        1) size of the park (float)
+        2) amenities available (std::string) // fenced-in play areas, agility equipment, water stations, etc.
+        3) rules and regulations (std::string) // leash requirements, etc., to ensure the safety and well-being of all park visitors.
+        4) community involvement (bool) // social activities organized by local dog owners and community organizations to support the upkeep and improvement of the park.
+        5) accessibility and inclusivity (bool) // wheelchair-accessible paths, designated parking spaces, to promote inclusivity and equal access.
+
+
+    Thing 5) dot-matrix screen
+    5 properties:
+        1) number of dots (int)
+        2) number of rows (int)
+        3) number of columns (int)
+        4) brightness (int) 
+        5) power consumption (float)
+    3 things it can do:
+        1) display text (void)
+        2) display images (void)
+        3) display graphics (void)
+
+    Thing 6) directional pressure pad controler
+    5 properties:
+        1) Number of directions supported (int) 
+        2) Number of sencors under the pad (int)    
+        3) tactile feedback (bool)
+        4) physical design (std::string)
+        5) pad color (std::string)
+    3 things it can do:
+        1) control gameplay (void)
+        2) control game settings (void)
+        3) select highscorers initials (void)
+
+    Thing 7) A and B game buttons
+    5 properties:
+        1) number of gam buttons (int) 
+        2) tactile feedback (bool)
+        3) physical design (std::string)
+        4) button color (std::string)
+        5) button size (std::string)   
+    3 things it can do:
+        1) execute gameplay actions (void)
+        2) control game settings (void)
+        3) confirm highscoer initials (void)
+
+    Thing 8) plastic housing
+    5 properties:
+        1) housing material (std::string)
+        2) housing color (std::string)
+        3) housing size height (float)
+        4) housing size width (float)
+        5) housing size depth (float)
+    3 things it can do:
+        1) secure game cartridge connection (void)
+        2) keep electronic components in place (void)
+        3) offer an easy, comfertable gaming experience (void)
+
+    Thing 9) game cartridge
+    5 properties:
+        1) battery powered memory (bool)
+        2) capasity in kb (int) 
+        3) game cartridge color (std::string)     
+        4) gameboy compatibility (bool) 
+        5) Lockout Chip installed (bool)
+    3 things it can do:
+        1) authentication checking cartridge (void)
+        2) load game into gameboy (void)
+        3) stores game status (void)
+
+    Thing 10) gameboy
+    5 properties:
+        1) dot-matrix screen 
+        2) directional pad controler
+        3) A and B game buttons
+        4) plastic housing
+        5) game cartridge
+    3 things it can do:
+        1) play game
+        2) load game
+        3) store high score lists
+*/
 
 /*
 =================
@@ -617,6 +623,8 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
+
+
 
 /*
 =================
@@ -1010,7 +1018,192 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+    struct CoffeeShop
+    {
+        // 5 properties:
+        int numBaristasAtWork = 3;
+        std::string coffeeBeanVariants = "Robusta, Arabica, Liberica";
+        int numEcoFriendlyPackaging = 4;
+        float amountRevenuePerDay = 2300.5f;   
+        int numCustumorsServedPerHour = 12;
+        // 3 Things It Can Do:
+        int brewAndSellCoffee(int numCoffeeCups, float priceCoffeeCups); 
+        // Returms total amount charged for x cups of coffee.
+        int upsellPastriesAndSnacks(int numPastries, int numSnacks, float pricePastries, float priceSnacks); 
+        // Returns total amount charged for numPastries plus numSnacks.
+        void provideRelaxingCustomerExperience();
+    };
 
+    struct YogaInstitute
+    {
+        // 5 properties:
+        int numYogaInstructors = 14;
+        std::string YogaStyleOffered = "Hatha, Vinyasa, Power Yoga";
+        int numOfPlanetFriendlyEquipment = 7;
+        int numClassesOfferedPerWeek = 31;
+        std::string communityAndMembershipPrograms = "Yoga Club, Yoga Summer Camp, Neighbor Yoga, Member-get-member";
+        // 3 Things It Can Do:
+        void leadYogaClasses();
+        float payroleYagoInstructors(float hourlyRate, int hoursWorked); 
+        // Returns the total payroll for a yoga instructor
+        float towelRental(int numTowels, float  rentalPerTowel); 
+        // returnss tha total cost of renting towels.
+    };
+
+    struct PublicLibrary
+    {
+        // 5 properties:
+        int numBooksInCollection = 43569;
+        std::string mediaFormatsAvailable = "Hardcover, Paperback, E-books, Audiobooks, DVDs";
+            std::string technologyAndResources = "Digital Librarian, online search and reservations, Printing, Scanning, Streaming, Self Service Checkout, Self Service Return";    
+        std::string typesOfEventsOffered = "Book Clubs, Author Talks, Book Signings, Children's Storytime, Art Exhibitions, Panel Discussions, Holiday Programs"; 
+        std::string communityOutreachAndServices = "Bookstore, Library Cards, Bulletin Board, Newspaper Reading Area, Turist Flyers";
+
+        //start of nested class:
+        struct PersonalLenderIdCard
+        {
+            //5 member variables
+            bool isValid = false;
+            int age = 36;        
+            int numBooksStatusDueReturn = 0;
+            int numPrePaidCoffeeCredits = 3;
+            bool CanTakeHomeSencoredMaterials = true;
+            // 3 member functions
+            float TopUpCoffeeCredits (float costPerCredit, int numCredits); 
+            // Returns cost of toping up credits 
+            float chargeLateReturns(int numLateBooks, float amountLateFee); 
+            // Returns the total cost of late returns
+            bool hasToiletKeyNumber3(bool getKeyBack); 
+            // Returns true if the toilet key number 3 is in the possession of the person.
+        }; //End of nested class
+
+        // 3 Things It Can Do:
+        void provideAccessToBooksAndResources();
+        bool feesNotPaid(PersonalLenderIdCard personCardImpounded);// Used User-defined type as parameter // Returns true if the person shoud have their card impounded
+        float chargeLateReturnFees(float amountDue); 
+    };
+
+    struct DogPark
+    {
+        // 5 properties:
+        int sizeOfParkInSquareFeet = 3500;
+        std::string amenitiesAvailable = "Fenced-in play areas, agility equipment, water stations, waste disposal stations, benches, shade structures";
+        std::string rulesAndRegulations = "leash requirements, vaccination requirements, licensing policies, owner responsibilities, guidelines for dog behavior";
+        bool communityInvolvement = true; 
+        std::string accessibilityAndInclusivity = "Wheelchair-accessible paths, designated parking spaces";
+
+        // start of nested class:
+        struct Accessibility
+        {
+            //5 member variables
+            void wheelchairAccessibility(bool wheelchairAccessiblePaths = true);
+            void sensoryAccessibility(std::string tactileMaps, std::string brailleSignage);
+            void cognitiveAccessibility(std::string clearSignage, std::string intuitiveWayfinding);
+            void AccessibilityScore(Accessibility); // Returns a meassure for user satisfaction accsessibility elements implemented. Don't no how to calcuate this. 
+            bool complaintProcesInPlace = true;
+            // 3 member functions.  
+            // they take multiple parameters. some parameters have default values.
+            void accessibilityCheckAndMaintenance(std::string installAllRamps, bool cleearAllPaths = true, int numWorkingToilets = 5); // returns 'good to go' if all items are approved. 
+            bool testingEmergincyReadyness(std::string emergencyType, std::string subjectTypeHuman, bool requiresHeartChock = false); // Returns weather went acceptable or not.
+            int inforcingParkRules(int numLeachVialations, int numDogOwnerConflictSolving, bool policeInvolved); 
+            // returns the number of park rules violaitons.
+        }; //End of nested class    
+
+        // 3 Things It Can Do:
+        void provideOffLeashExerciseAndSocialization();
+        void fosterCommunityConnections();
+        void spreadsResponsibleDogOwnership();
+    };
+
+    struct DotMatrixScreen
+    {
+        // 5 properties:
+        int numDotsPerRow = 160; 
+        int numRows = 144;
+        int numColumns = 160;
+        float levelOfBrightnessFrom1To10 = 7;  
+        float averagePowerConsumptionPerHourInWatt = 0.7f;
+        // 3 things it can do:
+        float setBrightness(float BrightnessLvl); 
+        // Returns a float value representing the level of brightness.
+        void displayImages();
+        void displayGraphics();
+    };
+
+    struct DirectionalPadControler
+    {
+        // 5 properties:
+        int numOfDirectSupported = 4;
+        int numSencors = 4;  
+        bool tactileFeedback = true;
+        std::string physicalDesign = "xShaped";
+        std::string padColor = "Black";
+        // 3 things it can do:
+        void controlPlayerMovement(DirectionalPadControler up);
+        // Used User-defined type as parameter.
+        void confirmSettings();
+        void selectHighscorersInitials();
+    };
+
+    struct GameButtons
+    {
+        // 5 properties:
+        int numGameButtons = 2;
+        int tactileFeedback = true;
+        std::string physicalDesign = "round, black";
+        bool binarySencor = true;
+        float buttonSizeØInMm = 0.9f;    
+        // 3 things it can do:
+        void executeAction(GameButtons buttonApressed); //Used User-defined type as parameter.
+        void adjustSettings();
+        void confirmHighscoerInitials();
+    };
+
+    struct Housing
+    {
+        // 5 properties:
+        std::string housingMaterial = "plastic";
+        std::string housingColor = "LightGray";
+        float sizeHeightInMm = 148;
+        float sizeWidthInMm = 90;
+        float sizeDepthInMm = 32;
+        // 3 things it can do:
+        void secureGameCartridgeConnection();
+        void keepElectronicComponentsInPlace();
+        void offerComfertableGamingExperience();
+    };
+
+    struct GameCartridge
+    {
+        // 5 properties:
+        bool batteryPoweredMemory = true;
+        int RamCapasityInKb = 128;
+        std::string cartridgeColor = "LightGray";   
+        bool gameboyCompatibility = true;
+        bool LockoutChip = true;
+        // 3 things it can do:
+        bool authenticationCheckingCartridge(bool isAuthenticated); 
+        // returns true if cartridge is authenticated
+        std::string gamesuccesfullyLaoded(bool gameLoaded); 
+        // returns game start from stage after last completed stage
+        void insertGameCartridge(GameCartridge gammeTitleA); 
+        // Used User-defined type as parameter.
+        // Returns string of the game status.
+    };
+
+    struct Gameboy
+    {
+        // 5 properties:
+        DotMatrixScreen dotMatrixScreen; 
+        DirectionalPadControler directionalPadControler;
+        GameButtons gameButtons;
+        Housing housing;
+        GameCartridge gameCartridge;
+        // 3 things it can do:
+        bool playGame(std::string gameTitle);//Retuens true if if gaame gameTitle runs
+        void loadGame(std::string gameTitle); //Returns true if gameTitle is loaded
+        void storeHighScoreLists();
+    };
 
 
 
